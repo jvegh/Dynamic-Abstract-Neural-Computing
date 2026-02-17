@@ -45,7 +45,7 @@ Neuronal operation, event controlled, thermodynamic model, electrical model,
 ## Version History
 
 * 0.2
-    * The irst published version
+    * The first published version
     * See [commit change]() or See [release history]()
 
 ## License

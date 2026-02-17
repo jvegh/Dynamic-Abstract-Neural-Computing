@@ -37,6 +37,11 @@ simulate the time-dependent processes of living matter.
 
 ex. Végh, János (Vegh [dot] Janos at a GMail address)
 
+## Keywords
+Neuronal operation, event controlled, thermodynamic model, electrical model,
+
+
+
 ## Version History
 
 * 0.2
@@ -49,6 +54,10 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## References and publications
 
-More citations see in Bibliography (file:///home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/docs/manual/bib.html)
+More citations see in Bibliography (https://jvegh.github.io/Dynamic-Abstract-Neural-Computing/manual/bib.html)
+* [Non-ordinary laws](http://dx.doi.org/10.2139/ssrn.5217729)
 * [Algorithm](https://www.mdpi.com/1999-4893/19/1/6/pdf)
 * [Model](https://doi.org/10.48550/arXiv.2507.11448)
+* [Technomorph biology](https://www.mdpi.com/2076-3417/15/11/5805)
+* [Neural information](http://dx.doi.org/10.3934/mbe.2023551)
+* [Role of speed](http://dx.doi.org/10.1007/s10441-022-09450-6)

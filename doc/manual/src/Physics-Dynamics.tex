@@ -1,0 +1,193 @@
+% Physics of electric dynamics, from viewpoint of biology
+
+
+\subsection[Dynamics]{Ions' dynamics\label{sec:Physics-ElectrodiffusionDynamics}\label{sec:Physics-Speculations}}
+As a kind of consistency check, for estimating the orders of magnitude of movement's parameters of charged heavy balls.
+
+
+\subsubsection{Rush-in speed\label{sec:Physics-RushInSpeed}}
+If we assume that a $50\ mV$ potential difference exists across the 
+$5\ nm$ thick membrane, it translates to a $10^7\ V/m$ gradient~\cite{MolecularBiology:2002}.
+The value of the force acting on a unit charge is
+\begin{equation}
+F_{Na^+}= 10^7 *1.60217663* 10^{-19} = 1.6*10^{-12}\ N
+\end{equation}
+\noindent
+Given that the mass of a $Na^+$ ion is $m_{Na} = 3.81915* 10^{-26}\ kg$, it causes an acceleration
+\begin{equation}
+a=\frac{F_{Na^+}}{m_{Na^+}} = 0.42 * 10^{14}\ \frac{m}{s^{2}}
+\label{eq:Physics-RushInAceleration}
+\end{equation}
+\noindent
+The distance $d$ to travel is the thickness of the neuronal membrane $5*10^{-9}\ nm$
+and we assume a continuosly accelerating ion, and using $d=\frac{1}{2}*a*t^2$
+\begin{equation}
+t_{traverse} = \sqrt{\frac{2*5*10^{-9}}{0.42*10^{14}}} = 1.54*10^{-11}\ s
+\end{equation}
+\noindent
+In this period the ion is accelerated to the speed  $v=a*t$
+\begin{equation}
+v_{Na^+} = 0.42 * 10^{14}\ *\ 1.54*10^{-11} = 600\ m/s
+\end{equation}
+The current we can attribute to an ion channel,
+provided that $10^3$ ions pass through an single ion channel, it means
+\begin{equation}
+I_{channel} = \frac{10^3 * 1.60217663* 10^{-19}}{1.54*10^{-11}} = 10^{-5} A
+\end{equation}
+\noindent
+(The thermal speed is about an order of magnitude higher.
+It is in the range of several $\mu A$s, for a short period. It is distributed in the 
+spatiotemporal surface of a neuron, and contributes to a current of dozen of $pA$s.)
+
+Notice an important difference. The acceleration of an ion is unbelievably large. It is sufficiently large to keep the potential at the same value,
+provided that the ions must follow a small change, such as due to the
+"leaking" current through the 
+%\gls{AIS}
+AIS.
+Similarly, the ions can 'instantly' follow quick changes such as
+a square wave gradient.
+However, if many similar ions are ahead, their repulsion decreases
+the acceleration, and the ion travels only at a few $m/s$ speed.
+The huge forces and accelerations means that a potential change
+acts immediately. However, the force decays quickly. The ions start to move
+'instantly', but the charge carriers can move only with a limited speed,
+much below the interaction speed of 
+EM
+%\gls{EM}
+interactions. The effect can propagate only with that lower speed.
+
+See the case of axon: there exist a mechanical constraint that 
+the ions cannot spread through the wall (they must keep the direction), and 
+the ion package propagates as Equs.\ref{eq:Nernst-dVdt} and~\ref{eq:Nernst-dCdt} describe it.
+
+\begin{advanced}
+As shown above, the ions' passage time, is much below $1\ ns$. 
+To switch that very intense and very short current pulse, one needs
+an at least as fast switch.
+The mechanical handling, using mechanical caps,
+(see the value of acceleration) is not possible.
+It needs an electronic control, see the layers of the two sides of the membrane.
+
+Furthermore, the time is only slightly higher than the magnitude of
+molecular transitions. It is highly unprobable, that it can happen
+$10^3$ times 
+reconfiguration of long molecule chains can happen in such short periods. 
+
+\end{advanced}
+
+\subsubsection{Rush-in concentration\label{sec:Physics-RushInConcentration}}
+
+As we described in section~\ref{sec:Fick-Electrodiffusion}, this sudden
+concentration change provokes a voltage gradient as described by Eq.~(\ref{eq:PhysicsGradientRatio}). From that point on, gradients
+$\frac{dV}{dt}$ and $\frac{dC}{dt}$ excite each other, as described
+by Eqs.~(\ref{eq:Nernst-1V}) and~(\ref{eq:Nernst-1C}).
+\index{voltage gradient}
+In simple physical picture, the rush-in ions appearing on the neuron's membrane
+are confined in the volume formed in an atomic layer on its surface.
+They attempt to be uniformly distributed. The electric repulsion 
+enables a hyper-viscous behavior for the electric fluid, so the surface -- without invasion -- would be equipotential. The membrane is an excellent isolator,
+except at the 
+\gls{AIS}. Here the ion channels represent a resistance (also limits the current), so a current starts, see
+section~\ref{sec:Physiology-NeuralCurrents_AIS},
+creating a potential gradient.
+
+Here comes into play the limiting effect of the interaction speed.
+Given that the electric repulsion is mediated by the concentration, 
+the decrease of the potential can happen with the speed of the slow current
+in the proximity of the 
+%\gls{AIS}
+AIS and the ions from the distant region can increase it with their potential-assisted speed. 
+The potential gradient creates a speed gradient in proximity of the
+%\gls{AIS}
+AIS, while it remains zero at larger distances. The speed gradient
+propagates with the speed given by Eq.~(\ref{eq:StokesEinsteinSpeed2})
+and its delayed effect creates a "ram current" effect, which 
+-- in a good approximation -- is resemblant to the effect of an $RC$ circuit.
+The charge is "stored" (cannot flow out because of the limiting resistor)
+for some time and at approprite parameters the neuron behaves as a damped $RC$ circuit.
+
+
+
+
+\subsubsection{Rush-in charge\label{sec:Physics-RushinCharge}}
+
+Let us suppose we have a simple electrodiffusion, say, positive ions rush-in into the intracellular space of a neuron through the membrane's ion channels, in one packet, about $10^5$ ions per channel. For all channels, in the order of $10^2$ channels on the membrane, the number of ions appearing (suddenly, in $psec$ time per channel (see section~\ref{sec:Physics-RushInSpeed}) and in $nsec$ time per membrane) on the surface is only $10^7$. This charge appears as current at the beginning of the
+%\gls{AIS}
+AIS and moves (the neuron's membrane discharges) without an external potential.
+The huge difference in the charge density (and concentration) on the membrane's surface and the no-charge at the beginning of the axon can explain why a current flows. (The other way round: ions escape into the volume and they repulse each other; so they will move in the direction of the drain).
+
+The Nernst-Planck equation could explain that the concentration gradient causes a potential gradient, i.e., explain why do we see a current without voltage. However, the number of ions is not surely sufficient to apply thermodynamics.
+At the same time, the ions exist in a volume having thickness about tenths of nanometer, i.e., the density of the ions can be sufficient to behave as a macroscopic charged fluid in that limited volume.
+This case is neither "net" macroscopic nor microscopic. On the one side, the Nernst-Planck
+ equation refers to large (on this scale) volume. On the other, evidence shows that dozens of $pA$ current flows, and behaves in a macroscopic way.  
+
+When we assume $10^7$ rushed-in ions for evoking a single action potential, it means $1.6*10^{-12}\ Cb$ charge. We take the typical resistance and capacitance values from~\cite{KochBiophysics:1999}:
+we assume $100\ pF$ capacitance and $100\ M\Omega$ resistance (i.e., $\tau=10^{-2}\ s$). 
+If we assume that the charge flows out in a period of $10\ ms$, we should measure a $160\ pA$ current on the axon, furthermore, that current causes a $160\ mV$ voltage drop (aka Action Potential) on the resistance.
+See also section~\ref{sec:Physiology-VoltageSquareVawe}: $300\ pA$ flows
+in a $5\ ms$ period.
+Similar value can be derived from~\cite{BeanActionPotential:2007}.
+All those values are in the order of the measured values.
+
+
+ 
+So, the charge from the micro-world can be excellently mapped to the measured macroscopic current. On the other way round, due to the Nernst-Planck equation~(\ref{eq:NernstPlanck}), 
+\index{Nernst-Planck equation}
+it could be expressed as a consequence of the sudden increase in the concentration (a concentration gradient $\frac{dC}{dx}$) of the chemical ions on the surface.
+Provided that thermodynamics can be applied to a volume of area of $10^{-2}\ mm^2$ and thickness say up to $10*10^{-9}\ m$.
+With those numbers we arrive at that in that layer the ion density during generating an action potential is  $10^{23}\ m^{-3}$, which is not far from the numbers where thermodynamics can be applied;
+so we assume that the Nernst-Planck equation (and the ones we described as "laws of motion of electrodiffusion") can be used to describe why an
+%\gls{AP}
+AP evokes in a neuron.
+
+
+
+\subsubsection{Ion selectivity\label{sec:Physics-IonSelectivity}}
+We assume that in a balanced state, a  $Na^{+}$ and a  $K^{+}$
+ion are placed at the entrance of the ion channel.
+According to the calculations above, $Na^{+}$ ions pass the ion channel in $15\ ps$.
+%
+At the same time, since the mass of a $K^+$ ion is $m_{K} = 6.492* 10^{-26}\ kg$, 
+and the same force accelerates it, its acceleration
+\begin{equation}
+a=\frac{F_{K^+}}{m_{K^+}} = 0.246 * 10^{14}\ \frac{m}{s^{2}}
+\end{equation}
+%==F_{Na^+}
+With this acceleration, the $K^+$ ions traverse in the the ion channel a distance only
+$d=\frac{1}{2}*0.246 * 10^{14}*(1.54*10^{-11})^2 = 2.92 * 10^{-9}\ nm$.
+That means that when the $Na^+$ ions already arrived at the low-concentration layer,
+at that time the $K^+$ ion passed only $\frac{2}{3}*d$ distance. If the potential on the 
+arrival side increases due to the already arrived ions, they will experience 
+a repulsive potential, and they will not be able to arrive: they cannot pass 
+the uphill potential barrier and they turn back, with the downhill gradient.
+
+Given the current intensity above, that the ion channels' size is not
+much larger than an ion, furthermore that the time available for interaction
+is shorter than the chemical transition time for the molecules, 
+
+
+
+\begin{advanced}
+As shown above, the ions' passage time is uncomparably fast compared to the neuronal processes' characteristic time.
+Furthermore, the time is about two orders of magnitude shorter
+than the atomic transitions, so it is highly unprobable, that
+reconfiguration of long molecule chains can be realistic.
+To switch that very intense and very short current, one needs
+an at least as \textit{fast switch}.
+The mechanical handling, using mechanical caps,
+(see the value of acceleration) is not possible.
+It needs an electronic control, see the layers on the two sides of the membrane,
+see section~\ref{sec:Physics-ElectrolyteLayers}.
+\end{advanced}
+
+
+%
+%\subsubsection{Layer speed\label{sec:Physics-MembraneCurrent}}
+%We assume that two $Na^+$ ions are at a distance of $10\ nm$.
+%The force between them is 
+%\index{Coulomb's law}
+%\begin{equation}
+%F_{Na^+}= \frac{1}{4*\pi*\epsilon_o}\frac{q_1*q_2}{r^2} = 9*10^9\biggl( \frac{1.60217663* 10^{-19}}{10^{-8}}\biggr)^2 = 2.311027 * 10^{-14}\ N
+%\end{equation}
+%\noindent
+

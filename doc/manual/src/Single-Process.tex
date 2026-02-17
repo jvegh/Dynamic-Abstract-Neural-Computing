@@ -1,0 +1,181 @@
+% The conceptual discusion of abstract processes
+
+
+\section[Processes]{Processes of operation\label{sec:Single-OperationProcesses}}
+
+
+In the neuron autonomous processes happen.
+Here we attempt to describe them in an abstract way.
+It is challenging, however, to write without physical and
+physiological details, so we frequently refer there and back
+to the corresponding
+chapters.
+
+\subsection[Operation in a nutshell
+%The Big Picture
+]{Operation in a nutshell%The Show
+\label{sec:Single_ElectricBigPicture}}
+
+
+We have Schrödinger's comments in mind when constructing the \hypertarget{PhysicalPicureNeuron}{physical picture
+ about neurons}, that we must be very careful. \textit{We must not use the
+ 'ordinary' laws of physics derived for non-living matter without revisiting them} because "\textit{the construction is different from anything we have yet tested in the physical laboratory}"~\cite{Schrodinger:1992}.
+ The fundamental principles are the same, but we must use different 
+\hyperlink{Abstractions}{approximations
+ and abstractions} for the different disciplines and for living material. For this reason,
+maybe it is more correct to call those laws for living matter 'non-disciplinary'
+instead of 'non-ordinary' laws.
+ We must also include the discoveries from the past seven decades,
+ among others that in the transient state a neuron shall be modeled
+as a serial (i.e., differentiator-type) \hyperlink{PhysicsOscillator}
+{electrical oscillator}, which has gated current 
+inputs (instead of a parallel oscillator 
+without gating inputs, which is a good model only in the resting state) and provides a timed output. We explicitly add that the charge carriers, the neuron 
+works with, are \textit{ions} (instead of electrons) and that the signal propagation
+mechanism is \textit{bioelectric} (instead purely an electric field
+or mechanical wave propagation or "protein mechanism"), in many cases even without having free carriers in the respective volume. (We do not consider the
+ideas that the associated mechanical, optical, etc. changes cause electric phenomena. They reverse the true causality: they do not have 
+a triggering cause; the view inherited from the narrative biology.)
+Electrochemical operation,
+especially that of \hyperlink{ThermodynamicElectricField}{semipermeable membranes}, requires special attention: 
+charge carriers are "created" inside the biological matter.
+Omitting purposefully the clear physical background results in performing
+\hyperlink{voltage-clamping}{wrong measurements} and introducing \hyperlink{PhysiologyFallacy}{wrong concepts} into biology.
+
+These distinctions involve numerous special features as follows.
+The play is divided into scenes and acts, where actors play roles in front of sets.
+Here we will only give a "guide" summary. Some parts of the plot are discussed in detail, others only in outline.
+Fundamentally, in this chapter we provide a mostly narrative discussion, the detailed explanation (assuming a deeper knowledge in physics and mathematics) is left for other chapters.
+
+
+In the non-disciplinary physical model (the 'abstract physical neuron', as we call it), a neuron (highly simplified) is a sphere with two lipid layers (membrane), a similarly insulating output tube (axon), and an incompressible, partially ionized electrolyte fluid with different composition and concentration inside and outside.
+They contain ions, simple chemical molecules, and complex biological formations.
+These components  may have gradients and move at continuously changing speeds that can vary by several orders of magnitude during operation. The lipid layer is partially permeable (controlled or uncontrolled) for the components above (channels, mainly ion channels).
+
+Between the membrane and the axon, there is a large amount of uncontrolled ion channels (\gls{AIS}). The membrane represents a confined space in which ions behave differently from in an infinite space; furthermore, it significantly alters the properties of the few-nanometer-thick layer near the membrane.
+The elastic wall of the membrane is covered with ion layers, and therefore, a potential difference is created there (the resting potential).
+In this layer, the concentration and potential change significantly with distance from the membrane due to interactions between the membrane's ion layers and the electrolyte.
+Ions sent by other neurons can enter the internal volume through controlled inputs (synapse).
+
+The membrane functions as a \hyperlink{ControlTheory}{\gls{PID} control circuit}.
+Under a small external influence, neuron remains in its resting state and regulates itself through non-controlled ion channels in its membrane.
+If the external influence exceeds a threshold, the controlled channels suddenly release a large amount of ions into the internal space, putting the neuron into a transient state.
+The membrane potential changes suddenly (within a few dozen nanoseconds), and, due to the mutual repulsion of ions, the pressure acting on the membrane wall and the ion concentration in the layer near the membrane also increase significantly and suddenly.
+
+Since \textit{the same physical action generates the voltage gradient and the concentration gradient} (and, consequently, the pressure), they are  inseparable and proportional to each other.
+Generating a voltage change  (clamping, direct current, magnetic pulse), or a pressure change (ultrasound, mechanical, shock waves) on the membrane mutually cause the other to change. Inputing ions (synaptic input) generates both changes.
+The control circuit tries to restore the resting state, during which the mentioned changes decrease proportionally together.
+The transient state of the neuron can, in principle, be described by any of the mentioned entities, but, as a practical matter, \textit{the effects of changes in the other entities must also be taken into account}: \textit{no single discipline can describe the changes}.
+The elastic membrane implements an almost critically damped vibration, but the "vibrating mass" and the "spring force" are constantly changing.
+In an electric resonant circuit, the capacitor's voltage and capacitance change due to the finite amount of charge.
+\textit{The pressure wave caused by a force shock and the voltage wave caused by a voltage shock describe the same effect}.
+In both cases, the other effect must be taken into account to some measure: an infinitesimal movement of the ion also involves a change in both pressure and voltage.
+Changes in pressure and charge alter the membrane's thickness (and therefore its capacity), and both voltage and pressure can cause a structural change (phase change, "melting") of the lipid chains that make up the membrane.
+\index{melting!lipids}
+In the case of the pressure wave, the speed is naturally finite (mass must be moved). For the electric wave, there are laws regarding only instantaneous interaction; so, they must be adapted to slow ion currents based on physical assumptions.
+It is simpler to describe the generation of the action potential as an electrical oscillation, and its propagation as a pressure wave (although this only represents well the wave front: the \gls{AP} lasts as long as there is a non-equilibrium charge in the neuron: the repulsion between the ions pushes the ions out of the closed space, so the intensity of the wave continuously decreases).
+Hyperpolarization is described in the electrical view as a capacitive current in the sequential oscillator circuit, in the thermodynamic view as a suction effect occurring in the opposite phase of the membrane. 
+In both cases, however, it must be taken into account that charge and mass are inseparable in ions, and that their cross-disciplinary effects significantly reduce the applicability of the disciplinary laws.
+ 
+In simple words, a neuron combines different disciplines; it works like a two-tact biological internal combustion engine, and can be described theoretically as a special Carnot-type thermodynamic engine, see section~\ref{sec:Physics-Thermodynamics}. The synaptic input currents operate the ignition. The influx of $Na^+$ ions acts like an explosion, producing a large pressure impulse due to electrical repulsion between ions; see Appendix~\ref{sec:Physics-Speculations}. The neuron's volume remains practically unchanged (represents an iso-volume process), and the pressure wave vibrates the particles (including the dissociated ions) in the form of a longitudinal and the created offset potential moves the ions out of the neuron through the only available output channel: the axon. The pressure wave is similar to a sound wave, with a negligible material transport. 
+The force analysis shows that the pressure wave
+causes a longitudinal vibration, while the changed potential adds
+a potential-dependent longitudinal force component for moving the ions.
+
+In the first stroke, the pressure impulse invests energy into compressing the elastic membrane and starting a compression wave (a soliton). In the second stroke, the elastic membrane pumps out some electrolyte (the driving force is the a combined thermoelectrical/mechanical force rather than some magic battery) through the ion channels in the \gls{AIS}, which "resists" it, thereby generating a potential wave known as \gls{AP}; well described by electricity. The force analysis shows that the pressure wave
+causes a longitudinal vibration, while the changed potential adds
+a potential-dependent longitudinal force component for moving the ions.
+ions.
+The compression
+produces heat, as evidenced by a rise in temperature. The expansion consumes heat, as evidenced by a decrease in temperature. These are well-understood processes in thermodynamics.
+However, they are still unexplained in biophysics, although they were observed
+seven decades ago~\cite{HeatProductionNeuron:1958}.
+The elastic membrane functions as a damped oscillator, which, in its negative amplitude phase, reverses the direction of electrolyte flow (and, consequently, the direction of the current carried by the ions).
+In the discipline of electricity (when using the serial $RC$ model), it can be interpreted as a capacitive current, which in physiology is observed as hyperpolarization that inverts the polarity of the output voltage.
+The ions represent both mass and charge simultaneously, and, correspondingly, one can observe, in addition to the electrical potential wave, mechanical, optical, and other features changing.
+In different disciplines, pressure and voltage represent the same phenomenon, using concepts from various disciplines, although the 
+speed of those waves are strongly different.
+
+ 
+
+Today, two major branches of disciplinary theories compete
+for being applied to describe the neuronal operation \cite{CriticalElectricity:2018,ThermodynamicAPDrukarch:2022,PerspectivesNerveSignalPropagation:2024,ComparisonHHandSoliton:2010,HH_Potential_Controversies_2017,PiezoelectricNeuron:2025}. Those cited references also compare those theories.
+The electrical view essentially stems from the (Nobel Prize-winning) work of Hodgkin and Huxley \cite{HodgkinHuxley:1952}. They could not make a perfect job, mainly due to the lack of
+discoveries made several decades later, including ours, about handling
+the finite speed of the biological ionic currents (and, due to that, the dynamic features), which drastically change
+their conclusions. In contrast with their \textit{empirical description}, which delivered mathematically formulated measured observations, our discussion, although it follows essentially
+the same principles, reinterprets and pinpoints the used fundamental terms, sets up a physical model, and \textit{explains} the physically underpinned processes. ``However, the theory could not explain the physical
+phenomena such as reversible heat changes, density changes,
+and geometrical changes observed in the experiments'' \cite{ComparisonHHandSoliton:2010}.
+By using the correct (non-disciplinary) discussion of the phenomena,
+we can explain all those observations.
+The thermodynamic view roots in the (possibly Nobel-prize-winning)
+idea of Heimburg and Jackson \cite{SolitonPropagation:2005}. They proposed that the action potential is essentially a sound wave (a soliton). ``However, there are several other questions that this has to answer like ion flow involvement in nerve signal propagation as stated by the \gls{HH} model and also the faster propagation in myelinated nerves than in unmyelinated'' \cite{ComparisonHHandSoliton:2010}.
+If we consider that the ion flow means charge propagation in a membrane tube where the specific capacity depends on the thickness (of the myelin sheath) of the wall \cite{VeghMembranePotential:2025}, the faster propagation is not mysterious anymore.
+Those apparent contradictions are simply consequences of the non-disciplinary features of ions.
+Given that
+our model natively connects charge and mass of ions~\cite{VeghNon-ordinaryLaws:2025}, it has a good chance of explaining the missing phenomena.
+
+
+\subsection[Synaptic]{Synaptic control\label{sec:Single_AP_Synaptic}}
+As discussed, controling the operation of its synapses is a
+fundamental part of neuronal operation. It is 
+a kind of gating and implements an 'autonomous cooperation' with 
+the upstream neurons. The neuron's gating uses
+a 'downhill method' for gating: while the membrane's potential
+is above of that of the axonal arbor, the charges cannot enter the membrane.
+As soon as the membrane's voltage exceeds the threshold voltage, the synaptic inputs stop, and restart only when the voltage drops below of that threshold.
+The synaptic gating makes interpreting neural information and entropy, as we discuss it in~\cite{VeghNeuralShannon:2022} and chapter~\ref{ch:Information}, at least hard.
+\index{time window}
+\index{synaptic gate}
+\index{entropy!neural}
+\index{information!neural}
+
+\subsection[Synchronization]{Synchronization\label{sec:Single-OperationSynchronization}}
+
+For the cooperation of neurons, it is of fundamental importance 
+to synchronize their operation. The neurons have low accuracy,
+while their concerted actions need precisely synchronized  
+pulses (about two orders of magnitude shorter time resolution
+than the inter-spike intervals!).
+
+Given that the voltage gradient is the pace of temporal change,
+a faster rush-in current in the upstream neuron (seen as
+a steeper slope~\cite{LosonczyIntegrative:2006})
+can evoke firing, independently from the membrane's voltage. \index{voltage gradient}
+This observation, alone, underpins
+that exceeding a a \textit{voltage threshold}
+leads to firing.
+Receiving a synchrony signal forces an instant firing. After firing,
+the first synaptic input sets the time base as we have discussed it above.
+
+It is interesting to note that, according to Shannon,
+\index{Shannon, Claude}
+\index{information!neural}
+\hyperlink{SingleSpikeEntropy}{a single spike does not carry information}, given that the shape of the spikes are identical, only its time can deliver information. And, yet,
+a single spike can carry the information that a new collective operation (of neurassemblies) begins and the participating neuron's operation must synchronize their "local time" to a remote basetime. In the sense of time-space, the signal resets the time base of all receiver neurons to zero. That is, all their synchronized upstream neurons will reset their timebase to that synchrony signal. Consequently, the neuron will receive its input spikes on a relatively well-defined scale, despite that the sender neurons send their spikes at different absolute times; by automatically "calculating" and applying
+the needed offset time. 
+The neuron's frequency stability is low, so the synchrony signal (the base frequencies) must be repeated relatively frequently for the system's stable operation.
+ Of course, the neuron does not know the absolute time.
+\index{local time}
+\index{time-space}
+\index{synchrony signal}
+The local time's starting time $t_o$
+is the time when the first synaptic input arrives and its range of interpretation ends when a new computation starts or when 
+the membrane's potential goes back to its resting value.
+
+\subsection[Learning]{Learning\label{sec:Single-OperationLearning}}
+
+It might also happen that (also depending on the residual
+membrane voltage) the outgoing spike's delivering begins
+immediately after last spike arrives.
+Given that the rising edge delivers the important timing information, and the voltage gradients contributions
+received before the last spike somewhat faded in the meantime,
+one can understand Hebb's observation in terms of learning: the last spike (before firing) contribute more than the ones
+received earlier.
+\index{voltage gradient}
+
+%in the form of a step in the potential gradient,
+%see Fig.~\ref{fig:Physical-processes-membrane}.
+
+

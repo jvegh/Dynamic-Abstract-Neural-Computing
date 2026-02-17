@@ -1,0 +1,261 @@
+latexml (LaTeXML version 0.8.8) processing /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/manual.tex
+(Digesting TeX manual...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/TeX.pool.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/eTeX.pool.ltxml... 0.00 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/pdfTeX.pool.ltxml... 0.00 sec) 0.05 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/manual.tex...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/textcomp.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu... 0.01 sec) 0.14 sec) 0.22 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/book.cls.ltxml... 0.00 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/graphicx.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/graphics.sty.ltxml... 0.00 sec) 0.01 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/latexml.sty.ltxml... 0.00 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/siunitx.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/expl3.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/expl3.lua.ltxml... 0.00 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex...
+Package: expl3
+2022-01-21 L3 programming layer (code)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/etex.sty.ltxml... 0.00 sec) 14.76 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def... 0.09 sec) 14.92 sec) 14.93 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/xcolor.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/color.sty.ltxml... 0.00 sec) 0.02 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/amstext.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/amsgen.sty.ltxml... 0.00 sec) 0.01 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/array.sty.ltxml... 0.00 sec) 15.01 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/cancel.sty.ltxml... 0.00 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/makeidx.sty.ltxml... 0.00 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/glossaries.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/ifthen.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty... 0.01 sec) 0.01 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/xkeyval.sty.ltxml... 0.00 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/etoolbox.sty.ltxml... 0.06 sec) 0.09 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/textcase.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty... 0.00 sec) 0.00 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty... 0.00 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/amsmath.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/amsbsy.sty.ltxml... 0.01 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/amsopn.sty.ltxml... 0.01 sec) 0.04 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty... 0.01 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty...
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty... 0.00 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty... 0.04 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty... 0.00 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty... 0.01 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty... 0.03 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty... 0.04 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty... 0.01 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty... 0.01 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty... 0.02 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty... 0.05 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty... 0.07 sec) 0.35 sec) 0.38 sec) 0.59 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-307.sty... 0.05 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty... 0.00 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty... 0.01 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/longtable.sty.ltxml... 0.00 sec) 0.02 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/supertabular.sty.ltxml... 0.00 sec) 0.02 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty... 0.02 sec) 1.33 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/xspace.sty.ltxml... 0.00 sec) 1.34 sec)
+Info:latex:(glossaries)  Package glossaries Info: Writing glossary file
+	at manual.tex; line 68 col 0 - line 68 col 15
+	manual.glo        
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/hyperref.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/ltxcmds.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty... 0.03 sec) 0.03 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/kvsetkeys.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty... 0.02 sec) 0.02 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/kvdefinekeys.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty... 0.01 sec) 0.01 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/kvoptions.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty... 0.06 sec) 0.06 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/nameref.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/refcount.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/infwarerr.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty... 0.02 sec) 0.02 sec) 0.05 sec) 0.05 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/gettitlestring.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty... 0.06 sec) 0.06 sec) 0.13 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/url.sty.ltxml... 0.00 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/bitset.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/intcalc.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty... 0.02 sec) 0.02 sec)
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/bigintcalc.sty.ltxml...
+(Processing definitions /usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/pdftexcmds.sty.ltxml...
+(Loading /usr/local/share/perl/5.34.0/LaTeXML/Package/iftex.sty.ltxml... 0.00 sec) 0.01 sec) 0.07 sec) 0.07 sec) 0.17 sec) 0.17 sec) 0.49 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/TitlePage.tex... 0.01 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg... 0.01 sec)
+(Processing definitions /usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-binary.cfg... 0.00 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/manual.glsdefs...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 55 col 1 - line 55 col 1
+	for entry `AP' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 83 col 1 - line 83 col 1
+	for entry `AIS' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 111 col 1 - line 111 col 1
+	for entry `ATP' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 139 col 1 - line 139 col 1
+	for entry `BI' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 167 col 1 - line 167 col 1
+	for entry `CNS' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 195 col 1 - line 195 col 1
+	for entry `EM' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 223 col 1 - line 223 col 1
+	for entry `GHK' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 251 col 1 - line 251 col 1
+	for entry `HBP' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 279 col 1 - line 279 col 1
+	for entry `HH' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 307 col 1 - line 307 col 1
+	for entry `ICT' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 335 col 1 - line 335 col 1
+	for entry `ML' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 363 col 1 - line 363 col 1
+	for entry `PID' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 391 col 1 - line 391 col 1
+	for entry `PSP' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 419 col 1 - line 419 col 1
+	for entry `RC' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 447 col 1 - line 447 col 1
+	for entry `PID controller' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 475 col 1 - line 475 col 1
+	for entry `local time' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 503 col 1 - line 503 col 1
+	for entry `potential-assisted speed' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+Error:latex:(glossaries) Package glossaries Error: Invalid parent `{}'
+	at manual.glsdefs; line 531 col 1 - line 531 col 1
+	for entry `potential-accelerated speed' - parent doesn't exist         See the glossaries package documentation for explanation.         Parent entries must be defined before their children        
+	In Core::Definition::Primitive[\GenericE... /usr/local/share/perl/5.34.0/LaTeXML/Package/LaTeX.pool.ltxml; line 5774
+	 <= Core::Stomach[@0x61f0fbe50818] <= Core::Gullet[@0x61f0fbe509f8] <= Core::Stomach[@0x61f0fbe50818] <= ...
+ 0.91 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Glossary.tex... 1.24 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Heading.tex... 0.01 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Foreword.tex... 0.10 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/StateOfTheArt.tex... 1.25 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single.tex...
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-Foreword.tex... 0.05 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-Introduction.tex... 0.12 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-Modeling.tex... 0.51 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-Concepts.tex... 0.41 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-Operation.tex... 0.42 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-Process.tex... 0.32 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-Control.tex... 0.43 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-RestingPotential.tex... 0.25 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-ActionPotential.tex... 0.78 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Single-Consequences.tex... 0.50 sec) 3.82 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics.tex...
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Foreword.tex... 0.13 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Introductory.tex... 0.06 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-ScienceMethods.tex... 0.85 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Spatiotemporal.tex... 0.08 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Thermodynamics.tex... 1.04 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Electricity.tex... 1.15 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Imitating.tex... 0.18 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Oscillator.tex... 0.42 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Dynamics.tex... 0.19 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Electrolyte.tex... 1.21 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Control.tex... 0.59 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Components.tex... 1.55 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Membrane.tex... 0.59 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physics-Measuring.tex... 0.51 sec) 8.57 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology.tex...
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-Foreword.tex... 0.06 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-StateOfTheArt.tex... 0.08 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-Physical.tex...
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-Membrane.tex... 0.07 sec) 0.61 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-Addendum.tex... 0.13 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-Electrodiffusion.tex... 0.11 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-RestingPotential.tex... 0.21 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-ActionPotential.tex... 1.57 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-HodgkinHuxley.tex... 0.44 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-Experimental.tex... 0.40 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Physiology-Fallacies.tex... 0.46 sec) 4.10 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Computing.tex...
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Computing-Foreword.tex... 0.08 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Computing-Introduction.tex... 0.03 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Computing-AP_Timing.tex... 0.04 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Computing-AP_Concept.tex... 0.25 sec) 0.47 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Information.tex...
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Information-Foreword.tex... 0.01 sec) 0.04 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Multiple.tex... 0.04 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Intelligence.tex... 0.07 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Simulation.tex...
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/Simulation-Foreword.tex... 0.02 sec) 0.17 sec)
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/src/VersionHistory.tex... 0.02 sec)
+Info:expected:
+../../../../LaTeX/CommonBibliography Couldn't find all bib files, using manual.bbl instead
+	at manual.tex; line 175 col 0 - line 175 col 1
+(Processing content /home/jvegh/REPO/DANCES/LaTeXML/doc/manual/manual.bbl... 1.08 sec) 39.28 sec) 39.76 sec)
+(Building...
+(Loading compiled schema /usr/local/share/perl/5.34.0/LaTeXML/resources/RelaxNG/LaTeXML.model... 0.00 sec) 18.47 sec)
+(Rewriting... 0.14 sec)
+(Math Parsing 1136 formulae ...... 4.09 sec)
+Math parsing succeeded:
+   ltx:XMArg: 1668/1668
+   ltx:XMath: 1136/1136
+   ltx:XMWrap: 16/16
+Symbols assumed as simple identifiers (with # of occurences):
+   'A{italic}' (47), 'C{italic}' (243), 'Delta' (54), 'D{italic}' (16), 'E{bold}' (1), 'E{italic}' (58), 'F{bold}' (1), 'F{italic}' (44), 'G{italic}' (23), 'H{italic}' (9), 'I{italic}' (106), 'J{italic}' (1), 'K{italic}' (92), 'L{italic}' (10), 'M{italic}' (21), 'N{italic}' (153), 'Omega' (2), 'O{italic}' (7), 'P{italic}' (9), 'Q{italic}' (15), 'R{italic}' (130), 'S{italic}' (22), 'T{italic}' (54), 'U{italic}' (72), 'V{italic}' (170), 'W{italic}' (8), 'Y{italic}' (3), 'alpha' (9), 'a{italic}' (305), 'beta' (6), 'b{italic}' (11), 'c{italic}' (156), 'd{italic}' (295), 'epsilon' (2), 'eta' (5), 'e{italic}' (176), 'f{italic}' (30), 'gamma' (4), 'g{italic}' (37), 'h{italic}' (21), 'i{italic}' (128), 'j{italic}' (2), 'k{italic}' (19), 'l{italic}' (154), 'mu' (6), 'm{italic}' (248), 'n{italic}' (161), 'o{italic}' (97), 'pi' (5), 'p{bold}' (5), 'p{italic}' (68), 'q{italic}' (31), 'r{bold}' (5), 'r{italic}' (99), 'sigma' (8), 's{italic}' (159), 'tau' (9), 't{bold}' (1), 't{italic}' (322), 'u{italic}' (18), 'v{bold}' (2), 'v{italic}' (40), 'w{italic}' (7), 'x{italic}' (64), 'y{italic}' (11), 'zeta' (1), 'z{italic}' (172)
+Set MATHPARSER_SPECULATE to speculate on possible notations.
+(Finalizing... 0.62 sec)
+Conversion complete: 18 errors (See /home/jvegh/REPO/DANCES/LaTeXML/doc/manual.latexml.log) (reqd. 1m 3.93s)

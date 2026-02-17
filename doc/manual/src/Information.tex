@@ -1,0 +1,34 @@
+\iflatexml
+\else
+\minitoc
+\fi
+\chapter[Information]{Neural information\label{ch:Information}}
+	\input{src/Information-Foreword}
+%	\hypertarget{information-biology}{}
+
+"In the terminology of communication theory and information
+theory, [a neuron] is a \hypertarget{NeuronInformationBroadcast}{multiaccess, partially degraded broadcast channel}
+that performs computations on data received at thousands of
+input terminals and transmits information to thousands of output
+terminals by means of a time-continuous version of pulse position.
+Moreover, [a neuron] engages in an extreme form of
+network coding; \textit{it does not store or forward the information it
+receives but rather fastidiously computes a certain functional of
+the union of all its input spike trains} which it then conveys to a
+multiplicity of select recipients"~\cite{EnergyEfficientNeuralComputing:2010}.
+\index{Shannon, Claude}
+Will be based on \cite{VeghNeuralShannon:2022}
+\cite{RoleOfInformationTransferSpeed:2022}
+\cite{VeghChannelCapacity:2023}
+
+%
+The theoretical model~\cite{VeghNeuralShannon:2022} described how
+the slow operation of biological objects explains biological phenomena,
+but  due to the lack of dedicated measurements
+it could only indirectly underpin the theory's correctness. Now, we
+give an exact quantitative explanation of the precise measurements~\cite{HodgkinHuxley:1952,SynapticTransmissionMason:1991},
+which have not been correctly understood in the past decades due to
+the lack of understanding of the role of the finite interaction speed
+(conduction velocity) in neuronal operations.
+
+\hypertarget{SingleSpikeEntropy}{Issuing the same signal carries no information (represents zero entropy)}

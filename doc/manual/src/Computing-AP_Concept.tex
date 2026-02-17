@@ -1,0 +1,103 @@
+% The conceptual discusion of abstract Action Potential
+
+\section{Action Potential\label{sec:Computing-ActionPotential}}
+
+In this section we discuss the  \textit{concept} of
+%\hypertarget{SINGLE_AP_CONCEPTUAL}
+{action potential}
+in an abstract sense that enables to define its notions, features and stages.
+Our approach here is hybrid: we know that the events are connected 
+to ion movements and that the components' cooperation forms the action potential.
+The %\hyperlink{PHYSIOLOGY_AP}
+{physiological}
+and 
+%\hyperlink {PHYSICS_AP}
+{physical} details
+are discussed in the respective chapters \ref{ch:Physiology} and \ref{ch:Physics}, where we provide citations describing the physiological details.
+We consider the neuron as an \textit{abstract computing element}
+and show how a neuron implements the generalized computing we discuss in chapter\ref{ch:Computing}.
+
+We assume that the neuron is in state "Relaxing", so the membrane's voltage is at the resting value. The membrane and the 
+\gls{AIS}
+are at the same potential, so no current is present (no "leaking current" exists).
+When input charge (through the synapses or directly through the membrane)
+ arrives to the membrane, its potential increases. The increased membrane potential means a potential difference between the membrane and the axon, so it drives a current through the AIS.
+% \gls{AIS}
+The current
+ (not identical with the leaking current) 
+ \index{leaking current}
+ \index{current!leaking}
+ decreases the membrane' potential between adjacent synaptic inputs.
+   For simplicity, we assume that the axonal inputs cause a step-like change in the membrane's voltage. Between the inputs the current through the
+   \gls{AIS}
+decreases the membrane's potential. As we discuss, the neuronal computation actually measures the time between the arrival of the first synaptic input and exceeding the threshold; it is in the order of tenths of a millissecond.
+
+ When the resulting potential exceeds a threshold value, for a very short time
+ (in the order of tenth of picoseconds) the ion channels in the membrane's wall open
+ and a large amount of ions suddenly (in a step-like way) increase the membrane's potential
+ in its \hyperlink{atomic_layer}
+ {surface layer}; see section~\ref{sec:Physics-TwoSegments}.
+The current due to the rushed-in ions creates a local potential gradient and the ions
+(with a potential-assisted speed) saturate the layer
+(the mechanism is described in section~\ref{sec:Physiology-Electrodiffusion}),
+open all ion channels. The rushed-in ions feel the potential gradient toward the \gls{AIS},
+but they can move in the layer on the surface
+with a finite speed, so the current from the different points of the membrane need different times to reach the \gls{AIS}.
+Correspondingly, the current (due to the current "created" by the nearby ion channels) reaches the \gls{AIS}
+instantly, while the current from the farthest point needs tenths of a millisecond to get to the \gls{AIS}.
+%
+After that, given that the current cannot flow out "instantly",
+the current produces a kind of "damped oscillation": drops below 
+the resting potential and then asymptotically approaches it, without exceeding it.
+It is the effect of the neuronal oscillator, marked as "RC-effect".
+In some sense, the ionic current "disappears": it get stored in the neuronal condenser
+while it travels on the surface of the membrane.
+
+During this process, the membrane's voltage controls the synaptic inputs.
+Given that the ions can reach the membrane using a "downhill" method,
+the current stops  when the membrane's potential rises
+above that of the axonal arbor,
+and will not flow until the membrane's potential drops again below the threshold:
+the synapses will be disabled and re-enabled.
+
+Biology observed the "absolute refractory" period, which is interpreted 
+that the synapses are disabled for a period, and it is a correct observation.
+Different is the case for the "relative refractory" period.
+Actually, the synaptic inputs arrive at the junction of the axon, and the current must travel to the \gls{AIS}.
+that needs time (in the order of tenth of a millisecond). Given that 
+the \gls{AP} is measured at the \gls{AIS}
+the main contributor' current in the meantime proceeds toward the "hyperpolarized" state,
+and so the synaptic inputs apparently contribute
+outside of the "absolute refractory" period,
+so this extension is called "relative refractory".
+Actually, the origin of both periods is the same,
+only the effect's time scale is shifted by the ionic current's travel time.
+
+As discussed, after that the membrane's voltage drops below the threshold potential,
+the neuron can start a new computing.
+The signal "ComputingBegin" is defined as the signal arriving first after then
+the neuron membrane's potential crossed the threshold value from the higher voltage direction.
+At that point, the membrane's voltage can be above or below the resting potential,
+and, correspondingly, the charge integration starts from a value higher or lower than the resting potential.
+Effectively, the value of the potential (more precisely, \textit{when} the first
+synaptic input arrives at the \gls{AIS}) represents a memory with initially a negative, later positive, time-dependent content.
+%
+
+Our stages slightly deviate from the ones commonly used in physiology.
+We define the stage "Computing" as the period between the arrival from the first synaptic input
+to exceeding the threshold.
+The stage "Delivering" is defined as the period while the membrane's voltage stays above the threshold.
+The stage "Relaxing" begins when the "Delivering" ends, and may be interrupted by a synaptic input.
+Notice that because of the spatiotemporal nature, the time values have a definite meaning only
+if the place of the measurent is also provided: it is one coordinate of a space-time point.
+
+
+
+
+
+
+
+The computer representation (actually a state machine) is shown in Figure~\ref{fig:NeuronStateMachine}.                          
+
+
+Will be based on \cite{VeghComputingModel:2021} \cite{VeghRevisingClassicComputing:2021}

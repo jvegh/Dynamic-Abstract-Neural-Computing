@@ -1,0 +1,427 @@
+% The physics behind the neural model
+
+\section{The physical model\label{sec:Physiology-Physical}}
+
+
+
+As Figure~\ref{fig:NeuronElectricOperationSummary}
+summarizes: "Electrical signals travel from the cell body of a neuron (left) to its axon terminal
+in the form of action potentials. Action potentials trigger the secretion of neurotransmitters
+from synaptic terminals (upper insert). Neurotransmitters bind to postsynaptic receptors
+and cause electric signals (synaptic potential) in the postsynaptic neuron (right).
+Synaptic potentials trigger action potentials, which propagate to the axon terminal
+and trigger secretion of neurotransmitters to the next neuron." 
+Furthermore, the "\textbf{neurons convey
+neural information} by virtue of electrical and chemical signals"\cite{JohnstonWuNeurophysiology:1995}.
+These sentences should read that ions carry the observed potential changes
+and that the signal propagation is low. Notice that at that time
+it was not yet recognized that the electric signals propagate
+with a finite speed also in the dendrites, not only on the axons.
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]
+	{fig/JohnstonSummaryFigure1_2.png}
+	\caption{Summary of conveying information by electric and chemical signals. (Fig. 1.2 from \cite{JohnstonWuNeurophysiology:1995}}
+	\label{fig:NeuronElectricOperationSummary}
+\end{figure}
+
+Basically, we follow the Johnston\&Wu's "general principles.
+As in general in science, we must introduce different abstractions and
+approximations for describing nature, see section~\ref{sec:Physics-Abstraction}.
+Making a model for neuron represents a special challenge. 
+As one of the simplest biological entities, the neurons interface the non-living
+and living science, furthermore, the microscopic and macroscopic world.
+
+We must be very cautious with modeling the electrical features. "an
+understanding of the electrical properties of dendrites is critical for evaluating the errors associated with the electrophysiological measurements
+of synaptic function".
+
+
+???The two conditions imply that we must use slow currents.
+\index{slow current}
+As we discuss in sections~\ref{sec:Physics-Current} and~\ref{sec:Calculating-ion's-speed}
+
+\index{electrotonic model}
+"Electrotonic is a rather arcane term
+that is used to describe passive electrical signals, that is, signals (current
+or voltage) that are not influenced by the voltage-dependent properties
+of the membrane. It will become obvious that this theory is too simple
+to explain the complexities of dendrites, but at least it is a good starting
+point."~\cite{JohnstonWuNeurophysiology:1995} In other words, that model is
+usable only for a static description, "it is too simple", but there is no 
+commonly used other idea.
+\index{Onsager-relations}
+Unfortunately, in physiology, the interrelations expressed by the Onsager-relations remain entirely out out scope; presumably primarily because of the lack of 
+laws of motions of thermodynamics. The chemical concentration and 
+the electrical potential is only loosely connected, and only statically and for the bulks of cellular segments.
+
+
+\subsection{Size of neuronal components\label{sec:Physiology-Sizes}}
+The
+'dendritic trees can be quite large, containing up to 98 \% of the
+entire neuronal surface area' \cite{BiologicalConservationLaw:2017}.
+'Because the cell body is small compared with the dendritic tree,
+its membrane potential is roughly uniform' \cite{ MolecularBiology:2002}; 
+we assume that \textit{the neuron's membrane itself is equipotential}.
+However, \textit{the dendrites are not equipotential while delivering signals}.
+Their potential 'is a composite of the effects of all the signals impinging on the cell,
+weighted according to the distances of the synapses from the cell body'.
+'Temporal and spatial summation together provide the means  by which ...
+many presynaptic neurons jointly control the membrane potential.'
+'Each incoming signal is reflected in a local \gls{PSP} of graded magnitude,
+which decreases with distance from the site of the synapse'  \cite{MolecularBiology:2002}; see our mathematical discussion of this physiological evidence in section~\ref{sec:Physiology-NeuralCurrents}.
+This latter sentence should read that \textit{its measurable effect (their local potential)
+decreases}, compared to the
+one at the presynaptic terminals. As the surface, over which it propagates
+during its journey through the dendrites, extends, the charge density decreases,
+but the total charge is conserved until the cell body is reached.
+These statements mean (assuming that those signals travel with
+the same speed in the dendrites) that \textit{ experiments underpin the presence of
+a 'slow current' of ions in neurons}, although the notion is not introduced.
+
+Experimental evidence shows that \hyperlink{slow_current}{the electric signals
+have a finite speed} in axons, dendrites, and cell bodies and that within the cell,
+the overwhelming majority of propagation time is spent in the dendrites.
+The mathematical handling of finite speeds is not simple, especially
+within a biological cell, so we separate the cell into two regions
+and make the approximation that within the cell body, the interaction is instant
+(that is, the Laws of electricity are valid). However, outside the cell body,
+the finite interaction speed in the dendrites leads to observable effects that significantly
+influence the cell's operation.
+\textit{We set up a hybrid model: the cell body is equipotential
+(aka: can be described by a 'fast current'), but the dendrites
+(and they contribute the overwhelming majority of the signal path within the cell)
+are non-equipotential. They must be described by approximations
+based on a 'slow current'}.
+With that model, we explain the up to now not understood features of neuronal
+charge processing; furthermore, why is that 'the interplay
+between the synaptic and neuronal dynamics, when the network is near
+a critical point, both recurrent spontaneous and stimulated phase
+transitions enable the phase-dependent processes to replace each other'
+\cite{BiologicalConservationLaw:2017}.
+
+The \hypertarget{finite_size}{size of presynaptic terminals} \href={https://www.ncbi.nlm.nih.gov/books/NBK26910/bin/ch11f38.jpg}{(reproduced here as Fig. \ref{fig_SizeOfPresynapticTerminals})}
+ is about two orders of magnitude smaller
+than the cell body and its dendrites \cite{MolecularBiology:2002}, chapter 11.
+In other words, the
+"dendritic trees can be quite large, containing up to e98\% of the
+entire neuronal surface area" \cite{BiologicalConservationLaw:2017}.
+"Because the cell body is small compared with the dendritic tree,
+its membrane potential is roughly uniform" \cite{MolecularBiology:2002}. We pinpoint that 
+since the ionic currents spend most of their travel time in the dendritic tree, we assume that the
+overwhelming portion of the travel time derives from the dendrites;
+so the contribution from the travel on the body is omitted.
+In this sense it is unimportant whether \textit{the membrane itself is equipotential}.
+However, it is crucial that  \textit{the dendrites are not equipotential while delivering signals}.
+Their potential "is a composite of the effects of all the signals impinging on the cell,
+weighted according to the distances of the synapses from the cell body".
+"Temporal and spatial summation together provide the means  by which ...
+many presynaptic neurons jointly control the membrane potential." \cite{MolecularBiology:2002}.
+This former sentence should read that \textit{its measurable effect (their potential)
+decreases}, compared to the
+one at the presynaptic terminals. As the surface, over which it propagates
+during its journey through the dendrites, extends, the charge density decreases,
+but the total charge conserves until the cell body reached.
+The latter sentence should read that the presynaptic \textit{terminals}
+and the \textit{membrane potential} mutually control each other. Given that the ions can reach the presynaptic terminal passively by using a "downhill" potential between the axonal arbor and the membrane, once, they cannot enter the mebrane until the membrane's potential is higher than that in the axonal arbor and twice, whwn they can enter, the current depends on the potential difference between the membrane and the arbor. 
+\index{axon!arbor}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{fig/ch11f38.jpg}
+	
+	\caption{The size of presynaptic terminals. \copyright \href{https://www.ncbi.nlm.nih.gov/books/NBK26910/bin/ch11f38.jpg}{Original}
+	}
+\label{fig_SizeOfPresynapticTerminals}
+\end{figure}
+
+
+
+\subsection{Neuron's potential\label{sec:Single-AbstractPotentialInside}}
+Experimental evidence shows that the electric signals
+have a finite speed in axons, dendrites and cell body; furthermore, that \textit{within the cell,
+the overwhelming majority of propagation time is spent in the dendrites}.
+The mathematical handling of finite speeds is not simple, especially
+within a biological cell, so we separate the cell into two regions
+and make the approximation that within the cell body the interaction is instant
+(that is, the Laws of electricity are valid), but outside the cell, in the dendrites
+the finite interaction speed leads to observable effects that significantly
+influence cell's operation (we need different approximation; we must not apply
+automatically the equations borrowed from electricity).
+\textit{We set up a hybrid model: the cell body is equipotential
+(aka: can be described by a 'fast current'), but the dendrites
+(and they contribute the overwhelming majority of the signal path within the cell)
+are non-equipotential and they must be described by approximations
+based on the notion of a 'slow current'.}
+With that model, we explain the up to now not understood features of neuronal
+charge processing, furthermore, why is that 'the interplay
+between the synaptic and neuronal dynamics, when the network is near
+a critical point, both recurrent spontaneous and stimulated phase
+transitions enable the phase-dependent processes to replace each other'
+\cite{BiologicalConservationLaw:2017}.
+
+
+The commonly used physical picture (see, for example, \cite{KochBiophysics:1999}, page 9)
+is only half of the truth:
+"there is never any actual movement of charge across the insulating membrane ...
+the charge merely redistributes itself across the two sides by the way of the rest of the circuit."
+On the one side, redistribution of charge \textit{per definitionem} means a current, on the other,
+that picture contradicts also the notion of 'specific conductance':
+the rest of the circuit cannot participate in a 'leakage current' through a distributed resistor.
+\index{leakage current}
+The cell has a resistance (see the \gls{AIS}
+and an area, but still, no specific resistance
+can be interpreted.
+The charge moves in  the proximal layer
+ of the electrolytes
+(in the form of a '{slow current}'
+ near to dendrites),
+then the circuit closes though the \gls{AIS} and  the extracellular segment.
+\textit{We explicitly introduce the notion of 'slow current', and show that we need to divide the membrane's ionic currents roughly into two categories,
+whether they flow directly between the intracellular and the extracellular
+space or within the layer on the surface of the membrane}.
+
+The physical difference is whether the movement of ions is assisted
+by the enormous potential gradient between the extra- and intracellular regions
+when passing the ion channels ('fast' current)
+or they move in the electrolyte layer proximal to isolating membrane
+assisted by the electrostatic repulsion of ions in the same layer
+('slow' speed of a macroscopic current).
+\index{slow current!cardiatic}
+Cardiatic slow currents have been discovered \cite{SlowCurrentChannels:1985}
+(actually, current pulses of duration in several msecs range).
+It was correctly observed that "the slow currents appear to
+have been caused by repeated openings of one or more channels"
+and their speed \cite{CardiacAPS:1980} was found in the range of $0.02-5\ m/sec$.
+In neurophysiology, ion current speeds
+ranging from a few $mm/s$ to dozens of $m/s$ has been observed.
+
+These statements mean (assuming that those signals travel with
+the same speed in the dendrites) that the \textit{presence of
+a 
+{'slow current'} of ions
+in neurons is
+experimentally underpinned}, although the notion is not introduced
+(mainly because its mathematical handling is not solved).
+Assuming that the dendrites' size is about $0.1\ mm$ and the synaptic signals appear
+at the \gls{AIS} $0.2\ ms$ after their arrival to their presynaptic terminals,
+we can estimate the speed of 'slow current' as  $0.5\ m/s$
+(see our discussion on the signals appearing in the 'relative refractory'
+ period and~\cite{APTemperatureDependenceRefractory:2001}).
+\index{refractory!relative}
+This result is in line with our result derived
+%from the 'ghost image' (see Fig. \ref fig:The-ghost-image_AP) $2\ m/s$,
+the speed value $1\ cm/s$ \cite{ActionPotentialGenerationNatrium:2008}
+measured  within a cell body and the axonal speed $20\ m/s$ \cite{HodgkinHuxley:1952}.
+
+
+
+\subsection{Axon Initial Segment\label{sec:Physiology-AIS}}
+"Neurons ensure the directional propagation of signals throughout the nervous system. The functional asymmetry of neurons is supported by cellular compartmentation: the cell body and dendrites (somatodendritic compartment) receive synaptic inputs, and the axon propagates the action potentials that trigger synaptic release toward target cells. Between the cell body and the axon sits a unique compartment called the axon initial segment (AIS)"\cite{AIS_Updated_Viewpoint:2018}.
+In the light of the new experimental and theoretical results,
+we need to add new components, roles and operating modes to
+the one assumed by the present physiology.
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{fig/AIS.jpg}
+	\caption{The structure of the Axon Initial Segment. %(Cartoon of a multipolar neuron and the molecular composition of the AIS.)
+		\cite{ActionPotentialGenerationNatrium:2008}
+		Ann. N.Y. Acad. Sci. 1420 (2018) 46--61, Figure 1 \copyright 2018 New York Academy of Sciences. }
+	\label{StructureOfAIS}
+\end{figure}
+
+%
+Also we must add the invention from about three decades later: "Neurons ensure the directional propagation of signals throughout the nervous system.
+The functional asymmetry of neurons is supported by cellular compartmentation: the cell body and dendrites (somatodendritic compartment) receive synaptic inputs,
+and the axon propagates the action potentials that trigger synaptic release toward target cells.
+\textit{Between the cell body and the axon sits a unique compartment called the axon initial segment} (AIS).
+%\gls{AIS}
+The AIS was first described 50 years ago [i.e., nearly two decades after HH published their study], and its molecular composition and organization have been progressively elucidated during the following decades. \dots. Recent years have also brought crucial insights into the functions of the AIS: how ion channels at its surface generate and shape the action potential."~\cite{AIS_Updated_Viewpoint:2018} We provide the physics and mathematics of how AIS shapes
+the action potential (or more precisely, we show what an important role it plays in
+forming AP).
+
+
+
+In our model, the 
+%\gls{AIS}
+AIS gets independent from the membrane,
+and this separation leads to crucial changes. (BTW, the name is misleading:
+the 
+%\gls{AIS}
+AIS is part of the neuronal oscillator, and it forwards a traveling
+potential wave to the axon instead of belonging to it.)
+'Although by definition a neuron must have an
+axon to assemble an AIS, the relationship between AIS
+assembly and axon specification in vivo has not been
+determined yet'~\cite{AIS_NeuronalPolarity:2010}.
+
+"The axon initial segment (AIS) is located at the proximal axon and is the site of action potential initiation. This
+reflects the high density of ion channels found at the AIS.
+... The summation of
+synaptic inputs gives rise to action potentials at the
+axon initial segment (AIS), a 20--60 $\mu m$ long domain
+located at the proximal axon/soma interface that has
+a high density of voltage-gated ion channels."	
+As discussed in \cite{AISStructureReview:2018}, see also their Figure 1, reproduced here as Figure \ref{StructureOfAIS},
+the structure of the Axon Initial Segment
+is known to the smallest details.
+As the illuminating investigations in 2008
+\cite{ActionPotentialGenerationNatrium:2008}
+revealed, the 
+%\gls{AIS}
+AIS has very dense ion channels. That is, from an electrical point
+of view, those parallelized channels can be abstracted as a  \textit{discrete  conductance}
+(or resistance) between the membrane and the axon.
+The membrane itself can be abstracted as a \textit{distributed condenser} with no resistance
+(in contrast with the viewpoint of biophysics, that the membrane  plus
+%\gls{AIS}
+AIS is considered a distributed element, where the capacitor and condenser cannot be separated).
+Notice the important point:
+	"Neurons are also anatomically polarized, as they can be
+subdivided into a somatodendritic input domain and an axonal output domain"~\cite{AIS_NeuronalPolarity:2010};
+providing a direct evidence that (unlike in 
+%\gls{HH}'s 
+HH's model) the input and output currents (and voltage time derivatives) are independent, see also Fig.~\ref{NeuronPolarity}.
+More precisely, they form the input and output of a neuronal oscillator, as our model suggests. Notice how the 
+%\gls{AP}
+AP changes its shape during its propagation in the adjacent segments, as our model explains: the broadening by axonal arbor, the voltage-gradient generated shape on the 
+%\gls{AIS},
+AIS, the appearance of 
+%\gls{iAPTD}
+iAPTD at the distant junction. Notice the lack of hyperpolarization at the beginning and end of the pipeline; a clear effect of of the neuronal oscillator.
+Inventing 
+%\gls{AIS}
+AIS changed the viewpoint of neuroscience~\cite{AIS_Updated_Viewpoint:2018}.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{fig/NeuronPolarity.png}
+	\caption{Neurons are highly polarized cells
+		~\cite{AIS_NeuronalPolarity:2010}, Figure 1 \copyright2010 Macmillan Publishers Limited.}
+	\label{NeuronPolarity}
+\end{figure}
+
+
+
+
+\subsection{Axons\label{sec:Physiology-Axon}}
+
+We model the axons as electrolyte-filled semipermeable membrane tubes with ion channels in their walls. The axons not passively follow the potential's time course, but they
+mediate the changes in their internal volume by using an ion pool
+available in their extracellular volume. The applied potential (including that of the mediated ions) opens the
+ion channels in the axon's wall. 
+
+In their native mode of operation, the three modes of ion channels define the 'direction of the time'~\cite{ThreeStateUnidirectional:2004, MarkovianIonChannel:2005,RoleOfInformationTransferSpeed:2022} (the direction of 
+the current that transmits the spike). The layer that the 
+front of the spike creates on the surface (on both sides
+of the tube) propagates in both directions, 
+but it cannot open the ion channels on the side where
+the spike arrived from, and the ion channels are still
+inactivated.
+
+\hyperlink{voltage-clamping}{Clamping}
+sets up an artificial working regime for the ion channels: the permanent
+electric field on the outer surface enables ions to enter the inner volume where
+formerly no ions (and no potential) existed. The rushed-in ions will
+flow away from the place of their entrance (recall that the current removes part of the ion layer on the surface), and a slow current toward the membrane can start. 
+Under clamping conditions, the experimenter sets the voltage instead of the transmitted signal and in a static way instead of an  autonomous dynamic one.
+
+Initially, the membrane, the clamping point on the
+axon, and the intracellular and extracellular fluid maintain
+their resting potential. When an external potential 
+is applied  suddenly to some point of the axon, an electric field $\frac{dV}{dx}\propto(V_{membrane}-V_{clamp})$
+appears on the \emph{outside surface} of the axon. The extracellular
+space with its high ion concentration $C_{k}^{ext}$ represents an "ion
+cloud" (see also section~\ref{sec:Physics-Current}). When the \hyperlink{voltage-clamping}{clamping voltage} is switched on, a ``fast'' current
+instantly delivers the potential along the \emph{outer} surface of
+the axon. However, this is not the case (at least not in the initial
+moment) on the \emph{inner} surface. \textit{There is no charge present that could
+change the potential}: 'the intracellular concentration at rest is around
+five orders of magnitude less than that in the extracellular space'~\cite{KochBiophysics:1999}. The physical picture that the clamping potential
+instantly appears at the end of the axon at the membrane (i.e., if (apparently) they
+have an infinitely large propagation speed) is valid
+only if charge carriers exist in the axon.
+
+
+The persisting \hyperlink{voltage-clamping}{clamping voltage} gradually triggers the opening of ion channels in its wall along the axon,
+leading to a continuous inflow through the axon's
+wall from the extracellular space into the intracellular space as a "fast current"; see section~\ref{sec:Physics-IonChannels}.
+The ions entering the intracellular space remain inside the axon: the cylindrical surface enables only a one-way (inward) traffic for the ions. As
+discussed in section 11.4 of~\cite{KochBiophysics:1999}, "once
+calcium enters the intracellular cytoplasm it is not free to diffuse". The ions start to create an ion-rich layer on the internal surface.
+However, a gradient parallel to the wall exists. The ions experience the electric field (which is present initially
+only at the clamping point but extends with the passing time) along the axis, speed up, and (after a short while) the ion's
+speed becomes constant in time but its value depends on the actual electric
+field, see Equ.~(\ref{eq:DriftCurrent}). The \emph{ions will slowly
+	move }along the axon \emph{with a field-dependent constant velocity
+	in the electric space} in a viscous solution.
+The moving ions deliver charge, so
+the potential gradually extends along the electrolyte tube (the axon).
+ ``In axon fibers, the
+effective diffusion constant was estimated to be about one-tenth of
+the diffusion coefficient in aqueous solution''~\cite{KochBiophysics:1999}; however, under the effect of the potential gradient, and the mutual repulsion,
+they form a ``slow current'' (and that macroscopic current may have a much higher propagation speed). 
+\emph{The current and potential are not instant, as we consider in
+	the classic theory of electricity}: they propagate with the speed
+of the ion current.
+
+
+
+In this model, we assume that during the time $dt$, in the volume
+$dx$, we have a constant ion inflow $I_{wall}$ through the axon's
+wall, which increases the charge and concentration already in the
+volume. The charges in the tube experience the field $\frac{dV}{dx}$,
+and they move with speed $v$ inside the tube (see Eq.~(\ref{eq:StokesCurrent})).
+The ionic fluid with velocity $v$ (proportional
+to $\frac{dV}{dx}$) transfers the ionic charge in
+the volume to the neighboring element at a distance $v*dt$, and delivers
+the charge and concentration from the neighboring element at a distance $-v*dt$ into
+this element. At the time $t$, the concentration at $x$ will result
+from the inflow at the place $x-v*t$ (see also the general discussion
+around Eq.~(\ref{eq:CoulombTimeDependent})). The higher the speed 
+$v$, the more significant the difference between the "inflow" and the "present"
+concentration. The stream inside the axon, a la Minkowski
+(although in this simple case, a Galilei-transform is sufficient), transforms
+the distance to time and vice versa.
+	Under the effect of \hyperlink{voltage-clamping}{clamping}, the current is decreased by the stream
+proportionally:
+
+\begin{equation}
+	\frac{dI_{axon}}{dt}=-\alpha*I_{axon};\ I_{axon}(t)\approx I_{wall}*(1-\exp(-\alpha*t))\label{eq:AxonalCurrentNoConc}
+\end{equation}
+
+
+\noindent ($\alpha$ is a timing constant
+of dimension $(1/time)$).
+
+
+When the stimulation happens inside the axon, and the axon
+forwards the charge package in the reverse direction~\cite{BackpropagationAP:2012}, towards the
+\gls{AIS} .
+The \gls{AIS}
+uses a "downhill" method of charge forwarding (it is a barrier in both directions), so it can forward
+the imitated
+"\gls{AP}" towards the soma.
+It is a propapation in the reverse direction, since the stimulation
+arrives from the "wrong" direction, and the but not a backpropagation.
+The capacitance of the dendrids explains the shape of the signal.
+
+
+\begin{figure}
+	\includegraphics[width=0.65\textwidth]{fig/AISBackPropagation.png}
+	
+	\caption{Action Potential Initiation in the Axon Initial Segment~\cite{BackpropagationAP:2012}\label{fig:APBackPropagation}.}
+%	\gls{AIS}.
+\end{figure}
+The AP's
+%\gls{AP}'s
+first front already passed to the axon and is forwarded there.
+It is hard to imagine that the commonly used "transversal current",
+the ion channels, not only synchronize themselves to the length and speed
+of the spike, but they also sense the direction of the potential gradient.
+
+
+
+
+	\input{src/Physiology-Membrane}
+

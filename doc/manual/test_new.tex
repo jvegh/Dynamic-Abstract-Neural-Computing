@@ -1,0 +1,91 @@
+\documentclass{book}
+\def\MyVersion{0.1.2}
+\usepackage{xkeyval}
+%\tolerance 500%
+%\emergencystretch 1em\relax
+%\hfuzz .2pt\relax
+\usepackage{makeidx}
+%\usepackage{eqnarray,amsmath}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{glossaries}
+\makeglossaries
+\makeindex
+%\usepackage{wrapfig}
+%\usepackage{changepage}
+%\usepackage{tcolorbox}
+\newglossaryentry{latex}
+{
+    name=latex,
+    description={Is a markup language specially suited
+    for scientific documents}
+}
+
+\newglossaryentry{maths}
+{
+    name=mathematics,
+    description={Mathematics is what mathematicians do}
+}
+
+\newglossaryentry{real number}
+{
+  name={real number},
+  description={include both rational numbers, such as $42$ and
+               $\frac{-23}{129}$, and irrational numbers,
+               such as $\pi$ and the square root of two; or,
+               a real number can be given by an infinite decimal
+               representation, such as $2.4871773339\ldots$ where
+               the digits continue in some way; or, the real
+               numbers may be thought of as points on an infinitely
+               long number line},
+%  symbol={\ensuremath{\mathbb{R}}
+  }
+\usepackage{latexml}
+
+   \title{
+Dynamic Abstract Neural Computing\\with\ Electronic Simulation\\(DANCES)  Version \emph{\MyVersion}}
+%\subtitle{The true physics, physiology, computing \& information science\\behind neuronal operation}
+
+\author{János Végh}
+\date{\today}
+%============================================================
+%============================================================
+\begin{document}\label{top}
+
+\printglossary[title=Special Terms, toctitle=List of terms]
+\clearpage
+\part{First}
+\chapter{first/1}
+\Gls{maths} \gls{real number}
+\section{What's}
+\part{second}
+\chapter{second's}
+
+in my last~\cite{VeghMembranePotential:2025}
+\listoftables
+\listoffigures
+
+\backmatter
+\printindex%[title=Index, toctitle=Index]
+
+\bibliography{
+	~/REPO/LaTeX/CommonBibliography%
+	,~/REPO/LaTeX/CommonPrivateBibliography%
+	,~/REPO/LaTeX/CommonNeuronalBibliography%
+	,~/REPO/LaTeX/CommonAIBibliography%
+}
+\end{document}
+
+\bibliography{
+	CommonBibliography.bib%
+}
+
+% \bibliographystyle{spphys}
+%\bibliographystyle{plain}
+\bibliography{
+	~/REPO/LaTeX/CommonBibliography%
+	,~/REPO/LaTeX/CommonPrivateBibliography%
+	,~/REPO/LaTeX/CommonNeuronalBibliography%
+	,~/REPO/LaTeX/CommonAIBibliography%
+}
+

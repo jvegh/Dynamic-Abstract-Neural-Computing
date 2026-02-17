@@ -1,0 +1,1478 @@
+
+\begin{schemamodule}{LaTeXML}
+\item[\textit{Included}]\moduleref{LaTeXML-common}, \moduleref{LaTeXML-inline}, \moduleref{LaTeXML-block}, \moduleref{LaTeXML-misc}, \moduleref{LaTeXML-meta}, \moduleref{LaTeXML-para}, \moduleref{LaTeXML-math}, \moduleref{LaTeXML-tabular}, \moduleref{LaTeXML-picture}, \moduleref{LaTeXML-structure}, \moduleref{LaTeXML-bib}
+\patterndef{Inline.model}{Combined model for inline content.
+}{\item[\textit{Content}:] (\typename{text} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \elementref{acknowledgements}, \elementref{anchor}, \elementref{bib-data}, \elementref{bib-date}, \elementref{bib-edition}, \elementref{bib-extract}, \elementref{bib-identifier}, \elementref{bib-key}, \elementref{bib-language}, \elementref{bib-links}, \elementref{bib-note}, \elementref{bib-organization}, \elementref{bib-part}, \elementref{bib-place}, \elementref{bib-publisher}, \elementref{bib-review}, \elementref{bib-status}, \elementref{bib-subtitle}, \elementref{bib-title}, \elementref{bib-type}, \elementref{bib-url}, \elementref{bibrefphrase}, \elementref{cite}, \elementref{classification}, \elementref{constraint}, \elementref{contact}, \elementref{date}, \elementref{del}, \elementref{emph}, \elementref{givenname}, \elementref{glossaryphrase}, \elementref{glossaryref}, \elementref{indexphrase}, \elementref{indexrefs}, \elementref{indexsee}, \elementref{keywords}, \elementref{lineage}, \elementref{p}, \elementref{personname}, \elementref{ref}, \elementref{sub}, \elementref{subtitle}, \elementref{sup}, \elementref{surname}, \elementref{tag}, \elementref{td}, \elementref{text}, \elementref{verbatim}}
+
+\patterndef{Block.model}{Combined model for physical block-level content.
+}{\item[\textit{Content}:] (\patternref{Block.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \elementref{abstract}, \elementref{block}, \elementref{figure}, \elementref{float}, \elementref{inline-block}, \elementref{para}, \elementref{quote}, \elementref{table}}
+
+\patterndef{Flow.model}{Combined model for general flow containing both inline and block level content.
+}{\item[\textit{Content}:] (\typename{text} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Block.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \elementref{bibblock}, \elementref{note}, \elementref{rdf}}
+
+\patterndef{Para.model}{Combined model for logical block-level context.
+}{\item[\textit{Content}:] (\patternref{Para.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{appendix.body.class}, \patternref{bibliography.body.class}, \patternref{chapter.body.class}, \patternref{document.body.class}, \patternref{glossary.body.class}, \patternref{index.body.class}, \patternref{paragraph.body.class}, \patternref{part.body.class}, \patternref{section.body.class}, \patternref{sidebar.body.class}, \patternref{slide.body.class}, \patternref{subparagraph.body.class}, \patternref{subsection.body.class}, \patternref{subsubsection.body.class}, \elementref{inline-logical-block}, \elementref{item}, \elementref{logical-block}, \elementref{proof}, \elementref{theorem}}
+
+\item[\textit{Start}]\textbf{==}\ \elementref{document}
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-common}
+\patterndef{Inline.class}{All strictly inline elements.
+}{\item[\textit{Expansion}:] (\elementref{text} ~\textbar~ \elementref{emph} ~\textbar~ \elementref{del} ~\textbar~ \elementref{sub} ~\textbar~ \elementref{sup} ~\textbar~ \elementref{glossaryref} ~\textbar~ \elementref{rule} ~\textbar~ \elementref{anchor} ~\textbar~ \elementref{ref} ~\textbar~ \elementref{cite} ~\textbar~ \elementref{bibref} ~\textbar~ \elementref{Math})\item[\textit{Used by}:] \patternref{Flow.model}, \patternref{Inline.model}, \elementref{XMText}, \elementref{caption}, \elementref{clippath}, \elementref{g}, \elementref{inline-item}, \elementref{listingline}, \elementref{picture}, \elementref{title}, \elementref{toccaption}, \elementref{toctitle}}
+
+\patterndef{Block.class}{All `physical' block elements. 
+A physical block is typically displayed as a block, but
+may not constitute a complete logical unit.
+}{\item[\textit{Expansion}:] (\elementref{p} ~\textbar~ \elementref{equation} ~\textbar~ \elementref{equationgroup} ~\textbar~ \elementref{quote} ~\textbar~ \elementref{block} ~\textbar~ \elementref{listing} ~\textbar~ \elementref{itemize} ~\textbar~ \elementref{enumerate} ~\textbar~ \elementref{description} ~\textbar~ \elementref{pagination})\item[\textit{Used by}:] \patternref{Block.model}, \patternref{Flow.model}, \elementref{titlepage}}
+
+\patterndef{Misc.class}{Additional miscellaneous elements that can appear in
+both inline and block contexts.
+}{\item[\textit{Expansion}:] (\elementref{inline-itemize} ~\textbar~ \elementref{inline-enumerate} ~\textbar~ \elementref{inline-description} ~\textbar~ \elementref{inline-block} ~\textbar~ \elementref{verbatim} ~\textbar~ \elementref{break} ~\textbar~ \elementref{graphics} ~\textbar~ \texttt{svg:svg} ~\textbar~ \elementref{rawhtml} ~\textbar~ \elementref{rawliteral} ~\textbar~ \elementref{ERROR} ~\textbar~ \elementref{inline-logical-block} ~\textbar~ \elementref{tabular} ~\textbar~ \elementref{picture} ~\textbar~ \elementref{inline-sectional-block})\item[\textit{Used by}:] \patternref{Block.model}, \patternref{Flow.model}, \patternref{Inline.model}, \elementref{XMText}, \elementref{caption}, \elementref{clippath}, \elementref{creator}, \elementref{equation}, \elementref{g}, \elementref{inline-item}, \elementref{listingline}, \elementref{picture}, \elementref{title}, \elementref{toccaption}, \elementref{toctitle}}
+
+\patterndef{Para.class}{All logical block level elements.
+A logical block typically contains one or more physical block elements.
+For example, a common situation might be \elementref{p},\elementref{equation},\elementref{p},
+where the entire sequence comprises a single sentence.
+}{\item[\textit{Expansion}:] (\elementref{para} ~\textbar~ \elementref{logical-block} ~\textbar~ \elementref{theorem} ~\textbar~ \elementref{proof} ~\textbar~ \elementref{figure} ~\textbar~ \elementref{table} ~\textbar~ \elementref{float} ~\textbar~ \elementref{pagination} ~\textbar~ \elementref{TOC})\item[\textit{Used by}:] \patternref{BackMatter.class}, \patternref{Para.model}}
+
+\patterndef{Meta.class}{All metadata elements, typically representing hidden data.
+}{\item[\textit{Expansion}:] (\elementref{note} ~\textbar~ \elementref{declare} ~\textbar~ \elementref{indexmark} ~\textbar~ \elementref{glossarydefinition} ~\textbar~ \elementref{rdf} ~\textbar~ \elementref{resource} ~\textbar~ \elementref{navigation})\item[\textit{Used by}:] \patternref{BackMatter.class}, \patternref{Block.model}, \patternref{Flow.model}, \patternref{Inline.model}, \patternref{Para.model}, \elementref{caption}, \elementref{clippath}, \elementref{document}, \elementref{equation}, \elementref{equationgroup}, \elementref{g}, \elementref{inline-item}, \elementref{listingline}, \elementref{picture}, \elementref{title}, \elementref{toccaption}, \elementref{toctitle}}
+
+\patterndef{Length.type}{The type for attributes specifying a length.
+Should be a number followed by a length, typically px.
+NOTE: To be narrowed later.
+}{\item[\textit{Content}:] \typename{text}\item[\textit{Used by}:] \patternref{Fontable.attributes}, \patternref{Positionable.attributes}, \patternref{Transformable.attributes}, \elementref{XMArray}, \elementref{equationgroup}, \elementref{item}, \elementref{tabular}, \elementref{td}}
+
+\patterndef{Color.type}{The type for attributes specifying a color.
+NOTE: To be narrowed later.
+}{\item[\textit{Content}:] \typename{text}}
+
+\patterndef{Foreign.attributes}{Attributes in foreign namespaces
+}{\attrdef{*:*}{}{\typename{text}}\item[\textit{Exluding attribute }]\texttt{xml:*}\item[\textit{Used by}:] \patternref{Common.attributes}}
+
+\patterndef{Common.attributes}{Attributes shared by ALL elements.
+}{\item[\textit{Attributes}:] \patternref{Foreign.attributes}, \patternref{RDF.attributes}\attrdef{class}{a space separated list of tokens, as in CSS.
+The \attr{class} can be used to add differentiate different instances of elements
+without introducing new element declarations.
+However, this generally shouldn't be used for deep semantic distinctions.
+This attribute is carried over to HTML and can be used for CSS selection.
+[Note that the default XSLT stylesheets for html and xhtml
+add the latexml element names to the class of html elements
+for more convenience in using CSS.]
+}{\typename{NMTOKENS}}\attrdef{cssstyle}{CSS styling rules.
+These will only be effective when the target system supports CSS.
+}{\typename{text}}\attrdef{xml:lang}{Language attribute
+}{\typename{text}}\item[\textit{Used by}:] \patternref{Sectional.attributes}, \elementref{ERROR}, \elementref{MathBranch}, \elementref{MathFork}, \elementref{Math}, \elementref{TOC}, \elementref{XMApp}, \elementref{XMArg}, \elementref{XMArray}, \elementref{XMCell}, \elementref{XMDual}, \elementref{XMHint}, \elementref{XMRef}, \elementref{XMRow}, \elementref{XMText}, \elementref{XMTok}, \elementref{XMWrap}, \elementref{XMath}, \elementref{abstract}, \elementref{acknowledgements}, \elementref{anchor}, \elementref{arc}, \elementref{bezier}, \elementref{bib-data}, \elementref{bib-date}, \elementref{bib-edition}, \elementref{bib-extract}, \elementref{bib-identifier}, \elementref{bib-key}, \elementref{bib-language}, \elementref{bib-links}, \elementref{bib-name}, \elementref{bib-note}, \elementref{bib-organization}, \elementref{bib-part}, \elementref{bib-place}, \elementref{bib-publisher}, \elementref{bib-related}, \elementref{bib-review}, \elementref{bib-status}, \elementref{bib-subtitle}, \elementref{bib-title}, \elementref{bib-type}, \elementref{bib-url}, \elementref{bibentry}, \elementref{bibitem}, \elementref{biblist}, \elementref{bibref}, \elementref{bibrefphrase}, \elementref{block}, \elementref{break}, \elementref{caption}, \elementref{circle}, \elementref{cite}, \elementref{classification}, \elementref{clip}, \elementref{clippath}, \elementref{contact}, \elementref{creator}, \elementref{curve}, \elementref{date}, \elementref{del}, \elementref{description}, \elementref{dots}, \elementref{ellipse}, \elementref{emph}, \elementref{enumerate}, \elementref{equation}, \elementref{equationgroup}, \elementref{figure}, \elementref{float}, \elementref{g}, \elementref{glossarydefinition}, \elementref{glossaryentry}, \elementref{glossarylist}, \elementref{glossaryphrase}, \elementref{glossaryref}, \elementref{graphics}, \elementref{grid}, \elementref{indexentry}, \elementref{indexlist}, \elementref{indexmark}, \elementref{indexphrase}, \elementref{indexrefs}, \elementref{indexsee}, \elementref{inline-block}, \elementref{inline-description}, \elementref{inline-enumerate}, \elementref{inline-item}, \elementref{inline-itemize}, \elementref{inline-logical-block}, \elementref{item}, \elementref{itemize}, \elementref{keywords}, \elementref{line}, \elementref{listing}, \elementref{listingline}, \elementref{logical-block}, \elementref{navigation}, \elementref{note}, \elementref{p}, \elementref{pagination}, \elementref{para}, \elementref{parabola}, \elementref{path}, \elementref{personname}, \elementref{picture}, \elementref{polygon}, \elementref{proof}, \elementref{quote}, \elementref{rdf}, \elementref{rect}, \elementref{ref}, \elementref{resource}, \elementref{rule}, \elementref{sub}, \elementref{subtitle}, \elementref{sup}, \elementref{table}, \elementref{tabular}, \elementref{tag}, \elementref{tbody}, \elementref{td}, \elementref{text}, \elementref{tfoot}, \elementref{thead}, \elementref{theorem}, \elementref{title}, \elementref{toccaption}, \elementref{tocentry}, \elementref{toclist}, \elementref{toctitle}, \elementref{tr}, \elementref{verbatim}, \elementref{wedge}}
+
+\patterndef{ID.attributes}{Attributes for elements that can be cross-referenced
+from inside or outside the document.
+}{\attrdef{xml:id}{the unique identifier of the element, 
+usually generated automatically by the latexml.
+}{\typename{ID}}\attrdef{fragid}{a "fragment identifier" derived from the \attr{xml:id} 
+relative to a page split from the complete document.
+This is used internally and may go away some day.
+}{\typename{text}}\item[\textit{Used by}:] \patternref{Labelled.attributes}, \elementref{ERROR}, \elementref{Math}, \elementref{XMApp}, \elementref{XMArg}, \elementref{XMArray}, \elementref{XMCell}, \elementref{XMDual}, \elementref{XMHint}, \elementref{XMRef}, \elementref{XMRow}, \elementref{XMText}, \elementref{XMTok}, \elementref{XMWrap}, \elementref{XMath}, \elementref{anchor}, \elementref{bibentry}, \elementref{bibitem}, \elementref{block}, \elementref{declare}, \elementref{del}, \elementref{description}, \elementref{emph}, \elementref{enumerate}, \elementref{glossaryentry}, \elementref{glossarylist}, \elementref{graphics}, \elementref{indexentry}, \elementref{indexlist}, \elementref{inline-block}, \elementref{inline-description}, \elementref{inline-enumerate}, \elementref{inline-itemize}, \elementref{inline-logical-block}, \elementref{itemize}, \elementref{logical-block}, \elementref{p}, \elementref{para}, \elementref{picture}, \elementref{quote}, \elementref{sub}, \elementref{sup}, \elementref{tabular}, \elementref{td}, \elementref{text}, \elementref{tr}, \elementref{verbatim}}
+
+\patterndef{IDREF.attributes}{Attributes for elements that can cross-reference other elements.
+}{\attrdef{idref}{the identifier of the referred-to element.
+}{\typename{IDREF}}\item[\textit{Used by}:] \patternref{Refable.attributes}, \elementref{XMRef}, \elementref{bibref}, \elementref{glossaryphrase}}
+
+\patterndef{Listable.attributes}{Attributes for items that can be put into lists, like index, table of contents.
+}{\attrdef{inlist}{Records which lists, such as toc=table of contents,..., this object could be listed in.
+Space separated set of toc, lof, lot, etc.
+}{\typename{text}}\item[\textit{Used by}:] \patternref{Labelled.attributes}, \elementref{bibref}, \elementref{cite}, \elementref{glossarydefinition}, \elementref{glossaryref}, \elementref{indexmark}}
+
+\patterndef{Listing.attributes}{Attributes for items that create lists, like index, table of contents.
+}{\attrdef{lists}{Records which lists, such as toc(=table of contents), this object should create a list of.
+Space separated set of toc, lof, lot, etc.
+}{\typename{text}}\item[\textit{Used by}:] \elementref{bibliography}, \elementref{glossary}, \elementref{index}}
+
+\patterndef{Labelled.attributes}{Attributes for elements that can be labelled from within LaTeX.
+These attributes deal with assigning a label  and generating cross references.
+The label migrates to an \attr{xml:id} and \attr{href} and the element
+can serve as a hypertext target.
+}{\item[\textit{Attributes}:] \patternref{ID.attributes}, \patternref{Listable.attributes}\attrdef{labels}{Records the various labels that LaTeX uses for crossreferencing.
+(note that \cs{label} can associate more than one label with an object!)
+It consists of space separated labels for the element.
+The \cs{label} macro provides the label prefixed by \texttt{LABEL:};
+Spaces in a label are replaced by underscore.
+Other mechanisms (like acro?) might use other prefixes (but \texttt{ID:} is reserved!)
+}{\typename{text}}\item[\textit{Used by}:] \patternref{Sectional.attributes}, \elementref{equation}, \elementref{equationgroup}, \elementref{figure}, \elementref{float}, \elementref{inline-item}, \elementref{item}, \elementref{listing}, \elementref{listingline}, \elementref{note}, \elementref{proof}, \elementref{table}, \elementref{theorem}}
+
+\patterndef{Refable.attributes}{Attributes for elements that can be referred to from within LaTeX.
+Such elements may serve as the starting point of a hypertext link.
+The reference can be made using \attr{label}, \attr{xml:id} or \attr{href};
+these attributes will be converted, as needed, from the former to the latter.
+}{\item[\textit{Attributes}:] \patternref{IDREF.attributes}\attrdef{labelref}{reference to a LaTeX labelled object;
+See the \attr{labels} attribute of \patternref{Labelled.attributes}.
+}{\typename{text}}\attrdef{href}{reference to an arbitrary url.
+}{\typename{text}}\item[\textit{Used by}:] \elementref{bib-identifier}, \elementref{bib-review}, \elementref{bib-url}, \elementref{contact}, \elementref{glossaryref}, \elementref{personname}, \elementref{ref}}
+
+\patterndef{Fontable.attributes}{Attributes for elements that contain (indirectly) text whose font can be specified.
+}{\attrdef{font}{Indicates the font to use. It consists of a space separated sequence
+of values representing the
+family (\texttt{serif}, \texttt{sansserif}, \texttt{math}, \texttt{typewriter},
+    \texttt{caligraphic}, \texttt{fraktur}, \texttt{script}, \ldots),
+series (\texttt{medium}, \texttt{bold}, \ldots),
+and shape (\texttt{upright}, \texttt{italic}, \texttt{slanted}, \texttt{smallcaps}, \ldots).
+Only the values differing from the current context are given.
+Each component is open-ended, for extensibility; it is thus unclear
+whether unknown values specify family, series or shape.
+In postprocessing, these values are carried to the \attr{class} attribute,
+and can thus be effected by CSS.
+}{\typename{text}}\attrdef{fontsize}{Indicates the text size to use, as a length, as in CSS.
+Normally, this should be a percentage value relative to the containing element.
+}{\patternref{Length.type}}\item[\textit{Used by}:] \elementref{XMTok}, \elementref{caption}, \elementref{del}, \elementref{emph}, \elementref{glossaryref}, \elementref{ref}, \elementref{text}, \elementref{title}, \elementref{verbatim}}
+
+\patterndef{Colorable.attributes}{Attributes for elements that draw something, text or otherwise, that can be colored.
+}{\attrdef{color}{the color to use (for foreground material); any CSS compatible color specification.
+In postprocessing, these values are carried to the \attr{class} attribute,
+and can thus be effected by CSS.
+}{\typename{text}}\attrdef{opacity}{the opacity of foreground material; a number between 0 and 1.
+}{\typename{float}}\item[\textit{Used by}:] \elementref{XMApp}, \elementref{XMTok}, \elementref{caption}, \elementref{del}, \elementref{emph}, \elementref{glossaryref}, \elementref{ref}, \elementref{rule}, \elementref{text}, \elementref{title}, \elementref{verbatim}}
+
+\patterndef{Backgroundable.attributes}{Attributes for elements that take up space and make sense to have a background color.
+This is independent of the colors of any things that it may draw.
+}{\attrdef{backgroundcolor}{the color to use for the background of the element; any CSS compatible color specification.
+In postprocessing, these values are carried to the \attr{class} attribute,
+and can thus be effected by CSS; the background will presumably
+correspond to a bounding rectangle, but is determined by the CSS rendering engine.
+}{\typename{text}}\attrdef{framed}{the kind of frame or outline for the box.
+}{(\attrval{rectangle} ~\textbar~ \attrval{underline} ~\textbar~ \typename{text})}\attrdef{framecolor}{the color of the frame or outlie for the box.
+}{\typename{text}}\item[\textit{Used by}:] \patternref{Sectional.attributes}, \elementref{Math}, \elementref{XMApp}, \elementref{XMCell}, \elementref{XMRow}, \elementref{XMText}, \elementref{XMTok}, \elementref{XMWrap}, \elementref{block}, \elementref{caption}, \elementref{constraint}, \elementref{del}, \elementref{description}, \elementref{emph}, \elementref{enumerate}, \elementref{equation}, \elementref{equationgroup}, \elementref{figure}, \elementref{float}, \elementref{glossaryref}, \elementref{inline-block}, \elementref{inline-description}, \elementref{inline-enumerate}, \elementref{inline-item}, \elementref{inline-itemize}, \elementref{inline-logical-block}, \elementref{item}, \elementref{itemize}, \elementref{listing}, \elementref{logical-block}, \elementref{p}, \elementref{para}, \elementref{proof}, \elementref{quote}, \elementref{ref}, \elementref{rule}, \elementref{table}, \elementref{tabular}, \elementref{tag}, \elementref{tbody}, \elementref{td}, \elementref{text}, \elementref{tfoot}, \elementref{thead}, \elementref{theorem}, \elementref{title}, \elementref{tr}, \elementref{verbatim}}
+
+\patterndef{Positionable.attributes}{Attributes shared by low-level, generic inline and block elements
+that can be sized or shifted.
+}{\attrdef{width}{the desired width of the box
+}{\patternref{Length.type}}\attrdef{height}{the desired height of the box
+}{\patternref{Length.type}}\attrdef{depth}{the desired depth of the box
+}{\patternref{Length.type}}\attrdef{xoffset}{horizontal shift the position of the box.
+}{\patternref{Length.type}}\attrdef{yoffset}{vertical shift the position of the box.
+}{\patternref{Length.type}}\attrdef{align}{alignment of material within the box.
+}{(\attrval{left} ~\textbar~ \attrval{center} ~\textbar~ \attrval{right} ~\textbar~ \attrval{justified})}\attrdef{vattach}{specifies which line of the box is aligned to the baseline of the containing object.
+The default is baseline. 
+}{(\attrval{top} ~\textbar~ \attrval{middle} ~\textbar~ \attrval{bottom} ~\textbar~ \attrval{baseline})}\attrdef{float}{the horizontal floating placement parameter that determines where the object is displayed.
+}{(\attrval{right} ~\textbar~ \attrval{left} ~\textbar~ \typename{text})}\item[\textit{Used by}:] \patternref{XMath.attributes}, \elementref{block}, \elementref{figure}, \elementref{float}, \elementref{inline-block}, \elementref{inline-logical-block}, \elementref{listing}, \elementref{logical-block}, \elementref{p}, \elementref{para}, \elementref{rule}, \elementref{table}, \elementref{text}}
+
+\patterndef{Transformable.attributes}{Attributes shared by (hopefully few) elements that can be transformed.
+Such elements should also have Positionable.attributes.
+Transformation order of an individual element is assumed to be
+translate, scale, rotate; wrap elements to achieve different orders.
+Attributes \attr{innerwidth}, \attr{innerheight} and \attr{innerdepth} describe
+the size of the contents of the element before transformation;
+The result size would be encoded in Positional.attributes.
+}{\attrdef{xtranslate}{horizontal shift the position of the inner element.
+}{\patternref{Length.type}}\attrdef{ytranslate}{vertical shift the position of the inner element.
+}{\patternref{Length.type}}\attrdef{xscale}{horizontal scaling of the inner element.
+}{\typename{text}}\attrdef{yscale}{vertical scalign of the inner element.
+}{\typename{text}}\attrdef{angle}{the rotation angle, counter-clockwise, in degrees.
+}{\typename{text}}\attrdef{innerwidth}{the expected width of the contents of the inner element
+}{\patternref{Length.type}}\attrdef{innerheight}{the expected height of the contents of the inner element
+}{\patternref{Length.type}}\attrdef{innerdepth}{the expected depth of the contents of the inner element
+}{\patternref{Length.type}}\item[\textit{Used by}:] \elementref{figure}, \elementref{float}, \elementref{g}, \elementref{inline-block}, \elementref{table}}
+
+\patterndef{Imageable.attributes}{Attributes for elements that may be converted to image form
+during postprocessing, such as math, graphics, pictures, etc.
+Note that these attributes are generally not filled in until postprocessing,
+but that they could be init
+}{\attrdef{imagesrc}{the file, possibly generated from other data.
+}{\typename{anyURI}}\attrdef{imagewidth}{the width in pixels of \attr{imagesrc}.
+}{\typename{nonNegativeInteger}}\attrdef{imageheight}{the height in pixels of \attr{imagesrc}.
+Note that, unlike \TeX, this is the total height, including the depth (if any).
+}{\typename{nonNegativeInteger}}\attrdef{imagedepth}{the depth in pixels of \attr{imagesrc}, being the location of the
+baseline of the content shown in the image.
+When displayed inilne, an image with a positive \attr{depth}
+should be shifted down relative to the baseline of neighboring material.
+}{\typename{integer}}\attrdef{description}{a description of the image
+}{\typename{text}}\item[\textit{Used by}:] \elementref{Math}, \elementref{graphics}, \elementref{picture}}
+
+\patterndef{RDF.attributes}{Attributes for RDFa (Resource Description Framework),
+following RDFa Core 1.1 \url{http://www.w3.org/TR/rdfa-syntax/}.
+The following descriptions give a short overview of the usage of the attributes,
+but see the specification for the complete details, which are sometimes complex.
+}{\attrdef{vocab}{indicates the default vocabulary
+(generally should be managed by LaTeXML and only appear on root node)
+}{\typename{text}}\attrdef{prefix}{specifies a mapping between CURIE prefixes and IRI (URI).
+(generally should be managed by LaTeXML and only appear on root node)
+}{\typename{text}}\attrdef{about}{indicates the subject for predicates appearing on the same or descendant nodes.
+}{\typename{text}}\attrdef{aboutlabelref}{gives the label for the document element that serves as the subject;
+it will be converted to \attr{aboutidref} and \attr{about} during post-processing.
+}{\typename{text}}\attrdef{aboutidref}{gives the id for the document element that serves as the subject;
+it will be converted to \attr{about} during post-processing.
+}{\typename{text}}\attrdef{resource}{indicates the subject for predicates appearing on descendant nodes,
+and also indicates the object for predicates
+when \attr{property} appears on the same node,
+or when \attr{rel} or \attr{rev} appears on an ancestor.
+}{\typename{text}}\attrdef{resourcelabelref}{gives the label for the document element that serves as the resource object;
+it will be converted to \attr{resourceidref} and \attr{resource} during post-processing.
+}{\typename{text}}\attrdef{resourceidref}{gives the id for the document element that serves as the resource object;
+it will be converted to \attr{resource} during post-processing.
+}{\typename{text}}\attrdef{property}{indicates the predicate and
+asserts that the subject is related by that predicate to the object.
+The subject is determined by one of \attr{about} on same node,
+\attr{resource} or \attr{typeof} on an ancestor node, or by the document root.
+The object is determined by one of \attr{resource}, \attr{href}, \attr{content}
+or \attr{typeof} on the same node, or by the text content of the node.
+}{\typename{text}}\attrdef{rel}{indicates the predicate exactly as \attr{property} except that it can
+assert multiple RDF triples where the objects are the nearest descendent \attr{resource}s.
+}{\typename{text}}\attrdef{rev}{indicates the predicate exactly as \attr{rel} except that it indicates
+the reverse relationship (with subject and object swapped).
+}{\typename{text}}\attrdef{typeof}{indicates the type of the \attr{resource} and thus implicitly asserts a relation
+that the object has the given type.
+Additionally, if no \attr{resource} was given on the same node,
+indicates an anonymous subject and or object exactly as \attr{resource}
+}{\typename{text}}\attrdef{datatype}{indicates the datatype of the target resource;
+}{\typename{text}}\attrdef{content}{indicates the content of the property to be used as the object,
+to be used instead of the content of the element itself;
+}{\typename{text}}\item[\textit{Used by}:] \patternref{Common.attributes}}
+
+\patterndef{Data.attributes}{Attributes for raw data storage
+}{\attrdef{data}{the data itself
+}{\typename{text}}\attrdef{datamimetype}{the MIME type of the data
+}{\typename{text}}\attrdef{dataencoding}{the encoding of the data (either empty, base64, or )
+}{\typename{text}}\attrdef{dataname}{the suggested file name of the data
+}{\typename{text}}\item[\textit{Used by}:] \elementref{figure}, \elementref{float}, \elementref{listing}, \elementref{proof}, \elementref{table}}
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-inline}
+\patternadd{Inline.class}{The inline module defines basic inline elements used throughout.
+}{\item[\textbar=] (\elementref{text} ~\textbar~ \elementref{emph} ~\textbar~ \elementref{del} ~\textbar~ \elementref{sub} ~\textbar~ \elementref{sup} ~\textbar~ \elementref{glossaryref} ~\textbar~ \elementref{rule} ~\textbar~ \elementref{anchor} ~\textbar~ \elementref{ref} ~\textbar~ \elementref{cite} ~\textbar~ \elementref{bibref})}
+
+\elementdef{text}{General container for styled text.
+Attributes cover a variety of styling and position shifting properties.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Positionable.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}, \elementref{MathFork}, \elementref{declare}, \elementref{equation}}
+
+
+
+\elementdef{emph}{Emphasized text.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{del}{Deleted text.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{sub}{Textual subscript text.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{sup}{Textual superscript text.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{glossaryref}{Represents the usage of a term from a glossary.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Refable.attributes}, \patternref{Listable.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\attrdef{key}{should be used to identifier used for the glossaryref.
+}{\typename{text}}\attrdef{title}{gives a expanded form of the glossaryref (unused?),
+}{\typename{text}}\attrdef{show}{a pattern encoding how the text content should be filled in during
+postprocessing, if it is empty.
+It consists of the words
+  \texttt{type} (standing for the object type, eg. Ch.),
+  \texttt{refnum}, \texttt{typerefnum} and \texttt{title}
+or \texttt{toctitle} (for the shortform of the title)
+mixed with arbitrary characters.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{rule}{A Rule.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Positionable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{ref}{A hyperlink reference to some other object. 
+When converted to HTML, the content would be the content of the anchor.
+The destination can be specified by one of the 
+attributes \attr{labelref}, \attr{idref} or \attr{href};
+Missing fields will usually be filled in during postprocessing,
+based on data extracted from the document(s).
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Refable.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\attrdef{show}{a pattern encoding how the text content should be filled in during
+postprocessing, if it is empty.
+It consists of the words
+  \texttt{type} (standing for the object type, eg. Ch.),
+  \texttt{refnum} and \texttt{title} (including type and refnum)
+or \texttt{toctitle} (for the shortform of the title)
+mixed with arbitrary characters.
+}{\typename{text}}\attrdef{title}{gives a description of the target, not repeating the content,
+used for accessibility or a tooltip in HTML.
+Typically filled in by postprocessor.
+}{\typename{text}}\attrdef{fulltitle}{gives a longer form description of the target,
+useful when the link appears outside its original context, eg in navigation.
+Typically filled in by postprocessor.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}, \elementref{navigation}, \elementref{tocentry}}
+
+
+
+\elementdef{anchor}{Inline anchor.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{cite}{A container for a bibliographic citation. The model is inline to
+allow arbitrary comments before and after the expected \elementref{bibref}(s)
+which are the specific citation.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Listable.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{bibref}{A bibliographic citation refering to a specific bibliographic item.
+Postprocessing will turn this into an \elementref{ref} for the actual link.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{IDREF.attributes}, \patternref{Listable.attributes}\attrdef{bibrefs}{a comma separated list of bibliographic keys.
+(See the \attr{key} attribute of \elementref{bibitem} and \elementref{bibentry})
+}{\typename{text}}\attrdef{show}{a pattern encoding how the text content (of an empty bibref) will be filled in.
+Consists of strings \texttt{author}, \texttt{fullauthor}, \texttt{year},
+\texttt{number} and \texttt{title}
+(to be replaced by data from the bibliographic item)
+mixed with arbitrary characters.
+}{\typename{text}}\attrdef{separator}{separator between formatted references
+}{\typename{text}}\attrdef{yyseparator}{separator between formatted years when duplicate authors are combined.
+}{\typename{text}}\item[\textit{Content}:] \elementref{bibrefphrase}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Inline.class}}
+
+
+
+\elementdef{bibrefphrase}{A preceding or following phrase used in composing a bibliographic reference,
+such as listing pages or chapter.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \elementref{bibref}}
+
+
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-block}
+\patternadd{Block.class}{The block module defines the following `physical' block elements.
+}{\item[\textbar=] (\elementref{p} ~\textbar~ \elementref{equation} ~\textbar~ \elementref{equationgroup} ~\textbar~ \elementref{quote} ~\textbar~ \elementref{block} ~\textbar~ \elementref{listing} ~\textbar~ \elementref{itemize} ~\textbar~ \elementref{enumerate} ~\textbar~ \elementref{description} ~\textbar~ \elementref{pagination})}
+
+\patternadd{Misc.class}{These are inline forms of logical lists
+(they are included in Misc since that has been the general strategy)
+}{\item[\textbar=] (\elementref{inline-itemize} ~\textbar~ \elementref{inline-enumerate} ~\textbar~ \elementref{inline-description})}
+
+\patterndef{EquationMeta.class}{Additional Metadata that can be present in equations.
+}{\item[\textit{Content}:] \elementref{constraint}\item[\textit{Used by}:] \elementref{equation}, \elementref{equationgroup}}
+
+\elementdef{p}{A physical paragraph.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Positionable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Block.class}, \elementref{equationgroup}}
+
+
+
+\elementdef{constraint}{A constraint upon an equation.
+}{\item[\textit{Attributes}:] \patternref{Backgroundable.attributes}\attrdef{hidden}{}{\typename{boolean}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{EquationMeta.class}}
+
+
+
+\elementdef{equation}{An Equation.  The model is just Inline which includes \elementref{Math},
+the main expected ingredient.
+However, other things can end up in display math, too, so we use Inline.
+Note that tabular is here only because it's a common, if misguided, idiom;
+the processor will lift such elements out of math, when possible
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] (\elementref{tags} ~\textbar~ \elementref{Math} ~\textbar~ \elementref{MathFork} ~\textbar~ \elementref{text} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class} ~\textbar~ \patternref{EquationMeta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Block.class}, \elementref{equationgroup}, \elementref{listingline}}
+
+
+
+\elementdef{equationgroup}{A group of equations, perhaps aligned (Though this is nowhere recorded).
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Backgroundable.attributes}\attrdef{rowsep}{the spacing between rows (equations, intertext,...)
+}{\patternref{Length.type}}\item[\textit{Content}:] (\elementref{tags} ~\textbar~ \elementref{equationgroup} ~\textbar~ \elementref{equation} ~\textbar~ \elementref{p} ~\textbar~ \patternref{Meta.class} ~\textbar~ \patternref{EquationMeta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Block.class}, \elementref{equationgroup}, \elementref{listingline}}
+
+
+
+\elementdef{MathFork}{A wrapper for Math that provides alternative,
+but typically less semantically meaningful,
+formatted representations.
+The first child is the meaningful form,
+the extra children provide formatted forms,
+for example being table rows or cells arising from an eqnarray.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] ((\elementref{Math} ~\textbar~ \elementref{text}), \elementref{MathBranch}\textsuperscript{*})\item[\textit{Used by}:] \elementref{equation}}
+
+
+
+\elementdef{MathBranch}{A container for an alternatively formatted math representation.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{format}{}{\typename{text}}\item[\textit{Content}:] (\elementref{Math} ~\textbar~ \elementref{tr} ~\textbar~ \elementref{td})\textsuperscript{*}\item[\textit{Used by}:] \elementref{MathFork}}
+
+
+
+\elementdef{quote}{A quotation.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Backgroundable.attributes}\attrdef{role}{The kind of quotation; could be something like verse, or translation
+}{\typename{text}}\item[\textit{Content}:] \patternref{Block.model}\item[\textit{Used by}:] \patternref{Block.class}}
+
+
+
+\elementdef{block}{A generic block (fallback).
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Positionable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Block.model}\item[\textit{Used by}:] \patternref{Block.class}}
+
+
+
+\elementdef{listing}{An Listing, (without caption: see \elementref{float})
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Positionable.attributes}, \patternref{Backgroundable.attributes}, \patternref{Data.attributes}\item[\textit{Content}:] \elementref{listingline}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Block.class}}
+
+
+
+\elementdef{listingline}{a line in a listing
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?}, (\typename{text} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class} ~\textbar~ \elementref{equation} ~\textbar~ \elementref{equationgroup})\textsuperscript{*})\item[\textit{Used by}:] \elementref{listing}}
+
+
+
+\elementdef{itemize}{An itemized list.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{item}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Block.class}}
+
+
+
+\elementdef{enumerate}{An enumerated list.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{item}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Block.class}}
+
+
+
+\elementdef{description}{A description list. The \elementref{item}s within are expected to have a \elementref{tag}
+which represents the term being described in each \elementref{item}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{item}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Block.class}}
+
+
+
+\elementdef{item}{An item within a list (\elementref{itemize},\elementref{enumerate} or \elementref{description}).
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Backgroundable.attributes}\attrdef{itemsep}{the vertical spacing between items
+}{\patternref{Length.type}}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?}, \patternref{Para.model})\item[\textit{Used by}:] \elementref{description}, \elementref{enumerate}, \elementref{itemize}}
+
+
+
+\elementdef{inline-itemize}{An inline form of itemized list.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{inline-item}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{inline-enumerate}{An inline form of enumerated list.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{inline-item}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{inline-description}{An inline form of description list.
+The \elementref{inline-item}s within are expected to have a \elementref{tags}
+which represents the term being described in each \elementref{inline-item}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{inline-item}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{inline-item}{An item within an inline list (\elementref{inline-itemize},\elementref{inline-enumerate}
+or \elementref{inline-description}).
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?}, (\patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*})\item[\textit{Used by}:] \elementref{inline-description}, \elementref{inline-enumerate}, \elementref{inline-itemize}}
+
+
+
+\elementdef{tags}{A container for one or more \elementref{tag}s.
+At most one will have no \attr{role}, which would be the default display.
+Other \elementref{tag} will have the role attribute for use in
+special forms of referencing.
+}{\item[\textit{Content}:] \elementref{tag}\textsuperscript{*}\item[\textit{Used by}:] \patternref{SectionalFrontMatter.class}, \elementref{bibitem}, \elementref{declare}, \elementref{equation}, \elementref{equationgroup}, \elementref{figure}, \elementref{float}, \elementref{inline-item}, \elementref{item}, \elementref{listingline}, \elementref{note}, \elementref{proof}, \elementref{table}, \elementref{theorem}}
+
+
+\elementdef{tag}{A tag within an item indicating the term or bullet for a given item.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}\attrdef{role}{specifies the purpose this tag is used for: no value is default display
+}{\typename{text}}\attrdef{open}{specifies an open delimiters used to display the tag.
+}{\typename{text}}\attrdef{close}{specifies an close delimiters used to display the tag.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \elementref{caption}, \elementref{tags}, \elementref{title}, \elementref{toccaption}, \elementref{toctitle}}
+
+
+
+\elementdef{pagination}{A page break or related pagination information.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{role}{what kind of pagination
+}{\typename{text}}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Block.class}, \patternref{Para.class}}
+
+
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-misc}
+\patternadd{Misc.class}{ Miscellaneous (Misc) elements are (typically) visible
+elements which don't have clear inline or block character;
+they can appear in both inline and block contexts.
+}{\item[\textbar=] (\elementref{inline-block} ~\textbar~ \elementref{verbatim} ~\textbar~ \elementref{break} ~\textbar~ \elementref{graphics} ~\textbar~ \texttt{svg:svg} ~\textbar~ \elementref{rawhtml} ~\textbar~ \elementref{rawliteral} ~\textbar~ \elementref{ERROR})}
+
+\elementdef{inline-block}{An inline block. Actually, can appear in inline or block mode, but
+typesets its contents as a block.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Positionable.attributes}, \patternref{Transformable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Block.model}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{verbatim}{Verbatim content
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{break}{A forced line break.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{graphics}{A graphical insertion of an external file.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Imageable.attributes}\attrdef{graphic}{the path to the graphics file. This is the (often minimally specified) path
+to a graphics file omitting the type extension.  Once resolved to a specific
+image file, the \attr{imagesrc} (from Imageable.attributes) is used.
+}{\typename{text}}\attrdef{candidates}{a comma separated list of candidate graphics files that could be used to
+for \attr{graphic}.  A post-processor or application may choose from these,
+or may make its own selection or synthesis to implement the graphic for a given target.
+}{\typename{text}}\attrdef{options}{an encoding of the scaling and positioning options
+to be used in processing the graphic.
+}{\typename{text}}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+
+
+
+\elementdef{rawhtml}{A container for arbitrary markup in the xhtml namespace
+(not currently validated against any particular html schema)
+}{\item[\textit{Content}:] \texttt{xhtml:*}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+\elementdef{rawliteral}{A container for even more arbitrary directives like jsp, php, etc
+Doesn't create an element, but an open angle bracket followed by \attr{open}
+then the text content, followed by a close angle bracket followed by \attr{close}.
+}{\attrdef{open}{}{\typename{text}}\attrdef{close}{}{\typename{text}}\item[\textit{Content}:] \typename{text}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+\elementdef{ERROR}{error object for undefined control sequences, or whatever
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \typename{text}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Misc.class}, \patternref{XMath.class}}
+
+
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-meta}
+\patternadd{Meta.class}{Meta elements are generally hidden;
+they can appear in both inline and block contexts.
+}{\item[\textbar=] (\elementref{note} ~\textbar~ \elementref{declare} ~\textbar~ \elementref{indexmark} ~\textbar~ \elementref{glossarydefinition} ~\textbar~ \elementref{rdf} ~\textbar~ \elementref{resource} ~\textbar~ \elementref{navigation})}
+
+\elementdef{note}{Metadata that covers several `out of band' annotations.
+It's content allows both inline and block-level content.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}\attrdef{mark}{indicates the desired visible marker to be linked to the note.
+}{\typename{text}}\attrdef{role}{indicates the kind of note
+}{(\attrval{footnote} ~\textbar~ \typename{text})}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?}, \patternref{Flow.model})\item[\textit{Used by}:] \patternref{Meta.class}}
+
+
+
+\elementdef{declare}{declare records declarative mathematical information.
+}{\item[\textit{Attributes}:] \patternref{ID.attributes}\attrdef{type}{the type of declaration
+}{\typename{text}}\attrdef{definiens}{the thing being defined (if global), else must have xml:id
+}{\typename{text}}\attrdef{sortkey}{the sort key for use creating notation indices
+}{\typename{text}}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?}, \elementref{text}\textsuperscript{?})\item[\textit{Used by}:] \patternref{Meta.class}}
+
+
+
+\elementdef{indexmark}{Metadata to record an indexing position. The content is
+a sequence of \elementref{indexphrase}, each representing a level in
+a multilevel indexing entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Listable.attributes}\attrdef{see\_also}{a flattened form (like \attr{key}) of another \elementref{indexmark},
+used to crossreference.
+}{\typename{text}}\attrdef{style}{NOTE: describe this.
+}{\typename{text}}\item[\textit{Content}:] (\elementref{indexphrase}\textsuperscript{*}, \elementref{indexsee}\textsuperscript{*})\item[\textit{Used by}:] \patternref{Meta.class}}
+
+
+
+\elementdef{indexphrase}{A phrase within an \elementref{indexmark}
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{key}{a flattened form of the phrase for generating an \attr{ID}.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \elementref{indexentry}, \elementref{indexmark}}
+
+
+
+\elementdef{indexsee}{A see-also phrase within an \elementref{indexmark}
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{key}{a flattened form of the phrase for generating an \attr{ID}.
+}{\typename{text}}\attrdef{name}{a name for the see phrase, such as "see also".
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \elementref{indexmark}}
+
+
+
+\elementdef{glossarydefinition}{A definition within an \elementref{glossaryentry}
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Listable.attributes}\attrdef{key}{a flattened form of the definition for generating an \attr{ID}.
+}{\typename{text}}\item[\textit{Content}:] \elementref{glossaryphrase}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Meta.class}}
+
+
+
+\elementdef{glossaryphrase}{A phrase being clarified within an \elementref{glossaryentry}
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{IDREF.attributes}\attrdef{key}{a flattened form of the phrase for generating an \attr{ID}.
+}{\typename{text}}\attrdef{role}{a keyword naming the format of this phrase (to match \attr{show} in \elementref{glossaryref}).
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \elementref{glossarydefinition}, \elementref{glossaryentry}}
+
+
+
+\elementdef{rdf}{A container for RDF annotations.
+(See document structure for rdf-prefixes attribute)
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Flow.model}\item[\textit{Used by}:] \patternref{Meta.class}}
+
+
+
+\elementdef{resource}{a resource for use in further processing such as javascript or CSS
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{src}{the source url to the resource
+}{\typename{text}}\attrdef{type}{the mime type of the resource
+}{\typename{text}}\attrdef{media}{the media for which this resource is applicable
+(in the sense of CSS).
+}{\typename{text}}\item[\textit{Content}:] \typename{text}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Meta.class}}
+
+
+
+\elementdef{navigation}{Records navigation cross-referencing information,
+or serves as a container for page navigational blocks.
+An \elementref{inline-logical-block} child should have attribute \attr{class}
+being one of \texttt{ltx\_page\_navbar}, \texttt{ltx\_page\_header}
+or \texttt{ltx\_page\_footer} and its contents will be used to create those components of webpages.
+Lacking those, a \elementref{TOC} requests a table of contents
+in the navigation bar. Page headers and footers will be synthesized from
+Links from the current page or document to related ones;
+these are represented by \elementref{ref} elements with \attr{rel}
+being up, down, previous, next, and so forth.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] (\elementref{ref} ~\textbar~ \elementref{TOC} ~\textbar~ \elementref{inline-logical-block})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Meta.class}}
+
+
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-para}
+\patternadd{Para.class}{This module defines the following `logical' block elements.
+}{\item[\textbar=] (\elementref{para} ~\textbar~ \elementref{logical-block} ~\textbar~ \elementref{theorem} ~\textbar~ \elementref{proof} ~\textbar~ \elementref{figure} ~\textbar~ \elementref{table} ~\textbar~ \elementref{float} ~\textbar~ \elementref{pagination})}
+
+\patternadd{Misc.class}{Additionally, it defines these miscellaneous elements that can appear
+in both inline and block contexts.
+}{\item[\textbar=] \elementref{inline-logical-block}}
+
+\elementdef{para}{A Logical paragraph. It has an \attr{id}, but not a \attr{label}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Positionable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Block.model}\item[\textit{Used by}:] \patternref{Para.class}}
+
+
+
+\elementdef{logical-block}{A logical-block. Actually, like block can appear in inline or block mode, but
+typesets its contents as para.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Positionable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Para.model}\item[\textit{Used by}:] \patternref{Para.class}}
+
+
+
+\elementdef{inline-logical-block}{An inline logical-block. Actually, can appear in inline or block mode, but
+typesets its contents as para.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Positionable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{Para.model}\item[\textit{Used by}:] \patternref{Misc.class}, \elementref{navigation}}
+
+
+
+\elementdef{theorem}{A theorem or similar object. The \attr{class} attribute can be used to distinguish
+different kinds of theorem.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?}, \elementref{title}\textsuperscript{?}, \patternref{Para.model})\item[\textit{Used by}:] \patternref{Para.class}}
+
+
+
+\elementdef{proof}{A proof or similar object. The \attr{class} attribute can be used to distinguish
+different kinds of proof.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Backgroundable.attributes}, \patternref{Data.attributes}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?}, \elementref{title}\textsuperscript{?}, \patternref{Para.model})\item[\textit{Used by}:] \patternref{Para.class}}
+
+
+
+\patterndef{Caption.class}{These are the additional elements representing figure and
+table captions.
+NOTE: Could title sensibly be reused here, instead?
+Or, should caption be used for theorem and proof?
+}{\item[\textit{Content}:] (\elementref{caption} ~\textbar~ \elementref{toccaption})\item[\textit{Used by}:] \elementref{figure}, \elementref{float}, \elementref{table}}
+
+\elementdef{figure}{A  figure, possibly captioned.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Positionable.attributes}, \patternref{Transformable.attributes}, \patternref{Backgroundable.attributes}, \patternref{Data.attributes}\attrdef{placement}{the vertical floating placement parameter that determines where the object is displayed.
+}{\typename{text}}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?} ~\textbar~ \elementref{figure} ~\textbar~ \elementref{table} ~\textbar~ \elementref{float} ~\textbar~ \patternref{Block.model} ~\textbar~ \patternref{Caption.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Para.class}, \elementref{figure}, \elementref{float}, \elementref{table}}
+
+
+
+\elementdef{table}{A  Table, possibly captioned. This is not necessarily a \elementref{tabular}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Positionable.attributes}, \patternref{Transformable.attributes}, \patternref{Backgroundable.attributes}, \patternref{Data.attributes}\attrdef{placement}{the vertical floating placement parameter that determines where the object is displayed.
+}{\typename{text}}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?} ~\textbar~ \elementref{table} ~\textbar~ \elementref{figure} ~\textbar~ \elementref{float} ~\textbar~ \patternref{Block.model} ~\textbar~ \patternref{Caption.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Para.class}, \elementref{figure}, \elementref{float}, \elementref{table}}
+
+
+
+\elementdef{float}{A generic float, possibly captioned, something other than a table or figure
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Positionable.attributes}, \patternref{Transformable.attributes}, \patternref{Backgroundable.attributes}, \patternref{Data.attributes}\attrdef{role}{The kind of float; could be something like a listing, or some other thing
+}{\typename{text}}\attrdef{placement}{the vertical floating placement parameter that determines where the object is displayed.
+}{\typename{text}}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?} ~\textbar~ \elementref{float} ~\textbar~ \elementref{figure} ~\textbar~ \elementref{table} ~\textbar~ \patternref{Block.model} ~\textbar~ \patternref{Caption.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Para.class}, \elementref{figure}, \elementref{float}, \elementref{table}}
+
+
+
+\elementdef{caption}{A caption for a \elementref{table} or \elementref{figure}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] (\elementref{tag} ~\textbar~ \typename{text} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Caption.class}}
+
+
+
+\elementdef{toccaption}{A short form of \elementref{table} or \elementref{figure} caption,
+used for lists of figures or similar.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] (\elementref{tag} ~\textbar~ \typename{text} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Caption.class}}
+
+
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-math}
+\patternadd{Inline.class}{The math module defines LaTeXML's internal representation of mathematical
+content, including the basic math container \elementref{Math}.  This element is
+considered inline, as it will be contained within some other block-level
+element, eg. \elementref{equation} for display-math.
+}{\item[\textbar=] \elementref{Math}}
+
+\patterndef{Math.class}{This class defines the content of the \elementref{Math} element.
+Additionally, it could contain MathML or OpenMath, after postprocessing.
+}{\item[\textit{Content}:] \elementref{XMath}\item[\textit{Used by}:] \elementref{Math}}
+
+\patterndef{XMath.class}{These elements comprise the internal math representation, being
+the content of the \elementref{XMath} element.
+}{\item[\textit{Content}:] (\elementref{XMApp} ~\textbar~ \elementref{XMTok} ~\textbar~ \elementref{XMRef} ~\textbar~ \elementref{XMHint} ~\textbar~ \elementref{XMArg} ~\textbar~ \elementref{XMWrap} ~\textbar~ \elementref{XMDual} ~\textbar~ \elementref{XMText} ~\textbar~ \elementref{XMArray} ~\textbar~ \elementref{ERROR})\item[\textit{Used by}:] \elementref{XMApp}, \elementref{XMArg}, \elementref{XMCell}, \elementref{XMDual}, \elementref{XMWrap}, \elementref{XMath}}
+
+\elementdef{Math}{Outer container for all math. This holds the internal
+\elementref{XMath} representation, as well as image data and other representations.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Imageable.attributes}, \patternref{ID.attributes}, \patternref{Backgroundable.attributes}\attrdef{mode}{display or inline mode.
+}{(\attrval{display} ~\textbar~ \attrval{inline})}\attrdef{tex}{reconstruction of the \TeX\ that generated the math.
+}{\typename{text}}\attrdef{content-tex}{more semantic version of \attr{tex}.
+}{\typename{text}}\attrdef{text}{a textified representation of the math.
+}{\typename{text}}\attrdef{lexemes}{preserved grammar-near lexemes for export to external apps
+}{\typename{text}}\item[\textit{Content}:] \patternref{Math.class}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Inline.class}, \elementref{MathBranch}, \elementref{MathFork}, \elementref{equation}}
+
+
+
+\patterndef{XMath.attributes}{Common attributes for the various XMath elements.
+}{\item[\textit{Attributes}:] \patternref{Positionable.attributes}\attrdef{role}{The role that this item plays in the Grammar.
+}{\typename{text}}\attrdef{enclose}{an enclose style to enclose the object
+with legitimate values being those of MathML's menclose notations;
+}{\typename{text}}\attrdef{lpadding}{left, or leading, (presumably non-semantic) padding space.
+}{\typename{text}}\attrdef{rpadding}{right, or trailing, (presumably non-semantic) padding space.
+}{\typename{text}}\attrdef{name}{The name of the token, typically the control sequence that created it.
+}{\typename{text}}\attrdef{meaning}{A more semantic name corresponding to the intended meaning,
+such as the OpenMath name.
+}{\typename{text}}\attrdef{omcd}{The OpenMath CD for which \attr{meaning} is a symbol.
+}{\typename{text}}\attrdef{scriptpos}{An encoding of the position of sub/superscripts
+Before parsing, it takes two forms. On a base token or element,
+it is one of (pre|mid|post), indicating where any script can be placed.
+On a script token, it is an integer level.
+After parsing, the concatenation is moved to the sub|super-script "operator".
+}{\typename{text}}\attrdef{possibleFunction}{an annotation placed by the parser when it suspects this token may be used as a function.
+}{\typename{text}}\attrdef{decl\_id}{an id to where the declaration of this object is given,
+preferably the xml:id of an ltx:declare
+}{\typename{text}}\attrdef{href}{reference to an arbitrary url.
+}{\typename{text}}\item[\textit{Used by}:] \elementref{XMApp}, \elementref{XMArg}, \elementref{XMArray}, \elementref{XMDual}, \elementref{XMHint}, \elementref{XMRef}, \elementref{XMText}, \elementref{XMTok}, \elementref{XMWrap}}
+
+\elementdef{XMath}{Internal representation of mathematics.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \patternref{XMath.class}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Math.class}}
+
+
+
+\elementdef{XMTok}{General mathematical token.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{ID.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\attrdef{thickness}{A thickness used for drawing any lines which are part of presenting the token,
+such as the fraction line for the fraction operator.
+}{\typename{text}}\attrdef{stretchy}{Whether or not the symbol should be stretchy.
+This shares MathML's ambiguity about horizontal versus vertical stretchiness.
+When not set, defaults to whatever MathML's operator dictionary says.
+}{\typename{boolean}}\attrdef{mathstyle}{The math style used for displaying the application of this token
+when it represents some sort of fraction, variable-sized operator or stack of expressions
+(note that this applies to binomials or other stacks of expressions as well as fractions).
+Values of \texttt{display} or \texttt{text} correspond to \TeX's
+displaystyle or textstyle, while \texttt{inline} indicates the
+stack should be arranged horizontally (the layout may depend on the operator).
+}{(\attrval{display} ~\textbar~ \attrval{text} ~\textbar~ \attrval{script} ~\textbar~ \attrval{scriptscript})}\item[\textit{Content}:] \typename{text}\textsuperscript{*}\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMApp}{Generalized application of a function, operator, whatever (the first child)
+to arguments (the remaining children).
+The attributes are a subset of those for \elementref{XMTok}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{ID.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \patternref{XMath.class}\textsuperscript{*}\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMDual}{Parallel markup of content (first child) and presentation (second child)
+of a mathematical object.
+Typically, the arguments are shared between the two branches:
+they appear in the content branch, with \attr{id}'s,
+and \elementref{XMRef} is used in the presentation branch
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] (\patternref{XMath.class}, \patternref{XMath.class})\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMHint}{Various layout hints, usually spacing, generally ignored in parsing.
+The attributes are a subset of those for \elementref{XMTok}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMText}{Text appearing within math.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{Backgroundable.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] (\typename{text} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMWrap}{Wrapper for a sequence of tokens used to assert the role of the
+contents in its parent. This element generally disappears after parsing.
+The attributes are a subset of those for \elementref{XMTok}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{Backgroundable.attributes}, \patternref{ID.attributes}\attrdef{rule}{The grammatical rule that should apply to the contained sequence
+}{\typename{text}}\attrdef{style}{}{\typename{text}}\item[\textit{Content}:] \patternref{XMath.class}\textsuperscript{*}\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMArg}{Wrapper for an argument to a structured macro.
+It implies that its content can be parsed independently of its parent,
+and thus generally disappears after parsing.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{ID.attributes}\attrdef{rule}{The grammatical rule that should apply to the contained sequence
+}{\typename{text}}\item[\textit{Content}:] \patternref{XMath.class}\textsuperscript{*}\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMRef}{Structure sharing element typically used in the presentation
+branch of an \elementref{XMDual} to refer to the arguments present in the content branch.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{ID.attributes}, \patternref{IDREF.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMArray}{Math Array/Alignment structure.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{XMath.attributes}, \patternref{ID.attributes}\attrdef{rowsep}{the spacing between rows
+}{\patternref{Length.type}}\attrdef{colsep}{the spacing between columns
+}{\patternref{Length.type}}\item[\textit{Content}:] \elementref{XMRow}\textsuperscript{*}\item[\textit{Used by}:] \patternref{XMath.class}}
+
+
+
+\elementdef{XMRow}{A row in a math alignment.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \elementref{XMCell}\textsuperscript{*}\item[\textit{Used by}:] \elementref{XMArray}}
+
+
+
+\elementdef{XMCell}{A cell in a row of a math alignment.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}, \patternref{ID.attributes}\attrdef{colspan}{indicates how many columns this cell spans or covers.
+}{\typename{nonNegativeInteger}}\attrdef{rowspan}{indicates how many rows this cell spans or covers.
+}{\typename{nonNegativeInteger}}\attrdef{align}{ specifies the alignment of the content.
+}{\typename{text}}\attrdef{width}{specifies the desired width for the column.
+}{\typename{text}}\attrdef{border}{records a sequence of t or tt, r or rr, b or bb and l or ll
+for borders or doubled borders on any side of the cell.
+}{\typename{text}}\attrdef{thead}{whether this cell corresponds to a table row or column heading or both
+}{(\attrval{column} ~\textbar~ \attrval{column row} ~\textbar~ \attrval{row})}\item[\textit{Content}:] \patternref{XMath.class}\textsuperscript{*}\item[\textit{Used by}:] \elementref{XMRow}}
+
+
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-tabular}
+\patternadd{Misc.class}{This module defines the basic tabular, or alignment, structure.
+It is roughly parallel to the HTML model.
+}{\item[\textbar=] \elementref{tabular}}
+
+\elementdef{tabular}{An alignment structure corresponding to tabular  or various similar forms.
+The model is basically a copy of HTML4's table.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}, \patternref{ID.attributes}\attrdef{vattach}{which row's baseline aligns with the container's baseline.
+}{(\attrval{top} ~\textbar~ \attrval{middle} ~\textbar~ \attrval{bottom})}\attrdef{width}{the desired width of the tabular.
+}{\patternref{Length.type}}\attrdef{rowsep}{the spacing between rows
+}{\patternref{Length.type}}\attrdef{colsep}{the spacing between columns
+}{\patternref{Length.type}}\item[\textit{Content}:] (\elementref{thead} ~\textbar~ \elementref{tfoot} ~\textbar~ \elementref{tbody} ~\textbar~ \elementref{tr})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{thead}{A container for a set of rows that correspond to the header of the tabular.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{tr}\textsuperscript{*}\item[\textit{Used by}:] \elementref{tabular}}
+
+
+
+\elementdef{tfoot}{A container for a set of rows that correspond to the footer of the tabular.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{tr}\textsuperscript{*}\item[\textit{Used by}:] \elementref{tabular}}
+
+
+
+\elementdef{tbody}{A container for a set of rows corresponding to the body of the tabular.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] \elementref{tr}\textsuperscript{*}\item[\textit{Used by}:] \elementref{tabular}}
+
+
+
+\elementdef{tr}{A row of a tabular.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \elementref{td}\textsuperscript{*}\item[\textit{Used by}:] \elementref{MathBranch}, \elementref{tabular}, \elementref{tbody}, \elementref{tfoot}, \elementref{thead}}
+
+
+
+\elementdef{td}{A cell in a row of a tabular.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Backgroundable.attributes}, \patternref{ID.attributes}\attrdef{colspan}{indicates how many columns this cell spans or covers.
+}{\typename{nonNegativeInteger}}\attrdef{rowspan}{indicates how many rows this cell spans or covers.
+}{\typename{nonNegativeInteger}}\attrdef{align}{ specifies the horizontal alignment of the content.
+The allowed values are open-ended to accomodate \texttt{char:.} type alignments.
+}{(\attrval{left} ~\textbar~ \attrval{right} ~\textbar~ \attrval{center} ~\textbar~ \attrval{justify} ~\textbar~ \typename{text})}\attrdef{width}{specifies the desired width for the column.
+}{\patternref{Length.type}}\attrdef{vattach}{how the cell contents aligns with the row's baseline.
+}{(\attrval{top} ~\textbar~ \attrval{middle} ~\textbar~ \attrval{bottom})}\attrdef{border}{records a sequence of t or tt, r or rr, b or bb and l or ll
+for borders or doubled borders on any side of the cell.
+}{\typename{text}}\attrdef{thead}{whether this cell corresponds to a table row or column heading or both
+(whether in head or foot).
+}{(\attrval{column} ~\textbar~ \attrval{column row} ~\textbar~ \attrval{row})}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \elementref{MathBranch}, \elementref{tr}}
+
+
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-picture}
+\patternadd{Misc.class}{This module defines a picture environment, roughly a subset of SVG.
+NOTE: Eventually we will drop these subset elements and incorporate SVG itself.
+}{\item[\textbar=] \elementref{picture}}
+
+\patterndef{Picture.class}{}{\item[\textit{Content}:] (\elementref{g} ~\textbar~ \elementref{rect} ~\textbar~ \elementref{line} ~\textbar~ \elementref{circle} ~\textbar~ \elementref{path} ~\textbar~ \elementref{arc} ~\textbar~ \elementref{wedge} ~\textbar~ \elementref{ellipse} ~\textbar~ \elementref{polygon} ~\textbar~ \elementref{bezier} ~\textbar~ \elementref{parabola} ~\textbar~ \elementref{curve} ~\textbar~ \elementref{dots} ~\textbar~ \elementref{grid} ~\textbar~ \elementref{clip} ~\textbar~ \texttt{svg:svg})\item[\textit{Used by}:] \elementref{clippath}, \elementref{g}, \elementref{picture}}
+
+\patterndef{Picture.attributes}{These attributes correspond roughly to SVG, but need documentation.
+}{\attrdef{x}{}{\typename{text}}\attrdef{y}{}{\typename{text}}\attrdef{r}{}{\typename{text}}\attrdef{rx}{}{\typename{text}}\attrdef{ry}{}{\typename{text}}\attrdef{width}{}{\typename{text}}\attrdef{height}{}{\typename{text}}\attrdef{fill}{}{\typename{text}}\attrdef{stroke}{}{\typename{text}}\attrdef{stroke-width}{}{\typename{text}}\attrdef{stroke-dasharray}{}{\typename{text}}\attrdef{transform}{}{\typename{text}}\attrdef{terminators}{}{\typename{text}}\attrdef{arrowlength}{}{\typename{text}}\attrdef{points}{}{\typename{text}}\attrdef{showpoints}{}{\typename{text}}\attrdef{displayedpoints}{}{\typename{text}}\attrdef{arc}{}{\typename{text}}\attrdef{angle1}{}{\typename{text}}\attrdef{angle2}{}{\typename{text}}\attrdef{arcsepA}{}{\typename{text}}\attrdef{arcsepB}{}{\typename{text}}\attrdef{curvature}{}{\typename{text}}\item[\textit{Used by}:] \elementref{arc}, \elementref{bezier}, \elementref{circle}, \elementref{clip}, \elementref{clippath}, \elementref{curve}, \elementref{dots}, \elementref{ellipse}, \elementref{g}, \elementref{grid}, \elementref{line}, \elementref{parabola}, \elementref{path}, \elementref{picture}, \elementref{polygon}, \elementref{rect}, \elementref{wedge}}
+
+\patterndef{PictureGroup.attributes}{These attributes correspond roughly to SVG, but need documentation.
+}{\attrdef{pos}{}{\typename{text}}\attrdef{framed}{}{\typename{boolean}}\attrdef{frametype}{}{(\attrval{rect} ~\textbar~ \attrval{circle} ~\textbar~ \attrval{oval})}\attrdef{fillframe}{}{\typename{boolean}}\attrdef{boxsep}{}{\typename{text}}\attrdef{shadowbox}{}{\typename{boolean}}\attrdef{doubleline}{}{\typename{boolean}}\item[\textit{Used by}:] \elementref{g}}
+
+\elementdef{picture}{A picture environment.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}, \patternref{Picture.attributes}, \patternref{Imageable.attributes}\attrdef{clip}{}{\typename{boolean}}\attrdef{baseline}{}{\typename{text}}\attrdef{unitlength}{}{\typename{text}}\attrdef{xunitlength}{}{\typename{text}}\attrdef{yunitlength}{}{\typename{text}}\attrdef{origin-x}{}{\typename{text}}\attrdef{origin-y}{}{\typename{text}}\attrdef{tex}{}{\typename{text}}\attrdef{content-tex}{}{\typename{text}}\item[\textit{Content}:] (\patternref{Picture.class} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{g}{A graphical grouping; the content is inherits by the transformations, 
+positioning and other properties.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Transformable.attributes}, \patternref{Picture.attributes}, \patternref{PictureGroup.attributes}\item[\textit{Content}:] (\patternref{Picture.class} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{rect}{A rectangle within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{line}{A line within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{polygon}{A polygon within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{wedge}{A wedge within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{arc}{An arc within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{circle}{A circle within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{ellipse}{An ellipse within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{path}{A path within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{bezier}{A bezier curve within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{curve}{A curve within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{parabola}{A parabola curve within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{dots}{A sequence of dots (?) within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\attrdef{dotstyle}{}{\typename{text}}\attrdef{dotsize}{}{\typename{text}}\attrdef{dotscale}{}{\typename{text}}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{grid}{A grid within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \typename{empty}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{clip}{Establishes a clipping region within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] \elementref{clippath}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Picture.class}}
+
+
+
+\elementdef{clippath}{Establishes a clipping region within a \elementref{picture}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Picture.attributes}\item[\textit{Content}:] (\patternref{Picture.class} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \elementref{clip}}
+
+
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-structure}
+\elementdef{document}{The document root.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] ((\patternref{FrontMatter.class} ~\textbar~ \patternref{SectionalFrontMatter.class} ~\textbar~ \patternref{Meta.class} ~\textbar~ \elementref{titlepage})\textsuperscript{*}, (\patternref{document.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})}
+
+\patterndef{document.body.class}{The content allowable as the main body of the document.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{paragraph} ~\textbar~ \elementref{subsubsection} ~\textbar~ \elementref{subsection} ~\textbar~ \elementref{section} ~\textbar~ \elementref{chapter} ~\textbar~ \elementref{part} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{slidesequence} ~\textbar~ \elementref{sidebar} ~\textbar~ \elementref{sectional-block})\item[\textit{Used by}:] \elementref{document}, \elementref{inline-sectional-block}, \elementref{sectional-block}}
+
+\patternadd{Misc.class}{}{\item[\textbar=] \elementref{inline-sectional-block}}
+
+
+
+\elementdef{sectional-block}{A block containing sectional material. Note that this may tend to break the overall heirarchy.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] \patternref{document.body.class}\textsuperscript{*}\item[\textit{Used by}:] \patternref{document.body.class}}
+
+
+
+\elementdef{inline-sectional-block}{A block containing sectional material. Note that this may tend to break the overall heirarchy.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] \patternref{document.body.class}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Misc.class}}
+
+
+
+\elementdef{part}{A part within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, (\patternref{part.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{document.body.class}}
+
+\patterndef{part.body.class}{The content allowable as the main body of a part.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{subparagraph} ~\textbar~ \elementref{paragraph} ~\textbar~ \elementref{subsubsection} ~\textbar~ \elementref{subsection} ~\textbar~ \elementref{section} ~\textbar~ \elementref{chapter} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{slidesequence} ~\textbar~ \elementref{sidebar})\item[\textit{Used by}:] \elementref{part}}
+
+
+
+\elementdef{chapter}{A Chapter within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, (\patternref{chapter.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{document.body.class}, \patternref{part.body.class}}
+
+\patterndef{chapter.body.class}{The content allowable as the main body of a chapter.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{subparagraph} ~\textbar~ \elementref{paragraph} ~\textbar~ \elementref{subsubsection} ~\textbar~ \elementref{subsection} ~\textbar~ \elementref{section} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{slidesequence} ~\textbar~ \elementref{sidebar})\item[\textit{Used by}:] \elementref{chapter}}
+
+
+
+\elementdef{section}{A Section within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, (\patternref{section.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{appendix.body.class}, \patternref{chapter.body.class}, \patternref{document.body.class}, \patternref{part.body.class}}
+
+\patterndef{section.body.class}{The content allowable as the main body of a section.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{subparagraph} ~\textbar~ \elementref{paragraph} ~\textbar~ \elementref{subsubsection} ~\textbar~ \elementref{subsection} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{slidesequence} ~\textbar~ \elementref{sidebar})\item[\textit{Used by}:] \elementref{section}}
+
+
+
+\elementdef{subsection}{A Subsection within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, (\patternref{subsection.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{appendix.body.class}, \patternref{chapter.body.class}, \patternref{document.body.class}, \patternref{part.body.class}, \patternref{section.body.class}}
+
+\patterndef{subsection.body.class}{The content allowable as the main body of a subsection.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{subparagraph} ~\textbar~ \elementref{paragraph} ~\textbar~ \elementref{subsubsection} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{slidesequence} ~\textbar~ \elementref{sidebar})\item[\textit{Used by}:] \elementref{subsection}}
+
+
+
+\elementdef{subsubsection}{A Subsubsection within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, (\patternref{subsubsection.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{appendix.body.class}, \patternref{chapter.body.class}, \patternref{document.body.class}, \patternref{part.body.class}, \patternref{section.body.class}, \patternref{subsection.body.class}}
+
+\patterndef{subsubsection.body.class}{The content allowable as the main body of a subsubsection.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{subparagraph} ~\textbar~ \elementref{paragraph} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{slidesequence} ~\textbar~ \elementref{sidebar})\item[\textit{Used by}:] \elementref{subsubsection}}
+
+
+
+\elementdef{paragraph}{A Paragraph within a document. This corresponds to a `formal' marked, possibly labelled
+LaTeX Paragraph,  in distinction from an unlabelled logical paragraph.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, (\patternref{paragraph.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{appendix.body.class}, \patternref{chapter.body.class}, \patternref{document.body.class}, \patternref{part.body.class}, \patternref{section.body.class}, \patternref{subsection.body.class}, \patternref{subsubsection.body.class}}
+
+\patterndef{paragraph.body.class}{The content allowable as the main body of a paragraph.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{subparagraph} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{slidesequence} ~\textbar~ \elementref{sidebar})\item[\textit{Used by}:] \elementref{paragraph}}
+
+
+
+\elementdef{subparagraph}{A Subparagraph within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, (\patternref{subparagraph.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{appendix.body.class}, \patternref{chapter.body.class}, \patternref{paragraph.body.class}, \patternref{part.body.class}, \patternref{section.body.class}, \patternref{subsection.body.class}, \patternref{subsubsection.body.class}}
+
+\patterndef{subparagraph.body.class}{The content allowable as the main body of a subparagraph.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{slidesequence} ~\textbar~ \elementref{sidebar})\item[\textit{Used by}:] \elementref{subparagraph}}
+
+
+
+\elementdef{slidesequence}{A slidesequence within a slideshow.
+Each slide contains a set slides, typically those that are revealed constructively. 
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] \elementref{slide}\textsuperscript{*}\item[\textit{Used by}:] \patternref{chapter.body.class}, \patternref{document.body.class}, \patternref{paragraph.body.class}, \patternref{part.body.class}, \patternref{section.body.class}, \patternref{subparagraph.body.class}, \patternref{subsection.body.class}, \patternref{subsubsection.body.class}}
+
+
+
+\elementdef{slide}{A Slide within a slideshow, that may or may not be contained within a slidesequence.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\attrdef{overlay}{\attr{overlay} is the number of the current overlay.
+This must be specified when part of a slidesequence, else it may be omitted.
+Should be unique and rising within a slidesequence.
+}{\typename{text}}\item[\textit{Content}:] ((\patternref{SectionalFrontMatter.class} ~\textbar~ \elementref{subtitle})\textsuperscript{*}, (\patternref{slide.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{appendix.body.class}, \patternref{chapter.body.class}, \patternref{document.body.class}, \patternref{paragraph.body.class}, \patternref{part.body.class}, \patternref{section.body.class}, \patternref{subparagraph.body.class}, \patternref{subsection.body.class}, \patternref{subsubsection.body.class}, \elementref{slidesequence}}
+
+\patterndef{slide.body.class}{The content allowable as the main body of a \elementref{slide}.
+}{\item[\textit{Content}:] \patternref{Para.model}\item[\textit{Used by}:] \elementref{slide}}
+
+
+
+\elementdef{sidebar}{A Sidebar; a short section-like object that floats outside the main flow.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] ((\patternref{FrontMatter.class} ~\textbar~ \patternref{SectionalFrontMatter.class})\textsuperscript{*}, (\patternref{sidebar.body.class} ~\textbar~ \patternref{BackMatter.class})\textsuperscript{*})\item[\textit{Used by}:] \patternref{appendix.body.class}, \patternref{chapter.body.class}, \patternref{document.body.class}, \patternref{paragraph.body.class}, \patternref{part.body.class}, \patternref{section.body.class}, \patternref{subparagraph.body.class}, \patternref{subsection.body.class}, \patternref{subsubsection.body.class}}
+
+\patterndef{sidebar.body.class}{The content allowable as the main body of a \elementref{sidebar}.
+}{\item[\textit{Content}:] \patternref{Para.model}\item[\textit{Used by}:] \elementref{sidebar}}
+
+
+
+\elementdef{appendix}{An Appendix within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, \patternref{appendix.body.class}\textsuperscript{*})\item[\textit{Used by}:] \patternref{BackMatter.class}}
+
+\patterndef{appendix.body.class}{The content allowable as the main body of a chapter.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{subparagraph} ~\textbar~ \elementref{paragraph} ~\textbar~ \elementref{subsubsection} ~\textbar~ \elementref{subsection} ~\textbar~ \elementref{section} ~\textbar~ \elementref{slide} ~\textbar~ \elementref{sidebar})\item[\textit{Used by}:] \elementref{appendix}}
+
+
+
+\elementdef{bibliography}{A Bibliography within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}, \patternref{Listing.attributes}\attrdef{files}{the list of bib files used to create the bibliography.
+}{\typename{text}}\attrdef{bibstyle}{the bibliographic style to be used to format the bibliography
+(presumably a BibTeX bst file name)
+}{\typename{text}}\attrdef{citestyle}{the citation style to be used when citing items from the bibliography
+}{\typename{text}}\attrdef{sort}{whether the bibliographic items should be sorted or in order of citation.
+}{\typename{boolean}}\item[\textit{Content}:] (\patternref{FrontMatter.class}\textsuperscript{*}, \patternref{SectionalFrontMatter.class}\textsuperscript{*}, \patternref{bibliography.body.class}\textsuperscript{*})\item[\textit{Used by}:] \patternref{BackMatter.class}}
+
+\patterndef{bibliography.body.class}{The content allowable as the main body of a chapter.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{biblist})\item[\textit{Used by}:] \elementref{bibliography}}
+
+
+
+\elementdef{index}{An Index within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}, \patternref{Listing.attributes}\attrdef{role}{The kind of index (obsolete?)
+}{\typename{text}}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, \patternref{index.body.class}\textsuperscript{*})\item[\textit{Used by}:] \patternref{BackMatter.class}}
+
+\patterndef{index.body.class}{The content allowable as the main body of a chapter.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{indexlist})\item[\textit{Used by}:] \elementref{index}}
+
+
+
+\elementdef{indexlist}{A heirarchical index structure typically generated during postprocessing
+from the collection of \elementref{indexmark} in the document
+(or document collection).
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \elementref{indexentry}\textsuperscript{*}\item[\textit{Used by}:] \patternref{index.body.class}, \elementref{indexentry}}
+
+
+
+\elementdef{indexentry}{An entry in an \elementref{indexlist} consisting of a phrase, references to
+points in the document where the phrase was found, and possibly
+a nested \elementref{indexlist} represented index levels below this one.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] (\elementref{indexphrase}, \elementref{indexrefs}\textsuperscript{?}, \elementref{indexlist}\textsuperscript{?})\item[\textit{Used by}:] \elementref{indexlist}}
+
+
+
+\elementdef{indexrefs}{A container for the references (\elementref{ref}) to where an \elementref{indexphrase} was
+encountered in the document. The model is Inline to allow
+arbitrary text, in addition to the expected \elementref{ref}'s.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \elementref{glossaryentry}, \elementref{indexentry}}
+
+
+
+\elementdef{glossary}{An Glossary within a document.
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}, \patternref{Listing.attributes}\attrdef{role}{The kind of glossary
+}{\typename{text}}\item[\textit{Content}:] (\patternref{SectionalFrontMatter.class}\textsuperscript{*}, \patternref{glossary.body.class}\textsuperscript{*})\item[\textit{Used by}:] \patternref{BackMatter.class}}
+
+\patterndef{glossary.body.class}{The content allowable as the main body of a chapter.
+}{\item[\textit{Content}:] (\patternref{Para.model} ~\textbar~ \elementref{glossarylist})\item[\textit{Used by}:] \elementref{glossary}}
+
+
+
+\elementdef{glossarylist}{A glossary list typically generated during postprocessing
+from the collection of \elementref{glossaryphrase}'s in the document
+(or document collection).
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\item[\textit{Content}:] \elementref{glossaryentry}\textsuperscript{*}\item[\textit{Used by}:] \patternref{glossary.body.class}}
+
+
+
+\elementdef{glossaryentry}{An entry in an \elementref{glossarylist} consisting of a phrase,
+(one or more, presumably in increasing detail?), possibly a definition,
+and references to points in the document where the phrase was found.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\attrdef{role}{The kind of glossary
+}{\typename{text}}\attrdef{key}{a flattened form of the phrase for generating an \attr{ID}.
+}{\typename{text}}\item[\textit{Content}:] (\elementref{glossaryphrase}\textsuperscript{*}, \elementref{indexrefs}\textsuperscript{?})\item[\textit{Used by}:] \elementref{glossarylist}}
+
+
+
+\elementdef{title}{The title of a document, section or similar document structure container.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Fontable.attributes}, \patternref{Colorable.attributes}, \patternref{Backgroundable.attributes}\item[\textit{Content}:] (\elementref{tag} ~\textbar~ \typename{text} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{SectionalFrontMatter.class}, \elementref{TOC}, \elementref{proof}, \elementref{theorem}}
+
+
+
+\elementdef{toctitle}{The short form of a title, for use in tables of contents or similar.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] (\elementref{tag} ~\textbar~ \typename{text} ~\textbar~ \patternref{Inline.class} ~\textbar~ \patternref{Misc.class} ~\textbar~ \patternref{Meta.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{SectionalFrontMatter.class}}
+
+
+
+\elementdef{subtitle}{A subtitle, or secondary title.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{FrontMatter.class}, \elementref{slide}}
+
+
+
+\elementdef{creator}{Generalized document creator.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{FrontMatter.attributes}\attrdef{role}{indicates the role of the person in creating the docment.
+Commonly useful values are specified, but is open-ended to support extension.
+}{(\attrval{author} ~\textbar~ \attrval{editor} ~\textbar~ \attrval{translator} ~\textbar~ \attrval{contributor} ~\textbar~ \attrval{translator} ~\textbar~ \typename{text})}\attrdef{before}{specifies opening text to display before this creator in a formatted titlepage.
+This would be typically appear outside the author information, like "and".
+}{\typename{text}}\attrdef{after}{specifies closing text, punctuation or conjunction to display after
+this creator in a formatted titlepage.
+}{\typename{text}}\item[\textit{Content}:] (\patternref{Person.class} ~\textbar~ \patternref{Misc.class})\textsuperscript{*}\item[\textit{Used by}:] \patternref{SectionalFrontMatter.class}}
+
+\patterndef{Person.class}{The content allowed in authors, editors, etc.
+}{\item[\textit{Content}:] (\elementref{personname} ~\textbar~ \elementref{contact})\item[\textit{Used by}:] \elementref{creator}}
+
+
+
+\elementdef{personname}{A person's name.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Refable.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Person.class}}
+
+
+
+\elementdef{contact}{Generalized contact information for a document creator.
+Note that this element can be repeated to give different types 
+of contact information (using \attr{role}) for the same creator.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{FrontMatter.attributes}, \patternref{Refable.attributes}\attrdef{role}{indicates the type of contact information contained.
+Commonly useful values are specified, but is open-ended to support extension.
+}{(\attrval{affiliation} ~\textbar~ \attrval{address} ~\textbar~ \attrval{current\_address} ~\textbar~ \attrval{email} ~\textbar~ \attrval{url} ~\textbar~ \attrval{thanks} ~\textbar~ \attrval{dedicatory} ~\textbar~ \attrval{orcid} ~\textbar~ \typename{text})}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Person.class}}
+
+
+
+\elementdef{date}{Generalized document date.
+Note that this element can be repeated to give the dates
+of different events (using \attr{role}) for the same document.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{FrontMatter.attributes}\attrdef{role}{indicates the relevance of the date to the document.
+Commonly useful values are specified, but is open-ended to support extension.
+}{(\attrval{creation} ~\textbar~ \attrval{conversion} ~\textbar~ \attrval{posted} ~\textbar~ \attrval{received} ~\textbar~ \attrval{revised} ~\textbar~ \attrval{accepted} ~\textbar~ \typename{text})}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{FrontMatter.class}}
+
+
+
+\elementdef{abstract}{A document abstract.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{FrontMatter.attributes}\item[\textit{Content}:] \patternref{Block.model}\item[\textit{Used by}:] \patternref{FrontMatter.class}}
+
+
+
+\elementdef{acknowledgements}{Acknowledgements for the document.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{FrontMatter.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{BackMatter.class}, \patternref{FrontMatter.class}}
+
+
+
+\elementdef{keywords}{Keywords for the document. The content is freeform.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{FrontMatter.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{FrontMatter.class}}
+
+
+
+\elementdef{classification}{A classification of the document.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{FrontMatter.attributes}\attrdef{scheme}{indicates what classification scheme was used.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{FrontMatter.class}}
+
+
+
+\elementdef{titlepage}{block of random stuff marked as a titlepage
+}{\item[\textit{Attributes}:] \patternref{Sectional.attributes}\item[\textit{Content}:] (\patternref{FrontMatter.class} ~\textbar~ \patternref{SectionalFrontMatter.class} ~\textbar~ \patternref{Block.class})\textsuperscript{*}\item[\textit{Used by}:] \elementref{document}}
+
+
+
+\elementdef{TOC}{(Generalized) Table Of Contents, represents table of contents
+as well as list of figures, tables, and other such things.
+This will generally be placed by a \cs{tableofcontents} command
+and filled in by postprocessing.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{FrontMatter.attributes}\attrdef{lists}{indicates the kind of lists; space separated names of lists like "toc","lof", etc.
+}{\typename{text}}\attrdef{select}{indicates what kind of document elements to list, in the form of
+one or more tags such as \texttt{ltx:chapter} separated by \texttt{|}
+(suggestive of an xpath expression).
+}{\typename{text}}\attrdef{scope}{indicates the scope set of elements to include:
+\texttt{current} (default) is all in current document;
+\texttt{global} indicates all in the document set;
+otherwise an xml:id
+}{(\attrval{current} ~\textbar~ \attrval{global} ~\textbar~ \typename{text})}\attrdef{show}{indicates what things to show in each entry
+}{\typename{text}}\attrdef{format}{indicates how to format the listing
+}{(\attrval{normal} ~\textbar~ \attrval{short} ~\textbar~ \attrval{veryshort} ~\textbar~ \typename{text})}\item[\textit{Content}:] (\elementref{title}\textsuperscript{?}, \elementref{toclist}\textsuperscript{?})\item[\textit{Used by}:] \patternref{Para.class}, \elementref{navigation}}
+
+
+
+\elementdef{toclist}{The actual table of contents list, filled in.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \elementref{tocentry}\textsuperscript{*}\item[\textit{Used by}:] \elementref{TOC}, \elementref{tocentry}}
+
+
+
+\elementdef{tocentry}{An entry in a \elementref{toclist}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] (\elementref{ref} ~\textbar~ \elementref{toclist})\textsuperscript{*}\item[\textit{Used by}:] \elementref{toclist}}
+
+
+
+\patterndef{Sectional.attributes}{Attributes shared by all sectional elements
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Labelled.attributes}, \patternref{Backgroundable.attributes}\attrdef{rdf-prefixes}{Stores RDFa prefixes as space separated pairs,
+with the pairs being prefix and url separated by a colon;
+this should only appear at the root element.
+}{\typename{text}}\item[\textit{Used by}:] \elementref{appendix}, \elementref{bibliography}, \elementref{chapter}, \elementref{document}, \elementref{glossary}, \elementref{index}, \elementref{inline-sectional-block}, \elementref{paragraph}, \elementref{part}, \elementref{section}, \elementref{sectional-block}, \elementref{sidebar}, \elementref{slide}, \elementref{slidesequence}, \elementref{subparagraph}, \elementref{subsection}, \elementref{subsubsection}, \elementref{titlepage}}
+
+\patterndef{FrontMatter.attributes}{Attributes for other elements that can be used in frontmatter.
+}{\attrdef{name}{Records the name of the type of object this is to be used when composing the
+presentation.  The value of this attribute is often set by language localization packages.
+}{\typename{text}}\item[\textit{Used by}:] \elementref{TOC}, \elementref{abstract}, \elementref{acknowledgements}, \elementref{classification}, \elementref{contact}, \elementref{creator}, \elementref{date}, \elementref{keywords}}
+
+\patterndef{SectionalFrontMatter.class}{The content allowed for the front matter of each sectional unit,
+and the document.
+}{\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?} ~\textbar~ \elementref{title} ~\textbar~ \elementref{toctitle} ~\textbar~ \elementref{creator})\item[\textit{Used by}:] \elementref{appendix}, \elementref{bibliography}, \elementref{chapter}, \elementref{document}, \elementref{glossary}, \elementref{index}, \elementref{paragraph}, \elementref{part}, \elementref{section}, \elementref{sidebar}, \elementref{slide}, \elementref{subparagraph}, \elementref{subsection}, \elementref{subsubsection}, \elementref{titlepage}}
+
+\patterndef{FrontMatter.class}{The content allowed (in addition to \patternref{SectionalFrontMatter.class})
+for the front matter of a document.
+}{\item[\textit{Content}:] (\elementref{subtitle} ~\textbar~ \elementref{date} ~\textbar~ \elementref{abstract} ~\textbar~ \elementref{acknowledgements} ~\textbar~ \elementref{keywords} ~\textbar~ \elementref{classification})\item[\textit{Used by}:] \elementref{bibliography}, \elementref{document}, \elementref{sidebar}, \elementref{titlepage}}
+
+\patterndef{BackMatter.class}{The content allowed a the end of a document.
+Note that this includes random trailing Block and Para material,
+to support articles with figures and similar data appearing `at end'.
+}{\item[\textit{Content}:] (\elementref{bibliography} ~\textbar~ \elementref{appendix} ~\textbar~ \elementref{index} ~\textbar~ \elementref{glossary} ~\textbar~ \elementref{acknowledgements} ~\textbar~ \patternref{Para.class} ~\textbar~ \patternref{Meta.class})\item[\textit{Used by}:] \elementref{chapter}, \elementref{document}, \elementref{paragraph}, \elementref{part}, \elementref{section}, \elementref{sidebar}, \elementref{slide}, \elementref{subparagraph}, \elementref{subsection}, \elementref{subsubsection}}
+
+\patternadd{Para.class}{}{\item[\textbar=] \elementref{TOC}}
+
+\end{schemamodule}
+\begin{schemamodule}{LaTeXML-bib}
+\elementdef{biblist}{A list of bibliographic \elementref{bibentry} or \elementref{bibitem}.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] (\elementref{bibentry} ~\textbar~ \elementref{bibitem})\textsuperscript{*}\item[\textit{Used by}:] \patternref{bibliography.body.class}}
+
+
+
+\elementdef{bibitem}{A formatted bibliographic item, typically as written explicit
+in a LaTeX article. This has generally lost most of the semantics
+present in the BibTeX data.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\attrdef{key}{The unique key for this object; this key is referenced by the
+\attr{bibrefs} attribute of \elementref{bibref}.
+}{\typename{text}}\item[\textit{Content}:] (\elementref{tags}\textsuperscript{?}, \elementref{bibblock}\textsuperscript{*})\item[\textit{Used by}:] \elementref{biblist}}
+
+
+
+\elementdef{bibblock}{A block of data appearing within a \elementref{bibitem}.
+}{\item[\textit{Content}:] \patternref{Flow.model}\item[\textit{Used by}:] \elementref{bibitem}}
+
+
+
+\elementdef{bibentry}{Semantic representation of a bibliography entry, 
+typically resulting from parsing BibTeX
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{ID.attributes}\attrdef{key}{The unique key for this object; this key is referenced by the
+\attr{bibrefs} attribute of \elementref{bibref}.
+}{\typename{text}}\attrdef{type}{The type of the referenced object. The values are a superset of
+those types recognized by BibTeX, but is also open-ended for extensibility.
+}{\patternref{bibentry.type}}\item[\textit{Content}:] \patternref{Bibentry.class}\textsuperscript{*}\item[\textit{Used by}:] \elementref{biblist}}
+
+\patterndef{bibentry.type}{}{\item[\textit{Content}:] (\attrval{article} ~\textbar~ \attrval{book} ~\textbar~ \attrval{booklet} ~\textbar~ \attrval{conference} ~\textbar~ \attrval{inbook} ~\textbar~ \attrval{incollection} ~\textbar~ \attrval{inproceedings} ~\textbar~ \attrval{manual} ~\textbar~ \attrval{mastersthesis} ~\textbar~ \attrval{misc} ~\textbar~ \attrval{phdthesis} ~\textbar~ \attrval{proceedings} ~\textbar~ \attrval{techreport} ~\textbar~ \attrval{unpublished} ~\textbar~ \attrval{report} ~\textbar~ \attrval{thesis} ~\textbar~ \attrval{website} ~\textbar~ \attrval{software} ~\textbar~ \attrval{periodical} ~\textbar~ \attrval{collection} ~\textbar~ \attrval{collection.article} ~\textbar~ \attrval{proceedings.article} ~\textbar~ \typename{text})\item[\textit{Used by}:] \elementref{bib-related}, \elementref{bibentry}}
+
+
+
+\elementdef{bib-name}{Name of some participant in creating a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{role}{The role that this participant played in creating the entry.
+}{(\attrval{author} ~\textbar~ \attrval{editor} ~\textbar~ \attrval{translator} ~\textbar~ \typename{text})}\item[\textit{Content}:] \patternref{Bibname.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\patterndef{Bibname.model}{The content model of the bibliographic name fields (\elementref{bib-name})
+}{\item[\textit{Content}:] \elementref{surname}, \elementref{givenname}\textsuperscript{?}, \elementref{lineage}\textsuperscript{?}\item[\textit{Expansion}:] (\elementref{surname}, \elementref{givenname}\textsuperscript{?}, \elementref{lineage}\textsuperscript{?})\item[\textit{Used by}:] \elementref{bib-name}}
+
+\elementdef{surname}{Surname of a participant (\elementref{bib-name}).
+}{\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibname.model}}
+
+
+
+\elementdef{givenname}{Given name of a participant (\elementref{bib-name}).
+}{\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibname.model}}
+
+
+
+\elementdef{lineage}{Lineage of a participant (\elementref{bib-name}), eg. Jr. or similar.
+}{\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibname.model}}
+
+
+
+\elementdef{bib-title}{Title of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-subtitle}{Subtitle of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-key}{Unique key of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-type}{Type of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-date}{Date of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{role}{characterizes what happened on the given date
+}{(\attrval{publication} ~\textbar~ \attrval{copyright} ~\textbar~ \typename{text})}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-publisher}{Publisher of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-organization}{Organization responsible for a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-place}{Location of publisher or event
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-related}{A Related bibliographic object, such as the book or journal
+that the current item is related to.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{type}{The type of this related entry.
+}{\patternref{bibentry.type}}\attrdef{role}{How this object relates to the containing object.
+Particularly important is \attrval{host} which indicates that
+the outer object is a part of this object.
+}{(\attrval{host} ~\textbar~ \attrval{event} ~\textbar~ \attrval{original} ~\textbar~ \typename{text})}\attrdef{bibrefs}{If the bibrefs attribute is given, it is the key of another object in the bibliography,
+and this element should be empty; otherwise the object should be described by
+the content of the element.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Bibentry.class}\textsuperscript{*}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-part}{Describes how the current object is related to a related (\elementref{bib-related})
+object, in particular page, part, volume numbers and similar.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{role}{indicates how the value partitions the containing object.
+}{(\attrval{pages} ~\textbar~ \attrval{part} ~\textbar~ \attrval{volume} ~\textbar~ \attrval{issue} ~\textbar~ \attrval{number} ~\textbar~ \attrval{chapter} ~\textbar~ \attrval{section} ~\textbar~ \attrval{paragraph} ~\textbar~ \typename{text})}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-edition}{Edition of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-status}{Status of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-identifier}{Some form of document identfier. The content is descriptive.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Refable.attributes}\attrdef{scheme}{indicates what sort of identifier it is; it is open-ended for extensibility.
+}{(\attrval{doi} ~\textbar~ \attrval{issn} ~\textbar~ \attrval{isbn} ~\textbar~ \attrval{mr} ~\textbar~ \typename{text})}\attrdef{id}{the identifier.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-review}{Review of a bibliographic entry. The content is descriptive.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Refable.attributes}\attrdef{scheme}{indicates what sort of identifier it is; it is open-ended for extensibility.
+}{(\attrval{doi} ~\textbar~ \attrval{issn} ~\textbar~ \attrval{isbn} ~\textbar~ \attrval{mr} ~\textbar~ \typename{text})}\attrdef{id}{the identifier.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-links}{Links to other things like preprints, source code, etc.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-language}{Language of a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-url}{A URL for a bibliographic entry. The content is descriptive
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}, \patternref{Refable.attributes}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-extract}{An extract from the referenced object.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{role}{Classify what kind of extract
+}{(\attrval{keywords} ~\textbar~ \attrval{abstract} ~\textbar~ \attrval{contents} ~\textbar~ \typename{text})}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-note}{Notes about a bibliographic entry.
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{role}{Classify the kind of note
+}{(\attrval{annotation} ~\textbar~ \attrval{publication} ~\textbar~ \typename{text})}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\elementdef{bib-data}{Random data, not necessarily even text.
+(future questions: should model be text or ANY? maybe should have encoding attribute?).
+}{\item[\textit{Attributes}:] \patternref{Common.attributes}\attrdef{role}{Classify the relationship of the data to the entry.
+}{\typename{text}}\attrdef{type}{Classify the type of the data.
+}{\typename{text}}\item[\textit{Content}:] \patternref{Inline.model}\item[\textit{Used by}:] \patternref{Bibentry.class}}
+
+
+
+\patterndef{Bibentry.class}{}{\item[\textit{Content}:] (\elementref{bib-name} ~\textbar~ \elementref{bib-title} ~\textbar~ \elementref{bib-subtitle} ~\textbar~ \elementref{bib-key} ~\textbar~ \elementref{bib-type} ~\textbar~ \elementref{bib-date} ~\textbar~ \elementref{bib-publisher} ~\textbar~ \elementref{bib-organization} ~\textbar~ \elementref{bib-place} ~\textbar~ \elementref{bib-part} ~\textbar~ \elementref{bib-related} ~\textbar~ \elementref{bib-edition} ~\textbar~ \elementref{bib-status} ~\textbar~ \elementref{bib-language} ~\textbar~ \elementref{bib-url} ~\textbar~ \elementref{bib-note} ~\textbar~ \elementref{bib-extract} ~\textbar~ \elementref{bib-identifier} ~\textbar~ \elementref{bib-review} ~\textbar~ \elementref{bib-links} ~\textbar~ \elementref{bib-data})\item[\textit{Used by}:] \elementref{bib-related}, \elementref{bibentry}}
+
+\end{schemamodule}

@@ -1,0 +1,177 @@
+\documentclass{book}
+\def\MyVersion{0.2.0}
+\tolerance 500%
+\renewcommand{\topfraction}{.8}
+\renewcommand{\floatpagefraction}{.8}
+\emergencystretch 1em\relax
+\hfuzz .2pt\relax
+
+%\usetikzlibrary{patterns}
+%\tcbuselibrary{skins,breakable}
+%\tcbuselibrary{breakable}
+\usepackage{graphicx}
+\usepackage{latexml}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage[makeroom]{cancel}
+%\usepackage{pstricks}
+%\usepackage[xcolor,framemethod=tikz]{mdframed}
+
+\newcommand{\warningbox}[1]
+{ 
+ \fcolorbox{blue!70!white}{red!10!white}{\parbox{\textwidth}{
+   \color{black}
+   \textbf{Warning: }{#1}
+}
+}}
+
+\newcommand{\quotationbox}[1]
+{ 
+ \fcolorbox{blue!70!white}{orange!10!white}{\parbox{\textwidth}{
+   \color{black}
+   \textbf{Quotation: }{#1}
+}
+}}
+
+\newcommand{\figurebox}[1]
+{ 
+ \fcolorbox{blue!70!white}{yellow!10!white}{\parbox{\textwidth}{
+}
+}}
+
+\newcommand{\supplementbox}[1]
+{ 
+ \fcolorbox{blue!70!white}{green!10!white}{\parbox{\textwidth}{
+   \color{black}
+   \textbf{Supplement: }{#1}
+}
+}}
+
+\newcommand{\indexit}[1]{\index{#1}{%\sffamily
+%\color{blue}
+#1}}
+\setcounter{secnumdepth}{2}
+%\newtcolorbox[auto counter,number within=chapter]{numericbox}[2][]{%
+%colbacktitle=yellow!30!white,coltitle=black,fonttitle=\bfseries,
+%title=Numeric example.~\thetcbcounter: #1}
+
+%\newtcolorbox[%auto counter,number within=chapter
+%]{fallacybox}{%
+%colbacktitle=red!10!white,coltitle=black,fonttitle=\bfseries,
+%title=Fallacy}
+
+\usepackage{makeidx}
+%\makeindex[columns=3, title=Alphabetical Index, intoc]
+\makeindex
+%\makeindex
+\usepackage{glossaries}
+\makeglossaries
+\usepackage{hyperref}
+\iflatexml
+\else
+\usepackage{minitoc}
+\fi
+
+\input{src/TitlePage}
+%============================================================
+%============================================================
+\begin{document}\label{top}
+\input{src/Glossary}
+\iflatexml
+\else
+\dominitoc%Initialize
+\fi
+
+\newenvironment{advanced}
+    {\begin{center}
+    \begin{tabular}{p{0.9\textwidth}}
+    \end{tabular} 
+    \end{center}
+    }
+
+\frontmatter
+    \input{src/Heading}
+\mainmatter
+	\input{src/Foreword}
+	\input{src/StateOfTheArt}
+%%
+	\input{src/Single}
+	\input{src/Physics}
+	\input{src/Physiology}
+	\input{src/Computing}
+	\input{src/Information}	
+	\input{src/Multiple}	
+	\input{src/Intelligence}
+	\input{src/Simulation}	
+%
+
+\pagebreak
+\backmatter
+\vfill
+\pagebreak
+\iflatexml
+\chapter*{ListOfTables\label{Ch:ListOfTables}}
+\else
+\fi
+\addcontentsline{toc}{chapter}{List of tables} 
+
+\listoftables
+\vfill
+
+\pagebreak
+\iflatexml
+\chapter*{ListOfFigures\label{Ch:ListOfFigures}}
+\else
+\fi
+\addcontentsline{toc}{chapter}{List of figures} 
+\listoffigures
+\vfill
+\pagebreak
+
+	\input{src/VersionHistory}	
+\vfill
+
+\pagebreak
+
+\iflatexml
+\chapter*{Index\label{Ch:Index}}\label{index}\label{Index}
+
+\else
+\fi
+\addcontentsline{toc}{chapter}{Index} 
+\printindex
+
+\vfill
+
+
+\pagebreak
+\iflatexml
+\chapter*{Glossary\label{Ch:Glossary}}
+\else
+\fi
+\addcontentsline{toc}{chapter}{Glossary} 
+%\printglossary[type=\acronymtype]
+ \printglossaries
+ 
+ \vfill
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Bibliography} 
+%\iflatexml
+%   \input{manual.bbl}
+%\else
+%\chapter*{Bibliography\label{ch:bibliography}}
+%\bibliographystyle{sn-chicago}
+%\bibliographystyle{spphys}
+\bibliographystyle{plain}
+
+%\label{Bibliography}
+
+ \bibliography{
+	../../../../LaTeX/CommonBibliography%
+	,../../../../LaTeX/CommonPrivateBibliography%
+	,../../../../LaTeX/CommonNeuronalBibliography%
+	,../../../../LaTeX/CommonAIBibliography%
+}
+%\fi
+\end{document}

@@ -1,0 +1,668 @@
+% This is the State-Of-The_Art for the 'Abstract Dynamic Neuron' book
+
+
+\chapter*{State-of-the-art\label{ch:StateOfTheArt}}
+\addcontentsline{toc}{chapter}{State of the art} 
+
+\quotationbox
+{
+"\textit{We stand on the verge of a great journey into the unknown—the interior terrain of thinking, feeling, perceiving, learning, deciding, and acting to achieve our goals—that is the special province of the human brain
+}"
+%\tcblower
+ — from the preamble to “\href{https://www.sciencedirect.com/science/article/pii/S089662732400655X}{BRAIN 2025: A Scientific Vision}”~\cite{BrainInitiative10:2024} @2015
+\index{Brain Initiative}
+}
+
+
+\paragraph*{Many-disciplinarity}
+Brain research is one of the fields where "\textit{nature is not interested in our separations, and many of the interesting phenomena bridge the gaps between fields.}" ~\cite{FeynmanThinking:1980}
+\index{Feynman, Richard P}
+We need a consistent
+model that comprises all relevant (and only those!) interactions and components and aligns with the
+concepts of the related scientific fields. % Neuroscience is not an exception.
+%https://blog.hptbydts.com/richard-feynmans-principles-of-scientific-thinking
+Different science disciplines consider different details relevant; see Fig.~\ref{fig:Blind_monks}.
+Despite the efforts of the project leader, no picture can be derived about the \textit{elephant}, although \textit{the details of the elephant} are accurate.
+This problem is mentioned in the \href{https://mgv.pku.edu.cn/english/research/rp/369700.htm}
+{China Brain Project}, when evaluating the similar past and present programs 
+over the world that "a systematic understanding of the brain is still lacking, possibly due to the fragmentation of research strategies".
+
+
+\begin{figure}
+	\includegraphics[width=0.65\textwidth]{fig/Blind_monks_examining_an_elephant.jpg}
+	
+	\caption{The difficulty of many-disciplinary research on the example of describing the elephant. (a 2,500-year-old Chinese silk painting)\label{fig:Blind_monks} }
+	
+\end{figure}
+
+\paragraph*{Modeling concepts}
+To model something means to reduce a system with unknown behavior
+to another system with already well-known behavior. The two systems
+will never be identical, only similar in certain aspects; furthermore,
+their similarity is subject to the environment, so the models have
+their range of applicability.
+To model a living structure with a non-living one, ab ovo, has its dangers.
+One possible approach is to describe a system's response
+to the environment, typically using parametrized mathematical formulas,
+without the aim of predicting a non-observed response. 
+It is usually a good starting point for understanding the system's operation,
+but without a deeper understanding of the details, it remains 
+a 'looks like' description.
+Science typically reduces the observations to an abstract level,
+such as how an ideal charge or mass behaves (meaning that it
+provides mathematically calculable predictions).
+The science of living matter attempted to follow for its subject
+the principles developed for non-living matter. However, because of the
+"different construction", it experienced discrepancies.
+Unfortunately, instead of developing the appropriate
+test methods, which could derive the appropriate laws
+describing living matter, biology stopped at the point that
+"laws of science cannot describe life". 
+Since, to some measure, the known laws can describe the phenomena,
+and they describe known (well-tested) scientific mechanisms,
+life science has created the missing mechanisms based on
+mathematical formulas, without abstracting them as science did;
+this way, it has lost the predictive power of the laws
+describing new (hypothesized) mechanisms
+and the expectation that the formulas must be based on some scientific mechanism.
+
+Neuronal modeling is a good (or bad) example of that modeling style.
+Hodgkin and Huxley~\cite{HodgkinHuxley:1952} noted that their high-precision, meticulous observations could be described mathematically (the title of their paper was "A quantitative description").
+Unfortunately, with the best intentions, they
+attempted to put a physical picture behind their formulas, although
+they warned that their "equations are not anything more than an empirical description",
+"the interpretation given is unlikely to provide a correct picture of the
+membrane" and "the success of the equations is no evidence in
+favour of the mechanism \dots we tentatively had in
+mind when formulating them".
+Despite their prophetic thoughts, the hypothesized incorrect mechanism defined the development path of neuroscience for decades, and led to
+the present crisis and the need for a "new understanding".
+We discuss their "physical model" (created by their successors) and compare it to our genuine physical model.
+
+We agree with the unfortunate distinction that
+“a biological model is
+often understood to be simply a diagram depicting the interrelationships of various (sub)systems in a process,
+whereas a physical model is expected to be a theoretical
+description of a process involving a number of equations of
+motion stemming from the first principles (if possible),
+testable against a range of tunable experimental conditions.
+It must lead to a quantitative prediction and not simply
+reproduce already known results”~\cite{MolecularBiophysics:2003}
+cited and expressed in~\cite{ThermodynamicAPDrukarch:2022}.
+"Riddled with some major misunderstandings
+and suffering from a lack of familiarity with the physics
+involved, this debate has been ongoing for some while
+without being picked up in mainstream neuroscientiﬁc
+literature."
+
+
+
+\paragraph*{Omitting time}
+All present projects work only in three dimensions, forgetting that,
+unlike the instant interactions in non-living systems, the interaction speed
+in living tissues is a million times slower, so time plays a fundamental role in neural operation.
+The time dimension of dynamic operation should be included in the brain maps, perhaps structurally, to produce a functionally sound digital twin of the brain.
+Neither a fundamentally sequential computer can simulate the fundamentally parallel operation of the brain, nor can the unbelievably dense wiring be technically realized, not to mention the numerous differences in operating characteristics.  
+
+
+
+Due to inadequate interpretation of the concepts of operation (both in biological and technical calculations), the basis of efforts is the hope that "what if it works".
+In order to obtain further funding, various projects consistently and purposefully replace the successful digital implementation of the connectivity
+that can be created (based on different, presumably correct brain maps) due to the failure to implement their communication.
+The digital implementation adds a quasi-random technical time contribution to the operating times, which is not noticeable in digital systems created without real timing conditions and implemented with random timings.
+Moreover, in systems with a large number of neurons, communication collapses, or the connectivity must be significantly reduced.
+In such demonstration systems, a small number of "neurons" compared to the brain actually produce an operation that remotely resembles the operation of a biological part of the brain, but does not show proper functionality.
+The situation is aggravated by the fact that researchers try to force a similarity to Artificial Intelligence onto the brain.
+ This is justified only by the fact that, in addition to the current technical implementation, developers no longer understand the operation of \gls{AI}, and neuroscientists do not understand the exact principles of brain function.
+
+
+\paragraph*{Physics}
+\quotationbox{
+"The construction [of living matter] is different from anything we have yet tested in the physical laboratory."
+"It is working in a manner that cannot be reduced to the \textbf{\textit{ordinary}} laws of physics"~\cite{Schrodinger:1992}.
+}
+\index{Schrödinger, Erwin}
+We attempted to test and describe living matter, including the brain, using methods based on the ordinary laws of science that we had previously applied to non-living matter. Also, we must understand that the fundamental differences need an accurate understanding of the
+\hyperlink{BiologicalCurrent}{biological currents} and their \hyperlink{voltage-clamping}{measuring processes}.
+Those \textbf{\textit{static}} methods did not consider its "special construction"; furthermore, they do not need (and, as a consequence, do not have) \textbf{\textit{dynamic}} "\hyperlink{PhysicsLawsOfMotion}{laws of motion}" in the sense that science does. 
+
+
+Their slowness and complexity require explicit consideration of the \textit{time-aware handling} of processes, including those in biological and technical computing.
+Essentially, we make the first steps in section~\ref{sec:Physics-Thermodynamics} toward answering E.~Schrödinger's question: "How can \textit{the events in space and time} which take place within \textit{the spatial boundary }of a living organism be accounted for by physics and chemistry?"~\cite{Schrodinger:1992} Notice the need \textit{of using events and describing the spatiotemporal behavior (in other words: implementing them by slow currents in a finite volume)} implied in the question; three items which
+our text targets.
+\textit{No presently available theoretical description and simulator can perform that task}.
+ We show that when considering the correct physics, \textit{the finite size of neuronal membranes}, \textit{the finite speed of
+ion currents}, and the correct  description of \textit{discrete to continuous transition}, we can solve the mystery that the combination of non-living materials shows
+\hyperlink{SignsOfLife}
+{signs of life} at an appropriate combination of their parameter values. We derive the required \hyperlink{NonOrdinaryLaws}{'non-ordinary'} (non-disciplinary) laws for describing life by physics.
+We emphasize again that the \href{https://en.wikipedia.org/wiki/First_principle}{first principles} are the same, but the
+different "construction" of the living matter needs different --  'non-ordinary' -- approximations
+and laws.
+
+
+\paragraph*{Electricity}
+Electronics and brain research were born at the same time, 
+developed together and fertilized each other. Sometimes,
+the too-tight parallels led to discrepancies, from assuming
+the same charge carrier and transfer mechanism for conductors and biological structures to use 
+equivalent circuits, or misunderstanding the essence of spiking for
+electronically implemented circuits. Those wrong parallels hide the need for
+introducing thermoelectricity with its \hyperlink{MixingSpeeds}{mixing speeds} instead of separated electrical and diffusional processes,
+that life is governed by \hyperlink{slow_current}{finite-speed ("slow") currents} and that \hyperlink{finite_size}{finite-size (distributed) biological objects}, cannot be
+directly and accurately mapped to point-like (ideal) electrical components.
+We need to connect the atomic electricity to the macroscopic one; furthermore,
+in biology, concentration changes evoke potential changes and create large potential gradients (and vice versa).
+Those internal gradients start dynamical electrical \textit{ion} currents in biological tissues. 
+
+\paragraph*{Thermodynamics}
+One of the most exciting aspects of our discussion is providing a
+way for thermodynamics to be used to describe neuronal operation.
+As we discuss, our physics-based model, which considers
+ions' charge and mass as inseparable, naturally answers the long-standing
+question how thermodynamics can describe life. We show how the dual nature of ions connects electrical and thermodynamic features of neurons.
+A Carnot-type process can be applied to the neuronal process, enabling energy consumption and energetic efficiency to be quantified.
+
+\paragraph*{Physiology}
+
+Physiology, which serves as the "implementation base" for neural computing, needs a revolution by introducing a new paradigm.
+Our point of view is new and unusual; it conflicts with the commonly accepted opinions of the respective scientific disciplines on many points.
+The facts and observations are the same, but their interpretation may differ due to the underlying 'non-ordinary' laws of physics.
+Biology stayed at a static description level, typically appropriate for describing static states.
+\textit{Neural processes} happen at well-observable speeds, which \textit{need a dynamic description instead of an ad-hoc description of state jumps}.
+\textit{We introduce for life sciences their dynamic \hyperlink{PhysicsLawsOfMotion}{laws of motion} (in the sense of Newton, Hamilton, and Schrödinger), (based on the
+\hyperlink{NernstPlanckTimeDerivatives}
+{time derivatives} of the static entities)}. Furthermore, 
+we explain why and how a fraction of charges, that constitute
+living matter, change obey their laws of motion,
+creating \textit{the needed 
+\hyperlink{DynamicLayer}
+{dynamic component}, that can implement
+the needed dynamic processes}.
+Considering them solves the mystery of 
+%%\hyperlink{CellToLife}
+{how life science builds on top of science}.
+We defy that
+"the emergence of life cannot be predicted by the laws of physics"~\cite{ConservationOfInformation:2021}, furthermore, that "the existence of life is against the laws of thermodynamics".
+\index{emergence of life}
+%Describing physiological processes and understanding neural information processing needs a revolution.
+
+\paragraph*{Neuroscience}
+We understood early that "\textit{the fundamental task of the nervous system is to \textbf{communicate and process information}}".
+The goal was set decades ago:
+"\textit{The ultimate aim of computational neuroscience is
+to explain \textbf{how electrical and chemical signals are used} in the brain
+to \textbf{represent and process information}}"~\cite{SejnowskiComputationalNeuroscience:1988}.
+\index{Sejnowski, T J}
+Today, computational neuroscience turned into introducing mathematical models, slightly or not related to reality, implementing them using a "technomorph biology"~\cite{VeghTechnomorphBiology:2025}, 
+while it keeps wondering why nature behaves differently.
+The worst inheritances of neuroscience are the static view from anatomy and classical physiology;
+omitting to revisit the primary hypotheses in light of new research results periodically;
+applying the abstractions of classical science
+(single speed, isolated, pair-wise, instant interactions in a homogeneous and isotropic infinite medium)
+to biological materials without revisiting their validity.
+Moreover, the tradition of applying ad hoc mathematical formulas
+\index{ad hoc hypothesis}
+without correct physical processes in the background (actually creating an alternative nature)
+instead of understanding the basics of the underlying processes.
+To start with, we introduce \textit{science-based abstract dynamics}
+(by introducing the needed 
+\hyperlink{PhysicsLawsOfMotion}
+{laws of motion}),
+as opposed to the \textit{empirical cell-biology's static} description of neuronal operation.
+We agree that "the basic structural units of the nervous system are individual neurons"
+\cite{JohnstonWuNeurophysiology:1995}, but
+we are also aware that neurons "are linked together
+by dynamically changing constellations of synaptic weights" and
+"cell assemblies are best understood in light of their output product"~\cite{BuzsakiCellAssemblies:2010,VeghNeuralShannon:2022},
+so we also 
+\hyperlink{Multiple_neurons}
+{model multiple neurons}.
+
+
+\paragraph*{Mathematics}
+We can only admire von Neumann's genial prediction that "the language of the brain, not the language of mathematics"~\cite{vonNeumannBrain}, given that most of the cited experimental evidence was unavailable at his age.
+Similarly, one can also agree with von Neumann~\cite{EDVACreport1945} and Sejnowski~\cite{SejnowskiNeuralComputation:1999} that "whatever the system [of the brain] is, it cannot fail to differ from what we consciously and explicitly consider mathematics"; adding that \textit{maybe the appropriate mathematical methods are not yet invented}. 
+\index{mathematics!brain}
+Our procedure still meets
+the requirement given by Feynman:~\cite{FeynmanComputation:2018}
+"an \emph{effective procedure} is a set of rules
+telling you, moment by moment, what to do to achieve a particular
+end; it is an algorithm."  Furthermore, it considers
+\index{algorithm}
+that ``timing of spike matters''  giving way to interpreting Hebb's learning
+rule~\cite{HebbBook:1949,HebbianLearningRule:2008}, which usually remains outside of the scope of mathematics. We formulate problems, provide their numerical solutions, and open the way for mathematics to provide analytical solutions.
+\index{Hebb, D.O.}
+Not surprisingly, the need for applying new approximations for the non-ordinary laws~\cite{VeghNon-ordinaryLaws:2025} for describing living matter needs a
+slightly different (in this sense, non-ordinary) mathematical formulation describing them. Furthermore, new algorithms~\cite{VeghNeuronAlgorithms:2025} are to be developed 
+for simulation.
+
+
+
+\paragraph*{Computing}"The brain computes!
+This is accepted as a truism by the majority of neuroscientists."~\cite{ KochBiophysics:1999} However, even after many years and grandiose projects, 
+"Yet for the most part, we still do not understand the brain’s underlying computational logic"~\cite{BrainInitiative10:2024}.
+To understand how "computation is done", we 
+\hyperlink{GeneralizedComputing}
+{generalized computing}~\cite{VeghRevisingClassicComputing:2021},
+in close cooperation with 
+%\hyperlink{COMPUTING_COMMUNICATION}
+{communication}
+\cite{RoleOfInformationTransferSpeed:2022}, for biology.
+We understand that "a piecemeal approach will not yield the major jumps in understanding for which the BRAIN Initiative was designed"~\cite{NIHBrainStrategy:2020}.
+We synthesize the available knowledge with a fresh eye and intend to leap forward in understanding neural computing,
+scrutinizing our knowledge
+pieces one by one for credibility, relation to other pieces, other disciplines,
+finding contradictions and their resolutions,  \textit{defying fallacies}.
+We show how an elementary neuronal operation carries out computing, why biological 
+computing is by orders of magnitude more effective than the technical one,
+how the biological implementation enables learning,
+how and why do the features of the two computing systems differ.
+
+
+\paragraph*{Information}Although we experience that the brain processes an enormous amount of information; furthermore, we know impressive details about how the brain uses it
+to react appropriately to stimuli from its environment,
+we still do not know the details and the underlying general principles
+how neuronal networks represent, process, and store the information they use.
+What makes the case worse is that, due to the lack of knowledge of the abstract way of neuronal operation,
+the so-called "neural information science" relies on a flawed mathematical foundation.
+We understand how neurons 
+%\hyperlink{InformationForBiology}
+{represent and process information}~\cite{VeghNeuralShannon:2022}.
+We introduce the appropriate interpretation of
+%\hyperlink{InformationForBiology}
+{information for biology}.
+
+
+\paragraph*{Intelligence}
+Scrutinizing time awareness in biological computing, learning, and intelligence reveals~\cite {WhyMachineLearningDifferent:2021} that they have practically nothing in common with the technical ones. 
+As a consequence, "biological brains are more efficient learners than modern\gls{ML}
+algorithms due to extra ‘prior structure’"~\cite{FittingElephants:2021}.
+ We must not forget "There is no reason whatever for believing that our brain is the supreme \textit{ne plus ultra} of an organ of thought in which the world is reflected."~\cite{Schrodinger:1992}
+ Furthermore, "it is also possible that non-biological hardware and computational paradigms may permit yet other varieties of machine intelligence we have not yet conceived"~\cite{FittingElephants:2021,FeynmanComputation:2018}. We start to conceive them by analyzing the fundamental
+ processes which can be "directly associated with consciousness"~\cite{Schrodinger:1992}.
+
+\section*{How do we proceed\label{sec:State-HowWeProceed}}
+
+ All that we derive here
+needs \hyperlink{zigzagdiscussion}{zigzag reading}. 
+\index{von Neumann!'zigzag' way}
+As emphasized many times, we confine our discussion to some abstract 
+disciplinary level, with pointers to special topics.
+We interpret known physiological evidence on top of the correct 'non-ordinary' laws of physics and derive the needed mathematical handling
+separately but in parallel with that physics.
+\index{non-ordinary laws}
+The physiological conclusions should be understood even if one does not
+understand the underlying physical and mathematical details.
+For this reason, we repeat the explanations in greater detail in different chapters. 
+If you understand \textit{why} the non-ordinary physical laws for 
+living matter are more or less different from the ordinary ones
+for non-living matter, you may leave the details for your expert colleagues (physicists and mathematicians).
+Mathematical handling also involves the fundamental principles
+of using the %\hyperlink{Abstractions}
+{abstractions and approximations} of constructing
+laws for physics reqires a thorough knowledge of both fields.
+Anyhow, you will need to be aware that college-level physics
+is usually not sufficient to understand the physics is usually not sufficient to understand the depth of the material,
+and you will need to re-read the concepts; the more you know it (and especially
+the more false biophysics you learned), the more carefully. A half-understanding
+of the physical base hinders your learning and the development of brain science.
+
+
+Nature is overly complex: science fields must use
+different \hyperlink{Abstractions}{approximations and abstractions}.
+When setting up a holistic model of a neuron, we attempt to \textit{see the forest for the trees}.
+We must pass
+\href{https://en.wikipedia.org/wiki/Charybdis}{between 'Scylla' and 'Charybdis'}:
+being still
+sufficiently accurate and detailed in describing phenomena while keeping the mathematical complexity
+(and computational need) still manageable.
+Without understanding that living matter needs different approaches and testing methods from science, really, "no single researcher or discovery 
+[and we add: even no 'vibrant ecosystem for rigorous and ethical research with human research participants as partners' or 'a community effort']
+will solve the brain’s mysteries"~\cite{BrainInitiative10:2024}.
+We must express the same fundamental principles in the form of laws that differ from those valid for classical physics for non-living material, and validate them. To do so, we must revisit whether we made the appropriate simplifications and approximations, and whether we correctly mapped those phenomena to the corresponding mathematical descriptions. We must dispel some important misconceptions, present the correct conceptions, and explain why the wrong ones misguide research.
+
+
+
+We aim to proceed along the lines (but fixing its conceptual mistakes, mainly the rigid disciplinarity) that was formulated @2012 as “The \gls{HBP}\index{Human Brain Project} should lay the technical foundation for a new model of \gls{ICT}\index{ICT}-based brain research, driving integration between data and knowledge from different disciplines, and to achieve a new understanding of the brain…and new brain-like computing technologies.” \cite{HBP_ScientificAdvances:2023}. Moreover, in the \gls{BI}\index{Brain Initiative}, ”There is a clear need for a tighter and more carefully managed integration and realignment of the work” \cite{BrainInitiative10:2024}. However, ”\gls{HBP} is not developing with the expected level of integration and the project controls in place are not adequate to achieve this aim.” \cite{HBP_ScientificAdvances:2023}. The ”great journey into the unknown” \cite{BrainInitiative10:2024} must begin at a much lower level: revisiting the fundamental phenomena, disciplines, laws, interactions, abstractions, omissions, and testing methods of science.
+
+
+You may have arrived with different backgrounds and goals. Consequently, you may have different spots of interest and paths through this material.
+The site is about neuron-based computing, which, for today, may mean
+very different topics. Of course, one must first understand the
+physical operations.  The primary goal is to deal with biologically
+implemented neurons' operation (they are created 'as is'; maybe not entirely understood,
+but attempting to discover it) and also artificially manufactured neurons
+which attempt to imitate the biological ones, grasping one or more
+of their features; furthermore, their networks, operations, features,
+and fallacies. A further goal is to understand the features of their
+larger assemblies and how they implement advanced computations.
+
+
+
+
+\section*{The old understanding\label{State-OldUnderstanding}}
+
+Recently, experimental and theoretical neurophysiology have diverged; this is the fundamental reason the brain’s elementary operations are not understood. Philosophically, the 'old understanding' describes observations in terms of mathematical formulas and attempts to provide a physical background for them. If it fails, it uses hypothesised lipid or other biophysical effects or supposed other mechanisms, including even
+quantum mechanical ones. Anything (even \textit{potential} quantum effects in the brain) but understanding concepts of science. No matter that those mechanisms contradict
+conservation laws and first principles, since 'the \xcancel{ordinary}
+laws cannot describe living matter'.
+
+Experimental research uncovers new facts and additional details. At the same time, instead of realizing and admitting that some initial hypotheses were incorrect,
+theory creates more \indexit{ad hoc hypothesis} and generates new (experimentally untested) theories. Given that biology claims that laws of nature are not valid for living matter, those newly created (and self-contradicting) theories have only a slight relation to nature. Bad examples include that
+\begin{itemize}
+\item experimentalists measure the ion current’s speed in the range of m/s, but theory uses equations that assume a million times higher speed
+\item experimental research has shown that the \gls{AIS} concentrates the majority of ion channels; however, theory suggests that all ion channels are distributed throughout the membrane
+\item the current producing the \gls{AP} travels through \gls{AIS} (that is, the resistor represented by the \gls{AIS} is connected in series to the neuronal condenser); theory insists that the resistor represented by the \gls{AIS} is connected in parallel to the neuronal condenser
+\item the \indexit{parallel $RC$ circuit} cannot produce the experimentally observed neuronal behavior,
+another ad hoc assumption was introduced: a $K^+$ current flows against the $Na^+$ current in the opposite direction,
+\index{ad hoc hypothesis}
+ with a precisely coordinated (although unexplained) temporal behavior of ion channels, despite experimental evidence
+\item the ions have ‘\indexit{mobility}’, but do not need a \indexit{driving force}, and the electric field does not influence their movement
+\item a ‘\indexit{leakage current}’ must flow, even in the resting state, despite the \indexit{metabolic efficiency of biology}; again, despite experimental evidence
+\item the leakage current consists of '\indexit{leakage ion}s', which move independently of the strong potential across the membrane
+\item the current has the magic feature that it can both emit and absorb heat; this is the only discipline where a dissipative process is reversible.\index{heat absorption} \end{itemize}
+Anything is possible, given that the laws of nature cannot describe life (or, maybe, life scientists do not know those laws).
+
+The miserable fact is that several aspects of the "old understanding" are wrong. Among others
+\begin{itemize}
+ \item The charge carriers are ions (with a mass nearly 100,000 times bigger and a propagation speed a million times slower than that of electrons).
+ The Coulomb forces between ions are neglected,
+ \index{Coulomb interaction}
+ which excludes understanding that the current comprises ions and that
+the current transmission mechanism is drastically different.
+ 
+ \item 
+The biological matter's current conduction mechanism differs from the one in metals (leading to assuming the conduction speed of free electrons in ionic solutions for ions; the laws of electricity created for light and fast electrons are not valid in the same form for heavy and slow ions a wrong interpretation of conductance; wrong discussion of the electric operation of cells based on false analogies with classic electric circuits)
+\index{ions vs electrons}
+
+\item In the slow ion currents, the electric repulsion, along with the biological 'construction' (constraints, and components with limited capacity), leads to 'skin' effects that fundamentally alter the physical behavior.
+The ions create a thin ($\textless 1~nm$ thick) ion-rich layer \index{electrolyte layer} \index{dynamic layer} in the electrolyte near the membrane.
+These skins are responsible for conducting phenomena rather than protein-based mechanical changes.
+\index{protein!mechanical activity}
+Classical theory handles the membrane-separated segments (bulk electrolyte) as homogeneous
+(misses the layer where the dynamic processes of operating the neuron happen)
+
+
+
+\item Ions have charge and mass; changing one of them changes the other
+
+ \item The repelling of the slow charged particles naturally causes mechanical and other changes; the signals propagate in the absence of external electrical voltage (concentration gradient and mechanical pressure)
+ 
+ \item The slow ion currents and the finite sizes are responsible for the timing relations of the cells
+ \item neurons' potential changes are the result of electrochemical (electrodiffusional)  processes instead of net electrical ones
+ \end{itemize}
+
+
+
+
+Physiology introduced the extremely harmful concept of
+\href{https://www.sas.upenn.edu/LabManuals/BBB251/NIA/NEUROLAB/APPENDIX/EQUAT.HH/equivcrt.htm}{\indexit{equivalent electrical circuit}}, see Fig.~\ref{fig:HH_EquivalentCircuit}
+that excludes understanding that
+ \begin{itemize}
+ 
+ \item The ions in electrolites move under the simultanous effect of \indexit{dual electrical/thermodynamic forces}. Bioelectrical (thermodynamic) processes generate control voltages in biology, and they change continuously,
+i.e., it obscures the need to consider the cooperation and interference between electrical and thermodynamic disciplines; furthermore, it excludes understanding the associated mechanical, optical, and other changes.
+
+ \item The voltage is location- and time-dependent during AP creation;
+ 
+ \item The \indexit{clamping method}s introduce a feedback that contributes an electron current (converted to ion current) to the native ion current; the assumed ‘\indexit{conduction change}’ mechanisms contradict the \indexit{first principles} of charge and mass conservation.
+
+ \item The communication network has a heavily time-dependent operation 
+ \item The neuronal signal processing and computation work with temporal arguments and results
+ \item In the neuronal oscillator, a wrong oscillator type is in use; the 
+ vital component
+ \gls{AIS}, discovered a half century ago and understood two decades ago,
+  is not yet integrated into the theory of neuronal operation (leading to the ad-hoc introduction of a non-existent rectifying current)
+  \item A potential controlled mechanism, instead of a fake protein mechanism,
+  \index{protein!mechanism}
+  forwards the charge carriers; disabled understanding \textit{why} the neuron remains stable and \textit{how} its power supply works
+ \end{itemize}
+ 
+Biology has a statical view. It neglects that the underlying laws of classical physics developed for an infinite, homogeneous, structureless medium, where the interactions have the same speed, are applied
+ to finite, inhomogeneous, structured living matter, where \textit{the interactions have enormously different speeds}; furthermore, that the phenomena happen on the boundary of the continuous and particle views.
+ The static view does not need (furthermore, does not enable the finding of) the laws of motion (in the sense of laws of Newton, Schrödinger, Hamilton)
+% \begin{fallacybox}
+ \begin{itemize}
+ \item It relies on biophysics, which applies
+the existing ('ordinary') laws of classical physics inadequately. Classical physics derived its laws for 'another construction'; 
+that is, biological matter also needs different approximations, laws and mathematical 
+formalism. Consequently, what followed was wrong, including the computational principles, just because of the wrong model. 
+
+ \item Experimentally, \hyperlink{voltage-clamping}{clamping and patching (using feedback)} introduce foreign currents into the cell, stop its native operation, and enable deriving conclusions from that artificial, statical operating mode for the native, dynamical operating mode. 
+ \item Theoretically, statical \textit{states} are assumed, and the experienced dynamicity (\textit{processes}) is accounted for as perturbation. 
+ \item The \textit{voltage gradient}, instead of currents, controls the neuronal oscillator's operation, which is known from the well-established theory of electricity but neglected in physiology. 
+\index{voltage gradient}
+  \end{itemize}
+%\end{fallacybox}
+
+Similar is the case with neuronal computing and communication~\cite{VeghChannelCapacity:2023}. 
+\begin{itemize}
+ \item Biology applies von Neumann’s principles of computing~\cite{EDVACreport1945}, although von Neumann said that applying the idea to biology was ‘unsound’. 
+  \item It refers to \textit{Shannon’s communication theory}~\cite{ShannonOriginal:1948}, although \textit{Shannon explicitly protested}~\cite{ShannonBandwagon:1956} against doing so.
+   \item It attempts to compare the so-called ‘spiking neural networks’, different mathematical learning algorithms, and even the functionality of artificial intelligence, without being aware that they have only the name in common with their biological counterparts~\cite{VeghNeuralShannon:2022}.
+    \item The opposite direction faces also similar issues: borrowing only one aspect of biological computing cannot make an approach successful~\cite{VeghTechnomorphBiology:2025}, neither in building supercomputers nor in biomorph architectures, large neural networks, brain simulation, or artificial intelligence systems.
+  \end{itemize}
+
+Current physiology is based on some tragic misunderstandings (due to the lack of physical knowledge)
+%\begin{fallacybox}
+\begin{itemize}
+\item The static worldview, inherited from anatomy and confirmed by the incorrect interpretation of clamping, resulted in treating neuronal operation as \indexit{perturbations to a static state}, without considering causality. 
+The case is similar to the incorrect hypothesis in physics that the orbits of the planets “must be” perfect circles; therefore, the observed deviations “must be” due to perturbations.  Assuming \indexit{perturbation}s hides the need for \indexit{laws of motion} in both cases.
+Relying on incorrect hypotheses excluded the introduction of the correct laws of motion (and, in general, understanding that there are laws underlying the observations).
+It required working out an elaborate system of perturbations (the work of generations of scientists using a wrong hypothesis).
+\item The \indexit{disciplinary approach} (combined with overestimating the wrong hypothesis about protein mechanisms)
+\indexit{protein!mechanism}
+obscures the fact that the \indexit{resting potential} originates from combined electrical/thermodynamic effects;
+among others, that the reason for the \indexit{transient voltage} increase is a drastic concentration increase, and that during an \gls{AP}, drastic transient concentration changes produce the observed voltage changes.
+The exact mechanism is responsible for the \indexit{axonal signal transfer} (instead of a magic action of cooperating lipids).
+\index{protein!cooperation}
+\item A spectacular example of the schizophrenic perspective in physiology is~\cite{NeuralEnergyConsumption:2017}, which, theoretically, starts from the \indexit{Hodgkin-Huxley model}.
+Experimentally, they measure that there is no \indexit{time delay between $K^+$ and $Na^+$ current}; the same subthreshold and suprathreshold voltage gradients generate an \gls{AP} with the same way but different magnitude (the \gls{AP} is generated without exceeding some threshold, because a gradient of any size generates such a voltage on the \gls{AIS};
+and the \indexit{current $K+$} itself also shows symptomes of \indexit{hyperpolarization});
+ the leakage current has the same (negligible) magnitude in resting and transient states (showing that two different ‘leakage’ mechanisms are present in the two states;
+ furthermore, this current cannot be responsible for the membrane’s resting potential);
+ they work with ‘ion counting’ but do not attempt to find out the identity of the 'leakage' ions; the leakage ions are neither $K^+$ nor $Na^+$, nor do they generate \indexit{Nernst voltage}.
+ Theoretically, they assume that the neuron “pumps 3 $Na^+$ ions out of the cell and two potassium ions in”; experimentally, they show in their Fig. 6 that the ratio changes between 0.01 and 7.5
+\item The non-scientific approach, which posits that science’s first principles do not apply to life,
+excludes attempts to introduce physical explanations for processes in living matter and opens pathways for creating an alternative worldview
+where science creates nature instead of merely describing it.
+\end{itemize}
+%\end{fallacybox}
+
+\paragraph*{The "model" behind the "old understanding"}
+ A concise summary of the "model" is shown in Fig.~\ref{fig:HHModelSummary}.
+Fig.~\ref{fig:HH_EquivalentCircuit} shows the equivalent circuit, which exactly corresponds to the "model" introduced by \gls{HH} 
+and their followers and which is used, in different variations, almost exclusively even today. Given that the model is described by equations
+describing electric circuits, it assumes that electrons constitute 
+the currents.
+The figure is great in showing that some magic power changes
+the conductances/resistance without any reason one could perceive.
+For two of the resistances (annotated as $g_K$ and $g_{Na}$)
+the (misidentified) conductance (actually, current) is displayed
+(compare those conductances to their Fig.~2 and Fig.~6),
+the third one is due to leakage (with an unknown time course
+and ionic composition). 
+The condenser is annotated with the output voltage of
+the differentiator $RC$ circuit (compare to Fig.~\ref{RCDifferentiatorCircuit}), although the circuit
+is surely a parallel $RC$ circuit.
+This conglomerate very effectively prevents any understanding.
+Despite its aim to be an electric circuit, it cannot explain any mechanical,
+thermodynamic, etc. observations. 
+As an electric model, it cannot reply to fundamental questions,
+such as \textit{why} an \gls{AP} begins, \textit{why} the conductance changes, \textit{how} the environment affects its parameters.
+It simply attempts to illustrate how a hypothetical electrical circuit,
+with a series of ad hoc (unnatural) assumptions, could produce
+\index{ad hoc hypothesis}
+a behavior in some aspects similar to the electric behavior
+of a simple $RC$ electric oscillator, consisting of ideal discrete components.
+
+                                                                                                       
+\begin{figure}
+	\includegraphics[width=\textwidth]
+	{fig/HHModelHeimburg.png}
+	\caption{The Hodgkin-Huxley model as reproduced by~\cite{HeimburgPhysikOfNerves:2009}}
+	\label{fig:HHModelSummary}
+\end{figure}
+
+
+                                                                                                       \section*{The new understanding\label{State-NewUnderstanding}}
+                                                                                                       
+                                                                                                       Hodgkin and Huxley in 1952~\cite{HodgkinHuxley:1952} advanced neurophysiology by providing a series of \textit{observations} on neuronal function.                                                                                                 However, as they warned, many of the \textit{mechanisms} must be fixed or replaced: "must emphasize
+that the interpretation given is unlikely to provide a correct picture of the membrane". We honor their outstanding work and want to supplement and enhance their interpretations and hypotheses rather than challenge them.
+% It is not possible, however.
+However, their work became the "Holy Bible" of physiology
+and a significant obstacle to development in neuroscience.
+"Attempts to present a more complete picture of neuronal
+physiology, have met with fierce opposition from mainstream neuroscience and,
+as a consequence, currently remain underdeveloped and insufficiently tested. Commonly misunderstood as to their basic premises and the physical principles they are built on, and mistakenly perceived as a threat to the generally acknowledged explanatory power of the 'classical' HH framework"~\cite{NerveSignalAsWindow:2023}. The editors 'do not believe' (see Fig. ~\ref{fig:Galilei}) that science advanced in the past seven decades, and they \href{https://dictionary.cambridge.org/dictionary/english/censor}{censor}
+publishing new ideas in scientific journals.
+Likely, they did not know that science must "have no respect whatsoever for authority; forget who said it and instead look what he starts with, where he ends up, and ask yourself, 'Is it reasonable?' \dots If we suppress all discussion, all criticism, proclaiming 'This is the answer, my friends; man is saved!' we will doom humanity for a long time to the chains of authority, confined to the limits of our present imagination." (Richard P. Feynman) Editors of neuroscience-related journals disagree with Feynman. They do not want a "new understanding".
+
+
+\begin{advanced}
+The editors' comments on the manuscript "The Physics Behind the Hodgkin-Huxley Empirical Description of the Neuron", submitted to "Physics of Life Reviews". 
+Oct 11, 2024. Rejected without reading. PLREV-D-24-00173\\
+%
+"The physics behind the Hodgkin-Huxley model of the neuron is certainly within the scope of PLRev. This model has been extensively studied since it was proposed in 1952 and its proponents won the Nobel Prize in 1963. So it is a challenge to say something original and relevant about this model in 2024. Since the author has no previous publications on the topic, \textit{the Editorial Board does not believe} that the review will have any impact on this very well-established research topic."
+\end{advanced}
+
+
+\begin{figure}
+	\includegraphics[width=.65\textwidth]{fig/Galilei.png}
+	
+	\caption{"Believing" in science (in the age of Galilei). \label{fig:Galilei} }
+	
+\end{figure}
+
+\begin{advanced}
+Similarly, the manuscript EBJO-D-25-00228 "The unified cross-disciplinary model of the operation of neurons" was believed (after two months of hesitation) was not to be sent to reviewers, 
+Dec 21, 2025. 
+"We regret to inform you that the European Biophysics Journal is unable to accept your manuscript for publication. We have considered it with care but believe it would be better suited to a more theoretical and/or neuroscience-focused journal."
+\end{advanced}
+
+
+As the Human Brain Project formulated, to enter a new level,
+"a \hypertarget{NewUnderstanding}{new understanding} of the brain" is needed. It is also correct that "integration between data and knowledge from different disciplines, and catalysing a community effort" is requested. To form a holistic and coherent picture, one really needs several disciplines, openness, and deep knowledge of the related disciplines from the researchers; furthermore, \textit{some knowledge about the bridges to the other disciplines}, as Feynman expressed. Furthermore, \textit{finding the non-ordinary laws of the underlying physics},
+including \textit{developing the needed mathematical handling}, as Schrödinger expected. Moreover, after that, \textit{a community effort guided by the principles of the new theoretical understanding} is needed to validate and revisit the interpretation of the results of previous observations in light of the "new understanding".
+The present content was written in the spirit of Feynman that we  
+ must ”have no respect whatsoever for authority; forget who said it and instead look what he starts with, where he ends up, and ask yourself, ’Is it reasonable?’". Reading it needs the same attitude.
+It requires much patience; the more patience and effort, the more the reader comes to know about the subject in the spirit of "old understanding". The "new understanding", the "non-ordinary laws" of physics, spiced with newly developed mathematics,
+is not easy, not quick, and not effortless. Furthermore, it requires well-controlled thinking, much above the level "this way we used to interpret the things and reply to this question for decades". Our discussion is a much more faithful description of neurons' operation than the old one.
+
+The "great journey into the unknown"~\cite{BrainInitiative10:2024} must begin at a much lower level: revisiting the fundamental phenomena, disciplines, laws, interactions, abstractions, omissions, and testing methods of science. Research must build on classical science but be reinterpreted for living matter.
+There is no independent 'life science'; there is only science. It is based on the same 'first principles' but using different abstractions and approximations for living and non-living matter, and having the appropriate relations between them.
+"There is a
+clear need for a tighter and more carefully managed integration and realignment of the work"~\cite{HBP_1st_Review:2015}.
+Without aligning the knowledge elements along the first principles, the "integration between data and knowledge from different disciplines", lacks "integration".
+However, even the review of the targeted \gls{HBP} project summarized that 
+"\gls{HBP} is not developing with the expected level of integration and the project
+controls in place are not adequate to achieve this aim."~\cite{HBP_1st_Review:2015}. "More Is Different"~\cite{MoreIsDifferent1972}.
+\index{new understanding}
+
+We provide (at least, part of) “\indexit{a new understanding of the brain}”. Philosophically, we rebase biology on new approximations
+to the same first principles rather than using the old approximations
+used in inanimate science.
+We ‘integrate and realign’ seemingly distant scientific fields by applying the abstractions and approximations required for living matter. We have reached the boundaries of classical scientific disciplines, as we have many times over the past century. We are now moving through terra incognita, where we cannot navigate using the classical disciplinary science. Putting different disciplines side by side, separated according to phenomena in inanimate science, is undoubtedly not perfect and sufficient for describing living matter because of its “different construction” as Schrödinger\index{Schrödinger, Erwin} formulated \cite{Schrodinger:1992} decades ago. We make a fresh start by rethinking some fundamental ideas in science \cite{VeghNonOrdinaryLawsForLife:2025} that appear divergent across these major scientific fields. Research must build upon classical science, but be reinterpreted in light of living matter.
+
+\textit{Biology represents a complex case where phenomena cannot be reasonably reduced to a single discipline},
+as classic inanimate science does.
+Cell biochemistry sufficiently well describes the lipid bilayers that constitute the membrane~\cite{OriginOfLifeMicelles:2021,ReproductionLife:2023}.
+The negative and positive ends of the lipids that constitute the membrane, in an electrolyte solution,
+attract and bind ions, forming a charged layer on the membrane surfaces.
+In this way, the membrane in electrolytes acts as a condenser, comprising two charged sheets on its surfaces,
+with ill-defined parameters. Their boundaries, thicknesses, and compositions depend on the operating state
+(unlike conducting plates with well-defined sizes and boundaries).
+Cell science does not establish its electrical phenomena; instead, it attempts to elucidate complex protein activities
+\index{protein!activity}
+ that explain charge transfer, resting and transient potential, and the entire biological operation using mathematical formulas without a realistic physical background.
+Electrophysiology combines currents of electrons and ions, and uses \indexit{Ohm’s Law} for its admittedly \indexit{non-Ohmic} systems.
+It introduces foreign (clamping) currents into biological systems, attributing their effects to a change in membrane conductance without explaining how voltage and current can be independent of charge carriers.
+By introducing \indexit{current feedback} (which, by definition, compensates for any gradient in the system), it applies an opposite-phase control unit against the neuron’s native control unit and concludes that, after compensation, there is no \indexit{gradient} in the system; in other words, that \textit{life exists without needing a \indexit{driving force}}.
+It is not aware that inside the neuron, there is a condenser with a voltage difference between its plates; instead, it believes that a ‘\indexit{leakage current}’ flows through resistors distributed over the membrane.
+That current is special in that, among other things, it has neither a chemical composition nor charge carriers; furthermore, it can not only emit but also absorb heat. 
+Neuroscience observes thermodynamic and mechanical changes but cannot connect them to electrical phenomena.
+Lacking the required physical background, \textit{biology claims that physical laws cannot describe processes in living matter}; without providing a plausible and self-consistent theoretical model.
+We show that, upon closer inspection, the concepts with the same name have different interpretations.
+We must understand that physical laws are about 'net' cases,
+while biology is about mixed cases, on the boundary of the classical disciplines, or even on the 'nobody's land.
+We must build a bridge (or maybe a new sub-discipline),
+concepts and measurement methods for that 'different contruction', instead of abusing concepts and test methods
+of inanimate science on living matter. 
+
+                                                                                                       
+We proceed in a \hyperlink{zigzagdiscussion}{zigzag way}
+when discussing different levels of understanding.
+Our discussion is closely related to %\hyperlink{Physics}
+{physics}, discussed in chapter~\ref{ch:Physics}.
+When discussing the underlying physical laws,
+we assume a knowledge of classical physics above college-level 
+and go back to the fundamental physical concepts and principles instead of taking over the
+\hyperlink{Abstractions}
+{approximations and abstractions} (in this context: ordinary laws of physics)
+used in the \textit{classical physics for non-biological matter} and
+less complex (strictly pair-wise, single type, finite  interaction speed in
+\index{interaction!attributes}
+homogeneous isotropic medium) interactions.
+We provide a holistic picture,
+from a physical point of view, by explaining which physical/physiological components cooperate.
+We derive \hyperlink{PhysicsLawsOfMotion}
+{the laws of motion} for thermodynamical/physiological processes of biology in section~\ref{sec:Physics-LawsOfMotion} (in this context, 'non-ordinary laws of physics'), 
+and introduce a \hyperlink{atomic_layer}
+{component which implements them}.
+In chapter~\ref{ch:Physiology} we go to a \hyperlink{AbstractPhysiology}
+{less abstract level} ("abstract physiology").
+We summarize
+how the components are put together to form, conceptually, 
+the dynamic operation of neural systems, including that \textit{why}
+{the action potential} is evoked; futhermore, in general, \textit{how} the processes happen.
+This abstract discussion serves as a basis for explaining what %\hyperlink{BiologicalComputing}
+{computing for biology}
+means, see chapter~\ref{ch:Computing}; how the idea of computing can be generalized
+to include the biological implementation; furthermore, how biology implements
+those general computing principles. Similarly, we use these abstract concepts
+when we go one step closer to the mystery of how biological information is
+represented, encoded and decoded, transmitted and processed,
+in chapter~\ref{ch:Information}. After reviewing the operation of individual neurons, we study the cooperation of their "constellations" in chapter~\ref{ch:Multiple}.
+We separate the operation of single neurons from the cooperation of neurons, a vital point for understanding the brain's elementary operation.
+We show how those elementary operations constrain the functionality of vast populations of neurons, in the context of the notion of intelligence in chapter~\ref{ch:Intelligence}. 
+We also provide hints on how those operations affect intelligence.
+
+
+\paragraph*{The "model" behind the "new understanding"}
+In our view, we consider that a neuron is a semipermeable, elastic, spherical lipid membrane
+\index{lipid!membrane}
+(i.e., low transmission capacity ion channels are present in the wall), which has a membrane tube (axon) connected.
+Through that membrane tube, the neuron connects to its "downstream" neurons. Between the membrane and the axon, a high transmission capacity component (\gls{AIS}) is located.
+We explicitly assume that the neuronal current consists of ions, i.e., \textit{the current is slow, and the ions repel each other}.
+Biological structures can become statically charged and accelerate or decelerate ions to different speeds.
+Those different speeds can be responsible for different phenomena,
+from forming a resting potential to producing enormous electric gradients, including creating charged electrolyte layers temporarily near the membrane's surface, needed for the dynamic operation.
+A \gls{PID} controller controls the neuronal operation, which also defines its experienced electrical behavior
+(describes the features of currents in the resting and the transient stages).
+The repulsion between the ions 
+represents an electrical force, which, in the closed volume of the neuron, provokes a mechanical force (a mechanical pressure).
+Our view naturally connects the features seen by thermodynamics
+and electricity, showing that those disciplinary views see
+the two sides of the same coin. The forces due to electricity and thermodynamics are proportional to each other, so, at the price of
+using a "falsified" force (increased with the force from another discipline), one can perform calculations using both (the correct)
+electrical or the thermodynamic theory.
+For discussing the creation of an \gls{AP}, electrical theory provides more convenient tools, whereas for discussing its transport through the axon, thermodynamic theory is more convenient.
+The model resolves the many contradictions between theory and
+experiments, and enables deriving the correct concepts for
+the energetic operation of neurons, as well as interpreting
+their information processing.
+ 
+
+%
+%                                                                                                       
+%\section*{Implications\label{State-Implications}}
+%
+%Although the brain's activity is traditionally called computing, 
+%we show that it can be considered computing only in a general sense:
+%the principles and concepts are the same, but the implementations
+%are entirely different.
+%Similarly, we must reinterpret the notion of information and its processing for the brain.
+%Those chapters build on top of the former ones, although only slightly connected to them.
+%
+
+

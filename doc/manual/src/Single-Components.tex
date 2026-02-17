@@ -1,0 +1,744 @@
+% The components of the abstract model
+
+\section{Components\label{sec:Single-Components}}
+
+In this section, we discuss statical and dynamical
+components. We attribute a new role to the 
+\gls{AIS}, and introduce the layers on the surface of the membrane.
+
+
+
+\subsection{Ion channels\label{sec:Single-Ion-Channels}}
+
+
+"The function of ion channels is to allow specific inorganic ions
+to diffuse rapidly down their electrochemical gradients across the lipid bilayer...
+Nerve cells (neurons), in particular, have made a specialty of using ion channels,
+and ... use a diversity of such channels for receiving, conducting, and transmitting signals...
+\textit{Ion channels cannot be coupled to an energy source to perform active transport,
+so the transport that they mediate is always passive ('downhill')}" \cite{MolecularBiology:2002}.
+Despite this clear view, the \textit{laws of motion} of ions in those
+channels is not discussed in the literature. As we discuss
+in section~\ref{sec:Demon-in-the-membrane}, they behave in a mystic way: from some point of view, they behave as 
+\hyperlink{Maxwell-demon}{'demons'}.
+\index{layer!lipid bilayer}
+
+Experimental evidence shows that although
+\href{https://www.ncbi.nlm.nih.gov/books/NBK26910/bin/ch11f32.gif}
+{"the durations of channel opening and closing vary greatly,
+	the rate at which current flows through an open channel is practically constant} \cite{MolecularBiology:2002}.
+The presence of the two layers on the opposite sides of the membrane
+actually implements the control square-ware signal on the figure.
+Those layers also explain why the ion channels (in a statistical sense)
+behave as digital, despite that the individual ion channels are not digital.
+
+
+Recall that, in physics, the \textit{drift speed}, the \textit{electric repulsion-assisted speed}
+and the \textit{potential-accelerated speed} of
+ions differ by  several orders of magnitude.
+As a consequence, 
+"\href{https://www.ncbi.nlm.nih.gov/books/NBK26910}
+{transport efficiency of ion channels}
+is  $10^5$ times greater than the fastest rate of transport mediated by any known carrier protein"~\cite{MolecularBiology:2002}, reproduced here as Fig.~\ref{fig:Single_VoltageGatedChannel}.
+They are either closed or open without
+a noticeable transition state, but as discussed in~\cite{ThreeStateUnidirectional:2004, MarkovianIonChannel:2005}, for their adequate description three states are needed:
+they can also be in inactivated state.
+We can consider the channel operation as "infinitely fast" compared
+to the speed of processes in front and behind of the channel: the massive difference in speeds
+explains why ion channel opening and closing resembles a 'digital
+operating mode'.
+%@link PHYSICS_SPEEDS The different speeds@endlink
+The different speeds
+play a significant role in the correct operation and
+the cooperation of different neuronal objects, including ion channels
+in the walls of membranes and axons.
+
+It is hard to separate the operation of the individual channels
+from the operation of their population in the walls of membranes (layers),
+\index{layer!on membrane}
+see also axon and neuronal membrane.
+When they
+pass the channel, they face two effects on the two sides of the membrane.
+On the side of departure with high concentration, they suddenly ``empty''
+the thin layer in the immediate proximity of the membrane. On the side of arrival with low concentration,
+again, the arrived ions suddenly form a 'filled' thin layer.
+The ions in both segments can move only with their corresponding diffusion speed
+(in the order of $10^{-4}\ m/s$) but they experience each other's electric repulsion
+that can speed up their speed to the range $1\ m/s$.
+(BTW: this effect can be misinterpreted
+as a sudden ion adsorption \cite{Hodgkin-HuxleyAdsorption:2021} on
+the surface of the membrane.) The final effect resembles an electric condenser:
+for a short time, layers with opposite charges are formed on the two sides
+of the semipermeable isolator membrane.
+
+
+Although the individual
+ion channels open and close 'randomly', the repulsion force
+on the two surfaces of the membrane acts as an additional valve.
+As \cite{MolecularBiology:2002} discusses,
+'this potential difference ... exists across a plasma membrane only about $5\ nm$ thick,
+so that the resulting voltage gradient is about $100,000\ V/cm$'.
+\index{voltage gradient}
+In a statistical sense, part of the ion channels can be open
+after the population members received the 'open' signal, part of the population can be closed
+or inactivated,
+but when the layer enables, the ions in the proximal layer
+can escape to the other side of the membrane.
+
+The rapid influx of ions
+causes a sudden increase in the potential on the intracellular side.
+\index{layer!diffusion}
+Conversely, the ions' removal from the layer on the extracellular
+side near the membrane 'empties' the layer, and the after-diffusion
+(despite the large concentration difference) with the low drift speed
+(even if it is assisted by the repulsion of the fellow ions)
+takes time. Because of the slow after-diffusion, the transfer stops well before
+the ion channels get inactivated.
+See also the operation of clamped axons: removing the surface ion layer enables the membrane
+to prolong its 'open' state (again, in statistical sense).
+\index{layer!diffusion}
+Basically, the diffusion speed in those layers
+(in a statistical sense) and the lack or presence of ions in the proximal layer,
+defines the 'open' and 'closed' states of the channel population.
+The ion channels have three states, but their population has only two.
+
+This behavior explains why ion currents
+start up with a sharp exponential rise \cite{SodiumCurrentDelay:2006}
+(fitting polynomial lines \cite{HodgkinHuxley:1952}
+to those critical regions was a big mistake: it hides the sudden change
+caused by the state change (opening) of the ion channels, and that
+the 'rising edge' is actually described by an exponential increase); why initiating an \gls{AP}
+has precise timings (both the charge-up signal and pressing
+ions through the \gls{AIS});
+why axonal arbors can provide a precise
+`ComputingBegin' signal. For the details, see the following subsections.
+%\hyperlink{electric_conductance}
+{Measuring the conductance}
+of ion channels, requires special care.
+\index{conductance}
+It is easy to make a systematic error, given that the measurement device can affect the result.
+
+Notice that the charged layers mean that a population
+of ion channels must cooperate. Although the individual
+\index{layer!ion channels}
+\index{ion channel!operation}
+ion channels open and close 'randomly', the repulsion force
+on the two surfaces of the membrane acts as an additional valve. In a statistical sense, some ion channels are open
+after the population members received the 'open' signal,
+but when they are open, only the ions in the proximal layer
+can escape to the other side of the membrane.
+
+
+
+\begin{figure*}
+\includegraphics[width=.65\textwidth]{fig/ch11f32.jpg}
+		\caption{Patch-clamp measurements for a single voltage-gated $Na^+$ channel 
+			(Fig.~11.32 in~\cite{MolecularBiology:2002})  \label{fig:Single_VoltageGatedChannel}}
+\end{figure*}
+
+
+%\cite{HilleIonChannels:1999}
+
+The different speeds play a significant role in the correct operation and
+the cooperation of different neuronal objects, including ion channels
+in the walls of membranes and axons. 
+Given that the "transport efficiency of ion channels
+is  $10^5$ times greater than the fastest rate of transport mediated by any known carrier protein"
+\cite{MolecularBiology:2002}, we can consider that speed as 'infinitely fast' compared to the speeds of neuronal ion currents.
+For cardiac \gls{AP}s,
+where only a few ion channels participate,
+"the slow currents appear to
+have been caused by repeated openings of one or more channels"\cite{CardiacAPS:1980}.
+For neuronal \gls{AP}s,
+where many ion channels participate,
+"the durations of channel opening and closing vary greatly";
+furthermore,
+"the rate at which current flows through an open channel is practically constant"~\cite{MolecularBiology:2002}.
+It is also known that  for their adequate operation, the ion channels need to implement
+three states: in addition to the 'on' and 'off' states, they can also be in an inactivated
+state~\cite{ThreeStateUnidirectional:2004, MarkovianIonChannel:2005}.
+However, the population of the ion channels has only 'on' and 'off' states;
+furthermore, for some reason the population get "fatigued":
+"the probability, that any individual channel
+will be in the open state, decreases with time"~\cite{MolecularBiology:2002}. 
+It is due to the finite resources, as we quantitatively discuss it in section~\ref{sec:Physics-ResourcesIonChannels}.
+
+As Fig.~\ref{fig:Single_VoltageGatedChannel} depicts, it is the gradient (the rising edge), 
+instead of the membrane potential, which 
+starts the individual patch currents (and, of course, 
+the aggregate current).
+Depending on the evironment of the channel's exit (the fluctuation
+of the charge density), the channel has an a maximum 'let-in' time.
+The representative patch currents show that the channel can definitely 
+and quickly open, 
+
+If we assume that the ions
+pass the ion channel one by one, without pausing, the passage time of an ion 
+is $10^{-7}\ s$. Given that the electrolyte electrodes contribute 
+a considerable delay, the value might be not accurate.
+
+\subsubsection{Ion pumps\label{sec:Single-IonPumps}}
+
+"These pumps differ from ion channels in two
+important details. First, whereas open ion channels
+have a continuous water-filled pathway through which
+ions flow unimpeded from one side of the membrane
+to the other, each time a pump moves an ion, or a group
+of a few ions, across the membrane, it must undergo a
+series of conformational changes. As a result, the rate of
+ion flow through pumps is 100 to 100,000 times slower
+than through channels. Second, pumps that maintain
+ion gradients use energy, often in the form of adenosine triphosphate (ATP), to transport ions against their
+electrical and chemical gradients. Such ion movements
+are termed active transport."~\cite{PrinciplesNeuralScience:2013}, page 101.
+
+
+The role of ion pumps must be revisited, too.
+It is not clear what a force can "transport ions against their
+electrical and chemical gradients" and how can they deliver in
+sufficiently short times the ions needed for the operation.
+In the resting state, instead of some magic lipid mechanism (ion pumps), the resultant potential
+\index{lipid mechanism}
+(the sum of the electric and thermodynamical potential for the individual ions) moves the ions through the channels in the membrane.
+The resulting conductance on those channels
+is about 50 times smaller~\cite{ActionPotentialGenerationNatrium:2008,AIS_Updated_Viewpoint:2018} than that of the \gls{AIS}.
+In a typical mammalian cell, see Table~\ref{Tab:SummaryTable},
+the sum of the electric and thermodynamical potentials are $-32\ [mV]\ K^+$ ions and $+4\ [mV]\ Na^+$ ions.
+The same values for squids are $-33\ [mV]\ K^+$ and $+13\ [mV]\ Na^+$.
+Correspondingly, the resulting force moves sodium ions out of the cell and potassium ions into the cell.
+%(for more numeric examples see section~\ref{sec:AP-PhysicalProcess}).
+The so called "Na-K pump" \textit{is supposed} to actively transport (using energy from \gls{ATP})
+sodium ions out of the cell and potassium ions into the cell.
+However, no mechanism is provided how the ions gain energy from \gls{ATP}.
+
+As Figure 6 in \cite{NeuralEnergyConsumption:2017} displays,
+the ratio of $K+$ and $Na+$ changes sharply during the transient state.
+Theoretically, they assume that the neuron “pumps 3 $Na^+$ ions out of the cell and two potassium ions in”; experimentally, they show in their Fig. 6 that the ratio changes between 0.01 and 7.5.
+The classical theory cannot explain this behavior and leads
+to exciting conclusions:
+"Furthermore, we analyzed energy properties of each ion channel and found that, under the two circumstances, power synchronization of ion channels and energy utilization ratio have significant differences. This is particularly true of the energy utilization ratio, which can rise to above 100\% during subthreshold activity."~\cite{NeuralEnergyConsumption:2017}
+
+Our electric model says that both the concentration (due to $Na+$ rush-in) and local membrane potential drastically changes
+during the transient state. As long as the resulting potential is above
+$\approx 33\ mV$, the driving force acting on potassium ions is
+positive, i.e., the pump will move both ions out of the cell.
+The potential gradient near the membrane explain also the energy delivery: \gls{ATP}, by hydrolysis, generates ions which are moved
+to the "plates" of the condenser. (as we discuss in section~\ref{sec:Physics-ControlTheory}, in transient state,
+the "setpoint" of the control circuit is also changed, and to restore the condenser's voltage, those ions must be collected.)
+
+
+\subsection{Ion layers\label{sec:Single-IonLayers}}
+
+Semipermeable membranes, with ion channels in their walls, separating electrolyte segments with ion concentrations differing by orders of magnitude,  play a unique role in neuronal electric operation.
+It is at least problematic to interpret the operation of the individual channels without understanding their dynamic
+interaction with the electrolyte and the semipermeable membrane. 
+
+We consider the external concentration constant: the extracellular
+space is infinitely large, and its concentration remains by orders
+of magnitude higher than the internal one. Our assumption is valid for the \textit{global static} concentration (we call it 'bulk'), but not for the\textit{ local dynamic} one.
+The voltage-controlled ion channels open when
+on the lower concentration side, the local voltage exceeds some threshold value.
+
+In the \textit{resting state} (without a voltage offset around the ion channels), the channels keep balance between the separated segments. 
+However, when an ion channel gets open (meaning that ions from the high-concentration side can
+pass through it to the low-concentration side), for a short period,
+the ions change the \textit{local} concentration and potential of the electrolyte in the
+proximity of the entrance and exit of the channels,
+forming two proximal layers. 
+The case drastically changes if an additional potential gradient appears.
+In that case, (part of) the ion layer, formed on the
+membrane's surface due to the charge arriving through the ion
+channels, is  continuously removed by the macroscopic ion current from the immediate
+proximity of the ion channels. The layer gets saturated later, and
+the conditions of transferring ions
+through the channels persist for longer, so they remain open, enabling a continuous
+ion inflow (a macroscopic current; see the
+discussion about  clamping dynamic operation using  \gls{AIS}).
+
+
+The ion channels have three states, but their population has only two.
+\index{ion channel!state}
+Fundamentally, the lack or presence of \textit{unbalanced} ions in the proximal layers defines the 'open' and 'closed' states of the channel population. The individual
+ion channels open and close in a stochastic way. In a statistical sense, part of the ion channels can be open, and another part can be closed or inactivated.
+However, only when the layer's potential enables, can the ions in the proximal layer
+escape to the other side of the membrane, even if the channel is open. 
+The ion channels have no reason to re-open because of the lack of offset voltage (and that layer).
+That is, primarily, the presence of the layers on the two sides of the membrane defines the ion inflow,
+and the individual ion channels  can freely (re)open, close, or inactivate
+until the layer provides a sufficiently large potential offset.
+This transient state is the key to understanding the dynamic operation of neurons.
+
+There is a strong electric field on the boundary of the segments. 
+As \cite{MolecularBiology:2002} discusses,  'an electrical potential difference about 50–100 mV ... exists across a plasma membrane only about $5\ nm$ thick, so the resulting voltage gradient is about $100,000\ V/cm$'. 
+\index{voltage gradient}
+In their 'off' state, the voltage-controlled ion channels are mechanically closed, so the ions cannot follow that gradient.  
+However, when (due to the collected synaptic charge or the significant slope of the arriving spike~\cite{LosonczyIntegrative:2006} or clamping) a voltage offset appears at the  ion channel, so it opens. Due to the enormous gradient, ions rush in
+from the extracellular segment into the intracellular one. This means a high speed, that is, a 'fast' current, see Eq.~(\ref{eq:StokesCurrent}).
+
+However, upon arriving at the other side of the  membrane, they experience the
+electric field disappearing, so the stream of ions stalls. The stalled ions 
+increase the local potential (see section~\ref{Physics-OscillatorDifferentiator}) around the  channel's exit,
+and the ions will move along the parallel potential gradient toward neighboring 
+channel exits. 
+'The description just given of an action potential concerns only a small patch of plasma membrane.
+However, the self-amplifying depolarization of the patch, 
+is sufficient to depolarize neighboring regions of the membrane,
+which then go through the same cycle. In this way,
+the action potential spreads as a traveling wave from the initial site of depolarization
+to involve the entire plasma membrane' \cite{MolecularBiology:2002}.
+The depolarization happens in an avalanche-like way \cite{NeuronalAvalanches:2003} over the entire membrane surface.  
+This process creates ion-rich layers in the proximity of the membrane
+on both sides. At the end of the process, the potential in the layer on the intracellular side temporarily reaches
+the  potential inside the bulk of the extracellular side.
+\index{layer!potential}
+The ions in the layer experience two forces: in the direction 
+parallel to the membrane's surface, the electric repulsion due to the fellow ions in the same layer; furthermore, in the perpendicular direction, the attraction of the ions
+in the opposite layer.
+
+The first force acts in distributing the potential uniformly  over the surface, and \textit{in this way (per definitionem), an ion 
+current flows in parallel with the surface}. This ion current is slow: the ions are moving 
+in a viscous solution under the effect of a potential gradient (see Eq.~(\ref{eq:StokesCurrent})), if any. In the lack of external potential, it is of type relaxation. The presence of a current drain (such as 
+\gls{AIS}
+on the membrane or the axonal arbor on the axon) also means a potential difference,  and an exponential discharge function of type $exp(-\beta *t)$
+describes that current, $\beta$ is a time constant.
+
+The second one acts against diffusion and prevents the ions from leaving the layer.
+\index{layer!diffusion}
+Until that current stops (due to the saturation of the layer),
+\textit{an ion current will flow in the direction perpendicular to the surface}.
+\index{layer!current}
+That current is "fast" only within the ion channel until the driving force disappears,
+and becomes "slow" in the electrolyte layer, where the received charge saturates the layer. A current of form $(1-exp(-\alpha *t))$ can describe the saturation, where $\alpha$ is a time constant.
+ Recall that the current's speed
+depends on the voltage gradient, so the intensity and the temporal behavior of the 
+currents are different, even between the "parallel" and "perpendicular" current directions, given that two different mechanisms control the process,
+despite that we consider the motion of the same charged particles. As a result of the two processes, a function of type $(1-exp(-\alpha *t))*exp(-\beta *t)$ describe the local charge distribution in the function of time. Although the timing constants change
+as the potential changes, we use the approximation that
+the layer is thin; furthermore, its concentration and potential have zero gradients in a direction perpendicular to the membrane. However,
+a steep potential gradient exists between the layer
+and the rest of the segment.
+\index{layer!thickness}
+
+
+
+The 'caps' on the top of the ion channels act as
+individual regulators, and the ion channels continuously and randomly open, close, and inactivate. Their statistical population enables a
+macroscopic ion inflow throughout the surface and the electric repulsion distributes
+the charge over the surface, tending to make the local potential uniform over the surface.
+The repulsion and attraction forces
+on the two surfaces of the membrane around the channel's exit act as an additional valve on the ion transport:
+the population 
+of ion channels must cooperate with them, given that the ions move 'downhill'.
+
+
+This behavior explains why ion currents across the membrane
+start up with a sharp exponential rise~\cite{SodiumCurrentDelay:2006}
+(one of the big mistakes was fitting polynomial lines~\cite{HodgkinHuxley:1952}
+to those critical regions, comprising both exponential and no-current regions: it hides the sudden change of membrane's current~\cite{SodiumCurrentDelay:2006}
+caused by the state change of the ion channels); why initiating an
+%\gls{AP}
+AP has precise timings (both the charge-up signal and pressing
+ions through the \gls{AIS}); why axonal arbors can provide a precise
+``Begin Computing'' signal. 
+Measuring the conductance of ion channels, requires special care.
+As discussed in section~\ref{sec:PHYSICS_MEASURINGCONDUCTANCE}, it is easy to
+make a systematic error, given that the measurement method can affect the result. 
+
+
+It is hard to separate the operation of the individual channels
+from the operation of their population in the walls of membranes (layers), see also the sections on axonal and neuronal membrane.
+When the ions
+pass the channel, they face two effects on the two sides of the membrane.
+On the side of departure with high concentration, they suddenly ``empty''
+the thin layer in the immediate proximity of the membrane. On the side of arrival with low concentration,
+again, the arrived ions suddenly form a ``filled'' thin layer.  
+The ions in both segments can move only with their corresponding diffusion speed 
+(in the order of $10^{-4}\ m/s$), but they experience each other's electric repulsion, which can speed up their speed to the range $1\ m/s$. 
+(BTW: this effect can be misinterpreted
+as sudden ion adsorption~\cite{Hodgkin-HuxleyAdsorption:2021} on
+the surface of the membrane.) The final effect resembles an electric condenser:
+for a short time, ion-rich layers are formed on the two sides
+of the semipermeable isolator membrane.
+The two layers
+attract each other, so the ions in the layers can diffuse toward their respective neighboring layers 
+only moderately. 
+
+We posit explicitly that our parameters can be directly concluded from the measurable parameters
+such as membrane surface size,
+its ion channel density, specific membrane capacitance and absolute resistance of the \gls{AIS}.
+Having
+those parameters of components of the non-living matter, plus the time course of the input currents, we can describe how and why a the living matter shows the behavior we can observe. This exact discussion provides an excellent base for understanding neuronal assemblies' operation, furthermore revealing details of neuronal information storage and transfer.
+
+
+
+\subsection{Axon\label{sec:Single-AxonalChargeDelivery}}
+
+
+As described above, the charge gradually increases the potential along
+the axon (starting from the position of the clamping electrode) until
+the clamping potential reaches the axon's end at the membrane. (We
+could see the effect when measuring voltage instead of conductance
+on the axonal tube instead of the membrane, shown in our Fig.~\ref{fig:The-time-course_Clamping}.)
+At that point, the driving force gradually disappears: the potential
+at the end of the axon and that on the membrane becomes the same.
+The macroscopic streaming of ions inside the tube only slightly complicates
+the process: the local internal concentration can saturate only later,
+given that part of the inflowing ions is delivered to another place
+within the axon. Notice that the current (and the voltage) on the
+axon increases in the function of the time exponentially instead of
+linearly or step-wise, which would be expected when assuming instant
+interaction or no ``slow'' macroscopic current.
+
+The unusual physical situation in making electric measurements in biological systems is that, in the metallic half
+of the circuit, the electrode at the membrane (and, if being equipotential,
+the membrane itself, too) takes "instantly" the external voltage.
+However, in the biological half of the circuit, the voltage $V$ at
+the end of the axonal tube initially remains the same: inside the
+tube, there is no charge around to produce a potential (actually,
+without charge inflow, it is a piece of insulator). 
+
+
+%Initially, the
+%intracellular charge carrier concentration is very shallow: there
+%is no initial current in the axon. The outside field opens
+%the ion channels in the axon's wall, and ions enter the intracellular
+%fluid. The clamping voltage combined with the repulsive force of the
+%entered ions generates a field that generates a macroscopic ion current
+%(the result of the numeric simulation of the process is depicted in
+%Fig.~\ref{fig:The-time-course_Clamping}). 
+
+\subsection{Axonal arbor\label{sub:Single-Axonal-arbor}}
+
+\subsection{Neuronal membrane\label{sec:Single-NeuronalMembrane}}
+
+At the dawn of finding methods for describing neuronal operation,
+\gls{HH}
+published high-precision measurements~\cite{HodgkinHuxley:1952}
+enabling detailed testing of theories explaining the seen physiological
+behavior. \emph{Their good physical model that }``movement
+of any charged particle in the membrane should contribute to the total
+current'' \emph{only lacked considering the finite speed} at which the objects in
+their measured system react to the observer's invasion (in addition to assuming the wrong oscillator type); furthermore,
+they have started from the commonly used wrong assumption that conductance
+is a primary electric entity. This wrong physical basis forced them
+to make unphysical assumptions to explain their findings. Although
+they attempted to give a physical background, they felt that ``\emph{the
+	interpretation given is unlikely to provide a correct picture of the
+	membrane}.''~\cite{HodgkinHuxley:1952} Using the Newtonian notion
+of interaction speeds is misleading and blocks understanding electrophysiological
+phenomena. 
+
+\subsubsection{The 'delayed' membrane current\label{sec:Single-DelayedMembraneCurrent}}
+
+
+They could ``find equations which describe the conductances with
+reasonable accuracy and are sufficiently simple for theoretical calculation
+of the \gls{AP}
+and refractory period''. \emph{However, their equations
+	cannot explain the delay experienced by a sudden change}; furthermore,
+they explained that \gls{AP}
+is created because of, for some secret
+reason, the membrane's conductance changes in time (although \emph{they noticed the presence of a ``slow'' current
+	that behaves differently from the ``fast'' currents that their equations
+	describe}). The primary issue with their model is that
+it concludes, as they admitted, a wrong description (irrealistic delay) of
+sudden changes, such as the arrival of a spike, of making clamping
+measurements, or of interpreting the mechanism of neuronal information
+transfer. 
+
+Their followers modified both the form of their mathematical description
+(without assuming any physical model, using ad-hoc equations) to achieve minor improvement in the temporal behavior of the
+description. For a review of ideas, see~\cite{Hodgkin-HuxleyAdsorption:2021}.
+This latter work attempted to introduce ``a physiologically, physically
+and chemically viable model'' that had to assume a physically not
+plausible ion-adsorption buildup mechanism to be able to explain the
+mentioned delay, see their Eq. (45). Those attempts, however, did
+not change what \gls{HH} noticed~\cite{HodgkinHuxley:1952}:
+``there is the difficulty that \emph{both sodium and
+	potassium conductances increase with a delay when the axon is depolarized
+	but fall with no appreciable inflexion when it is repolarized}''.
+Without admitting a ``slow'' current exists, we must presume
+that sodium and potassium concerted their actions, and conductance
+is indeed misinterpreted in both cases. HH concluded~\cite{HodgkinHuxley:1952}
+(presumably after many unsuccessful attempts) that "there is little
+hope of calculating the time course of the sodium and potassium conductances
+from first principles". 
+It is correct: the existence of such a time course itself is against the first principles of science.
+However, if we make correct (physically
+plausible, instead of ad-hoc) assumptions, \textit{we can derive a "time course"} (well, not
+of the conductance because it is a misinterpretation of the physical
+phenomena, see section~\ref{sec:PHYSICS_MEASURINGCONDUCTANCE}; instead) \textit{of the ionic current from first principles} although
+we must mix microscopic and macroscopic parameters. 
+
+It is a long-standing enigmatic phenomenon
+that "the emergence of life cannot be predicted by the laws of physics"~\cite{ConservationOfInformation:2021}
+(unlike the creation of technical systems). Still, we can provide
+a complete description of the biological phenomena from first principles
+if we consider the finite interaction speed instead of using the idea
+of ``prompt interaction'' taken from classic physics, which is a
+fake abstraction for that goal. Models in neuroscience (as reviewed
+in~\cite{BrainNetworkModels:2018}) almost entirely leave the mentioned
+aspects out of scope. We introduce a finite interaction speed  without introducing
+either twisted mathematical handling or obscure physical (for example,
+adsorption) mechanisms. In our straightforward physical model, we see
+the measurable membrane potential and current change in the function of
+the speed of ions $v$. 
+
+
+The commonly used physical picture behind the process is that the
+membrane, as if it were metal, is equipotential, %(although when introducing
+%a multi-compartment model, one admits that that assumption was wrong),
+and the ``fast'' axonal current flows directly to the membrane.
+This assumption is why we expect an instant appearance of the axon's current
+in the membrane's current (instead, we experience a ``time-dependent
+conductance'').
+
+
+
+\subsubsection{The 'true' membrane current \label{sec:Single-TrueMembranCurrent}}
+
+This axonal charge-up current, a phenomenon we are exploring from
+an abstract perspective, flows into the membrane.
+It causes transient changes~\cite{TransientResponses:2008,KochElectricalPropertiesSpike:1983} in its voltage, providing \textit{direct evidence that the membrane is not always equipotential. The ions on the membrane’s surface can propagate at a finite speed}.
+The membrane attempts
+to remain isopotential, the ions move freely on its surface. 
+
+
+The sudden membrane potential change in the charge-up
+period acts as a valve. Given that the ions in the axonal arbor need to enter
+	the membrane against the actual membrane potential, the potential stops the ion inflow to the membrane for the period while the membrane's voltage is above the threshold: it effectively inhibits further inflow through
+all axons. This behavior naturally explains the absolute refractory
+period. After the membrane's voltage drops below the threshold value,
+the ions can enter the membrane again (see Figures~\ref{fig:MasonFig4} and~\ref{fig:ArtificialCurrent_AP}), but they need time to reach the
+\gls{AIS}
+	 later (see Figure~\ref{fig:AP_Conceptual}) when in the meantime the membrane's voltage proceeded toward its hyperpolarized state; so they seem to appear dozens of microseconds later at the
+	 \gls{AIS},
+	 explaining the relative refractory period and its dependence on the temperature
+         through the conduction velocity~\cite{APTemperatureDependenceRefractory:2001}
+
+
+The inflow charge generates a "potential wave" (a solid current outflow) through the \gls{AIS};
+see the discussion in section~\ref{sec:Physiology-DerivingActionPotential}.
+The decreasing charge causes the membrane's potential to decrease
+toward its resting potential, so it falls below the threshold voltage
+of the axonal gate at some point. If ions are still waiting on the
+other side, stopped when the membrane's charge-up process started
+(recall that they cannot exit the axon of the presynaptic neuron, and previously they could
+not enter the membrane), or newly arrived while the gate was closed,
+they can enter the membrane again.
+The ions travel a finite distance on the surface of the membrane with
+a finite speed, so there must be a delay between their entry and exit times. Furthermore,
+the inflow current must equal the outflow current. As discussed in
+section~\ref{sec:Physics-Electricity}, charge conservation
+is not necessarily valid in \emph{all contexts} of biological operation.
+If we measure the input and output currents, they may differ (see
+Fig.~1. in~\cite{ActionPotentialGenerationNatrium:2008}); see section~\ref{sec:Physiology-DerivingActionPotential}.
+
+Notice that, to some measure, the case of switching a clamping voltage
+on is analogous to the arrival of a spike. Initially, the axon contains
+no ions. The front evoked by a step function is linear because of
+the slow current. In the classic picture, the axonal current flows into the membrane with
+capacity $C_{m}$ and increases the membrane's voltage $V_{m}$
+with a time constant discussed after Eq.(\ref{eq:I_Membrane_Off})
+\begin{equation}
+	\frac{dV_{m}}{dt}=-\frac{1}{C_{m}}I_{axon};\ V_{m}(t)=\frac{I_{wall}*(1-e^{-\alpha*t})}{C_{m}}\label{eq:MembraneCurrent}
+\end{equation}
+
+\noindent that generates a change in the membrane current
+\begin{equation}
+	\frac{dI_{m}}{dt}=\frac{1}{R_{m}}\frac{dV_{m}}{dt};\ I_{m}^{on}(t)=g_{m}(V)V_{m}(t)\label{eq:TimeDependentConductance}
+\end{equation}
+\noindent where $g_{m}=\frac{1}{R_{m}}$ is the conductance of the
+membrane. That is, the measurable current equals the product of the conductance
+and the clamping voltage. Equs.(\emph{3)-(5) in~\cite{HodgkinHuxley:1952}}
+express this relation\emph{. If we assume that the axonal current
+	is ``fast'', we arrive at the wrong conclusion that the conductance
+	is voltage- or time-dependent.}
+In contrast, if we assume that the axonal current is ``slow'',
+we naturally conclude that Ohm's Law is correct and valid also for
+biology: the conductance/resistance is constant.
+
+\emph{There is no voltage-dependent conductance}~\cite{KochVoltageDependentConductance:1999}.
+Instead, the finite speed of ions and the wrong assumption that conductance
+is a primary entity misleads physiological research.\emph{ With wording
+	that "conductance changes", one states that charge carriers
+	appear/disappear/reappear; that is, the charge conservation is not
+	fulfilled} (with nonphysical consequences listed in connection with
+the model in~\cite{HodgkinHuxley:1952}). The physics background
+of the phenomenon is that the number of charge carriers changes (ions
+are ``created'' in the axon, and they appear on the membrane, as
+we detailed above).
+
+In contrast, when the clamping voltage is switched off, the axon is still
+filled with charge carriers (but not filled after); the resting potential reaches the end
+at the membrane ``instantly''. The driving force disappears, the
+ion stream stops, and no more ions enter the membrane. The lack and
+the presence of ions in the axon when switching clamping on and off, respectively, produce the difference that ``\emph{conductances
+	increase with a delay when the axon is depolarized but fall with no
+	appreciable inflexion when it is repolarized}''~\cite{HodgkinHuxley:1952}.
+The potential is equalized by the 
+\gls{AIS} current, producing a net
+exponential decay:
+
+\begin{equation}
+	I_{m}^{off}=I_{Wall}*e^{(-\frac{\alpha}{R_{m}C_{m}}*t)}\label{eq:I_Membrane_Off}
+\end{equation}
+
+\noindent 
+
+During the regular operation of a neuronal membrane, after opening
+the ion channels, a vast amount of ions flow into the intracellular
+space from the extracellular space, imitating the effect of switching
+a clamping voltage. The essential difference is that
+the ions arrive through the axon to the joining point in clamping.
+In contrast, through the membrane's ion channels, they directly contribute on the membrane’s entire surface.
+The membrane's size is finite, so with a finite
+current speed, it takes time until the charges on the membrane's surface
+arrive at the \gls{AIS}, in the same way as we discussed for the
+axonal current. These findings have significant implications for our
+understanding of the operation of neurons, including their signal processing and memory.
+
+From a computational point of view~\cite{VeghComputingModel:2021},
+a persisting significant deviation from the resting potential (the
+arrival of the first spike from one of the upstream neurons) provides
+the signal 'Begin Computing', opening the ion channels in the membrane
+provides 'End Computing'. After that, we will be in the 'Signal Delivery'
+phase until the end of the charge-up process. After that, 'Signal
+Transmission' follows. Our simple neuronal condenser can only perform
+one operation, to integrate the current it receives. Its
+result is the integration time itself. \emph{It cannot distinguish
+	its operands} (which synaptic inputs provided the current it integrates).
+Furthermore, \emph{not all operands must be present at the beginning
+	of the computation process}. \emph{The membrane potential slowly returns to its resting value;  furthermore, the current arriving during the
+	'relative refractory period', represent a (time-dependent)
+	memory}, see section~\ref{sec:Single-OperationConceptual}. Notice that the content of that memory may depend on the
+neuronal environment.
+
+
+
+\subsection{Axon Initial Segment\label{sec:Single-Axonal-Initial-Segment}}
+
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{fig/AIS.jpg}
+	\caption{The structure of the Axon Initial Segment. %(Cartoon of a multipolar neuron and the molecular composition of the AIS.)
+		\cite{ActionPotentialGenerationNatrium:2008}
+		Ann. N.Y. Acad. Sci. 1420 (2018) 46--61, Figure 1 \copyright 2018 New York Academy of Sciences. }
+	\label{StructureOfAIS}
+\end{figure}
+
+%
+Also we must add the invention from about three decades later: "Neurons ensure the directional propagation of signals throughout the nervous system.
+The functional asymmetry of neurons is supported by cellular compartmentation: the cell body and dendrites (somatodendritic compartment) receive synaptic inputs,
+and the axon propagates the action potentials that trigger synaptic release toward target cells.
+\textit{Between the cell body and the axon sits a unique compartment called the \gls{AIS}}.
+
+The \gls{AIS} was first described 50 years ago [i.e., nearly two decades after HH published their study], and its molecular composition
+and organization have been progressively elucidated during the following decades. \dots.
+Recent years have also brought crucial insights into the functions of the AIS:
+how ion channels at its surface generate and shape the action potential."~\cite{AIS_Updated_Viewpoint:2018}
+We provide the physics and mathematics of how AIS shapes
+the action potential (or more precisely, we show what an important role it plays in
+forming AP).
+
+
+
+In our model, the \gls{AIS} gets independent from the membrane,
+and this separation leads to crucial changes. (BTW, the name is misleading:
+the \gls{AIS} is part of the neuronal oscillator, and it forwards a traveling
+potential wave to the axon instead of belonging to it.)
+'Although by definition a neuron must have an
+axon to assemble an AIS, the relationship between AIS
+assembly and axon specification in vivo has not been
+determined yet'~\cite{AIS_NeuronalPolarity:2010}.
+
+"The axon initial segment (AIS) is located at the proximal axon and is the site of action potential initiation. This
+reflects the high density of ion channels found at the AIS.
+... The summation of
+synaptic inputs gives rise to action potentials at the
+axon initial segment (AIS), a 20--60 $\mu m$ long domain
+located at the proximal axon/soma interface that has
+a high density of voltage-gated ion channels."	
+As discussed in \cite{AISStructureReview:2018}, see also their Figure 1, reproduced here as Figure \ref{StructureOfAIS},
+the structure of the Axon Initial Segment
+is known to the smallest details.
+As the illuminating investigations in 2008
+\cite{ActionPotentialGenerationNatrium:2008}
+revealed, the \gls{AIS} has very dense ion channels. That is, from an electrical point
+of view, those parallelized channels can be abstracted as a  \textit{discrete  conductance}
+(or resistance) between the membrane and the axon.
+The membrane itself can be abstracted as a \textit{distributed condenser} with no resistance
+(in contrast with the viewpoint of biophysics, that the membrane  plus \gls{AIS}
+is considered a distributed element, where the capacitor and condenser cannot be separated).
+Notice the important point:
+	"Neurons are also anatomically polarized, as they can be
+subdivided into a somatodendritic input domain and an axonal output domain"~\cite{AIS_NeuronalPolarity:2010};
+providing a direct evidence that (unlike in \gls{HH}'s
+model) the input and output currents (and voltage time derivatives) are independent, see also Fig.~\ref{NeuronPolarity}.
+More precisely, they form the input and output of a neuronal oscillator, as our model suggests. Notice how the 
+\gls{AP}
+changes its shape during its propagation in the adjacent segments, as our model explains: the broadening by axonal arbor, the voltage-gradient generated shape on the
+\gls{AIS},the appearance of
+%\gls{iAPTD}
+iAPTD at the distant junction. Notice the lack of hyperpolarization at the beginning and end of the pipeline; a clear effect of of the neuronal oscillator.
+Inventing 
+%\gls{AIS}
+AIS changed the viewpoint of neuroscience~\cite{AIS_Updated_Viewpoint:2018}.
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{fig/NeuronPolarity.png}
+	\caption{Neurons are highly polarized cells
+		~\cite{AIS_NeuronalPolarity:2010}, Figure 1 \copyright2010 Macmillan Publishers Limited.}
+	\label{NeuronPolarity}
+\end{figure}
+
+
+At the time when 
+\gls{HH} published \cite{HodgkinHuxley:1952} their electrical model for the neuron, the structure of the neuron, the
+\gls{AIS}
+and its role in the electric operation was not yet known.
+Despite the early warning that '\textit{it was not possible to separate the change into
+resistance and capacity components}' \cite{COLE_CURTIS_IMPEDANCE:1939},
+a commonly accepted truism was that neurons, in some sense, behave
+as electric oscillators.
+HH introduced the idea explicitly that the electrically equivalent circuit
+of a neuron is an $RC$ oscillator.
+They did not see any structural elements on the membrane,
+so logically, they assumed it was a distributed resistor and capacitor,
+which really has resemblance with a \textit{parallelly switched $RC$ oscillator.}
+However, they made a wrong choice of the circuit type, and their choice (probably due to inertia)
+was repeated in good textbooks such as  (\cite{ JohnstonWuNeurophysiology:1995}
+Figure 3.1 or \cite{KochBiophysics:1999} Figure 1.1), and
+it is a commonly accepted fallacy even today~\cite{NeuralDynamicsGertsner:2014}.
+This wrong choice led to the need to assume a false (rectifying) ionic current and blocks
+understanding, among others, \textit{why} \gls{AP}
+is initiated.
+
+From the discussion and figure above, it is clear that the right choice is a
+\url{"https://www.electronics-tutorials.ws/rc/rc-differentiator.html"} \textit{differentiator}  where
+'the input signal is applied to one side of the capacitor with the output taken across the resistor'.
+The currents
+are directly created on the membrane (condenser) and the output voltage
+(\gls{AP})
+is taken across the resistor
+(\gls{AIS}).
+In other words: \textit{the neuronal membrane is a serial instead of a parallel circuit},
+with far-reaching consequences.
+
+For electrical modeling, we can use the approximation  that a \textit{distributed} condenser
+(the neuronal membrane) and a \textit{discrete} resistor (the 
+\gls{AIS})
+form an $RC$ circuit,
+see also the discussion in section \ref{sec:PHYSICS_MEASURINGOSCILLATOR}.
+It is clear that all currents (including the synaptic currents, the membrane's rush-in current,
+and the artificial currents either patching them directly to the membrane or clamping them to its axons)
+flow into the condenser (and cause potential increases calculated using the membrane's capacitance).
+Furthermore, the potential drops only due to the current flowing through the 
+\gls{AIS}.
+It is the exact equivalent of
+ a passive $RC$ \textit{differentiator} circuit:
+"the input is connected to a capacitor while the output voltage is taken from across a resistance"
+and not to be mismatched with
+a passive $RC$ \textit{integrator} circuit
+where "the input is connected to a resistance while the output voltage is taken from across a capacitor".
+

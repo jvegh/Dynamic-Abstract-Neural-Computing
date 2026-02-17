@@ -1,0 +1,28 @@
+\iflatexml
+\else
+\minitoc
+\fi
+\chapter{Multiple neurons\label{ch:Multiple}}
+Will be based on \cite{VeghNeuralShannon:2022}
+\cite{RoleOfInformationTransferSpeed:2022}
+\cite{VeghChannelCapacity:2023}
+
+When we discuss the operation of neurons, we must not forget that “what makes the brain a remarkable information processing organ is not the complexity of its neurons but the fact that it has many elements interconnected in a variety of complex ways”~\cite{PrinciplesNeuralScience:2013}. 
+At this level of abstraction, one does not need to consider biological details, since "Despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity, the nervous systems adopts a number of basic principles"~\cite{JohnstonWuNeurophysiology:1995}.
+A neuron operates in cooperation with in its environment (the multiple fellow neurons, with outputs distributed in space and time).
+It receives multiple inputs at different times (at different offset times from the different upstream neurons) and in different stages. 
+\hypertarget{Multiple_neurons}{Neurassemblies}
+
+
+We learned that the neuron's behavior can hardly be described mathematically and be modeled electronically. Furthermore, the length of the axons between the neurons and the conduction velocity of the neural signals entirely define the time of the data transfer (in the msec range); all connections are direct. The transferred signal starts the next computation as well (asynchronous mode).  ”A preconfigured, strongly connected minority of fast-firing neurons form the backbone of brain connectivity and serve as an ever-ready, fast-acting system. However, full performance of the brain also depends on the activity of very large numbers of weakly connected and slow-firing majority of neurons.”~\cite{LogNormalBuzsaki:2014}
+
+One must be careful when extrapolating results derived for a single “neuronal link” to a set of neurons. If we consider that the number of input spikes carries the information, it is typical that several spikes arrive at a neuron, and only one spike is produced: “A single neuron may receive inputs from up to 15,000–20,000 neurons and may transmit a signal to 40,000–60,000 other neurons”~\cite{SynapticOrganizationGordon:2004}. “In the terminology of communication theory and information theory, [a neuron] is a multiaccess, partially degraded broadcast channel that performs computations on data received at thousands of input terminals and transmits information to thousands of output terminals by means of a time-continuous version of pulse position. Moreover, [a neuron] engages in an extreme form of network coding; it does not store or forward the information it receives but rather fastidiously computes a certain functional of the union of all its input spike trains which it then conveys to a multiplicity of select recipients"~\cite{EnergyEfficientNeuralComputing:2010}. In this way, some “information loss” surely takes place. If we consider that the 
+ISI
+%\gls{ISI}
+ carries information and a neuron takes into consideration in its “computing” only the spikes which arrive within an appropriate time window, some information is lost again. Even the result of the computation, a single output spike, may be issued before either of the input spikes was entirely delivered. One more reason why the notion of information should be revisited.
+ 
+% \hypertarget{MODELING_SINGLE}{ }
+%
+% 
+%\hypertarget{MODELING_SINGLE_ION_CHANNEL}{ion channels}
+%\hypertarget{AXONAL_CHARGE_DELIVERY}{}

@@ -1,0 +1,158 @@
+\documentclass[border= 5mm]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{compat=1.15}
+\usepackage{adjustbox}
+\usepackage{pgfplotstable}
+	\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{webyellow}{rgb}{0.98,0.92,0.73}
+\definecolor{webgray}{rgb}{.753,.753,.753}
+\definecolor{webblue}{rgb}{0,0,.8}
+\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green
+\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
+
+\pgfplotscreateplotcyclelist{my color list}{%
+	solid, color=webblue, every mark/.append style={ fill=webblue}\\%
+	densely dashdotted, color=webgreen, every mark/.append style={ fill=webred},mark=triangle\\%
+	densely dotted, color=webbrown, every mark/.append style={solid, thick,  fill=webgreen}, mark=diamond\\%
+	dashed, color=webred, every mark/.append style={solid, thick fill=webbrown},mark=o\\%
+	dashdotted, color=webblue, every mark/.append style={solid, fill=webyellow}, mark=square*\\%
+	densely dotted, color=webgreen, every mark/.append style={solid, fill=gray}, mark=otimes*\\%
+	dashed, color=webbrown, every mark/.append style={solid, fill=gray},mark=diamond*\\%
+	densely dashed, every mark/.append style={solid, fill=gray},mark=square*\\%
+	dashdotted, every mark/.append style={solid, fill=gray},mark=otimes*\\%
+	dashdotdotted, every mark/.append style={solid},mark=star\\%
+}
+\begin{document}
+	
+	\def\xMin{0}
+	\def\xMax{1.7}
+	\def\xMode{lin}
+%	\def\xMin{0.005}
+%	\def\xMode{log}
+\begin{tabular}{c}
+\begin{tikzpicture}[scale=.95]
+\begin{axis}
+[
+%	title={Our membrane voltage},
+%			hide  x axis,
+	width=\textwidth,
+	height=.5\textwidth,
+	cycle list name={my color list},
+	legend style={
+	cells={anchor=east},
+	legend style={at={(.59,0.8)},anchor=west},
+},
+%		legend style={
+%			cells={anchor=east},
+%			legend pos={north west},
+%		},
+		xmin=\xMin, xmax=\xMax,% x scale
+		ymin=-30, ymax=150, % y scale
+		xlabel={Local time (ms)},
+		/pgf/number format/1000 sep={},
+		ylabel={Voltage (arb. u.)},
+%		xmode=\xMode,
+		xmode=linear,
+		log basis x=10,
+	axis x line*=bottom,
+%		ymode=log,
+%		log basis y=10,
+		]
+	\addplot +[%mark size=1, mark=*,%
+	mark=none
+	] table [x=a, y=b, col sep=comma] {AP_0_offset_test.csv};
+\addlegendentry{Membrane potential}
+%	\addplot +[%mark size=1, mark=*,%
+%mark=none
+%] table [x=a, y=h, col sep=comma] {AP_0_offset_test.csv};
+%\addlegendentry{AIS- potential}
+
+%	\addplot +[mark=none] table [x=a, y=b, col sep=comma] {AP_0_offset.csv};
+%\addlegendentry{Membrane potential @ 0}
+
+\addplot[
+orange,dashed,
+no marks, mark=*, mark size=2,
+] plot coordinates {
+	(0.04,20)
+	(1.5,20)
+};
+
+\addplot[
+orange,dashed,
+no marks, mark=*, mark size=2,  very thick,
+] plot coordinates {
+	(1.5,0)
+	(9.5,0)
+};
+
+\end{axis}
+
+\begin{axis}
+	[
+	hide  x axis,
+	width=\textwidth,
+	height=.5\textwidth,
+	cycle list name={my color list},
+	legend style={
+	cells={anchor=east},
+	legend style={at={(.59,0.8)},anchor=west},
+},
+%	legend style={
+%		cells={anchor=east},
+%		legend pos={north east},
+%	},
+		xmin=\xMin, xmax=\xMax,% x scale
+ymin=-250, ymax=1450, % y scale
+	xlabel={Local time (ms)},
+	/pgf/number format/1000 sep={},
+	ylabel={dV/dt (arb. u.)},
+%	xmode=\xMode,
+		xmode=linear,
+	log basis x=10,
+	yshift=130,
+	%		ymode=log,
+	%		log basis y=10,
+	]
+	\addplot +[%mark size=1, mark=*,
+mark=none
+] table [x=a, y=f, col sep=comma] {AP_0_offset_test.csv};
+\addlegendentry{Resulting dV/dt test}
+	\addplot +[mark=none] table [x=a, y=e, col sep=comma] {AP_0_offset_test.csv};
+\addlegendentry{AIS dV/dt}
+	\addplot +[mark=none, very thick] table [x=a, y=d, col sep=comma] {AP_0_offset_test.csv};
+\addlegendentry{iAPTd: Rush-in dV/dt}
+%	\addplot +[mark=none] table [x=a, y=f, col sep=comma] {AP_0_offset.csv};
+%\addlegendentry{Resulting dV/dt @0}
+\end{axis}
+
+\begin{axis}
+	[
+	hide  x axis,
+	width=\textwidth,
+	height=.25\textwidth,
+	cycle list name={my color list},
+	legend style={
+		cells={anchor=east},
+			legend style={at={(.05,0.6)},anchor=west},
+	},
+	xmin=\xMin, xmax=\xMax,% x scale
+	ymin=0, ymax=1, % y scale
+	xlabel={Local time (ms)},
+	ytick={0,1},
+%	/pgf/number format/1000 sep={},
+	ylabel={State},
+%	xmode=\xMode,
+		xmode=linear,
+	log basis x=10,
+	yshift=260,
+	]
+	\addplot +[mark=none] table [x=a, y=g, col sep=comma] {AP_0_offset_test.csv};
+	\addlegendentry{Synapses ON @ 0}
+\end{axis}
+\end{tikzpicture}
+
+\end{tabular}
+\end{document}

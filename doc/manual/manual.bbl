@@ -1,0 +1,793 @@
+\begin{thebibliography}{100}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI \discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI \discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{NeuralDynamicsGertsner:2014}
+W.~Gerstner, W.M. Kistler, R.~Naud, L.~Paninski, \emph{Neuronal Dynamics: From
+  single neurons to networks and models of cognition and beyond} (Cambridge
+  University Press, Cambridge, UK, 2014)
+
+\bibitem{JohnstonWuNeurophysiology:1995}
+D.~Johnston, S.M.S. Wu, \emph{Foundations of Cellular Neurophysiology}
+  (Massachusetts Institute of Technology, Cambridge, Massachusetts and London,
+  England, 1995)
+
+\bibitem{EDVACreport1945}
+J.~von Neumann, IEEE Annals of the History of Computing \textbf{15}(4), 27
+  (1993).
+\newblock \doi{10.1109/85.238389}
+
+\bibitem{BrainInitiative10:2024}
+J.~Ngai, Neuron \textbf{112} (2024).
+\newblock \doi{10.1016/j.neuron.2024.09.007}
+
+\bibitem{FeynmanThinking:1980}
+R.P. Feynman.
+\newblock Principles of scientific thinking.
+\newblock
+  \url{https://blog.hptbydts.com/richard-feynmans-principles-of-scientific-thinking}
+
+\bibitem{HodgkinHuxley:1952}
+A.L. Hodgkin, A.F. Huxley, J. Physiol. \textbf{117}, 500 (1952)
+
+\bibitem{MolecularBiophysics:2003}
+J.~Tuszynski, M.~Kurzynski, \emph{Introduction to molecular biophysics} (CRC
+  Press, Boca Raton, London, New York, Washington D.C., 2003)
+
+\bibitem{ThermodynamicAPDrukarch:2022}
+B.~Drukarch, M.M.M. Wilhelmus, S.~Shrivastava, Reviews in the Neurosciences
+  \textbf{33}(3), 285 (2022).
+\newblock \doi{10.1515/revneuro-2021-0094}.
+\newblock \urlprefix\url{https://doi.org/10.1515/revneuro-2021-0094}
+
+\bibitem{Schrodinger:1992}
+E.~Schr\"odinger, \emph{Is life based on the laws of physics?} (Cambridge
+  University Press, Canto, 1992), pp. 76--85
+
+\bibitem{ConservationOfInformation:2021}
+Y.A. Cengel, Entropy \textbf{23}(6) (2021).
+\newblock \doi{10.3390/e23060779}.
+\newblock \urlprefix\url{https://www.mdpi.com/1099-4300/23/6/779}
+
+\bibitem{SejnowskiComputationalNeuroscience:1988}
+T.J. Sejnowski, C.~Koch, C.P. S, Science \textbf{9}, 1299 (1988).
+\newblock \doi{10.1126/science.3045969}
+
+\bibitem{VeghTechnomorphBiology:2025}
+J.~V{\'e}gh, Applied Sciences \textbf{15}(11) (2025).
+\newblock \doi{10.3390/app15115805}.
+\newblock \urlprefix\url{https://www.mdpi.com/2076-3417/15/11/5805}
+
+\bibitem{BuzsakiCellAssemblies:2010}
+G.~Buzs\'aki, Neuron \textbf{68}(4), 362 (2010).
+\newblock \doi{10.1016/j.neuron.2010.09.023}
+
+\bibitem{VeghNeuralShannon:2022}
+J.~V{\'e}gh, {\'A}.J. Berki, Entropy \textbf{24}(8), 1086 (2022).
+\newblock \doi{10.3390/e24081086}
+
+\bibitem{vonNeumannBrain}
+{von Neumann, John}, \emph{{The Computer and the Brain}} (New Haven, Yale
+  University Press, 1958).
+\newblock
+  \urlprefix\url{https://complexityexplorer.s3.amazonaws.com/supplemental_materials/5.6+Artificial+Life/The+Computer+and+The+Brain_text.pdf}
+
+\bibitem{SejnowskiNeuralComputation:1999}
+L.~Abbott, T.J. Sejnowski, \emph{Neural Codes and Distributed Representations}
+  (Cambridge, MA: MIT Press, 1999)
+
+\bibitem{FeynmanComputation:2018}
+R.P. Feynman, \emph{Feynman Lectures on Computation} (CRC Press, 2018)
+
+\bibitem{HebbBook:1949}
+D.~Hebb, \emph{{The Organization of Behavior}} (New York: Wiley and Sons, 1949)
+
+\bibitem{HebbianLearningRule:2008}
+N.~Caporale, Y.~Dan, Annual Review of Neuroscience \textbf{31}(1), 25 (2008).
+\newblock \doi{10.1146/annurev.neuro.31.060407.125639}.
+\newblock
+  \urlprefix\url{https://doi.org/10.1146/annurev.neuro.31.060407.125639}.
+\newblock PMID: 18275283
+
+\bibitem{VeghNon-ordinaryLaws:2025}
+J.~V{\'e}gh, {arXiv}, in review in Foundations of Physics \textbf{1} (2025)
+
+\bibitem{VeghNeuronAlgorithms:2025}
+J.~V{\'e}gh, Algorithms \textbf{1} (2025).
+\newblock \doi{10.3390/a19010006}
+
+\bibitem{KochBiophysics:1999}
+C.~Koch, \emph{Biophysics of Computation} (Oxford University Press, New York,
+  Oxford, 1999)
+
+\bibitem{VeghRevisingClassicComputing:2021}
+J.~V\'egh, Informatics \textbf{8}(4) (2021).
+\newblock \doi{10.3390/informatics8040071}
+
+\bibitem{RoleOfInformationTransferSpeed:2022}
+J.~V{\'e}gh, {\'A}.J. Berki, Acta Biotheoretica \textbf{70}(4), 26 (2022).
+\newblock \doi{10.1007/s10441-022-09450-6}.
+\newblock
+  \urlprefix\url{https://link.springer.com/article/10.1007/s10441-022-09450-6}
+
+\bibitem{NIHBrainStrategy:2020}
+N.S. Hsu, H.Y. Fang, K.K. David, J.W.G. Gnadt, C.~Peng, E.M. Talley, J.M. Ward,
+  J.~Ngai, W.J. Koroshetz, Current Opinion in Neurobiology \textbf{65} (2020)
+
+\bibitem{WhyMachineLearningDifferent:2021}
+J.~V{\'{e}}gh, A.J. Berki, {Advances in Artificial Intelligence and Machine
+  Learning} \textbf{1}, 131 (2021).
+\newblock \doi{10.54364/AAIML.2021.1109}
+
+\bibitem{FittingElephants:2021}
+P.~Mitra, Nature Machine Intelligence \textbf{3} (2021).
+\newblock \doi{10.1038/s42256-021-00345-8}
+
+\bibitem{HBP_ScientificAdvances:2023}
+{Human Brain Project}.
+\newblock {A closer look at scientific advances} (2023).
+\newblock
+  \urlprefix\url{https://sos-ch-dk-2.exo.io/public-website-production-2022/filer_public/6f/70/6f706305-a2e3-45b8-a42b-dfb476222a6a/230413_hpb22_digital.pdf}
+
+\bibitem{VeghChannelCapacity:2023}
+J.~V{\'{e}}gh, A.J. Berki, Mathematical Biology and Engineering \textbf{20},
+  12380 (2023).
+\newblock \doi{10.3934/mbe.2023551}
+
+\bibitem{ShannonOriginal:1948}
+C.E. Shannon, The Bell System Technical Journal \textbf{27}(3), 379 (1948).
+\newblock \doi{10.1002/j.1538-7305.1948.tb01338.x}
+
+\bibitem{ShannonBandwagon:1956}
+C.E. Shannon, IRE Transactions in Information Theory \textbf{2}, 3 (1956).
+\newblock
+  \urlprefix\url{http://csc.ucdavis.edu/~cmg/papers/Shannon.IRETransInfoTh1956b.pdf}
+
+\bibitem{NeuralEnergyConsumption:2017}
+Y.~Wang, R.~Wang, X.~Xu, Neural Plast. p. 6207141 (2017).
+\newblock \doi{https://doi.org/10.1155/2017/6207141}.
+\newblock \urlprefix\url{https://pmc.ncbi.nlm.nih.gov/articles/PMC5337805/}
+
+\bibitem{HeimburgPhysikOfNerves:2009}
+T.~Heimburg, Physik Journal \textbf{8}(3), 33 (2009)
+
+\bibitem{NerveSignalAsWindow:2023}
+B.~Drukarch, M.~Wilhelmus, {Frontiers in Cellular Neuroscience} \textbf{17}
+  (2023).
+\newblock \doi{10.3389/fncel.2023.1232020}
+
+\bibitem{HBP_1st_Review:2015}
+{Human Brain Project: The HBP flagship 1st technical project review} (2015)
+
+\bibitem{MoreIsDifferent1972}
+P.W. Anderson, Science \textbf{177}, 393 (1972).
+\newblock \doi{10.1126/science. 177.4047.393}
+
+\bibitem{VeghNonOrdinaryLawsForLife:2025}
+J.~V{\'e}gh, Entropy  (2025).
+\newblock \doi{http://dx.doi.org/10.2139/ssrn.5217729}
+
+\bibitem{OriginOfLifeMicelles:2021}
+A.~Kahana, D.~Lancet, Nature Reviews Chemistry \textbf{5}, 870–878 (2021).
+\newblock \doi{doi.org/10.1038/s41570–021–00329–7}
+
+\bibitem{ReproductionLife:2023}
+A.~Kahana, L.~Segev, D.~Lancet, Cell Reports Physical Science \textbf{4}
+  (2023).
+\newblock \doi{https://doi.org/10.1016/j.xcrp.2023.101384}
+
+\bibitem{PrinciplesNeuralScience:2013}
+E.R. Kandel, J.H. Schwartz, T.M. Jessell, S.A. Siegelbaum, A.J. Hudspeth,
+  \emph{Principles of Neural Science}, 5th edn. (The McGraw-Hill Medical, New
+  York Chicago etc., 2013)
+
+\bibitem{COLE_CURTIS_IMPEDANCE:1939}
+K.S. Cole, H.J. Curtis, The Journal of General Physiology  (1939).
+\newblock \doi{http://doi.org/10.1085/jgp.22.5.649}
+
+\bibitem{MechanisticModelHodgkinHuxleyCraver:2006}
+C.F. Craver, Synthese \textbf{153}(3), 355 (2006).
+\newblock \doi{10.1007/s11229-006-9097-x}
+
+\bibitem{MathNeuroscience:2010}
+B.~Ermentrout, T.H. David, \emph{Mathematical Foundations of Neuroscience}
+  (Springer, New York, 2010)
+
+\bibitem{GertstnerSpikingNeuronModels:2002}
+Gerstner, Kistler, \emph{{Spiking Neuron Models. Single Neurons, Populations,
+  Plasticity}} (Cambridge University Press, 2002)
+
+\bibitem{SingleNeuronComputation:2014}
+T.~McKenna, J.~Davis, S.~Zornetzer, \emph{Single Neuron Computation}.
+\newblock Neural Networks: Foundations to Applications (Academic Press, 2014).
+\newblock \urlprefix\url{https://books.google.hu/books?id=n7CjBQAAQBAJ}
+
+\bibitem{RealisticNeuronalModeling:2016}
+M.~Almog, A.~Korngreen, J Neurophysiol. \textbf{5}, 2180 (2016).
+\newblock \doi{doi: 10.1152/jn.00360.2016}
+
+\bibitem{PerspectivesNerveSignalPropagation:2024}
+{Holland, L. and de Regt, H.W. and Drukarch, B.}, History and Philosophy of the
+  Life Sciences \textbf{46} (2024).
+\newblock \doi{10.1007/s40656-024-00644-4}
+
+\bibitem{ActionPotentialGenerationNatrium:2008}
+M.H.P. Kole, S.U. Ilschner, B.M. Kampa, S.R. Williams, P.C. Ruben, G.J. Stuart,
+  Nature Neuroscience \textbf{11}, 178 (2008).
+\newblock \doi{10.1038/nn2040}.
+\newblock \urlprefix\url{https://www.nature.com/articles/nn2040}
+
+\bibitem{AIS_NeuronalPolarity:2010}
+M.~Rasband, Nat Rev Neurosci \textbf{11}, 552 (2010).
+\newblock \doi{10.1038/nrn2852}
+
+\bibitem{BackpropagationAP:2012}
+M.~Kole, G.~Stuart, Neuron \textbf{73}(2), 235 (2012).
+\newblock \doi{https://doi.org/10.1016/j.neuron.2012.01.007}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0896627312000505}
+
+\bibitem{AxonInitialSegmentStructure:2018}
+C.Y.M. Huang, M.N. Rasband, Ann N Y Acad Sci. \textbf{1420}, 46 (2018).
+\newblock \doi{10.1111/nyas.13718}
+
+\bibitem{AIS_Updated_Viewpoint:2018}
+C.~Leterrier, Journal of Neuroscience \textbf{38}(9), 2135 (2018).
+\newblock \doi{10.1523/JNEUROSCI.1922-17.2018}
+
+\bibitem{ElectrotonicNeuronModel:1978}
+D.~Perkel, M.~B., J Neurophysiol. \textbf{41}, 621 (1978).
+\newblock \doi{10.1152/jn.1978.41.3.621}
+
+\bibitem{SomjenBook:1972}
+G.~Somjen, \emph{{SENSORY CODING in the mammalian nervous system}} (New York,
+  MEREDITH CORPORATION, 1972).
+\newblock \doi{10.1007/978-1-4684-1707-4}
+
+\bibitem{VeghHowMany:2020}
+J.~V{\'{e}}gh, The Journal of Supercomputing \textbf{76}(12), 9430 (2020).
+\newblock
+  \urlprefix\url{http://link.springer.com/article/10.1007/s11227-020-03210-4}
+
+\bibitem{VeghScalingANN:2021}
+J.~V\'egh, Neural Computing and Applications \textbf{33}(1), 16847 (2021).
+\newblock \doi{10.1007/s00521-021-06456-y}.
+\newblock
+  \urlprefix\url{http://link.springer.com/article/10.1007/s00521-021-06456-y}
+
+\bibitem{SlowCurrentChannels:1985}
+B.J. Patlak, M.~Ortiz, J. Gen. Physiol. \textbf{86}, 89 (1985)
+
+\bibitem{CardiacAPS:1980}
+P.F. Cranefield, F.A. Dodge, \emph{Slow Conduction in the Heart} (Springer
+  Netherlands, Dordrecht, 1980), pp. 149--171
+
+\bibitem{ThreeStateUnidirectional:2004}
+B.~Linder, J.~Garcia-Ojalvo, A.~Neiman, L.~Schimansky-Geier, Physics reports
+  \textbf{392}(6), 321 (2004)
+
+\bibitem{LosonczyIntegrative:2006}
+A.~Losonczy, J.~Magee, Neuron \textbf{50}, 291 (2006).
+\newblock \doi{10.1016/j.neuron.2006.03.016}
+
+\bibitem{APTemperatureDependenceRefractory:2001}
+M.C. Kiernan, K.~Cikurel, H.~Bostock, Brain \textbf{124}(4), 816 (2001).
+\newblock \doi{10.1093/brain/124.4.816}.
+\newblock \urlprefix\url{https://doi.org/10.1093/brain/124.4.816}
+
+\bibitem{HeatProductionNeuron:1958}
+B.C. Abbott, A.V. Hill, J.V. Howarth, Proc. R. Soc. London. B. \textbf{148},
+  149–187 (1958)
+
+\bibitem{CriticalElectricity:2018}
+B.~Drukarch, M.~Wilhelmus, {Progress in Neurobiology} \textbf{169}, 172 (2018).
+\newblock \doi{10.1016/j.pneurobio.2018.06.009}
+
+\bibitem{ComparisonHHandSoliton:2010}
+R.~Appali, S.~Petersen, U.~van Rienen, Advances in Radio Science \textbf{8}, 75
+  (2010).
+\newblock \doi{10.5194/ars-8-75-2010}
+
+\bibitem{HH_Potential_Controversies_2017}
+D.E. Pence, Philosophy of Science \textbf{84}(5), 1177 (2017).
+\newblock \doi{10.1086/694040}
+
+\bibitem{PiezoelectricNeuron:2025}
+Z.~Zhu, Q.~Chen, X.~Zhang, Nonlinear Dyn \textbf{113}, 10461–10477 (2025).
+\newblock \doi{10.1007/s11071-024-10784-8}
+
+\bibitem{SolitonPropagation:2005}
+T.~Heimburg, A.D. Jackson, Proceedings of the National Academy of Sciences pp.
+  9790--9795 (2005).
+\newblock \doi{10.1073/pnas.0503823102}
+
+\bibitem{VeghMembranePotential:2025}
+J.~V{\'e}gh, arXiv, in review in Journal of Biological Physics pp. 1--76
+  (2025).
+\newblock \doi{https://doi.org/10.48550/arXiv.2507.11448}
+
+\bibitem{BiologicalConservationLaw:2017}
+B.~Podobnik, M.~Jusup, Z.~Tiganj, W.X. Wangi, J.M. Buld, H.E. Stanley, Applied
+  Physical Sciences \textbf{45}, 11826 (2017).
+\newblock \doi{10.1073/pnas.1705704114}
+
+\bibitem{OriginMembranePotential:2018}
+I.I. Ryzhkov, D.V. Lebedev, V.S. Solodovnichenko, A.V. Minakov, M.M. Simunin,
+  Journal of Membrane Science \textbf{549}, 616 (2018).
+\newblock \doi{https://doi.org/10.1016/j.memsci.2017.11.073}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0376738817327060}
+
+\bibitem{MembranePotentialPermeability:2024}
+H.~Tamagawa, M.~Sasaki, W.~Lin, B.~Delalande, Mod Concept Material Sci.
+  \textbf{6} (2024)
+
+\bibitem{Hodgkin-HuxleyAdsorption:2021}
+{Hirohisa Tamagawa and Titus Mulembo and Vera Maura {Fernandes de Lima} and
+  Wolfgang Hanke}, Progress in Biophysics and Molecular Biology \textbf{167}, 3
+  (2021).
+\newblock \doi{https://doi.org/10.1016/j.pbiomolbio.2021.10.004}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0079610721001279}
+
+\bibitem{CompanionGuideHodgkinHuxley:2022}
+A.M. Brown, \emph{A companion guide to the Hodgkin-Huxley papers} (The
+  Physiological Society, Seattle, WA 98195, USA, 2022)
+
+\bibitem{AISStructureReview:2018}
+C.Y.M. Huang, M.N. Rasband, Annals of the New York Academy of Sciences
+  \textbf{1420} (2018).
+\newblock \doi{10.1111/nyas.13718}
+
+\bibitem{EnergyNeuralCommunication:2021}
+W.B. Levy, V.G. Calvert, Proceedings of the National Academy of Sciences
+  \textbf{118}(18), e2008173118 (2021).
+\newblock \doi{10.1073/pnas.2008173118}
+
+\bibitem{UpdateHodgkinHuxley:1990}
+J.~Rinzel, Bulletin of Mathematical Biology \textbf{52}(1), 5 (1990).
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0092824005800035}
+
+\bibitem{TransientResponses:2008}
+{Khorsand P and Chance F }, {PLoS ONE} \textbf{3}(11), e3786 (2008).
+\newblock \doi{doi.org/10.1371/journal.pone.0003786}
+
+\bibitem{KochElectricalPropertiesSpike:1983}
+C.~Koch, T.A. Poggio, Proceedings of the Royal Society of London. Series B.
+  Biological Sciences \textbf{218}, 455  (1983)
+
+\bibitem{NeuronalAvalanches:2003}
+J.M. Beggs, D.~Plenz, Journal of Neuroscience \textbf{23}(35), 11167 (2003).
+\newblock \doi{10.1523/JNEUROSCI.23-35-11167.2003}
+
+\bibitem{SynapticTransmissionMason:1991}
+A.~Mason, A.~Nicoll, K.~Stratford, The Journal of Neuroscience \textbf{11}, 79
+  (1991)
+
+\bibitem{NeuronalArborisation:2021}
+A.~Goikolea-Vives, H.~Stolp, { Int J Mol Sci} \textbf{15} (2021).
+\newblock \doi{10.3390/ijms22158220}
+
+\bibitem{NeuritsArbor:2022}
+K.~Hasegawa, K.i. Kuwako, {Seminars in Cell \& Developmental Biology}
+  \textbf{129}, 103 (2022).
+\newblock \doi{https://doi.org/10.1016/j.semcdb.2022.02.015}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S1084952122000544}.
+\newblock Special Issue: Emerging biology of cellular protrusions in 3D
+  architecture by Mayu Inaba and Mark Terasaki
+
+\bibitem{HodgkinConduction:1964}
+A.L. Hodgkin, \emph{The conduction of the nervous impulse} (Liverpool
+  University Press, Liverpool, UK, 1964, 1964)
+
+\bibitem{BeanActionPotential:2007}
+B.~Bean, Nature Reviews Neuroscience \textbf{8} (2007).
+\newblock \doi{10.1038/nrn2148}
+
+\bibitem{ThermalBiophysics:2007}
+T.~Heimburg, \emph{Thermal Biophysics of Membranes}, 1st edn. (2007 WILEY-VCH
+  Verlag GmbH \& Co. KGaA, Weinheim, 2007)
+
+\bibitem{MechanicalWaves:2015}
+A.~El~Hady, B.B. Machta, Nature Communications \textbf{6}, 6697 (2019).
+\newblock \doi{10.1038/ncomms7697}
+
+\bibitem{PressureChangeActionPotentialMeasured:1980}
+{Iwasa, K and Tasaki, I. and Gibbons, RC.}, Science \textbf{17}(4467), 338
+  (1980).
+\newblock \doi{10.1126/science.7423196}
+
+\bibitem{RapidMechanicalBiphaseActionPotentialMeasured:1981}
+I.~Tasaki, K.~Iwasa, J Physiol (Paris) \textbf{77}, 1055 (1981)
+
+\bibitem{MolecularBiology:2002}
+B.~Alberts, A.~Johnson, J.~Lewis, et~al.
+\newblock Molecular biology of the cell (2002).
+\newblock \urlprefix\url{https://www.ncbi.nlm.nih.gov/books/NBK26910/}
+
+\bibitem{SubmillisecondResolution:2008}
+I.~Nemenman, G.D. Lewen, W.~Bialek, R.R. de~Ruyter~van Steveninck, PLOS
+  Computational Biology \textbf{4}(3), 1 (2008).
+\newblock \doi{10.1371/journal.pcbi.1000025}
+
+\bibitem{SterlingPrinciples:2017}
+P.~Sterling, S.~Laughlin, \emph{Principles of Neural Design}, 1st edn. (The MIT
+  Press, Cambridge, Massachusetts and London, England, 2017)
+
+\bibitem{EinsteinMinkowskiRelativity:1977}
+L.~Pyenson, {Archive for History of Exact Sciences} \textbf{17}, 71 (1977).
+\newblock \doi{10.1007/BF00348403}
+
+\bibitem{OriginsOfLifeWalker:2017}
+S.I. Walker, Reports on Progress in Physics \textbf{80}(9), 092601 (2017).
+\newblock \doi{10.1088/1361-6633/aa7804}.
+\newblock \urlprefix\url{https://doi.org/10.1088/1361-6633/aa7804}
+
+\bibitem{ModernRelativity:1993}
+A.~Das, \emph{{The special theory of relativity: a mathematical exposition}},
+  1st edn. (Springer-Verlag New York, 1993)
+
+\bibitem{Minkowski:1908}
+{Hermann Minkowski}, Nachrichten von der K\"oniglichen Gesellschaft der
+  Wissenschaften zu G\"ottingen (in German) pp. 53--111 (1908)
+
+\bibitem{RetardedTimePotential:2011}
+H.A. Ulku, A.A. Ergin, IEEE Transactions on Antennas and Propagation
+  \textbf{59}(11), 4123 (2011).
+\newblock \doi{10.1109/TAP.2011.2164180}
+
+\bibitem{WiringDominance:2019}
+R.~Ho, M.~Horowitz.
+\newblock {More about wires and wire models}.
+\newblock
+  \url{https://web.stanford.edu/class/archive/ee/ee371/ee371.1066/lectures/lect_09_1up.pdf}
+  (accessed on 29 April 2025) (2007)
+
+\bibitem{Roemer:1676}
+Wikipedia.
+\newblock Roemer's determination of the speed of light.
+\newblock
+  \url{https://en.wikipedia.org/wiki/R%C3%B8mer%27s_determination_of_the_speed_of_light}
+  (2024)
+
+\bibitem{NewtonPrincipia:1687}
+I.~Newton.
+\newblock Philosophiae naturalis principia mathematica.
+\newblock \urlprefix\url{https://www.britannica.com/topic/Principia}
+
+\bibitem{EinsteinSpecial:1905}
+A.~Einstein, Annalen der Physik (in German) \textbf{10}(17), 891 (1905).
+\newblock \doi{10.1002/andp.19053221004}
+
+\bibitem{Minkowski100:2008}
+S.~Walter, ESI News \textbf{1}(3), 6 (2008)
+
+\bibitem{HelmholtzReport:1850}
+H.~Schmidgen.
+\newblock {Of frogs and men: the origins of psychophysiological time
+  experiments, 1850-1865} (1850).
+\newblock \urlprefix\url{https://epub.uni-regensburg.de/27126/1/schmidgen.pdf}
+
+\bibitem{HelmoltzHistory:1851}
+E.~Phsychology.
+\newblock The rise of experimental psychology (1850).
+\newblock \urlprefix\url{https://ebrary.net/269412/psychology/helmholtz}
+
+\bibitem{LogicalCalculusMcCulloch:1943}
+W.S. McCulloch, W.~Pitts, j-BULL-MATH-BIOPHYS \textbf{5}(4), 115 (1943).
+\newblock \doi{https://doi.org/10.1007/BF02478259}.
+\newblock \urlprefix\url{http://link.springer.com/article/10.1007/BF02478259}
+
+\bibitem{GrotthussMechanism:2023}
+I.~Popov, Z.~Zhu, A.e.a. Young-Gonzales, Commun Chem \textbf{6} (2023).
+\newblock \doi{10.1038/s42004-023-00878-6}
+
+\bibitem{ElectromagneticNeuron:2018}
+J.~Isakovic, I.~Dobbs-Dixon, D.~Chaudhury, et~al., Sci Rep \textbf{8} (2018).
+\newblock \doi{10.1038/s41598-018-31054-9}
+
+\bibitem{OnsagerExperimental:1959}
+D.G. Miller, {THERMODINAMICS OF IRREVERSIBLE PROCESSES THE EXPERIMENTAL
+  VERIFICATION OF THE ONSAGER RECIPROCAL RELATIONS }.
+\newblock Tech. Rep. Contract No. W-7405-eng-48, UNIVERSITY OF CALIFORNIA,
+  Lawrence Radiation Laboratory, Livermore, California (1959).
+\newblock \doi{10.1021/cr60203a003}
+
+\bibitem{PerturbationNeuralComputation:2002}
+W.~Maass, T.~Natschl\"ager, H.~Markram, Neural Computation \textbf{14}(11),
+  2531 (2002).
+\newblock \doi{10.1162/089976602760407955}
+
+\bibitem{SpatiotemporalPrut:1998}
+Y.~Prut, E.~Vaadia, H.~Bergman, I.~Haalman, H.~Slovin, M.~Abeles, {J.
+  Neurophysiol} \textbf{79} (1998)
+
+\bibitem{SpatiotemporalPlenz:1996}
+D.~Plenz, A.~Aertsen, {Neuroscience} \textbf{70/4}, 893 (1996)
+
+\bibitem{VeghIntroducingTemporalBehaviorScience:2020}
+J.~V{\'{e}}gh, Global Journal of Computer Science and Technology: Hardware \&
+  Computation \textbf{20/1}, 13 (2020).
+\newblock \urlprefix\url{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}
+
+\bibitem{BuzsakiVeghSpaceTime:2023}
+G.~Buzs\'aki, J.~V\'egh, \emph{Space, time and memory}, 1st edn. (Oxford
+  University Press, 2025).
+\newblock
+  \urlprefix\url{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}
+
+\bibitem{Poisson-Boltzmann-Nernst-Planck:2011}
+Q.~Zheng, W.~G.W., J Chem Phys \textbf{19} (2011).
+\newblock \doi{10.1063/1.3581031}
+
+\bibitem{ViscousChargedFluids:2014}
+D.~Forcella, J.~Zaanen, D.~Valentinis, D.~van~der Marel, Phys. Rev. B
+  \textbf{90}, 035143 (2014).
+\newblock \doi{10.1103/PhysRevB.90.035143}.
+\newblock \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevB.90.035143}
+
+\bibitem{MechanicalPropertiesNerves:2025}
+T.~Heimburg, Chemistry and Physics of Lipids \textbf{267}, 105461 (2025).
+\newblock \doi{https://doi.org/10.1016/j.chemphyslip.2024.105461}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0009308424000860}
+
+\bibitem{RejectingMemristor:2018}
+I.~Abraham, Nature Scientific Reports \textbf{8}, 10972 (2018).
+\newblock \doi{10.1038/s41598-018-29394-7}
+
+\bibitem{BrainNetworkModels:2018}
+D.S. Bassett, P.~Zurn, J.I. Gold, Nature Reviews Neuroscience \textbf{19}, 566
+  (2018).
+\newblock \doi{10.1038/s41583-018-0038-8}
+
+\bibitem{APTemperatureDependence:2012}
+N.~Hyun, K.~Hyun, K.~Lee, B.~Kaang, Neurosignals \textbf{20}, 252 (2012).
+\newblock \doi{10.1159/000334960}
+
+\bibitem{MultiCompartmentNeurons:2023}
+R.~Stock, J.~Kaiser, E.~Müller, {et al.}, {Open Res Europe} \textbf{3} (2023).
+\newblock \doi{10.12688/openreseurope.15775.1}
+
+\bibitem{VeghComputingModel:2021}
+J.~V\'egh, in \emph{2021 international conference on computational science and
+  computational intelligence; foundations of computer science}, vol.~21 (IEEE
+  Las Vegas, USA; July 26-29, IEEE, 2021), vol.~21, p. FCS4404
+
+\bibitem{MembranePotentialAbsorption:2014}
+H.~Tamagawa, S.~Morita, Membranes \textbf{4}(2), 257 (2014).
+\newblock \doi{10.3390/membranes4020257}.
+\newblock \urlprefix\url{https://www.mdpi.com/2077-0375/4/2/257}
+
+\bibitem{MembranePotentialKeyFunction:2023}
+H.~Tamagawa, T.~Nakahata, R.~Sugimori, B.~Delalande, M.~T, Acta Biotheoretica
+  \textbf{71}(15) (2023).
+\newblock \doi{10.1007/s10441-023-09467-5}
+
+\bibitem{MembraneBindingDipole:2025}
+A.~Baumgart, J.R. Clarke, G.C. Cranfield, R.~Zerlotti, F.T. Buoninsegni,
+  Biophysical Journal \textbf{124} (2025).
+\newblock \doi{10.1016/j.bpj.2024.11.557}
+
+\bibitem{ElectricDoubleLayer:2023}
+K.~Doblhoff-Dier, M.T. Koper, Current Opinion in Electrochemistry \textbf{39},
+  101258 (2023).
+\newblock \doi{https://doi.org/10.1016/j.coelec.2023.101258}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S2451910323000510}
+
+\bibitem{MembraneCapacitance:2000}
+L.J. Gentet, G.J. Stuart, J.D. Clements, Biophysical Journal \textbf{79}(1),
+  314 (2000).
+\newblock \doi{https://doi.org/10.1016/S0006-3495(00)76293-X}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S000634950076293X}
+
+\bibitem{MarkovianIonChannel:2005}
+I.~Goychuk, P.~H\"anggi, J.L. Vega, S.~Miret-Art\'es, Phys. Rev. E \textbf{71},
+  061906 (2005).
+\newblock \doi{10.1103/PhysRevE.71.061906}.
+\newblock \urlprefix\url{https://link.aps.org/doi/10.1103/PhysRevE.71.061906}
+
+\bibitem{SodiumCurrentDelay:2006}
+G.~Baranauskas, M.~Martina, The Journal of Neuroscience \textbf{26}, 671 (2006)
+
+\bibitem{KochVoltageDependentConductance:1999}
+M.~Stemmler, C.~Koch, {Nat Neurosci} \textbf{2}, 521 (1999)
+
+\bibitem{LivingSystemPhysics:2021}
+M.F. Schneider, Progress in Biophysics and Molecular Biology \textbf{162}, 2
+  (2021).
+\newblock \doi{https://doi.org/10.1016/j.pbiomolbio.2020.10.001}.
+\newblock
+  \urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0079610720301000}.
+\newblock On the Physics of Excitable Media. Waves in Soft and Living Matter,
+  their Transmission at the Synapse and their Cooperation in the Brain
+
+\bibitem{VoltageSensingIonChannel:2019}
+I.~Karbat, et~al., Cell \textbf{178} (2019)
+
+\bibitem{VoltageGatedChannelStructure:2019}
+G.~Wisedchaisri, et~al., Cell \textbf{178}, 993.1003.e12 (2019).
+\newblock \doi{10.1016/j.cell.2019.06.031}
+
+\bibitem{IonChannelSimulation:2016}
+C.~Kutzner, D.A. Köpfer, J.P. Machtens, B.L. de~Groot, C.~Song, U.~Zachariae,
+  Biochimica et Biophysica Acta \textbf{1858}, 1741 (2016)
+
+\bibitem{HilleIonChannels:1999}
+B.~Hille, A.C. M, R.~McKinnon, Nature Medicine \textbf{5}(10), 1105 (1999)
+
+\bibitem{TheBoookOfGENESIS:2003}
+J.M. Bower, D.~Beeman, \emph{The Book of GENESIS: Exploring Realistic Neural
+  Models} (2003).
+\newblock \urlprefix\url{http://genesis-sim.org/GENESIS/iBoG/iBoGpdf/}
+
+\bibitem{NeuroscienceBook:2001}
+D.~Purves, G.J. Augustine, D.~Fitzpatrick, L.C. Katz, A.S. LaMantia, J.O.
+  McNamara, S.M. Williams (eds.), \emph{{Neuroscience}}, 2nd edn. (Sinauer
+  Associates, 2001).
+\newblock \urlprefix\url{https://www.ncbi.nlm.nih.gov/books/NBK10799/}
+
+\bibitem{ElectrochemistryMembrane:2022}
+A.~Boldini, M.~Porfiri, npj Comput Mater  (2022).
+\newblock \doi{10.1038/s41524-022-00827-2}
+
+\bibitem{DepolarizationBianchi:2012}
+D.~Bianchi, A.~Marasco, A.~Limongiello, et~al., J Comput Neurosci \textbf{33},
+  207–225 (2012).
+\newblock \doi{10.1007/s10827-012-0383-y}
+
+\bibitem{HodgkinMemoryBook:1992}
+T.~Tansey, \emph{Alan Hodgkin, Chance and design: reminiscences of science in
+  peace and war}, vol.~37 (Cambridge University Press, 1992, 2012).
+\newblock \doi{10.1017/S0025727300058555}
+
+\bibitem{Mechanistic_HodgkinHuxley_2008}
+C.F. Craver, Philosophy of Science \textbf{75}(5), 1022 (2008).
+\newblock \doi{10.1086/594543}
+
+\bibitem{PhysicsForHodgkinHuxley:2024}
+M.~Oleksowicz, in \emph{Proceedings of the SISFA 43rd Annual Conference,
+  Padova, 5-8, sept 2023; at Padova, Italy} (2024).
+\newblock \doi{10.6093/978-88-6887-297-7}
+
+\bibitem{BuzsakiTheBrain:2019}
+G.~Buzs\'aki, \emph{The Brain from Inside Out}, 1st edn. (Oxford University
+  Press, 2019)
+
+\bibitem{LowPassFilter_Carandini:1996}
+M.~Carandini, F.~Mechler, C.~Leonard, J.~Movshon, J Neurophysiol. pp. 3425--41
+  (1996).
+\newblock \doi{10.1152/jn.1996.76.5.3425}
+
+\bibitem{NaturalComputation:2018}
+D.~Chu, M.~Prokopenko, J.C. Ray, Interface Focus \textbf{8} (2018).
+\newblock \doi{10.1098/rsfs.2018.0058}.
+\newblock Accessed: 2025-03-20
+
+\bibitem{HumanBrainProject:2018}
+E.~Human Brain~Project.
+\newblock {Human Brain Project}.
+\newblock \url{https://www.humanbrainproject.eu/en/ } (2018)
+
+\bibitem{HBP_HodgkinHuxleyNeuronBuilder:2023}
+{Human Brain Project}.
+\newblock {Hodgkin-Huxley Neuron Builder}.
+\newblock \url{ https://hhnb.ebrains-italy.eu/hh-neuron-builder/} (2023)
+
+\bibitem{NeuralNetworkPerformance:2018}
+S.J. van Albada, A.G. Rowley, J.~Senk, M.~Hopkins, M.~Schmidt, A.B. Stokes,
+  D.R. Lester, M.~Diesmann, S.B. Furber, Frontiers in Neuroscience \textbf{12},
+  291 (2018).
+\newblock
+  \urlprefix\url{https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2018.00291/full}
+
+\bibitem{VeghBrainAmdahl:2019}
+J.~{V\'egh}, Brain Informatics \textbf{6}, 1 (2019).
+\newblock \doi{10.1186/s40708-019-0097-2}.
+\newblock
+  \urlprefix\url{https://braininformatics.springeropen.com/articles/10.1186/s40708-019-0097-2}
+
+\bibitem{NeuromorphicComputing:2015}
+{US DOE Office of Science}.
+\newblock {Report of a Roundtable Convened to Consider Neuromorphic Computing
+  Basic Research Needs} (2015).
+\newblock
+  \urlprefix\url{https://science.osti.gov/-/media/ascr/pdf/programdocuments/docs/Neuromorphic-Computing-Report_FNLBLP.pdf}
+
+\bibitem{PhysicsForNeuromorhicComputing:2020}
+D.~Markovic, A.~Mizrahi, D.~Querlioz, J.~Grollier, Nature Reviews Physics
+  \textbf{2}, 499 (2020).
+\newblock \doi{https://www.nature.com/articles/s42254-020-0208-2.pdf}
+
+\bibitem{BrainMasterPlan:2022}
+A.~Mehonic, A.J. Kenyon, Nature \textbf{604}, 255 (2022).
+\newblock \doi{10.1038/s41586-021-04362-w}
+
+\bibitem{NeuromorphicSystems:1990}
+C.~Mead, {Proc. IEEE} \textbf{78}, 1629 (1990)
+
+\bibitem{GordonBellPrize:2017}
+G.~Bell, D.H. Bailey, J.~Dongarra, A.H. Karp, K.~Walsh, The International
+  Journal of High Performance Computing Applications \textbf{31}(6), 469
+  (2017).
+\newblock \urlprefix\url{https://doi.org/10.1177/1094342017738610}
+
+\bibitem{FurberNeuralEngineering:2007}
+{S. Furber and S. Temple}, {J. R. Soc. Interface} \textbf{4}, 193 (2007).
+\newblock \doi{10.1098/rsif.2006.0177}
+
+\bibitem{ScienceQuantumComputers:2018}
+A.~Cho, Science \textbf{364}(6447), 1218 (2018).
+\newblock \doi{10.1126/science.364.6447.1218}
+
+\bibitem{InformationNeuroscienceDimitrov:2011}
+A.G. Dimitrov, A.A. Lazar, J.D. Victor, Journal of Computational Neuroscience
+  \textbf{30/1}, 1 (2011).
+\newblock \doi{10.1007/s10827-011-0314-3}
+
+\bibitem{InformationTheoryIntersection:2008}
+D.H. Johnson, \emph{Information theory and neuroscience: Why is the
+  intersection so small?} (IEEE, 2008), pp. 104--108.
+\newblock \doi{10.1109/ITW.2008.4578631}
+
+\bibitem{InformationTheoryAbused:2019}
+L.~Nizami, Cybernetics \& Human Knowing \textbf{26}(4), 47 (2019).
+\newblock \urlprefix\url{https://core.ac.uk/download/pdf/333651513.pdf}
+
+\bibitem{EnergyEfficientNeuralComputing:2010}
+T.~Berger, W.B. Levy, IEEE Transactions on Information Theory \textbf{56}(2),
+  852 (2010).
+\newblock \doi{10.1109/TIT.2009.2037089}
+
+\bibitem{LogNormalBuzsaki:2014}
+G.~Buzs\'aki, K.~Mizuseki, Nature Reviews Neuroscience \textbf{15}, 264 (2014).
+\newblock \doi{10.1038/nrn3687}
+
+\bibitem{SynapticOrganizationGordon:2004}
+S.~Gordon (ed.), \emph{{The Synaptic Organization of the Brain}}, 5th edn.
+  (Oxford Academic, New York, 2005).
+\newblock \doi{10.1093/acprof:oso/9780195159560.001.1}
+
+\bibitem{MachineVersusLivingIntelligence:2024}
+N.~Rouleau, M.~Levin, Nat Mach Intell \textbf{6}, 1424 (2024).
+\newblock \doi{10.1038/s42256-024-00955-y}.
+\newblock \urlprefix\url{https://doi.org/10.1038/s42256-024-00955-y}
+
+\bibitem{SeekingClarityAI:2024}
+Editorial, Nat Mach Intell \textbf{6} (2024).
+\newblock \doi{10.1038/s42256-024-00968-7}
+
+\bibitem{mackay1952limiting}
+D.M. MacKay, W.S. McCulloch, The bulletin of mathematical biophysics
+  \textbf{14}(2), 127 (1952)
+
+\bibitem{ComputerBrainSejnowski:1989}
+T.J. Sejnowski, IEEE Annals of the History of Computing \textbf{11}(03), 197
+  (1989).
+\newblock \doi{10.1109/MAHC.1989.10028}
+
+\bibitem{SystemChome:2017}
+IEEE/Accellera.
+\newblock {Systems initiative}.
+\newblock \url{http://www.accellera.org/downloads/standards/systemc} (2017)
+
+\bibitem{SystemCBook:2010}
+C.D. Black, J.~Donovan, B.~Bunton, A.~Keist, \emph{SystemC: From the Ground
+  Up}, 2nd edn. (Springer, New York, 2010)
+
+\bibitem{VeghMissingSecondDraft:2020}
+J.~V\'egh, in \emph{{Proceedings of the 2020 International Conference on
+  Computational Science and Computational Intelligence (CSCI'20: December
+  16-18, 2020, Las Vegas, Nevada, USA}} (IEEE Computer Society, 2020), pp.
+  1260--1264.
+\newblock \doi{10.1109/CSCI51800.2020.00235}
+
+\end{thebibliography}

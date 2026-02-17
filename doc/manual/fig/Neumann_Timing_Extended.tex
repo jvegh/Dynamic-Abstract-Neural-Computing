@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikz-timing}[2009/05/15]
+\usepackage{adjustbox}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\begin{document}
+	\maxsizebox{1.5\columnwidth}{!}{
+		\begin{tikztimingtable}
+			Operand 1 available & L 5h 30l 3h 22l\\ % ends with edge
+			Operand 2 available& LL 3h  55l \\ % ends with edge
+			%	Processor available & 3h 9L  N(A4)4H 8l \\ % is available all the time
+			Begin computing  & 3L   N(A1)1H 10L 5L N(A2)1H 11L  \\ % ends
+			End computing  & 4l 16l N(A3)1h 19l 10l 1h 11l  \\ % ends
+			Computing cycle  & 3L   8H N(A6)  N(B4)3L 10l 7H 5L\\ % ends
+			Result available & 11L  4H 6L 10l 5h 5l\\ % is available all the time
+			\\
+			\textcolor{blue}{Refractory}  & 5l   15l N(B3)hh N(B4) N(B6)4l 14l 10l 6l hh 4l\\ % ends with edge
+			\textcolor{blue}{Signal delivery}  & 4l   16l N(B3)3h  17l  10l 6l 3h 3l\\ % ends with edge
+			\textcolor{red}{Signal transfer}  & 23l 5h4h 6h  N(B2)N(B4)N(B5)24l  \\ % ends with edge
+			\\
+			Synchron signal & 3L N(B1)1H  20l N(A4)1H 8L N(A5)1H 7L\\ % is available all the time
+			\extracode
+			\tablerules
+			\begin{pgfonlayer}{background}
+				\foreach \n in {1,...,6}
+				\draw [help lines] (A\n) -- (B\n);
+			\end{pgfonlayer}
+		\end{tikztimingtable}
+	}
+\end{document}

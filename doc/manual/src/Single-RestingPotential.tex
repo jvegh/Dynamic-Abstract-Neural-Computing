@@ -1,0 +1,139 @@
+% Physics of resting potential
+
+\section[Resting potential]{Resting potential\label{sec:Single-RestingPotential}}
+
+The excellent textbook~\cite{PrinciplesNeuralScience:2013} separates the neuron membrane's states into \hypertarget{RestingState}{resting} and transient states. Concerning the resting state, the statement that "the resting membrane potential results
+from the separation of charge across the
+cell membrane" is only half the truth; here we tell the second half. 
+We refine their statement "by discussing how resting ion channels
+establish and maintain the resting potential" ~\cite{PrinciplesNeuralScience:2013}, page 126.
+In the resting state, two effects are considered. On the one side, the potential is created by a static charge-up: "the cell membrane potential results from the
+separation of net positive and net negative charges on
+either side of the membrane".  Furthermore, as we discussed, it is only a small part of the potential: the polarization of the electrolyte's dipoles contributes to the rest. On the other hand, it was claimed that "the resting membrane potential is the result of the [low intensity]
+passive flux of individual ion species through several
+classes of resting channels"~\cite{PrinciplesNeuralScience:2013},
+although it was question marked whether the membrane permeability is a primary property for the 
+membrane potential generation, for a review, see~\cite{MembranePotentialPermeability:2024}. The claim is rooted in the measurements by Hodgkin and Huxley~\cite{CompanionGuideHodgkinHuxley:2022}, as we discuss in section~\ref{sec:Single-RestingCurrent}.
+Its numeric figure was correct, but it was mistakenly interpreted as being produced by a "leakage current" on the membrane's parallel resistance.
+Paper~\cite{OriginMembranePotential:2018} stated correctly "that separation of charges produces a potential" and derived the thermodynamic part in two different ways but did not account for the electric potential. We derive how that electric potential is produced by separating charges and how its value can be calculated from the first principles.
+
+More precisely, inseparable thermodynamic and electrical processes keep the potential set by the inseparable electric and thermodynamic backbone defined by the lipid structure of the cell. It is one of the frequent cases when 
+one effect implements a functionality (the backbone closely defines the frames of the operation), and the other (in this case, combined thermodynamics and electricity) corrects it when it implements a complex operational (dynamical) functionality:
+"stimulated phase transitions enable the phase-dependent processes to replace each other ... one process to build and the other
+to correct"~\cite{BiologicalConservationLaw:2017}.
+
+
+
+The book asks the central questions, "How do ionic gradients contribute to the resting membrane potential? What prevents
+the ionic gradients from dissipating by diffusion of
+ions across the membrane through the resting channels?"
+However, it leaves them essentially open by giving only a qualitative answer, as it discusses only membrane permeability without explaining how the resting potential is created and regulated through charging and polarization.
+
+We demonstrate in section~\ref{sec:Physics-MembraneElectricity} that classical electric methods can calculate the membrane's potential resulting from charge separation and polarization.
+However, some physically plausible assumptions must be made to provide numerical figures.
+The electric processes are inseparable from the corresponding thermodynamical processes~\cite{VeghNon-ordinaryLaws:2025}, which we discuss by deriving a "thermodynamical electrical field".
+The other minor effect is a low-intensity "passive flux" (material transport) produced by the
+"resting channels". They are ion channels not necessarily only across the membrane; they also include the ion channels in the \gls{AIS}~\cite{AIS_NeuronalPolarity:2010, ActionPotentialGenerationNatrium:2008, BackpropagationAP:2012, AIS_Updated_Viewpoint:2018, AISStructureReview:2018}.
+The "resting current" is about two orders of magnitude lower~\cite{EnergyNeuralCommunication:2021}, see also section~\ref{sec:Single-RestingCurrent} than it was assumed at the time of writing the book; correspondingly, its role is much smaller in the transient state, producing an
+\gls{AP}
+which we discuss elsewhere~\cite{VeghMembranePotential:2025}.
+
+The membrane's electric potential defines the resting potential, and the "electric" and "thermodynamic" potentials work together to control neuronal operation.  
+The anatomically defined "electric" membrane potential plus the (compared to the internal amount) vast amount of ions in the extracellular segment and so the stable concentration provides a solid reference point.
+In the resting state, the membrane potential is balanced the presence of always-open "resting ion  channels". When ions flow
+into the membrane, the "resting ion  channels"
+can keep the balance: the internal $K^+$ and $Na^+$ concentrations are adjusted as the $Na^+$ flows in.
+
+
+The importance of the subject was correctly estimated decades ago~\cite{UpdateHodgkinHuxley:1990}:
+"For the past forty years our understanding and our methods
+of studying the biophysics of excitable membranes have been significantly
+influenced by the landmark work of Hodgkin and Huxley. Their work has
+had far reaching impact on many different life science subdisciplines where
+concepts of cell biology have come to be important. These include not only
+neurophysiology but also endocrinology, muscle and cardiac physiology, and
+developmental biology. The ionic currents and electrical signals generated by
+neuronal membranes are of obvious importance in the nervous system. But
+ionic fluxes also play important roles in affecting cellular functions such as
+secretion, contraction, migration, etc."
+
+
+%\subsubsection[Resting]{Resting state\label{sec:PHYSICS_RESTINGSTATE}}
+
+In this state, the goal is to provide stability by using slow and less intense currents. 
+As~\cite{PrinciplesNeuralScience:2013} discusses, there are 'holes' (non-controlled ion channels) in the membrane where the counterforce is missing.
+The difference in the electric and thermodynamic forces could accelerate ions until the Stokes-Einstein  speed (see Eq.(\ref{eq:StokesEinsteinSpeeddV})) is reached.
+Given that the deviation from the set-point is slight, the intensity and speed of the current are low.
+The slow ion transport delivers both charge and mass, so the gradients
+permanently direct the process control variable toward the reference point. Given that the 'resting channels' are scattered on the surface of the membrane and it takes time for the gradients delivered by slow ions to reach the entrance of an ion channel (see also section~\ref{sec:Physics-MovingPotential}), some slight variations 
+in the actual value of the membrane's potential necessarily exist.
+Given that the 
+\gls{AIS}
+comprises non-gated ion channels with much higher density than those in the membrane, the variations and the control ("leaking") are marginal, and for mainly through the ion channels in the membrane's walls, as observed in experimental physiology.
+
+The electric voltage contribution is unidirectional, the two-component thermodynamic contributions, depending on the concentrations, can be positive or negative.
+If choosing the zero potential at the middle of the electric potential, we can interpret that
+the concentration combinations maintain their ionic concentrations (and so also thermodynamic voltage contributions) independently on both sides starting from a zero potential level. They generate potentials autonomously in the segments proximal to the opposite surfaces of the membrane. The electric charge on the membrane creates another voltage independently. However, that voltage must fit between the two thermodynamic voltages. Any deviation in the potentials starts a current directing the concentrations and voltages toward a balanced state.
+The process is complex: the sum of surface concentration of ions must be the same on both sides for the condenser and the ratios on the intracellular and extracellular sides must be adjusted to satisfy the conditions 
+%\begin{tabular}
+%	$U_{internal}^{K^+,Na^+}$ &$= -U_{electric}$ &$+ U_{internal}^{K^+} $&$+ U_{internal}^{Na^+}$&$(+U_{internal}^{invasion})$\\
+%	$U_{external}^{Cl^-,Ca^{2+}} $&$= U_{electric} &- U_{external}^{Cl^-}$ &$- U_{external}^{Ca^{2+}}$&$(+U_{external}^{invasion})$
+%\end{tabular}
+
+In a balanced state, the left sides are zero: at the contact point between the electrolyte and the membrane
+there are no potential differences, while in perturbed state they are non-zero and so they represent the driving forces for restoring the balance. (Recall that the ions are slow and that the local electric and concentration gradients control the local potentials.)
+From the derivation, follows that
+%\begin{tabular}
+%	$U_{electric}$ &$= - 2*(U_{internal}^{K^+} $&$+ U_{internal}^{Na^+}) $\\
+%	$U_{electric}$ &$= - 2*(U_{external}^{Cl^-} $&$+ U_{external}^{Ca^{2+}})$ \\
+%	$U_{electric}$ &$=  U_{internal}^{K^+} $&$+ U_{internal}^{Na^+}$ 
+%	&$= - (U_{external}^{Cl^-} $&$+ U_{external}^{Ca^{2+}})$\quad
+%\end{tabular}
+
+
+
+\begin{figure}
+\iflatexml
+	\includegraphics[width=.8\columnwidth]{fig/RestingPotential3.svg}
+	\else
+	\includegraphics[width=.8\columnwidth]{fig/RestingPotential3.pdf}
+\fi
+	\caption{The mechanism for controlling neuronal operation is the same in all cases shown in Table~\ref{Tab:SummaryTable}. It appears that 
+		the thicker membrane produces a higher membrane electric potential and requires a higher thermal potential to compensate for it. However, it can solve the task using a lower salt concentration.
+		Given that the electric membrane potential 
+		accelerates the ions across the ion channels in the membrane, and the operation is faster. The electric field has a similar value, as shown in  Fig.~\ref{fig:NernstPlanckThermalWidth}.
+		Furthermore, 
+		the total concentration decreases as the membrane thickness and potential increase.  
+		\label{fig:RestingPotential3}
+	}
+\end{figure}
+
+Legend to Figures~\ref{fig:RestingPotential3} and~\ref{fig:RestingPotential4}:\\  
+We arbitrarily choose the zero potential in the solution, on both sides of the membrane. The membrane maintenances its potential difference across its surfaces (practically unchanged). The electrolytes on its two sides are galvanically connected to the plate,
+so they must adjust their concentrations to produce the thermodynamic potential to adjust the electrolyte's potential to zero, otherwise the potential difference drives a current through the electrolyte (ion transport). The two segment must cooperate in balancing the system. They have the same ions in different concentrations. Until the potential gets balanced (or invasion happens), ions will move from one segment to the other. Notice that the \textit{difference} of the thermodynamic potentials is balanced for the system. The \textit{per ion} thermodynamic forces are different for the different ions
+
+Figure~\ref{fig:RestingPotential3} also shows that
+in its native state, the neuron is electrically balanced: in the
+internal and external segments, the resulting thermodynamical and electrical forces are equal
+(see also Fig.~\ref{fig:Physics-ClampingKandel}: the internal
+and external reference points are galvanically connected.)
+Any foreign invasion into the neuron's life (chemical or electrical, including clamping) changes the left-side reference value to
+an externally set value. The neuron must adjust its $Na^+$ and $K^+$ concentrations to reach a new balance while the invasion persists. That is, any invasion ("testing in the physical laboratory") changes the concentrations and voltages 
+inside the cell. In addition, the internal biological processes can trigger internal processes that contribute (from the measurement's point of view) foreign currents or processes, see also section~\ref{sec:Single-ActionPotential}. The feedback the clamping methods apply introduces a compensating current. Even a simple conductance measurement device is active: it applies a test voltage that generates a test current, which sensitively affects the ionic composition of the neuron (recall that the concentrations may differ by up to six orders os magnitude). Although modern electronic devices attempt to conceal this effect, they subtly influence biological operation.
+
+From our result, it follows that for more chemical elements, a per-element coupled set of equations exists plus the sum concentration
+agreed electric fields that are valid simultaneously and define the process variable (aka membrane potential) of the neural regulatory circuit.
+In a more symmetrical form
+
+\begin{align}
+	0_{in/out} &=\frac{U_{electric}^{Total}(c,\Delta z,d)}{2} + \sum_{k;in/out} U_{thermal}^{C_k}(d)+ \sum_{
+k; in/out} U_{invasion}\\
+	c &=\sum_k C_k^{ext} =\sum_k C_k^{int}	\label{eq:coupling}
+\end{align}
+That is, we have an unidirectional electric potential difference and oppositely directed thermal voltages. In the balanced state, the two potentials must be equal.
+When changing say one concentration, it changes the other concentration on the same side, and the surface charge density of the condenser. The changed electric voltage 
+re-adjusts the thermodynamic voltage, and as a consequence,  the concentrations, in the other segment.
+There is no simple way to express, say,
+$[Na^+]_i$ in the function of $[K^+]_i$ or vice versa, and similarly for the other ions. Everything moves.
+The size matters: the amount of ions in the external segment is many orders of magnitude higher, and the gradients are reciprocally proportional to the amount of ions.
+

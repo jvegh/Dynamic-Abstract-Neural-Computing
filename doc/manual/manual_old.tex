@@ -1,0 +1,143 @@
+\documentclass{book}
+\def\MyVersion{0.1.3}
+\tolerance 500%
+\emergencystretch 1em\relax
+\hfuzz .2pt\relax
+\usepackage{latexml}
+\usepackage{latexmlman}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\input{latexmlreleases}
+
+%\definecolor{webbrown}{rgb}{.6,0,0}
+%\definecolor{webyellow}{rgb}{0.98,0.92,0.73}
+%\definecolor{webgray}{rgb}{.753,.753,.753}
+%\definecolor{webblue}{rgb}{0,0,.8}
+%\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green
+%\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
+%\definecolor{NavyBlue}{rgb}{0,0,0.5}
+\newcommand{\indexit}[1]{\index{#1}{%\sffamily
+%\color{blue}
+#1}}
+
+\usepackage{makeidx}
+%\usepackage{eqnarray,amsmath}
+\makeindex
+%\usepackage{wrapfig}
+%\usepackage{changepage}
+\usepackage{tcolorbox}
+
+   \title{ 
+Dynamic Abstract Neural Computing\\with\ Electronic Simulation\\(DANCES)  Version \emph{\MyVersion}}
+\subtitle{The true physics, physiology, computing \& information science\\behind neuronal operation}
+
+\author{János Végh}
+\date{\today}
+\lxKeywords{LaTeXML, LaTeX to XML, LaTeX to HTML, LaTeX to MathML, LaTeX to ePub, converter}
+%============================================================
+\begin{lxNavbar}
+\includegraphics[width=0.42\textwidth]{../graphics/BrainElectronics.png}
+Dynamic Abstract Neural Computing\\ with Electronic Simulation\\
+(DANCES) Version \emph{\MyVersion}\\
+@\today
+\lxContextTOC
+%\\
+\href{../simulator/ToIssue.html}{Report issue}
+\href{../manual.pdf}{Manual in .PDF form}
+\href{../simulator/index.html}{Simulator}
+\href{../simulator/ToCode.html}{Code}
+\href{https://github.com/jvegh/DynamicAbstractNeuralComputing/graphs/traffic}{Traffic}
+\includegraphics[width=0.42\textwidth]{../graphics/NeuronAndBrain.jpg}
+\end{lxNavbar}
+%============================================================
+%============================================================
+\begin{document}\label{top}
+
+%\include{src/Glossary.tex}
+\frontmatter
+\iflatexml
+%\begin{advanced}
+%"\textit{Though this be madness, yet there is method in't.}"
+%
+%\hfill Shakespeare: Hamlet: Act 2 Scene 2
+%\end{advanced}
+\maketitle
+\else
+\begin{titlepage}
+\parindent=0em
+\makeatletter
+\null\vfil
+\hspace{-.5in}
+\hbox to \textwidth{%
+ \hskip.75in
+ \hbox to .25\textwidth{\vspace{0.26in}\includegraphics[width=0.45\textwidth]{../graphics/BrainElectronics.png}}%
+ \hspace{-.5in}\hbox to 0.5\textwidth{
+
+ \vbox{
+\begin{advanced}
+"\textit{Though this be madness, yet there is method in't.}"
+
+\hfill Shakespeare: Hamlet: Act 2 Scene 2
+\end{advanced}
+	\vskip 2 in
+   \null
+    \centering
+    {\LARGE \@title \par}%
+    \vskip 1.0em%
+    {\large \@subtitle \par}%
+    \vskip 3em%
+    {\large \@author \par}%
+    \vskip 1.5em%
+    {\large \@date \par}%       % Set date in \large size.
+    \vskip 3em%
+   \null
+   }%
+   }%
+% \vspace{1.25in}
+ \hbox to 0.25\textwidth{\hskip.95in\includegraphics[width=0.31\textwidth]{../graphics/NeuronAndBrain.jpg}}%
+}%
+\par\vfil\null
+\center{Version \emph{\MyVersion}}\\
+\center{Prepared using \LaTeXML\\
+\date{\today}
+}
+%\makeatotherwebblue
+\end{titlepage}
+%\printglossary
+\tableofcontents
+\vfill
+\pagebreak
+\fi
+\mainmatter
+
+	\input{src/Foreword}
+	\input{src/QuickStart}	
+%%
+	\input{src/Single}
+	\input{src/Physics}
+	\input{src/Physiology}
+	\input{src/Computing}
+	\input{src/Information}	
+	\input{src/Multiple}	
+	\input{src/Intelligence}
+	\input{src/Simulation}	
+
+
+%\chapter*{Bibliography\label{ch:bibliography}}
+%\bibliographystyle{chicago2.bst}
+\bibliographystyle{spphys}
+%\bibliographystyle{plain}
+\bibliography{
+	../../../../LaTeX/CommonBibliography%
+	,../../../../LaTeX/CommonPrivateBibliography%
+	,../../../../LaTeX/CommonNeuronalBibliography%
+	,../../../../LaTeX/CommonAIBibliography%
+}
+\listoftables
+\listoffigures
+
+\backmatter
+\printindex
+
+\end{document}
+

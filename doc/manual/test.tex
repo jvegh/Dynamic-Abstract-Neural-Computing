@@ -1,0 +1,63 @@
+\documentclass{book}
+\def\MyVersion{0.1.4}
+\tolerance 500%
+\emergencystretch 1em\relax
+\hfuzz .2pt\relax
+\usepackage{latexml}
+\newcommand{\indexit}[1]{\index{#1}{%\sffamily
+%\color{blue}
+#1}}
+\usepackage{tcolorbox}
+
+\usepackage{makeidx}
+\makeindex
+\usepackage{glossaries}
+\makeglossaries
+\usepackage{hyperref}
+\input{src/Glossary}
+\newglossaryentry{maths}
+{
+    name=mathematics,
+    description={Mathematics is what mathematicians do}
+}
+
+\input{src/TitlePage}
+%============================================================
+%============================================================
+\begin{document}\label{top}
+
+\frontmatter
+
+    \input{src/Heading}
+\mainmatter
+my text before
+
+\chapter{first/1} \label{MyCh1}
+\Gls{maths} %\gls{real number}
+ \indexit{this}
+ my text after
+
+
+in my last~\cite{NIHBrainStrategy:2020}
+\pagebreak
+\backmatter
+\pagebreak
+\listoftables
+\pagebreak
+\listoffigures
+\pagebreak
+\printindex
+\label{index}
+\pagebreak
+ \printglossary[title=Special Terms, toctitle=List of terms]
+\pagebreak
+ \bibliography{
+	../../../../LaTeX/CommonBibliography%
+	,../../../../LaTeX/CommonPrivateBibliography%
+	,../../../../LaTeX/CommonNeuronalBibliography%
+	,../../../../LaTeX/CommonAIBibliography%
+}
+%\label{bibliography}
+%   \input{test.bbl}  \label{Bibliography}
+\end{document}
+

@@ -1,0 +1,97 @@
+\documentclass[border= 5mm]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{compat=1.15}
+\usepackage{adjustbox}
+\usepackage{pgfplotstable}
+	\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{webyellow}{rgb}{0.98,0.92,0.73}
+\definecolor{webgray}{rgb}{.753,.753,.753}
+\definecolor{webblue}{rgb}{0,0,.8}
+\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green
+\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
+
+\pgfplotscreateplotcyclelist{my color list}{%
+	solid, color=webblue, every mark/.append style={ fill=webblue}\\%
+	densely dotted, color=webred, every mark/.append style={ fill=webblue}\\%
+densely dashdotted, color=webgreen, every mark/.append style={ fill=webblue},mark=triangle\\%
+solid, color=webgreen, every mark/.append style={ fill=webgreen}\\%
+densely dotted, color=webgreen, every mark/.append style={ fill=webgreen}\\%
+densely dashdotted, color=webgreen, every mark/.append style={ fill=webgreen},mark=triangle\\%
+solid, color=webred, every mark/.append style={ fill=webred}\\%
+densely dotted, color=webred, every mark/.append style={ fill=webred}\\%
+densely dashdotted, color=webred, every mark/.append style={ fill=webred},mark=triangle\\%
+densely dashed, every mark/.append style={solid, fill=gray},mark=square*\\%
+	dashed, color=webbrown, every mark/.append style={solid, fill=gray},mark=diamond*\\%
+	densely dashed, every mark/.append style={solid, fill=gray},mark=square*\\%
+	dashdotted, every mark/.append style={solid, fill=gray},mark=otimes*\\%
+	dashdotdotted, every mark/.append style={solid},mark=star\\%
+}
+\begin{document}
+	
+	\def\xMin{-.5}
+	\def\xMax{+2.5}
+	\def\xMode{lin}
+\begin{tikzpicture}[scale=.95]
+
+\begin{axis}
+	[
+%	hide  x axis,
+	width=\textwidth,
+	height=.9\textwidth,
+	cycle list name={my color list},
+	legend style={
+	cells={anchor=east},
+	legend style={at={(.6,0.23)},anchor=west},
+},
+		xmin=\xMin, xmax=\xMax,% x scale
+ymin=-40, ymax=110, % y scale
+	xlabel={dV/dt, rush in},
+	/pgf/number format/1000 sep={},
+	ylabel={$V_{AP}$},
+		xmode=linear,
+	]
+        	\addplot +[mark=none, very thick] table [x=d, y=b, col sep=comma] {AP_0_offset2.csv};
+\addlegendentry{AP vs Rush-in@0}
+        	\addplot +[mark=none, very thick] table [x=e, y=b, col sep=comma] {AP_0_offset2.csv};
+\addlegendentry{AP vs AIS @0}
+        	\addplot +[mark=none, very thick] table [x=f, y=b, col sep=comma] {AP_0_offset2.csv};
+\addlegendentry{AP vs resulting @0}
+
+%        	\addplot +[mark=none, very thick] table [x=d, y=b, col sep=comma] {AP_2_offset.csv};
+%\addlegendentry{AP vs Rush-in@2}
+%\addplot +[mark=none, very thick] table [x=e, y=b, col sep=comma] {AP_2_offset.csv};
+%\addlegendentry{AP vs AIS @2}
+%\addplot +[mark=none, very thick] table [x=f, y=b, col sep=comma] {AP_2_offset.csv};
+%\addlegendentry{AP vs resulting @2}
+%
+%        	\addplot +[mark=none, very thick] table [x=d, y=b, col sep=comma] {AP_4_offset.csv};
+%\addlegendentry{AP vs Rush-in@4}
+%\addplot +[mark=none, very thick] table [x=e, y=b, col sep=comma] {AP_4_offset.csv};
+%\addlegendentry{AP vs AIS @4}
+%\addplot +[mark=none, very thick] table [x=f, y=b, col sep=comma] {AP_4_offset.csv};
+%\addlegendentry{AP vs resulting @4}
+
+\addplot +[
+orange,
+thick,
+only marks, mark=o, mark size=4
+] plot coordinates {
+	(0,0)
+};
+
+\end{axis}
+
+\end{tikzpicture}
+\end{document}
+
+	\addplot +[%mark size=1, mark=*,
+mark=none
+] table [x=a, y=f, col sep=comma] {AP_0_offset_test.csv};
+\addlegendentry{Resulting dV/dt test}
+	\addplot +[mark=none] table [x=a, y=e, col sep=comma] {AP_0_offset_test.csv};
+\addlegendentry{AIS dV/dt}
+	\addplot +[mark=none, very thick] table [x=a, y=d, col sep=comma] {AP_0_offset_test.csv};
+\addlegendentry{iAPTd: Rush-in dV/dt}
+

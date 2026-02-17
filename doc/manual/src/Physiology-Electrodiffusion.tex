@@ -1,0 +1,104 @@
+\section{Electrodiffusion\label{sec:Physiology-Electrodiffusion}}
+
+
+The Onsager reciprocal relations express the equality of certain ratios between flows and forces in \hypertarget{ThermodynamicalSystems}{thermodynamical systems} out of equilibrium, but \textit{where a notion of local equilibrium exists}. \textit{This is exactly the case for a neuron during producing an action potential.} The closest relative to our derivation is the Poisson-Nernst-Planck (PNP) and its mathematically simplified version (Poisson-Boltzmann-Nernst-Planck)~\cite{Poisson-Boltzmann-Nernst-Planck:2011} model are based on a \textit{mean-field approximation of ion interactions and continuum descriptions of concentration and electrostatic potential}. Given that the Nernst-Planck equation is essentially a flux equation for the 
+special case of zero flux, furthermore that Planck essentially included Fick's second law in the PNP model, our approach seems to be self-consistent
+and a significant extension to the famous model. 
+As we discussed,
+it is not reasonable to calculate a mean value for those vastly different
+interaction speeds. We derived a realistic approach
+to the ion transport problems,  in many areas; in addition to  biological systems, also for semiconductor devices and nanofluidic systems.
+
+
+
+Biological cells comprise components such as electrolytes, semipermeable 
+membranes, solutions with expremely different concentration.
+Surprisingly, they show spontaneous electrical activity.
+As Eq.(\ref{eq:PhysicsGradientRatio}) shows, the electrical interaction
+speed is million times higher than the chemical one. 
+
+
+\subsection{Operating regimes\label{sec:Physiology-OperatingRegimes}}
+
+Our equations also call attention to a neglected aspect of evoking
+%\gls{AP}s:
+APs: the rush-in ions increase the local potential in the proximal
+layer to \emph{above the potential of the bulk in the intracellular
+segment}, typically even to slightly above the potential in the bulk
+of the extracellular segment. Consequently, \emph{the concentration
+must also at least approach or even slightly exceed the level of the
+extracellular concentration} for a short period and in a very thin
+layer near the membrane (the timing relations were discussed above).
+The mechanical waves~\cite{MechanicalWaves:2015} provide indirect
+evidence for the effect's existence.
+
+We consider three operating regimes for neuronal membranes. Eq.~(\ref{eq:NernstPlanck})
+describes the steady state. As we discussed, in the case of the finite
+membrane width of biological neurons, a gradient of a particular form
+is created in the electrolyte, also comprising a membrane-width-dependent
+term. However, otherwise, the state can be described by Eq.~(\ref{eq:NernstPlanck}). 
+
+In single-shot mode, along the axis of the ion channel, at large distances,
+the concentration and potential remain essentially unchanged during
+the process. Using our time derivatives, we can describe the details,
+including the process's time course. Given that the slowest interaction
+defines the propagation speed and the proportion of the layer to the
+bulk is extremely tiny, no significant change in bulk can be measured.
+The interaction speed in the bulk is practically the \emph{drift}
+speed (and the gradients are zero).
+
+In the case of high-rate, repetitive measurements, the changes occurring
+in the proximal layers can slowly influence the parameters of the
+bulk. However, this effect becomes significant only in long-term observations
+when a large number of single actions take place in quick succession.
+In a continuous high-rate firing mode, the layers have parameters
+other than the ones required by Eq.(\ref{eq:NernstPlanck}) for the resting
+state for a growing fraction of the time. We can estimate the time
+roughly as how long the ions can diffuse to a distance of 0.1\ mm
+(in the order of $\frac{10^{-4}m}{10^{-4}m/s}$), and how many times
+that distance is greater that the assumed width of the layer proximal
+to the membrane's surface (in the order of $\frac{10^{-4}m}{10^{-8}m}$,
+that causes a 100\% change). We arrive at that a rate 100\ Hz will
+deliver a charge causing a percentage increase of the bulk concentration
+is in the order of at least dozens of seconds. 
+
+\subsection{Connecting science to life\label{sec:Physiology-Life}}
+
+
+The two layers, plus the demon, see section~\ref{sec:Demon-in-the-membrane}, also naturally explain why that difference
+comes into existence. As we explained above, when a \emph{finite-width}
+membrane separating the two segments appears in the volume (due to
+the evolution or the development of the individual biological object),
+two thin electrolyte layers will be formed proximal to its surfaces
+on the two sides, even if the concentrations are equal. As observed,
+``a membrane potential arises when there is a difference in the electrical
+charge on the two sides of a membrane, due to a \emph{slight excess}
+of positive ions over negative ones on one side and a slight deficit
+on the other.''~\cite{NeuroscienceBook:2001} We add that some potential
+difference is created by the presence of the membrane alone, as discussed
+above. When a demon also appears in the membrane (initially a simple
+hole), the random movement of ions with \emph{finite speed }through
+the \emph{finite length} of the ion channels may also solve the mystery
+of \emph{\hypertarget{CellToLife}{why a cell comes into life} during evolution}.
+Maybe we can answer E.~Scrödinger's profound question: "What is life, and how did it emerge from non-life?"
+
+
+Erwin Schrödinger's famous book "What Is Life? The Physical Aspect of the Living Cell"
+provides a nice example of disciplinary thinking.
+Schrödinger's lecture focused on one important question:
+"how can the events in space and time which take place within the spatial boundary
+of a living organism be accounted for by physics and chemistry?"
+He discussed the living cell's operation from the point of view of thermodynamics,
+forgetting that the ions have also charges, so the electric interaction
+must also be considered. The basic difficulty to consider both of them is
+that their interaction speed differs by a factor about a million, and
+physics has no proper approximation to handle them simultaneously.
+Considering the laws of a single discipline, either theory of thermodynamics,
+or theory of electricity, is not sufficient. We must elaborate the way
+how they cooperate in the nature, even if we need to elaborate new mathematical
+methods for that goal, see section~\ref{sec:Physics-Thermodynamics}.
+
+
+\subsection{Spatiotemporal behavior\label{sec:Physiology-Spatiotemporal}}
+
+as we discussed in section~\ref{sec:Physics-Spatiotemporal},

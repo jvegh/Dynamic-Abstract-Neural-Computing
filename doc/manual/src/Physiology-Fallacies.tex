@@ -1,0 +1,376 @@
+% Fallacies about physiology
+
+\section{Fallacies\label{sec:Physiology-Fallacies}}
+
+As we mentioned, when discovering new facts and more details,
+not only do they need to be inserted into the existing set,
+but the validity of \textit{all} assumptions and approximations must be revisited.
+Maybe the discovery supersedes one or more of the old items,
+provides a new hypothesis in place of an old one,
+turns a hypothesis into fact,
+or question marks the overall validity (at least part) of the set of
+approximations and abstractions. Alternatively, it turns a hypothesis into a \hypertarget{PhysiologyFallacy}{fallacy}.
+
+
+Neuroanatomy provided an unbelievable wealth of details about the
+% \gls{CNS},
+CNS,
+its structure, components, their infinite variety of implementation,
+connection, chemical/enzymatical composition, and so on.
+A vast amount of data is collected and available,
+and uncountable attempts (mathematical models) have been made
+to describe the actual phenomena. However, focusing on too many details
+prevents understanding that \textit{"the nervous systems adopts
+a number of basic principles"}~\cite{JohnstonWuNeurophysiology:1995}.
+The illusion of having an imposing
+knowledge base inspired undertakings such as simulating the entire human brain.
+\index{brain!simulating}
+
+The brain must be studied "from Inside Out"~\cite{BuzsakiTheBrain:2019}.
+First of all, understanding how the known and established physical laws
+underpin the operation of single neurons (the interface of non-living matter
+and living matter) instead of hypothesizing additional laws and phenomena
+complementing/overwriting them, led to creating a fictive nature, which in some points
+resemblant to the real one. The abstraction, the discrete components connected
+by ideal wires that can describe electric phenomena, is successful in electronics. However, it is not valid for neurons (see mainly the electrotonic models),
+although some rough resemblance indeed exists.
+The basic differences are that  \textit{the structure of living matter is different and
+that many interactions with drastically different interaction speeds
+are behind the phenomena}, as contrasted with the (mostly) single interaction
+with a single speed of electronics.
+\index{electrotonic model}
+\index{living matter}
+
+\textit{Nature is based on the collective operation of single neurons
+and is prepared to consider the finite operating and transmitting times and uncertainties/failures of operation, unlike (most) technical networks}.
+However, the usual neural network models~\cite{BrainNetworkModels:2018}
+do not consider those differences.
+
+\subsection{Equivalent electrical circuit\label{sec:Fallacies-ElectricalCuircuit}}
+
+"These ionic concentration gradients across the cell membrane
+constitute the driving forces (or chemical potentials)
+for ionic currents flowing through open channels in the membrane.
+In other words, the ionic concentration gradients act like DC batteries
+for cross-membrane currents.”~\cite{JohnstonWuNeurophysiology:1995}
+
+\subsection{Point-like neuron\label{sec:Physiology-FallaciesPointLike}}
+
+The abstraction we need to use always includes simplifications and omissions,
+depending on which phenomena we want to study. If we want to describe Earth's orbit around our Sun, we can consider it point-like at an elementary level and assume pairwise interaction between them.  However, for finer details, we need to consider its structure, size, and the disturbing effects of other planets and its Moon. Whether the abstraction of having point-like neurons is valid depends on the targeted phenomenon.
+
+In the initial investigations, the \textit{size of the cells} was seen
+to be much smaller than the \textit{size of their connections}.
+In addition, the axons were much earlier available for experimental
+investigations, suggesting that the observed signals originate and
+terminate in the network nodes. This abstraction might be
+appropriate (with some limitations, mainly due to the connection speed)
+until we can develop technical tools to study the \textit{internal operation}
+of the network nodes. "We assume that the dimensions
+of the cell are small enough so that spatial variations in the membrane potential can be neglected"~\cite{KochBiophysics:1999}. Its internal operations and phenomena can only have an artificial timing, its input signals are artificially correlated, and its mystic internal operation produces an action potential as an output signal in a pair-wise interaction.
+
+When starting from 'the so-called point representation
+of a neuron" \cite{KochBiophysics:1999}, admitting that "such
+an approximation would be valid, for instance, if we were investigating
+a small, spherical cell without a significant dendritic tree", we
+necessarily conclude that "individual neurons convert
+the incoming streams of binary pulses into analog, spatially distributed
+variables". This statement attempts to underpin that in the neural networks
+digital pulses are traveling, which is less then the half of truth.
+This point of view blocks the interpretation of even the phenomena that are correctly seen and leads to the design of wrong experiments. Among others, it results in the immediate consequence of interpreting neuronal communication as streams of binary pulses,
+which leads to applying Shannon’s mathematical theory to neural communication, despite Shannon's sharp opposition~\cite{ShannonBandwagon:1956}.
+\index{neuron!point-like}
+\index{point-like neuron}
+\index{Shannon, Claude}
+\index{information theory!neural}
+\index{neural information theory}
+
+
+
+
+\subsection{Passive distributed membrane\label{sec:Physiology-FallaciesPassiveMembrane}}
+
+The role of the neuronal membrane is controversial as used in physiology.
+As \cite{KochBiophysics:1999}
+discussed, 'from an electrical point of view, the properties of the membrane can be
+satisfactorily described by a sole element: a capacitance.' However, on the same page, the
+caption of Figure 1.1 explains that 'Proteins inserted into the membrane, here ionic channels,
+provide a conduit through the membrane.' Also, the 'associated lumped electrical circuit for this patch,
+consisting of a capacitance and a resistance \textit{in series} with a battery' (and parallel
+with each other).
+That picture is wrong; see Figure \ref{StructureOfAIS}.
+When inventing the 
+AIS, the wrong hypothesis turned into a fallacy.
+\index{passive membrane}
+\index{membrane!passive}
+
+
+\begin{figure}
+\includegraphics[width=.65\textwidth]{fig/PassiveNeuronMembraneCircular.jpg}
+
+\caption{Equivalent electrical
+model of a spherical cell with passive membrane. \cite{KochBiophysics:1999} Fig. 1.2 \label{fig:Fallacies-NeuronMembraneCircular} }
+\end{figure}
+
+
+
+\subsection{Membrane as a wrong isolator\label{sec:Physiology-Wrong isolator}}
+
+When assuming that the membrane's resistance and capacitance are distributed over its surface,
+one must also assume that it has imperfect resistance despite 
+no known mechanisms to conduct an ionic current. The membrane is a perfect isolator
+connected to a resistance the neuron's 
+%\gls{AIS}
+AIS
+ represents. The ionic current
+(although it is not a 'leaking current') can flow out through it. The right picture
+that the capacitor and resistor are connected serially instead of parallel, as
+introduced several decades ago, defies the fallacy that the membrane is a non-perfect isolator.
+
+\subsection{Energy consumption\label{subsec:EnergyConsumption}}
+
+The passive distributed membrane implies that in its resting state (without operation and communication), a permanent 'leaking current' flows out from the $RC$ circuit through the 
+parallel resistance $R$. If we assume (see, for example~\cite{KochBiophysics:1999} page~11) $R=100\ M\Omega$ 
+and $V_M=0.1~V$, we arrive at $I_{rest}=1pA$ and $P_{rest}=10^{-9}~W$ power consumption per neuron. 
+We arrive at power consumption $100\ W$ for the brain's neurons if all neurons resting without communication.
+For the $10^{11}$ neurons of the brain
+we arrive at  power consumption if all neurons are  \textit{resting} without communication.
+It is plausible to assume that the working neuron consumes more energy (the synaptic currents are in the $nA$ range, although their fill-out factor is low).
+"The audit points out that, rather than the oft-quoted 20 W of glucose available to the human brain, \textit{the fraction partitioned to cortical computation is only $0.1~W$} of ATP"~\cite{EnergyNeuralCommunication:2021}.
+Assuming a leaking current, a must-be consequence of the parallel  $RC$ neuronal oscillator, results in more power consumption of about two orders of magnitude than the measured value.
+\textit{The existence of a leaking current is against the experimental evidence and 
+the metabolic efficiency of the biology of evolution}. 
+
+
+\subsection{'Delayed rectifying' current\label{sec:Physiology-DelayedCurrent}}
+
+As a consequence of using, by mistake, the integrator-type instead of the differentiator-type $RC$ circuit,
+the textbooks (see, for example \cite{MolecularBiology:2002}), explain that 'the membrane potential would have simply relaxed back
+to the resting value after the initial depolarizing stimulus if there had been
+no voltage-gated ion channels in the membrane'. This statement is wrong.
+The figure refers to an electric integrator-type circuit instead of a neuronal oscillator.
+
+Unlike in the resting state, when generating an 
+%\gls{AP},
+AP, there is no intense $K^+$ current. The explanation that
+'the efflux of $K^+$ through $K^+$ channels,
+which open in response to membrane depolarization' \cite{MolecularBiology:2002}
+is wrong. As we described, the $Na^+$ ions form for a
+short time (a small fraction of a millisecond), a thin $Na^+$-rich layer on the
+intracellular side of the membrane (this effect is misinterpreted
+as ions adsorption @cite Hodgkin-HuxleyAdsorption:2021), 
+and, correspondingly, a $Na^+$-poor layer on the extracellular side.
+The strong repulsive force would prevent
+$K^+$ ions in the intracellular side from reaching their specific ion channels,
+even if the $K^+$ channels would 'know' when to open.
+The driving force for $K^+$ would act in the opposite direction.
+Furthermore, an attractive force would act on the $Cl^-$ ions.
+How big the driving force could be, can be understood from \cite{MolecularBiology:2002}, chapter 11:
+'The interior of the resting neuron or muscle cell is at an electrical potential
+about $50\dots 100\ mV$ more negative than the external medium.
+Although this potential difference seems small, it exists across a plasma membrane
+only about $5\ nm$ thick, so that the resulting voltage gradient is about $100,000\ V/cm$.'
+\index{voltage gradient}
+The diameter of the ion channel is about $0.1\ nm$, and
+'two $K^+$ ions in single file within the selectivity filter,
+separated by about $8\ A$.
+Mutual repulsion between the two ions is thought to help move them through the pore
+into the extracellular fluid."~\cite{MolecularBiology:2002}. Maybe, in biology, Newton's third law in not active?
+We show a numeric calculation in section~\ref{sec:Physics-ElectrodiffusionDynamics}.
+
+Fortunately, the correct differentiator-type
+circuit produces the 'hyper-polarized' 
+%\gls{AP}
+AP voltage time course
+(below the resting potential) alone, without needing to hypothesize
+some (unphysical) 'ghost' current.
+
+As discussed,
+the rushed-in $Na^+$ ions
+produce a 'traveling wave' on the membrane. However,  \cite{MolecularBiology:2002} shows that potential only on the axon.
+The textbook skips the conclusion that a traveling wave spreads over the membrane,
+because it would kill the starting hypothesis that
+\textit{the membrane is isopotential while generating an Action Potential}.
+
+The effect of the ion channels alone
+cannot produce a traveling wave. However, as we discussed, the rushed-in ions
+create a huge charge density on the membrane's surface, and that charge can exit only
+through the 
+%\gls{AIS}.
+AIS. That macroscopic 'slow current' on the intracellular side of the membrane,
+on the differentiator-type $RC$ circuit, produces the 'traveling wave'
+observed about the
+%\gls{AIS}
+AIS and along the axon.
+When the book~\cite{MolecularBiology:2002} was published, the structure of 
+%\gls{AIS}
+AIS  \cite{AxonInitialSegmentStructure:2018} was not known.
+Now it is. 
+It is high time to fix the neuronal circuit type and explain how to create the action potential with a correct model based on the first principles of science.
+
+HH's equations more or less accurately describe 
+the features of the wrong oscillator type and those of the
+non-existing $K^+$ current introduced for compensating for the wrong oscillator selection.
+As the meticulous review~\cite{BeanActionPotential:2007} made clear, "typically only a fraction of the various
+voltage-dependent potassium currents present in a
+neuron is significantly activated \textit{during normal action
+	potentials}". That is, they might be significant in other periods, but not during generating normal 
+	%\gls{AP}s.
+	APs.
+
+
+\subsection{Membrane refractoriness\label{sec:Physiology-FallaciesRefractoriness}}
+
+After introducing the notion of "slow current" notion,
+\textit{no relative and absolute refractoriness exists}, only \href{href="https://neuronaldynamics.epfl.ch/online/Ch2.S2.html}{refractoriness}.
+The period,
+called "relative refractoriness" in the time-independent discussion,
+is an illusion. 
+The slow currents, received through the synapses, need time to reach
+\gls{AIS}, so they  appear
+dozens of microseconds later at the \gls{AIS}.
+In that period, the output voltage on \gls{AIS}
+is already below the resting potential,
+which is the extension of the absolute
+refractory period. 
+Given that the \gls{AP} is already in its
+hyperpolarized state in that period,  
+its exciting contribution is much harder to observe
+than at the beginning of an \gls{AP}, starting from
+the resting potential. However, the physical background is the same.
+
+The causality is reversed:
+not "the minimal distance between two spikes defines the absolute refractory period
+of the neuron"~\cite{NeuralDynamicsGertsner:2014}. Instead, as we discuss, until the membrane's potential
+is above the threshold (which period is defined by physiological parameters),
+the synaptic inputs are closed, so if another spike arrives until
+the synapses are re-opened, it is neglected. 
+
+\subsection{Membrane as low-pass filter\label{sec:Physiology-FallaciesLowPassFilter}}
+
+
+The fallacy that in the neuronal $RC$ circuit the elements are switched in parallel, implies
+the commonly used fallacy that a biological neuron is a low-pass filter.
+A neuron can be represented as a \textit{differentiator}-type $RC$
+oscillator belonging to high-pass filters in the world of instant interaction of electronics.
+However, neurophysiology sticks to assuming that
+'the cell membrane composed of a resistance and a capacitance in parallel (RC circuit)'
+and it should show the signs of a Low-Pass Filter.
+The experimental work \cite{LowPassFilter_Carandini:1996}
+(their figure is reproduced in Fig.~\ref{fig:Fallacies-LowPassFilter})
+'demonstrated' experimentally the 'low-pass' behavior of their neuron.
+It shows an example when one proves 'experimentally' what they want to believe. Likely Feynman's warning was forgotten: "The first principle is that you must not fool yourself -- and you are the easiest person to fool.” 
+
+The fundamental issue with evaluating  their data is
+misunderstanding of the neuron's function.
+\textit{A neuron does not pass signals: it receives ones and produces new signals}.
+Furthermore, the physiological notions are
+interpreted for a 'steady state', i.e., using alternating current invalidates their basic assumptions.
+It is senseless to check its signal-passing feature: it is a wrong question to nature.
+The statement is valid for other measurements using alternating currents, too.
+According to~\cite{OnsagerExperimental:1959}, page 22,
+"Also included are $L_{ij}$ determined using sinusoidally varying
+voltage and pressure. This kind of experiment gives values of
+$L_{ij}$ which are frequency dependent. However, the values approach a
+constant value·at sufficiently low frequency."
+
+\begin{figure}
+\includegraphics[width=.85\textwidth]{fig/LowPassFilter_Koch.jpg}
+
+\caption{Illustrating the fallacy that neurons represent a low-pass filter. \cite{KochBiophysics:1999} Fig. 1.4 \label{fig:Fallacies-LowPassFilter} }
+\end{figure}
+
+
+Any foreign input current into the membrane, whether it is noise or a sine signal,
+increases the momentary and the average resting potential of the membrane,
+that is, decreases the probability that the synaptic trigger
+arrives at a moment when the synaptic input is enabled.
+For how synaptic inputs are enable in function of artificial currents, see our Figure \ref{fig:ArtificialCurrent_AP}.
+The arrival time of the spike from the presynaptic neuron is independent
+from the operation of the postsynaptic neuron, so the signals arrive at a 'random time'
+in the neuron's local time system.
+With increasing the frequency of that foreign signal,
+more input charge increases the membrane's voltage.
+The longer the membrane voltage is above its threshold potential,
+the less is the chance to re-open the neuron's synaptic inputs, i.e.,
+to receive inputs from the 'regularly firing cell':
+the triggers arrive with a high probability in the absolute refractory period.
+\index{refractory period}
+In the case of varying frequencies, this effect, combined with the finite ion current speed, makes the measured firing rate unpredictable. In a later research, it was noticed that \cite{DepolarizationBianchi:2012}
+the too high current blocks spiking (more precisely,
+receiving the triggering signal).
+\index{spike!blocking}
+\index{blocking spikes}
+
+From our conceptual model of generating 
+%\gls{AP}
+AP (see Fig. \ref{fig:AP_Conceptual}),
+it is immediately clear that although in the 'native mode' of operation,
+the falling edge of the 
+%\gls{AP}
+AP
+would result in the membrane's voltage falling below the threshold,
+in this way re-enabling synaptic inputs.
+However, in 'artificial' mode, the foreign current can keep the voltage above the threshold
+(for shorter or longer periods, additionally),
+so the synaptic signal cannot enter the membrane, given that
+in periods when the membrane has potential value above the threshold,
+the synaptic inputs are not enabled; see also Figure~\ref{fig:ArtificialCurrent_AP}.
+The synaptic inputs are re-enabled only  later when the membrane's potential is
+under the threshold potential when a new synaptic trigger arrives.
+That is, the triggering effect
+of the "regularly firing cells" is suppressed by the artificially
+increased neuronal membrane voltage.
+\textit{The effect has nothing to do with the effect 'Low-Pass Filter'}. See also section~\ref{sec:Physics-MembraneElectricity}.
+
+
+
+\subsection{Thresholds of initiating AP\label{sec:Physiology-FallaciesAPThresholds}}
+
+As discussed above, ion channels have a voltage threshold that opens
+them. We can successfully interpret how the microscopic threshold
+of the ion channels forms the macroscopic phenomenon that a voltage
+threshold exists for the membrane. Section~17.3 in~\cite{KochBiophysics:1999},
+introduces further (current and charge) thresholds. After introducing
+the ``slow current'' notion, we can understand that the same voltage
+threshold manifests in apparently different thresholds.
+
+As discussed, introducing a sustained current $I_{clamp}$
+implies the introduction of a sustained slow current on the membrane's
+surface. The sustained current means a sustained presence of ions on the surface, resulting in a continuous increase of potential offset over the resting potential value. As observed, ``the somatic membrane
+potential responds with a slight overshoot''. Given that the charge
+collection for initiating an 
+%\gls{AP}
+AP starts at a voltage above the
+resting potential, the voltage threshold is reached earlier. The introduced
+external current $I_{A}$ is added to the sustained \hyperlink{voltage-clamping}{clamping current}.
+The charge delivered by the newly added slow current appears delayed
+(after the onset). Depending on the point of the membrane the current
+is added, the delay may be up to 1 msec. (As \cite{ActionPotentialGenerationNatrium:2008}
+demonstrated, the propagation speed inside a neuron is in the order
+of less than 1 cm/s; furthermore, as we discussed, the need to use
+electrolyte electrodes can prolong the measured delay time considerably.)
+\emph{The current threshold is another manifestation of the voltage
+	threshold.}
+
+As we discussed in section~\ref{sec:Physics-SlowCurrent},
+the virtue of a capacitive current is used only to imitate the effect
+of a slow current: biology has no discrete capacitance. The capacitive
+current exists only as a virtual notion in the electric circuit comprising
+discrete elements that are considered parallel with the biology-imitating
+circuit comprising distributed elements. In the lack of notion of
+a ``slow'' current, for ``rapid events'', one may attempt to replace
+the ``delayed rectifying current'' with an instantaneous current.
+As formulated in section~17.3.5 in~\cite{KochBiophysics:1999}:
+``Because we are considering rapid events, the steady-state I-V in
+Eq.~17.4 must be replaced by the instantaneous I-V curve''. However,
+the rapid events are not rapid enough to make such a replacement in
+a differential equation. This replacement results in their Eq.~(17.7)
+non-matching values are used. As we explained, Eq.~(\ref{eq:Kirchoff_biological})
+formulates Kirchoff's Law in biology. Using \emph{a virtual parameter
+	``capacity $C$'' for biological neurons misleads research: introduces
+	a nonexisting ``charge threshold'', which exists only due to mismatching
+	notions of finite-speed biological circuits with notions of the infinite-speed
+	abstract electric circuits}, used to imitate a finite-speed current
+in terms of a virtual infinite-speed current.%
+

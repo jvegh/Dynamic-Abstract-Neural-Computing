@@ -1,0 +1,175 @@
+
+\iflatexml
+\else
+\minitoc
+\fi
+\chapter[Simulation]{Neural simulator\label{ch:Simulation}}
+	\input{src/Simulation-Foreword}
+	
+	
+\section{\label{SIMULATION_MAIN_PAGE} Simulation principles and technology}
+%
+%
+%@ingroup SIMULATION SIMULATION principles and technology
+%@section   NeuRipes_Simulation_MAIN NeuRipes's simulation method
+
+The central idea of simulation is the notion of "event".
+We use events almost in the everyday sense; that something happens at some given time.
+In technical computing, an event is an electric signal, that means
+the beginning or and of an elementary operation, or signals transferring
+control to another place in the program.
+In biology,  "A signal is a physical event that, to the receiver,
+was not bound to happen at the time or in the way it did." \cite{ mackay1952limiting}
+Similarly, we "define an elementary operation of the brain as a single synaptic event"~\cite{ComputerBrainSejnowski:1989}.
+
+
+The basic issue with simulating biology with technology is that
+\textit{two} time scales exist and they are connected by \textit{events} only.
+The length of the computing and the biological operation are
+not proportional at all. Furthermore, neuronal operations happen
+simultaneously, while technical operations work in a sequential way
+(or maybe in parallelized sequential way) that breaks happening events simultaneously.
+
+The way as we perform simulation that we define events
+(such as beginning or end of computing, receiving an input, etc)
+and we perform the actions that happen at the same (biological) time.
+The "same time" in this context means that the simulated times
+are within a so called "time resolution". The biological actions
+are implemented as a kind of callback function that is called when
+the corresponding (simulated) time arrives. Choosing smaller time resolution
+results in slightly more accurate results at the price of much more computing time.
+
+The software we use is a special C++ based library SystemC with a user-level scheduler
+\cite{SystemChome:2017,SystemCBook:2010}. The primary purpose of the software
+is to prepare electronic designs, so a lot of formal elements are to be considered.
+Those elements are typically confined in low-level modules, and the user-accessible modules
+resemble normal c++ modules, although their name and description max reflect specialties.
+
+\subsection{Event and timing\label{sec:Simulation-EventTiming}}
+
+As always, we need to uses approximations
+and mix physical processes with the terms of simulation
+
+
+\subsubsection{Types of time\label{sec:Simulation-time }}
+The notion of time is vital for biological and electronic
+computing~\cite{RoleOfInformationTransferSpeed:2022,VeghIntroducingTemporalBehaviorScience:2020}. However,
+when simulating biological objects by electronic computers,
+the they are not identical, and, what is worse, they are even not proportional. The way as computers work~\cite{VeghMissingSecondDraft:2020}, destroys even their sequence. For this reason, a pseudo-time is used, which we call 
+'simulated time'. 
+\index{simulated time}
+The biological processes are cut into segments of variable size.
+At the beginning the period for the biological process is set and
+its length is transferred to the scheduler of the engine (important: this scheduler sits on top of the scheduler of the 
+operating system and works independently from it).
+The information comprises a callback function, at what simulated
+time what activity is to be executed.
+Many biological processes run simultanously and they individually 
+communicate with the scheduler.
+This way, the scheduler has the information which biological process wants to use the processor, in a chronological order. 
+The scheduler maintains the simulated time as multiples of
+a 'time resolution'. In this way the continuous simulated time
+is mapped to discrete time steps. The time between those
+discrete steps is considered they are the same.
+
+When the next element of the queue follows, the scheduler
+increases the simulated time to the value of the requested time of action of the actual item. If more than one action is scheduled to the same time, all those actions are performed, in an arbitrary order. At the end of the period, the callback function
+notifies the biological process that the requested timing period
+is over (meaning that the requested computing activity was performed) and the scheduler takes the next item in the queue.
+If the time of that item is different, the system advances to
+that time value.
+
+This way the biological objects work on the same time scale. 
+Through the elapsed time and/or notifying each other, they can cooperate. Although the periods of the simulated time and the
+period while the computer works out the simulated task are greatly disproportional, the simulation is perfectly timed. The simulated process asks to schedule its phases to the biologically correct time, and they are executed at a processor time when the processor has free activity time.
+
+%An (educational, demonstration and research)-purpose @link SIMULATION_MAIN_PAGE simulator@endlink
+%attaches the site, with complete code, examples, use cases, reproduced research results and documentation
+%(to the \gls{API} documentation through the related \em modules and \em classes).
+%<i>Our simulator provides a deeper understanding, a correct physical background,
+%and it is the only one where the time is handled as part of the unified space-time.</i>
+%In this site, the science facts are provided as cited references,
+%and in most cases also direct hyperlink makes accessing them easy.
+%
+%The closely related @link MODELING_SINGLE_MAIN neuron simulation @endlink details are underpinned
+%by @link PHYSICS_MAIN_PAGE physics @endlink explanations.
+%<i>None of the existing simulators handles the mentioned phenomena:
+%they live in the world of the classic science grammatically translated to biological terms,
+%without interpreting them for biology.
+%Neither of them handles time as a physically reasonable entity; instead, they consider
+%it as an additional (and mathematically separable) parameter in the Newtonian scene.</i>
+\section{\label{sec:SIMULATION_SYSTEMC} SystemC, the background language and engine}
+
+In the SystemC engine there exists a time resolution,
+a small period in which all events 'happen at the same time'.
+(for biological neurons, a $2 \mu s$ time resolution seems
+to be sufficient.) for describing all its features a complete
+Refererence Guide \cite{SystemChome:2017} for developing the  code, but using the well-written
+core of the package it is suffient to study the textbook \cite{SystemCBook:2010}.
+
+
+\section{Ripes Simulator \label{sec:Ripes_Simulator} }
+
+The final goal is use the technology developed in \href{https://ripes.me/}{the RIPES simulator},
+to visualize and manipulate variable of the neurons and their groups
+at different levels.
+Presently, program classes, demos and tests, furthermore,
+first of all: theoretical backround is provided and shared on the site.
+
+\section{\label{GTKWave_Simulator} GTKWave simulator}
+
+Although it remains almost entirely hidden for the average user, the simulator
+is essentially an electronic design software. It produces an 'ObjectName.vcd' file
+that, correspondingly, can be analyzed using the tools of electronic design.
+One of the popular tools is GTKWave. The contents of the .vcd file can be displayed
+as shown in \ref{fig:ArtificialCurrent_GTKWave}. (To reproduce the figure, one has to switch
+the signal forms to 'analog stepwise' and 'analog interpolated', respectively,
+and increase the 'insert analog height extension' to the single-text line annotation.)
+
+
+
+\begin{figure}
+	\includegraphics[width=0.65\textwidth]{fig/GTKWave.png}
+	\caption{The summary of  AP
+%	\gls{AP} 
+	generation
+		as seen in the simulator. The information is essentially the same that in Figure~\ref{fig:ArtificialCurrent_AP} (for codename '0', i.e., 'Simple delivery').
+		The rush-in current produces its voltage time derivative, the resulting voltage time derivative
+		generates the neuron's output voltage, the AP.
+%		\gls{AP}.
+	The neuron passes (due to the excitation) from stage 'Relaxing' (codename '1') to 'Computing' (codename '2')
+and 'Delivering' (codename '2') as described above.
+	\label{fig:ArtificialCurrent_GTKWave}}
+\end{figure}
+
+
+%
+%The figure shows the time course of the \gls{AP}, together with the corresponding
+%@link MODELING_SINGLE_ELECTRIC_DIFFERENTIATOR voltage derivatives@endlink produced by PhysicalNeuron.
+%The 'State' line displays how the state of the neuron changes from 'Relaxing' (codename '1')
+%to 'Computing' (codename "2') for the effect of receiving the first input (just a step-like increase
+%in this phase of development). After reaching the threshold voltage, the state
+%changes to 'Delivering' (codename '3')
+%and remains there until the membrane voltage decreases again below the threshold.
+%When the membrane's threshold voltage reached, a 'rush-in' current  starts
+%that loads the membrane's condenser to a peak voltage and slowly discharges.
+%
+%The figure shows the time courses of a '@link MODELING_SINGLE_ELECTRIC_DIFFERENTIATOR_SIMPLE simple delivery@endlink'
+%case when the (simulated, step-like) synaptic inputs trigger an \gls{AP}.
+%The rush-in current produces a sharply changing time derivative,
+%the current flowing through the \gls{AIS} generates another dime derivative.
+%The resulting time derivative is their sum (or, actually, difference, given that
+%the latter term is an outward current). This derivative has an inflection point,
+%followed by a raising period and almost constant value.
+%When @link MODELING_SINGLE_ELECTRIC_OPERATION integrating the resulting time derivative@endlink,
+%the result is the\f$V_{out}\f$ \gls{AP}
+%The membrane's resulting \f$\frac{dV}{dt}\f$ value changes sharply when entering stage 'Delivering'
+%and later changes from negative to positive; in this way forming the output voltage.
+%Although the \gls{AIS} voltage decays continuously, it is evidently visible
+%in stage 'Computing', following the step-like incrementations.
+%
+%
+
+
+
+%	\input{src/Simulation-AP_Timing}

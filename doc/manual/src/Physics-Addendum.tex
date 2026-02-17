@@ -1,0 +1,60 @@
+% The addendum to Johnston&Wu book
+
+\section{Addendum\label{sec:Physics-Addendum}}
+
+
+In this section, we add some notions, pinpointig and fixes to the chapters of book~\cite{JohnstonWuNeurophysiology:1995}, needed mainly to make 
+enhanced abstractions for biology, with the goal to derive the needed 'extraordinary' laws of physics. The quotations are from \href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{that book},
+without citing the book per quotation, providing only page number. Our fixes and notations are
+typeset in blue, and confine themselves to the most needed text,
+so the best way or reading is to read the two texts simultaneously.
+
+\subsection{Ion movement in excitable cells\label{sec:Physics-IonMovement}}
+\href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{Page 9} "In excitable cells, movement of
+ions across the plasma membrane results in changes of electrical potential
+across the membrane, and these potential changes are the primary signals
+that convey biological messages from one part of the cell to another part
+of the cell" \textcolor{blue}{Given that those messages are delived by ions, the conveyed biological messages also mean changes of concentration. After crossing the membrane,
+\index{slow current}
+the ions (as slow currents) also physically move in the layer on the surface of 
+the plasma membrane. To consider \hyperlink{atomic_layer}
+{the process and the dynamically formed component} is essential in understanding why and how
+%\gls{AP}s
+APs form, as well as how those signals are processed and transmitted. Their effect is significant. As shown in Page 12, the total number of ions in the spherical cell is $2*10^{13}$. As we estimate in section~\ref{sec:Physiology-OperatingRegimes}, the number of ions conveyed in a single signal is about $10^{7}$, which seems to be negligible. In line with our estimate, in the order of $10^4$ pulses in quick succession are needed to drastically change the number of ions (aka concentration or potential of the bulk) in the cell. However, the 
+number of uncompensated ions is estimated, in line with our estimate for the order of number of ions per pulse,  as $4.7*10^7$,so it is absolutely necessary to consider
+the finite resources, as we do it in section~\ref{sec:Physics-Resources}.}
+
+\subsection{Physical laws that dictate ion movement\label{sec:Physics-PhysicalLaws}}
+\href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{Page 10} "The first two laws concern two processes: diffusion of particles caused
+by concentration differences and drift of ions caused by potential differences. The third law concerns the relationship between the proportional
+coefficients of the first two processes, the diffusion coefficient $D$ and the
+drift mobility $\mu$."\textcolor{blue}{Unfortunately, here the reciprocal relations, which we discuss in section~\ref{sec:Physics-Thermodynamics}, between the processes is missing, as well as the role of the finite resources, which we
+discuss in section~\ref{sec:Physics-Resources}. This is a fundamentally wrong abstraction. The worst context of this abstraction is that it hides that the speeds of diffusion coefficients and speeds differ by several orders of magnitude, as it refers to the Nernst-Planck equation at zero flux, where, really, both speeds are zero. The equation, in addition, does not consider that by moving ions, we change the potential and concentration simultanously and
+inseparably; that is, handling the case with partial derivatives is not allowed.
+}
+
+\href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{Page 15}"The
+negative sign indicates that $I$ flows in the opposite direction as $\frac{\partial V}{\partial x}$ and in
+the opposite (same) direction as $\frac{\partial [C]}{\partial x}$
+if $z$ is positive (negative).
+This equation describes the passive behavior of ions in biological systems." \textcolor{blue}{Unfortunately, there are doubts here if partial derivation can be applied at all: when changing one of the abstract entities the other changes simultanously, given that the ion represents mass and charge simultanously.}
+
+\subsection{The Nernst equation\label{sec:Physics-NernstEquation}}
+\href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{Page 15}"The NPE gives the explicit expression of ionic current in terms of concentration and electric potential gradients." \textcolor{blue}{As we discuss in section~\ref{sec:Nernst-time-derivatives}, NPE is valid only in the 'mean-field' approximation, i.e., when we assume that the diffusion and electrical interactions have the same speed. Furthermore, although it was derived for equilibrium state, it implies that for the short time of forming an
+%\gls{AP},
+AP, the concentration also changes, given that the potential changes. According to their Table 2.1, for a short period, up to two orders of magnitude change in the
+concentration can take place. See also section~\ref{sec:Physics-TwoSegments}.
+}
+
+\subsection{Ion distribution and gradient maintenance\label{sec:Physics-IonDistribution}}
+\href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{Page 17} "These ionic concentration gradients across the cell membrane constitute the driving forces
+(or chemical potentials) for ionic currents flowing through open channels
+in the membrane. In other words, the ionic concentration gradients act
+like DC batteries for cross-membrane currents."
+\textcolor{blue}{First, the relation is mutual; it could be considered that
+there are chemical batteries. Second, the  ionic currents flow not only through the membrane; they can flow also through the extracellular space. Furthermore, one must tell also when it folows. Third, the driving force
+of those DC batteries chasnges during operation.
+}
+
+\subsection{Membrane permeability\label{sec:Physics-MembranePermeability}}
+\href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{Page 24}"Within the membrane, if one assumes that $[C]$ drops linearly with respect to $x$"\textcolor{blue}{Since the ions are simultanously also charges, the potential also drops linearly, as explicitly said on page 26. Ions must accelerate across the membrane surfaces.}

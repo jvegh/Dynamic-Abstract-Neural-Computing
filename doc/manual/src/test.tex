@@ -1,0 +1,411 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\begin{document}
+
+\begin{tcolorbox}[blanker, interior engine=spartan, colback=blue!10]
+In the segments of electrolytes, the separating membrane
+introduces an asymmetry, and on the two sides of the membrane,
+a charge layer is formed. As we derived in Eq.(\ref{eq:Physics-ElectricFieldFromSigma}), that asymmetry
+produces an electric field on the surface
+\end{tcolorbox}
+
+Text \tcbox[tcbox raise base]{Hello World}\hfill
+%
+\tcbox[left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=0mm,
+toptitle=0.5mm,bottomtitle=0.5mm,title=My table]{%
+\arrayrulecolor{blue!50!black}\renewcommand{\arraystretch}{1.2}%
+\begin{tabular}{r|c|l}
+One & Two & Three \\\hline\hline
+Men & Mice & Lions \\\hline
+Upper & Middle & Lower
+\end{tabular}}\hfill
+
+In the segments of electrolytes, the separating membrane
+introduces an asymmetry, and on the two sides of the membrane,
+a charge layer is formed. As we derived in Eq.(\ref{eq:Physics-ElectricFieldFromSigma}), that asymmetry
+produces an electric field on the surface
+
+\begin{equation}
+	E_z(c,\Delta z) 
+	= \frac{\sigma_A(c,\Delta z)}{\epsilon_o} =	
+	10.89*10^3 * c  * \Delta z \quad 
+	\biggl[ \frac{V}{m} \frac{1}{nm*mM} \biggr]
+	\label{eq:Physics-ElectricFieldFromSigma}
+\end{equation}
+
+We can express the concentration with the electric field
+and the solution's
+\[
+E =  c * N_A * e_{el} * \Delta z
+\]
+
+On the other hand, we know that in a balanced state, the Nernst-Planck equation (see Eq.(\ref{eq:Nernst1})) describes the interdependence of the electric force field
+and the thermodynamic force field on each other
+%
+\begin{equation}
+	E(z) = \frac{d}{dx}V(z)=-\frac{RT}{q*F}\frac{1}{C_{k}(z)}\frac{d}{dz}C_{k}(z)\label{eq:Nernst1}
+\end{equation}
+
+
+\begin{equation}
+	\sigma_{V}(c) = c*6.023*10^{20} * 1.602 * 10^{-19}  = 96.4 * c\quad \biggl[\frac{C}{  mM  * m^3}\biggr]\label{eq:Physics-VolumetricChargeDensity}
+\end{equation}
+By assuming an arbitrary 'physical layers thickness' $\Delta z$ we can calculate the  \textit{surface charge density}~$\sigma_{A} (\Delta z)$~ we need for our calculations below as
+\begin{equation}
+	\sigma_{A} (c,\Delta z)= 96.4*c*\Delta z \quad \biggl[\frac{C }{mM * m^2}\biggr]
+	\label{eq:Physics-SurfaceChargeDensity}
+\end{equation}
+
+
+\begin{equation}
+	E_z(c,\Delta z) 
+= \frac{\sigma_A(c,\Delta z)}{\epsilon_o} =	
+	10.89*10^3 * c  * \Delta z \quad 
+	\biggl[ \frac{V}{m} \frac{1}{nm*mM} \biggr]
+	\label{eq:Physics-ElectricFieldFromSigma}
+\end{equation}
+
+%\tableofcontents	
+%%	When ions are contained in a closed volume,
+%%	they exist in a state of thermal and electrical equilibrium.
+%%	In the absence of external influences or a separating membrane,
+%%	both gradients are balanced and are at zero.
+%%	In this scenario, the 'carrier' - the ion - can be influenced by two different types of interactions, each represented by a distinct abstraction in these processes.
+%	
+%	
+%\subsection{Two segments\label{sec:Physics-TwoSegments}}
+%
+%
+%\subsubsection[Charge layers]{Charge layers in segment\label{sec:Physics-LayersInSegment}}
+%We consider that the segment is composed of electrically conducting discs (the ions are free to move on the surface) and the charged discs' contribution to the 
+%electric field at point $P$ (see Fig.~ \ref{fig:Physics-PointCharge}) can be calculated as known from the 
+%theory of electricity. Due to the symmetry in the direction of $z$, in a homogenous solution, the resulting electric field in the plane perpendicular to direction $z$ is zero: we have  contributions of the same size with opposite signs. The resulting electric field (after integrating the contributions of the rings over the the surface), as shown in Fig.~\ref{fig:Physics-Capacitor} is 
+%\[
+%E_z = \frac{\sigma_A}{\epsilon_o}
+%\]
+%\noindent Notice that here we used the abstraction of an infinitely thin "charged sheet" and that there is a step-like
+%gradient in the electric field in the gap. The physical reality is that the charge is represented by ions, which simultaneously represent a mass, and in equilibrium, the forces due to the voltage and concentration gradients (see see Eq.(\ref{eq:Nernst})) must be counterbalanced by an external force.
+%%
+%An interference between science disciplines can also manifest here. We know at the same time that at the boundaries of electrolytes, different interfaces, including electrically neutral electric double layers, can be formed by only partly known 
+%processes~\cite{ElectricDoubleLayer:2023}. The presence of those structures makes drawing quantitative conclusions hard.
+%
+%%%
+%%\begin{figure}
+%%	\includegraphics[width=.85\textwidth]{fig/eled.png}
+%%	
+%%	\caption{\href{http://hyperphysics.phy-astr.gsu.edu/hbase/electric/imgel2/eled.png}{The electric field of a disc of charge} can be found by superposing the point charge fields of infinitesimal charge elements. This can be facilitated by summing the fields of charged rings.\label{fig:Physics-PointCharge}}
+%%\end{figure}
+%
+%
+%\subsubsection{Condenser effect\label{sec:Physics-CondenserEffect}}
+%Now let us separate the volume into two segments by a membrane with
+%a finite thickness~$d$ (that is, the point's distance from the 
+%two disks will be $z$ and $z+d$). The resulting electric field for segments with surface charge densities will be
+%$\sigma_{A,1}$ and $\sigma_{A,2}$ (see Eq.~(\ref{eq:Physics-SurfaceChargeDensity}))
+%\begin{equation}
+%	E_z = k*2*\pi*	\sigma_{A} \biggl( 
+%\biggl[1-\frac{z}{\sqrt{z^2+R^2}}\biggr] - 
+%	\biggl[1-\frac{z+d}{\sqrt{(z+d)^2+R^2}}\biggr]
+%	\biggr)\label{eq:Physics-ElectricFieldFinite}
+%\end{equation}
+%
+%If the 
+%distance is finite, the resulting electric field will differ from zero. 
+%With such a model, a usual parallel plate condenser can be derived, as shown in Fig.~\ref{fig:Physics-Capacitor}.
+%We have two charged disks (infinite conducting sheets), and 
+%an insulator layer between them. In the classical picture, 
+%the amount of opposite charges on the two plates must be the same.
+%As shown, a constant electric field is present inside the membrane (the plates of the condenser) and zero electric field inside the parallel conducting plates, as well as outside the condenser.
+%In this ideal picture, the charges are aligned on the border of two (infinitely thin) conducting layers and cannot move:
+%the attractive force between them and the opposite charges on the other plate 
+%keeps them fixed in direction of $z$ and the repulsive force
+%between the charges with the same sign keeps their surface density in the $(x,y)$ plane uniform: the infinitely thin plates are equipotential (as discussed in section~\ref{sec:Physics-ElectrodiffusionDynamics}, the strong electrostatic force can produce an enormous acceleration for the individual ions, but the thermodynamic gradient can only change with a several orders of magnitude lower speed, allowing measurable changes in the current intensity on the surface).
+%This picture is valid for the equilibrium state of charges, infinitely small non-dissociating charge carriers and perfectly smooth surfaces. 
+%%\begin{figure}
+%%	\includegraphics[width=.85\textwidth]{fig/eplat4.png}
+%%	
+%%	\caption{The oppositely charged parallel surfaces of the membrane are treated like  conducting plates (infinite planes, neglecting fringing),
+%%		then Gauss' law can be used to calculate the electric field between the plates. Presuming the plates to be at equilibrium with zero electric field inside the conductors, then the result from a charged conducting surface can be used.\label{fig:Physics-Capacitor}}
+%%\end{figure}
+%
+%\subsubsection{Simple conducting sheet\label{sec:Physics-SimpleSheet}}
+%
+
+\subsubsection{Dielectric segments\label{sec:Physics-DielectricSegment}}
+
+
+
+
+
+
+
+
+
+\subsection{XXX****\label{sec:xxx}}
+As we know from theory of electricity, outside the two charged sheets, there is no electric field due to the charged sheets. However, the 
+charged sheet itself means simultaneously a 'concentration sheet', i.e., a steep concentration gradient,
+that according to Eq.(\ref{eq:Nernst}) generates an electric field outside that elemental condenser. 
+The Nernst-Planck force compensates for the difference 
+between the electric field between the two neighboring condensers. The contribution of the dipoles, according to the  Nernst-Planck equation is 
+
+\begin{equation}
+	E_{dipoles}(z) = \frac{d}{dx}V_{m}(z)=-\frac{RT}{q*F}\frac{1}{C_{k}(z)}\frac{d}{dz}C_{k}(z)\label{eq:Nernst2}
+\end{equation}
+
+We consider the electrolyte consisting of parallel plate condensers of thickness $dz$ where the electric field 
+between the plates is reduced due to the change of concentration
+gradient, that is
+
+\begin{equation}
+	E_{electrolyte}(z) = \frac{C_{k}(z)*dz}{2*\epsilon_o} -\frac{RT}{q*F}\frac{1}{C_{k}(z)}\frac{d}{dz}C_{k}(z)\label{eq:ElectrolyteField}
+\end{equation}
+
+The electri
+\noindent showing that for freely moving ions in steady state the electric force
+must be counterbalanced by the corresponding thermodynamic force. 
+
+\begin{equation}
+	E_{condenser}= \frac{\sigma_A}{2*\epsilon_o} = F*C_k(z)*dz
+	\label{eq:CondenserField}
+\end{equation}
+
+We can imagine the electrolyte comprising parallel plate condensers with electrode distance $dz$
+
+In electrolytes, molecules with balanced electrically charged ions are present, that ions dynamically change their relations to each other, depending on their local macroscopic or microscopic conditions. Electrolytes, as a solution are neutral. 
+
+
+
+When thermodynamic or electrical invasion happens, the ion's distribution changes.
+(Above we assumed an infinitely large volume. Limiting the volume's size
+means an asymmetry for the ions in the volume and brings to light 
+unexpected phenomena.)
+We must also discuss another fallacy that the
+structured biological objects behave as the metals do under the effect
+of electrical forces. To derive an abstraction similar to the ones as
+sciences derive their laws, we assumed that the ions are tiny charged heavy
+balls, and they attempt to have a uniformly distributed concentration
+and potential in the considered space segment. We discuss the cases
+when an external electrical or chemical invasion happens in one segment, the case when a
+physical surface (with different thickness) mechanically separates the ions in two neighboring
+segments, when the solutions on the two sides have different features, when the two separated segments
+are not symmetrical due to 'Maxwell-demon'-like transmit gates (semipermeable
+membrane); and when a physical effect concerts the operation of the
+demons. 
+\index{Maxwell-demon}
+
+The cellular electrodiffusion phenomena are very complex, and it is
+not a simple task to choose which physical/chemical effects can be
+omitted so that their omission does not prevent us from explaining
+physiological phenomena. We discuss mainly the commonly used fundamental
+omission that the speed of ionic movement cannot play a role in describing
+neuronal operation. 
+
+\subsection{XXX****}
+The contribution of the dipoles, according to the  Nernst-Planck equation is 
+
+	\begin{equation}
+	E_{dipoles}(z) = \frac{d}{dx}V_{m}(z)=-\frac{RT}{q*F}\frac{1}{C_{k}(z)}\frac{d}{dz}C_{k}(z)\label{eq:Nernst2}
+\end{equation}
+
+We consider the electrolyte consisting of parallel plate condensers of thickness $dz$ where the electric field 
+between the plates is reduced due to the change of concentration
+gradient, that is
+
+	\begin{equation}
+	E_{electrolyte}(z) = \frac{C_{k}(z)*dz}{2*\epsilon_o} -\frac{RT}{q*F}\frac{1}{C_{k}(z)}\frac{d}{dz}C_{k}(z)\label{eq:ElectrolyteField}
+\end{equation}
+
+
+	\begin{equation}
+	E_{condenser}= \frac{\sigma_A}{2*\epsilon_o} = F*C_k(z)*dz
+	\label{eq:CondenserField}
+\end{equation}
+ Electrolytes, as a solution are neutral. 
+
+
+
+When thermodynamic or electrical invasion happens, the ion's distribution changes.
+(Above we assumed an infinitely large volume. Limiting the volume's size
+means an asymmetry for the ions in the volume and brings to light 
+unexpected phenomena.)
+We must also discuss another fallacy that the
+structured biological objects behave as the metals do under the effect
+of electrical forces. To derive an abstraction similar to the ones as
+sciences derive their laws, we assumed that the ions are tiny charged heavy
+balls, and they attempt to have a uniformly distributed concentration
+and potential in the considered space segment. We discuss the cases
+when an external electrical or chemical invasion happens in one segment, the case when a
+physical surface (with different thickness) mechanically separates the ions in two neighboring
+segments, when the solutions on the two sides have different features, when the two separated segments
+are not symmetrical due to 'Maxwell-demon'-like transmit gates (semipermeable
+membrane); and when a physical effect concerts the operation of the
+demons. 
+\index{Maxwell-demon}
+
+The cellular electrodiffusion pheno7mena are very complex, and it is
+not a simple task to choose which physical/chemical effects can be
+omitted so that their omission does not prevent us from explaining
+physiological phenomena. We discuss mainly the commonly used fundamental
+omission that the speed of ionic movement cannot play a role in describing
+neuronal operation. 
+
+\subsection{One segment\label{sec:Physics-OneSegment}}
+
+We prepare a tiny electrolyte volume filled with a solution containing
+ions (such as $Na^+$, $K^+$ and $Ca^+$; furthermore, of course $Cl^-$ or similar). The overwhelming majority of those ions 
+is chemically bound, but a minority might exist separately from each other; especially under external macroscopic changes  applied to the volume.  
+Electrodiffusion experience shows that, when applying such changes, reaching a steady state
+is a temporal \emph{process}, and even the spatial and temporal development
+of the concentration gradients can be measured as individual
+processes (the voltage gradient is too fast to measure it). It is also evident from experiments that diffusion is a
+fast \emph{process} and that the propagation of the electrostatic
+field is unimaginably fast ; see our discussion around Eq.~(\ref{eq:PhysicsGradientRatio}), but it must be process, too. In other words,
+we have two enormously different interaction speeds. Eq.~(\ref{eq:Nernst})
+provides only position derivatives. 
+However, Eq.(\ref{eq:Nernst-dVdt}) and Eq.(\ref{eq:Nernst-dCdt}) provide the time derivatives for describing 
+the time course of the processes.
+
+
+In the calculations below, we use the notion of 'surface charge density' (given in $C * m^{-2}$).
+We know the permittivity of free space, $\epsilon_o = 8.854*10^{-12}\ C*V^{-1}*m^{-1}$,
+furthermore, $1\ mM$ concentration means that $6*10^{20}$ atoms are present in 
+$1\ m^3$. This way, if the concentration $c$ is given in $mM$, we can derive that the \textit{volume charge density} from the concentration 
+\begin{equation}
+	\sigma_{V} = c*6.023*10^{20} * 1.602 * 10^{-19}  = 96.4 * c \biggl[\frac{C}{ m^3 * mM }\biggr]\label{eq:Physics-VolumetricChargeDensity}
+\end{equation}
+and, for a layer with thickness $dx$ the \textit{surface charge density}~$\sigma_{A} (dx)$~is
+\begin{equation}
+	\sigma_{A} (dx)= \sigma_{V}*dx\label{eq:Physics-SurfaceChargeDensity}
+\end{equation}
+We presume that the charges are confined into a physically well-defined layer.
+%
+%\begin{equation}
+%\sigma_{A} (dx) = c*6.023*10^{20} * 1.602 * 10^{-19} * dx = 96.4 * c_1  * dx \biggl[\frac{C}{ m^2 * mM }\biggr] \label{eq:Physics-SurfaceChargeDensity}
+%\end{equation}
+ 
+In a segmented electrolyte we experience electric fields 
+that have different sources. For the closed system, the electric charges are balanced, but locally they may be unbalanced due to physical reasons. 
+In steady state, the some other force must counterbalance
+the electric force. That force may be a mechanical one:
+the ions sitting on the surface of the membrane press the
+surface due to the attractive force on ions on the and the membrane mechanically provides the needed 
+counterforce. 
+We discuss the case when the electrolyte is separated 
+by an isolator membrane
+
+\subsection{Two segments\label{sec:Physics-TwoSegments}}
+
+The membrane is a perfect isolator, i.e., no charge carriers exist
+between its two surfaces. (There may be ion channels built into the membrane that deliver ions, as we discuss in section~\ref{sec:Demon-in-the-membrane}, but it is a different mechanism.)
+For the discussion below, we assume that a two-dimensional surface
+separates the volume and we discuss the gradient along a line, perpendicular
+to that plane surface.
+Having the membrane's shape in mind, we introduce the idea of 'thin physical layer', that is parallel with the membrane. 
+We compose the segments from such layers (sheets) having different potentials.
+We consider the immediate environment of the neuron's membrane
+as parallel $(x,y)$ plates and find the electric field's $z$ component of those plates in the points
+as shown in Fig.~\ref{fig:Physics-PointCharge}.
+
+Inside the cell, the charge distribution is homogeneous, so the electric 
+field contributions cancel each other, even if an infinitely thin isolating (bilayer of lipid molecules) membrane separates the volume in two segments. 
+In the segments, (a tiny fraction of) the components decompose into ionized state (dissociate), and the created ions interact with
+the membrane using a not entirely understood mechanism~\cite{MembraneBindingDipole:2025}.
+%Figure~\href{https://www.ncbi.nlm.nih.gov/books/NBK26910/figure/A2034/?report=objectonly}
+{The ionic basis of a membrane potential} shows and explains the cases
+introduced by the finite-width membrane. On the left side (the case of infinitely thin membrane), 
+at an exact balance of charges on each side, the membrane potential is zero. 
+We assume the membrane is transparent
+for the electrical interaction (the electrical field affects the ions
+in the other segment on the other side of the membrane) but not for
+their masses (mechanically separates the segments). 
+We actually do not affect the electrical and thermal distributions in the now separated segments. 
+
+% This way, we separate the two segments
+%by distance $1$ (we measure distance in units of the thickness $d$
+%when deriving the mathematical dependence, but use physical units
+%in the figure), the first force is unchanged while the second force reduces.
+
+
+Separating a volume into two segments has no initial effects: the
+\emph{bulk} concentration and potential remain the same on the two
+sides of the membrane. However, the finite thickness will result in
+a lack of balance (create a voltage and concentration gradient) near the surfaces of the membrane, even if the concentration on the two sides are the same. Changing the
+bulk concentration or potential in one of the segments creates a corresponding
+gradient across the separating membrane (and also evokes new bulk
+parameters in the resting state). In the layers proximal to the membrane,
+the ions will experience an extra force. The \emph{concentration and
+	potential, inseparably and having the same time course}, will change
+across the two sides of the membrane just because of the gap in physical
+features the membrane represents, as we discussed above. (Notice,
+however, that while increasing the concentration in one segment means
+having an unlimited possibility of increasing bulk potential, decreasing
+it may be limited by the reduced number of charge carriers.)
+
+The electrical repulsion/attraction across the membrane will form two
+layers on the two surfaces: a positive ion-rich layer on the high-concentration
+side and a negative ion-rich layer on the low-concentration side.  Here, refer
+to Fig.(\ref{fig:The-membrane's-extra-gradient}). We do not clone
+the figure, although the bulk parameters differ. The ions in the other
+segment do not counterbalance the repulsion force at the membrane,
+so the values of the local potential in the proximal layer near the
+membrane in the segment with the higher concentration will be above
+the one in the bulk of the segment and of course, the potential will
+also be higher. The opposite charges distribute in the two bulk layers and do not cause a significant concentration or potential change. However, the values of the local concentration and potential
+remain the same in the bulk of the respective layer.
+\index{layer!bulk}
+
+The result is a condenser-plate effect: two layers are formed on the
+\index{condenser-plate effect}
+\index{layer!condenser}
+isolator's two sides where the charges' repulsion does not counterbalance
+the repulsion in the bulk of the corresponding segment. Fig.~\ref{fig:The-extra-membrane-potential}
+displays how the function shapes of the potential and its gradient
+change in the function of the distance from the membrane. Here, we
+assume that no ion channels are in the excellently isolating wall
+(ion channels would mean a current drain and, therefore, a voltage
+drop). The attraction between the ions in the two skin layers
+prevents the ions in the layers on the two sides from diffusing into/from
+the bulk without a current drain in the layer for an extended period.
+This steady state results from the interplay of the concentration
+and the potential described by Eq.~(\ref{eq:Nernst}). The gradients
+change gradually within the segWe can calculate the amount of chargeswe need for our calculation, see Eq.~(\ref{eq:Physics-SurfaceChargeDensity}).
+ments and drop linearly across the membrane.
+Recall our remark above on the limitations of the thickness of the
+layers in proximity to the membrane, which also enforces limitations
+on the potential in the layer. No current can flow through the membrane;
+there is no leaking current. 
+\index{leaking current}
+
+We also need to notice the difference in the local gradients in the
+function of distance from the membrane's surface. If something changes,
+a $dV_{assist}$ gradient appears between the layers and will rearrange
+concentration and voltage in the segment. Notice that this gradient
+is by orders of magnitudes smaller than the gradient $dV_{accelerate}$
+which accelerates the ions in the proximity of the channel entrance
+(see the red ball in front of the entrance of the ion channel). According
+to the Stokes formula (see Eq.~(\ref{eq:StokesSpeed})), the corresponding
+speeds also differ by orders of magnitudes, enabling us to distinguish
+\emph{potential-assisted} and \emph{potential-accelerated} speeds,
+and correspondingly, speak about \emph{'slow' and 'fast' currents}
+that the ions represent at a macroscopic level. For this study, we
+assume the diffusion, potential-assisted and potential-accelerated
+speeds, in $m/s$ to be $10^{-4}$, $10^{-1}$ (also inside neurons~\cite{ActionPotentialGenerationNatrium:2008}),
+\index{speed!diffusion}
+\index{speed!potential-assisted}
+\index{speed!potential-accelerated}
+$10^{+3}$, respectively (used only to estimate the order of magnitude
+of some respective operating times). When staging, we assume the greater
+of the mixing speeds as 'infinitely large' and omit the time that
+the process needs, while discussing how the slower process proceeds.
+
+
+
+	
+\bibstyle{sphys}
+\bibliography{../../../../../LaTeX/CommonBibliography%
+	,../../../../../LaTeX/CommonPrivateBibliography%
+	,../../../../../LaTeX/CommonNeuronalBibliography%
+}
+
+\end{document}

@@ -1,0 +1,300 @@
+% How modeling, in general, works 
+
+\section{Abstract modeling\label{sec:SINGLE_ABSTRACT_NEURON}}
+
+
+Our \hypertarget{NeuronPhysical}{abstract model} focuses on the
+neuron's signal processing function. However, we cannot reach our goal 
+without the correct physiological understanding of its mechanisms. In the next chapter, we show that nature and its observable phenomena are complex; it is pointless to dispute
+which of the scientific disciplines describes neuronal behavior. The non-disciplinary approach shows that the firm and fast electric interaction sufficiently well describes neuronal operation after introducing the equivalent "thermodynamic electrical potential".
+
+In this chapter we consider that \href{https://neuronaldynamics.epfl.ch/online/Ch1.S1.html}{neurotransmitters, receptors and specialized membrane proteins}
+\textit{only implement a kind of (time and energy-consuming)
+	chemical/enzymatic decoupling
+	of the signal transmission mechanism.} The idea resembles opto-coupling in electronics:
+makes \textit{the signal transmission independent from the local potential value}.
+Suppose neurons use galvanic coupling
+when the resting potential of one of the neurons equals the extracellular space. In that case,
+all connected neurons' resting potential is
+equal to that of the extracellular space. Without this decoupling, the death
+of one neuron would immediately lead to the death of the entire neural network.
+Furthermore, the neurons could not make independent signal processing.
+
+
+\subsection{Modeling approaches\label{sec:Single-ClassicVsModern}}
+The \hyperlink{spatiotemporal}{spatiotemporal} neuronal operation is too complex and fast to enable a
+sufficiently detailed and accurate observation  of neuronal operation. 
+Given that the action potential involves rapid changes in membrane potential,
+the genial idea (originally introduced by Cole and Curtis~\cite{COLE_CURTIS_IMPEDANCE:1939}) applied by Hodgkin and Huxley~\cite{HodgkinHuxley:1952} was to slow down (actually to "freeze") 
+its dynamics by the "voltage clamp" device, which can set the membrane's potential
+at a particular voltage and keep it there, using electrical stimulation and feedback.
+\index{clamping}\index{laws of motion}
+\textit{This advantage of the method is its disadvantage at the same time.} 
+First, since it uses purely electric stimulation and feedback, it suggests 
+that the stimulated operation is also purely electrical,
+hiding that it is a thermoelectric process (and it is accompanied by mechanical changes). Second, it enables experimenting
+with "snapshots" of the operation (the feedback fixes the neuron's voltage, in a frozen state, to a particular value), hiding that \textit{the operation is dynamic} and
+\textit{needs a dynamic description by laws of motion}.
+Third, the feedback the method uses means introducing
+'foreign' (external), time-dependent current into the cell, is not in their equations.
+
+\hyperlink{HHmeasurements}{The method} has enabled them to gain an initial understanding of what was happening in the neuron at each stage of the action potential.
+Correspondingly, they have set up a classic \textit{predictive description} (a very precise set of observations, in the form of mathematical equations), describing \textit{purely electrical static processes}. Although they correctly determined that an influx of sodium ions through voltage-gated sodium ion channels causes a rapid shift in membrane potential, which causes the initiation of the electrical signal that is known as the action potential, their picture (which, in their opinion, "the interpretation given is unlikely to provide a correct picture of the membrane") could not accurately describe
+the observations, especially their timing relations.
+ 
+The main goal of the BRAIN initiative was
+"observing their [the neural system's] \textit{dynamic} patterns of activity
+as the circuit functions in vivo during behavior,
+and \textit{perturbing} these patterns to test their significance”.~\cite{NIHBrainStrategy:2020}
+This method is exactly equivalent with the predictive
+\href{https://www.britannica.com/science/Ptolemaic-system}{Ptolemaic system}
+\index{Ptolemaic system}
+\index{Kepler's law}
+(or at most with Kepler's law)
+for describing planetal motion, that lacked the (Newtonian) laws of motion. The “natural” expectation for the paths of celestial bodies was that they must travel in uniform motion along the most “perfect” path possible.
+It presumed "perfect" circles (without reasoning) for planetary orbits and adapted them to the real-world planetary orbits by \textit{perturbing} them (without reasoning why that perturbation occurs), instead of discovering their laws of motion and understanding that they are ellipses.
+Ptolemy’s model explained the observed “imperfection” by postulating that irregular movements were due to a combination of several regular circular motions ("perturbation")
+and introducing ad hoc spheres.
+\index{ad hoc hypothesis}
+The idea of the "perfect path" had to be replaced with "Newton's law of universal gravitation".
+At first glance, that universal law, without solving its differential equation, has no relation to the ideal path.
+
+"Central to the BRAIN Initiative is the discovery, development, and dissemination of new theories".~\cite{NIHBrainStrategy:2020} However, there is no project to validate 
+the principles used in the so-called theoretical descriptions.
+Neuroscience theory remained static, forming a fundamental obstacle to understanding the dynamic operation of neural systems.
+%
+This is precisely why a new perspective must be introduced. The static view
+means that by measuring technologies such as \hyperlink{voltage-clamping}{clamping or freezing} means that 
+\textit{we forcefully prevent the gradients from changing, which change is the 
+life itself}. That view enables us to study fine details of samples taken from living materials that themselves do not live (in the sense of activity they do in their native state), and \textit{hides that they have internal forces which move them according to their laws of motion; furthermore, that such laws exist}. Measuring electrical activity in a living system affects its electrical (and, through this, chemical) behavior.
+
+
+We must also defy existing ideas and notions, shortly discuss why they show some initial successes and why they lead to wrong conclusions; furthermore, introduce new ideas (why we must combine electricity and thermodynamics (as well as mechanical changes) instead of using them side by side in physiology; why do we need to revisit physical principles to handle interactions with different speeds; which rules are valid when combining phenomena of the boundary of microscopic and macroscopic worlds; what is the true abstract operating principle of neurons; why information has a different meaning and needs different handling in technical and biological implementations).
+
+\subsection{Model types\label{sec:SINGLE_ModelTypes}}
+
+"There is a widely accepted distinction between merely modeling a mechanism's behavior and explaining it. \dots Some models are data summaries. Some
+models sketch explanations but leave crucial details unspecified or hidden behind
+filler terms. Some models are used to conjecture a how-possibly explanation without regard to whether it is a how-actually explanation."\cite{MechanisticModelHodgkinHuxleyCraver:2006}.
+"A biological model is often understood to be simply a diagram depicting the interrelationships of various (sub)systems in a process, whereas a physical model is expected to be a theoretical description of a process involving a number of equations of motion stemming from the first principles (if possible), testable against a range of tunable experimental conditions. It must lead to a quantitative prediction and not simply reproduce already known results"~\cite{MolecularBiophysics:2003}. Our model is surely a physical model.
+
+The only neuron model~\cite{HodgkinHuxley:1952} which attempted to equip 
+fellow researchers with scientific
+background based on the authors' experiences and their conclusions
+drawn by using mathematical equations from experimental observation,
+is evaluated extremely differently.
+The scientifically unusual brainstorming or 'call for a collective effort' nature
+of the paper legitimates nearly all possible classifications. 
+We discuss that model in a separate section~\ref{sec:Physiology-HodgkinHuxley};
+with their genial observations and conclusions, and the minor mistakes
+they made when making that huge first step into the unknown. As always, the second step
+must include more discoveries and new perspectives (in our case, of more than seven decades), and minor corrections must be performed to fix the scientific direction.
+As we discussed, we admire \gls{HH}'s activity. However, 
+in the interest of advancing science, we must include the discoveries
+into their picture.
+
+%
+\gls{HH} considered their work (in the classification above) as
+a data summary with clear signs of using empirically measured conductance and fitted polynomials for their measured data. Unfortunately, their followers accepted their ad-hoc assumptions even though the model "sketches explanations but leaves crucial details unspecified or hidden behind
+filler terms".
+They even introduced further ad-hoc assumptions needed to provide satisfactory agreement with the
+experimental evidence into \gls{HH}'s admittedly wrong physical picture, and they forgot the doubts and question marks \gls{HH} described and took their unproven hypotheses as facts.
+"These equations and the methods that arose from this combination of modeling and
+experiments have since formed the basis for every subsequent model for active cells.
+The Hodgkin-Huxley model and a host of simplified equations  derived from
+them have inspired the development of \textit{new and beautiful mathematics}." \cite{MathNeuroscience:2010}.
+That mathematics is new and beautiful, but, unfortunately, \textit{describes some pseudo-nature instead of the genuine one}.
+Unfortunately, their (wrong) oscillator model is used by neurophysiology textbooks~\cite{JohnstonWuNeurophysiology:1995, KochBiophysics:1999,GertstnerSpikingNeuronModels:2002} and 
+also neurophysiology research, including grandiose projects~\cite{NIHBrainStrategy:2020} or \href{https://www.humanbrainproject.eu/en/}{Human Brain Project}.
+From a wrong starting point, with the wrong ideas in mind, only more fake spheres are added to the model, but no good research results are achieved.
+
+Even in the collection of topics "Single Neuron Computation"~\cite{SingleNeuronComputation:2014}, their chapter~1 "introduces the topics of electrotonic (electronic circuit equivalent) modeling of realistic neurons and the interaction of dendritic morphology 
+and voltage-dependent membrane properties on the processing of neuronal synaptic input". This approach suggests that nature should build its neurons
+from discrete electronic components. In other words, nature must adapt to mathematical equations. \textit{Studying such neurons
+built from discrete electronic components with well-established mathematics
+ is much easier than finding the correct physical background.}
+The book chapters attempt to compose a neuron from
+(models of) different sub-components, interactions, etc.
+The approach is sufficiently good to serve as the book's opening chapter and as a basis for discussion in the adjacent chapters.
+However, the many controversial models lead them to conclude that "this raises the possibility that the neuron is itself a network". Yes, the Prolemaian model can describe nature using an infinite (perhaps recursive) set of spheres. The validity of the approach is at least questioned~\cite{RealisticNeuronalModeling:2016}
+(given that the model is called "realistic"): "Is realistic neuronal modeling realistic?"  
+
+\section[Modeling and disciplinarity]{Modeling and disciplinarity\label{sec:SINGLE_MultiPhysicsNeuronN}}
+
+
+As of today (2026), the understanding of neuronal operation remains divergent. As~\cite{PerspectivesNerveSignalPropagation:2024} formulated,
+"bio-electric and a thermodynamic perspectives" are fighting,
+mostly in the spirit of "if the only tool you have is a hammer, you tend to see every problem as a nail”,
+and discusses "answerable what-if questions that have been overlooked or purposefully neglected thus far", without attempting to integrate those
+disciplinary perspectives. (BTW: that effort would be hopeless: 
+as we discuss, the life-related phenomena happen in the "nobody's land":
+the "construction of the living matter" requires dividing processes 
+into pieces and describe them with different physical processes that
+are interfaced to each other.) 
+ By neglecting that ions are "material
+points" that also have charge, the cellular phenomena cannot be described in either approach alone, given that they are simultaneously governed by the laws of 
+the two mentioned fields, with \hyperlink{ThermodynamicsSpecialties}{many specialties}. Furthermore, molecular and enzymatic effects also shape the operation, in most cases adding color to it. Our discussion
+combines appropriately the two disciplines (not the two perspectives!) in an almost abstract approach, emphasizing also their cooperation, furthermore, at some places mentioning also biochemistry.
+First, we give an overview (with the intention of providing
+sufficiently solid background for the audience having not too deep knowledge in physics, thermodynamics, and electricity), and we expand the
+quantitative details in later chapters with a complete disciplinary underpinning.
+
+As we mentioned, other, more physical (sometimes extreme, sometimes called multi-physics) approaches "have met with fierce opposition from mainstream neuroscience"~\cite{NerveSignalAsWindow:2023}. The
+\hyperlink{Thermodynamics}{thermodynamic} effects seemingly mask the true causes of neuronal function and lead to a misunderstanding of physiological evidence.
+We discuss the operation of neurons mainly in electrical terms after deriving an "\hyperlink{ThermodynamicElectricField}{equivalent thermodynamical electric field}", we can,
+by considering the electric repulsion of ions, associate the observed mechanical effects and explain the thermodynamical effects of neuronal operation.
+We discuss the thermoelectrical, computational, information theoretical, and physiological details in
+different chapters. In those discussions, we return to the same concepts repeatedly, in \hyperlink{zigzagdiscussion}{von Neumann's 'zigzag' way}, from different points of view (at different abstraction levels and disciplinary depths).
+\index{von Neumann!'zigzag' way}
+
+
+Again, another approach: over the decades, computational and/or mathematical neuroscience implemented
+ad hoc mathematical formulas only slightly related to neuronal operation because
+\index{ad hoc hypothesis}
+theoretical neuroscience did not provide the correct scientific background.
+They forgot the warning that "the success of the
+equations is no evidence in favour of the mechanism"~\cite{HodgkinHuxley:1952}; biophysics attempts to
+find out unestablished mechanisms for the equations. 
+It is not possible to understand even correct experimental observations and to design thoughtful experiments; furthermore, among others, to understand the role of synaptic weights,
+the formation of 
+\gls{AP}s,
+and neuronal information processing, without
+fixing the scientific background (or providing a wrong background), the 
+misunderstood electric operation and misinterpreted physiological observations; furthermore, the abused concepts of technical computing and information that result in "technomorph biology"\cite{VeghTechnomorphBiology:2025}.
+Moreover, we must introduce non-disciplinary physical laws,
+maybe a more appropriate name for the idea that E.~Schrödinger coined~\cite{Schrodinger:1992}.
+
+
+ The 'abstract' means that 
+we omit the physiological details and focus on the abstracted operating principle,
+\textit{what} the function or component wants to implement,
+\textit{why} neededs. The 'physical' means that 
+we put a \textit{non-disciplinary} physical mechanism behind the different stages of operation. 
+We intend to find the appropriate stages, or \textit{the series of dynamic stages},
+with corresponding transitions.
+Our method is to omit, per stage, the less important interactions and processes.
+In some (but not all!) cases, we can reduce the actual stage to a single (dominant )
+interaction, described by a single scientific discipline. In other cases,
+the stages (or their interfaces) 
+have a dominant interaction and a correcting interaction, so
+we need to invent new procedures.  Such multiple simultaneous
+interaction cases are rarely discussed in science. When discussed in science disciplines,
+the interaction speeds are considered to be the same, and the
+related laws are used in their simplified form. This is the only place where our description is 'non-ordinary':
+we check whether the omissions leading to the 'ordinary' laws are legal,
+and derive our 'non-ordinary' laws where needed.
+Those laws are non-ordinary only in the sense that, instead of the 'ordinary' ones
+we used to in classical science, we use the correct approximation and abstractions needed
+"because the construction is different from anything we have yet tested
+in the physical laboratory"~\cite{Schrodinger:1992}.
+Furthermore, they may be "non-ordinary" also in a mathematical sense.
+
+
+
+\subsection{Creating the brain\label{sec:SINGLE_ABSTRACT_CREATING}}
+Let us play with the idea that we are assisting God (or evolution) in creating the World.
+We are a subcontractor, and our task is to design the brain. We must consider several constraints.  The brain we design, to mention 
+a few major items, must
+\begin{itemize}
+\item be governed by the available laws of nature
+\item use the available (living and non-living) matter
+\item be compatible with the objects to be controlled
+\item control biological objects
+\item be as powerful and energy efficient as possible
+\item be inexpensive (both its creation and operation)
+\item elaborate protocols to work with unreliable components
+\item apply tricks to overcome the inherently slow operation of its components
+\item process (encode, transmit, decode, store) information
+\item cope with harsh environmental conditions 
+\item adapt to changes in the environment and in its own components
+\end{itemize}
+
+
+Two other subcontractors were already working on creating the World. They have conducted a "feasibility study" and elaborated the necessary laws (including their mathematical formalism) for their field. They have the right and freedom to simplify and elaborate on the implementation details, provided that the principles of cooperation among the parts are not violated. They are self-consistent within their field and do not conflict with the first principles of nature. Given that the task was challenging and the general laws complex, the group subcontracted to deal with non-living matter,
+made simplifications (\hyperlink{Abstractions}{approximations and abstractions}) and worked out their own laws (today we know that work as laws of non-living nature); sometimes only implicitly 
+adding that their laws are simplified ones and are consistently valid only
+to the field of that group's activity.
+With those simplifications, they achieved success in their field, though they sometimes had to revisit them. In those cases, new science disciplines were born,
+such as discovering the non-independence of space, time, and mass, which led to the theories of relativity, or discovering the relations between the continuous and discrete descriptions of nature in thermodynamics and quantum theory.
+
+When, somewhat later, the second group subcontracted for creating laws of living matter, 
+they were allowed (and obliged) to use the product of the first group. They wanted to take a flying start,
+and they took over those simplifications (the simplified laws describing non-living matter),
+saying that those simplifications were proven successful for the other group; instead of deriving their specific simplifications for their specific field,
+the living matter. Initially, they were successful; the minor discrepancies were attributed to their inexperience.
+As the discrepancies started to grow, the second subcontractor started to claim that the laws describing non-living matter are not valid for living matter,
+\textit{without discovering which other laws describe living matter}. Our approach to that problem is that we scrutinize 
+the interactions and describe their effects in a non-disciplinary way.
+
+The third working group started to work when the second group 
+already had some significant achievements, and aimed to organize the cooperation of units
+based on the principles of living matter, in two stages. Of course, 
+they were allowed (and obliged) to use the products of the second group
+when creating resources and operating principles of the network
+of living matter organized into biological units. 
+Although the original goal was only to concentrate the work of specific 
+goal-oriented groups of units for survival, the method (called neural computing) developed by the group was so successful that a higher-level unit coordinating the lower-level coordinating units has been created.
+Of course, it inherited the laws developed for the former levels.
+As the operating complexity of that latter unit (called the brain) grew, 
+again higher-level functionality appeared (called the mind) that is again based on the inherited lower-level laws. That means, to understand the high-level functionalities, one needs a very accurate understanding 
+of the elementary neuronal operations, which has the precondition of
+understanding life itself. (We just mentioned a fourth working group of increasing importance.
+After that the performance of technical computing, due to physical and technological reasons, to enhance the energy and computing efficiency of technical computing systems, a growing interest appeared toward borrowing concepts of biological computing.)
+
+
+The best approach to the problem of describing life by science was given by E.~Schrödinger~\cite{Schrodinger:1992}, by saying that the fundamental
+principles must be the same, but the 'ordinary' laws of science we derived for non-living matter might differ from the 'non-ordinary' laws of science describing living matter.
+He expressed his firm scientific conviction and commitment that (by using different approximations) we can derive those laws based on science, despite
+that the "construction" of living matter needs different approaches.
+In other words, the general laws of nature ("the first principles") behind the simplified laws
+derived as approximations describing "non-living matter" 
+and the ones describing "living matter" differ only in the
+approximations they use. This way, the 'ordinary' and 'non-ordinary' laws,
+together, describe nature; among others, they describe life.
+
+We point out that when we map the formal laws of non-living matter onto living matter, we do so outside their range of validity. Instead, in some cases, we must derive special approximations valid for living matter, and derive the
+appropriate laws for those abstractions. 
+We derive the correct laws (valid for living matter), which 
+--according to Schrödinger's expectation-- are 'non-ordinary' in the sense
+that their form and range of validity differ from the 'ordinary' ones
+we use in classic science. The general laws of nature are universal; their
+simplified ones can be disciplinary. However, "\textit{nature is not interested in our separations, and many of the interesting phenomena bridge the gaps between fields.}" (Richard P. Feynman)
+\index{Feynman, Richard P}
+We know that nature is infinitely complex, all science disciplines
+apply approximations, and use mathematics to describe that
+simplified nature.
+To "design" neuronal operation, we must consider and coordinate all related disciplines. They are
+not contradicting each other, but some of their fundamental considerations may prove to be oversimplifications when the respective discipline must 
+cooperate. It also brings to light that we need to
+invent new pieces of mathematics.
+
+In this section, we assume that, in addition to the well-known
+'ordinary laws, those 'non-ordinary' laws exist
+(we will derive them in Chapter~\ref{ch:Physics} given that they may belong 
+to different scientific disciplines),
+and we derive the abstract rules that enable neuronal cooperation.
+We describe the known (and more or less understood) static components,
+the recently discovered (but not yet integrated) ones, furthermore
+the dynamic components and processes needed for the observed operation, 
+but remained hidden by the testing methods.
+ 
+
+
+\subsection{Existing models\label{sec:SINGLE_ExistingModels}}
+
+Textbooks, such as
+\href{https://neuronaldynamics.epfl.ch/}{Neuronal dynamics} and \cite{KochBiophysics:1999},
+usually skip the question \textit{how} the neuron, a piece of living material, is modeled.
+Instead, they put behind their formulas, without validating them for biology, the picture taken
+from classical physics, which was validated for different circumstances (non-living material),
+for describing electrical circuits.
+This way, they shoot themself in the foot. 
+At the time of setting up their model, it was not known that the overwhelming majority of ion channels were concentrated in the \gls{AIS}, and only a small fraction is distributed over the membrane's surface. \gls{HH} hypothesized that the (at that time, only hypothesized) ion channels are distributed over the membrane, so that the neuron can be modelled as a distributed $RC$ oscillator circuit, corresponding to a parallelly connected oscillator comprising discrete elements $R$ and $C$.
+Their model was the best possible one in their time, but we know for decades~\cite{ActionPotentialGenerationNatrium:2008,AIS_NeuronalPolarity:2010,BackpropagationAP:2012,AxonInitialSegmentStructure:2018,AIS_Updated_Viewpoint:2018}, that those ion channels that they hypothesized serve only for maintaining the resting state,
+and the transient state needs a different mechanism.
+
+
+\gls{HH}  seem to be one of the rare exceptions, but as they admit, the "\textit{interpretation given is unlikely to provide a correct picture of the
+membrane}", furthermore, that "\textit{a physical theory of this kind does not lead to
+satisfactory functions ... without further ad hoc assumptions}"  \cite{HodgkinHuxley:1952}.
+\index{ad hoc hypothesis}

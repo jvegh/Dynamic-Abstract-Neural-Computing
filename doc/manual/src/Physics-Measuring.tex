@@ -1,0 +1,478 @@
+% Physics measuring electric entities
+
+\section[Measuring]{Measuring\label{sec:PHYSICS_MEASURING}}
+\warningbox{
+An intuitive grasp of concepts of measuring, electricity, and electrical circuits, is helpful for understanding some of the basic theory concpts in cellular neurophysiology.}
+
+
+\subsection{Electrical measurement\label{sec:Physics-MeasurementElectrical}}
+The difficulties of making \hypertarget{electric_conductance}{electric measurement} on living matter
+were known since the beginnings: "Since it is quite generally
+believed that the depolarization of a nerve fiber membrane, during
+excitation and propagation, involves an increased permeability to
+ions there have been many attempts to detect and to measure this
+change as an increase in the electrical conductivity. ...
+In these cases \textit{the measuring current was also the stimulating current} and it was not possible
+to analyze the changes satisfactorily."~\cite{COLE_CURTIS_IMPEDANCE:1939}
+It is worth to recall that \textit{performing an electric measurement 
+on the operation of some electric system always represents an intervention into the 
+electric process of the system under study}; the question only is how much the measurement influences those operating processes.
+Measuring the conductance of an isolating membrane, with ion channels in its wall and 
+slow ions flowing in its surface layers, is one of the hardest measuring tasks.
+We discuss below some fine differences compared to measuring in metals.
+We interpret the notions precisely below.
+\index{layer!conductance}
+
+When measuring \hypertarget{electric_resistance}{electric resistance} (or conductance), we need:
+\begin{itemize}
+ \item Charged objects that can be moved, the charge carriers
+ \item An electric field that moves the charge carriers
+ \item No other field (such as concentration gradient) that moves the charge carriers
+ \item A medium that 'resists' moving the charge carriers
+\end{itemize}
+
+
+If an electric potential is applied to an ionic solution, the cations of the solution are drawn to the electrode that has an abundance of electrons, while the anions are drawn to the electrode that has a deficit of electrons. The movement of anions and cations in opposite directions within the solution amounts to a current. Notice that the current inside the electrolyte is represented by ions, in the rest of the electric circuit, by electrons; the electrode must convert
+the charge carrier. The electrode actively participates in the process (even if it is a measurement), and its operation takes time.
+Recall that the current delivered by the ions means at the same time a change in concentration (transport of material). If the ions can freely change their position, after some relaxation time, the driving forces due to the electric charge and the concentration balance each other as the \hyperlink{NernstPlanckPositionDerivatives}{Nernst-Planck equation} describes.
+
+\begin{figure}
+\figurebox{
+\includegraphics[width=.65\textwidth]{fig/mmet.png}
+
+\caption{Though most modern meters have solid state digital readouts, the physics is more readily demonstrated with a \href{http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/movcoil.html}{moving coil current detector} called a galvanometer. Since the modifications of the current sensor are compact, it is practical to have all three functions in a single instrument with multiple ranges of sensitivity. Schematically, a single range "multimeter" might be designed as illustrated.
+“from Hyperphysics by Rod Nave, Georgia State University". \copyright hyperphysics.phy-astr.gsu.edu/hbase/}
+}\label{fig:Physics-Multimeter}
+\end{figure}
+
+
+The electric measurement means an intrusion into the measured system. To measure voltage and current (we call them secondary entities), we can minimize the intervention. 
+However, to measure conductance, we must generate charge (see Fig.~\ref{fig:Physics-Multimeter}): we must apply some
+voltage to the medium and measure the current with which the medium
+responds; that is, a foreign voltage falsifies the measurement result. The fact is known in neurophysiology (but either forgotten
+or not understood), see \cite{JohnstonWuNeurophysiology:1995}, section
+A.3.12: "\textit{(input impedance) can be measured by applying a voltage
+and measuring the resulting current or by injecting a current and
+measuring the resulting voltage}". We often forget that we concluded
+the notion for metals and that if the number of moved charge carriers
+changes during the measurement, or a "foreign" (not considered)
+force field also affects the object, our measurement will produce
+fake results; see for example electromagnetic forces and the decades-long
+history of memristors \cite{RejectingMemristor:2018}. Moreover,
+we assumed an isotropic medium (unlike complex biological objects).
+The current may delay, disappear, and re-appear in an improperly designed
+measurement. It is not against the laws of physics; it is due to the
+incomplete knowledge of physics.
+
+A "conductance meter" device \textit{actively applies a potential
+that affects the measured object}. It assumes that the tested
+object is passive (also in the sense that switching that field on
+causes no structural change in the medium) and it is in a field-less
+stationary electric state. \textit{The device calculates the displayed result
+as if the object were metal and no foreign current or voltage was
+present}. For active components (the measured object actively reacts
+to the applied voltage, and even for resistors used in actively working
+electric circuits), it provides fake measurement results: it calculates
+resistance/conductance using Ohm's Law from its input data that contains
+"foreign" current contribution(s).
+\index{Ohm's Law}
+
+It is frequently forgotten that the mentioned processes "produce"
+electric charge in the measured system. Measuring conductivity actually means measuring current, see section~\ref{sec:Physics-Current}. Somehow, researchers forgot
+this warning and attibuted the created charge to some changed conductivity.
+In the case of a biological membrane, no charge carriers are present
+in its resting state. However, the applied voltage may open voltage-controlled
+ion channels, and the field may move the ions through them. \textit{The
+device sees its own effect: the voltage it applies generates an ion inflow,
+moves the ions it produces, and measures the resulting output current}.
+Recall Eq.(\ref{eq:StokesCurrent}): the current grows as the number of charge carriers $n$ increases; a real danger when measuring conductance in the presence of ion channels.
+Different devices and different settings provide different conductance
+values for the same membrane. (Assuming some resting conduction in
+axons is a self-contradiction. To have conduction, charge carriers
+need to be present, which means the presence of ions that means potential
+above the resting potential. Those ions flow out to the galvanically
+connected membrane. \textit{The measurement device generates the "resting conductance"
+attributed to axons and membrane}.
+\index{resting conductance}
+It is a systematic error due to the incomplete understanding of the physics
+of electric measurements. See Fig. 6 in~\cite{HodgkinHuxley:1952}
+at high clamp voltage, the device's voltage contribution is insignificant.
+However, it is at least comparable to the measured effect at low clamp
+voltage.)
+
+Furthermore, \textit{one must forget to make parallels with the single-speed
+electric circuits}, especially using their ready-made equations (used
+outside their range of validity) assuming a voltage generator:
+biological circuits are different. Biological interactions are governed
+by more complex laws, especially if interactions at enormously different
+speeds play a role. However, like in the case of modern versus classic
+physics, the first principles can provide good hints in the limiting
+case. If we face a controversy, we apply the wrong basic assumptions
+and omissions/approximations.
+
+
+Ohm's Law is valid only in its \textit{differential form}. 
+\index{Ohm's Law} 
+The charge, whether injected artificially or natively through the synapses into the membrane,
+needs time to travel from their entry point to their exit.
+The two definitions are equivalent only if the current's speed is infinitely large (instant interaction) or in other words, it does not depend on the time.
+The non-differential definition fixes current
+and makes material's features variable. \textit{The wrong definition rejects known laws of physics and introduces 
+new laws which it does not define.
+It rejects the first principles of science and introduces empirical laws without understanding them.}
+%
+The misunderstanding arises from using the wrong abstraction of "electrical
+node". In classical electricity, the abstraction
+'instant interaction' means that the node is discrete and sizeless. \textit{Kirchoff's law implies that the current enters and exits the node simultaneously}, which is not 
+\index{Kirchoff's Laws}
+the case in biology. It is a self-contradiction:
+the change in the current's time course (a charge related electric entity)
+is transferred to the medium.
+Due to the wrong definition one simply divides non-matching data value pairs and
+attributes the effect of the wrong definition (using inappropriate abstraction of "instant interaction") to the process under study.
+It is the source of a series of misunderstandings
+and directs physiology towards a wrong direction (it did not ask:
+why charge conservation is not valid).
+\index{Kirchoff's Laws}
+In classical electricity, in the world of 'instant interaction' the Kirchoff's law is a
+good \textit{approximation} (but correct books also mention that on a $30~cm$ piece of wire there exist a $1\ ns$ delay). However, the case is different in physiology: the speed of current is in the range of $m/s$; there is a "phase delay"
+between the voltage and the current. 
+
+
+\subsection[Capacitance]{Capacitance\label{sec:PHYSICS_MEASURINGSAPACITANCE}}
+
+In the classical theory of electricity, we use the abstraction that
+the propagation of electric signals is instant and some
+discrete elements change the electric features of the circuits,
+the wires are only a passive medium. One of the discrete elements is 
+the condenser an one can observe that the voltage on that element 
+is proportional to the charge it stores; we call it "capacity".
+
+When considering the finite speed of the charge carriers,
+one can identify two components, a resident one and a transient one.
+The resident capacity means that the ions sit on the surface as we
+can calculate from the concentration of the ionic solution,
+see Eq.(\ref{eq:UGapTotal400}). This capacity is estimated by~\cite{JohnstonWuNeurophysiology:1995}, page 12, to be $1~\mu~F/cm^2$
+and the surface area $7.85*10^{-5}~[cm^{-2}]$, $7.85*10^{-11}~[cm^{-2}]$. The number of uncompensated ions $4.7*10^7$,
+that raises $100~mV$ on the membrane. 
+
+The transient capacity arises from the finite speed and finite size
+of the neuron. 
+
+
+
+\subsection[Conductance]{Interpreting conductance in electrolytes\label{fig:Physics-ElectricityOhmic}\label{sec:PHYSICS_MEASURINGCONDUCTANCE}}
+
+Figure~\ref{fig:Physics-Clamping2} shows, how the measurable membrane potential drastically changes in the function of the measuring (clamping) current intensity.
+At the positions labeled as "Electrotonic potential" the neuron is in steady state: neither its condenser charges/discharges, nor its ion channels open.
+When starting from the resting potential, the membrane follows a charge-up function, a saturating exponential.
+We just note here that the shape of the front side may depend on where the current is introduced.
+If the microelectrode is inserted directly into the cell, the current causes really a charge-up current.
+If it is inserted to an axon from an upstream neuron, where no charge carriers are present at the resting potential, the axon must let ions in the tube.
+This effect also results in a saturating voltage, as experienced by Hodgkin-Huxley~\cite{HodgkinHuxley:1952}, see Fig.~\ref{fig:ClampingOnOff_HH}.
+In the two cases the timing constants are similar, but definitely different.
+
+\begin{figure}
+\figurebox{
+\includegraphics[width=.65\textwidth]{fig/Kandel6_2cMembranePotential.png}
+
+\caption{ (Fig.~6.2c in~\cite{PrinciplesNeuralScience:2013}) Voltage recorded in presence of clamping current. }}
+\label{fig:Physics-Clamping2}
+\end{figure}
+
+The figure enables one to explain what is misinterpreted in biology in connection with Ohm's law (and why using a conductance meter in such a case is wrong).
+\index{Ohm's law}
+Let us divide the membrane current  (labeled as "Membrane current") with the $V_m$ membrane potential, into regions.
+In the "flat" regions (in steady state) we receive the same value and the result can be interpreted as "conductance". In those regions 
+the cell behaves 'Ohmic'. However, it is 'non-ohmic' around the
+rising and falling edges of the test current, furthermore,
+if the amplitude of the signal is higher then some threshold value.
+After receiving the rising edge of the measuring signal, the membrane's condenser stores part of the charge.
+If one knows the laws of electricity, fits a saturating exponential to the curve as the membran potential rises when the condenser charges and the physics is all right.
+If one believes that the condenser must take instantly the voltage, might say that $V_m/I_m$ changes, that is the membrane's conductance/capacitance changes and has a time constant.
+Similar explanation can be given, when the falling edge arrives and the condenser discharges.
+%
+When the current exceeds a threshold value, the ion channels in membrane's wall open and an extra current (not from the current generator) flows into the membrane.
+If one believes that the correct value that must be used in deriving conductance is the one that the test generator provides (and the conductance meter does so), divides the test current (instead of the total current) with the measured membrane potential evoked by the total current, uses non-matching value pairs. 
+Non-understanding physics results in claming non-Ohmic behavior.
+Neither the conductance nor the capacitance of a cell changes
+under the effect of electric test signals. Only the measurement is wrong. 
+
+%When an alternating current is used, a continuous charge/discharge takes place.
+%Actually, instead of an instant (step-like) current, a continuously changing input current is used. Assuming a sinusoidal signal, at some phase of the signal an
+%\gls{AP}
+%is evoked. That test signal keeps increasing the  
+%
+
+
+	
+\subsubsection[Electrolytes]{Measuring electrolytes\label{sec:Physics-ElectrolytesConductivity}}	
+Substances that give ions when dissolved in water are called electrolytes.  Certain chemical elements can naturally hold a positive or a negative electrical charge, and they react to their micro- and macro electric environment. A molecule has internal attraction forces that keep its ions in place, and has two charge centers (dipoles). When another dipole or a macroscopic external electric field (which can be of electrical or chemical origin) appears near the molecule, its perturbing effect can affect the relation of the ions to each other. Initially, the two charge centers increase their distance (the molecule polarizes). When that disturbance is strong enough, the ions can entirely separate (the molecule ionizes).
+The local electric field fluctuates, so the state of the ions is dynamic: they dissociate, free ions recombine.
+The ions can exist in ionized and polarized states.
+The state (and behavior) of ions depends on their environment.
+
+%We apply two approximations to the solution. 
+A small part (about $10^{-3}$) of the molecules dissociates (i.e. the ions leave their counterpart with opposite charge behind) and they move freely in the volume. In other words, the electrolyte liquid can then conduct electricity due to the mobility of the positive and negative ions, which are called cations and anions, respectively. 
+The rest of molecules can be in a more or less polarized state, providing a possibility of producing internal electric field.
+The macroscopic state of the molecules depends on,
+for example, how far they are from the boundary of the segment; whether global or local external invasion is applied. 
+
+Thermolectric experience shows that, when applying such changes, reaching a steady state
+is a temporal \emph{process}, and even the spatial and temporal development
+of the concentration gradients can be measured as individual
+processes (the voltage gradient is too fast to measure it). It is also evident from experiments that diffusion is a
+fast \emph{process} and that the propagation of the electrostatic
+field is unimaginably fast ; see our discussion around Eq.~(\ref{eq:PhysicsGradientRatio}), but it must be process, too. In other words,
+we have two enormously different interaction speeds. Eq.~(\ref{eq:NernstPlanck})
+provides only position derivatives. 
+However, Eq.(\ref{eq:Nernst-dVdt}) and Eq.(\ref{eq:Nernst-dCdt}) provide the time derivatives for describing 
+the time course of the processes.
+
+
+In physiology, electrolyte solutions do not surely satisfy 
+\hyperlink{electric_resistance}{the conditions}
+we use for the notions of electricity in physics, see section~\ref{sec:Physics-Electricity}.
+The number of charged objects (the ion concentration) may change in
+time (even without the presence of biological structures), and a chemical driving force may also move the objects independently
+from the electrical field. When measuring only the macroscopic electric
+parameters voltage and current, and especially when 
+\hyperlink{electric_conductance}
+{measuring current believing we measure
+directly conductance;} in addition, measuring it in a wrong way; (for the details see section~\ref{sec:PHYSICS_MEASURINGCONDUCTANCE}) \emph{we
+attribute the consequences of the injected charge carriers' low propagation speed to the
+medium} and we describe the phenomenon that "the conductance changes"
+in the function of the voltage~\cite{KochVoltageDependentConductance:1999}.
+(We know that the macroscopical speed of current changes with the \hyperlink{voltage-clamping}{clamping speed}, see Eq.(\ref{eq:StokesEinsteinSpeeddV} and section~\ref{sec:Physiology-StokesLaw}),
+that might change the time difference between the non-matching value pairs, leading to the illusion that the conductance changes.)
+The measurement must be
+fixed:
+ the 
+\hyperlink{electric_resistance}
+{tacit assumptions} about notions of electricity must be fulfilled. 
+
+
+
+Conductance is a ``steady-state''
+notion; see its definition in section~\ref{sec:PHYSICS_MEASURINGCONDUCTANCE} and in section A.3.12 in~\cite{JohnstonWuNeurophysiology:1995}:
+"the input impedance measured \emph{after the voltage has reached
+	a steady state} following a step change in injected current is defined
+as input resistance", or "the input resistance \dots obtained
+by dividing the \emph{steady-state} voltage change by the current
+using it"~\cite{KochBiophysics:1999}.  \textit{Using quickly changing (alternating) currents, either sinusoidal or random  for measuring conductance, measures some ill-defined current.}
+The experience is resemblant to studying \href{https://en.wikipedia.org/wiki/Dielectric}
+{dielectric dispersion} in physics. 
+"Because there is a lag between changes in polarisation and changes in the electric field, the permittivity of the dielectric is a complex function of the frequency of the electric field." 
+Rearranging charges inside the tested medium needs time. 
+Different polarization types have similar behavior, at much higher frequencies, because of the much shorter distances that rearranging the charges need.
+In the case of neurons, charges must be rearranged on nearly $0.1~mm$ distances, and "can no longer follow the oscillations of the electric field" at  much lower frequencies; see section~\ref{sec:Physiology-FallaciesLowPassFilter}.
+Yes, "the construction is different from anything we have yet tested in the physical laboratory".
+
+
+\index{conductance}
+Physiologists seem to forget the definition and they measure something they think to be  "conductance" in non-steady state. They are "\hyperlink{ResettingClock}
+{resetting the clock}",
+instead of explicitly admitting that the current speed is finite;
+despite that they measure it to be in the few $m/s$ range.
+The conductance (per definitionem) does not change; only the (maybe:
+foreign) charge carriers may need time to deliver the current:
+\emph{we calculate the conductance from non-matching value pairs} (or not-steady-state).
+Wording that biological systems show ``non-ohmic behavior''
+means that they are not metals (they have a charge transfer mechanism differing from the "free electron cloud"): we abstracted the notion of conductance
+for metals (or at least steady-state).
+\index{free electron cloud}
+Physics describes biological operations perfectly; although, it may use 'non-ordinary' laws. Electric
+operations are also ohmic in biology, but one has to use the correct
+(time-aware, i.e., considering the speed of the charged carrier) interaction
+speed, correct definition and measurement method. \emph{Using the Newtonian 'instant interaction' as the speed
+	of charged ions or the macroscopic speed of their current,
+	 is a catastrophic
+	hypothesis and contradicts all our phenomena}. 
+\index{instant interaction}
+
+The ohmic behavior means that voltage and current relate to each other,
+as we learned in college, only when the electrostatic interaction
+speed is very high (in the mathematical/physical description, the
+interaction is instant); furthermore, free charge carriers are present in the volume. In biological systems, it is not necessarily
+the case: the macroscopic speed of ionic
+current conveying electrostatic interaction is very low, and so they
+may follow the electrical field propagation apparently with a time shift
+(if they are improperly distributed, as was early explicitly noticed~\cite{HodgkinHuxley:1952}).
+As Fig.~\ref{fig:The-time-course_Clamping} displays, when
+measuring the secondary entities (instead of a ternary one), everything
+comes to the right: the voltage and current change using the same
+time course. Of course, as the are derived form the same primary entity 'charge'. One should \emph{measure} the voltage instead of \emph{assuming}
+the potential appears immediately, even without charge carriers (the locally present individual charges generate the potential).
+Furthermore, one should not introduce a foreign current into a system
+(by measuring its conductance or fixing its electric state by
+adding some feedback current by \hyperlink{voltage-clamping}{clamping/patching}) when studying the electrical features of that system.
+
+ 
+ \subsubsection[Invasions]{Electrical and chemical invasions\label{sec:Physics-Invasions}}
+When thermal or electrical invasion happens, the ion's distribution changes.
+(Above we assumed an infinitely large volume. Limiting the volume's size
+means an asymmetry for the ions in the volume and brings to light
+unexpected phenomena.)
+We must also discuss another fallacy that the
+structured biological objects behave as the metals do under the effect
+of electrical forces. To derive an abstraction similar to the ones as
+sciences derive their Laws, we assumed that the ions are tiny charged heavy
+balls, and they attempt to have a uniformly distributed concentration
+and potential in the considered space segment. We discuss the cases
+when an external electrical invasion happens in one segment, when an
+external chemical invasion happens in one segment, the case when a
+physical surface mechanically separates the ions in two neighboring
+segments with different features, when the two separated segments
+are not symmetrical due to 'Maxwell-demon'-like transmit gates (semipermeable
+membrane); and when a physical effect concerts the operation of the
+demons.
+\index{Maxwell-demon}
+
+The cellular electrodiffusion phenomena are very complex, and it is
+not a simple task to choose which physical/chemical effects can be
+omitted so that their omission does not prevent us from explaining
+physiological phenomena. We discuss mainly the commonly used fundamental
+omission that the speed of ionic movement cannot play a role in describing
+neuronal operation.
+
+See also section~\ref{sec:PHYSICS_EquivalentCircuit}.
+
+\subsection[Clamping/patching]{Voltage/current clamping/patching\label{sec:PHYSICS_clamping}}
+
+The very common measuring method reveals some fundamental differences between the electric behavior of conductors and living matter.
+"The reason for \hypertarget{voltage-clamping}{voltage-clamping} the axon is threefold: (1) By keeping
+the voltage constant, \textit{\textbf{one can eliminate the capacitive current, that is,
+$I_C = C\frac{dV}{dt} = 0;$}} (2) by keeping the voltage constant, \textbf{\textit{one can measure the
+time-dependent characteristics of ion conductances}} without the influence
+of voltage-dependent parameters; and (3) by inserting two silver wire electrodes into the axon, one can space-clamp it so that the \textbf{\textit{whole length of
+the axon is isopotential}} (silver wires short-circuit the interior of the axon)."~\cite{JohnstonWuNeurophysiology:1995} That is: (1) the experimenter wants to make sure that $\frac{dV}{dt}$ does not change.
+\textit{A late consequence of choosing a wrong $RC$ oscillator model}. 
+In the wrong model, the \textit{integrator}, integrating the currents can be done and  
+the voltage gradient has no role. In the correct model, the \textit{diffferentiator}, the gradient controls neuron's operation. 
+(2) Clamping introduces extra current (not measured) to the
+neuronal circuit. From the known relations in Ohm's law,
+\index{Ohm's Law} we use the fixed voltage and the sum of the 
+'real' current plus the 'foreign' current, and attribute the observed
+deviation to that the \hyperlink{electric_resistance}{conductance} changed. Actually, the measurement device is not appropriate for that purpose. (3) As we discussed, the ion current is flowing on the \hyperlink{DynamicLayer}{thin layer} on the internal surface of the axon. There are no charge carriers to deliver the potential from those electrodes to the stream of ions (the ions
+are pressed to the wall of the axon and the dielectric layer
+repulses the carriers). This effect is why Hodgkin and Huxley 
+experienced~\cite{HodgkinHuxley:1952} a time delay between a voltage and the current: 
+the axon is not equipotential because it is not a conventional conductor. 
+Again, physiology is \hyperlink{ResettingClock}{resetting the clock}: (1) they want to believe that voltage gradients have no role and so they eliminate it (2) the do not want to understand that voltage and current are not  independent from the charge and the measuring device changes the measured value (3) they do not want to accept that the charge carrier and the charge transmission mechanism, and because of that, the behavior of the biological systems, are different from those in classical electronics. The low speed of ions hinderts the fundamental understanding, mainly of the \hyperlink{temporal_dependence}{temporal operation}.
+
+\begin{figure}
+\figurebox{
+\includegraphics[width=.65\textwidth]{fig/JohnstonWu6_1_Clamping.png}
+
+\caption{ (Fig.~6.1 in~\cite{JohnstonWuNeurophysiology:1995})
+"Schematic diagram of the two-wire voltage-clamp experiments on the squid
+axon. One wire is used for monitoring the membrane potential and the other for passing
+current. \textit{The voltage clamp amplifier injects or withdraws charges} from the interior of
+the squid axon in order to hold the membrane voltage constant (voltage is clamped at the
+command voltage, $V_C$)."}
+}
+\label{fig:Physics-Clamping}
+\end{figure}
+
+\begin{figure}
+\figurebox{
+\includegraphics[width=.8\textwidth]{fig/VoltageClampNegativeFeedback_Kandel7-2.png}
+
+\caption{ 
+"The negative feedback mechanism of the
+voltage clamp. Membrane potential ($V_m$) is measured
+by one amplifier connected to an intracellular electrode
+and an extracellular electrode in the bath. The membrane
+potential signal is displayed on an oscilloscope and is also
+fed into the negative terminal of the voltage-clamp feedback amplifier. The command potential, which is selected
+by the experimenter and can be of any desired amplitude
+and waveform, is fed into the positive terminal of the
+feedback amplifier. The feedback amplifier then subtracts
+the membrane potential from the command potential and
+amplifies any difference between these two signals. The
+voltage output of the amplifier is connected to the internal
+current electrode, a thin wire that runs the length of the
+axon core. The negative feedback ensures that the voltage
+output of the amplifier drives a current across the resistance
+of the current electrode that alters the membrane
+voltage to minimize any difference between $V_m$ and the
+command potential. To accurately measure the current-voltage relationship of the cell membrane, the membrane
+potential must be uniform along the entire surface of the
+axon. This is made possible by the highly conductive internal
+current electrode, which short-circuits the axoplasmic
+resistance, reducing axial resistance to zero. This low-resistance pathway eliminates all variations in
+electrical potential along the axon core."
+(Fig.~7.2 in~\cite{PrinciplesNeuralScience:2013}) 
+}
+}\label{fig:Physics-ClampingKandel}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=.8\textwidth]{fig/ClampingGENESIS.png}
+\caption{Simulating a voltage clamped neuron by the program GENESYS~\cite{TheBoookOfGENESIS:2003}, Fig.~4.7.
+Figure~\ref{fig:Physics-VoltageClampingGenesis}
+ clearly shows that the source of the "K conductance" and "K current"
+is the "injection current". The rising edge of the current triggers an action potential
+(note the very sharp gradient at $t=2$) and then (as the negative feedback is defined)
+the injecting current is converted to "K current" (as mis-identified: a real current,
+but from an external force) compensates for the biological current
+(aka the current that produces on the \gls{AIS} an \gls{AP}).
+If one assumes that the voltage in the system is constant, one can calculate
+conductance a $\frac{I}{U}$. However, $I=I_{biological}+I_{externa}$. By beliving the fallacy that
+$I=I_{biological}$, one (mis)identifies the introduced external current as
+a change in the neuron's conduction. Simply, a measurement design error.
+"The construction is different" in biology.\label{fig:Physics-VoltageClampingGenesis}
+}
+\end{figure}
+
+Notice two of the common fallacies in the figure. 
+"The highly conductive internal current electrode, which short-circuits the axoplasmic
+resistance, reducing axial resistance to zero". First, the current 
+flows in the $<1\ nm$ thick layer on the internal surface of the membrane instead of inside the axon.
+The electrode keeps only
+the potential of the "bulk" constant, unless the internal electrode fits perfectly
+(with better than the mentioned size accuracy)
+into the tube. Furthermore, the membrane's surface
+can open/close ion channels in its wall, adding foreign current
+that causes a change in the value of the command potential.
+Second, there are \textit{two} feedback amplifiers of the figure:
+the natural one (see Fig.~\ref{fig:RestingPotential4}) and the 
+feedback in the clamp instrument. As we discussed, only the 
+steady-state measurements can be accurate. The control voltage that is "selected
+by the experimenter and can be of any desired amplitude
+and waveform", is misleading: when using non-constant waveform,
+the system is not in steady state.
+
+See Figure~\ref{fig:RestingPotential4}: 
+"Any conductor that has a linear current-voltage (I-V)
+curve is said to be ohmic. Not all conductors have linear I-V curves. Most
+neurons, for example, have nonlinear or nonohmic I-V relations." The neuron is not a simple conductor.
+"Only a narrow region of the
+V-I or I-V curves of a neuron can usually be considered ohmic."~\cite{JohnstonWuNeurophysiology:1995}, page 488.
+When studying its behavior using 'foreign' voltage or current, outside that narrow region.
+The measuring procedure may trigger neuron's own electric processes,
+and the careless experimenter observes that -- from his point of view -- 'foreign' contribution
+as a deviation from the ohmic relations. See examples in section~\ref{sec:Physiology-Physical}.
+"The construction is different from anything we have yet tested in the physical laboratory"~\cite{Schrodinger:1992};
+we need to use different methods for that different construction.
+
+\subsection{Interfacing biology}{\label{Physics-Interfacing}}
+Another problem to solve when measuring chemical electrolytes
+using electronic devices is their interfacing. At some point, the
+ionic charge must be converted to electrons (there and back), which
+usually happens in electrolyte electrodes. Interfacing the analyzed
+electrolytic wire and metallic wire in the measurement circuit introduces
+problems, not only the contact potentials but also a %\hyperlink{time_delay}
+{time delay}. 
+These electrodes need to
+carry the ions to some distance, and that process is outside of the
+time scale of the primary measured process. The effect is noticed
+but not explained~\cite{HodgkinHuxley:1952}: "the steady state
+relation between sodium current and voltage could be calculated for
+this system and was found to agree reasonably with the observed curve
+at 0.2 msec after the onset of a sudden depolarization." Moreover,
+given that \textit{the speed of ions depends on the depolarizing voltage (see
+	Eq.~(\ref{eq:StokesCurrent})), this time gap also depends on the depolarizing
+	voltage}: the higher the voltage, the shorter the time gap, demonstrated
+in their Fig.~3. As we demonstrate in Figure~\ref{fig:SpeedDependence},
+this effect may lead to conclusions opposite to the real ones.

@@ -1,0 +1,29 @@
+% The foreword for simulation
+
+\begin{advanced}
+"I don't understand the things that I cannot create" R.P.Feynman
+\end{advanced}
+
+
+	The many enormous differences between technical and biological computing make simulation of neural operation  a real challenge.
+A fundamental issue is that the biological 
+time of the events is not directly proportional to the
+computer processing time. Given that the processing time
+comprises computing time plus transfer time, time-stamping
+cannot provide a solution for time handling. The time stamp records when an event happens in the computing process instead
+of its biological time. Given that several neurons
+share the computing resources and the computer's execution is sequential,
+the events happening at a biologically identical time will generate time stamps at technically different times.
+Furthermore, from the same reason, the the generated event
+will be considered again at different times with a (technically random) delay compared to the time of generating those events and to each other.
+Furthermore, the propagation time through the axons
+cannot be included. 
+These effects are late consequences of omitting the transfer
+time in computing science. 
+
+The goal is to "create" neurons and their systems; in spirit of Feynman. In some sense, it is a "duck test". We simulate a duck and test it it looks like, swims and quacks
+We demonstrate that our abstract model passes the \href{https://en.wikipedia.org/wiki/Duck_test}{duck test}
+"If it looks like a duck, swims like a duck, and quacks like a duck,
+then it probably \textit{is} a duck".
+See also Feynman's opinion on understanding. 
+\index{duck model}

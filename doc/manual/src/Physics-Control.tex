@@ -1,0 +1,157 @@
+% Physics : neuron as control circle
+
+
+\section[Controling potential]{Neuron as control circle\label{sec:Physics-NeuronControlCircle}}
+
+From control theory, it is known that the goal of a controlled system is to
+govern the application of system inputs to drive the system to a desired state while minimizing delay and overshoot, steady-state error, and ensuring control stability.
+The neuron implements a controller that monitors the controlled process variable (the membrane voltage) and compares it with the reference or setpoint (the resting potential).
+Recall that the geometry, the composition, and the concentration of electrolytes define the setpoint, as discussed in section~\ref{sec:Physics-MembraneElectricity}. 
+The difference between the process variable's actual and desired values, known as the error signal, represents the actual offset potential.
+It is applied as a feedback to generate a control action that brings the controlled process variable to the setpoint value.
+
+
+From a control theoretical point of view, the condenser geometry and the ion concentrations set
+the 'always the same' value (the set-point; see also Figure~\ref{fig:NernstPlanckThermalWidth}) and the currents serve to keep or restore
+that value.
+After introducing a finite-width membrane into an electrolyte,
+a potential difference between the two membrane surfaces is created; see Eq.~(\ref{eq:UGapTotal400}).
+When adjusting the membrane's potential, we must consider its ground and excited states separately,
+given that the perturbations in these two cases are vastly different. Nature employs various mechanisms to maintain the ground state and recover it after generating a spike. Although nature's tools are remarkably similar (channels and pumps; here, for discussing 'downhill' channels, we must consider the charge-up of different components), the significant difference in current intensity warrants a separate discussion.
+
+
+
+%\subsection{Neuron as a PID controller\label{Physics-PIDController}}
+\subsection[PID's potential controling]{PID's potential controling\label{sec:Physics-PIDPotentialControl}}
+
+Biology uses a simple \gls{PID} controller with proportional, integral, and derivative components. 
+In simple words, it means that the output of the system (the output voltage measurable on the \gls{AIS}) depends on the input voltage (the present: input current if the resistance is constant),
+the integrated input current(s) (the past: how much the biological objects changed due to electrical effects), and their derivatives (the future: how the actual gradients tend to form the action potential). (Notice that calculating the derivatives of the interdependent parameters needs care, as discussed in~\cite{MechanicalPropertiesNerves:2025}, given that the components are non-ideal biological components rather that the ideal discrete components.) The sum of those summands defines the resulting output voltage. 
+The biological case is more complicated than the technical one because biology works with slow ions, and the components have
+their temporal dependence (applying 
+the laws created for fast currents needs emulation, as discussed in section~\ref{sec:Physics-Imitating}). Furthermore, the summands have several constituents and the neurons handle those current-related constituents autonomously.
+That is, unlike what is assumed in the classic physiology,
+the output voltage is not necessarily a simple
+function of the mentioned input variables;
+furthermore, it is not sufficient to consider the "present" of the system.
+The classic models all omit the derivatives' contributions (a direct consequence of using clamping that 'freezes' their state, the 'future' cannot be interpreted)
+except that of the capacitive current, which is the passive consequence of the input currents.
+Furthermore, the 'Integrate and Fire'-type models
+consider the integrated currents only in the 'charge-up' ('Computing') period of operation and they entirely omit that different physical processes are going on in different stages of operation.
+That is, \textit{even the best classic models can not describe neuronal operation completely and correctly}.
+
+
+The gradients are used to adjust the process variable through their positive and negative contributions (corresponding to rising and falling edges), and the different speeds of the thermodynamic and electrical interactions minimize the delay (i.e., provide the maximum operational speed, vital for survival).
+The steady-state error is minimized by setting the process variable to the reference point using long-term stable parameters (geometry and overall concentration). The low-intensity current through the always-open resting ion channels provides dynamic stability in the steady state.%The permanently zero error signal indicates a lack of operations. 
+
+We considered that neuron has a stable base state. On the one side, this resting state must be dynamically stabilized for little perturbations using as little energy as possible
+(and to provide a mechanism when the cell grows, divides, or ages). On the other side, it must be able to restore the state after rough perturbations as quickly as possible, causing short-time transients (when restoring the
+membrane's potential after issuing a spike).
+In both the resting and transient states, the system attempts to return to its balanced state, though the mechanisms required differ. 
+
+In its excited state, the system aims to provide an intense output that informs the downstream neurons.
+This overshoot is initiated by a large number of voltage-gated ion channels (distinct from the non-gated ion channels used to maintain the resting potential) distributed in the neuron's membrane.
+The overshoot current flows through those persistently open ion channels, which are concentrated in the \gls{AIS} (which has about two orders of magnitude higher channel density than the wall).
+The intense slow current produces a condenser-like behavior (capacitive current); the phenomena called "polarization" and "hyperpolarization" (not polarization; instead, a movement of completely separated charge in the surface layer of the electrolyte) of the membrane provide the necessary positive and negative error signals for the controller in the transient state by moving the actual potential value of the membrane above and below the resting potential value. The potentials and the electrical field's magnitudes 
+depend on the concentration and the geometry (the finite size of the membrane). The ions' chemical nature comes into play only if the polarizability can differ 
+for different molecules.
+
+
+\begin{figure}
+	\includegraphics[width=0.65\textwidth]{fig/PID_en.svg.png}
+	\caption{A block diagram of a PID controller in a feedback loop. r(t) is the desired process variable (PV) or setpoint (SP), and y(t) is the measured PV. (Wikipedia)
+		\label{fig:PID_Controller}
+	}
+\end{figure}
+
+	The time course of the overall control function $u(t)$ of the general \gls{PID} controller in function of the error variable $e(t)$ in Fig.~\ref{fig:PID_Controller} is
+	described by
+	\begin{equation}
+		u(t)= K_p\biggl( e(t)
+		+ \frac{1}{T_i} \int_0^t e(\tau) d\tau
+		+ T_d \frac{de(t)}{dt}\biggr)
+		\label{eq:PID}
+	\end{equation}
+	where $T_i=\frac{K_p}{K_i}$ is the time integration constant, $T_d=\frac{K_d}{K_p}$
+	is the derivative time constant (notice the independent time constants).
+	That is, in the world of a neuron, the "theory of everything" is
+	\begin{equation}
+		V_M^{OUT}(t)= K_p\biggl( \underbrace{\overbrace{V_M^{IN}(t)}^{proportional}}_{clamping,\ synaptic}
+			+ \overbrace{\underbrace{\frac{1}{T_i} \int_0^t V_{M}^{IN}(\tau) d\tau}_{membrane's\ wall}}^{integral\ (parallel\ RC)}
+		+ \overbrace{\underbrace{T_d \frac{dV_M^{IN}(t)}{dt}}}^{derivative\ (serial\ RC)}_{AIS,\ synaptic}\,\biggr)
+		\label{eq:PID_Neuron}
+	\end{equation}
+The first term represents the constant effect of the external world (including synaptic inputs, clamping, and exciting brain tissue).
+	The second term represents the time-averaged contribution, such as 
+	charging up the membrane, including clamping current. The voltage is mainly due to current through ion channels in the membrane's wall; it represents a parallel $RC$ circuit. The third term represents
+	the sum of the gradients due to all effects (the external world, the internal processes, and the outflow through the \gls{AIS}); it represents a serial $RC$ circuit.
+The underbraces of the equation identify which components of the neuron
+contribute the terms of the \gls{PID} equation.
+The presence of some terms depends on the neuron's actual stage; furthermore, the $R$ values in the parallel and serial $RC$ circuit differ
+(resulting in different time constants). 
+
+\subsection[HH's potential controling]{HH's potential controling\label{sec:Physics-HHPotentialControl}}
+
+One can reformulate the \gls{HH}'s famous Eq.~(1) in~\cite{HodgkinHuxley:1952} to the form of the \gls{PID} equation
+	\begin{equation}
+		\underbrace{I \times R_{AIS}}_{V_M^{OUT}} = 
+		\overbrace{\underbrace{I_i\times  R_{M} }_{ionic}}^{proportional}
+		+\overbrace{
+				\frac{1}{\underbrace{C_M\times R_{AIS}}_{T_i}} \int_0^t \xcancel{(I_{bio}-I_{clamp})(\tau)} d\tau
+		}^{integral,\ clamping\ cancels\ this}
+		+\overbrace{\underbrace{C_M\times R_{M}}_{T_d}\frac{dV_M}{dt}}^{derivative,\ capacitive}
+		\label{eq:HH_PID}
+	\end{equation}
+The proportional term comprises the ionic (and external) currents.
+At the time when Eq.~(\ref{eq:HH_PID}) was set up, \gls{AIS} was not yet known,
+so \gls{HH} assumed that in the proportional term, the resistance is identical to the membrane's resistance
+implemented by the ion channels in the wall
+(leading to the ideas of "leakage current" and "resting potential", misleading physiological research.)
+\index{leakage current}
+The experimental conditions canceled the integral term entirely: the negative feedback from clamping precisely counterbalances the neuron's internally generated current, so the current integrates to zero.
+(BTW: the "integrate and fire" type models artificially revive the forgotten
+integral term.)
+The derivative term assumes that all currents are constants,
+so the voltage changes only due to the capacitive current.
+It entirely forgets that gradients are needed to operate an
+electrical system (leading to the ideas of constant-voltage batteries
+and magically operated resistors in the equivalent circuits, see Fig.~\ref{fig:HH_EquivalentCircuit}). 
+It was forgotten that a non-constant current contributes a gradient
+to the derivative term, although it was known from the beginning that
+the \gls{AP}s comprise relatively steep rising and falling edges.
+\gls{HH}'s formalism describes only the 'present' (as can be expected
+when freezing the state), has no predictive power nor can give account
+of neuronal memories.
+
+\gls{HH} considered only the proportional term, plus in the derivative term, the voltage gradient due to the condenser (but not the capacitive current itself, directly leading to the wrong ad-hoc hypothesis of the presence of $K^+$ for explaining hyperpolarization). Given that clamping obscures the presence of
+gradient-like changes in the system, they missed that \textit{the input currents also produce a voltage gradient and that the output current through the \gls{AIS} also produces a gradient}. Furthermore, the equation shows that external currents (e.g., the rising and falling edges of step functions) also cause significant changes in the output voltage.
+Similarly, a "foreign" invasion (changing mechanically the positions of charges by pressure, ultrasound, magnetic pulse, changing the concentration in one of the segments, and so on) generates a change in the position of charges on the neuronal membrane. This way, it generates a voltage gradient (as well as a pressure gradient and other changes), which may trigger neuronal spikes.
+%As discussed in section~\ref{sec:AP-PhysicalProcess},
+Subthreshold excitations provide direct experimental evidence that the description of the resting state includes both serial and parallel contributions.
+	
+
+\subsection[Comparing equations]{Comparing equations describing neuron's output voltage\label{sec:Physics-CompageNeuronOutputVoltage}}
+
+When comparing Eq.~(\ref{eq:RC_Parallel_Circuit_Output}) describing the operation of a simple serial $RC$ oscillator taken from the theory of electricity,  Eq.~(\ref{eq:HH_PID}) describing \gls{HH}'s differential equation
+(having \gls{PID} in mind),  and the complete Eq.~(\ref{eq:PID_Neuron}) describing neuron-specific \gls{PID}, one can see that they describe the 
+same process in different (experimental and mathematical) approximations.
+As experience shows, Eq.~(\ref{eq:RC_Parallel_Circuit_Output}) describing 
+the 'net electric' model provides a sufficiently accurate description
+of the \gls{AP}, proving that the dominating effect comes from the derivate term and that the thermodynamic term is linearly proportional to the
+electric one. Furthermore, as we emphasized by discussing the 
+physical processes and the mathematical terms, to some measure, 
+the "parallel $RC$ circuit" is also present in the process, although
+its current amplitude is by two orders of magnitude 
+lower than that of the "serial $RC$ circuit"; furthermore, the time constants of the two circuits are also largely different, making the effect of the parallel circuit unnoticeable.
+The slow current also play a role: the ion currents are 'local': 
+given that the channels in the membrane's wall are always open, the current on its way towards the \gls{AIS} may flow out
+through a nearby ion channel, so only a fragment of the 'resting current' reaches the \gls{AIS}.
+Eq.~(\ref{eq:PID_Neuron})
+provides a high-accuracy description of the process, but for most 
+practical applications using Eq.~(\ref{eq:RC_Parallel_Circuit_Output})
+provides sufficiently good results, while Eq.~(\ref{eq:HH_PID}) is based
+on an incorrect 'physical model' and requires a series of incorrect ad-hoc hypotheses to describe observations.
+Note that the forces acting on ions have both electrical and thermodynamic components, but they are proportional to each other. That is, although the absolute values of the coefficients in the equations are not accurate; their effects are. Surely, the description of the process
+is complicated, but appropriate approximations give sufficiently
+precise and computationally reasonable results.
+

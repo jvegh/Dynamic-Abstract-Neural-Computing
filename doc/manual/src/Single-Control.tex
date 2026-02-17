@@ -1,0 +1,200 @@
+% Single : neuron as control circle
+
+
+\section[Control circuit]{Neuron as control circuit\label{sec:Single-NeuronControlCircle}}
+
+The neuron as a system aims to collect inputs from its upstream neurons and to provide an intense output that informs the downstream neurons.
+A large number of voltage-gated ion channels, distributed in the neuron's wall, implements the input charge of this overshoot
+and the overshoot output current flows through a similarly large number of persistently open ion channels concentrated in 
+\gls{AIS}.
+The intense slow current produces a condenser-like behavior (capacitive current); the phenomena called polarization and hyperpolarization (not polarization, instead a complete charge separation) of the membrane provide the necessary positive and negative error signals for the controller in the transient state.
+
+We considered that the neuron has a stable base state. On the one side, this resting state must be dynamically stabilized for little perturbations
+(and to provide a mechanism when the cell grows, divides, or ages). On the other side, it must be able to restore the state after rough perturbations, causing short-time transients (when restoring the
+membrane's potential after issuing a spike). The two states need different physical mechanisms: a set of ungated low-current ion channels 
+for the resting state, and a set of high-intensity ion channels 
+for the transient state. Of course, for starting a spike, the input channels must be gated while the output ion channels can work without gating. 
+
+
+From \hypertarget{ControlTheory}{control theory}, it is known that the goal of the system is to
+govern the application of system inputs to drive the system to a desired state while minimizing any delay, overshoot, or steady-state error and ensuring control stability.
+The neuron implements a controller that monitors the controlled process variable (membrane voltage) and compares it with the reference or setpoint (the resting potential).
+The difference between the process variable's actual and desired values called the error signal, is the actual offset potential.
+It is applied as feedback to generate a control action to bring the controlled process variable to the same value as the set point.
+
+Biology uses such a simple controller.
+The gradients are used to adjust the process variable by their positive and negative contributions, and the different speeds of the thermodynamical and electrical interactions minimize the delay (i.e., provide the maximum speed of operations, vital for survival).
+The difference between the process variable's actual and desired values called the error signal, is the actual offset potential.
+It is applied as feedback to generate a control action to bring the controlled process variable to the same value as the set point.
+The steady-state error is minimized by setting the process variable to the reference point using long-term stable parameters (geometry and overall concentration).
+The low-intensity current through the always-open resting ion channels provides dynamic stability in the steady state. The permanently zero error signal indicates a lack of operations.
+In contrast, the permanently nonzero error signal is a sign of abnormal operation and is likely a symptom of a neurological disease.
+See also section~\ref{sec:Single-Robustness}.
+
+The system aims to provide an intense output that informs the downstream neurons.
+This overshoot is implemented by a large number of voltage-gated ion channels distributed in the neuron's wall.
+The overshoot current flows through a similarly large number of persistently open ion channels concentrated in 
+\gls{AIS}.
+The intense slow current produces a condenser-like behavior (capacitive current); the phenomena called polarization and hyperpolarization (not polarization, which is a complete charge separation instead) of the membrane provide the necessary positive and negative error signals for the controller in the transient state.
+
+
+
+\subsection{Electricity builds and thermodynamics corrects\label{sec:Single-FixingPotential}}
+
+
+From a control theoretical point of view, the condenser geometry sets
+the 'always the same' value and the currents serve to keep or restore
+that value.
+Forming membrane's potential is an excellent example of the principle that nature uses "one process to build and the other
+to correct"~\cite{BiologicalConservationLaw:2017}. 
+
+After introducing a finite-width membrane into an electrolyte,
+a potential difference between the two membrane surfaces is created; see Eq.(\ref{eq:UGapTotal400}).
+When adjusting the membrane's potential, we must consider its ground and excited states separately,
+given that the perturbations in these two cases are vastly different. Nature employs various mechanisms to maintain the ground state and recover it after generating a spike. Although nature's tools are remarkably similar (channels and pumps; here, we discuss only the 'downhill' channels), the significant difference in current intensity needs a different discussion.
+
+The potential's and the electric field's magnitudes 
+depend on the concentration and the geometry (the finite width of the membrane).
+The ions' chemical nature comes into play only if the polarizability can differ for different molecules.
+The thickness of the charged layer $\Delta z$ has a significant impact on the resulting electric field (i.e., the neuron's 'setpoint').
+If biological fragments are formed and settle down on the membrane's intracellular side, due to the increased $\Delta z$,
+the resting potential (and the threshold potential) may change, leading to neurological diseases.
+
+
+Given that the same number of charged ions must be present
+on the two sides of the membrane,
+their surface density $\sigma_A$ must be the same. 
+Notice that the effect is purely electrostatic, resulting in an asymmetric ion distribution; no permeability is needed. If the membrane is (slightly) permeable, ions will
+move across the membrane until equilibrium is reached.
+The resulting potential difference is directly proportional to the concentration difference.
+
+The classical condenser has an electric field, as the blue dashed diagram line shows in Fig.~\ref{fig:The-membrane's-extra-gradient}. No field is outside or inside the condenser plates (see Fig.~\ref{fig:Physics-Capacitor}). There is a sudden jump in the field on the conductor's surface (the armatures) and a constant field between the plates.
+(The charged layer can be ideally thin if electrons are sitting on the surface but is of finite thickness on the opposite side where ions are on the surface.  This latter effect is not discussed in classical electricity.)
+
+
+The biological condenser behaves differently; see the
+red diagram line. The electrolyte (instead of an insulator) outside the condenser drastically changes the structure of the field. The electric field on the surface and between the plates changes by a factor of 3 to 4. Outside the plates, the polarization creates a field that changes logarithmically. An ion layer with finite thickness is built near the membrane's surface. It is uniformly charged, so the field is linear. At the internal surface of the condenser, it takes the value of the field calculated for the gap; on the other side of the layer, it takes the value of the logarithmic field at that position.  The dashed line represents the gap field, the continuous line represents the charged layer field, and the dotted line represents the electrolyte field. We can observe the "correspondence principle": the particle-continuous fields join seamlessly; furthermore, if the polarizability of the electrolyte decreases toward zero, the field value approaches the classical value.
+
+
+As Eq.(\ref{eq:NernstPlanckThermal1}) shows, the "thermodynamic electric field" increases
+as temperature increases, and raises the setpoint. As Eq.(\ref{eq:StokesEinsteinSpeeddV})
+shows, the current decreases as temperature increases, in line with the experimental evidence.
+The amplitude of action potential is decreased given that the setpoint increased
+and its duration is reduced given that the current decreases.
+
+
+
+The thickness of the charged layer has a significant impact on the resulting electric field (i.e., the neuron's 'setpoint'). If biological fragments are formed and settle down on the membrane's intracellular side, due to the increased $\Delta z$, the resting potential (and the threshold potential) may change, leading to neurological diseases.
+
+
+\subsection[Robustness]{Robustness of the control circle\label{sec:Single-Robustness}}
+
+An exciting thought experiment is discussed in~\cite{OriginMembranePotential:2018}. "First, we consider a hypothetical membrane that is permeable only to $Na^+$ ions. Suppose that $[Na^+]_o$, the outside or extracellular sodium concentration, is $145\ mM$, and $[Na^+]_i$ is 12 mM. And suppose that initially, there is no membrane potential. The diffusion gradient for $Na^+$ favors $Na^+$ entry into the cell, and the initial $Na^+$ influx carries a charge that builds up on the inside of the cell. This produces a potential (recall that separation of charge produces a potential) across the membrane that impedes further $Na^+$ ion movement because the positive charges repel the positively charged $Na^+$ ion."
+
+The paper correctly explains that in the case of $Na^+$ only, the potential sets up
+to $66.6\ mV$. (We quietly add that plus a layer of the corresponding $Cl^-$ ions on the other segment, in a similar concentration ratio, builds up; so also, the attraction between positive and negative charges contributes to the effect.) 
+In lack of our argumentation, it cannot explain why 
+that potential builds up; only why that concentration ratio
+establishes: the Nernst law, alone, does not explain the effect. Furthermore, the statement is valid only for
+a well-defined semipermeable membrane.
+We can add that the same concentrations develop if initially identical concentrations
+are present on both sides. 
+The finite width of the membrane creates its electric potential, which is a consequence of charge separation, as stated.
+If there are no ions initially inside, then no charge separation occurs, and therefore, no ion transport begins due to the membrane's electric potential. However, the thermal driving force exists, and the started ion transport quickly builds the electric layer, which effectively helps to establish the resting potential. 
+
+This robustness also explains why, during replication (cell division), cells also inherit their operating ability and resting potential; the existing membrane cell continues to grow in the same way. Its voltage remains the same, and the voltage defined in this way adjusts the concentrations appropriately. Moreover, it explains why, during evolution, cells first formed: a couple of lipids came together to form a membrane, establishing cellular electricity. As Fig.~\ref{fig:RestingPotential3} depicts, the concentrations may adapt to the living conditions (whether living in see-water), but the general operating principles remained the same. The see-water environment 
+enables using thinner membrane and lower membrane voltage; however, the same electric field is is used in all cases.
+
+Given that neurons share the external (global) concentrations (defined by the vast amount of ions in bulk), they provide a firmly fixed offset value to the always-the-same electric potential. This way, the operations of the individual neurons do not interfere. Furthermore, the internal (local) concentrations can adjust themselves even following a very rough charge perturbation
+while issuing an \gls{AP};
+moreover, when the living organism is growing.
+
+\subsection{Controller\label{sec:Physics-Controller}}
+We consider the neuron as a simple automated voltage controller with a predefined structure (a biological oscillator with a constant capacity (membrane) and resistance (AIS)),
+unidirectional input (synapses) and output (axon) connections with the environment,
+some \hyperlink{DynamicLayer}{\textit{dynamic components}} (ionic currents in the temporarily formed
+electrolyte layers), and a single temporary "stage variable" (the membrane's potential).
+The circuit essentially collects charge (while it is leaking, furthermore, gates its inputs) in its ground state,
+and when the stage variable (the membrane's potential) -- undex external impact(s) -- reaches a well-defined constant critical value (the threshold potential),
+it flushes the collected charge.
+By regulating the single stage variable, the system can pass
+from stage to stage, in a well-defined way.
+The neuron transmits the collected information to its downstream neurons:
+the "Delivering" process transmits the charge carriers from the surface layer
+of the membrane to the 
+%\gls{AIS}
+AIS and the ion channels 'instantly' deliver the ions to the beginning
+of the axon where they pass along as the laws of motion of electrodiffusion dictate; see also section~\ref{sec:Single-ActionPotential}.
+
+
+In our (somewhat simplified) view, a neuron is an autonomous  system that has a well-defined equilibrium state. We do not mention here the details needed to maintain the equilibrium state,
+furthermore, we subdivide the charge processing into subprocesses by their physical nature.
+In reply to the environment (mainly upstream neurons) the neuron lets a given amount of positive charges from the electrolyte layer (handled as a "charged infinite sheet")
+formed on the high-concentration side of its membrane to enter the low-concentration side where it forms temporarily a similar layer. This process is instant.
+The ions produce a voltage increase on the well-defined
+capacity of the neuron. That voltage serves as a driving force 
+for removing the rushed-in ions through its axon, through the 
+\gls{AIS}
+with as well-defined resistance. The ions arrive through
+ion channels at different places of the membrane, so they need
+different times to reach their outflow point.
+The travel time can be interpreted as "storing the charge for some time", which can be modeled by a classic condenser (which is a discrete element and uses instant current).
+The resistance 
+of the
+\gls{AIS}
+limits the current on the surface to a value which is much less
+than the inflow through the membrane. We assume that the repulsion between charged particles in the electrolyte layer
+is remarkable that tends to make the charged layer equipotential.
+However, the different speeds for the mass and charge transport processes limits the propagation speed of ions.
+Equations~(\ref{eq:Nernst-dVdt}) and~(\ref{eq:Nernst-dCdt}) describe the processes, althought they must be combined with the geometry of the of the neuronal membrane.
+The result of the interference of those processes is known
+as Action Potential.
+Important to notice that the the charge transfer from the layer on the high-concentration side to the layer on the low concentration side is accompanied with considerable voltage and concentration  changes in both layers during generating the
+\gls{AP},
+see also section~\ref{sec:Physics-Resources}.
+These changes manifest in considerable current (and voltage) gradients.
+
+
+A physical neuron operates with current gradients that enables it using very precise timings,
+and cooperates with the fellow individual neurons and their assemblies.
+Its goal is implementing a computing unit, which receives input information
+in form of native current gradients or artificial 
+current gradients through its synapses. In any case, the received current evokes a potential gradient,
+and \textit{the voltage gradient operates the neuron}.
+\index{voltage gradient}
+In this abstract interpretation,
+the neuron is represented as a \textit{serial} electric $RC$ oscillator circuit, which implements some 
+\index{$RC$ oscillator!serial}
+voltage gradient (or maybe current density) threshold.
+\cite{LosonczyIntegrative:2006} provided evidence that a spike with sufficiently large slope of current density
+(in other words, potential gradient)
+is capable alone to evoke the critical voltage gradient needed
+to evoke an action potential. 
+
+\subsection{Goldman-Hodgkin-Katz potential\label{sec:Goldman-Hodgkin-Katz}}
+
+
+It has already been stated, based on experimental evidence, that "the membrane permeability to the ions has nothing to do with the potential generation and the ions' adsorption on the membrane surface generates the membrane potential"; for a review, see~\cite{MembranePotentialPermeability:2024}.
+The idea itself is nonsense: in a balanced state, no ion transport happens, so even without permeability, the balanced state persists;  the resting potential has nothing to do with either ions' mobility or permeability or with ion absorption~\cite{Hodgkin-HuxleyAdsorption:2021}.
+Furthermore, there is no idea in \gls{GHK} about whether the 'setpoint' (why that specific concentration or potential difference) is present and why the same potential is reset after rough perturbations such as issuing an \gls{AP} or replicating a cell.
+The causality is reversed: the potential is a static concept and is set electrically, and
+the two gradients form the experienced concentrations from the available solvent molecules.
+For the time course of gradient formation, mobility and permeability play a role, but not in determining concentrations or the resting potential.
+
+In our clear physical picture, the thermodynamic forces on one side
+and on the other side of the membrane are summed. They counterbalance each other; furthermore, jointly the effect of the neuronal condenser, see  Fig.~\ref{fig:RestingPotential3}.
+As we emphasized, the concentration gradients are ion-specific.
+Furthermore, as discussed in connection with Eq.(\ref{eq:Nernst1}), the Nernst equation comprises a per-ion indefinite constant (a potential difference).
+To calculate a linear combination of terms comprising an arbitrary constant is nonsense,
+and so is adding absolute concentrations on the different sides of the membrane, or changing the base of the logarithm used in a calculation to match
+the experimental value. It is not more than number magic. The potential is described by coupled equations as discussed in connection with Eq.~(\ref{eq:coupling}).
+
+The $Ca^{2+}$ ions do not fit into the \gls{GHK} picture. 
+One of the reasons why \gls{GHK} cannot be good is that $[Ca^{2+}]$
+is omitted. Biologically, it is hard to believe that $Ca^{2+}$ does not participate in the game of life (especially since biology sees the need for $Ca^{2+}$ pumps). Physically, a single concentration on one side of the membrane cannot maintain balance; as the different ion-exchange processes shown in Table~\ref{Tab:SummaryTable} and Fig.~\ref{fig:RestingPotential3} demonstrate.
+When adding a new ion to the solution, the sum concentration
+increases, and so the electrical force increases, forcing the previous 
+elements to find new concentrations on both sides.
+The appearance of a new chemical element indirectly changes the concentrations of the others (a good example is the role of the negligible amount of $Ca^{2+}$).
+
+

@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/home/jvegh/REPO/LaTeXML/DANCES/doc/sty,/home/jvegh/REPO/LaTeXML/DANCES/doc,/home/jvegh/REPO/LaTeXML/DANCES/doc/site"?>
+<?latexml class="article"?>
+<?latexml package="latexml"?>
+<?latexml package="hyperref"?>
+<?latexml package="latexmldoc"?>
+<?latexml package="listings"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML" class="ltx_authors_1line" labels="LABEL:top" xml:id="ltxsite">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-article.css" type="text/css"/>
+  <resource src="ltx-listings.css" type="text/css"/>
+<!--  %============================================================ -->  <title><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> <emph font="italic">A <text class="ltx_LaTeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text>X</text> to XML/HTML/MathML Converter</emph></title>
+  <keywords name="keywords">LaTeXML, LaTeX to XML, LaTeX to HTML, LaTeX to MathML, LaTeX to ePub, converter</keywords>
+  <para xml:id="ltxsite.p1">
+    <p><emph font="italic"><!--  %============================================================ -->Now available</emph>: <ref labelref="LABEL:get"><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> 0.8.8</ref>!</p>
+  </para>
+  <para xml:id="ltxsite.p2">
+    <p>In the process of developing the
+<ref class="ltx_href" href="https://dlmf.nist.gov/">Digital Library of Mathematical Functions</ref>,
+we needed a means of transforming
+the <text class="ltx_LaTeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text>X</text> sources of our material into XML which would be used
+for further manipulations, rearrangements and construction of the web site.
+In particular, a true ‘Digital Library’ should focus on the <emph font="italic">semantics</emph>
+of the material, and so we should convert the mathematical material into both
+content and presentation MathML.
+At the time, we found no software suitable to our needs, so we began
+development of <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> in-house.</p>
+  </para>
+  <para xml:id="ltxsite.p3">
+    <p><!--  %**** index.tex Line 50 **** -->The approach is to emulate TeX as far as possible (in Perl), converting
+the <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> or (<text class="ltx_LaTeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text>X</text>) document into <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>’s XML format. That format
+is modelled on the typical document structure found in <text class="ltx_LaTeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text>X</text>, and inspired by
+HTML, MathML, OpenMath and others. That abstract document is then further
+transformed into HTML of various flavors, with MathML and SVG,
+or into JATS or ePub or ….
+Of course, emulating <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> is kinda hard,
+there are many clever <text class="ltx_LaTeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text>X</text> package developers,
+and the Web moves quickly,
+so there are gaps in fidelity and coverage.</p>
+  </para>
+  <paragraph xml:id="ltxsite.S0.SS0.SSS0.Px1">
+    <title>Examples</title>
+    <para xml:id="ltxsite.S0.SS0.SSS0.Px1.p1">
+      <p>of <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>’s work include:
+<indexmark>
+          <indexphrase key="examples">examples</indexphrase>
+        </indexmark></p>
+      <description xml:id="ltxsite.S0.I1">
+        <item xml:id="ltxsite.S0.I1.ix1">
+          <tags>
+            <tag><ref class="ltx_href" font="bold" href="examples/tabular/tabular.html">LaTeX tabular</ref></tag>
+            <tag role="autoref">item </tag>
+            <tag role="typerefnum">item <ref class="ltx_href" href="examples/tabular/tabular.html">LaTeX tabular</ref></tag>
+          </tags>
+          <para xml:id="ltxsite.S0.I1.ix1.p1">
+            <p>from the <text class="ltx_LaTeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text>X</text> manual, p.205.
+(<ref class="ltx_TeX_logo ltx_href" cssstyle="letter-spacing:-0.2em; margin-right:0.2em" href="examples/tabular/tabular.tex">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</ref>,
+<ref class="ltx_href" href="examples/tabular/tabular.pdf"><graphics candidates="pdf.eps,pdf.png" graphic="pdf" xml:id="ltxsite.S0.I1.ix1.p1.g1"/></ref>)</p>
+          </para>
+        </item>
+        <item xml:id="ltxsite.S0.I1.ix2">
+          <tags>
+            <tag><ref class="ltx_href" font="bold" href="https://dlmf.nist.gov/">DLMF</ref></tag>
+            <tag role="autoref">item </tag>
+            <tag role="typerefnum">item <ref class="ltx_href" href="https://dlmf.nist.gov/">DLMF</ref></tag>
+          </tags>
+          <para xml:id="ltxsite.S0.I1.ix2.p1">
+            <p>The Digital Library of Mathematical Functions was the
+primary instigator for this project.</p>
+          </para>
+        </item>
+        <item xml:id="ltxsite.S0.I1.ix3">
+          <tags>
+            <tag><ref class="ltx_href" font="bold" href="manual/"><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> Manual</ref></tag>
+            <tag role="autoref">item </tag>
+            <tag role="typerefnum">item <ref class="ltx_href" href="manual/"><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> Manual</ref></tag>
+          </tags>
+          <para xml:id="ltxsite.S0.I1.ix3.p1">
+            <p>The <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> User’s manual (<ref class="ltx_href" href="manual.pdf"><graphics candidates="pdf.eps,pdf.png" graphic="pdf" xml:id="ltxsite.S0.I1.ix3.p1.g1"/></ref>).</p>
+          </para>
+        </item>
+        <item xml:id="ltxsite.S0.I1.ix4">
+          <tags>
+            <tag><text font="bold">These pages</text></tag>
+            <tag role="autoref">item </tag>
+            <tag role="typerefnum">item These pages</tag>
+          </tags>
+          <para xml:id="ltxsite.S0.I1.ix4.p1">
+            <p>were produced using <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>, as well.</p>
+          </para>
+        </item>
+      </description>
+      <p>See also</p>
+      <description xml:id="ltxsite.S0.I2">
+        <item xml:id="ltxsite.S0.I2.ix1">
+          <tags>
+            <tag><ref class="ltx_url" font="typewriter bold" href="https://latexml.mathweb.org/editor">https://latexml.mathweb.org/editor</ref></tag>
+            <tag role="autoref">item </tag>
+            <tag role="typerefnum">item <ref class="ltx_url" font="typewriter" href="https://latexml.mathweb.org/editor">https://latexml.mathweb.org/editor</ref></tag>
+          </tags>
+          <para xml:id="ltxsite.S0.I2.ix1.p1">
+            <p>an online editor/showcase
+of things that <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text><!--  %“item[“url–https://arxmliv.kwarc.info˝] An experiment processing --> can do.
+<!--  %the entire “url–https://arXiv.org˝. --></p>
+          </para>
+        </item>
+        <item xml:id="ltxsite.S0.I2.ix2">
+          <tags>
+            <tag><ref class="ltx_url" font="typewriter bold" href="https://arxiv.org/">https://arxiv.org/</ref></tag>
+            <tag role="autoref">item </tag>
+            <tag role="typerefnum">item <ref class="ltx_url" font="typewriter" href="https://arxiv.org/">https://arxiv.org/</ref></tag>
+          </tags>
+          <para xml:id="ltxsite.S0.I2.ix2.p1">
+            <p>is now offering preprints in HTML format using <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> (currently experimental).</p>
+          </para>
+        </item>
+      </description>
+    </para>
+<!--  %In brief, “texttt–latexml˝ is a program, written in Perl, that attempts to 
+     %faithfully mimic “TeX’s behavior, but produces XML instead of dvi. 
+     %The document model of the target XML makes explicit the model implied 
+     %by “LaTeX. 
+     %The processing and model are both extensible; you can define 
+     %the mapping between “TeX“ constructs and the XML fragments to be created. 
+     %A postprocessor, “texttt–latexmlpost˝ converts this 
+     %XML into other formats such as HTML or XHTML, with options 
+     %to convert the math into MathML (currently only presentation) or images. 
+     %“emph–Caveats˝: It isn’t finished, there are gaps in the coverage, 
+     %particularly in missing implementations of the many useful “LaTeX“ packages. 
+     %But is beginning to stabilize and interested parties 
+     %are invited to try it out, give feedback and even to help out. 
+     %**** index.tex Line 100 **** 
+     %%============================================================ 
+     %“section–Examples˝“label–examples˝“index–examples˝ 
+     %At the moment, the best example of “LaTeXML’s output is 
+     %the “href–https://dlmf.nist.gov/˝–DLMF˝ itself. 
+     %There is, of course, a fair amount of insider, special case, 
+     %code, but it shows what can be done. 
+     %Some highlights: 
+     %“begin–description˝ 
+     %“item[“href–examples/tabular/tabular.html˝–LaTeX tabular˝] 
+     %from the “LaTeX“ manual, p.205. 
+     %(“href–examples/tabular/tabular.tex˝–“TeX˝, 
+     %“href–examples/tabular/tabular.pdf˝–“PDFIcon˝) 
+     %“item[“url–https://latexml.mathweb.org/editor˝] an online editor/showcase 
+     %of things that “LaTeXML“ can do. 
+     %“item[“url–https://arxmliv.kwarc.info˝] An experiment processing 
+     %the entire “url–https://arXiv.org˝. 
+     %“end–description˝ 
+     %And, of course 
+     %“begin–description˝ 
+     %“item[“href–https://dlmf.nist.gov/˝–DLMF˝] 
+     %The Digital Library of Mathematical Functions was the 
+     %primary instigator for this project. 
+     %“item[“href–manual/˝–“LaTeXML“ Manual˝] 
+     %The “LaTeXML“ User’s manual (“href–manual.pdf˝–“PDFIcon˝). 
+     %**** index.tex Line 125 **** 
+     %“item[And these pages] were produced using “LaTeXML, as well. 
+     %“end–description˝ -->  </paragraph>
+  <section inlist="toc" labels="LABEL:ussage" xml:id="ltxsite.S1">
+    <tags>
+      <tag role="autoref">section </tag>
+      <tag role="typerefnum">§</tag>
+    </tags>
+    <title>Usage</title>
+    <para xml:id="ltxsite.S1.p1">
+      <p>In most cases, all that should be needed to convert
+a <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> file, <text font="italic">mydoc</text><text font="typewriter">.tex</text> to XML, and
+then to HTML would be:</p>
+      <listing class="ltx_lst_language_bash ltx_lstlisting" data="ICAgbGF0ZXhtbCAtLWRlc3Q9JW15ZG9jJS54bWwgJW15ZG9jJQogICBsYXRleG1scG9zdCAtLWRlc3Q9JXNvbWV3aGVyZS9teWRvYyUuaHRtbCAlbXlkb2MlLnhtbA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+        <listingline xml:id="lstnumberx1"><text class="ltx_lst_space" font="typewriter">   </text><text class="ltx_lst_keyword" font="typewriter bold">latexml</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">dest</text><text font="typewriter">=</text><text font="typewriter italic">mydoc</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">xml</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter italic">mydoc</text></listingline>
+        <listingline xml:id="lstnumberx2"><text class="ltx_lst_space" font="typewriter">   </text><text class="ltx_lst_keyword" font="typewriter bold">latexmlpost</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">dest</text><text font="typewriter">=</text><text font="typewriter italic">somewhere/mydoc</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">html</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter italic">mydoc</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">xml</text></listingline>
+      </listing>
+      <p>This will carry out the default transformation into HTML5,
+which represents mathematics using MathML.
+Different file extensions (or the <verbatim font="typewriter">--format</verbatim> option) imply different output formats,
+including XHTML, HTML4 w/images for math, JATS, TEI.
+There are also options to split large documents into several pages, or to combine multiple
+documents into a single site. See the command documentation, below.</p>
+    </para>
+    <para xml:id="ltxsite.S1.p2">
+      <p>The functionality of <text font="typewriter">latexml</text> and <text font="typewriter">latexmlpost</text> are conveniently
+combined into the single executable <text font="typewriter">latexmlc</text>, without creating the
+intermediate XML file. The above commands are equivalent to</p>
+      <listing class="ltx_lst_language_bash ltx_lstlisting" data="ICAgbGF0ZXhtbGMgLS1kZXN0PSVzb21ld2hlcmUvbXlkb2MlLmh0bWwgJW15ZG9jJQ==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+        <listingline xml:id="lstnumberx3"><text class="ltx_lst_space" font="typewriter">   </text><text class="ltx_lst_identifier" font="typewriter">latexmlc</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">dest</text><text font="typewriter">=</text><text font="typewriter italic">somewhere/mydoc</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">html</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter italic">mydoc</text></listingline>
+      </listing>
+      <p><!--  %**** index.tex Line 150 **** -->Moreover, <text font="typewriter">latexmlc</text> provides extra functionality
+such as the creation of ePub documents:</p>
+      <listing class="ltx_lst_language_bash ltx_lstlisting" data="ICAgbGF0ZXhtbGMgLS1kZXN0PSVteWRvYyUuZXB1YiAlbXlkb2Ml" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+        <listingline xml:id="lstnumberx4"><text class="ltx_lst_space" font="typewriter">   </text><text class="ltx_lst_identifier" font="typewriter">latexmlc</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">dest</text><text font="typewriter">=</text><text font="typewriter italic">mydoc</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">epub</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter italic">mydoc</text></listingline>
+      </listing>
+      <p><emph font="italic">However</emph>, be aware that a future merging and renaming will occur in
+the not-too-distant future, resulting in a single executable <text font="typewriter">latexml</text>
+which will combine all functionality.</p>
+    </para>
+    <subsection inlist="toc" xml:id="ltxsite.S1.SS1">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>Documentation</title>
+      <para xml:id="ltxsite.S1.SS1.p1">
+        <p>If you want to dig deeper:</p>
+        <description xml:id="ltxsite.S1.I1">
+          <item xml:id="ltxsite.S1.I1.ix1">
+            <tags>
+              <tag><ref class="ltx_href" font="bold" href="manual/">LaTeXML Manual</ref></tag>
+              <tag role="autoref">item </tag>
+              <tag role="typerefnum">item <ref class="ltx_href" href="manual/">LaTeXML Manual</ref></tag>
+            </tags>
+            <para xml:id="ltxsite.S1.I1.ix1.p1">
+              <p>(<ref class="ltx_href" href="manual.pdf"><graphics candidates="pdf.eps,pdf.png" graphic="pdf" xml:id="ltxsite.S1.I1.ix1.p1.g1"/></ref>).</p>
+            </para>
+          </item>
+          <item xml:id="ltxsite.S1.I1.ix2">
+            <tags>
+              <tag><ref class="ltx_href" font="typewriter bold" href="manual/commands/latexml.html">latexml</ref></tag>
+              <tag role="autoref">item </tag>
+              <tag role="typerefnum">item <ref class="ltx_href" font="typewriter" href="manual/commands/latexml.html">latexml</ref></tag>
+            </tags>
+            <para xml:id="ltxsite.S1.I1.ix2.p1">
+              <p>describes the <text font="typewriter">latexml</text> command.</p>
+            </para>
+          </item>
+          <item xml:id="ltxsite.S1.I1.ix3">
+            <tags>
+              <tag><ref class="ltx_href" font="typewriter bold" href="manual/commands/latexmlpost.html">latexmlpost</ref></tag>
+              <tag role="autoref">item </tag>
+              <tag role="typerefnum">item <ref class="ltx_href" font="typewriter" href="manual/commands/latexmlpost.html">latexmlpost</ref></tag>
+            </tags>
+            <para xml:id="ltxsite.S1.I1.ix3.p1">
+              <p>describes the <text font="typewriter">latexmlpost</text> command for postprocessing.</p>
+            </para>
+          </item>
+          <item xml:id="ltxsite.S1.I1.ix4">
+            <tags>
+              <tag><ref class="ltx_href" font="typewriter bold" href="manual/commands/latexmlc.html">latexmlc</ref></tag>
+              <tag role="autoref">item </tag>
+              <tag role="typerefnum">item <ref class="ltx_href" font="typewriter" href="manual/commands/latexmlc.html">latexmlc</ref></tag>
+            </tags>
+            <para xml:id="ltxsite.S1.I1.ix4.p1">
+              <p>describes the <text font="typewriter">latexmlc</text> command.</p>
+            </para>
+          </item>
+        </description>
+      </para>
+<!--  %Possibly, eventually, want to expose: 
+     %https://www.mathweb.org/wiki/???? 
+     %But, it doesn’t have anything in it yet. -->    </subsection>
+  </section>
+  <section inlist="toc" labels="LABEL:get" xml:id="ltxsite.S2">
+    <tags>
+      <tag role="autoref">section </tag>
+      <tag role="typerefnum">§</tag>
+    </tags>
+    <title>Get <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text></title>
+    <indexmark>
+      <indexphrase key="get">get</indexphrase>
+    </indexmark>
+    <subsection inlist="toc" labels="LABEL:get.quick" xml:id="ltxsite.S2.SS1">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>Quick Start</title>
+      <subsubsection inlist="toc" labels="LABEL:get.current" xml:id="ltxsite.S2.SS1.SSS1">
+        <tags>
+          <tag role="autoref">subsubsection </tag>
+          <tag role="typerefnum">§</tag>
+        </tags>
+        <title>Current Release</title>
+        <para xml:id="ltxsite.S2.SS1.SSS1.p1">
+          <p>The current release is <text font="bold">0.8.8</text>. (see the <ref class="ltx_href" href="Changes">Change Log</ref>).
+<emph font="italic">Prebuilt packages sometimes lag behind the latest release.</emph></p>
+        </para>
+        <para xml:id="ltxsite.S2.SS1.SSS1.p2">
+          <p>Most people will want to install a prebuilt release,
+and some version of <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>. Choose the appropriate
+Operating system, repository type and context from the table below.
+This will install all necessary prerequisites, unless otherwise noted.</p>
+        </para>
+        <para class="ltx_noindent" xml:id="ltxsite.S2.SS1.SSS1.p3">
+          <tabular vattach="middle">
+            <tbody>
+              <tr>
+                <td align="left"><text font="italic">Platform</text></td>
+                <td align="left"><text font="italic">Command</text></td>
+                <td align="left"><text font="italic"><!--  %**** index.tex Line 200 **** -->Details</text></td>
+              </tr>
+              <tr>
+                <td align="left" border="t"><!--  %============================ --><text font="bold italic">Linux</text></td>
+                <td border="t"/>
+                <td border="t"/>
+              </tr>
+              <tr>
+                <td align="left">RPM-based</td>
+                <td align="left"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBkbmYgaW5zdGFsbCBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx5"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">dnf</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td align="left"><ref labelref="LABEL:get.linux.rpm">RPM-based</ref></td>
+              </tr>
+              <tr>
+                <td align="right"><text font="italic">or</text></td>
+                <td align="left"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyB5dW0gaW5zdGFsbCBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx6"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">yum</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td/>
+              </tr>
+              <tr>
+                <td align="left">Debian</td>
+                <td align="left"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBhcHQtZ2V0IGluc3RhbGwgbGF0ZXhtbA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx7"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">apt</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">get</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">latexml</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td align="left"><ref labelref="LABEL:get.linux.debian"><!--  %**** index.tex Line 225 **** -->Debian</ref></td>
+              </tr>
+              <tr>
+                <td align="left" border="t" colspan="2"><text font="bold italic">MacOS<text font="upright"> <ref class="ltx_href" href="https://www.macports.org">MacPorts</ref></text></text></td>
+                <td border="t"/>
+              </tr>
+              <tr>
+                <td align="left">w/<ref class="ltx_href" href="https://tug.org/mactex/">MacTeX</ref></td>
+                <td align="left"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBwb3J0IGluc3RhbGwgTGFUZVhNTCArbWFjdGV4" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx8"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">+</text><text class="ltx_lst_identifier" font="typewriter">mactex</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td align="left"><ref labelref="LABEL:get.macos.macports">MacOS</ref> (<ref class="ltx_href" href="https://tug.org/mactex/">MacTeX</ref> preinstalled)</td>
+              </tr>
+              <tr>
+                <td align="left">w/TeXlive</td>
+                <td align="left"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBwb3J0IGluc3RhbGwgdGV4bGl2ZS1sYXRleApzdWRvIHBvcnQgaW5zdGFsbCBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx9"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">texlive</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">latex</text></listingline>
+                      <listingline xml:id="lstnumberx10"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td align="left"><ref labelref="LABEL:get.macos.macports">MacOS</ref></td>
+              </tr>
+              <tr>
+                <td align="left">w/o <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text></td>
+                <td align="left"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBwb3J0IGluc3RhbGwgTGFUZVhNTA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx11"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td align="left"><ref labelref="LABEL:get.macos.macports">MacOS</ref></td>
+              </tr>
+              <tr>
+                <td align="left" border="t"><text font="bold italic">Windows</text></td>
+                <td border="t"/>
+                <td border="t"/>
+              </tr>
+              <tr>
+                <td align="left"><ref class="ltx_href" href="https://chocolatey.org">Chocolatey</ref></td>
+                <td align="left"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y2hvY28gaW5zdGFsbCBsYXRleG1s" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx12"><text class="ltx_lst_identifier" font="typewriter">choco</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">latexml</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td align="left"><ref labelref="LABEL:get.windows.chocolatey">Chocalatey</ref>; may need <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text></td>
+              </tr>
+              <tr>
+                <td align="left"><ref class="ltx_href" href="https://strawberryperl.com">Strawberry</ref></td>
+                <td align="left"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y3BhbiBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx13"><text class="ltx_lst_identifier" font="typewriter">cpan</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td align="left"><ref labelref="LABEL:get.windows.strawberry">Strawberry-Perl</ref>; may need <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>, ImageMagick</td>
+              </tr>
+              <tr>
+                <td align="left" border="t"><text font="bold italic">Any</text></td>
+                <td border="t"/>
+                <td border="t"/>
+              </tr>
+              <tr>
+                <td align="left" border="b">CPAN</td>
+                <td align="left" border="b"><inline-block class="ltx_minipage" vattach="middle" width="216.8pt">
+                    <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y3BhbiBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                      <listingline xml:id="lstnumberx14"><text class="ltx_lst_identifier" font="typewriter">cpan</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+                    </listing>
+                  </inline-block></td>
+                <td align="left" border="b"><ref labelref="LABEL:get.cpan">CPAN</ref>; may need <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>, ImageMagick, libxml2,libxslt</td>
+              </tr>
+            </tbody>
+          </tabular>
+          <p>Note that there is <emph font="italic">no</emph> implied endorsement of any of these systems.</p>
+        </para>
+      </subsubsection>
+      <subsubsection inlist="toc" labels="LABEL:get.development" xml:id="ltxsite.S2.SS1.SSS2">
+        <tags>
+          <tag role="autoref">subsubsection </tag>
+          <tag role="typerefnum">§</tag>
+        </tags>
+        <title>Development version or from Source</title>
+        <toctitle>Development version</toctitle>
+        <para xml:id="ltxsite.S2.SS1.SSS2.p1">
+          <p>If you want to use the ‘bleeding edge’ development version with the latest patches and improvements,
+you may fetch the source from <ref class="ltx_href" href="https://github.com/">GitHub</ref>.
+(The same installation instructions apply if you are using source from a release tarball.)</p>
+        </para>
+        <paragraph xml:id="ltxsite.S2.SS1.SSS2.Px1">
+          <title>Prerequisites</title>
+          <para xml:id="ltxsite.S2.SS1.SSS2.Px1.p1">
+            <p>will need to be <text font="bold">pre</text>-installed (including any optional ones);
+see <ref labelref="LABEL:get.prerequisites"/>.</p>
+          </para>
+          <para xml:id="ltxsite.S2.SS1.SSS2.Px1.p2">
+            <p>It may be expedient, when a prebuilt <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> is available,
+to first simply install <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text><!--  %**** index.tex Line 300 **** --> from your system’s repositories
+(See the commands below specific to your system).
+Then uninstall it
+(often by using the OS’ package manager with the <text font="typewriter">remove</text> sub-command
+instead of <text font="typewriter">install</text>);
+This generally leaves the prerequisites installed.</p>
+          </para>
+        </paragraph>
+        <paragraph xml:id="ltxsite.S2.SS1.SSS2.Px2">
+          <title>Clone</title>
+          <para xml:id="ltxsite.S2.SS1.SSS2.Px2.p1">
+            <p>the development source from github:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="Z2l0IGNsb25lIGh0dHBzOi8vZ2l0aHViLmNvbS9icnVjZW1pbGxlci9MYVRlWE1MLmdpdApjZCBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx15"><text class="ltx_lst_identifier" font="typewriter">git</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">clone</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">https</text><text font="typewriter">://</text><text class="ltx_lst_identifier" font="typewriter">github</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">com</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">brucemiller</text><text font="typewriter">/</text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">git</text></listingline>
+              <listingline xml:id="lstnumberx16"><text class="ltx_lst_keyword" font="typewriter bold">cd</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+            </listing>
+            <p>(Keep up-to-date by occasionally running
+<text class="ltx_lst_language_bash ltx_lstlisting" framed="rectangle"><text class="ltx_lst_identifier" font="typewriter">git</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">pull</text></text> and rebuilding.)</p>
+          </para>
+          <subparagraph xml:id="ltxsite.S2.SS1.SSS2.Px2.SPx1">
+            <title>Alternatively, a zip</title>
+            <para xml:id="ltxsite.S2.SS1.SSS2.Px2.SPx1.p1">
+              <p>can be downloaded from
+<ref class="ltx_href" href="https://github.com/brucemiller/LaTeXML/archive/master.zip">LaTeXML-master.zip</ref>,
+and unpacked:</p>
+              <listing class="ltx_lst_language_bash ltx_lstlisting" data="dW56aXAgTGFUZVhNTC1tYXN0ZXIuemlwCmNkIExhVGVYTUwtbWFzdGVy" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                <listingline xml:id="lstnumberx17"><text class="ltx_lst_identifier" font="typewriter">unzip</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">master</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">zip</text></listingline>
+                <listingline xml:id="lstnumberx18"><text class="ltx_lst_keyword" font="typewriter bold">cd</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">master</text></listingline>
+              </listing>
+            </para>
+          </subparagraph>
+          <subparagraph inlist="toc" xml:id="ltxsite.S2.SS1.SSS2.Px2.SPx2">
+            <title>or, a tarball</title>
+            <para xml:id="ltxsite.S2.SS1.SSS2.Px2.SPx2.p1">
+              <p>can be downloaded from 0.8.8, and unpacked:</p>
+              <listing class="ltx_lst_language_bash ltx_lstlisting" data="dGFyIHp4dmYgTGFUZVhNTC1AXEN1cnJlbnRWZXJzaW9uQC50YXIuZ3oKY2QgTGFUZVhNTC1AXEN1cnJlbnRWZXJzaW9uQA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+                <listingline xml:id="lstnumberx19"><text class="ltx_lst_identifier" font="typewriter">tar</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">zxvf</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text><text font="typewriter">-</text><text font="typewriter">0.8.8</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">tar</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">gz</text></listingline>
+                <listingline xml:id="lstnumberx20"><text class="ltx_lst_keyword" font="typewriter bold">cd</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text><text font="typewriter">-</text><text font="typewriter">0.8.8</text></listingline>
+              </listing>
+            </para>
+          </subparagraph>
+        </paragraph>
+        <paragraph xml:id="ltxsite.S2.SS1.SSS2.Px3">
+          <title>Build</title>
+          <para xml:id="ltxsite.S2.SS1.SSS2.Px3.p1">
+            <p><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> in its source directory using the standard Perl procedure
+(On Windows, use <text font="typewriter">dmake</text> instead of <text font="typewriter">make</text>):</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="cGVybCBNYWtlZmlsZS5QTAptYWtlCm1ha2UgdGVzdA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx21"><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Makefile</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">PL</text></listingline>
+              <listingline xml:id="lstnumberx22"><text class="ltx_lst_identifier" font="typewriter">make</text></listingline>
+              <listingline xml:id="lstnumberx23"><text class="ltx_lst_identifier" font="typewriter">make</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">test</text></listingline>
+            </listing>
+            <p>The tests should complete without error (some tests may be ‘skipped’).</p>
+          </para>
+          <para xml:id="ltxsite.S2.SS1.SSS2.Px3.p2">
+            <p>Append the following options to the <text font="typewriter">perl Makefile.PL</text> command, if desired:</p>
+            <description xml:id="ltxsite.S2.I1">
+              <item xml:id="ltxsite.S2.I1.ix1">
+                <tags>
+                  <tag><text font="bold">PREFIX=<text font="italic">perldir</text></text></tag>
+                  <tag role="autoref">item </tag>
+                  <tag role="typerefnum">item PREFIX=<text font="italic">perldir</text></tag>
+                </tags>
+                <para xml:id="ltxsite.S2.I1.ix1.p1">
+                  <p>specifies a nonstandard place to install LaTeXML</p>
+                </para>
+              </item>
+              <item xml:id="ltxsite.S2.I1.ix2">
+                <tags>
+                  <tag><text font="bold">TEXMF=<text font="italic">texdidr</text></text></tag>
+                  <tag role="autoref">item </tag>
+                  <tag role="typerefnum">item TEXMF=<text font="italic">texdidr</text></tag>
+                </tags>
+                <para xml:id="ltxsite.S2.I1.ix2.p1">
+                  <p>specifies a where to install <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>’s <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> style files.</p>
+                </para>
+              </item>
+            </description>
+            <p>(See <text font="typewriter">perl perlmodinstall</text> for more details and options.)</p>
+          </para>
+        </paragraph>
+        <paragraph xml:id="ltxsite.S2.SS1.SSS2.Px4">
+          <title>Install</title>
+          <para xml:id="ltxsite.S2.SS1.SSS2.Px4.p1">
+            <p><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> to where the OS can find the files</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBtYWtlIGluc3RhbGw=" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx24"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">make</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text></listingline>
+            </listing>
+            <p>(Alternatively, you can run directly from the build directory, eg.
+<text font="typewriter italic"><!--  %****␣index.tex␣Line␣350␣**** -->latexmldir<text font="upright">/blib/script/latexml</text></text>.)</p>
+          </para>
+        </paragraph>
+      </subsubsection>
+    </subsection>
+    <subsection inlist="toc" labels="LABEL:get.prerequisites" xml:id="ltxsite.S2.SS2">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>Prerequisites</title>
+      <para xml:id="ltxsite.S2.SS2.p1">
+        <p><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> requires several Perl modules to do its job. Most
+are automatically installed by the platform-specific installation or CPAN.
+However, CPAN will <emph font="italic">not</emph> install the required C libraries needed for
+<text font="typewriter">XML::LibXML</text>, and <text font="typewriter">XML::LibXSLT</text>.
+If <text font="typewriter">libxml2</text> and <text font="typewriter">libxslt</text> are are not already installed,
+follow the instructions at <ref class="ltx_href" href="http://www.xmlsoft.org">XMLSoft</ref> to
+download and install the most recent versions of <text font="typewriter">libxml2</text> and <text font="typewriter">libxslt</text>.
+Note that Strawberry Perl, on Windows, already includes these libraries
+(but ActiveState does not).</p>
+      </para>
+      <subparagraph inlist="toc" xml:id="ltxsite.S2.SS2.SSS0.P0.SPx1">
+        <title>Recommend</title>
+        <para xml:id="ltxsite.S2.SS2.SSS0.P0.SPx1.p1">
+          <p>to install prerequisites from prebuilt packages
+for your system, if available, rather than from scratch.</p>
+        </para>
+      </subparagraph>
+      <paragraph inlist="toc" xml:id="ltxsite.S2.SS2.SSS0.Px1">
+        <title>Optional Prerequisites</title>
+        <para xml:id="ltxsite.S2.SS2.SSS0.Px1.p1">
+          <p>will be wanted by most users,
+but are not required because they are sometimes difficult to find or install,
+or to allow for minimal installs.</p>
+          <description xml:id="ltxsite.S2.I2">
+            <item xml:id="ltxsite.S2.I2.ix1">
+              <tags>
+                <tag><text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em" font="bold">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text></tag>
+                <tag role="autoref">item </tag>
+                <tag role="typerefnum">item <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text></tag>
+              </tags>
+              <para xml:id="ltxsite.S2.I2.ix1.p1">
+                <p>Virtually all users of <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> will want to install <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>. <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> <emph font="italic">should</emph> find whatever <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>-installation you have, and will
+use <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>’s style files directly in some cases, providing broader coverage,
+particularly for the more complex styles like <text font="typewriter">babel</text> and <text font="typewriter">tikz</text>.
+Moreover, if <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> is present when <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> is being installed,
+<text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text><!--  %**** index.tex Line 375 **** --> will install a couple of its own style files that can be used
+with regular <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>, or <text class="ltx_LaTeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text>X</text> runs;
+So if you are going to install <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>, install it first!
+See <ref class="ltx_href" href="https://www.tug.org"><text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> Users Group</ref> for more options.</p>
+              </para>
+              <para xml:id="ltxsite.S2.I2.ix1.p2">
+                <p>Note that <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> will use, for its own purposes, the style files from whatever
+<text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> system, if any, it finds at runtime.</p>
+              </para>
+            </item>
+            <item xml:id="ltxsite.S2.I2.ix2">
+              <tags>
+                <tag><text font="bold">Image::Magick</text></tag>
+                <tag role="autoref">item </tag>
+                <tag role="typerefnum">item Image::Magick</tag>
+              </tags>
+              <para xml:id="ltxsite.S2.I2.ix2.p1">
+                <p>provides a handy library of image manipulation routines.
+When they are present <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> is able to carry out more image processing,
+such as transformations by the <text font="typewriter">graphicx</text> package, and conversion of math to images;
+otherwise, some such operations will not be supported.</p>
+              </para>
+              <para xml:id="ltxsite.S2.I2.ix2.p2">
+                <p>See <ref labelref="LABEL:get.imagemagick"/> for installation and usage issues.</p>
+              </para>
+            </item>
+            <item xml:id="ltxsite.S2.I2.ix3">
+              <tags>
+                <tag><text font="bold">Graphics::Magick</text></tag>
+                <tag role="autoref">item </tag>
+                <tag role="typerefnum">item Graphics::Magick</tag>
+              </tags>
+              <para xml:id="ltxsite.S2.I2.ix3.p1">
+                <p>is an <emph font="italic">alternative</emph> to <text font="typewriter">Image::Magick</text> that <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> will
+use if is found on the system; it may (or may not ) be easier to install, although it
+is less widely available.</p>
+              </para>
+            </item>
+            <item xml:id="ltxsite.S2.I2.ix4">
+              <tags>
+                <tag><text font="bold">UUID::Tiny</text></tag>
+                <tag role="autoref">item </tag>
+                <tag role="typerefnum">item UUID::Tiny</tag>
+              </tags>
+              <para xml:id="ltxsite.S2.I2.ix4.p1">
+                <p>generates unique identifiers that can be used to make better ePub documents
+(it can be installed using <ref labelref="LABEL:get.cpan.prereq">CPAN</ref>).</p>
+              </para>
+            </item>
+            <item labels="LABEL:get.perl-doc" xml:id="ltxsite.S2.I2.ix5">
+              <tags>
+                <tag><text font="bold">perl-doc</text></tag>
+                <tag role="autoref">item </tag>
+                <tag role="typerefnum">item perl-doc</tag>
+              </tags>
+              <para xml:id="ltxsite.S2.I2.ix5.p1">
+                <p>On <emph font="italic">some</emph><!--  %**** index.tex Line 400 **** --> compact distributions the perl documentation modules
+are not installed by default (eg. debian minimal). These modules help generate
+readable command-line documentation for the <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> tools. Thus you <emph font="italic">may</emph>
+want to install an extra package (<text font="typewriter">perl-doc</text> on debian minimal) to enable this feature.</p>
+              </para>
+            </item>
+          </description>
+          <p><emph font="italic">Note to packagers:</emph> If you are preparing a compiled installation package (such as rpm or deb) for
+<text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>, and the above packages are easily installable in your distribution,
+you probably should include them as dependencies of <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>.</p>
+        </para>
+      </paragraph>
+    </subsection>
+    <subsection inlist="toc" labels="LABEL:get.linux" xml:id="ltxsite.S2.SS3">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>Linux systems</title>
+      <subsubsection inlist="toc" labels="LABEL:get.linux.rpm" xml:id="ltxsite.S2.SS3.SSS1">
+        <tags>
+          <tag role="autoref">subsubsection </tag>
+          <tag role="typerefnum">§</tag>
+        </tags>
+        <title>RPM-based systems</title>
+        <indexmark>
+          <indexphrase key="rpm">rpm</indexphrase>
+        </indexmark>
+        <indexmark>
+          <indexphrase key="Fedora">Fedora</indexphrase>
+        </indexmark>
+        <indexmark>
+          <indexphrase key="Redhat">Redhat</indexphrase>
+        </indexmark>
+        <indexmark>
+          <indexphrase key="Centos">Centos</indexphrase>
+        </indexmark>
+        <para xml:id="ltxsite.S2.SS3.SSS1.p1">
+          <p>Current (or recent) releases of <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> should be available from
+the Fedora (and probably others including Redhat Enterprise Linux, CentOS, Scientific Linux…)
+repositories (Thanks Mike Petullo).</p>
+        </para>
+        <paragraph xml:id="ltxsite.S2.SS3.SSS1.Px1">
+          <title>Install prebuilt</title>
+          <para xml:id="ltxsite.S2.SS3.SSS1.Px1.p1">
+            <p><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>, including all prerequisites including texlive for <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> with:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBkbmYgaW5zdGFsbCBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx25"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">dnf</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+            </listing>
+            <p>(use <text font="typewriter">yum</text> instead <text font="typewriter">dnf</text>, on some systems):</p>
+          </para>
+        </paragraph>
+        <paragraph labels="LABEL:get.linux.rpm.prereq" xml:id="ltxsite.S2.SS3.SSS1.Px2">
+          <title>Install <emph font="italic">only</emph> prerequisites</title>
+          <para xml:id="ltxsite.S2.SS3.SSS1.Px2.p1">
+            <p>(including the optional ones) with:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBkbmYgaW5zdGFsbCBcCiAgcGVybC1BcmNoaXZlLVppcCBwZXJsLURCX0ZpbGUgcGVybC1GaWxlLVdoaWNoIFwKICBwZXJsLUdldG9wdC1Mb25nIHBlcmwtSW1hZ2UtU2l6ZSBwZXJsLUlPLVN0cmluZyBwZXJsLUpTT04tWFMgXAogIHBlcmwtbGlid3d3LXBlcmwgcGVybC1QYXJzZS1SZWNEZXNjZW50IHBlcmwtUG9kLVBhcnNlciBcCiAgcGVybC1UZXh0LVVuaWRlY29kZSBwZXJsLVRlc3QtU2ltcGxlIHBlcmwtVGltZS1IaVJlcyBwZXJsLVVSSSBcCiAgcGVybC1YTUwtTGliWE1MIHBlcmwtWE1MLUxpYlhTTFQgXAogIHBlcmwtVVVJRC1UaW55IHRleGxpdmUgSW1hZ2VNYWdpY2sgSW1hZ2VNYWdpY2stcGVybA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx26"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">dnf</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx27"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Archive</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Zip</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">DB_File</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">File</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Which</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx28"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Getopt</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Long</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Image</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Size</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">IO</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">String</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">JSON</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">XS</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx29"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libwww</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Parse</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">RecDescent</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Pod</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Parser</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx30"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Text</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Unidecode</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_keyword" font="typewriter bold">Test</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Simple</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Time</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">HiRes</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">URI</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx31"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">XML</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">LibXML</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">XML</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">LibXSLT</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx32"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">UUID</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Tiny</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">texlive</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">ImageMagick</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">ImageMagick</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text></listingline>
+            </listing>
+            <p>(use <text font="typewriter">yum</text> instead <text font="typewriter">dnf</text>, on some systems):</p>
+          </para>
+        </paragraph>
+      </subsubsection>
+      <subsubsection inlist="toc" labels="LABEL:get.linux.debian" xml:id="ltxsite.S2.SS3.SSS2">
+        <tags>
+          <tag role="autoref">subsubsection </tag>
+          <tag role="typerefnum">§</tag>
+        </tags>
+        <title>Debian-based systems</title>
+        <indexmark>
+          <indexphrase key="Debian">Debian</indexphrase>
+        </indexmark>
+        <para xml:id="ltxsite.S2.SS3.SSS2.p1">
+          <p>For Debian-based systems (including Ubuntu), the deb repositories
+are generally used for software installation.
+<text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> is available from Debian’s <emph font="italic">unstable</emph> repositories
+(the version in the stable repositories may be quite old)
+(Thanks Peter Ralph and Atsuhito Kohda).</p>
+        </para>
+        <paragraph xml:id="ltxsite.S2.SS3.SSS2.Px1">
+          <title>Install prebuilt</title>
+          <para xml:id="ltxsite.S2.SS3.SSS2.Px1.p1">
+            <p><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>, including its required and optional prerequisites
+including <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>, with:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBhcHQtZ2V0IGluc3RhbGwgbGF0ZXhtbA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx33"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">apt</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">get</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">latexml</text></listingline>
+            </listing>
+          </para>
+        </paragraph>
+        <paragraph labels="LABEL:get.linux.debian.prereq" xml:id="ltxsite.S2.SS3.SSS2.Px2">
+          <title>Install <emph font="italic">only</emph> prerequisites</title>
+          <para xml:id="ltxsite.S2.SS3.SSS2.Px2.p1">
+            <p>(including optional ones) with:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBhcHQtZ2V0IGluc3RhbGwgICBcCiAgbGliYXJjaGl2ZS16aXAtcGVybCBsaWJmaWxlLXdoaWNoLXBlcmwgbGliaW1hZ2Utc2l6ZS1wZXJsICBcCiAgbGliaW8tc3RyaW5nLXBlcmwgbGlianNvbi14cy1wZXJsIGxpYnRleHQtdW5pZGVjb2RlLXBlcmwgXAogIGxpYnBhcnNlLXJlY2Rlc2NlbnQtcGVybCBsaWJ1cmktcGVybCBsaWJ1dWlkLXRpbnktcGVybCBsaWJ3d3ctcGVybCBcCiAgbGlieG1sMiBsaWJ4bWwtbGlieG1sLXBlcmwgbGlieHNsdDEuMSBsaWJ4bWwtbGlieHNsdC1wZXJsICBcCiAgdGV4bGl2ZS1sYXRleC1iYXNlIGltYWdlbWFnaWNrIGxpYmltYWdlLW1hZ2ljay1wZXJs" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx34"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">apt</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">get</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter">   </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx35"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">libarchive</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">zip</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libfile</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">which</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libimage</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">size</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter">  </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx36"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">libio</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">string</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libjson</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">xs</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libtext</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">unidecode</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx37"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">libparse</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">recdescent</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">liburi</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libuuid</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">tiny</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libwww</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx38"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">libxml2</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libxml</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libxml</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libxslt1</text><text font="typewriter">.1</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libxml</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libxslt</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter">  </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx39"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">texlive</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">latex</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">base</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">imagemagick</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">libimage</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">magick</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text></listingline>
+            </listing>
+            <p>See note <ref labelref="LABEL:get.perl-doc"/> about optional installation of <text font="typewriter">perl-doc</text>.</p>
+          </para>
+        </paragraph>
+      </subsubsection>
+      <subsubsection inlist="toc" labels="LABEL:get.linux.arch" xml:id="ltxsite.S2.SS3.SSS3">
+        <tags>
+          <tag role="autoref">subsubsection </tag>
+          <tag role="typerefnum">§</tag>
+        </tags>
+        <title>Archlinux &amp; friends</title>
+        <indexmark>
+          <indexphrase key="Arch">Arch</indexphrase>
+        </indexmark>
+        <para xml:id="ltxsite.S2.SS3.SSS3.p1">
+          <p>For Archlinux and derivatives, it is most convenient to install from sources via <ref labelref="LABEL:get.cpanm">CPANM</ref>.
+Nonetheless, a package can be found in the <ref class="ltx_href" href="https://aur.archlinux.org/">Archlinux User Repository</ref>.
+Furthermore, most dependencies can be found in the official repositories.</p>
+        </para>
+        <paragraph xml:id="ltxsite.S2.SS3.SSS3.Px1">
+          <title>Install from AUR</title>
+          <para xml:id="ltxsite.S2.SS3.SSS3.Px1.p1">
+            <p>(Arch User Repositories)
+using the <ref class="ltx_href" href="https://aur.archlinux.org/packages/perl-latexml/">perl-latexml</ref> package.</p>
+          </para>
+        </paragraph>
+        <paragraph xml:id="ltxsite.S2.SS3.SSS3.Px2">
+          <title>Install <emph font="italic">only</emph> prerequisites,</title>
+          <para xml:id="ltxsite.S2.SS3.SSS3.Px2.p1">
+            <p>with:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBwYWNtYW4gLVMgZGIgaW1hZ2VtYWdpY2sgcGVybCBwZXJsLWFsZ29yaXRobS1kaWZmIFwKICAgcGVybC1hcmNoaXZlLXppcCBwZXJsLWZpbGUtd2hpY2ggcGVybC1pbWFnZS1zaXplIFwKICAgcGVybC1pby1zdHJpbmcgcGVybC1saWJ3d3cgcGVybC1qc29uLXhzIFwKICAgcGVybC1wYXJzZS1yZWNkZXNjZW50IHBlcmwteG1sLWxpYnhtbCBwZXJsLXhtbC1saWJ4c2x0IFwKICAgdGV4bGl2ZS1jb3Jl" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx40"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">pacman</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">S</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">db</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">imagemagick</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">algorithm</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">diff</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx41"><text class="ltx_lst_space" font="typewriter">   </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">archive</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">zip</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">which</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">image</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">size</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx42"><text class="ltx_lst_space" font="typewriter">   </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">io</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">string</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libwww</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">json</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">xs</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx43"><text class="ltx_lst_space" font="typewriter">   </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">parse</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">recdescent</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">xml</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libxml</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">xml</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libxslt</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx44"><text class="ltx_lst_space" font="typewriter">   </text><text class="ltx_lst_identifier" font="typewriter">texlive</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">core</text></listingline>
+            </listing>
+            <p><!--  %**** index.tex Line 475 **** -->Additionally, install the <ref class="ltx_href" href="https://archlinux.org/packages/community/x86_64/perl-text-unidecode/">perl-text-unidecode</ref>
+community package.</p>
+          </para>
+        </paragraph>
+      </subsubsection>
+    </subsection>
+    <subsection inlist="toc" labels="LABEL:get.macos" xml:id="ltxsite.S2.SS4">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>MacOS</title>
+      <indexmark>
+        <indexphrase key="Apple Macintosh">Apple Macintosh</indexphrase>
+      </indexmark>
+      <subsubsection inlist="toc" labels="LABEL:get.macos.macports" xml:id="ltxsite.S2.SS4.SSS1">
+        <tags>
+          <tag role="autoref">subsubsection </tag>
+          <tag role="typerefnum">§</tag>
+        </tags>
+        <title>MacPorts</title>
+        <para xml:id="ltxsite.S2.SS4.SSS1.p1">
+          <p>For Apple Macintosh systems, the <ref class="ltx_href" href="https://www.macports.org">MacPorts</ref> repository is perhaps the most convenient way to install <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>;
+(Thanks devens, Mojca, Sean and Andrew Fernandes).
+Download and install <ref class="ltx_href" href="https://www.macports.org">MacPorts</ref> from that site.
+Since some users prefer <ref class="ltx_href" href="https://tug.org/mactex/">MacTeX</ref> and don’t want a duplicate (large) texlive,
+and others prefer texlive, there are several ways to install <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>\̇par</p>
+        </para>
+        <paragraph xml:id="ltxsite.S2.SS4.SSS1.Px1">
+          <title>Install using MacTeX</title>
+          <para xml:id="ltxsite.S2.SS4.SSS1.Px1.p1">
+            <p>(already installed), including prerequisites with:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBwb3J0IGluc3RhbGwgTGFUZVhNTCArbWFjdGV4" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx45"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">+</text><text class="ltx_lst_identifier" font="typewriter">mactex</text></listingline>
+            </listing>
+          </para>
+        </paragraph>
+        <paragraph xml:id="ltxsite.S2.SS4.SSS1.Px2">
+          <title>Install with TeXLive</title>
+          <para xml:id="ltxsite.S2.SS4.SSS1.Px2.p1">
+            <p>and other prerequisites with:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBwb3J0IGluc3RhbGwgdGV4bGl2ZS1sYXRleApzdWRvIHBvcnQgaW5zdGFsbCBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx46"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">texlive</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">latex</text></listingline>
+              <listingline xml:id="lstnumberx47"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+            </listing>
+            <p>You may want to select a more complete <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>package than <text font="typewriter">texlive-latex</text>.</p>
+          </para>
+        </paragraph>
+        <paragraph xml:id="ltxsite.S2.SS4.SSS1.Px3">
+          <title>Install without <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text></title>
+          <para xml:id="ltxsite.S2.SS4.SSS1.Px3.p1">
+            <p>using</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBwb3J0IGluc3RhbGwgTGFUZVhNTA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx48"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+            </listing>
+          </para>
+        </paragraph>
+        <paragraph labels="LABEL:get.macos.macports.prereq" xml:id="ltxsite.S2.SS4.SSS1.Px4">
+          <title>Install <emph font="italic">only</emph> prerequisites</title>
+          <para xml:id="ltxsite.S2.SS4.SSS1.Px4.p1">
+            <p>(including optional ones except <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>) with:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="c3VkbyBwb3J0IGluc3RhbGwgXAogIHA1LWFyY2hpdmUtemlwIHA1LWZpbGUtd2hpY2ggcDUtZ2V0b3B0LWxvbmcgcDUtaW1hZ2Utc2l6ZSBcCiAgcDUtaW8tc3RyaW5nIHA1LWpzb24teHMgcDUtdGV4dC11bmlkZWNvZGUgcDUtbGlid3d3LXBlcmwgXAogIHA1LXBhcnNlLXJlY2Rlc2NlbnQgcDUtdGltZS1oaXJlcyBwNS11cmkgcDUteG1sLWxpYnhtbCBcCiAgcDUteG1sLWxpYnhzbHQgcDUtcGVybG1hZ2ljaw==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx49"><text class="ltx_lst_identifier" font="typewriter">sudo</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">port</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx50"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">archive</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">zip</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">file</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">which</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">getopt</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">long</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">image</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">size</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx51"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">io</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">string</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">json</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">xs</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">text</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">unidecode</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libwww</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx52"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">parse</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">recdescent</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">time</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">hires</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">uri</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">xml</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libxml</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+              <listingline xml:id="lstnumberx53"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">xml</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">libxslt</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">p5</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">perlmagick</text></listingline>
+            </listing>
+          </para>
+        </paragraph>
+      </subsubsection>
+    </subsection>
+    <subsection inlist="toc" labels="LABEL:get.windows" xml:id="ltxsite.S2.SS5">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>Windows</title>
+      <indexmark>
+        <indexphrase key="windows">windows</indexphrase>
+      </indexmark>
+      <para xml:id="ltxsite.S2.SS5.p1">
+        <p>As with MacOS, there is no single <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text> package that we can assume
+you’ll want to use, so we include no dependency in the following.
+You’ll probably want to preinstall a version of your choice;
+<ref class="ltx_href" href="https://MiKTeX.org">MikTeX</ref> is popular.</p>
+      </para>
+      <subsubsection inlist="toc" labels="LABEL:get.windows.chocolatey" xml:id="ltxsite.S2.SS5.SSS1">
+        <tags>
+          <tag role="autoref">subsubsection </tag>
+          <tag role="typerefnum">§</tag>
+        </tags>
+        <title>Windows using Chocolatey</title>
+        <paragraph xml:id="ltxsite.S2.SS5.SSS1.Px1">
+          <title>Install <ref class="ltx_href" href="https://chocolatey.org">Chocolatey</ref> prebuilt</title>
+          <para xml:id="ltxsite.S2.SS5.SSS1.Px1.p1">
+            <p><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> as well as all prerequisites
+(including ImageMagick)(Thanks Ronald Tse), using:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y2hvY28gaW5zdGFsbCBsYXRleG1s" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx54"><text class="ltx_lst_identifier" font="typewriter">choco</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">latexml</text></listingline>
+            </listing>
+          </para>
+        </paragraph>
+      </subsubsection>
+      <subsubsection inlist="toc" labels="LABEL:get.windows.strawberry" xml:id="ltxsite.S2.SS5.SSS2">
+        <tags>
+          <tag role="autoref">subsubsection </tag>
+          <tag role="typerefnum">§</tag>
+        </tags>
+        <title>Windows using Strawberry Perl</title>
+        <para xml:id="ltxsite.S2.SS5.SSS2.p1">
+          <p><ref class="ltx_href" href="https://strawberryperl.com">Strawberry Perl</ref>,
+comes with <emph font="italic">many</emph> of our prerequisites pre-installed,
+and provides other needed commands (<text font="typewriter">perl</text>, <text font="typewriter">cpan</text>, <text font="typewriter">dmake</text>).</p>
+        </para>
+        <paragraph labels="LABEL:get.windows.strawberry" xml:id="ltxsite.S2.SS5.SSS2.Px1">
+          <title>Install under Strawberry</title>
+          <para xml:id="ltxsite.S2.SS5.SSS2.Px1.p1">
+            <p>from CPAN,
+after installing the <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>-system of your choice (if desired),
+and ImageMagick (see <ref labelref="LABEL:get.windows.imagemagick"/>),
+using:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y3BhbiBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx55"><text class="ltx_lst_identifier" font="typewriter">cpan</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+            </listing>
+          </para>
+          <para xml:id="ltxsite.S2.SS5.SSS2.Px1.p2">
+            <p>Installing the optional package <text font="typewriter">Image::Magick</text> on Windows seems to be problematic,
+so we have omitted it from these instructions.
+You may want to try <ref class="ltx_href" href="https://www.imagemagick.org/">ImageMagick</ref>, but
+you’re on your own, there! You may have better luck with <text font="typewriter">Graphics::Magick</text>.</p>
+          </para>
+        </paragraph>
+        <paragraph labels="LABEL:get.windows.strawberry.prereq" xml:id="ltxsite.S2.SS5.SSS2.Px2">
+          <title>Installi <emph font="italic">only</emph> prerequisites under Strawberry,</title>
+          <para xml:id="ltxsite.S2.SS5.SSS2.Px2.p1">
+            <p>except for <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>, and ImageMagick (see <ref labelref="LABEL:get.windows.imagemagick"/>),
+using:</p>
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y3BhbiBJbWFnZTo6U2l6ZSBQYXJzZTo6UmVjRGVzY2VudCBVVUlEOjpUaW55" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx56"><text class="ltx_lst_identifier" font="typewriter">cpan</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Image</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Size</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Parse</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">RecDescent</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">UUID</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Tiny</text></listingline>
+            </listing>
+          </para>
+        </paragraph>
+      </subsubsection>
+      <subsubsection labels="LABEL:get.windows.miktexbug" xml:id="ltxsite.S2.SS5.SSSx1">
+        <title>Failing Installation with MiKTeX and administrative rights</title>
+        <para xml:id="ltxsite.S2.SS5.SSSx1.p1">
+          <p>Note that when trying to install with administrative rights rights on Windows, a
+MikTeX warning sometimes causes a test to fail with an error
+“kpsewhich: warning: running with administrator privileges”.
+This warning is something LaTeXML has no control over, and is specific to the MikTeX toolchain.
+To workaround the problem, you can set the <text class="ltx_lst_identifier ltx_lstlisting">LATEXML_KPSEWHICH_MIKTEX_ADMIN</text>
+and <text class="ltx_lst_identifier ltx_lstlisting">LATEXML_TEST_TEXLIVE</text> environment variables and try to force an installation.</p>
+        </para>
+        <paragraph xml:id="ltxsite.S2.SS5.SSSx1.Px1">
+          <title>Using Chocolatey</title>
+          <para xml:id="ltxsite.S2.SS5.SSSx1.Px1.p1">
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="JEVudjpMQVRFWE1MX0tQU0VXSElDSF9NSUtURVhfQURNSU49dHJ1ZSA7ICRFbnY6TEFURVhNTF9URVNUX1RFWExJVkU9IjAiOyBjaG9jbyBpbnN0YWxsIGxhdGV4bWw=" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx57"><text class="ltx_lst_identifier" font="typewriter">$Env</text><text font="typewriter">:</text><text class="ltx_lst_identifier" font="typewriter">LATEXML_KPSEWHICH_MIKTEX_ADMIN</text><text font="typewriter">=</text><text class="ltx_lst_keyword" font="typewriter bold">true</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">;</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">$Env</text><text font="typewriter">:</text><text class="ltx_lst_identifier" font="typewriter">LATEXML_TEST_TEXLIVE</text><text font="typewriter">=</text><text class="ltx_lst_string" font="typewriter">"0"</text><text font="typewriter">;</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">choco</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">latexml</text></listingline>
+            </listing>
+          </para>
+        </paragraph>
+        <paragraph xml:id="ltxsite.S2.SS5.SSSx1.Px2">
+          <title>Using CPAN</title>
+          <para xml:id="ltxsite.S2.SS5.SSSx1.Px2.p1">
+            <listing class="ltx_lst_language_bash ltx_lstlisting" data="JEVudjpMQVRFWE1MX0tQU0VXSElDSF9NSUtURVhfQURNSU49dHJ1ZSA7ICRFbnY6TEFURVhNTF9URVNUX1RFWExJVkU9IjAiOyBjcGFuIGxhdGV4bWw=" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+              <listingline xml:id="lstnumberx58"><text class="ltx_lst_identifier" font="typewriter">$Env</text><text font="typewriter">:</text><text class="ltx_lst_identifier" font="typewriter">LATEXML_KPSEWHICH_MIKTEX_ADMIN</text><text font="typewriter">=</text><text class="ltx_lst_keyword" font="typewriter bold">true</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">;</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">$Env</text><text font="typewriter">:</text><text class="ltx_lst_identifier" font="typewriter">LATEXML_TEST_TEXLIVE</text><text font="typewriter">=</text><text class="ltx_lst_string" font="typewriter">"0"</text><text font="typewriter">;</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">cpan</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">latexml</text></listingline>
+            </listing>
+          </para>
+        </paragraph>
+      </subsubsection>
+    </subsection>
+    <subsection inlist="toc" labels="LABEL:get.cpan" xml:id="ltxsite.S2.SS6">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>CPAN installation</title>
+      <para xml:id="ltxsite.S2.SS6.p1">
+        <p>The following command will install <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> and its Perl prerequisites,
+but you may need to pre-install <text font="typewriter">libxml2</text> and <text font="typewriter">libxslt</text> (See <ref labelref="LABEL:get.prerequisites"/><!--  %**** index.tex Line 575 **** -->),
+as well as optionally <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>  ImageMagick, if desired.</p>
+        <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y3BhbiBMYVRlWE1M" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+          <listingline xml:id="lstnumberx59"><text class="ltx_lst_identifier" font="typewriter">cpan</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text></listingline>
+        </listing>
+      </para>
+      <paragraph labels="LABEL:get.cpan.prereq" xml:id="ltxsite.S2.SS6.SSS0.Px1">
+        <title>Install <emph font="italic">only</emph> prerequisites</title>
+        <para xml:id="ltxsite.S2.SS6.SSS0.Px1.p1">
+          <p>(excluding <text font="typewriter">libxml2</text>, <text font="typewriter">libxslt</text>, <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>, ImageMagick)
+using:</p>
+          <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y3BhbiBBcmNoaXZlOjpaaXAgREJfRmlsZSBGaWxlOjpXaGljaCBHZXRvcHQ6OkxvbmcgSW1hZ2U6OlNpemUgXAogIElPOjpTdHJpbmcgSlNPTjo6WFMgTFdQIE1JTUU6OkJhc2U2NCBQYXJzZTo6UmVjRGVzY2VudCBcCiAgUG9kOjpQYXJzZXIgVGV4dDo6VW5pZGVjb2RlIFRlc3Q6Ok1vcmUgVVJJIFwKICBYTUw6OkxpYlhNTCBYTUw6OkxpYlhTTFQgVVVJRDo6VGlueQ==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+            <listingline xml:id="lstnumberx60"><text class="ltx_lst_identifier" font="typewriter">cpan</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Archive</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Zip</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">DB_File</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">File</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Which</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Getopt</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Long</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Image</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Size</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+            <listingline xml:id="lstnumberx61"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">IO</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">String</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">JSON</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">XS</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">LWP</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">MIME</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Base64</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Parse</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">RecDescent</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+            <listingline xml:id="lstnumberx62"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">Pod</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Parser</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Text</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Unidecode</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">Test</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">More</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">URI</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">\</text></listingline>
+            <listingline xml:id="lstnumberx63"><text class="ltx_lst_space" font="typewriter">  </text><text class="ltx_lst_identifier" font="typewriter">XML</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">LibXML</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">XML</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">LibXSLT</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">UUID</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">Tiny</text></listingline>
+          </listing>
+        </para>
+      </paragraph>
+    </subsection>
+    <subsection inlist="toc" labels="LABEL:get.cpanm" xml:id="ltxsite.S2.SS7">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>CPANM Installation</title>
+      <para xml:id="ltxsite.S2.SS7.p1">
+        <p>On certain linux machines, you may not want to install <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> (or its dependencies)
+system-wide, or you may simply lack the required root rights to do so.
+In such a case, it is convenient to install the <emph font="italic">development</emph> version and
+dependencies into the home directory using a tool called
+<ref class="ltx_href" href="https://github.com/miyagawa/cpanminus">cpanminus</ref>.</p>
+      </para>
+      <paragraph xml:id="ltxsite.S2.SS7.SSS0.Px1">
+        <title>Bootstrap cpanminus,</title>
+        <para xml:id="ltxsite.S2.SS7.SSS0.Px1.p1">
+          <p>if you haven’t previously,
+with the following commands</p>
+          <listing class="ltx_lst_language_bash ltx_lstlisting" data="IyBEb3dubG9hZCBhbmQgaW5zdGFsbCBjcGFubWludXMKY3VybCAtTCBodHRwczovL2NwYW5taW4udXMgfCBwZXJsIC0gQXBwOjpjcGFubWludXMKCiMgU2V0dXAgYSBkaXJlY3RvcnkgaW4gfi9wZXJsNSB0byBjb250YWluIGFsbCBwZXJsIGRlcGVuZGVuY2llcwp+L3Blcmw1L2Jpbi9jcGFubSAtLWxvY2FsLWxpYj1+L3Blcmw1IGxvY2FsOjpsaWIgJiYgZXZhbCAkKHBlcmwgLUkgfi9wZXJsNS9saWIvcGVybDUvIC1NbG9jYWw6OmxpYik=" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+            <listingline xml:id="lstnumberx64"><text class="ltx_lst_comment" font="typewriter italic">#<text class="ltx_lst_space"> </text>Download<text class="ltx_lst_space"> </text>and<text class="ltx_lst_space"> </text>install<text class="ltx_lst_space"> </text>cpanminus</text></listingline>
+            <listingline xml:id="lstnumberx65"><text class="ltx_lst_identifier" font="typewriter">curl</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">L</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">https</text><text font="typewriter">://</text><text class="ltx_lst_identifier" font="typewriter">cpanmin</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">us</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">|</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">-</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">App</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">cpanminus</text></listingline>
+            <listingline xml:id="lstnumberx66"/>
+            <listingline xml:id="lstnumberx67"><text class="ltx_lst_comment" font="typewriter italic">#<text class="ltx_lst_space"> </text>Setup<text class="ltx_lst_space"> </text>a<text class="ltx_lst_space"> </text>directory<text class="ltx_lst_space"> </text>in<text class="ltx_lst_space"> </text>~/perl5<text class="ltx_lst_space"> </text>to<text class="ltx_lst_space"> </text>contain<text class="ltx_lst_space"> </text>all<text class="ltx_lst_space"> </text>perl<text class="ltx_lst_space"> </text>dependencies</text></listingline>
+            <listingline xml:id="lstnumberx68"><text font="typewriter">~/</text><text class="ltx_lst_identifier" font="typewriter">perl5</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">bin</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">cpanm</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">--</text><text class="ltx_lst_identifier" font="typewriter">local</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">lib</text><text font="typewriter">=~/</text><text class="ltx_lst_identifier" font="typewriter">perl5</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">local</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">lib</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">&amp;&amp;</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">eval</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">$</text><text font="typewriter">(</text><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">I</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">~/</text><text class="ltx_lst_identifier" font="typewriter">perl5</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">lib</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">perl5</text><text font="typewriter">/</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">Mlocal</text><text font="typewriter">::</text><text class="ltx_lst_identifier" font="typewriter">lib</text><text font="typewriter">)</text></listingline>
+          </listing>
+        </para>
+      </paragraph>
+      <paragraph xml:id="ltxsite.S2.SS7.SSS0.Px2">
+        <title>Install prerequisites</title>
+        <para xml:id="ltxsite.S2.SS7.SSS0.Px2.p1">
+          <p>(excluding <text font="typewriter">libxml2</text>, <text font="typewriter">libxslt</text>, <text class="ltx_TeX_logo" cssstyle="letter-spacing:-0.2em; margin-right:0.2em">T<text cssstyle="font-variant:small-caps;font-size:120%;" yoffset="-0.2ex">e</text>X</text>, ImageMagick)
+using:</p>
+          <listing class="ltx_lst_language_bash ltx_lstlisting" data="Y3Bhbm0gZ2l0Oi8vZ2l0aHViLmNvbS9icnVjZW1pbGxlci9MYVRlWE1MLmdpdA==" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+            <listingline xml:id="lstnumberx69"><text class="ltx_lst_identifier" font="typewriter">cpanm</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">git</text><text font="typewriter">://</text><text class="ltx_lst_identifier" font="typewriter">github</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">com</text><text font="typewriter">/</text><text class="ltx_lst_identifier" font="typewriter">brucemiller</text><text font="typewriter">/</text><text class="ltx_lst_keyword" font="typewriter bold">LaTeXML</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">git</text></listingline>
+          </listing>
+          <p>This automatically fetches the latest version from GitHub and installs
+missing dependencies.</p>
+        </para>
+      </paragraph>
+    </subsection>
+    <subsection inlist="toc" labels="LABEL:get.imagemagick" xml:id="ltxsite.S2.SS8">
+      <tags>
+        <tag role="autoref">subsection </tag>
+        <tag role="typerefnum">§</tag>
+      </tags>
+      <title>ImageMagick Issues</title>
+      <para xml:id="ltxsite.S2.SS8.p1">
+        <p>Although <ref class="ltx_href" href="https://imagemagick.com/">ImageMagick</ref> is a useful and powerful tool,
+it often presents installation and usage challenges, particularly its Perl binding
+and when used in conjunction with Ghostscript.</p>
+      </para>
+      <paragraph xml:id="ltxsite.S2.SS8.SSS0.Px1">
+        <title>ImageMagick Versions</title>
+        <para xml:id="ltxsite.S2.SS8.SSS0.Px1.p1">
+          <p><!--  %**** index.tex Line 625 **** -->for the ImageMagick binaries and the Perl binding must match;
+often those available from CPAN are out-of-sync.
+Ideally, you should install the current versions of both ImageMagick and the perl binding
+from your OS/platform distribution, if available.
+Next best solution is to get the same versions from the same source
+following the instructions at <ref class="ltx_href" href="https://www.imagemagick.org/">ImageMagick</ref>
+to download and install the latest version of ImageMagick being sure to enable
+and build the Perl binding along with it.</p>
+        </para>
+      </paragraph>
+      <paragraph labels="LABEL:get.windows.imagemagick" xml:id="ltxsite.S2.SS8.SSS0.Px2">
+        <title>Installing ImageMagick under Windows</title>
+        <para xml:id="ltxsite.S2.SS8.SSS0.Px2.p1">
+          <p>seems to work best by downloading and installing the main ImageMagick binary
+appropriate for your Windows system
+from <ref class="ltx_href" href="https://imagemagick.org/script/binary-releases.php#windows">ImageMagick</ref>.
+Then fetch the <text font="typewriter">PerlMagick</text> tarball <emph font="italic">with the same version</emph> from
+<ref class="ltx_href" href="https://imagemagick.com/download/perl/">ImageMagick/perl</ref>.
+Use the following commands to compile and install the PerlMagick,
+with X.XX being the version you downloaded:</p>
+          <listing class="ltx_lst_language_bash ltx_lstlisting" data="dGFyIC16eHZmIFBlcmxNYWdpY2stWC5YWC50YXIuZ3oKY2QgUGVybE1hZ2ljay1YLlhYCnBlcmwgTWFrZWZpbGUuUEwKZG1ha2UKZG1ha2UgdGVzdApkbWFrZSBpbnN0YWxs" dataencoding="base64" datamimetype="text/plain" framed="rectangle">
+            <listingline xml:id="lstnumberx70"><text class="ltx_lst_identifier" font="typewriter">tar</text><text class="ltx_lst_space" font="typewriter"> </text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">zxvf</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">PerlMagick</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">X</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">XX</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">tar</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">gz</text></listingline>
+            <listingline xml:id="lstnumberx71"><text class="ltx_lst_keyword" font="typewriter bold">cd</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">PerlMagick</text><text font="typewriter">-</text><text class="ltx_lst_identifier" font="typewriter">X</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">XX</text></listingline>
+            <listingline xml:id="lstnumberx72"><text class="ltx_lst_identifier" font="typewriter">perl</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">Makefile</text><text font="typewriter">.</text><text class="ltx_lst_identifier" font="typewriter">PL</text></listingline>
+            <listingline xml:id="lstnumberx73"><text class="ltx_lst_identifier" font="typewriter">dmake</text></listingline>
+            <listingline xml:id="lstnumberx74"><text class="ltx_lst_identifier" font="typewriter">dmake</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_keyword" font="typewriter bold">test</text></listingline>
+            <listingline xml:id="lstnumberx75"><text class="ltx_lst_identifier" font="typewriter">dmake</text><text class="ltx_lst_space" font="typewriter"> </text><text class="ltx_lst_identifier" font="typewriter">install</text></listingline>
+          </listing>
+        </para>
+      </paragraph>
+      <paragraph xml:id="ltxsite.S2.SS8.SSS0.Px3">
+        <title>ImageMagick Security</title>
+        <para xml:id="ltxsite.S2.SS8.SSS0.Px3.p1">
+          <p><!--  %**** index.tex Line 650 **** -->is also an issue, due to the possibility of embadding
+malicious code in postscript, pdf and other image formats.
+For a certain range of versions of ImageMagick and Ghostscript, a security policy was set
+which inhibited processing of pdf files; the problem appears to be fixed recent versions.
+If you see <text font="typewriter">operation not allowed by the security policy</text>, see the discussion
+at <ref class="ltx_href" href="https://stackoverflow.com/a/53180170">stackoverflow</ref>.</p>
+        </para>
+      </paragraph>
+    </subsection>
+  </section>
+  <section inlist="toc" labels="LABEL:contact" xml:id="ltxsite.S3">
+    <tags>
+      <tag role="autoref">section </tag>
+      <tag role="typerefnum">§</tag>
+    </tags>
+    <title>Contacts &amp; Support</title>
+    <paragraph inlist="toc" labels="LABEL:contact.list" xml:id="ltxsite.S3.SS0.SSS0.Px1">
+      <title><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> Mailing List</title>
+      <para xml:id="ltxsite.S3.SS0.SSS0.Px1.p1">
+        <p>is a low-volume mailing list for questions, support and comments.
+See <ref class="ltx_href" font="typewriter" href="https://lists.informatik.uni-erlangen.de/mailman/listinfo/latexml">latexml-project</ref> for subscription information.</p>
+      </para>
+    </paragraph>
+    <paragraph inlist="toc" labels="LABEL:contact.git" xml:id="ltxsite.S3.SS0.SSS0.Px2">
+      <title>Github Issue-Tracker</title>
+      <para xml:id="ltxsite.S3.SS0.SSS0.Px2.p1">
+        <p>at <ref class="ltx_href" href="https://github.com/brucemiller/LaTeXML/">https://github.com/brucemiller/LaTeXML/</ref>,
+allows you to report Issues with <text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text>,
+as well as browse the code, see the latest changes, and check-out the current code.</p>
+      </para>
+<!--  %There is a Trac bug-tracking system for reporting bugs, or checking the 
+     %status of previously reported bugs at 
+     %“href–https://trac.mathweb.org/LaTeXML/˝–Bug-Tracker˝. 
+     %To report bugs, please: 
+     %**** index.tex Line 675 **** 
+     %“begin–itemize˝ 
+     %“item “href–https://trac.mathweb.org/register/register˝–Register˝ a Trac account 
+     %(preferably give an email so that you’ll get notifications about activity regarding the bug). 
+     %“item “href–https://trac.mathweb.org/LaTeXML/newticket˝–Create a ticket˝ 
+     %“end–itemize˝ -->    </paragraph>
+    <paragraph inlist="toc" xml:id="ltxsite.S3.SS0.SSS0.Px3">
+      <title>Thanks</title>
+      <para xml:id="ltxsite.S3.SS0.SSS0.Px3.p1">
+        <p>to our friends at
+the <ref class="ltx_href" href="https://kwarc.info">KWARC Research Group</ref>
+for hosting the mailing list, the original Trac system and svn repository,
+as well as general moral support.</p>
+      </para>
+    </paragraph>
+    <paragraph inlist="toc" xml:id="ltxsite.S3.SS0.SSS0.Px4">
+      <title>Authors</title>
+      <para xml:id="ltxsite.S3.SS0.SSS0.Px4.p1">
+        <p>are
+<ref class="ltx_href" href="mailto:bruce.miller@nist.gov">Bruce Miller</ref>,
+<ref class="ltx_href" href="mailto:deyan.ginev@gmail.com">Deyan Ginev</ref>.</p>
+      </para>
+    </paragraph>
+  </section>
+  <section inlist="toc" labels="LABEL:notices" xml:id="ltxsite.S4">
+    <tags>
+      <tag role="autoref">section </tag>
+      <tag role="typerefnum">§</tag>
+    </tags>
+    <title>License &amp; Notices</title>
+    <paragraph inlist="toc" xml:id="ltxsite.S4.SS0.SSS0.Px1">
+      <title>License:</title>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px1.p1">
+        <p>This software was developed at the National Institute of Standards and
+Technology by employees of the Federal Government in the course of their
+official duties. Pursuant to title 17 Section 105 of the United States
+Code, this software is not subject to copyright protection in the U.S.
+and is in the <text font="bold">public domain</text>.</p>
+      </para>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px1.p2">
+        <p><!--  %**** index.tex Line 700 **** -->To the extent that any copyright protections may be considered to be held
+by the authors of this sofware in some jurisdiction outside the United
+States, the authors hereby waive those copyright protections and dedicate
+the software to the public domain. Thus, this license may be considered equivalent to
+<ref class="ltx_href" href="https://creativecommons.org/about/cc0">Creative Commons 0: ”No Rights Reserved”</ref>.</p>
+      </para>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px1.p3">
+        <p>Note that, according to
+<ref class="ltx_href" href="https://www.gnu.org/licences/license-list.html#PublicDomain">Gnu.org</ref>,
+public domain is compatible with GPL.</p>
+      </para>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px1.p4">
+        <p>We would appreciate acknowledgement if the software is used.</p>
+      </para>
+    </paragraph>
+    <paragraph inlist="toc" xml:id="ltxsite.S4.SS0.SSS0.Px2">
+      <title>Contributor Notice:</title>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px2.p1">
+        <p>Contributions of software patches and enhancements to this project
+are welcome; such contributions are assumed to be under the same terms
+as the software itself. Specifically, if you contribute code, documention,
+text samples or any other material, you are asserting and acknowledging that:
+you are the copyright holder of the material or that it is in the public domain;
+it does not contain any patented material; and that you waive any copyright
+protections and dedicate the material to the public domain.</p>
+      </para>
+    </paragraph>
+    <paragraph inlist="toc" xml:id="ltxsite.S4.SS0.SSS0.Px3">
+      <title>Disclaimer:</title>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px3.p1">
+        <p><text class="ltx_LaTeXML_logo"><text cssstyle="letter-spacing:-0.2em; margin-right:0.1em">L<text cssstyle="font-variant:small-caps;" yoffset="0.4ex">a</text>T<text cssstyle="font-variant:small-caps;font-size:120%" yoffset="-0.2ex">e</text></text><text cssstyle="font-size:90%" yoffset="-0.2ex">XML</text></text> is an experimental system provided by NIST as a public service.</p>
+      </para>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px3.p2">
+        <p><!--  %**** index.tex Line 725 **** -->The software is expressly provided ”AS IS.” NIST makes NO warranty of
+any kind, express, implied, in fact or arising by operation of law,
+including, without limitation, the implied warranty of
+merchantability, fitness for a particular purpose, non-infringement
+and data accuracy. nist neither represents nor warrants that the
+operation of the software will be uninterrupted or error-free, or that
+any defects will be corrected. NIST does not warrant or make any
+representations regarding the use of the software or the results
+thereof, including but not limited to the correctness, accuracy,
+reliability, or usefulness of the software.</p>
+      </para>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px3.p3">
+        <p>You are solely responsible for determining the appropriateness of
+using and distributing the software and you assume all risks
+associated with its use, including but not limited to the risks and
+costs of program errors, compliance with applicable laws, damage to or
+loss of data, programs or equipment, and the unavailability or
+interruption of operation. This software is not intended to be used in
+any situation where a failure could cause risk of injury or damage to
+property.</p>
+      </para>
+    </paragraph>
+    <paragraph inlist="toc" xml:id="ltxsite.S4.SS0.SSS0.Px4">
+      <title>Privacy Notice:</title>
+      <para xml:id="ltxsite.S4.SS0.SSS0.Px4.p1">
+        <p>We adhere to <ref class="ltx_href" href="https://www.nist.gov/public_affairs/privacy.cfm">NIST’s Privacy, Security and Accessibility Policy</ref>.</p>
+      </para>
+<!--  %============================================================ -->    </paragraph>
+  </section>
+  <navigation>
+    <inline-logical-block class="ltx_page_navbar">
+<!--  %============================================================ -->      <para xml:id="ltxsite.p4">
+        <p><ref labelref="LABEL:top"><graphics candidates="../graphics/latexml.png" graphic="../graphics/latexml" xml:id="ltxsite.p4.g1"/></ref><break/><graphics candidates="../graphics/mascot.png" graphic="../graphics/mascot" xml:id="ltxsite.p4.g2"/><break/></p>
+      </para>
+      <TOC format="context"/>
+<!--  %**** index.tex Line 25 **** 
+     %Direct link to manual from navbar -->      <para xml:id="ltxsite.p5">
+        <p><ref href="./manual/">            <text fontsize="173%">The Manual</text></ref><text fontsize="173%">
+</text></p>
+      </para>
+    </inline-logical-block>
+  </navigation>
+</document>

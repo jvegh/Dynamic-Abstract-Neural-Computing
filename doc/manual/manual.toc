@@ -1,0 +1,257 @@
+\contentsline {chapter}{Foreword}{1}{chapter*.2}%
+\contentsline {chapter}{State of the art}{5}{chapter*.7}%
+\contentsline {chapter}{\numberline {1}Single (abstract) neurons}{23}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{24}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Modeling}{26}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Modeling approaches}{26}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Model types}{28}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Modeling and disciplinarity}{29}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Existing models}{30}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Creating the brain}{31}{subsection.1.2.5}%
+\contentsline {section}{\numberline {1.3}Concepts}{33}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}The scene}{35}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}The actors}{36}{subsection.1.3.2}%
+\contentsline {subsubsection}{Slow current}{37}{section*.25}%
+\contentsline {subsubsection}{Ion channels}{38}{section*.26}%
+\contentsline {subsubsection}{Charged layers}{38}{section*.27}%
+\contentsline {subsubsection}{Driving forces}{38}{section*.28}%
+\contentsline {subsection}{\numberline {1.3.3}Life cycle}{39}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Stages}{39}{subsection.1.3.4}%
+\contentsline {subsubsection}{Computing}{41}{section*.29}%
+\contentsline {subsubsection}{Delivering}{42}{section*.30}%
+\contentsline {subsubsection}{Relaxing}{43}{section*.31}%
+\contentsline {subsubsection}{Classic}{44}{section*.32}%
+\contentsline {subsection}{\numberline {1.3.5}Computing}{44}{subsection.1.3.5}%
+\contentsline {section}{\numberline {1.4}Processes}{45}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Operation in a nutshell }{45}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Synaptic}{48}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Synchronization}{48}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Learning}{49}{subsection.1.4.4}%
+\contentsline {section}{\numberline {1.5}Control circuit}{49}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Electricity builds and thermodynamics corrects}{50}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Robustness}{52}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Controller}{53}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Goldman-Hodgkin-Katz potential}{54}{subsection.1.5.4}%
+\contentsline {section}{\numberline {1.6}Resting potential}{55}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Action potential}{59}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}The concept}{59}{subsection.1.7.1}%
+\contentsline {subsubsection}{Sending AP}{62}{section*.33}%
+\contentsline {subsubsection}{Receiving AP}{62}{section*.34}%
+\contentsline {subsubsection}{Post-synaptic potentials (PSP) }{63}{section*.35}%
+\contentsline {subsection}{\numberline {1.7.2}The implementation}{64}{subsection.1.7.2}%
+\contentsline {section}{\numberline {1.8}Transmitting potential}{68}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Consequences}{68}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Resting current}{68}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Heat absorption}{70}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Reversal potential}{71}{subsection.1.9.3}%
+\contentsline {subsection}{\numberline {1.9.4}Pressure wave}{71}{subsection.1.9.4}%
+\contentsline {subsubsection}{Membrane's charge}{72}{section*.36}%
+\contentsline {subsection}{\numberline {1.9.5}Role of proteins}{72}{subsection.1.9.5}%
+\contentsline {section}{\numberline {1.10}Implications}{73}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1}Information}{73}{subsection.1.10.1}%
+\contentsline {subsection}{\numberline {1.10.2}Computing}{73}{subsection.1.10.2}%
+\contentsline {subsection}{\numberline {1.10.3}Communication}{74}{subsection.1.10.3}%
+\contentsline {chapter}{\numberline {2}Physics for neurons}{75}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{78}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Science methods}{79}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Dichotomies in modeling}{81}{subsection.2.2.1}%
+\contentsline {subsubsection}{Electrical vs Mechanical}{81}{section*.37}%
+\contentsline {subsubsection}{Instant interaction}{82}{section*.38}%
+\contentsline {paragraph}{Speeds}{84}{section*.39}%
+\contentsline {paragraph}{In observations}{84}{section*.40}%
+\contentsline {paragraph}{In neuroscience}{85}{section*.41}%
+\contentsline {paragraph}{In interactions}{86}{section*.42}%
+\contentsline {paragraph}{In sciences's laws}{87}{section*.43}%
+\contentsline {subsection}{\numberline {2.2.2}Other issues}{88}{subsection.2.2.2}%
+\contentsline {subsubsection}{Closed volume}{88}{section*.44}%
+\contentsline {subsection}{\numberline {2.2.3}Instant Interaction}{88}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Locality and finite resources}{89}{subsection.2.2.4}%
+\contentsline {subsubsection}{Ion channels}{90}{section*.45}%
+\contentsline {subsection}{\numberline {2.2.5}Complete measurement}{91}{subsection.2.2.5}%
+\contentsline {subsubsection}{Ions' thermodynamics}{93}{section*.46}%
+\contentsline {subsection}{\numberline {2.2.6}Mathematical issue}{93}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Physics for biology}{93}{subsection.2.2.7}%
+\contentsline {section}{\numberline {2.3}Spatiotemporal}{96}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Ions' thermodynamics}{97}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Why different}{98}{subsection.2.4.1}%
+\contentsline {subsubsection}{Dual substances}{99}{section*.47}%
+\contentsline {subsubsection}{Mixing speeds}{99}{section*.48}%
+\contentsline {subsubsection}{Microscopic vs macroscopic}{99}{section*.49}%
+\contentsline {subsubsection}{Limited volumes}{100}{section*.50}%
+\contentsline {subsubsection}{Constraints}{100}{section*.51}%
+\contentsline {subsubsection}{Reciprocal relations}{100}{section*.52}%
+\contentsline {subsubsection}{Electric charges}{101}{section*.53}%
+\contentsline {subsection}{\numberline {2.4.2}Statistical mechanics}{101}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Non-ordinary laws}{106}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Steady state}{108}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Laws of motion}{110}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Nernst's law}{114}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.7}Fick's Law}{115}{subsection.2.4.7}%
+\contentsline {section}{\numberline {2.5}Ions' electricity}{116}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Why different}{117}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Concepts}{118}{subsection.2.5.2}%
+\contentsline {subsubsection}{Charge}{118}{section*.54}%
+\contentsline {subsubsection}{Electric field}{119}{section*.55}%
+\contentsline {subsubsection}{Voltage}{120}{section*.56}%
+\contentsline {subsubsection}{Current}{121}{section*.57}%
+\contentsline {subsubsection}{Resistance/Conductance}{122}{section*.58}%
+\contentsline {subsubsection}{Capacitance}{126}{section*.59}%
+\contentsline {subsection}{\numberline {2.5.3}Peculiarities}{126}{subsection.2.5.3}%
+\contentsline {subsubsection}{Ionic currents in a cell}{126}{section*.60}%
+\contentsline {subsubsection}{Speed}{127}{section*.61}%
+\contentsline {subsubsection}{Different speeds}{129}{section*.62}%
+\contentsline {subsubsection}{In layers}{132}{section*.63}%
+\contentsline {subsubsection}{Drain}{132}{section*.64}%
+\contentsline {subsubsection}{Source}{133}{section*.65}%
+\contentsline {subsubsection}{Without potential}{134}{section*.66}%
+\contentsline {subsection}{\numberline {2.5.4}Imitating ion's electricity}{135}{subsection.2.5.4}%
+\contentsline {subsubsection}{Time dependence}{135}{section*.67}%
+\contentsline {subsubsection}{Charge storing}{135}{section*.68}%
+\contentsline {subsubsection}{Time delay}{138}{section*.69}%
+\contentsline {subsection}{\numberline {2.5.5}Oscillator}{139}{subsection.2.5.5}%
+\contentsline {subsubsection}{Integrator-type oscillator}{141}{section*.70}%
+\contentsline {subsubsection}{Differentiator-type oscillator}{142}{section*.71}%
+\contentsline {subsection}{\numberline {2.5.6}Dynamics}{143}{subsection.2.5.6}%
+\contentsline {subsubsection}{Rush-in speed}{143}{section*.72}%
+\contentsline {subsubsection}{Rush-in concentration}{145}{section*.73}%
+\contentsline {subsubsection}{Rush-in charge}{145}{section*.74}%
+\contentsline {subsubsection}{Ion selectivity}{146}{section*.75}%
+\contentsline {section}{\numberline {2.6}Electrolyte's electricity}{147}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Electrolytes}{147}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Inhomogeneities}{149}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Thermodynamic field}{150}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}One segment}{153}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}Two segments}{155}{subsection.2.6.5}%
+\contentsline {subsubsection}{Charge layers}{156}{section*.76}%
+\contentsline {subsubsection}{Classical condenser}{157}{section*.77}%
+\contentsline {subsubsection}{Biological condenser}{159}{section*.78}%
+\contentsline {subsubsection}{Bridging}{161}{section*.79}%
+\contentsline {subsubsection}{Electrical field}{163}{section*.80}%
+\contentsline {subsubsection}{Membranes with ions channels}{166}{section*.81}%
+\contentsline {subsection}{\numberline {2.6.6}Goldman-Hodgkin-Katz potential}{166}{subsection.2.6.6}%
+\contentsline {subsection}{\numberline {2.6.7}Moving in the membrane's potential}{167}{subsection.2.6.7}%
+\contentsline {subsubsection}{Passing through ion channels}{168}{section*.82}%
+\contentsline {subsubsection}{Moving in the polarized electrolyte}{168}{section*.83}%
+\contentsline {subsubsection}{Ion selectivity}{168}{section*.84}%
+\contentsline {section}{\numberline {2.7}Controling potential}{169}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}PID's potential controling}{170}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}HH's potential controling}{172}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Comparing equations}{173}{subsection.2.7.3}%
+\contentsline {section}{\numberline {2.8}Neuronal components}{174}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Animal electricity}{174}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Ion channels and pumps}{176}{subsection.2.8.2}%
+\contentsline {subsubsection}{Ungated channels}{177}{section*.85}%
+\contentsline {subsubsection}{Gated channels}{179}{section*.86}%
+\contentsline {subsubsection}{Ion layers}{182}{section*.87}%
+\contentsline {subsection}{\numberline {2.8.3}Neuronal membrane}{184}{subsection.2.8.3}%
+\contentsline {subsubsection}{The 'delayed' membrane current}{185}{section*.88}%
+\contentsline {subsubsection}{The 'true' membrane current }{186}{section*.89}%
+\contentsline {subsection}{\numberline {2.8.4}Axon and axonal arbor}{188}{subsection.2.8.4}%
+\contentsline {subsection}{\numberline {2.8.5}Axon Initial Segment}{190}{subsection.2.8.5}%
+\contentsline {subsection}{\numberline {2.8.6}Background logistics}{191}{subsection.2.8.6}%
+\contentsline {section}{\numberline {2.9}Neuronal operation}{191}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Membranes \& layers}{191}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Demon in the membrane}{193}{subsection.2.9.2}%
+\contentsline {subsubsection}{Voltage sensing}{193}{section*.90}%
+\contentsline {subsubsection}{Ions' passing}{195}{section*.91}%
+\contentsline {subsubsection}{Delivering current}{197}{section*.92}%
+\contentsline {subsubsection}{Ion selectivity}{197}{section*.93}%
+\contentsline {subsection}{\numberline {2.9.3}Equivalent circuits}{198}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.4}States}{200}{subsection.2.9.4}%
+\contentsline {section}{\numberline {2.10}Measuring}{201}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Electrical measurement}{201}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}Capacitance}{204}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.3}Conductance}{204}{subsection.2.10.3}%
+\contentsline {subsubsection}{Electrolytes}{205}{section*.94}%
+\contentsline {subsubsection}{Invasions}{207}{section*.95}%
+\contentsline {subsection}{\numberline {2.10.4}Clamping/patching}{208}{subsection.2.10.4}%
+\contentsline {subsection}{\numberline {2.10.5}Interfacing biology}{209}{subsection.2.10.5}%
+\contentsline {chapter}{\numberline {3}Physiology for neurons}{211}{chapter.3}%
+\contentsline {section}{\numberline {3.1}State-of-the-art}{212}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The physical model}{213}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Size of neuronal components}{215}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Neuron's potential}{216}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Axon Initial Segment}{218}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Axons}{220}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Membrane}{222}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Addendum}{223}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Ion movement in excitable cells}{224}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Physical laws that dictate ion movement}{224}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}The Nernst equation}{225}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Ion distribution and gradient maintenance}{225}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Membrane permeability}{225}{subsection.3.3.5}%
+\contentsline {section}{\numberline {3.4}Electrodiffusion}{225}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Operating regimes}{226}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Connecting science to life}{226}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Spatiotemporal behavior}{227}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Resting potential}{227}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Action potential}{228}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}The classic picture}{230}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}The modern picture}{231}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Role of AIS}{232}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}Neural currents}{238}{subsection.3.6.4}%
+\contentsline {subsubsection}{Patching current}{238}{section*.96}%
+\contentsline {subsubsection}{Clamping current}{238}{section*.97}%
+\contentsline {subsubsection}{AIS current}{239}{section*.98}%
+\contentsline {subsubsection}{Synaptic and rushed-in current}{239}{section*.99}%
+\contentsline {subsubsection}{Native case}{239}{section*.100}%
+\contentsline {subsubsection}{Complex case}{240}{section*.101}%
+\contentsline {subsubsection}{Currents in different stages}{241}{section*.102}%
+\contentsline {subsection}{\numberline {3.6.5}Charge conservation}{241}{subsection.3.6.5}%
+\contentsline {subsection}{\numberline {3.6.6}Voltage time derivative}{244}{subsection.3.6.6}%
+\contentsline {subsection}{\numberline {3.6.7}Synaptic control}{247}{subsection.3.6.7}%
+\contentsline {section}{\numberline {3.7}Hodgkin\&Huxley's empirical description}{248}{section.3.7}%
+\contentsline {subsubsection}{Self-evaluation}{250}{section*.103}%
+\contentsline {subsubsection}{Nobel-laudation}{251}{section*.104}%
+\contentsline {subsection}{\numberline {3.7.1}Measurement science}{251}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Mathematics}{252}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Physics}{252}{subsection.3.7.3}%
+\contentsline {subsubsection}{Neglecting Coulomb's Law}{252}{section*.105}%
+\contentsline {subsection}{\numberline {3.7.4}Driving force}{252}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.5}Electricity}{253}{subsection.3.7.5}%
+\contentsline {subsubsection}{Equivalent circuits}{253}{section*.106}%
+\contentsline {subsubsection}{Oscillator type}{254}{section*.107}%
+\contentsline {subsubsection}{Cable equation}{256}{section*.108}%
+\contentsline {section}{\numberline {3.8}Experimental evidence}{257}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Stokes-Einstein relation}{257}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Axon }{260}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Invasions}{260}{subsection.3.8.3}%
+\contentsline {subsubsection}{Concentration square vawe}{261}{section*.109}%
+\contentsline {subsubsection}{Voltage square wave}{263}{section*.110}%
+\contentsline {subsubsection}{Action potential}{264}{section*.111}%
+\contentsline {section}{\numberline {3.9}Fallacies}{265}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Equivalent electrical circuit}{265}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Point-like neuron}{265}{subsection.3.9.2}%
+\contentsline {subsection}{\numberline {3.9.3}Passive distributed membrane}{266}{subsection.3.9.3}%
+\contentsline {subsection}{\numberline {3.9.4}Membrane as a wrong isolator}{266}{subsection.3.9.4}%
+\contentsline {subsection}{\numberline {3.9.5}Energy consumption}{267}{subsection.3.9.5}%
+\contentsline {subsection}{\numberline {3.9.6}'Delayed rectifying' current}{267}{subsection.3.9.6}%
+\contentsline {subsection}{\numberline {3.9.7}Membrane refractoriness}{269}{subsection.3.9.7}%
+\contentsline {subsection}{\numberline {3.9.8}Membrane as low-pass filter}{269}{subsection.3.9.8}%
+\contentsline {subsection}{\numberline {3.9.9}Thresholds of initiating AP}{271}{subsection.3.9.9}%
+\contentsline {chapter}{\numberline {4}Computing}{273}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{275}{section.4.1}%
+\contentsline {section}{\numberline {4.2} Computing and communication}{276}{section.4.2}%
+\contentsline {section}{\numberline {4.3} Computing and information}{276}{section.4.3}%
+\contentsline {section}{\numberline {4.4} Computing and biology}{276}{section.4.4}%
+\contentsline {section}{\numberline {4.5} Computational modeling of neuronal membrane}{276}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Timing relations}{276}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Action Potential}{276}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Information}{281}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Multiple neurons}{283}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Intelligence}{285}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Cognition}{286}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Simulation}{287}{chapter.8}%
+\contentsline {section}{\numberline {8.1} Simulation principles and technology}{287}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Event and timing}{288}{subsection.8.1.1}%
+\contentsline {subsubsection}{Types of time}{288}{section*.112}%
+\contentsline {section}{\numberline {8.2} SystemC, the background language and engine}{289}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Ripes Simulator }{289}{section.8.3}%
+\contentsline {section}{\numberline {8.4} GTKWave simulator}{289}{section.8.4}%
+\contentsline {chapter}{List of tables}{291}{figure.8.1}%
+\contentsline {chapter}{List of figures}{292}{chapter*.113}%
+\contentsline {paragraph}{Version 0.2.0 @ 2026.02.11}{301}{section*.118}%
+\contentsline {paragraph}{Version 0.1.18 @ 2026.02.01}{301}{section*.120}%
+\contentsline {chapter}{Index}{302}{section*.120}%
+\contentsline {chapter}{Glossary}{306}{section*.120}%
+\contentsline {chapter}{Bibliography}{308}{chapter*.122}%

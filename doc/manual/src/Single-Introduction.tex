@@ -1,0 +1,104 @@
+% The foreword for single-neuron modeling
+
+\section{Introduction\label{sec:Single-Introduction}}
+
+
+
+Nature uses an infinite variety of implementing neurons.
+However, they can cooperate.
+"We must be prepared to find it working in a manner that cannot be reduced to the \textbf{ordinary} laws of physics".~\cite{Schrodinger:1992}
+We base our discussion on those (sometimes 'non-ordinary') laws,
+see section~\ref{sec:Physics-NonOrdinaryLaws},
+and create an 'abstract physical neuron' model,
+skipping the 'implementation details' nature uses.
+Notice that at that time,
+it was not yet recognized that the electric signals propagate
+with a finite speed also in the dendrites (or, more precisely,
+its handling in mathematics and physics was not solved), not only on the axons; furthermore, that 
+\gls{AIS}
+is a separated (and, for forming an 
+\gls{AP}:
+vital) component of the neuron.
+We develop the needed 'non-ordinary' laws in chapter~\ref{ch:Physics}.
+
+
+"Neurons are specially endowed with the ability
+to communicate precisely and rapidly with other cells
+at distant sites in the body." "Neurons have receptive dendrites
+at one end and a transmitting axon at the other. This
+arrangement is the structural basis for unidirectional
+neuronal signaling." "The cell membrane of neurons contains
+specialized proteins—ion channels and receptors—that
+facilitate the flow of specific inorganic ions, thereby
+\textit{redistributing charge and creating electrical currents}
+that alter the voltage across the membrane."~\cite{PrinciplesNeuralScience:2013}, page 71.
+We follow this line and explain how processes, that traditionally
+belong to different science disciplines, redistribute charges and create
+electrical currents, them discuss how the cell handles the electrical charge. The details are described in Chapter~\ref{ch:Physics}, where
+the fundamental differences caused by the charge carrier are discussed. 
+
+We agree that "The basic structural units of the nervous system are individual neurons"~\cite{JohnstonWuNeurophysiology:1995}. However,
+we also know that \hyperlink{Multiple_neurons}{multiple neurons} "are linked together
+by \textit{\textbf{dynamically}} changing constellations of synaptic weights" and
+"cell assemblies are best understood in light of their output product" \cite{BuzsakiCellAssemblies:2010}. However, the classic understanding replaces the dynamic description with 
+a perturbation-level correction to a mostly wrong (and century-old) \textbf{\textit{static}} description. Furthermore, it lacks the laws of motion, and the modern understanding of the operation of the \textbf{\textit{dynamic}} components the detailed operation requires.
+The final reason is
+the wrong understanding of living matter's non-disciplinary scientific operation, so we must go back to the first principles
+of science. Here, we give
+a holistic picture of neuronal operation and provide details in the subsequent chapters. 
+
+We agree that '\textit{the fundamental task of the nervous system is to \textbf{communicate and process information}}';
+furthermore, that '\textit{\textbf{neurons convey
+		neural information} by virtue of electrical and chemical signals}'
+\cite{JohnstonWuNeurophysiology:1995}.
+The goal was set decades ago:
+'\textit{The ultimate aim of computational neuroscience is
+	to \textbf{explain how} electrical and chemical signals are used in the brain
+	\textbf{to represent and process information}}'
+\cite{SejnowskiComputationalNeuroscience:1988}.
+It was also confirmed two decades later: "Information is carried within neurons and from
+neurons to their target cells by electrical and chemical
+signals. \textbf{Transient electrical signals} are particularly
+important for carrying \textbf{time-sensitive information} rapidly and over long distances"~\cite{PrinciplesNeuralScience:2013}, page 126.
+Our goal is to describe the role of neuroscience signals in an abstract level, provide their mathematical description based on established physical processes, to understand their interdependence, to explain the physics they use, to find out in the later chapter how at physical level the information is represented and processed.
+
+
+First of all, we introduce (and, in this aspect, correct the current common understanding)
+that neurons' "output product"~\cite{BuzsakiCellAssemblies:2010}
+\textit{is created and transmitted by thermoelectric processes instead of
+	net electric phenomena or net thermodinamic}.
+	Feynman was right, also in this point: "\textit{nature is not interested in our separations, and many of the interesting phenomena bridge the gaps between fields.}" ~\cite{FeynmanThinking:1980}
+We derive the correct mathematical and physical handling processes,
+not considering the disciplinary boundaries, pointing to where
+the \hyperlink{Abstractions}{disciplinary omissions and approximations} are not valid,
+deriving the required correct handling of the physical processes together with with the mathematics required to handle them.
+We use the theory developed in section~\ref{sec:Physics-Thermodynamics},
+where (among others) \hyperlink{NernstPlanckTimeDerivatives}{the time derivatives of the processes} are introduced, in this way enabling the
+quantitative mathematical description of the neurons' abstract operation,
+that serves as a basis for discussing quantitatively the neural computing
+processes (as we dscuss in section~\ref{sec:Physics-LawsOfMotion},
+these derivatives are the laws of motion of ions) and their information handling. However, these corrections must be carried out
+in disciplinarily separated chapters.  
+
+
+In the present chapter, we consider only
+the holistic picture, without details (in an abstract way) 
+in the sense that we attempt to explain what are the principles that 
+neurons' functionality implement. Our point might be felt as a technical one,
+although it is not so. We only attempt to stay at an abstraction level, similar to the one cited in connection 
+with %\hyperlink{NeuronInformationBroadcast}
+{communication and information}, when formulating neuron's 
+functionality and features. 
+We keep an eye on the discussion in other chapters and 
+we present \textit{a purely physical model with purely physical interactions, in the spirit of the limited interaction speed}.
+We borrow the names of components and their operations from biology. 
+We use physical principles and laws  behind them (the details are discussed in separate chapters). 
+We build an artificial (abstract) neuron, using
+the 'ordinary' and 'non-ordinary' laws of physics. We use 
+explicitly the finite speed of ions in electrolytes and derive
+the 'extraordinary' laws from the mixing of the interaction speeds.
+We demonstrate that our abstract model passes the \href{https://en.wikipedia.org/wiki/Duck_test}{duck test}
+"If it looks like a duck, swims like a duck, and quacks like a duck,
+then it probably \textit{is} a duck".
+
+\index{duck model}

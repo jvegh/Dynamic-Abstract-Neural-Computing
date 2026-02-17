@@ -1,0 +1,233 @@
+
+\subsection{Oscillator\label{sec:PHYSICS_MEASURINGOSCILLATOR}}
+
+The \hypertarget{PhysicsOscillator}{simplest $RC$ oscillator circuits} comprise only a resistor and a capacitor.
+Beause the capacitor "stores" the charges, the output signal is different from
+the input signal (the circuit "forms" the signal). Their behavior can be described by
+mathematical equations, as given in Table \ref{tab:Electric_RCOscillator_Circuits}.
+Notice that the two discrete elements are connected at one of their ends, leaving only
+two options how to connect the input an output signals to them. Correspondingly, we can produce
+a parallel or a serial connection.
+
+\begin{table}
+\caption{\href{href="https://www.electronics-tutorials.ws/rc/rc-integrator.html} {RC circuit types}\label{tab:Electric_RCOscillator_Circuits}}
+\centering
+\begin{tabular}{cc}
+\hline
+\hline
+The RC Integrator
+\label{RCIntegratorCircuit}                                                                                                                                   & The RC differentiator                                                                                                                                  \label{RCDifferentiatorCircuit}                                                                                                                                  \\
+\hline
+	$
+		V_{out}^{Integrator}=\frac{1}{RC}\int_0^t V_{in}{dt}\label{eq:RC_Integrator}
+	$
+& $V_{out}^{Differentiator}=RC\frac{dV_{in}}{dt} $ \\
+\hline
+Low Pass Filter&High Pass Filter\\
+\hline
+\iflatexml
+\includegraphics[width=.4\textwidth]{fig/rc-rc12Integrator.gif} & 
+\includegraphics[width=.5\textwidth]{fig/rc-rc13Differentiator.gif}
+\else
+\includegraphics[width=.4\textwidth]{fig/rc-rc12Integrator.jpg} & 
+\includegraphics[width=.5\textwidth]{fig/rc-rc13Differentiator.jpg}
+\fi  \\
+%\hline
+%\includegraphics[width=.4\textwidth]{fig/rcIntegrator.jpg} &
+%\includegraphics[width=.4\textwidth]{fig/rcDifferentiator.jpg}\\
+\hline
+\end{tabular}
+\end{table}
+
+%%\subsection{Imitating slow current in classic physics	}
+%\hypertarget{PHYSICS_SLOW_CURRENT}{}
+%
+It may have different reasons why a current appears with a delay compared
+to the voltage, such as: the charge carriers of the current have finite
+speed, or, although they have infinitely high speed, they are stored
+for some reason for some time and released only some time later (as
+the conditions within the circuit change). In a limited way, we can
+imitate one effect with the other. Electronics uses the abstraction that circuits are composed of 
+point-like discrete elements implementing abstract features such as resistance and capacitance, and they are connected with abstracted ideal wires, with no resistance. 
+Given the lack of mathematics describing
+"slow" currents, it is usual to imitate a neuronal circuit
+with a simple electric $RC$ circuit having capacity $C$ and resistance $R$.
+In that picture, the electric behavior
+can be described by summing the resistance and capacitance to single discrete components, i.e., we can use the formulas taken from electronics. 
+
+
+These ideal discrete elements
+	can be connected in two ways,
+	and those combinations have drastically different behavior, as their differential equations and waveforms show;
+ see table %\ref RC_circuits,
+  from \href{https://www.electronics-tutorials.ws/rc}{the electric tutorial}.
+The two circuits comprise the same electric components, but wired in a different way:
+they form a \textit{serial} and a \textit{parallel} circuit, respectively.
+The serial circuit is a
+\href{https://www.electronics-tutorials.ws/rc/rc-differentiator.html}{passive $RC$ \textbf{differentiator} circuit}:
+"\textit{the input is connected to a capacitor while the output voltage is taken from across a resistance}"
+and it is not to be confuzed with the parallel
+\href{https://www.electronics-tutorials.ws/rc/rc-integrator.html} {passive $RC$ \textbf{integrator} circuit}
+where "\textit{the input is connected to a resistance while the output voltage is taken from across a capacitor}".	
+One of the most vital
+differences between those circuits (see also the figures in  Table \ref{RCIntegratorCircuit} and in \url{https://www.electronics-tutorials.ws/rc})
+that their output is defined by the \textit{time integral} of the input voltage (or current)
+or by its \textit{time derivative}. 
+
+ Although the two oscillators have the same time constant $RC$, they form the input signal
+ entirely  differently.
+ From the figures showing the generated signal forms,
+ one sees that in the case of the \textit{differentiator},
+ the input signal's rising edge generates a positive output voltage,
+ and the falling edge generates a negative voltage,
+ in resemblance with the action potential.
+ By replacing the input square wave current with a physically plausible input current function,
+ we have good hopes to reproduce the 
+\gls{AP}
+ voltage on the output of the circuit.
+ 
+ 
+From a biological point of view, \textit{the differentiator can produce output voltage that
+differs from the input voltage in its sign, while the integrator cannot}.
+	\textit{The differentiator can produce output voltage that
+		differs from the input voltage in its sign, while the integrator cannot.  No additional currents and sophisticated control mechanisms
+		are needed to describe the action potential with a differentiator-type neuronal $RC$ circuit: it is a natural consequence of
+		the interplay of the finite speed of the "slow" ionic current
+		and the finite size of the neuronal membrane} (see section~\ref{sec:Physiology-AP}).
+	The shape of the output waveform depends on the pulse width ratio to the $RC$ time constant. When $RC$ is much larger than the pulse width, the output waveform resembles the input signal, even in the case of the square wave input.
+
+
+If we use chained electric $RC$ circuits, such as in multi-compartment membrane models~\cite{MathNeuroscience:2010,MultiCompartmentNeurons:2023}, the second circuit receives the output voltage of the first circuit at a later time, and so on. The system can be described by a system of equations
+similar to the one describing the single-compartment system, but they are
+valid at different times. Handling the many equipotential compartments
+attempts to cover the fact that one imitates finite membrane size
+and slow currents.
+
+
+
+The Differentiator is a High Pass Filter type of circuit that can convert a
+square wave input signal into high frequency spikes at its output
+(For non-square wave input, the spikes get smeared).
+When the capacitor is fully charged the output voltage across the resistor is zero.
+\textit{The arrival of the falling edge
+of the input waveform} (whether square-wave or other type of falling edge)
+\textit{causes the capacitor to reverse its current giving a negative output contribution},
+and the output spike changes from a positive value to a negative value, purely because it is a derivative. From the point of view of laws of motion (see section~\ref{sec:Nernst-time-derivatives}): the differentiator is the circuit, which can be described by the 
+biological laws of motion, namely by Eq.(\ref{eq:Nernst-dVdt}).
+
+
+As discused in section~\ref{sec:Single-OperationConceptual},
+we divide neuronal operation (generating an \gls{AP})
+into stages.
+We have different physical models in the different
+stages of operation. We have changed the fake \textit{integrator}-type $RC$ circuit (see section~\ref{sec:Physiology-HHOscillator}) to the correct \textit{differentiator}-type one; eliminated the fake $K^+$ 
+current; derived the neuronal 
+\gls{AP}
+ from the first principles of science, eliminating 
+the empirical functions. \textit{These changes mean that we need an
+entirely new mathematical formalism to discuss neuronal operations}. Discussions about Green's function, Fourier series, and similar stuff need revisiting: they target the wrong model.
+
+\subsubsection{Integrator-type oscillator\label{Physics-OscillatorIntegrator}}
+
+ As discussed in section~\ref{sec:Physiology-AIS}, although the notion of 
+\gls{AIS}
+was already known at the time when HH \cite{HodgkinHuxley:1952}
+published their Nobel-prize winner suggestions,
+its role was not known. 
+The $RC$ circuits were well-known electric elements with established theory. As detailed in section~\ref{sec:Physiology-HodgkinHuxley}, the misinterpretation of some experimental facts mislead them and they
+chose the wrong type of $RC$ circuit (see Table~\ref{tab:Electric_RCOscillator_Circuits}). Their equations and conclusion
+are based on the \textit{integrator} type $RC$ circuit. They said, 'The first step in our analysis
+is to \textit{divide the total membrane current into a capacity current and an ionic current}'.
+Their Eq.(1) is
+\begin{equation}
+	I = C_M \frac{dV}{dt}+I_i \label{eq:OutputHH}
+\end{equation}
+In their picture, those \textit{currents} control the operation of the neuronal membrane.
+The basic issue with their idea (see our discussion at Eq.~(\ref{eq:OutputHHmod}) is that the output voltage (aka
+\gls{AP})
+is 
+%
+\[V_{OUT}=\frac{1}{RC}\int_0^t V_{IN} dt\]
+%
+($V_{IN}$ can be interpreted given that the two discrete elements are switched in parallel). It implies that to produce
+an output voltage (see the output line shapes in Table~\ref{tab:Electric_RCOscillator_Circuits}) that first rises, after peaking, goes negative, then returns
+to zero, $V_{IN}$ must contain a strongly negative time-depending term which is synchronized to the other currents.
+To produce such a term, 
+\gls{HH}~\cite{HodgkinHuxley:1952} used a circuit
+where the resistances/conductances change according to some \textit{empirical} function
+(i.e, an \textit{ad-hoc function}, without science base).
+In other words, some mystic power must regulate the conductance of the elements,
+to make them behave as we know  from another discipline, the theory of electricity. Starting form a wrong point (having a bad model in mind) it is simply not possible to arrive at a reasonable description. HH (and their followers) had to introduce false physical assumptions and several further ad-hoc assumptions.
+
+\subsubsection{Differentiator-type oscillator\label{Physics-OscillatorDifferentiator}}
+
+In the correct \textit{differentiator-type}
+$RC$ circuit we
+need to work with the \textit{time derivatives of the input voltages the input currents cause in the membrane}.
+\index{Hodgkin-Huxley model}
+We need to correct HH: \textit{the time derivatives instead of currents govern the action potential}.
+This behavior explains why a large slope of the arriving spike~\cite{LosonczyIntegrative:2006} can trigger an instant spike: the large slope (much higher than a normal one) of the current induces a much higher voltage gradient contribution around the point of arrival on the membrane, and so it alone can raise the local voltage gradient above the threshold voltage near to the junction, triggering the known mechanism.
+The input voltage  $V_{IN}$ comprises different contributors (with different temporal courses), and the differentiation
+is linear; i.e., we shall sum up the different contributing terms linearly
+(compare our equation to Eq.(\ref{eq:OutputHHmod}))
+\begin{equation}
+	\frac{d}{dt} V_{OUT}(t) = \sum \frac{d}{dt} V_{IN}(t) \label{eq:RC_Parallel_Circuit_Output}
+\end{equation}
+To describe the 
+\gls{AP},
+the output voltage of the $RC$ circuit, we need to provide
+all contributions $\frac{dV}{dt}$ and solve the differential equation numerically. 
+
+The different contributions are discussed in section~\ref{sec:Physiology-NeuralCurrents}.
+The time derivatives of the different voltages
+can be calculated using different physical models, corresponding to the different stages of operation.
+Because of the presence of slow currents, they need different
+travel times and the different contributions have different time courses.
+We assume that the membrane is equipotential, that is, $V_M(t)$ depends only on
+the time, so it is identical with the voltage function to $V_{AIS}(t)$.
+
+Here comes to light \textit{the fundamental difference between the static and dynamic description: the temporal course of the charge
+is identical with the current only if the current is constant} such as in the case of \hyperlink{voltage-clamping}{clamping/patching}.
+In the case of a constant current where $I=\frac{dQ}{dt}$, the voltage increase $dV$
+on the capacity $C$ of the membrane is $\frac{dQ}{C}=\frac{I*dt}{C}$,
+so 
+\[\frac{d}{dt} V=\frac{I}{C}\]
+The \textit{constant} current input to the neuron causes a constant membrane's voltage derivative contribution.
+However, the currents are not necessarily constant;
+especially not for neuronal spikes.
+If the artificial current follows a math function,
+\textit{the time derivative} of that function should be used.
+In the case of a native current (i.e., receiving a spike from a presynaptic neuron), the received input has the form of 
+\gls{PSP},
+where the time derivative can be well approximated by a steep exponential function, see Eq.~(\ref{eq:I_Out}) (see the middle inset in Fig.~\ref{fig:Physical-processes-membrane}).
+
+ HH's original Eq.(1) (reproduced here as Eq.~\ref{eq:OutputHH})
+explicitly says that the total current is
+the total membrane current divided into capacitive current plus the ionic current.
+When we rearrange HH's Eq.(1) into the form
+(to compare it to the correct right entity in Eq.(\ref{eq:OutputHHmod})),
+\begin{equation}
+	\frac{d}{dt}V_{OUT}= \frac{1}{V_M}\frac{I}{C_M} - \frac{I_i}{C_M} \label{eq:OutputHHmod}
+\end{equation}
+However, it is valid only \hyperlink{voltage-clamping}{in
+the clamping condition's steady state}, i.e., in the "freezed" state of the neuron.
+We see that \textit{the equation (in the function of the time) is true only
+if in artificial mode the \hyperlink{voltage-clamping}{clamping} (due to the feedback)
+adds a foreign difference current (not present in the equation)
+or in native mode the neural condenser and the upstream neuron agrees to produce the exact shape of the action potential}. For a working neuron, 
+the condenser current follows the laws of the oscillator and the ionic current follows the distribution we know from the 
+\gls{PSP}. 
+Consequently, \textit{their gradients change in time differently, and that is the reason of forming an 
+\gls{AP}.
+}
+
+
+Notice also the differences, that HH's ionic current \textit{decreases} the voltage derivative, our one
+\textit{increases} it, and in their  case the resistive current is the difference between the total current
+and the ionic current, while in our case the current that flows out through the 
+\gls{AIS}
+equals the sum of the input currents, but they have 
+a different time course: the neuronal condenser stores
+some charge for a while.
+
+

@@ -1,0 +1,495 @@
+% Physics of action potential
+
+\section[Action potential]{Generating action potential\label{sec:Single-ActionPotential}}
+
+
+\subsection[The concept]{The conceptual operation\label{sec:Single-OperationConceptual}}
+
+
+A commonly accepted truth that "\textit{\hypertarget{TransientState}{transient} electrical signals are particularly
+important for carrying time-sensitive information} rap-
+idly and over long distances. These transient electrical
+signals—receptor potentials, synaptic potentials, and
+action potentials—are \textit{all produced by \textbf{temporary
+changes in the electric current }into and out of the
+cell}, changes that drive the electrical potential across
+the cell membrane away from its resting value."\cite{PrinciplesNeuralScience:2013}"
+"Most voltage-gated
+channels, in contrast, are closed when the membrane is
+at rest and require membrane depolarization to open."
+
+By putting together the operating stages (as we have mentioned: in a well-defined order), one receives the
+characteristic process of neuronal operation (an operating cycle): the stage variable changes in a well-defined pace in the function of the local time. As depicted in Fig.~\ref{fig:AP_Conceptual}, the stage variable can be well observed inside the cell, furthermore, it has a well-measurable effect outside the cell.  The notion 
+of neuronal operation is the  current pulse (called 'Action Potential') has a central role in neural operation.  Here we discuss concepts of its production, while its sending and receiving in the next sections. The stages we have discussed previously are  are color-coded in the diagram line. 
+The stage variable in the "Computing" stage is observable 
+only inside the cell. After the beginning of stage "Delivering", the characteristics of the emitted charge pulse are well observable also outside the cell. The figures on the axes are approximately correct: the measurable voltage change is up to several dozens of millivolts, and the time scale
+is up to several milliseconds. 
+%\begin{figure*}
+%\iflatexml
+%\includegraphics[width=\textwidth]{fig/AP_Schematic.svg}
+%\else
+%\includegraphics[width=.65\textwidth]{fig/AP_Schematic.pdf}
+%\fi
+%		\caption{The conceptual graph of the action potential \label{fig:AP_Conceptual}}
+%\end{figure*}   
+%
+
+As we discussed in section~\ref{sec:Single-OperationConceptual},
+at the beginning of an operating cycle, synapses are open and some input pulses (gradient steps)
+increase the membrane's potential~\cite{TransientResponses:2008,KochElectricalPropertiesSpike:1983} (the green section of the broken line).
+After exceeding the membrane's threshold voltage (the dotted orange line), the synapses' gating mechanism closes the current inputs and
+the membrane's rush-in mechanism begins to work due to opening voltage-controlled ion channels
+in the membrane's wall. The effect extends over the surface in an
+avalanche-like way~\cite{NeuronalAvalanches:2003}. The voltage increases
+until all ion channels get opened. The ion channels close after a very short 
+period and the neuronal $RC$ circuit continues its operation with discharging the condenser (the red section of the broken line). Given that the condenser stores part of the received charge,
+the capacitive current decreases and later reverses and reverts also the resulting current (and, consequently, the measurable voltage; this effect is observed as the membrane gets hyperpolarized). 
+In this period (the blue section of the broken line) the
+synapses are open again and the received synaptic input gradients
+contribute again to the membrane's voltage. That is, a new cycle 
+(this time starting with a potential differring from the resting value)
+can start and that residual potential acts as a memory
+(the details of the electrical processes are discussed in section~\ref{sec:PHYSICS_MEASURINGOSCILLATOR}).
+Notice that all mentioned events are spatiotemporal; most noticably,
+the arrival of the synaptic inputs to the synaptic terminal
+following the absolute refractory period is much earlier than
+they are observable as an increase in the potential value (measured at
+the 
+%\gls{AIS}
+AIS).
+Also notice that there is no direct connection between the
+input and output voltages: the $RC$ circuit fundamentally
+changes the neuronal output. 
+
+With reference to Fig.~\ref{fig:AP_Conceptual}, we subdivide neuron's operation
+to three stages (green, red, and blue sections of the broken diagram line), in line with the state machine in Fig.~\ref{fig:NeuronStateMachine}.
+We start in stage 'Relaxing' (it is a steady-state,
+with the membrane's voltage at its resting value). Everything is balanced,
+the synaptic inputs are enabled.
+No currents flow (neither input nor output; at this point we do not consider the dynamic balancing current discussed in section~\ref{sec:Physics-NeuronControlCircle}), since all component have the same potential, there is no significant driving force for an output current.
+
+\begin{figure*}
+\iflatexml
+\includegraphics[width=\textwidth]{fig/AP_Schematic.svg}
+\else
+\includegraphics[width=.65\textwidth]{fig/AP_Schematic.pdf}
+\fi
+		\caption{The conceptual graph of the action potential \label{fig:AP_Conceptual}}
+\end{figure*}   
+
+As the figure suggests, an external invasion, typically, an electric voltage on the intracellular side, changes the balanced state and due to the parameters are linked,
+changes all concentrations. When moving the system out of
+its balanced state, in any way, a driving force appears that moves the system towards finding a new balanced state. However, recall that the ions are slow, so \textit{the changes are not instant}.
+
+
+The neuron has a stage variable (the membrane potential) and a regulatory
+threshold value. There exists a threshold for \textit{voltage gradient} instead of the \textit{membrane's voltage} itself
+(the voltage gradient provides a 'driving force').
+\index{voltage gradient}
+As we detail in  section~\ref{sec:Electrodiffusion_VoltageSensing}, the voltage sensing is based on voltage gradient sensing, which phenomenon correlates with the value of membrane's voltage.
+Given that physiological measurements (such as \hyperlink{voltage-clamping}{clamping}) suppress the gradient, and only the voltage is measured in a
+'freezed' state, this difference has remained hidden. Crossing the membrane's voltage threshold value upward and downward causes a
+stage transition from "Computing" to "Delivering" and from "Delivering"
+to "Relaxing", respectively. Another role of that regulatory value is 
+to open/close the input synapses. Furthermore, when the value exceeds
+the threshold, an intense current starts to charge up the condenser,
+that later discharges.
+We show that, although the change correlates with the value
+of membrane's voltage, the neuron's membrane actually senses the voltage gradient. 
+
+Given that the neuron's operation resembles
+an $RC$ oscillator, the capacitive current of the condenser 
+changes its direction, leading to changing the potential relative
+to the charge-up potential value to a value of opposite sign.
+The time constant of the $RC$ oscillator 
+is set so that the rushed-in current generates a nearly critically damped
+oscillation (with a damping parameter about $\zeta=0.35$).
+
+Notice that all these processes happen with well-defined speeds,
+i.e., the different stages have well-defined temporal lengths. The length of period "Delivering" is fixed (defined by physiological parameters),
+the length of "Computing" depends on the activity of the upstream
+neurons (furthermore, on the gating due to the membrane's voltage).
+Due to the finite speed, we discuss all operations in 
+\index{local time}
+neuron's own "local time".
+
+When the membrane's voltage decreases below the threshold value, 
+the axonal inputs are re-opened, that may mean an instant passing
+to stage "Computing" again. 
+The current stops only when the charge on the membrane disappears (the driving force terminates),
+so the current may change continuously, changing the voltage on the
+circuit's output.
+The time of the end of operation is ill-defined, and so is the
+value of the membrane's voltage at the time when the next axonal input arrives. \textit{The residual potential acts as a (time-dependent) memory},
+with about a $msec$ lifetime; see Fig.~\ref{fig:AP_Conceptual}.
+
+
+
+With putting together the operating stages (as we have mentioned: in a well-defined order), one receives the
+characteristic process of neuronal operation (an operating cycle): the stage variable changes in a well-defined pace in the function of the local time. As depicted in Fig.~\ref{fig:AP_Conceptual}, the stage variable can be well observed inside the cell, furthermore, it has a well-measurable effect outside the cell.  The notion 
+of neuronal operation is the  current pulse (called 'Action Potential') has a central role in neural operation.  Here we discuss concepts of its production, while its sending and receiving in the next sections. The stages we have discussed previously are  are color-coded in the diagram line. 
+The stage variable in the "Computing" stage is observable 
+only inside the cell. After the beginning of stage "Delivering", the characteristics of the emitted charge pulse are well observable also outside the cell. The figures on the axes are approximately correct: the measurable voltage change is up to several dozens of millivolts, and the time scale
+is up to several milliseconds. 
+
+As we discussed in section~\ref{sec:Single-OperationConceptual},
+at the beginning of an operating cycle, synapses are open and some input pulses (gradient steps)
+increase the membrane's potential~\cite{TransientResponses:2008,KochElectricalPropertiesSpike:1983} (the green section of the broken line).
+After exceeding the membrane's threshold voltage (the dotted orange line), the synapses' gating mechanism closes the current inputs and
+the membrane's rush-in mechanism begins to work due to opening voltage-controlled ion channels
+in the membrane's wall. The effect extends over the surface in an
+avalanche-like way~\cite{NeuronalAvalanches:2003}. The voltage increases
+until all ion channels get opened. The ion channels close after a very short 
+period and the neuronal $RC$ circuit continues its operation with discharging the condenser (the red section of the broken line). Given that the condenser stores part of the received charge,
+the capacitive current decreases and later reverses and reverts also the resulting current (and, consequently, the measurable voltage; this effect is observed as the membrane gets hyperpolarized). 
+In this period (the blue section of the broken line) the
+synapses are open again and the received synaptic input gradients
+contribute again to the membrane's voltage. That is, a new cycle 
+(this time starting with a potential differring from the resting value)
+can start and that residual potential acts as a memory
+(the details of the electrical processes are discussed in section~\ref{sec:PHYSICS_MEASURINGOSCILLATOR}).
+Notice that all mentioned events are spatiotemporal; most noticably,
+the arrival of the synaptic inputs to the synaptic terminal
+following the absolute refractory period is much earlier than
+they are observable as an increase in the potential value (measured at
+the 
+\gls{AIS}).
+%AIS).
+Also notice that there is no direct connection between the
+input and output voltages: the $RC$ circuit fundamentally
+changes the neuronal output. 
+
+\subsubsection{Sending AP\label{sec:Single_SendingAP}}
+Sending 
+\gls{AP}
+%AP 
+begins when the membrane's potential exceeds the threshold
+and terminates when it drops below the threshold. The time of
+the stage "Delivering" is entirely determined by the parameters
+$C$ and $R$ of the neuronal oscillator, so all outgoing spikes have the same shape. However,
+depending of the time of the previous spike (or, more precisely,
+the value of the membrane's potential at the moment of the start of "Delivering"), the shape may be apparently different.
+The measurable potential is the sum of the "tail" of the 
+previous spike plus the front of "this" spike; and both of them have
+their temporal course (the currents that evoke those voltages are slow).
+The effect of gating can be observed with a time delay at the 
+\gls{AIS}
+%AIS
+(the slow current entering through the synaptic terminals needs time to reach the AIS), and the value of that delay depends on the geometry of the neuron,
+mainly on the position of the synaptic terminal.
+On its "\gls{local time}" scale, the \gls{AP} starts when
+the first exciting synaptic pulse arrives,
+\index{local time}
+usually (due to exceeding the threshold for the voltage gradient)
+leading to starting the neuron's rush-in current.
+
+
+\subsubsection{Receiving AP\label{sec:Single_ReceivingAP}}
+
+The native input arrives through the synaptic terminals, at the 
+time determined by the upstream neuron (in the sense that 
+at what absolute time it sends the spike and how long the spike travels).
+The time window of the "Computing" period opens when the first
+input arrives and so the further inputs arrive at a later time.
+The time window ends when the membrane's voltage exceeds its threshold.
+Given that the computing time is in the order of $0.1\ ms$
+and the total length of an
+%\gls{AP}
+AP 
+is in the order of up to $10\ ms$,
+only the first temporal part of the received spike can be processed and can contribute
+to the result: as the membrane's potential increases, the neuron
+closes its synapses. That means that the neurons coooperate with
+their upstream neurons: the contributions to their membrane's charge through their synapses change
+even between the adjacent spikes. Even, the composition of the sum
+may change, depending on in which order the input spikes arrive. 
+
+
+
+\subsubsection{Post-synaptic potentials (PSP) \label{subsec:Single-PSP}}
+
+
+During regular neuronal operation, spikes arrive through synapses,
+and their effect can also be measured as a \gls{PSP}.
+When a spike
+(evoked by a single \gls{AP}, elicited by current injection in presynaptic
+cells)~\cite{SynapticTransmissionMason:1991} arrives at a synapse,
+it can be represented that a (short pulse of) ``slow'' current arrives
+through the axon. However, the inflow of the axonal current is ``slow'',
+and a ``critical mass'' of ions is needed to start a well-defined current
+inflow into the membrane, so neuronal arborization~\cite{NeuronalArborisation:2021}
+takes place, forming an ``ion buffer''. 
+If a current $I$ arrives through the axon, when entering the arbor, the cross section $A$ suddenly increases, so $v$ suddenly decreases; see Eq.(\ref{eq:DriftCurrent}).  The arbor buffers the charge received in the spike. 
+The mechanism that the ion current 'takes away' the ions does not work in the arbor. The ions can move under the voltage gradient resulting from the mutual repulsion and the current drain towards the membrane.\textit{ The drain current (into the membrane) is proportional to the voltage gradient
+between the arbor and the membrane,
+\index{voltage gradient}
+giving a natural explanation how the membrane's potential controls synaptic contributions,
+furthermore why the potential increase in the "relative refractory" period
+changes with the membrane's potential.}
+For details, see section~\ref{sec:Single_AP_Synaptic} and Figure~\ref{fig:MasonFig4}.
+Whether the buffer is filled or empty explains that
+`both sodium and potassium conductances increase with a delay when the axon is depolarized
+but fall with no appreciable inflexion when it is repolarized'~\cite{HodgkinHuxley:1952}.
+
+
+The arbor essentially (and anatomically) belongs to the
+axon, but its functionality is also similar to that of the membrane. It \emph{plays a vital role in the information processing in the brain}~\cite{NeuritsArbor:2022}:
+defines the crucial input parameter ``time of arrival of a spike'', makes the intensity of synaptic inputs nearly independent from the shape of the spike (less depending on the presynaptic neuron; important for the cooperation); furthermore, links adjacent spikes, providing a neuronal memory.
+The buffering effect may be seen as ``making a hole in the membrane''~\cite{KochElectricalPropertiesSpike:1983}:
+exceeding a critical mass (charge in the arbor) may start an intensive
+current into the membrane and manifest in a sudden $\frac{d}{dt}V$ change, see section~\ref{sec:Physiology-VoltageTimeDerivative}. The shape of
+% \gls{PSP}
+PSP
+ also plays a vital role in 
+synchronizing neurassemblies~\cite{BuzsakiCellAssemblies:2010,LosonczyIntegrative:2006}.
+
+
+The buffering changes the shape of the received 
+%\gls{AP}:
+AP: it integrates the input axonal current and distorts the received
+% \gls{AP}'s
+AP's
+ shape toward a 
+ %\gls{PSP}:
+ PSP: there is no 
+ %\gls{AIS}
+ AIS in the axon (no oscillator).
+Most schematic figures 
+showing signal transmission from a presynaptic neuron to a postsynaptic neuron
+miss the point that at the synapse, the
+% \gls{AP}
+AP
+ appears as having
+a different shape. Furthermore, they misidentify the temporal length of
+% \gls{AP}
+AP essentially to
+a period between the beginning of the charge-up to the end of reaching
+the hyperpolarization peak voltage (comprising the 'Delivering' stage and some part of 'Relaxing').
+Our discussion shows that the stage 'Computing' (reaching the threshold potential) and 'Relaxing' (\textit{the long tail
+after hyperpolarization) are a vital part of 
+%\gls{AP}
+AP}. The former is the result of the neuronal computation and the latter (among others) provides
+short-term neuronal memory for neuronal cooperation.
+
+
+
+The intense current from this buffer starts to charge the membrane
+and discharge the arbor. We arrive back at the case we saw in the
+case of a \hyperlink{voltage-clamping}{clamping} where a "slow"
+axonal input current from the arbor arrived at the membrane at its
+junction. It flows with its finite speed on the membrane's surface,
+while, at the same time, the newly created potential decays exponentially. 
+Initially, while the buffer is charging, the current
+increases exponentially as the spike arrives, manifesting 
+in the observable 
+%\gls{PSP}.
+PSP.
+We can validate our model-based hypothesis by fitting experimental
+data; see section~\ref{sec:Physiology-Experimental}.
+
+
+
+\subsection[The implementation]{The implementation of the ActionPotential\label{Single-APImplementation}}
+
+As we discussed in connection with Fig.~\ref{fig:RestingPotential3},
+fundamentally the neuron is electrically balanced and for small perturbations, it control mechanisms return its state to the 
+dynamically balanced resting state. To produce an AP,
+%\gls{AP}
+the neuron uses a voltage-dependent "ion-production" mechanism
+(its "structure differs from anything we tested in physical laboratories". As physiology observed, a large amount of $Na^+$
+ions rush into the intracellular segment. They cause a sudden
+increase in the local potential of the \hyperlink{DynamicLayer}{proximal layer of the membrane}. The potential creates a considerable \hyperlink{voltage_gradient}{combined gradient}
+across the AIS,
+%\gls{AIS}
+and an intensive current starts to flow. Due to the ions' \hyperlink{slow_current}{low speed}, the current needs time
+to reach the AIS,
+%\gls{AIS} 
+Actually, a discharge process takes place.
+Given that the charges are created over the finite-size surface
+of the membrane, charges from different positions arrive
+at different times (although they were created at the same time):
+a smeared double-exponential current appears on the AIS
+%\gls{AIS}.
+However, the mebrane with its capacitance $C$ and the AIS
+%\gls{AIS}
+with its resistance $R$ forms a \textbf{\textit{serial}} \hyperlink{PhysicsOscillator}{$RC$
+oscillator} (one of the catastrophic fallacies in neorophysiology
+is to hypothesize the circuit is \textbf{\textit{parallel}} distorts
+the shape to what can be measured by physiology.
+
+\begin{figure}
+\iflatexml
+	\includegraphics[width=.7\textwidth]{fig/AP_Artificial_test.svg}
+	\else
+	\includegraphics[width=.6\textwidth]{fig/AP_Artificial_test.pdf}
+	\fi
+	\caption{The summary of % \gls{AP} 
+	AP generation. 
+	The voltage time derivatives (the midle inset),
+        resulting by summing the $\frac{d}{dt}V_{AIS}$, $\frac{d}{dt}V_{M}$ and
+        a constant corresponding to the clamping current, that define the membrane's output voltage (the \gls{AP},
+	the bottom subfigure), that control synaptic contributions (top subfigure).
+		\label{fig:ActionPotentialTest}
+		}
+\end{figure}
+
+
+In a special type of invasion, when suddenly a large amount of $Na^+$ rushes in (i.e., the trigger is external, but the ions derive from a biological process),
+the current throughput of the "resting ion channels" 
+is not sufficient anymore: the instant increase of $Na^+$ concentration drastically increases, and so does the 
+membrane's potential. At that point, the neuron is out of balance: although most of the $Na^+$ ions can
+flow out through the 
+%\gls{AIS},
+AIS, the system also changes its $K^+$ concentration through the limited capacity "resting ion  channels" until the balanced state regained. 
+This latter effect must not be mismatched with the capacitive current, which (due to its changed direction) causes the phenomenon known as "hyperpolarization".
+
+
+\begin{figure}
+\iflatexml
+	\includegraphics[width=.7\textwidth]{fig/RestingPotential4.svg}
+	\else
+	\includegraphics[width=.7\textwidth]{fig/RestingPotential4.pdf}
+	\fi
+	\caption{The mechanism of producing 
+	\gls{AP}
+	(using numbers referring to the case of squid shown in Table~\ref{Tab:SummaryTable}. In the resting state, the inside thermal potentials follow the green path.
+		When the rush-in of $Na+$ ions increases the internal concentration to $[200]$, the potential on the internal side of the membrane increases to $+90\ mV$, and the neuron must decrease its $K^+$ concentration to restore the resting potential, or release an action potential through the 
+		\gls{AIS}.
+		\label{fig:RestingPotential4}
+	}
+\end{figure}
+
+
+
+Figure~\ref{fig:RestingPotential4} shows the schematic course of potentials and concentrations during issuing an 
+%\gls{AP}. 
+AP.
+Follow the green path: the concentration ratio of 
+$Na^+$ and $K^+$ ions define a thermodynamic contribution in the intracellular segment. Follow the 
+blue path: the $Cl^-$ and $Ca^{2+}$ ions define a thermodynamic contribution in the extracellular segment.
+% Between them, the membrane creates a (concentration-dependent!) electric contribution. In a balanced state, the sum of these contributions must equal to zero.
+
+Notice the two-sided negative feedback effect: a change in the value of the 
+"command potential" or "command concentration" changed the other value.
+In the case of voltage invasion, the ratio of the ion concentrations also changes. In this case, the feedback amplifier is the 
+delicate balance of the electric and thermodynamic force fields.
+In the case of clamping, another (electric) feedback amplifier is introduced
+into the system and they work against each other. The neuron attempts 
+to restore its balance without external potential (it cannot distinguish the foreign potential from its membrane potential), and changes its concentrations accordingly.
+A vital difference is the \textit{speed} of the feedback amplifier. The electrical one works with electric speed, while the thermodynamic 
+one with the several orders lower thermodynamic speed.
+When switching (or changing) the external ("command") voltage,
+the neuron must first get into its "steady state". It takes time.
+"The command potential, which is selected
+by the experimenter and can be of any desired amplitude
+and waveform"~\cite{PrinciplesNeuralScience:2013}.
+However, if the measured data readings are not from a steady state,
+the measurement is wrong: the different amplifier speeds (different current speeds) surely distort the measured value. 
+Compare the figure to Fig.~\ref{fig:Physics-ClampingKandel}
+
+On the left side, two positive ions are in the solution, and the membrane potential (due to charge separation) rises toward the outside segment; the ions cannot go "uphill". Similarly, 
+the $Cl^-$ ions cannot go uphill (due to their negative charge, the same potential is also rising for them). This single membrane potential keeps all ions in their segments. However, the $Ca^{2+}$ ions can travel "downhill".
+Calcium pumps needed: although in minimal concentration, $Ca^{2+}$ ions flow into 
+the intracellular segment, and they must be pumped out. (BTW: this is also the reason why measuring $Ca^{2+}$ concentration is inaccurate.)
+
+As we discussed above, 
+the concentrations and voltages in the extracellular segment, with its vast amount of ions, remain unchanged
+in resting and transient states.
+Follow the red path: when $Na^+$ ions rush into the intracellular segment;
+they increase the concentration from $50\ mM$ to (say) $200\ mM$. This sudden change decreases the thermal contribution of $Na^+$ potential to $[20\ mV]$, but 
+because the total charge on the membrane significantly increases, the resulting voltage on the intracellular  side of the membrane increases to $90\ mV$.
+The neuron could decrease its potential to the resting value if it could decrease $K^+$ concentration to $100\ mM$. However, the ion delivering capacity of the "resting ion channels" is not sufficient: they are sized to maintain the resting state.
+(Furthermore, the electric contribution appears instantly, while the thermodynamic one, due to the finite speed of ions, only with some delay~\cite{VeghNon-ordinaryLaws:2025}.)
+Follow the dashed orange path: the large amount of rush-in $Na^+$ ions drastically increases the surface concentration on the membrane, so the potential suddenly changes to $90\ mV$. Follow the dotted orange path: the electric field of the membrane suddenly changes its direction from positive slope to negative so that the excess positive ions can move "downhill" out of the intracellular space through the high-capacity ion channel array 
+%(\gls{AIS})
+(AIS) at the end of the neuron.
+Its internal end is at the high membrane potential,
+while the external end is at the low potential of the extracellular segment. 
+
+Given that the outer concentrations are unchanged, so is the membrane potential. The system must preserve its balanced state under the constraints that the inside sum of concentrations of the positive ions remains the same while the outside concentrations of all ions remains unchanged
+change according to Eq.(\ref{eq:coupling}). That is, we have a sum concentration and the dependence of $[K^+]_i$ on $[Na^+]_i$
+\begin{align}
+ [C]_i&=[K]_i+[Na]_i\\
+ -\frac{U_{electric}}{2*58} &= \log_{10}\biggl( \frac{[K+]_o}{[C]_i-[Na^+]_i}\biggr) + \log_{10}\biggl( \frac{[Na^+]_o}{[Na^+]_i} \biggr)
+ \end{align}
+\noindent that enables us to derive $[K^+]_i$ in function of $[Na^+]_i$ (i.e., what $[K^+]_i$ concentration can keep the balance with the given $[Na^+]_i$ concentration):
+\[
+10^{\biggl(-\frac{U_{electric}}{2*58} - \log_{10}\biggl( \frac{[Na^+]_o}{[Na^+]_i} \biggr)\biggr)} =  \frac{[K^+]_o}{[K^+]_i}
+\]
+\noindent
+\[
+[K+]_i = {[K+]_o}*10^{\biggl(\frac{U_{electric}}{2*58} + \log_{10}\biggl( \frac{[Na+]_o}{[Na+]_i} \biggr)\biggr)}
+\]
+
+The other way round is that by knowing all concentration values, we can calculate the voltage on the membrane:
+\[
+U_{M} = U_{electric} + 58*\biggl(\log_{10}\frac{[Na+]_o}{[Na+]_i}+\log_{10}\frac{[K+]_o}{[K+]_i}\biggr)
+\]
+This enables us to draw the membrane's voltage at different 
+concentrations, as hown in Fig.
+
+
+The set-point on the extracellular side remains fixed.
+On the intracellular side, initially, the actual voltage 
+is above the set-point on the extracellular side, so at the two ends of the 
+%\gls{AIS},
+AIS,
+ a positive driving force moves the ions toward the downstream neuron. However, the charge on the membrane continuously decreases  and consequently, the voltage slope increases and the current through the membrane decreases. At some point, 
+the voltage drops below the set-point of the extracellular side. The neuron continues restoring 
+its set-point on the intracellular side, but now the 
+resulting potential across the membrane is reversed. The resulting potential continues having a larger positive slope, 
+so the direction of the reversed current grows.
+At this stage, most of the rushed-in charge has flown out,
+so the driving force decreases and a low-intensity current
+restores the balanced state, to the previous set-point.
+When measuring at the 
+\gls{AIS},
+ one observes that the
+potential rises suddenly, then decreases below the set-point (hyperpolarizes the membrane), than a decreasing current (flowing in the opposite direction due to the changed slope of the resulting potential,
+but comprising the originally rushed-in $Na^+$ ions) slowly restores the resting potential.
+Here comes to light the finite speed of ions again. 
+The ions can follow the potential changes with a delay
+due to their finite speed, causing an apparent delay in the time course of the
+\gls{AP}'s current.
+
+\begin{figure}
+\iflatexml
+	\includegraphics[width=0.5\textwidth]{fig/ChannelActivation_Kandel7-3.png}
+\else
+	\includegraphics[width=0.39\textwidth]{fig/ChannelActivation_Kandel7-3.png}
+\fi
+	\caption{\textcolor{blue}{Errata in blue.} A voltage-clamp experiment demonstrates the
+sequential activation of two types of voltage-gated channels.
+A. A small depolarization (10 mV) elicits capacitive and leakage
+currents ($I_c$ and $I_l$, respectively), the components of the total
+membrane current ($I_m$).
+\index{leakage current}
+\textcolor{blue}{There is no leakage current, see section~\ref{sec:Single-RestingCurrent} and the capacitive current is something different.
+The two small and opposite sharp changes are due to switching a \textit{current} instead of voltage to the membrane (nothing is activated), see the signal shapes of the differentiator circle in Fig.~\ref{RCDifferentiatorCircuit}.
+%The output current is the current flowing out through the always-open channels in the
+%\gls{AIS}
+%(where it is measured, instead of the ion channels across the membrane). The current is the same that the clamping introduces into the membrane.                                                                                                                     As discussed, an external invasion (even if it is voltage-clamp) means introducing a current
+%into the membrane. 
+}
+B. A larger depolarization (60 mV) results in larger capacitive
+and leakage currents, plus a time-dependent inward ionic current followed by a time-dependent outward ionic current.
+\textcolor{blue}{The larger current induces larger voltage gradient that opens voltage-controlled ion channels in the membrane's wall, and the slow current -- distorted by the $RC$ circuit as discussed-- appears with a time delay on the  the always-open channels in the
+\gls{AIS}.}
+Top: Total (net) current in response to the depolarization.
+Middle: Individual $Na^+$ and $K^+$ currents.
+%Depolarizing the cell in
+%the presence of tetrodotoxin (TTX), which blocks the Na+ current,
+%or in the presence of tetraethylammonium (TEA), which blocks
+%the $K^+$ current, reveals the pure $K^+$ and $Na^+$ currents ($I_K$ and $I*{Na}$,
+%respectively) after subtracting $I_c$ and $I_l$. 
+Bottom: Voltage step \textcolor{blue}{and also current step. This is why $I_c$ must be subtracted. 
+$I_K$ and $I_{Na}$ are both capacitive currents, flowing in opposite directions, as discussed in section~\ref{Physics-OscillatorDifferentiator}} (Fig. 7-3 in~\cite{PrinciplesNeuralScience:2013}.)
+		\label{fig:TransientChannelActivation }
+	}
+\end{figure}
+
+
+
+\section[Transmitting potential]{Transmitting action potential\label{sec:Physics-TransmittingPotential}}
+
+

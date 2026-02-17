@@ -1,0 +1,332 @@
+\begin{theindex}
+
+  \item $RC$ oscillator
+    \subitem serial, \hyperpage{54}
+
+  \indexspace
+
+  \item  equation
+    \subitem Nernst-Planck, \hyperpage{108}
+
+  \indexspace
+
+  \item a new understanding of the brain, \hyperpage{19}
+  \item Action Potential, \hyperpage{85}, \hyperpage{179}
+  \item ad hoc hypothesis, \hyperpage{9}, \hyperpage{12}, 
+		\hyperpage{17}, \hyperpage{27}, \hyperpage{30, 31}, 
+		\hyperpage{34}, \hyperpage{162}
+  \item algorithm, \hyperpage{9}
+  \item ATP hydrolysis, \hyperpage{148}
+  \item axon
+    \subitem arbor, \hyperpage{216}
+  \item axonal radius, \hyperpage{232}
+  \item axonal signal transfer, \hyperpage{16}
+
+  \indexspace
+
+  \item blocking spikes, \hyperpage{270}
+  \item Boltzmann equations, \hyperpage{105}
+  \item brain
+    \subitem simulating, \hyperpage{265}
+  \item Brain Initiative, \hyperpage{5}, \hyperpage{11}
+
+  \indexspace
+
+  \item cable equation, \hyperpage{257}
+  \item capacity, \hyperpage{120}
+  \item cell
+    \subitem limited volume, \hyperpage{100}
+  \item charge density
+    \subitem surface, \hyperpage{68}
+  \item charge separation, \hyperpage{148}, \hyperpage{153}
+  \item clamping, \hyperpage{26}
+  \item clamping method, \hyperpage{14}
+  \item clock reset, \hyperpage{84}
+  \item condenser, \hyperpage{38}, \hyperpage{157}
+  \item condenser-plate effect, \hyperpage{159}
+  \item conductance, \hyperpage{149}, \hyperpage{175}, \hyperpage{184}, 
+		\hyperpage{207}
+  \item conduction change, \hyperpage{14}
+  \item conduction speed, \hyperpage{119}
+  \item constrains, \hyperpage{148}
+  \item Coulomb interaction, \hyperpage{13}, \hyperpage{104}, 
+		\hyperpage{127}, \hyperpage{197}
+  \item Coulomb's law, \hyperpage{34}, \hyperpage{81}, \hyperpage{87}, 
+		\hyperpage{96}, \hyperpage{98}, \hyperpage{252, 253}
+  \item current
+    \subitem across layers, \hyperpage{197}
+    \subitem biological, \hyperpage{175}
+    \subitem fast, \hyperpage{101}
+    \subitem leaking, \hyperpage{276}
+    \subitem slow, \hyperpage{101}
+  \item current $K+$, \hyperpage{16}
+  \item current feedback, \hyperpage{20}
+
+  \indexspace
+
+  \item delayed current, \hyperpage{86}, \hyperpage{122}
+  \item depolarization, \hyperpage{43}
+  \item digital pulse code, \hyperpage{34}
+  \item disciplinary approach, \hyperpage{15}
+  \item disciplinary discussion, \hyperpage{148}
+  \item discrete vs continuous, \hyperpage{35}
+  \item driving force, \hyperpage{13}, \hyperpage{20}
+  \item dual electrical/thermodynamic forces, \hyperpage{14}
+  \item duck model, \hyperpage{26}, \hyperpage{193}, \hyperpage{287}
+  \item dynamic layer, \hyperpage{13}, \hyperpage{149}
+
+  \indexspace
+
+  \item electric condenser, \hyperpage{179}
+  \item electric dipole, \hyperpage{120}
+  \item electric field, \hyperpage{68}
+  \item electrical dipole, \hyperpage{147}
+  \item electrical equilibrium, \hyperpage{147}
+  \item electrolyte layer, \hyperpage{13}
+  \item electrometer, \hyperpage{194}
+  \item electron cloud, \hyperpage{104}
+  \item electrotonic model, \hyperpage{214}, \hyperpage{265}
+  \item emergence of life, \hyperpage{9}
+  \item entropy
+    \subitem neural, \hyperpage{48}
+  \item equivalent electrical circuit, \hyperpage{14}, \hyperpage{123}, 
+		\hyperpage{149}, \hyperpage{175}
+  \item event, \hyperpage{75}
+
+  \indexspace
+
+  \item Feyman R. P, \hyperpage{77}
+  \item Feynman, Richard P, \hyperpage{5}, \hyperpage{33}
+  \item Feynman, Richard P., \hyperpage{33}, \hyperpage{35}
+  \item Fick's Law, \hyperpage{115}
+  \item finite resource, \hyperpage{106}
+  \item first principles, \hyperpage{14}
+  \item free electron cloud, \hyperpage{207}
+
+  \indexspace
+
+  \item Galilei, Galileo, \hyperpage{78}
+  \item Galillei's relativity principle, \hyperpage{81}
+  \item Goldman-Hodgkin-Katz potential, \hyperpage{162}
+  \item gradient, \hyperpage{20}
+    \subitem electrical, \hyperpage{38}
+    \subitem thermodynamic, \hyperpage{38}
+
+  \indexspace
+
+  \item heat absorption, \hyperpage{13}, \hyperpage{70}, 
+		\hyperpage{232}
+  \item heat liberation, \hyperpage{70}
+  \item heat release, \hyperpage{70}
+  \item Hebb, D.O., \hyperpage{10}
+  \item Hodgkin-Huxley model, \hyperpage{16}, \hyperpage{142}
+  \item Human Brain Project, \hyperpage{11}
+  \item hyperpolarization, \hyperpage{16}, \hyperpage{43}
+
+  \indexspace
+
+  \item ICT, \hyperpage{11}
+  \item information
+    \subitem neural, \hyperpage{48, 49}
+  \item information theory
+    \subitem neural, \hyperpage{266}
+  \item instant interaction, \hyperpage{37}, \hyperpage{83}, 
+		\hyperpage{106}, \hyperpage{129}, \hyperpage{207}
+  \item interaction
+    \subitem attributes, \hyperpage{20}, \hyperpage{94}
+    \subitem dominant, \hyperpage{101}
+    \subitem speed, \hyperpage{101}
+  \item ion adsorption, \hyperpage{179}
+  \item ion channel, \hyperpage{38}, \hyperpage{86}, \hyperpage{194}
+    \subitem operation, \hyperpage{184}
+    \subitem state, \hyperpage{182}
+  \item ion skin, \hyperpage{165}, \hyperpage{169}
+  \item ion transport, \hyperpage{177}
+  \item ions vs electrons, \hyperpage{13}
+
+  \indexspace
+
+  \item Johnston Daniel, \hyperpage{2}
+  \item Johnston\&Wu, \hyperpage{33}
+
+  \indexspace
+
+  \item Kepler's Law, \hyperpage{96}
+  \item Kepler's law, \hyperpage{27}
+  \item Kirchhoff's Laws, \hyperpage{87}
+  \item Kirchoff's law, \hyperpage{122}
+  \item Kirchoff's Laws, \hyperpage{122}, \hyperpage{137}, 
+		\hyperpage{204}
+
+  \indexspace
+
+  \item law of conservation in biology~\cite{BiologicalConservationLaw:2017}, 
+		\hyperpage{78}
+  \item laws of motion, \hyperpage{15}, \hyperpage{26}, \hyperpage{106}
+  \item laws of motion of biology, \hyperpage{147}
+  \item layer
+    \subitem atomic, \hyperpage{164}
+    \subitem condenser, \hyperpage{159}
+    \subitem conductance, \hyperpage{202}
+    \subitem current, \hyperpage{132}, \hyperpage{183}
+    \subitem demon, \hyperpage{193}
+    \subitem diffusion, \hyperpage{179}, \hyperpage{183}
+    \subitem ion channels, \hyperpage{184}
+    \subitem ion selection, \hyperpage{198}
+    \subitem on membrane, \hyperpage{179}
+    \subitem potential, \hyperpage{183}
+    \subitem skin, \hyperpage{192}
+    \subitem thickness, \hyperpage{183}
+    \subitem voltage gradient sensing, \hyperpage{194}
+  \item leakage current, \hyperpage{13}, \hyperpage{20}, 
+		\hyperpage{69, 70}, \hyperpage{166}, \hyperpage{172}, 
+		\hyperpage{217}
+  \item leakage ion, \hyperpage{13}
+  \item leaking current, \hyperpage{276}
+  \item limited resource, \hyperpage{117}
+  \item limiting speed, \hyperpage{119}
+  \item lipid
+    \subitem bilayer, \hyperpage{176}
+    \subitem membrane, \hyperpage{21}
+  \item living matter, \hyperpage{265}
+  \item local time, \hyperpage{37}, \hyperpage{41}, \hyperpage{44}, 
+		\hyperpage{49}, \hyperpage{61, 62}
+
+  \indexspace
+
+  \item mathematics
+    \subitem brain, \hyperpage{9}
+  \item mathematics of finite speeds ~\cite{EinsteinMinkowskiRelativity:1977}, 
+		\hyperpage{79}
+  \item Maxwell equations, \hyperpage{86}
+  \item Maxwell's-demon, \hyperpage{149}
+  \item Maxwell-demon, \hyperpage{194}, \hyperpage{208}
+  \item melting
+    \subitem lipids, \hyperpage{46}
+  \item membrane
+    \subitem passive, \hyperpage{266}
+    \subitem semipermeable, \hyperpage{194}
+  \item metabolic efficiency of biology, \hyperpage{13}
+  \item Minkowski, Herman, \hyperpage{79}
+  \item mobility, \hyperpage{13}
+
+  \indexspace
+
+  \item Nernst voltage, \hyperpage{16}
+  \item Nernst's Law, \hyperpage{114}
+  \item Nernst-Planck equation, \hyperpage{108, 109}, \hyperpage{146}
+  \item neural information theory, \hyperpage{266}
+  \item neuron
+    \subitem point-like, \hyperpage{266}
+  \item neuron model
+    \subitem McCulloch-Pitts, \hyperpage{85}
+    \subitem multi-compartment, \hyperpage{86}
+  \item new understanding, \hyperpage{19}
+  \item non-Ohmic, \hyperpage{20}
+  \item non-ordinary laws, \hyperpage{11}, \hyperpage{148}
+  \item non-ordinary laws of science, \hyperpage{147}
+
+  \indexspace
+
+  \item Ohm's Law, \hyperpage{203}, \hyperpage{208}
+  \item Ohm's law, \hyperpage{205}
+  \item Ohm’s Law, \hyperpage{20}
+  \item Onsager-relations, \hyperpage{214}
+  \item optical properties, \hyperpage{232}
+
+  \indexspace
+
+  \item parallel $RC$ circuit, \hyperpage{12}
+  \item passive membrane, \hyperpage{266}
+  \item perturbation, \hyperpage{15}
+  \item perturbations to a static state, \hyperpage{15}
+  \item point-like neuron, \hyperpage{266}
+  \item polarization, \hyperpage{153}
+    \subitem membrane, \hyperpage{153}
+  \item potential-accelerated speed, \hyperpage{90}
+  \item potential-assisted speed, \hyperpage{90}
+  \item pressure, \hyperpage{232}
+  \item prompt interaction, 
+		\hyperindexformat{\see{instant interaction}}{106}
+  \item protein
+    \subitem activity, \hyperpage{20}
+    \subitem cooperation, \hyperpage{16}
+    \subitem mechanical activity, \hyperpage{13}
+    \subitem mechanism, \hyperpage{14, 15}, \hyperpage{114}, 
+		\hyperpage{177}
+  \item Ptolemaic system, \hyperpage{27}
+
+  \indexspace
+
+  \item refractory
+    \subitem relative, \hyperpage{218}
+  \item refractory period, \hyperpage{44}, \hyperpage{270}
+  \item resource
+    \subitem finite, \hyperpage{196}
+  \item resting conductance, \hyperpage{203}
+  \item resting potential, \hyperpage{15}, \hyperpage{147}
+  \item retarded time, \hyperpage{87}
+
+  \indexspace
+
+  \item Schrödinger, Erwin, \hyperpage{7}, \hyperpage{19}, 
+		\hyperpage{76}
+  \item Sejnowski, T J, \hyperpage{9}
+  \item Shannon, Claude, \hyperpage{49}, \hyperpage{266}, 
+		\hyperpage{281}
+  \item shortening of axon, \hyperpage{232}
+  \item sign of life, \hyperpage{149}
+  \item simulated time, \hyperpage{288}
+  \item slow current, \hyperpage{37}, \hyperpage{39}, \hyperpage{214}, 
+		\hyperpage{224}
+    \subitem cardiatic, \hyperpage{217}
+  \item spatiotemporal, \hyperpage{75}
+  \item speed
+    \subitem diffusion, \hyperpage{164}
+    \subitem gradient, \hyperpage{128}
+    \subitem interaction, \hyperpage{35}, \hyperpage{101}
+    \subitem potential-accelerated, \hyperpage{164}
+    \subitem potential-assisted, \hyperpage{164}, \hyperpage{257}
+    \subitem potential-related, \hyperpage{101}
+  \item spike
+    \subitem blocking, \hyperpage{270}
+  \item Stokes-Einstein relation, \hyperpage{128}, \hyperpage{257}, 
+		\hyperpage{259}
+  \item synaptic gate, \hyperpage{48}
+  \item synchronization, \hyperpage{37}
+  \item synchrony signal, \hyperpage{49}
+
+  \indexspace
+
+  \item telegrapher's equations, \hyperpage{83}, \hyperpage{257}
+  \item temporal behavior, \hyperpage{35}
+  \item thermodynamic electrical field, \hyperpage{150}
+  \item thermodynamic equilibrium, \hyperpage{147}
+  \item thermoelectric gradient, \hyperpage{39}
+  \item time delay between $K^+$ and $Na^+$ current, \hyperpage{16}
+  \item time window, \hyperpage{48}
+  \item time-space, \hyperpage{49}, \hyperpage{97}
+  \item time-space coordinate, \hyperpage{76}
+  \item transient voltage, \hyperpage{15}
+
+  \indexspace
+
+  \item van der Waals force, \hyperpage{194}, \hyperpage{196}
+  \item voltage gradient, \hyperpage{15}, \hyperpage{41}, 
+		\hyperpage{48, 49}, \hyperpage{54}, \hyperpage{60}, 
+		\hyperpage{63}, \hyperpage{73}, \hyperpage{134, 135}, 
+		\hyperpage{145}, \hyperpage{166}, \hyperpage{181--183}, 
+		\hyperpage{193--195}, \hyperpage{235, 236}, 
+		\hyperpage{238}, \hyperpage{245}, \hyperpage{247}, 
+		\hyperpage{256}, \hyperpage{258}, \hyperpage{261}, 
+		\hyperpage{268}
+  \item von Neumann
+    \subitem 'zigzag' way, \hyperpage{2}, \hyperpage{11}, 
+		\hyperpage{30}
+  \item von Neumann, John, \hyperpage{35}
+
+  \indexspace
+
+  \item Wu Samuel Miao-sin , \hyperpage{2}
+
+\end{theindex}

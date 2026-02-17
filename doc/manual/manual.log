@@ -1,0 +1,1803 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.1.30)  13 FEB 2026 21:17
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**manual
+(./manual.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21>
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(/usr/local/share/texmf/tex/latex/latexml/latexml.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment') Excluding comment 'lxNavbar'
+Excluding comment 'lxHeader' Excluding comment 'lxFooter')
+(/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2022-02-02 v3.0.46 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen141
+\l__siunitx_angle_marker_box=\box50
+\l__siunitx_angle_unit_box=\box51
+\l__siunitx_compound_count_int=\count194
+
+(/usr/share/texlive/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/01/04 v1.11 internationalization of LaTeX2e packages
+ (CN)
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count195
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+\l__siunitx_number_exponent_fixed_int=\count196
+\l__siunitx_number_min_decimal_int=\count197
+\l__siunitx_number_min_integer_int=\count198
+\l__siunitx_number_round_precision_int=\count199
+\l__siunitx_number_group_minimum_int=\count266
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen142
+))
+\l__siunitx_table_tmp_box=\box52
+\l__siunitx_table_tmp_dim=\dimen143
+\l__siunitx_table_column_width_dim=\dimen144
+\l__siunitx_table_integer_box=\box53
+\l__siunitx_table_decimal_box=\box54
+\l__siunitx_table_before_box=\box55
+\l__siunitx_table_after_box=\box56
+\l__siunitx_table_before_dim=\dimen145
+\l__siunitx_table_carry_dim=\dimen146
+\l__siunitx_unit_tmp_int=\count267
+\l__siunitx_unit_position_int=\count268
+\l__siunitx_unit_total_int=\count269
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count270
+\l__pdf_internal_box=\box57
+))
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen147
+\ar@mcellbox=\box58
+\extrarowheight=\dimen148
+\NC@list=\toks18
+\extratabsurround=\skip49
+\backup@length=\skip50
+\ar@cellbox=\box59
+))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
+)
+\@indexfile=\write4
+\openout4 = `manual.idx'.
+
+
+Writing index file manual.idx
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2021/11/01 v4.49 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks19
+\XKV@tempa@toks=\toks20
+)
+\XKV@depth=\count271
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2021/10/15 v2.07 (NLCT)
+\@glsmfirst=\toks21
+\@glsmrest=\toks22
+)
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2019/09/27 v2.32 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen149
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count272
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count273
+\leftroot@=\count274
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count275
+\DOTSCASE@=\count276
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box60
+\strutbox@=\box61
+\big@size=\dimen150
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count277
+\c@MaxMatrixCols=\count278
+\dotsspace@=\muskip17
+\c@parentequation=\count279
+\dspbrk@lvl=\count280
+\tag@help=\toks23
+\row@=\count281
+\column@=\count282
+\maxfields@=\count283
+\andhelp@=\toks24
+\eqnshift@=\dimen151
+\alignsep@=\dimen152
+\tagshift@=\dimen153
+\tagwidth@=\dimen154
+\totwidth@=\dimen155
+\lineht@=\dimen156
+\@envbody=\toks25
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count284
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2019/09/27 v2.32 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count285
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count286
+\FP@xia=\count287
+\FP@xib=\count288
+\FP@xfa=\count289
+\FP@xfb=\count290
+\FP@rega=\count291
+\FP@regb=\count292
+\FP@regs=\count293
+\FP@times=\count294
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count295
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks27
+\@dtl@tmpcount=\count296
+\dtl@tmplength=\skip54
+\dtl@sortresult=\count297
+\@dtl@numgrpsepcount=\count298
+\@dtl@datatype=\count299
+\dtl@codeA=\count300
+\dtl@codeB=\count301
+\@dtl@foreach@level=\count302
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
+307.sty
+Package: glossaries-compatible-307 2021/11/01 v4.49 (NLCT)
+)
+\gls@level=\count303
+\@gls@tmpb=\toks28
+\gls@tmplen=\skip55
+\glskeylisttok=\toks29
+\glslabeltok=\toks30
+\glsshorttok=\toks31
+\glslongtok=\toks32
+
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
+y
+Package: glossary-hypernav 2021/11/01 v4.49 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+Package: glossary-list 2021/11/01 v4.49 (NLCT)
+\glslistdottedwidth=\skip56
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+Package: glossary-long 2021/11/01 v4.49 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip57
+\LTright=\skip58
+\LTpre=\skip59
+\LTpost=\skip60
+\LTchunksize=\count304
+\LTcapwidth=\dimen157
+\LT@head=\box62
+\LT@firsthead=\box63
+\LT@foot=\box64
+\LT@lastfoot=\box65
+\LT@gbox=\box66
+\LT@cols=\count305
+\LT@rows=\count306
+\c@LT@tables=\count307
+\c@LT@chunks=\count308
+\LT@p@ftn=\toks33
+)
+\glsdescwidth=\skip61
+\glspagelistwidth=\skip62
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+Package: glossary-super 2021/11/01 v4.49 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2020/02/02 v4.1g the supertabular environment
+\c@tracingst=\count309
+\ST@wd=\dimen158
+\ST@rightskip=\skip63
+\ST@leftskip=\skip64
+\ST@parfillskip=\skip65
+\ST@pageleft=\dimen159
+\ST@headht=\dimen160
+\ST@tailht=\dimen161
+\ST@pagesofar=\dimen162
+\ST@pboxht=\dimen163
+\ST@lineht=\dimen164
+\ST@prevht=\dimen165
+\ST@toadd=\dimen166
+\ST@dimen=\dimen167
+\ST@pbox=\box67
+))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+Package: glossary-tree 2021/11/01 v4.49 (NLCT)
+\glstreeindent=\skip66
+))
+\glswrite=\write5
+\glo@main@file=\write6
+\openout6 = `manual.glo'.
+
+Package glossaries Info: Writing glossary file manual.glo on input line 68.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen168
+\Hy@linkcounter=\count310
+\Hy@pagecounter=\count311
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
+nguages
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count312
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count313
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen169
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count314
+\Field@Width=\dimen170
+\Fld@charsize=\dimen171
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count315
+\c@Item=\count316
+\c@Hfootnote=\count317
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count318
+\c@bookmark@seq@number=\count319
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip67
+)
+(/usr/share/texlive/texmf-dist/tex/latex/minitoc/minitoc.sty
+Package: minitoc 2018/07/12 v62 Package minitoc
+
+(/usr/share/texlive/texmf-dist/tex/latex/minitoc/mtcmess.sty
+Package: mtcmess 2006/03/14
+)
+Package minitoc Info: I0001
+(minitoc)             *** minitoc package, version 62 ***.
+\tf@mtc=\write7
+\mtcindent=\skip68
+\mtcskipamount=\skip69
+Package minitoc Info: I0005
+(minitoc)             compatible with hyperref.
+Package minitoc Info: I0023
+(minitoc)             part level macros available.
+Package minitoc Info: I0003
+(minitoc)             chapter level macros available.
+\mtc@toks=\toks34
+\mtc@strutbox=\box68
+\mtc@hstrutbox=\box69
+Package minitoc Info: I0002
+(minitoc)             Autoconfiguration of extensions.
+\openout7 = `manual.mtc0'.
+
+\openout7 = `manual.mtc'.
+
+ (./manual.mtc0)
+Package minitoc Info: I0012
+(minitoc)             Long extensions (Unix-like) will be used.
+Package minitoc Info: I0031
+(minitoc)             ==> this version is configured for UNIX-like 
+(minitoc)                 (long extensions) file names.
+\openout7 = `manual.mtc'.
+
+\openout7 = `manual.mtc0'.
+
+\c@mtc=\count320
+\c@minitocdepth=\count321
+\c@ptc=\count322
+\c@parttocdepth=\count323
+\ptcindent=\skip70
+Package minitoc Info: I0010
+(minitoc)             The english language is selected.
+(minitoc)              on input line 4910.
+
+(/usr/share/texlive/texmf-dist/tex/latex/minitoc/english.mld
+File: english.mld 2006/01/13
+)
+(/usr/share/texlive/texmf-dist/tex/latex/minitoc/english.mld
+File: english.mld 2006/01/13
+))
+(./src/TitlePage.tex Excluding 'lxNavbar' comment.)
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 78.
+ (./manual.aux)
+\openout1 = `manual.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count324
+\scratchdimen=\dimen172
+\scratchbox=\box70
+\nofMPsegments=\count325
+\nofMParguments=\count326
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen173
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
+\everyMPtoPDFconversion=\toks36
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
+nary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 78.
+ (./manual.glsdefs)
+Package hyperref Info: Link coloring OFF on input line 78.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count330
+)
+LaTeX Info: Redefining \ref on input line 78.
+LaTeX Info: Redefining \pageref on input line 78.
+LaTeX Info: Redefining \nameref on input line 78.
+
+(./manual.out) (./manual.out)
+\@outlinefile=\write8
+\openout8 = `manual.out'.
+
+Package minitoc(hints) Info: I0049
+(minitoc(hints))             ==> You requested the hints option. 
+(minitoc(hints))             Some hints are eventually given below.
+
+
+Package minitoc(hints) Warning: W0030
+(minitoc(hints))                --- The \part command is altered 
+(minitoc(hints))                after minitoc.
+
+
+Package minitoc(hints) Warning: W0023
+(minitoc(hints))                --- It may be the consequence 
+(minitoc(hints))                of loading the ``hyperref'' package.
+
+
+Package minitoc(hints) Warning: W0028
+(minitoc(hints))                --- The \chapter command is altered 
+(minitoc(hints))                after minitoc.
+
+
+Package minitoc(hints) Warning: W0023
+(minitoc(hints))                --- It may be the consequence 
+(minitoc(hints))                of loading the ``hyperref'' package.
+
+(./src/Glossary.tex
+\@gls@deffile=\write9
+\openout9 = `manual.glsdefs'.
+
+)
+Package minitoc Info: I0024
+(minitoc)             PREPARING MINITOCS FROM manual.toc on input line 83.
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc1.
+\openout7 = `manual.mtc1'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc2.
+\openout7 = `manual.mtc2'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc3.
+\openout7 = `manual.mtc3'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc4.
+\openout7 = `manual.mtc4'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc5.
+\openout7 = `manual.mtc5'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc6.
+\openout7 = `manual.mtc6'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc7.
+\openout7 = `manual.mtc7'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc8.
+\openout7 = `manual.mtc8'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc9.
+\openout7 = `manual.mtc9'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc10.
+\openout7 = `manual.mtc10'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc11.
+\openout7 = `manual.mtc11'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc12.
+\openout7 = `manual.mtc12'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc13.
+\openout7 = `manual.mtc13'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc14.
+\openout7 = `manual.mtc14'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing manual.mtc15.
+\openout7 = `manual.mtc15'.
+
+ (./src/Heading.tex
+<../graphics/neurer.png, id=674, 476.78125pt x 356.33125pt>
+File: ../graphics/neurer.png Graphic file (type png)
+<use ../graphics/neurer.png>
+Package pdftex.def Info: ../graphics/neurer.png  used on input line 18.
+(pdftex.def)             Requested size: 113.85063pt x 85.08626pt.
+
+Overfull \hbox (27.60063pt too wide) detected at line 18
+[][]
+ []
+
+
+Overfull \hbox (140.22011pt too wide) detected at line 40
+ []
+ []
+
+<../graphics/NeuronAndBrain.jpg, id=676, 147.4308pt x 147.4308pt>
+File: ../graphics/NeuronAndBrain.jpg Graphic file (type jpg)
+<use ../graphics/NeuronAndBrain.jpg>
+Package pdftex.def Info: ../graphics/NeuronAndBrain.jpg  used on input line 42.
+
+(pdftex.def)             Requested size: 86.25pt x 86.25003pt.
+
+Overfull \hbox (68.65627pt too wide) detected at line 42
+ []
+ []
+
+
+Overfull \hbox (16.4346pt too wide) detected at line 43
+ [] [][]
+ []
+
+[1
+
+\openout5 = `manual.ist'.
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../graphics/neurer.png> <.
+./graphics/NeuronAndBrain.jpg>] [2
+
+] (./manual.toc [3] [4] [5] [6])
+\tf@toc=\write10
+\openout10 = `manual.toc'.
+
+ [7])
+[8
+
+] (./src/Foreword.tex
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 10--11
+[][][] 
+ []
+
+[1
+
+]
+Overfull \hbox (25.13332pt too wide) in paragraph at lines 102--103
+[][][][] 
+ []
+
+) (./src/StateOfTheArt.tex [2] [3] [4
+
+]
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 14--15
+[][][] 
+ []
+
+<fig/Blind_monks_examining_an_elephant.jpg, id=941, 91.48196pt x 69.56831pt>
+File: fig/Blind_monks_examining_an_elephant.jpg Graphic file (type jpg)
+<use fig/Blind_monks_examining_an_elephant.jpg>
+Package pdftex.def Info: fig/Blind_monks_examining_an_elephant.jpg  used on inp
+ut line 32.
+(pdftex.def)             Requested size: 224.2479pt x 170.55528pt.
+[5] [6 <./fig/Blind_monks_examining_an_elephant.jpg>]
+Overfull \hbox (57.51088pt too wide) in paragraph at lines 123--128
+ []\OT1/cmr/bx/n/10 Physics [][][]
+ []
+
+[7] [8] [9] [10] [11] [12]
+
+LaTeX Warning: Command \textless invalid in math mode on input line 379.
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
+79.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 379.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 379.
+
+[13] [14]
+Underfull \hbox (badness 3098) in paragraph at lines 453--459
+\OT1/cmr/m/n/10 hy-poth-e-sis about pro-tein mech-a-nisms) []pro-tein!mechanism
+ ob-scures
+ []
+
+[15] [16]
+<fig/HHModelHeimburg.png, id=1132, 272.217pt x 152.4897pt>
+File: fig/HHModelHeimburg.png Graphic file (type png)
+<use fig/HHModelHeimburg.png>
+Package pdftex.def Info: fig/HHModelHeimburg.png  used on input line 502.
+(pdftex.def)             Requested size: 345.0pt x 193.28049pt.
+ [17 <./fig/HHModelHeimburg.png>]
+<fig/Galilei.png, id=1149, 142.131pt x 108.6459pt>
+File: fig/Galilei.png Graphic file (type png)
+<use fig/Galilei.png>
+Package pdftex.def Info: fig/Galilei.png  used on input line 531.
+(pdftex.def)             Requested size: 224.2479pt x 171.4232pt.
+ [18 <./fig/Galilei.png>] [19]
+[20] [21]) (./src/Single.tex
+Package minitoc Info: I0006
+(minitoc)             manual.mtc0 is empty on input line 5.
+ [22]
+Chapter 1.
+(./src/Single-Foreword.tex [23
+
+]) (./src/Single-Introduction.tex [24] [25])
+(./src/Single-Modeling.tex [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+[28] [29] [30] [31] [32]) (./src/Single-Concepts.tex
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 8--10
+[][][]
+ []
+
+[33] [34]
+<fig/phospholipid1.png, id=1362, 770.88pt x 503.63156pt>
+File: fig/phospholipid1.png Graphic file (type png)
+<use fig/phospholipid1.png>
+Package pdftex.def Info: fig/phospholipid1.png  used on input line 100.
+(pdftex.def)             Requested size: 224.2479pt x 146.5028pt.
+ [35]
+<fig/Lipid_Bilayer_With_Various_Components.jpg, id=1382, 421.575pt x 192.72pt>
+File: fig/Lipid_Bilayer_With_Various_Components.jpg Graphic file (type jpg)
+<use fig/Lipid_Bilayer_With_Various_Components.jpg>
+Package pdftex.def Info: fig/Lipid_Bilayer_With_Various_Components.jpg  used on
+ input line 125.
+(pdftex.def)             Requested size: 224.2479pt x 102.51456pt.
+
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+ [36 <./fig/phospholipid1.png>] [37 <./fig/Lipid_Bilayer_With_Various_Component
+s.jpg>]
+<fig/HeimburgCurrents.png, id=1420, 338.7054pt x 108.6459pt>
+File: fig/HeimburgCurrents.png Graphic file (type png)
+<use fig/HeimburgCurrents.png>
+Package pdftex.def Info: fig/HeimburgCurrents.png  used on input line 194.
+(pdftex.def)             Requested size: 310.4979pt x 99.60231pt.
+
+[38 <./fig/HeimburgCurrents.png>]) (./src/Single-Operation.tex
+<fig/NeuronStateMachineSimple.pdf, id=1444, 255.33794pt x 249.59547pt>
+File: fig/NeuronStateMachineSimple.pdf Graphic file (type pdf)
+<use fig/NeuronStateMachineSimple.pdf>
+Package pdftex.def Info: fig/NeuronStateMachineSimple.pdf  used on input line 4
+1.
+(pdftex.def)             Requested size: 224.2479pt x 219.21053pt.
+ [39] [40 <./fig/NeuronStateMachineSimple.pdf>] [41] [42] [43]) (./src/Single-P
+rocess.tex
+[44] [45] [46] [47] [48]) (./src/Single-Control.tex [49] [50] [51] [52]
+[53]) (./src/Single-RestingPotential.tex [54] [55] [56]
+<fig/RestingPotential3.pdf, id=1663, 386.2701pt x 276.73486pt>
+File: fig/RestingPotential3.pdf Graphic file (type pdf)
+<use fig/RestingPotential3.pdf>
+Package pdftex.def Info: fig/RestingPotential3.pdf  used on input line 99.
+(pdftex.def)             Requested size: 276.00105pt x 197.74146pt.
+
+Underfull \vbox (badness 1708) has occurred while \output is active []
+
+ [57 <./fig/RestingPotential3.pdf>] [58]) (./src/Single-ActionPotential.tex [59
+]
+<fig/AP_Schematic.pdf, id=1741, 459.02292pt x 327.4062pt>
+File: fig/AP_Schematic.pdf Graphic file (type pdf)
+<use fig/AP_Schematic.pdf>
+Package pdftex.def Info: fig/AP_Schematic.pdf  used on input line 75.
+(pdftex.def)             Requested size: 224.2479pt x 159.95084pt.
+ [60 <./fig/AP_Schematic.pdf>] [61] [62] [63]
+<fig/AP_Artificial_test.pdf, id=1827, 377.18517pt x 353.13431pt>
+File: fig/AP_Artificial_test.pdf Graphic file (type pdf)
+<use fig/AP_Artificial_test.pdf>
+Package pdftex.def Info: fig/AP_Artificial_test.pdf  used on input line 324.
+(pdftex.def)             Requested size: 207.0021pt x 193.80417pt.
+<fig/RestingPotential4.pdf, id=1828, 381.52737pt x 276.73589pt>
+File: fig/RestingPotential4.pdf Graphic file (type pdf)
+<use fig/RestingPotential4.pdf>
+Package pdftex.def Info: fig/RestingPotential4.pdf  used on input line 351.
+(pdftex.def)             Requested size: 241.49895pt x 175.17215pt.
+ [64] [65 <./fig/AP_Artificial_test.pdf> <./fig/RestingPotential4.pdf>] [66]
+<fig/ChannelActivation_Kandel7-3.png, id=1884, 88.4103pt x 220.4235pt>
+File: fig/ChannelActivation_Kandel7-3.png Graphic file (type png)
+<use fig/ChannelActivation_Kandel7-3.png>
+Package pdftex.def Info: fig/ChannelActivation_Kandel7-3.png  used on input lin
+e 459.
+(pdftex.def)             Requested size: 134.54979pt x 335.47096pt.
+
+
+LaTeX Warning: Float too large for page by 1.97096pt on input line 489.
+
+[67]) (./src/Single-Consequences.tex
+Underfull \vbox (badness 2158) has occurred while \output is active []
+
+ [68]
+[69 <./fig/ChannelActivation_Kandel7-3.png>]
+<fig/ElasticityGradientHeimburg.png, id=1920, 244.0317pt x 110.814pt>
+File: fig/ElasticityGradientHeimburg.png Graphic file (type png)
+<use fig/ElasticityGradientHeimburg.png>
+Package pdftex.def Info: fig/ElasticityGradientHeimburg.png  used on input line
+ 57.
+(pdftex.def)             Requested size: 345.0pt x 156.68228pt.
+ [70 <./fig/ElasticityGradientHeimburg.png>] [71] [72] [73])) (./src/Physics.te
+x
+Package minitoc Info: I0006
+(minitoc)             manual.mtc1 is empty on input line 6.
+ [74]
+Chapter 2.
+(./src/Physics-Foreword.tex
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 15--16
+[][][] 
+ []
+
+[75
+
+] [76]
+Overfull \hbox (25.13332pt too wide) in paragraph at lines 79--89
+[][][][]
+ []
+
+
+Underfull \vbox (badness 2573) has occurred while \output is active []
+
+ [77])
+(./src/Physics-Introductory.tex [78]) (./src/Physics-ScienceMethods.tex
+[79] [80]
+Overfull \hbox (25.13332pt too wide) in paragraph at lines 76--77
+[][][][] 
+ []
+
+[81] [82] [83] [84] [85] [86] [87] [88] [89]
+<fig/IonChannelRK.pdf, id=2124, 345.021pt x 284.84619pt>
+File: fig/IonChannelRK.pdf Graphic file (type pdf)
+<use fig/IonChannelRK.pdf>
+Package pdftex.def Info: fig/IonChannelRK.pdf  used on input line 590.
+(pdftex.def)             Requested size: 224.2479pt x 185.13913pt.
+ [90 <./fig/IonChannelRK.pdf>]
+[91] [92] [93] [94] [95]) (./src/Physics-Spatiotemporal.tex [96]
+<fig/RelativisticComputation.pdf, id=2218, 217.92918pt x 248.79651pt>
+File: fig/RelativisticComputation.pdf Graphic file (type pdf)
+<use fig/RelativisticComputation.pdf>
+Package pdftex.def Info: fig/RelativisticComputation.pdf  used on input line 51
+.
+(pdftex.def)             Requested size: 224.2479pt x 256.01648pt.
+)
+(./src/Physics-Thermodynamics.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [97]
+[98 <./fig/RelativisticComputation.pdf>] [99] [100] [101] [102] [103] [104]
+[105] [106] [107] [108] [109] [110] [111] [112] [113] [114] [115])
+(./src/Physics-Electricity.tex
+
+LaTeX Warning: Reference `sec:Physics-ParticlesContinuous' on page 116 undefine
+d on input line 13.
+
+[116] [117] [118] [119] [120] [121] [122]
+<fig/SolidResistance.png, id=2486, 331.2375pt x 302.12875pt>
+File: fig/SolidResistance.png Graphic file (type png)
+<use fig/SolidResistance.png>
+Package pdftex.def Info: fig/SolidResistance.png  used on input line 314.
+(pdftex.def)             Requested size: 120.7521pt x 110.14008pt.
+<fig/IonicResistance.jpg, id=2487, 149.0169pt x 127.27194pt>
+File: fig/IonicResistance.jpg Graphic file (type jpg)
+<use fig/IonicResistance.jpg>
+Package pdftex.def Info: fig/IonicResistance.jpg  used on input line 315.
+(pdftex.def)             Requested size: 120.7521pt x 103.13048pt.
+
+Overfull \hbox (26.30612pt too wide) in paragraph at lines 304--324
+ [][] 
+ []
+
+
+Underfull \vbox (badness 1742) has occurred while \output is active []
+
+ [123 <./fig/SolidResistance.png> <./fig/IonicResistance.jpg>] [124] [125] [126
+] [127]
+[128]
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 616--617
+[][][] 
+ []
+
+[129] [130] [131] [132] [133] [134]) (./src/Physics-Imitating.tex [135]
+[136] [137] [138]) (./src/Physics-Oscillator.tex
+<fig/rc-rc12Integrator.jpg, id=2659, 311.1625pt x 151.56625pt>
+File: fig/rc-rc12Integrator.jpg Graphic file (type jpg)
+<use fig/rc-rc12Integrator.jpg>
+Package pdftex.def Info: fig/rc-rc12Integrator.jpg  used on input line 32.
+(pdftex.def)             Requested size: 137.9979pt x 67.21896pt.
+<fig/rc-rc13Differentiator.jpg, id=2660, 329.23pt x 151.56625pt>
+File: fig/rc-rc13Differentiator.jpg Graphic file (type jpg)
+<use fig/rc-rc13Differentiator.jpg>
+Package pdftex.def Info: fig/rc-rc13Differentiator.jpg  used on input line 33.
+(pdftex.def)             Requested size: 172.5pt x 79.41388pt.
+ [139] [140 <./fig/rc-rc12Integrator.jpg> <./fig/rc-rc13Differentiator.jpg>] [1
+41] [142])
+(./src/Physics-Dynamics.tex [143] [144] [145] [146])
+(./src/Physics-Electrolyte.tex [147] [148] [149]
+<fig/NernstPlanckThermal.pdf, id=2795, 296.13437pt x 249.2803pt>
+File: fig/NernstPlanckThermal.pdf Graphic file (type pdf)
+<use fig/NernstPlanckThermal.pdf>
+Package pdftex.def Info: fig/NernstPlanckThermal.pdf  used on input line 169.
+(pdftex.def)             Requested size: 345.0pt x 290.42058pt.
+ [150] [151 <./fig/NernstPlanckThermal.pdf>] [152]
+<fig/MembranePotentialKandel_6-1.png, id=2845, 154.8987pt x 181.6386pt>
+File: fig/MembranePotentialKandel_6-1.png Graphic file (type png)
+<use fig/MembranePotentialKandel_6-1.png>
+Package pdftex.def Info: fig/MembranePotentialKandel_6-1.png  used on input lin
+e 258.
+(pdftex.def)             Requested size: 224.2479pt x 262.9701pt.
+ [153]
+<fig/eled.png, id=2858, 144.0582pt x 82.1469pt>
+File: fig/eled.png Graphic file (type png)
+<use fig/eled.png>
+Package pdftex.def Info: fig/eled.png  used on input line 323.
+(pdftex.def)             Requested size: 293.2521pt x 167.25278pt.
+ [154 <./fig/MembranePotentialKandel_6-1.png>]
+[155 <./fig/eled.png>] [156] [157]
+<fig/eplat4.png, id=2904, 144.7809pt x 85.7604pt>
+File: fig/eplat4.png Graphic file (type png)
+<use fig/eplat4.png>
+Package pdftex.def Info: fig/eplat4.png  used on input line 460.
+(pdftex.def)             Requested size: 293.2521pt x 173.74234pt.
+ [158 <./fig/eplat4.png>] [159] [160]
+[161] [162] [163]
+<fig/DielectricMembrane.pdf, id=2960, 227.6234pt x 167.91533pt>
+File: fig/DielectricMembrane.pdf Graphic file (type pdf)
+<use fig/DielectricMembrane.pdf>
+Package pdftex.def Info: fig/DielectricMembrane.pdf  used on input line 794.
+(pdftex.def)             Requested size: 293.2521pt x 216.35544pt.
+ [164]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [165 <./fig/DielectricMembrane.pdf>] [166]
+Underfull \vbox (badness 5022) has occurred while \output is active []
+
+ [167]
+[168]) (./src/Physics-Control.tex [169] [170]
+<fig/PID_en.svg.png, id=3046, 963.6pt x 343.2825pt>
+File: fig/PID_en.svg.png Graphic file (type png)
+<use fig/PID_en.svg.png>
+Package pdftex.def Info: fig/PID_en.svg.png  used on input line 61.
+(pdftex.def)             Requested size: 224.2479pt x 79.88568pt.
+
+Underfull \vbox (badness 1210) has occurred while \output is active []
+
+ [171 <./fig/PID_en.svg.png>]
+Overfull \hbox (15.42818pt too wide) detected at line 104
+[][][] \OT1/cmr/m/n/10 = [] + [] + []
+ []
+
+[172]) (./src/Physics-Components.tex [173] [174] [175] [176] [177] [178]
+[179]
+<fig/ch11f32.jpg, id=3157, 231.86626pt x 289.08pt>
+File: fig/ch11f32.jpg Graphic file (type jpg)
+<use fig/ch11f32.jpg>
+Package pdftex.def Info: fig/ch11f32.jpg  used on input line 339.
+(pdftex.def)             Requested size: 224.2479pt x 279.5868pt.
+ [180 <./fig/ch11f32.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [181]
+[182] [183] [184] [185] [186] [187] [188]
+Underfull \vbox (badness 4595) has occurred while \output is active []
+
+ [189]
+Underfull \vbox (badness 5022) has occurred while \output is active []
+
+ [190])
+(./src/Physics-Membrane.tex [191] [192] [193] [194] [195] [196] [197] [198]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [199]
+<fig/NernstPlanckConcentration.pdf, id=3377, 298.63872pt x 255.63605pt>
+File: fig/NernstPlanckConcentration.pdf Graphic file (type pdf)
+<use fig/NernstPlanckConcentration.pdf>
+Package pdftex.def Info: fig/NernstPlanckConcentration.pdf  used on input line 
+497.
+(pdftex.def)             Requested size: 276.00105pt x 236.2646pt.
+
+[200]) (./src/Physics-Measuring.tex
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 5--6
+[][][] 
+ []
+
+[201 <./fig/NernstPlanckConcentration.pdf>] [202] [203] [204] [205] [206]
+[207]
+<fig/ClampingGENESIS.png, id=3491, 232.4685pt x 161.6439pt>
+File: fig/ClampingGENESIS.png Graphic file (type png)
+<use fig/ClampingGENESIS.png>
+Package pdftex.def Info: fig/ClampingGENESIS.png  used on input line 411.
+(pdftex.def)             Requested size: 276.00105pt x 191.93686pt.
+
+Underfull \hbox (badness 3482) in paragraph at lines 425--425
+[]\OT1/cmr/m/n/10 Figure 2.12: []Simulating a volt-age clamped neu-ron by the p
+ro-gram
+ []
+
+[208])) (./src/Physiology.tex
+Package minitoc Info: I0006
+(minitoc)             manual.mtc2 is empty on input line 4.
+ [209] [210 <./fig/ClampingGENESIS.png>]
+Chapter 3.
+(./src/Physiology-Foreword.tex [211
+
+]) (./src/Physiology-StateOfTheArt.tex
+[212]) (./src/Physiology-Physical.tex
+<fig/JohnstonSummaryFigure1_2.png, id=3558, 276.7941pt x 195.8517pt>
+File: fig/JohnstonSummaryFigure1_2.png Graphic file (type png)
+<use fig/JohnstonSummaryFigure1_2.png>
+Package pdftex.def Info: fig/JohnstonSummaryFigure1_2.png  used on input line 2
+4.
+(pdftex.def)             Requested size: 345.0pt x 244.12068pt.
+ [213] [214 <./fig/JohnstonSummaryFigure1_2.png>]
+Overfull \hbox (153.30667pt too wide) in paragraph at lines 104--129
+[]\OT1/cmr/m/n/10 The []  size of presy-nap-tic ter-mi-nals []https://www.ncbi.
+nlm.nih.gov/books/NBK26910/bin/ch11f38.jpg[](reproduced
+ []
+
+[215]
+<fig/ch11f38.jpg, id=3593, 519.6213pt x 292.6935pt>
+File: fig/ch11f38.jpg Graphic file (type jpg)
+<use fig/ch11f38.jpg>
+Package pdftex.def Info: fig/ch11f38.jpg  used on input line 131.
+(pdftex.def)             Requested size: 345.0pt x 194.3395pt.
+ [216 <./fig/ch11f38.jpg>] [217]
+<fig/AIS.jpg, id=3611, 401.8212pt x 395.3169pt>
+File: fig/AIS.jpg Graphic file (type jpg)
+<use fig/AIS.jpg>
+Package pdftex.def Info: fig/AIS.jpg  used on input line 227.
+(pdftex.def)             Requested size: 345.0pt x 339.41698pt.
+ [218]
+<fig/NeuronPolarity.png, id=3627, 295.8252pt x 120.45pt>
+File: fig/NeuronPolarity.png Graphic file (type png)
+<use fig/NeuronPolarity.png>
+Package pdftex.def Info: fig/NeuronPolarity.png  used on input line 298.
+(pdftex.def)             Requested size: 345.0pt x 140.47746pt.
+ [219 <./fig/AIS.jpg>] [220 <./fig/NeuronPolarity.png>] [221]
+<fig/AISBackPropagation.png, id=3663, 216.0873pt x 137.0721pt>
+File: fig/AISBackPropagation.png Graphic file (type png)
+<use fig/AISBackPropagation.png>
+Package pdftex.def Info: fig/AISBackPropagation.png  used on input line 411.
+(pdftex.def)             Requested size: 224.2479pt x 142.2525pt.
+ (./src/Physiology-Membrane.tex [222 <./fig/AISBackPropagation.png>])) (./src/P
+hysiology-Addendum.tex [223] [224])
+(./src/Physiology-Electrodiffusion.tex [225] [226])
+(./src/Physiology-RestingPotential.tex
+Overfull \hbox (4.28374pt too wide) in paragraph at lines 24--24
+[]|\OT1/cmr/m/n/10 [Out]| 
+ []
+
+
+Overfull \hbox (1.46083pt too wide) in paragraph at lines 24--25
+[]|$\OML/cmm/m/it/10 U[]$| 
+ []
+
+
+Overfull \hbox (4.56151pt too wide) in paragraph at lines 25--25
+[]|\OT1/cmr/m/n/10 [mM]| 
+ []
+
+
+Overfull \hbox (4.56151pt too wide) in paragraph at lines 25--25
+[]|\OT1/cmr/m/n/10 [mM]| 
+ []
+
+
+Overfull \hbox (5.40068pt too wide) in paragraph at lines 31--31
+[]|$\OML/cmm/m/it/10 Na[]$| 
+ []
+
+
+Overfull \hbox (2.14398pt too wide) in paragraph at lines 32--32
+[]|$\OML/cmm/m/it/10 Cl[]$| 
+ []
+
+
+Overfull \hbox (8.12433pt too wide) in paragraph at lines 33--33
+[]|$\OML/cmm/m/it/10 Ca[]$| 
+ []
+
+
+Overfull \hbox (3.88095pt too wide) in paragraph at lines 33--33
+[]|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 27[]$| 
+ []
+
+
+Overfull \hbox (5.40068pt too wide) in paragraph at lines 42--42
+[]|$\OML/cmm/m/it/10 Na[]$| 
+ []
+
+
+Overfull \hbox (2.14398pt too wide) in paragraph at lines 43--43
+[]|$\OML/cmm/m/it/10 Cl[]$| 
+ []
+
+
+Overfull \hbox (8.12433pt too wide) in paragraph at lines 44--44
+[]|$\OML/cmm/m/it/10 Ca[]$| 
+ []
+
+
+Overfull \hbox (8.88097pt too wide) in paragraph at lines 44--44
+[]|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 021[]$| 
+ []
+
+
+Overfull \hbox (5.40068pt too wide) in paragraph at lines 53--53
+[]|$\OML/cmm/m/it/10 Na[]$| 
+ []
+
+
+Overfull \hbox (2.14398pt too wide) in paragraph at lines 54--54
+[]|$\OML/cmm/m/it/10 Cl[]$| 
+ []
+
+
+Overfull \hbox (8.12433pt too wide) in paragraph at lines 55--55
+[]|$\OML/cmm/m/it/10 Ca[]$| 
+ []
+
+
+Overfull \hbox (3.88095pt too wide) in paragraph at lines 55--55
+[]|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 04[]$| 
+ []
+
+
+Overfull \hbox (5.40068pt too wide) in paragraph at lines 63--63
+[]|$\OML/cmm/m/it/10 Na[]$| 
+ []
+
+<fig/HypotheticRestingPotential.png, id=3727, 212.4738pt x 207.4149pt>
+File: fig/HypotheticRestingPotential.png Graphic file (type png)
+<use fig/HypotheticRestingPotential.png>
+Package pdftex.def Info: fig/HypotheticRestingPotential.png  used on input line
+ 76.
+(pdftex.def)             Requested size: 241.49895pt x 235.75282pt.
+) (./src/Physiology-ActionPotential.tex [227] [228]
+Underfull \vbox (badness 2111) has occurred while \output is active []
+
+ [229 <./fig/HypotheticRestingPotential.png>]
+<fig/ActionPotential_Kandel7-10.png, id=3758, 184.7703pt x 122.3772pt>
+File: fig/ActionPotential_Kandel7-10.png Graphic file (type png)
+<use fig/ActionPotential_Kandel7-10.png>
+Package pdftex.def Info: fig/ActionPotential_Kandel7-10.png  used on input line
+ 103.
+(pdftex.def)             Requested size: 189.75105pt x 125.6783pt.
+ [230] [231 <./fig/ActionPotential_Kandel7-10.png>] [232]
+File: fig/AIS.jpg Graphic file (type jpg)
+<use fig/AIS.jpg>
+Package pdftex.def Info: fig/AIS.jpg  used on input line 245.
+(pdftex.def)             Requested size: 345.0pt x 339.41698pt.
+ [233] [234] [235]
+<fig/AP_Artificial.pdf, id=3815, 372.29488pt x 354.74535pt>
+File: fig/AP_Artificial.pdf Graphic file (type pdf)
+<use fig/AP_Artificial.pdf>
+Package pdftex.def Info: fig/AP_Artificial.pdf  used on input line 411.
+(pdftex.def)             Requested size: 345.0pt x 328.74597pt.
+ [236] [237 <./fig/AP_Artificial.pdf>] [238]
+[239]
+<fig/AP_Variety.pdf, id=3871, 468.47522pt x 335.16318pt>
+File: fig/AP_Variety.pdf Graphic file (type pdf)
+<use fig/AP_Variety.pdf>
+Package pdftex.def Info: fig/AP_Variety.pdf  used on input line 607.
+(pdftex.def)             Requested size: 345.0pt x 246.82526pt.
+ [240 <./fig/AP_Variety.pdf>] [241] [242]
+<fig/PSP.pdf, id=3948, 462.77994pt x 276.25609pt>
+File: fig/PSP.pdf Graphic file (type pdf)
+<use fig/PSP.pdf>
+Package pdftex.def Info: fig/PSP.pdf  used on input line 827.
+(pdftex.def)             Requested size: 345.0pt x 205.95645pt.
+ [243]
+<fig/ColeFirstDerivative.jpg, id=3968, 290.2845pt x 148.8762pt>
+File: fig/ColeFirstDerivative.jpg Graphic file (type jpg)
+<use fig/ColeFirstDerivative.jpg>
+Package pdftex.def Info: fig/ColeFirstDerivative.jpg  used on input line 895.
+(pdftex.def)             Requested size: 345.0pt x 176.93771pt.
+ [244 <./fig/PSP.pdf>]
+<fig/Bean_Fig1d.pdf, id=4004, 407.93604pt x 239.52586pt>
+File: fig/Bean_Fig1d.pdf Graphic file (type pdf)
+<use fig/Bean_Fig1d.pdf>
+Package pdftex.def Info: fig/Bean_Fig1d.pdf  used on input line 921.
+(pdftex.def)             Requested size: 345.0pt x 202.58554pt.
+
+[245 <./fig/ColeFirstDerivative.jpg>]
+<fig/AP_dV_V_loop.pdf, id=4017, 370.53831pt x 310.32236pt>
+File: fig/AP_dV_V_loop.pdf Graphic file (type pdf)
+<use fig/AP_dV_V_loop.pdf>
+Package pdftex.def Info: fig/AP_dV_V_loop.pdf  used on input line 981.
+(pdftex.def)             Requested size: 345.0pt x 288.93773pt.
+ [246 <./fig/Bean_Fig1d.pdf>]
+Underfull \vbox (badness 1033) has occurred while \output is active []
+
+ [247 <./fig/AP_dV_V_loop.pdf>]
+File: fig/AP_Artificial.pdf Graphic file (type pdf)
+<use fig/AP_Artificial.pdf>
+Package pdftex.def Info: fig/AP_Artificial.pdf  used on input line 1060.
+(pdftex.def)             Requested size: 345.0pt x 328.74597pt.
+) (./src/Physiology-HodgkinHuxley.tex [248] [249] [250]
+[251] [252]
+<fig/HHcirdiagm.png, id=4103, 641.39626pt x 494.84875pt>
+File: fig/HHcirdiagm.png Graphic file (type png)
+<use fig/HHcirdiagm.png>
+Package pdftex.def Info: fig/HHcirdiagm.png  used on input line 171.
+(pdftex.def)             Requested size: 224.2479pt x 173.01088pt.
+ [253 <./fig/HHcirdiagm.png>]
+<fig/RCLongWaveform.jpg, id=4114, 133.2177pt x 66.2475pt>
+File: fig/RCLongWaveform.jpg Graphic file (type jpg)
+<use fig/RCLongWaveform.jpg>
+Package pdftex.def Info: fig/RCLongWaveform.jpg  used on input line 219.
+(pdftex.def)             Requested size: 224.2479pt x 111.52751pt.
+ [254]
+<fig/HodgkinHuxleyFig2Simple.pdf, id=4127, 351.38979pt x 239.52786pt>
+File: fig/HodgkinHuxleyFig2Simple.pdf Graphic file (type pdf)
+<use fig/HodgkinHuxleyFig2Simple.pdf>
+Package pdftex.def Info: fig/HodgkinHuxleyFig2Simple.pdf  used on input line 24
+0.
+(pdftex.def)             Requested size: 224.2479pt x 152.86601pt.
+ [255 <./fig/RCLongWaveform.jpg> <./fig/HodgkinHuxleyFig2Simple.pdf>] [256]) (.
+/src/Physiology-Experimental.tex
+[257]
+<fig/HodgkinHuxleyFig3.pdf, id=4174, 284.51794pt x 245.40483pt>
+File: fig/HodgkinHuxleyFig3.pdf Graphic file (type pdf)
+<use fig/HodgkinHuxleyFig3.pdf>
+Package pdftex.def Info: fig/HodgkinHuxleyFig3.pdf  used on input line 72.
+(pdftex.def)             Requested size: 224.2479pt x 193.41833pt.
+<fig/Fig3_eval.pdf, id=4184, 306.20198pt x 249.2773pt>
+File: fig/Fig3_eval.pdf Graphic file (type pdf)
+<use fig/Fig3_eval.pdf>
+Package pdftex.def Info: fig/Fig3_eval.pdf  used on input line 93.
+(pdftex.def)             Requested size: 224.2479pt x 182.56429pt.
+ [258 <./fig/HodgkinHuxleyFig3.pdf>] [259 <./fig/Fig3_eval.pdf>]
+<fig/MasonPSPFig4.pdf, id=4223, 460.18323pt x 265.09338pt>
+File: fig/MasonPSPFig4.pdf Graphic file (type pdf)
+<use fig/MasonPSPFig4.pdf>
+Package pdftex.def Info: fig/MasonPSPFig4.pdf  used on input line 198.
+(pdftex.def)             Requested size: 224.2479pt x 129.18092pt.
+<fig/HH_AP.pdf, id=4226, 467.08704pt x 278.25958pt>
+File: fig/HH_AP.pdf Graphic file (type pdf)
+<use fig/HH_AP.pdf>
+Package pdftex.def Info: fig/HH_AP.pdf  used on input line 216.
+(pdftex.def)             Requested size: 224.2479pt x 133.59279pt.
+<fig/HodgkinHuxleyUI_On.pdf, id=4229, 322.14653pt x 270.83083pt>
+File: fig/HodgkinHuxleyUI_On.pdf Graphic file (type pdf)
+<use fig/HodgkinHuxleyUI_On.pdf>
+Package pdftex.def Info: fig/HodgkinHuxleyUI_On.pdf  used on input line 232.
+(pdftex.def)             Requested size: 155.24895pt x 130.518pt.
+<fig/HodgkinHuxleyUI_Off.pdf, id=4230, 322.14653pt x 270.8298pt>
+File: fig/HodgkinHuxleyUI_Off.pdf Graphic file (type pdf)
+<use fig/HodgkinHuxleyUI_Off.pdf>
+Package pdftex.def Info: fig/HodgkinHuxleyUI_Off.pdf  used on input line 232.
+(pdftex.def)             Requested size: 155.24895pt x 130.51752pt.
+<fig/MasonPSPlin.pdf, id=4231, 409.19878pt x 257.31331pt>
+File: fig/MasonPSPlin.pdf Graphic file (type pdf)
+<use fig/MasonPSPlin.pdf>
+Package pdftex.def Info: fig/MasonPSPlin.pdf  used on input line 244.
+(pdftex.def)             Requested size: 155.24895pt x 97.62302pt.
+ [260]
+<fig/ConcentrationReduction.pdf, id=4243, 184.0476pt x 198.50159pt>
+File: fig/ConcentrationReduction.pdf Graphic file (type pdf)
+<use fig/ConcentrationReduction.pdf>
+Package pdftex.def Info: fig/ConcentrationReduction.pdf  used on input line 280
+.
+(pdftex.def)             Requested size: 182.84958pt x 197.20776pt.
+<fig/DifferentiatorWaveForm.png, id=4244, 124.7862pt x 154.8987pt>
+File: fig/DifferentiatorWaveForm.png Graphic file (type png)
+<use fig/DifferentiatorWaveForm.png>
+Package pdftex.def Info: fig/DifferentiatorWaveForm.png  used on input line 282
+.
+(pdftex.def)             Requested size: 162.15042pt x 201.28554pt.
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 280--286
+[][] [] 
+ []
+
+[261 <./fig/MasonPSPFig4.pdf>] [262 <./fig/HH_AP.pdf> <./fig/HodgkinHuxleyUI_On
+.pdf> <./fig/HodgkinHuxleyUI_Off.pdf> <./fig/MasonPSPlin.pdf>]
+<fig/KoleSquareResponse.png, id=4338, 248.3679pt x 133.6995pt>
+File: fig/KoleSquareResponse.png Graphic file (type png)
+<use fig/KoleSquareResponse.png>
+Package pdftex.def Info: fig/KoleSquareResponse.png  used on input line 311.
+(pdftex.def)             Requested size: 251.84853pt x 135.57603pt.
+File: fig/DifferentiatorWaveForm.png Graphic file (type png)
+<use fig/DifferentiatorWaveForm.png>
+Package pdftex.def Info: fig/DifferentiatorWaveForm.png  used on input line 312
+.
+(pdftex.def)             Requested size: 127.64832pt x 158.45544pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--322
+[][]
+ []
+
+) (./src/Physiology-Fallacies.tex [263 <./fig/ConcentrationReduction.pdf> <./fi
+g/DifferentiatorWaveForm.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [264 <./fig/KoleSquareResponse.png>] [265]
+<fig/PassiveNeuronMembraneCircular.jpg, id=4379, 278.2395pt x 173.448pt>
+File: fig/PassiveNeuronMembraneCircular.jpg Graphic file (type jpg)
+<use fig/PassiveNeuronMembraneCircular.jpg>
+Package pdftex.def Info: fig/PassiveNeuronMembraneCircular.jpg  used on input l
+ine 109.
+(pdftex.def)             Requested size: 224.2479pt x 139.79076pt.
+ [266] [267 <./fig/PassiveNeuronMembraneCircular.jpg>] [268]
+<fig/LowPassFilter_Koch.jpg, id=4412, 277.035pt x 229.0959pt>
+File: fig/LowPassFilter_Koch.jpg Graphic file (type jpg)
+<use fig/LowPassFilter_Koch.jpg>
+Package pdftex.def Info: fig/LowPassFilter_Koch.jpg  used on input line 278.
+(pdftex.def)             Requested size: 293.2521pt x 242.50839pt.
+ [269] [270 <./fig/LowPassFilter_Koch.jpg>])) (./src/Computing.tex
+\openout7 = `manual.mtc'.
+
+\openout7 = `manual.mtc'.
+
+(./manual.mtc3 [271]) [272]
+Chapter 4.
+(./src/Computing-Foreword.tex
+Overfull \hbox (10.13332pt too wide) in paragraph at lines 14--15
+[][][] 
+ []
+
+[273
+
+]) (./src/Computing-Introduction.tex
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+ [274])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [275]
+(./src/Computing-AP_Timing.tex
+<fig/Neumann_Timing_Extended.pdf, id=4542, 330.30402pt x 178.58017pt>
+File: fig/Neumann_Timing_Extended.pdf Graphic file (type pdf)
+<use fig/Neumann_Timing_Extended.pdf>
+Package pdftex.def Info: fig/Neumann_Timing_Extended.pdf  used on input line 11
+.
+(pdftex.def)             Requested size: 345.0pt x 186.53644pt.
+) (./src/Computing-AP_Concept.tex [276]
+Underfull \vbox (badness 1342) has occurred while \output is active []
+
+ [277 <./fig/Neumann_Timing_Extended.pdf>])) (./src/Information.tex
+\openout7 = `manual.mtc'.
+
+\openout7 = `manual.mtc'.
+
+ (./manual.mtc4 [278])
+[279] [280]
+Chapter 5.
+(./src/Information-Foreword.tex)) (./src/Multiple.tex
+\openout7 = `manual.mtc'.
+
+\openout7 = `manual.mtc'.
+
+ (./manual.mtc5 [281
+
+])
+[282]
+Chapter 6.
+[283
+
+]) (./src/Intelligence.tex
+\openout7 = `manual.mtc'.
+
+\openout7 = `manual.mtc'.
+
+ (./manual.mtc6) [284]
+Chapter 7.
+
+Underfull \vbox (badness 7814) has occurred while \output is active []
+
+ [285
+
+])
+(./src/Simulation.tex
+Package minitoc Info: I0006
+(minitoc)             manual.mtc7 is empty on input line 5.
+ [286]
+Chapter 8.
+(./src/Simulation-Foreword.tex) [287
+
+] [288]
+<fig/GTKWave.png, id=4784, 337.5009pt x 164.7756pt>
+File: fig/GTKWave.png Graphic file (type png)
+<use fig/GTKWave.png>
+Package pdftex.def Info: fig/GTKWave.png  used on input line 132.
+(pdftex.def)             Requested size: 224.2479pt x 109.48135pt.
+) [289] [290 <./fig/GTKWave.png>]
+(./manual.lot)
+\tf@lot=\write11
+\openout11 = `manual.lot'.
+
+ [291
+
+
+] [292
+
+] (./manual.lof [293]
+Underfull \vbox (badness 8132) has occurred while \output is active []
+
+ [294]
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+ [295]
+Overfull \hbox (20.04245pt too wide) in paragraph at lines 29--29
+ [][] [][]\OT1/cmr/m/n/10 Simulating a volt-age clamped neu-ron by the pro-gram
+ GENESYS [[]], 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [296]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [297]
+[298])
+\tf@lof=\write12
+\openout12 = `manual.lof'.
+
+ [299] (./src/VersionHistory.tex
+Package minitoc Info: I0006
+(minitoc)             manual.mtc8 is empty on input line 4.
+ [300
+
+]) [301] (./manual.ind [302
+
+]
+[303] [304] [305
+
+]) (./manual.gls [306
+
+
+]) [307
+
+] (./manual.bbl [308
+
+]
+Underfull \hbox (badness 2197) in paragraph at lines 74--78
+\OT1/cmr/m/n/10 Uni-ver-sity Press, 1958).  URL []$\OT1/cmtt/m/n/10 https : / /
+ complexityexplorer . s3 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
+\OT1/cmtt/m/n/10 amazonaws . com / supplemental _ materials / 5 . 6 + Artificia
+l + Life /
+ []
+
+[309]
+Underfull \hbox (badness 1946) in paragraph at lines 127--129
+[]\OT1/cmr/m/n/10 P. Mi-tra, Na-ture Ma-chine In-tel-li-gence \OT1/cmr/bx/n/10 
+3 \OT1/cmr/m/n/10 (2021).  DOI $10 . 1038 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--135
+[]$\OT1/cmtt/m/n/10 https : / / sos-[]ch-[]dk-[]2 . exo . io / public-[]website
+-[]production-[]2022 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--135
+\OT1/cmtt/m/n/10 filer _ public / 6f / 70 / 6f706305-[]a2e3-[]45b8-[]a42b-[]dfb
+476222a6a /
+ []
+
+
+Underfull \hbox (badness 5637) in paragraph at lines 146--149
+[]\OT1/cmr/m/n/10 C.E. Shan-non, IRE Trans-ac-tions in In-for-ma-tion The-ory \
+OT1/cmr/bx/n/10 2\OT1/cmr/m/n/10 , 3
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--149
+\OT1/cmr/m/n/10 (1956).  URL []$\OT1/cmtt/m/n/10 http : / / csc . ucdavis . edu
+ / []cmg / papers / Shannon .
+ []
+
+[310]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
+[]\OT1/cmr/m/n/10 C.F. Craver, Syn-these \OT1/cmr/bx/n/10 153\OT1/cmr/m/n/10 (3
+), 355 (2006).  DOI $10 . 1007 /
+ []
+
+[311]
+Underfull \hbox (badness 1292) in paragraph at lines 247--250
+\OT1/cmr/m/n/10 (New York, MERED-ITH COR-PO-RA-TION, 1972).  DOI $10 . 1007 /
+ []
+
+[312]
+Underfull \hbox (badness 6125) in paragraph at lines 352--355
+[]\OT1/cmr/m/n/10 J. Rinzel, Bul-letin of Math-e-mat-i-cal Bi-ol-ogy \OT1/cmr/b
+x/n/10 52\OT1/cmr/m/n/10 (1), 5 (1990).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--355
+\OT1/cmr/m/n/10 URL []$\OT1/cmtt/m/n/10 https : / / www . sciencedirect . com /
+ science / article / pii /
+ []
+
+[313] [314]
+Underfull \hbox (badness 5460) in paragraph at lines 446--451
+[]\OT1/cmr/m/n/10 R. Ho, M. Horowitz.  More about wires and wire mod-els.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 446--451
+[]$\OT1/cmtt/m/n/10 https : / / web . stanford . edu / class / archive / ee / e
+e371 / ee371 . 1066 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--458
+[]\OT1/cmr/m/n/10 Wikipedia.  Roe-mer's de-ter-mi-na-tion of the speed of light
+.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--458
+[]$\OT1/cmtt/m/n/10 https : / / en . wikipedia . org / wiki / R % C3 % B8mer % 
+27s _ determination _
+ []
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 483--486
+[]\OT1/cmr/m/n/10 W.S. Mc-Cul-loch, W. Pitts, j-BULL-MATH-BIOPHYS \OT1/cmr/bx/n
+/10 5\OT1/cmr/m/n/10 (4), 115
+ []
+
+[315]
+Underfull \hbox (badness 2521) in paragraph at lines 579--584
+[]\OT1/cmr/m/n/10 K. Doblhoff-Dier, M.T. Koper, Cur-rent Opin-ion in Elec-tro-c
+hem-
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 579--584
+\OT1/cmr/m/n/10 101258$.  URL []$\OT1/cmtt/m/n/10 https : / / www . sciencedire
+ct . com / science / article /
+ []
+
+
+Underfull \hbox (badness 6961) in paragraph at lines 586--591
+[]\OT1/cmr/m/n/10 L.J. Gen-tet, G.J. Stu-art, J.D. Clements, Bio-phys-i-cal Jou
+r-nal
+ []
+
+
+Underfull \hbox (badness 4927) in paragraph at lines 586--591
+\OT1/cmr/bx/n/10 79\OT1/cmr/m/n/10 (1), 314 (2000).  DOI $https : / / doi . org
+ / 10 . 1016 / S0006-[]3495(00 )
+ []
+
+[316]
+Underfull \hbox (badness 5726) in paragraph at lines 605--612
+[]\OT1/cmr/m/n/10 M.F. Schnei-der, Progress in Bio-physics and Molec-u-lar Bi-o
+l-ogy
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 605--612
+\OT1/cmr/bx/n/10 162\OT1/cmr/m/n/10 , 2 (2021).  DOI $https : / / doi . org / 1
+0 . 1016 / j . pbiomolbio . 2020 . 10 .
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 657--660
+\OT1/cmr/m/it/10 Padova, 5-8, sept 2023; at Padova, Italy \OT1/cmr/m/n/10 (2024
+).  DOI $10 . 6093 /
+ []
+
+[317]
+Underfull \hbox (badness 10000) in paragraph at lines 693--697
+\OT1/cmr/m/n/10 URL []$\OT1/cmtt/m/n/10 https : / / braininformatics . springer
+open . com / articles / 10 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--704
+[]$\OT1/cmtt/m/n/10 https : / / science . osti . gov / -[] / media / ascr / pdf
+ / programdocuments /
+ []
+
+[318]
+Underfull \hbox (badness 1221) in paragraph at lines 760--763
+[]\OT1/cmr/m/n/10 N. Rouleau, M. Levin, Nat Mach In-tell \OT1/cmr/bx/n/10 6\OT1
+/cmr/m/n/10 , 1424 (2024).  DOI 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--763
+\OT1/cmr/m/n/10 10 . 1038 / s42256-[]024-[]00955-[]y$.  URL []$\OT1/cmtt/m/n/10
+ https : / / doi . org / 10 . 1038 /
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 778--781
+[]\OT1/cmr/m/n/10 IEEE/Accellera.  Sys-tems ini-tia-tive.  []$\OT1/cmtt/m/n/10 
+http : / / www . accellera . org /
+ []
+
+)
+Package minitoc Info: I0009
+(minitoc)             Listing minitoc auxiliary files. 
+(minitoc)             Creating the manual.maf file.
+\openout7 = `manual.maf'.
+
+
+
+Package minitoc(hints) Warning: W0024
+(minitoc(hints))                Some hints have been written 
+(minitoc(hints))                in the manual.log file.
+
+[319] (./manual.aux)
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `manual.out' has not changed.
+(rerunfilecheck)             Checksum: 59220C12AAB8F8C27E68F5FEE4F5A26F;25087.
+ ) 
+Here is how much of TeX's memory you used:
+ 22548 strings out of 480129
+ 422335 string characters out of 5893409
+ 765837 words of memory out of 5000000
+ 38769 multiletter control sequences out of 15000+600000
+ 478465 words of font info for 59 fonts, out of 8000000 for 9000
+ 81 hyphenation exceptions out of 8191
+ 91i,19n,91p,1806b,1075s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/jvegh/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600
+pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmss10.pfb>
+Output written on manual.pdf (327 pages, 7882468 bytes).
+PDF statistics:
+ 6022 PDF objects out of 6186 (max. 8388607)
+ 5347 compressed objects within 54 object streams
+ 987 named destinations out of 1000 (max. 500000)
+ 1637 words of extra memory for PDF output out of 10000 (max. 10000000)
+

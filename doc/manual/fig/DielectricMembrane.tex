@@ -1,0 +1,448 @@
+\documentclass[border= 5mm]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{animate}
+\usepackage{adjustbox}
+\usetikzlibrary{
+	shapes,
+	positioning,
+	intersections,
+	fillbetween,
+	arrows,
+	fit,
+	backgrounds,
+	calc,
+	tikzmark,
+	arrows.meta,
+	shadows,
+	automata}
+\pgfplotsset{compat=1.10} 
+\usepackage{pgfplotstable}
+   \definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webblue}{rgb}{0,0,.8}
+\definecolor{webred}{rgb}{0.8, 0, 0}   
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{webyellow}{rgb}{0.98,0.92,0.73}
+\definecolor{webgray}{rgb}{.753,.753,.753}
+
+
+
+\begin{document}
+	\def\EGapTotal{0.44}
+	\def\MembranePos{-5.}
+	\def\DeltaZ{0.5}
+	\def\z{(0.2*(\MembranePos-\x))}
+	\def\zz{(0.2*\x)}
+	\def\DielectricField{-0.25*\EGapTotal*(
+		ln(\z/(\z+1)))
+	}
+	\def\MinusDielectricField{-0.25*\EGapTotal*(
+	ln(\zz/(\zz+1)))
+}
+	{\maxsizebox{.5\textwidth}{!}
+		{
+			
+\begin{tikzpicture}%[scale=1.5]
+	\begin{axis}[
+		%  axis y line*=left,
+		%			title={\huge Membrane potential dependence on distance},
+		width=\textwidth,
+		xlabel=$\large Distance\ from\ membrane\ (10^{-9}\ m)$,
+		ylabel=$\large Electric\ field\ (10^7\ V/m)$,
+		ymin=-0.45, ymax=0.45,
+		xmin=-9, xmax = 7,
+		%			ymode=log,
+		%			log basis y=10,
+		legend style={
+			cells={anchor=west},
+			legend pos={north east},
+		},
+		]
+
+% Charged layer
+\addplot[
+webred,
+no marks, mark=*, mark size=2, very thick, forget plot,
+] plot coordinates {
+	(\MembranePos-\DeltaZ,.6*\EGapTotal)
+	(\MembranePos,\EGapTotal)
+};
+
+
+\addplot[
+webred,
+no marks, mark=*, mark size=2, very thick,
+] plot coordinates {
+	(\DeltaZ,-.6*\EGapTotal)
+	(0,-\EGapTotal)
+};
+
+
+\addplot[
+webred, dashed, very thick,
+no marks, mark=*, mark size=2, ultra thick, forget plot,
+] plot coordinates {
+	(\MembranePos+0.0,\EGapTotal)
+	(\MembranePos+0.05,-\EGapTotal)
+};
+
+\addlegendentry{Ion layer field}
+
+\addplot[samples=100,domain=-15:\MembranePos-\DeltaZ,webred, dotted, ultra thick, forget plot]
+{\DielectricField} ;
+
+\addplot[samples=100,domain=\DeltaZ:10,webred, dotted, ultra thick]
+{\DielectricField} ;
+\addlegendentry{Dielectric field}
+
+%\addlegendentry{Charged layers}
+
+\addplot[
+webred, dashed, thick,
+no marks, mark=*, mark size=2, very thick,
+] plot coordinates {
+	(\MembranePos,-\EGapTotal)
+	(0,-\EGapTotal)
+};
+\addlegendentry{Membrane gap field}
+
+%Draw membrane
+\addplot[
+webgreen,
+no marks, mark=*, mark size=2, thin, forget plot
+] plot coordinates {
+	(\MembranePos,-0.5)
+	(\MembranePos,-0.1)
+};
+\addplot[
+webgreen,
+no marks, mark=*, mark size=2, thin, forget plot
+] plot coordinates {
+	(\MembranePos,0.5)
+	(\MembranePos,0.1)
+};
+
+%\addplot[green!25] fill between[of=ChargedA and MembraneA];
+\addplot[
+webgreen,
+no marks, mark=*, mark size=2, thin, forget plot
+] plot coordinates {
+	(0,-0.5)
+	(0,-0.1)
+};
+\addplot[
+webgreen,
+no marks, mark=*, mark size=2, thin%very thick%, forget plot
+] plot coordinates {
+	(0,0.1)
+	(0,0.5)
+};
+\addlegendentry{Membrane surface}
+
+\addplot[
+webblue, dotted, very thick,
+no marks, mark=*, mark size=2, ultra thick, forget plot
+] plot coordinates {
+	(-9,0)
+	(\MembranePos,0)
+};
+
+\addplot[
+webblue, dashed, very thick,
+no marks, mark=*, mark size=2, ultra thick, forget plot,
+] plot coordinates {
+	(\MembranePos-0.1,0)
+	(\MembranePos,+\EGapTotal/4)
+};
+
+\addplot[
+webblue, dashed, very thick,
+no marks, mark=*, mark size=2, ultra thick, forget plot,
+] plot coordinates {
+	(\MembranePos,\EGapTotal/4)
+	(\MembranePos+0.15,-\EGapTotal/4)
+};
+
+\addplot[
+webblue, dashed, thick,
+no marks, mark=*, mark size=2, ultra thick, forget plot,
+] plot coordinates {
+	(\MembranePos,-\EGapTotal/4)
+	(0,-\EGapTotal/4)
+};
+
+\addplot[
+webblue, dotted, very thick,
+no marks, mark=*, mark size=2, ultra thick, forget plot,
+] plot coordinates {
+	(0,0)
+	(-0.05,-\EGapTotal/4)
+};
+
+\addplot[
+webblue, dotted, very thick,
+no marks, mark=*, mark size=2, ultra thick,
+] plot coordinates {
+	(0,0)
+	(7,0)
+};
+
+\addlegendentry{Classic field}
+
+% Now draw the ion channel
+\addplot[
+orange, thick,
+no marks, mark=*, mark size=2, thin
+] plot coordinates {
+	(-5,0.1)
+	(0,0.1)
+};
+\addplot[
+orange, thick,
+no marks, mark=*, mark size=2, thin, forget plot
+] plot coordinates {
+	(-5,-0.1)
+	(0,-0.1)
+};
+\addlegendentry{Ion channel}
+% Add a cap
+\addplot[
+webblue, %thick,
+no marks, mark=*, mark size=2, very thick%, forget plot
+] plot coordinates {
+	(0,0.1)
+	(1.8,-0.06)
+};
+\addlegendentry{Cap}
+	% Draw Delta z			
+\addplot[
+webgreen,dashed,
+no marks, mark=*, mark size=2, very thick, forget plot
+] plot coordinates {
+	(\MembranePos-\DeltaZ,0.3)
+	(\MembranePos-\DeltaZ,0.5)
+};
+
+% Draw Delta z			
+\addplot[
+webgreen,dashed,
+no marks, mark=*, mark size=2, very thick%, forget plot
+] plot coordinates {
+	(+\DeltaZ,-0.3)
+	(+\DeltaZ,-0.5)
+};
+\addlegendentry{Ion layer thickness}
+
+
+% Add a 'fast' ion 			
+\addplot[
+webred, 
+ mark=*, mark size=3, 
+] plot coordinates {
+		(-5.15,0.40)
+	};
+
+\addplot[
+webred, 
+mark=*, mark size=3, 
+] plot coordinates {
+	(0.15,-0.40)
+};
+\addplot[
+webred, 
+mark=o, mark size=3, 
+] plot coordinates {
+	(-5.15,0)
+};
+
+% Add a 'slow' ion 			
+\addplot[
+webgreen, 
+mark=*, mark size=3, 
+] plot coordinates {
+	(-8,0.11)
+};
+
+
+\addplot[
+webred, 
+mark=o, mark size=3, 
+] plot coordinates {
+	(0.15,0)
+};
+\addplot[
+webgreen, 
+mark=o, mark size=3, 
+] plot coordinates {
+	(-8,00)
+};
+\addplot[
+webgreen, 
+mark=*, mark size=3, 
+] plot coordinates {
+	(-7,.135)
+};
+\addplot[
+webgreen, 
+mark=o, mark size=3, 
+] plot coordinates {
+	(-7,00)
+};
+
+      \node[anchor=west, rectangle, rounded corners,fill=webred!20] (after) at (axis cs:-3.4,0.2){$E_{accelerate}$};
+\node (VoltageAA) at (axis cs:-5.15,0.40){};
+\node (VoltageBB) at (axis cs:.15,-0.4){};
+\draw[->,dashed,  webgreen](after)--(VoltageAA);
+\draw[->,dashed,  webgreen](after)--(VoltageBB);
+\draw[->,dashed,  webgreen](after)--(axis cs:-5.15,0);
+\draw[->,dashed,  webgreen](after)--(axis cs:0.15,0);
+
+      \node[anchor=west, rectangle, rounded corners,fill=webred!20] (after) at (axis cs:-8.5,-.1){$E_{assist}$};
+\node (VoltageAB) at (axis cs:-8,0.115){};
+\node (VoltageAC) at (axis cs:-7,0.14){};
+\draw[->,dashed,  webgreen](after)--(VoltageAB);
+\draw[->,dashed,  webgreen](after)--(VoltageAC);
+\draw[->,dashed,  webgreen](after)--(axis cs:-8,0);
+\draw[->,dashed,  webgreen](after)--(axis cs:-7,0);
+% Move arrows of ions
+\draw[->,  webgreen,  ultra thick](axis cs:-8,0)--(axis cs:-7,0.);
+\draw[->,  webred,  ultra thick](axis cs:-5.15,0)--(axis cs:0.15,0.);
+
+			\end{axis}
+			\end{tikzpicture}
+		}
+	}
+	
+		
+\end{document}
+
+%			\newcommand\ConcentrationmM[1]{\pgfmathparse{#1}}
+%			\newcommand\Deltaznm[1]{\pgfmathparse{#1}}
+%			% Concentration, in mM
+%			% Avogadro_constant (N_A) 6.02214076e23 [1/Mol]
+%			% Avogadro_constant (N_A) 6.02214076e20 [1/mMol]
+%			% Electron_charge, 1.602176634e−19 [Cb]
+%			% FaradayConstant F 9.64853321233100184e4
+%			% Assumed width of the physical layer, for calculating \sigma, nanometer
+%			% Permittivity
+%			\def\Epsilon_0{8.854187813e-12}
+%			% Volumetric concentration
+%			% c * Avogadro_Constant * Electron_charge
+%			% Volumetric charge density in \frac{C * mM }{ m^3}
+%			\newcommand\SigmaVmMperCubic[1]{
+	%				#1*6.02214076*1.602176634*10}
+%%\pgfmathparse{\SigmaVmMperCubic{1}}\pgfmathresult
+%		% Return surface charge density [mM,nm] in \frac{C * mM }{ m^2}
+%			\newcommand\SigmaAmMPerSquare[1]{#1*6.02214076*1.602176634*10}
+%\pgfmathparse{\SigmaAmMPerSquare{1,}\pgfmathresult					\def\MembraneBulkPotential{5}
+	%			\def\MembraneFactor{1}
+	%			\def\MembraneDistance{x}
+	%			\def\MembraneWidth{5}
+	%			\def\AtomWidth{0.1}
+	%			\def\MembraneOffset{0}
+	%			\def\MembraneGradient{\MembraneBulkPotential*(ln(\MembraneDistance/(\MembraneDistance+\MembraneWidth)))}
+	%			\def\MembranePotential{0.1}
+	%			%*\MembraneBulkPotential}
+%				%*(ln(\MembraneDistance/(\MembraneDistance+\MembraneWidth)))/(abs(\MembraneDistance+\MembraneWidth))}
+
+
+\begin{tikzpicture}%[scale=1.5]
+\begin{axis}[
+	%  axis y line*=left,
+	%			title={\huge Membrane potential dependence on distance},
+	width=\textwidth,
+	xlabel=\large Distance from membrane $(nm)$,
+	ylabel=\large Voltage and gradient $(arb.\ u)$,
+	ymin=0, ymax=+100,
+	xmin=-6, xmax = -5,
+	%			ymode=log,
+	%			log basis y=10,
+	legend style={
+		cells={anchor=west},
+		legend pos={north west},
+	},
+	]
+	\def\MembraneBulkPotential{5}
+	
+	%			\addplot[samples=100,domain=-10:-\MembraneWidth-1,webblue, forget plot]
+	%{\MembranePotential} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-1:-\MembraneWidth-.05,webblue, forget plot]
+	%{\MembranePotential} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-1:-\MembraneWidth-.01,webblue]
+	%{\MembranePotential} ;
+	%\addplot[samples=10,domain=-\MembraneWidth-.05:-\MembraneWidth-.04,webblue
+	%{\MembranePotential} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-.01:-\MembraneWidth-.001,webblue]
+	%\addlegendentry{Membrane potential}
+	
+	
+	%			\addplot[samples=100,domain=-10:-\MembraneWidth-1,webred]
+	%{\MembraneGradient} ;
+	%			\addplot[samples=100,domain=-\MembraneWidth-1:-\MembraneWidth-.1,webred]
+	%{\MembraneGradient} ;
+	%			\addplot[samples=100,domain=-\MembraneWidth-.1:-\MembraneWidth-.01,webred]
+	%{\MembraneGradient} ;
+	%			\addplot[samples=100,domain=-\MembraneWidth-.01:-\MembraneWidth-.001,webred]
+	%{\MembraneGradient} ;
+	%
+	%%			\addplot[samples=100,domain=1:6,webred]
+	%{\MembraneGradient} ;
+	%			\addplot[samples=100,domain=.1:1,webred]
+	%{\MembraneGradient} ;
+	%			\addplot[samples=100,domain=.01:.1,webred]
+	%{\MembraneGradient} ;
+	%			\addplot[samples=100,domain=.001:.01,webred]
+	%{\MembraneGradient} ;
+	%\addlegendentry{Membrane gradient}
+	%
+	%
+	%%% Draw the second potential
+	%			\def\MembraneBulkPotential{10}
+	%
+	%\addplot[samples=100,domain=-10:-\MembraneWidth-1,webred,very thick]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-1:-\MembraneWidth-.1,webred,very thick]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-.1:-\MembraneWidth-.01,webred,very thick]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-.01:-\MembraneWidth-.001,webred,very thick]
+	%{\MembraneGradient} ;
+	%
+	%
+	%			\addplot[samples=100,domain=1:6,webred,very thick]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=.1:1,webred,very thick]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=.01:.1,webred,very thick]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=.001:.01,webred,very thick]
+	%{\MembraneGradient} ;
+	%
+	%\addlegendentry{Bulk potential 10}
+	%
+	%%% Draw the third potential
+	%\def\MembraneBulkPotential{20}
+	%
+	%
+	%\addplot[samples=100,domain=-10:-\MembraneWidth-1,webred]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-1:-\MembraneWidth-.1,webred]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-.1:-\MembraneWidth-.01,webred]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=-\MembraneWidth-.01:-\MembraneWidth-.001,webred]
+	%{\MembraneGradient} ;
+	%
+	%			\addplot[samples=100,domain=1:6,webred]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=.1:1,webred]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=.01:.1,webred]
+	%{\MembraneGradient} ;
+	%\addplot[samples=100,domain=.001:.01,webred]
+	%{\MembraneGradient} ;
+	%
+	%\addlegendentry{Bulk potential 20}
+	%%
+	%

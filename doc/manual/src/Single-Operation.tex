@@ -1,0 +1,282 @@
+% The conceptual discusion of abstract hypotheses
+
+
+\subsection[Life cycle]{Life cycle\label{sec:Single-LifeCycle}}
+
+
+Living organisms change from moment to
+moment along their internal laws
+and we can study them at different abstraction levels. "Despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity,
+\textit{the nervous systems adopts a number of
+ basic principles}". \cite{JohnstonWuNeurophysiology:1995} Although we will discuss
+their internal operation in terms of particular processes  (the actual level depends on the process),
+here we classify the obvious results of observations according to the principles
+the foreword to this chapter mentions: how nature implements those "basic rules" 
+by more simple \textit{processes} and \textit{states} (which we can describe by using
+ordinary or extraordinary laws) and which \textit{events} it provides for the observer
+(which we can use for staging those very complex "signs of life"). 
+
+Fig.~\ref{fig:NeuronStateMachine} illustrates our abstract view of a neuron,
+in this case as a "stage machine".
+Notice that the double circles are \textit{stages} (\textit{states} with event-defined periods) connected 
+by bent arrows representing \textit{instant stage transitions}, while at some other abstraction level we consider them as \textit{processes} having a temporal course
+with their own \textit{event} handling. Fundamentally, the system is circulating along the blue pathway, and maintains its state by using 
+the black loops, but sometimes it takes the less common red pathways.
+It reveives its inputs cooperatively
+(controls the accepted amount of its external inputs from the upstream neurons by gating them by regulating a stage variable), furthermore
+it actively communicates \textit{the time of its state change} (that is: \textit{not its state} as assumed in the so called neural information theory) toward the downstream neurons in a process
+parallel with its mentioned activity.
+
+\subsection[Stages]{Stages of operation\label{sec:Single-OperationStages}}
+
+Initially, a neuron is in stage "Relaxing" which is the ground state of its operation.
+(We also introduce a "Sleeping" or "Standby" helper stage, which can be imagined 
+as a low-power mode in electronical or state maintenance mode of biological  computing; or "creating the neuron" in biology; a "no payload activity" stage.) The stage transition from "Sleeping" also \textit{resets the internal stage variable} membrane potential (to the value of the resting potential).
+In biology, a "leakage" background activity takes place: it changes (among others) the stage variable towards the system's "no activity" value.
+
+\begin{figure*}
+\iflatexml
+\includegraphics[width=.65\textwidth]{fig/NeuronStateMachineSimple.svg}
+\else
+\includegraphics[width=0.65\textwidth]{fig/NeuronStateMachineSimple.pdf}
+\fi
+		\caption{The model of neuron as an abstract state machine\label{fig:NeuronStateMachine}}
+\end{figure*} 
+
+An event (in form of a pulse of slow ions) arriving from the environment acts as a "look at me" signal
+\index{slow current}
+and the system passes to "Computing" stage: an excitation begins.
+The external signal
+acts as triggering a stage change and, simultaneously, contributes to the value of the internal stage variable (membrane voltage).
+During normal operation, when the stage variable reaches the critial value (the threshold potential),
+the system generates an event: passes to stage "Delivering" and "flushes" the collected charge.
+In that stage, it starts to deliver a signal toward the environment
+(to  the other neurons connected to its axon) and after a fixed period, passes to stage "Relaxing",
+without resetting the stage variable. From this event on, it is again in stage
+"Relaxing", where the "leakage" and the input pulses from the upstream neurons contribute to its
+stage variable. Process "Delivering" operates an independent subsystem ("Firing"): happens simultaneously with 
+process of "Relaxing" which, after some time, usually passes to the next "Computing".
+
+\textit{The stages "Computing" and "Delivering" mutually block 
+each other and the I/O operations happen in parallel with them}. They have temporal lengths, and they must follow in the well-defined order (a "proper sequencing"~\cite{EDVACreport1945,VeghRevisingClassicComputing:2021}) "Computing"$\Rightarrow$ "Delivering"$\Rightarrow$"Relaxing". Theoretically, \textit{a three-state system is needed to define the direction of time}~\cite{ThreeStateUnidirectional:2004}; a fundamental issue for quantum-based computing is the lack of a third state. In electronical computing we can introduce this as "up" edge and "down" edge, with a "hold" stage between.  A charge-up process must always happen before discharging. Stage "Delivering" has a fixed period, stage "Computing" has a variable period (depends mainly on the upstream neurons), and the total length of the computing period equals their sum. The (physiologically defined) length of the "Delivering" period limits neuron's firing rate; the length of "Computing" is usually much shorter.
+
+In any stage, a "leak current" (through ion channels, but mainly the \gls{AIS}
+instead of the membrane)
+changing the stage variable is present; \textbf{\textit{the continuous change (the presence of a voltage gradient) has a fundamental importance for a biological computing system}}
+ \index{voltage gradient}
+This current is proportional to the stage variable (membrane current); it is \textbf{\textit{not}} identical with the fixed-size "leak current" assumed in the Hodgkin-Huxley model~\cite{HodgkinHuxley:1952}.
+The event which is issued when stage "Computing" ends and "Delivering" begins, separates two physically different operating modes: inputting payload signals for computing
+and inputting "servo" ions for transmitting
+(signal transmission to fellow neurons begins and happens in parallel
+with further computation(s)).
+Given that stages "Computing" and "Delivering" take time,
+and the next "Computing" can only start through the stage "Relaxing",   
+furthermore "Delivering" can only begin after "Computing" finished,
+\textit{these stages mutually block each other} (and the length of the "Delivering" period limits neuron's firing rate). 
+
+There are two more possible stage transitions from the stage "Computing".
+First, the stage variable (due to "leaking") may approach its initial value (the resting potential) without firing and the system passes to stage "Relaxing"; in this case we consider that the excitation "Failed".
+This happens when leaking is more intense than the input current pulses (the input firing rate is too low or a random firing event started the computing).
+Second, an external pulse may have the effect to force the system (independently from the value of the stage variable) to pass instantly to stage "Delivering", and after that, to "Relaxing". (When several neurons share that input signal,
+they will go to "Relaxing" at the same time: they get synchronized; a simple way of synchronizing low-precision asynchronous oscillators.)
+
+
+Anyhow: a neuron operates in cooperation with in its environment (the fellow neurons, with outputs distributed in space and time).
+It receives multiple inputs at different times (at different offset times from the different upstream neurons) and in different stages. 
+In stage "Computing", the synaptic inputs are open, while
+in stage "Delivering", the synaptic inputs are closed (the input is ineffective).
+It produces multiple outputs (in the sense that the signal may branch along its path), in form of a signal with temporal course.
+ 
+
+%\subsection[Overview]{Overview of stages\label{sec:Single-StagesOverview}}
+
+
+\subsubsection[Computing]{Stage 'Computing'\label{sec:Single-OperationComputing}}
+%\subsubsection{Stage 'Computing'\label{sec:Single-OperationComputing}}
+
+The neuron receives its inputs as 'Axonal inputs'. For the first input in stage 'Relaxing',
+the neuron enters stage 'Computing'. 
+The  time of this event is the base time used for calculating the neuron's "local time" (in describing the operation and in the simulator). 
+\index{local time}
+Notice that producing the result is a cooperation 
+between the neuron and its upstream neurons (the neuron gates its input currents). One of the upstream neurons
+opens computing, and the receiving neuron terminates it.
+
+
+The physical implementation is
+a steep current gradient which evokes a steep \hyperlink{voltage_gradient}{voltage gradient} $dV/dt$
+on the condenser 'membrane' in its intracellular segment, see section~\ref{subsec:Single-PSP}. 
+\index{voltage gradient}
+The membrane is connected to the axon through a resistor 
+%\gls{AIS}
+'AIS'
+(these components, switched in serial, constitute the \hyperlink{PhysicsOscillator}{neuronal oscillator}).
+Given that the current creates a potential gradient on the membrane, the 
+increased potential starts a current ("Leaking") proportional to the voltage difference
+between the membrane and the axon (across the AIS). This current decreases
+the membrane's potential (discharges the condenser). In lack of further 
+excitation, the membrane's potential decreases back to its resting value
+and the neuron returns to stage 'Relaxing'.
+
+However, for repeated excitation, when the next 'Axonal input' arrive(s) before
+the neuron returns to stage 'Relaxing', the voltage increases further, and it might reach
+a threshold voltage. In such a case, the neuron enters stage 'Delivering'
+(the red section of the broken diagram line). The time at which point this happens
+depends on the arrival of spikes and the discharge of the membrane (when the
+difference of the received charge and the loss due to discharge evokes
+a sufficiently large voltage on the condenser's capacity). At that point,
+the computation is finished. \textit{The result of the computation is
+the time} passed between receiving the first 'Axonal input' and the time when
+the neuron closes its input sources (and simultaneously, opens the ion channels
+in its wall, see below, to enter stage "Delivering").  No more input shall be received, so
+the neuron disables its synaptic inputs, and prepares for delivering 
+the result of its 'computation' (nothing shall be stored: the result is the time of sending the message, but the delivery period takes time; is a fixed-length
+process, will follow immediately). 
+In this stage, the role of the slow speed is not evident. The current 
+arrives through an axon, passes the terminal and arrives at the AIS;
+the time components cannot be separated. 
+
+
+\subsubsection[Delivering]{Stage 'Delivering'\label{sec:Single-OperationDelivering}}
+In this stage,
+the result is ready: the time between the arrival of the first
+synaptic input and reaching the membrane's threshold voltage is measured.
+No more input is desirable, so the neuron's input synapses remain closed.
+Simultanously, the neuron starts it "servo" mechanism: it opens its ion channels
+and an intense ion current starts to charge the membrane. 
+It is an 'instant' current.
+The voltage on the membrane quickly rises, but it takes a short time
+until its peak voltage reached.
+Given that the charge-up current is instant and the increased
+membrane voltage drives an outward current, the membrane voltage
+gradually decays.
+When the voltage drops below the threshold voltage, the neuron re-opens its synaptic inputs and passes to stage "Relaxing": it is ready for the next operation. The signal transmission to downstream neurons
+happens in parallel with the recent "Delivering" stage and
+the next "Relaxing" and maybe "Computing" stages. 
+%The actual electric operation is discussed in section~\ref{sec:Physics-OperationDelivering}.
+
+Delivering the result needs huge power because of the noisy environment and 
+the huge distances, so at the beginning of the 'Delivery' phase,
+the neuron switches in a 'servo' mechanism. Exceeding the threshold voltage
+(either as a consequence of the 'spatiotemporal' summing several spikes or a single spike with sufficiently large voltage gradient~\cite{LosonczyIntegrative:2006}) opens the voltage-gated ion channels in the membrane's wall. 
+Due to the
+vast voltage gradient across the two segments of the membrane, an enormous 
+amount of ions rush-in into the intracellular space and the intense current
+increases the membrane's potential; for the details see section~\ref{sec:Physics-Electricity}. The amount of the rushed-in ions
+is several times more than those received during the stage 'Computing'.
+
+The ion channels over the surface of the neuron open
+at the same time, and they are open only for a very short period
+(actually, they implement a sudden "step current"). However, this 
+current on the surface is created at different distances from the \gls{AIS}
+and (due to the final speed of the ions) and the time until the ions 
+arrive at the \gls{AIS} depends on the distance to \gls{AIS}.
+Due to this effect, the current quickly increases;
+until it reaches a maximum. 
+The time when the \gls{AP} reaches maximum value (due to the event that
+the current from the most distant places of the membrane could reach \gls{AIS}), 
+and from this point it starts to decrease.
+(there is no other special threshold voltage value:
+the charge from the rush-in current distributes on the surface;
+the current injection can charge the fixed capacity 
+membrane to that voltage).
+At this point the neuronal condenser is maximally depolarized.
+\index{depolarization}
+
+The neuronal condenser is loaded to its maximum, and the resistor (the \gls{AIS})
+enables a current to flow out, so the condenser (the membrane) discharges (repolarizes).
+Here enters into the picture that the neuron is resemblant to a serial oscillator.
+The condenser stores the charge for some period, and releases it to the \gls{AIS}
+at a later time. As a result, the direction of the current on the neuron's
+membrane reverses, see the shape of the output voltage in table~\ref{tab:Electric_RCOscillator_Circuits}.
+The essential difference between the serial and parallel $RC$ oscillators is
+that the differentiator circuit can produce opposite voltage on its output
+without assuming any additional mechanism, such as an outward current,
+given that \textit{a current pulse has rising and falling edges which can natively produce 
+positive and negative voltage derivatives}.
+As the result of the process, the potential reaching the AIS goes to negative;
+a phenomenon called hyperpolarization.
+\index{hyperpolarization}
+
+Notice that the current in the red section (plus also in the blue section) 
+of the diagram line still originates from the rushed-in charge. The observer
+sees the sum of the resistive and capacitive currents;
+maybe new axonal inputs superimposed.
+The ion current's finite speed plays again. When the axonal arbors re-open,
+the ion flows into the membrane at some distant point, so its effect
+will be observed some time later; apparently when the neuron membrane is
+about its hyperpolarized state. 
+
+\subsubsection[Relaxing]{Stage 'Relaxing'\label{sec:Single-OperationRelaxing}}
+
+In this stage,
+the neuron re-opens its synaptic gates. Recall that the ion channels
+used for generating an intense membrane current
+are already closed. The neuron passes to stage 'Relaxing' and is ready for a new computation:
+the previous result is under delivering (parallelly, independently),
+the axonal inputs are open again. 
+However, the membrane's potential at this point may differ from the
+resting potential.  A new computation begins
+(the neuron passes to the stage "Computing")
+when a new axonal input arrives.  Given that the computation is analog, a current flows through the AIS, and the result is the length of the period to reach
+the threshold value, the 
+membrane voltage plays the role of an accumulator (with a time-dependent content): a non-zero initial value acts as a short-time memory in the next computing cycle.
+The local time is reset when a new computing cycle begins, but not when eventually the resting potential reached.
+%The actual electric operation is discussed in section~\ref{sec:Physics-OperationRelaxing}.
+\index{local time}
+
+As the membrane's voltage drops below the threshold voltage,
+the neuron re-opens its synaptic gates (the ion channels in the membrane's wall
+are already closed). The neuron passes to stage 'Relaxing' and is ready for a new computation:
+the previous result is under delivering (parallelly, independently),
+the axonal inputs are open again. 
+However, the membrane's potential at this point may differ from the
+resting potential. Given that the computation is analog, the 
+membrane voltage plays the role of an accumulator (with a time-dependent content,
+given that the current flows though the AIS). A new computation begins
+(the neuron passes to the stage "Computing")
+when a new axonal input arrives. Given that the result is the time to reach
+the threshold value, the non-zero initial value acts as a short-time memory.
+
+The ion current's finite speed plays again. When the axonal arbors re-open,
+the ion flows into the membrane at some distant point, so its effect
+will be observed some time later; apparently when the neuron membrane is
+about its hyperpolarized state. 
+
+
+ 
+\subsubsection[Classic]{Classic stages\label{sec:Single-OperationClassicStages}}
+We can map our 'modern' stages to those 'classic' stages and we can see
+why defining the length of the Action Potential
+%AP
+is problematic.
+The effect of slow current affects the apparent boundary between our
+"Delivering" stage and "Relaxing" stages. 
+Classical physiology sees the difference and distinguishes 'absolute' and 
+'relative' refractory periods with a smeared boundary between. Furthermore,
+it defines the length of the spike with some characteristic point,
+such as reaching the resting value for the first or second time, or
+reaching the maximum polarization/hyperpolarization.  Our derivation of the stages (see Fig.~\ref{fig:AP_Conceptual}) defines clear-cut breakpoints between them.
+
+We can define the length of the spike as the sum of the variable-size length of period "Computing" and fixed-size period "Delivering". The "absolute refractory" 
+period is defined as the period while the neuron membrane's voltage keeps
+the gates of the synaptic inputs closed (the value of membrane voltage is above their threshold). That period is apparently extended 
+(and interpreted as a "relative refractory" period, which sensitively depends
+on the conduction velocity~\cite{APTemperatureDependenceRefractory:2001})
+by the period when although the gating is re-enabled, but the slow current did not
+yet arrive to the 
+\gls{AIS}
+where it contributes to the measured 
+\gls{AP}, see Fig.~\ref{fig:AP_Conceptual}.  \textit{Only one refractory period exists,
+plus the effect of the slow current.}
+\index{refractory period}
+
+\subsection[Computing]{Computing\label{sec:Single-Computing}}
+
+We accept the truism that "The brain computes!"~\cite{KochBiophysics:1999} and elaborate in Chapter~\ref{ch:Computing}
+how neuronal computing can be interpreted in terms of 
+the general computing theory.
+Here we define the terms of abstract neuronal operation
+we use there and below when discussing the physical operation of the neuron.
+
+

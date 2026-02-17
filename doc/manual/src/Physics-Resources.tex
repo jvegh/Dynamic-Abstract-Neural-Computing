@@ -1,0 +1,76 @@
+\subsection{Finite resources\label{sec:Physics-Resources}}
+
+\begin{advanced}
+"How can \textit{the events in space and time} which take place \textbf{\textit{within the spatial boundary}} of a living organism be accounted for by physics and chemistry?"~\cite{Schrodinger:1992}
+\end{advanced}
+Co-existing processes may affect each other by \hypertarget{ChangingResources}{changing resources}:
+changing one quantity changes the other.
+Mathematics descibes such processes by linked differential equations, such as the \href{https://en.wikipedia.org/wiki/Lotka-Volterra_equations}{Lotka-Volterra} (or \hypertarget{predator_prey}{"predator-prey"}) equations.
+
+
+\subsubsection{Ion channels\label{sec:Physics-ResourcesIonChannels}}
+
+
+We want to describe the change of voltage due to
+limited resources using an idea similar to the predator-prey model.
+We have charged sheets (represented by ions in the electrolyte) with potential $U_H$ and $U_L$
+on the two surfaces of the membrane, 
+plus we consider 
+the corresponding neighboring layers on their side toward the "bulk" of the segment. We assume that the layers'capacity is constant, so the change of charge is linearly proportional to the change of the voltage.
+
+
+\begin{figure}
+\iflatexml
+\includegraphics[width=0.65\textwidth]{fig/IonChannelRK.svg}
+\else
+\includegraphics[width=0.65\textwidth]{fig/IonChannelRK.pdf}
+\fi
+	
+	\caption{The potential values connected to the operation of ion channels. The arbitrary values of the transfer speeds (for visibility instead of approach real values) are $\alpha = 1$; 
+	$\beta  =.1$; $\gamma = 0.0001$; furthermore the time scale is also arbitrary.
+	\label{fig:IonChannelRK} }	
+\end{figure}
+
+
+
+We consider that a charge transfer happens from the layer with potential~$U_H$~to the layer with potential~$U_L$~
+(that is, the \textit{same charge} is removed and added, respectively) with a high speed (we call it \textit{potential-accelerated} speed),
+\index{potential-accelerated speed}
+ furthermore, that with a much lower speed 
+(we call it \textit{potential-assisted} speed)
+\index{potential-assisted speed}
+the charge in the neighboring layer increases and decreases, respectively, those voltages are ($U_{H-1}$~and~$U_{L+1}$). 
+
+
+That is, we assume four voltages and the initial conditions
+\[
+U_{H-1} = U_{H} = U; \quad U_{L=1} = U_{L+1} = 0;
+\]
+%	
+We assume a constant capacity for the layers and that the amount of transferred charge (or voltage) is proportional to the difference of voltages in the respective layers.
+\[
+\frac{dU_{H}}{dt} =  -\alpha * (U_H-U_L) + \beta *(U_{H-1}-U_H)
+\]
+%
+\[
+\frac{dU_{L}}{dt} = +\alpha * (U_H-U_L) - \beta *(U_{L}-U_{L+1})
+\]
+%
+Furthermore, we assume that the after-diffusion from and to the layers next to the proximal layers is much lower than the high speed of the charge exchange
+between the proximal layers, that is
+\[
+\frac{dU_{H-1}}{dt} = -\gamma*(U_{H-1}-U_{H})
+\]
+%
+\[
+\frac{dU_{L+1}}{dt} = +\gamma*(U_{L}-U_{L+1})
+\]
+
+As Fig.\ref{fig:IonChannelRK} depicts, voltages $U_H$ and $U_L$
+quickly approach their balanced values. When they get equal, the driving force cancels.
+In the meantime, the voltages $U_{H-1}$ and $U_{L+1}$ tend to approach $U_H$ and $U_L$, respectively.
+ The diffusional and energy producing processes, depending on the local conditions, change the voltages
+on the two ends of the channel, creating the illusion that the channel opens and closes. As~\cite{HeimburgPhysikOfNerves:2009}
+analyzed, this on/off behavior of currents can be observed
+for natural and synthetic lipid membranes; with and without  caps.
+ In spite of slightly different experimental conditions, amplitude and typical time scale are similar.

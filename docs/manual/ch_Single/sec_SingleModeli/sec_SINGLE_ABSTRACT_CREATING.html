@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1.2.5 Creating the brain ‣ 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0</title>
+<!--Generated on Tue Feb 17 16:52:46 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 17, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up" href="../index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="prev" href="sec_SINGLE_ExistingModels.html" title="1.2.4 Existing models ‣ 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="next" href="../Single-Concepts/index.html" title="1.3 Concepts of the play ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Single-ClassicVsModern.html" title="1.2.1 Modeling approaches ‣ 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_SINGLE_ModelTypes.html" title="1.2.2 Model types ‣ 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_SINGLE_MultiPhysicsNeuronN.html" title="1.2.3 Modeling and disciplinarity ‣ 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_SINGLE_ExistingModels.html" title="1.2.4 Existing models ‣ 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-Introduction/index.html" title="1.1 Introduction ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="index.html" title="1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../Single-Concepts/index.html" title="1.3 Concepts of the play ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-OperationProcesses/index.html" title="1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-NeuronControlCircle/index.html" title="1.5 Neuron as control circuit ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-RestingPotential/index.html" title="1.6 Resting potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-ActionPotential/index.html" title="1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-TransmittingPotential/index.html" title="1.8 Transmitting action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-RestingConsequences/index.html" title="1.9 Consequences of the resting potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../Single-Implications/index.html" title="1.10 Implications for computing, communication, information ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Physics/index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Physiology/index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<meta name="keywords" lang="en" content="Feynman, Richard P">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">Dynamic Abstract Neural Computing
+<br class="ltx_break">with Electronic Simulation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.0</em>
+<br class="ltx_break">@February 17, 2026</p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-Introduction/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Modeling</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Single-ClassicVsModern.html" title="In 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2.1 </span>Modeling approaches</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_SINGLE_ModelTypes.html" title="In 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2.2 </span>Model types</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_SINGLE_MultiPhysicsNeuronN.html" title="In 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2.3 </span>Modeling and disciplinarity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_SINGLE_ExistingModels.html" title="In 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2.4 </span>Existing models</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2.5 </span>Creating the brain</span></span></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../Single-Concepts/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Concepts</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-OperationProcesses/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Processes</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-NeuronControlCircle/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.5 </span>Control circuit</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-RestingPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.6 </span>Resting potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-ActionPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.7 </span>Action potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-TransmittingPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.8 </span>Transmitting potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-RestingConsequences/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.9 </span>Consequences</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../Single-Implications/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.10 </span>Implications</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physics/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physiology/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href">Report issue</a>
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="https://github.com/jvegh/DynamicAbstractNeuralComputing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Modeling</span></a><a href="sec_SINGLE_ExistingModels.html" title="In 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2.4 </span>Existing models</span></a><a href="../Single-Concepts/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Concepts</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.2.5 </span>Creating the brain</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Let us play with the idea that we are assisting God (or evolution) in creating the World.
+We are a subcontractor, and our task is to design the brain. We must consider several constraints. The brain we design, to mention
+a few major items, must</p>
+<ul id="Ch1.S2.I1" class="ltx_itemize">
+<li id="Ch1.S2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">be governed by the available laws of nature</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">use the available (living and non-living) matter</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">be compatible with the objects to be controlled</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">control biological objects</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">be as powerful and energy efficient as possible</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">be inexpensive (both its creation and operation)</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i7.p1" class="ltx_para">
+<p class="ltx_p">elaborate protocols to work with unreliable components</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i8.p1" class="ltx_para">
+<p class="ltx_p">apply tricks to overcome the inherently slow operation of its components</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i9.p1" class="ltx_para">
+<p class="ltx_p">process (encode, transmit, decode, store) information</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i10" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i10.p1" class="ltx_para">
+<p class="ltx_p">cope with harsh environmental conditions</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i11" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i11.p1" class="ltx_para">
+<p class="ltx_p">adapt to changes in the environment and in its own components</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Two other subcontractors were already working on creating the World. They have conducted a ”feasibility study” and elaborated the necessary laws (including their mathematical formalism) for their field. They have the right and freedom to simplify and elaborate on the implementation details, provided that the principles of cooperation among the parts are not violated. They are self-consistent within their field and do not conflict with the first principles of nature. Given that the task was challenging and the general laws complex, the group subcontracted to deal with non-living matter,
+made simplifications (<a href="../../ch_Physics/sec_Physics-Abstraction/index.html#Abstractions" title="range of phenomena, we use approximations and omissions, and we create abstractions ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">approximations and abstractions</a>) and worked out their own laws (today we know that work as laws of non-living nature); sometimes only implicitly
+adding that their laws are simplified ones and are consistently valid only
+to the field of that group’s activity.
+With those simplifications, they achieved success in their field, though they sometimes had to revisit them. In those cases, new science disciplines were born,
+such as discovering the non-independence of space, time, and mass, which led to the theories of relativity, or discovering the relations between the continuous and discrete descriptions of nature in thermodynamics and quantum theory.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">When, somewhat later, the second group subcontracted for creating laws of living matter,
+they were allowed (and obliged) to use the product of the first group. They wanted to take a flying start,
+and they took over those simplifications (the simplified laws describing non-living matter),
+saying that those simplifications were proven successful for the other group; instead of deriving their specific simplifications for their specific field,
+the living matter. Initially, they were successful; the minor discrepancies were attributed to their inexperience.
+As the discrepancies started to grow, the second subcontractor started to claim that the laws describing non-living matter are not valid for living matter,
+<span class="ltx_text ltx_font_italic">without discovering which other laws describe living matter</span>. Our approach to that problem is that we scrutinize
+the interactions and describe their effects in a non-disciplinary way.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">The third working group started to work when the second group
+already had some significant achievements, and aimed to organize the cooperation of units
+based on the principles of living matter, in two stages. Of course,
+they were allowed (and obliged) to use the products of the second group
+when creating resources and operating principles of the network
+of living matter organized into biological units.
+Although the original goal was only to concentrate the work of specific
+goal-oriented groups of units for survival, the method (called neural computing) developed by the group was so successful that a higher-level unit coordinating the lower-level coordinating units has been created.
+Of course, it inherited the laws developed for the former levels.
+As the operating complexity of that latter unit (called the brain) grew,
+again higher-level functionality appeared (called the mind) that is again based on the inherited lower-level laws. That means, to understand the high-level functionalities, one needs a very accurate understanding
+of the elementary neuronal operations, which has the precondition of
+understanding life itself. (We just mentioned a fourth working group of increasing importance.
+After that the performance of technical computing, due to physical and technological reasons, to enhance the energy and computing efficiency of technical computing systems, a growing interest appeared toward borrowing concepts of biological computing.)</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">The best approach to the problem of describing life by science was given by E. Schrödinger <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib9" title="" class="ltx_ref">9</a>]</cite>, by saying that the fundamental
+principles must be the same, but the ’ordinary’ laws of science we derived for non-living matter might differ from the ’non-ordinary’ laws of science describing living matter.
+He expressed his firm scientific conviction and commitment that (by using different approximations) we can derive those laws based on science, despite
+that the ”construction” of living matter needs different approaches.
+In other words, the general laws of nature (”the first principles”) behind the simplified laws
+derived as approximations describing ”non-living matter”
+and the ones describing ”living matter” differ only in the
+approximations they use. This way, the ’ordinary’ and ’non-ordinary’ laws,
+together, describe nature; among others, they describe life.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">We point out that when we map the formal laws of non-living matter onto living matter, we do so outside their range of validity. Instead, in some cases, we must derive special approximations valid for living matter, and derive the
+appropriate laws for those abstractions.
+We derive the correct laws (valid for living matter), which
+–according to Schrödinger’s expectation– are ’non-ordinary’ in the sense
+that their form and range of validity differ from the ’ordinary’ ones
+we use in classic science. The general laws of nature are universal; their
+simplified ones can be disciplinary. However, ”<span class="ltx_text ltx_font_italic">nature is not interested in our separations, and many of the interesting phenomena bridge the gaps between fields.</span>” (Richard P. Feynman)
+
+We know that nature is infinitely complex, all science disciplines
+apply approximations, and use mathematics to describe that
+simplified nature.
+To ”design” neuronal operation, we must consider and coordinate all related disciplines. They are
+not contradicting each other, but some of their fundamental considerations may prove to be oversimplifications when the respective discipline must
+cooperate. It also brings to light that we need to
+invent new pieces of mathematics.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">In this section, we assume that, in addition to the well-known
+’ordinary laws, those ’non-ordinary’ laws exist
+(we will derive them in Chapter <a href="../../ch_Physics/index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a> given that they may belong
+to different scientific disciplines),
+and we derive the abstract rules that enable neuronal cooperation.
+We describe the known (and more or less understood) static components,
+the recently discovered (but not yet integrated) ones, furthermore
+the dynamic components and processes needed for the observed operation,
+but remained hidden by the testing methods.</p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="sec_SINGLE_ExistingModels.html" title="In 1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2.4 </span>Existing models</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="../Single-Concepts/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Concepts</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Feb 17 16:52:46 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

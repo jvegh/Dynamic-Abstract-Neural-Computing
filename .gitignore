@@ -6,6 +6,21 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+*.log
+*.aux
+*.glsdefs
+*.ist
+*.lof
+*.lot
+doc/*.log
+doc/manual.*.log
+doc/manual/*.log
+doc/manual/*.aux
+doc/manual/*.glsdefs
+doc/manual/*.ist
+doc/manual/*.lof
+doc/manual/*.lot
+
 
 # Additional Ruby/bundler ignore for when you run: bundle install
 /vendor

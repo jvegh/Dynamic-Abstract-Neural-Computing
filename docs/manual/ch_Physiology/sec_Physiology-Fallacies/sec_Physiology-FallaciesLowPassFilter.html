@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>3.8.8 Membrane as low-pass filter ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14</title>
-<!--Generated on Tue Jan 13 21:02:55 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on January 13, 2026.-->
+<title>3.9.8 Membrane as low-pass filter ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0</title>
+<!--Generated on Tue Feb 17 16:52:46 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 17, 2026.-->
 
 <link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
 <link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
@@ -11,43 +11,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
 <script src="../../../LaTeXML-maybeMathjax.js"></script>
-<link rel="up" href="index.html" title="3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="up up" href="../index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="up up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="prev" href="sec_Physiology-FallaciesRefractoriness.html" title="3.8.7 Membrane refractoriness ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="next" href="sec_Physiology-FallaciesAPThresholds.html" title="3.8.9 Thresholds of initiating AP ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="subsection" href="sec_Fallacies-ElectricalCuircuit.html" title="3.8.1 Equivalent electrical circuit ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="subsection" href="sec_Physiology-FallaciesPointLike.html" title="3.8.2 Point-like neuron ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="subsection" href="sec_Physiology-FallaciesPassiveMembrane.html" title="3.8.3 Passive distributed membrane ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="subsection" href="sec_Physiology-Wrong_isolator.html" title="3.8.4 Membrane as a wrong isolator ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="subsection" href="subsec_EnergyConsumption.html" title="3.8.5 Energy consumption ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="subsection" href="sec_Physiology-DelayedCurrent.html" title="3.8.6 ’Delayed rectifying’ current ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="subsection" href="sec_Physiology-FallaciesRefractoriness.html" title="3.8.7 Membrane refractoriness ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="subsection" href="sec_Physiology-FallaciesAPThresholds.html" title="3.8.9 Thresholds of initiating AP ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="section" href="../sec_Physiology-Physical/index.html" title="3.1 The physical model ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="section" href="../sec_Physology-Addendum/index.html" title="3.2 Addendum ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="section" href="../sec_Physiology-Electrodiffusion/index.html" title="3.3 Electrodiffusion ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="section" href="../sec_Physiology-DerivingRestingPotential/index.html" title="3.4 Resting potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="section" href="../sec_Physiology-DerivingActionPotential/index.html" title="3.5 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="section" href="../sec_Physiology-HodgkinHuxley/index.html" title="3.6 Hodgkin&amp;Huxley’s empirical description ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="section" href="../sec_Physiology-Experimental/index.html" title="3.7 Experimental evidence ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="section" href="index.html" title="3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_Single/index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_Physics/index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
-<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14">
+<link rel="up" href="index.html" title="3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up" href="../index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="prev" href="sec_Physiology-FallaciesRefractoriness.html" title="3.9.7 Membrane refractoriness ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="next" href="sec_Physiology-FallaciesAPThresholds.html" title="3.9.9 Thresholds of initiating AP ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Fallacies-ElectricalCuircuit.html" title="3.9.1 Equivalent electrical circuit ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physiology-FallaciesPointLike.html" title="3.9.2 Point-like neuron ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physiology-FallaciesPassiveMembrane.html" title="3.9.3 Passive distributed membrane ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physiology-Wrong_isolator.html" title="3.9.4 Membrane as a wrong isolator ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="subsec_EnergyConsumption.html" title="3.9.5 Energy consumption ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physiology-DelayedCurrent.html" title="3.9.6 ’Delayed rectifying’ current ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physiology-FallaciesRefractoriness.html" title="3.9.7 Membrane refractoriness ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physiology-FallaciesAPThresholds.html" title="3.9.9 Thresholds of initiating AP ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../Physiology-StateOfTheArt/index.html" title="3.1 State-of-the-art ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physiology-Physical/index.html" title="3.2 The physical model ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physology-Addendum/index.html" title="3.3 Addendum ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physiology-Electrodiffusion/index.html" title="3.4 Electrodiffusion ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physiology-DerivingRestingPotential/index.html" title="3.5 Resting potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physiology-DerivingActionPotential/index.html" title="3.6 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physiology-HodgkinHuxley/index.html" title="3.7 Hodgkin&amp;Huxley’s empirical description ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physiology-Experimental/index.html" title="3.8 Experimental evidence ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="index.html" title="3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Single/index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Physics/index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
 <meta name="keywords" lang="en" content="blocking, blocking spikes, refractory period, spike">
 </head>
 <body>
@@ -56,57 +58,59 @@
 <img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
 <p class="ltx_p">Dynamic Abstract Neural Computing
 <br class="ltx_break">with Electronic Simulation
-<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.1.14</em>
-<br class="ltx_break">@January 13, 2026</p>
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.0</em>
+<br class="ltx_break">@February 17, 2026</p>
 </div>
 <nav class="ltx_TOC">
 <ol class="ltx_toclist">
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Single/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physics/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Single/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physics/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics for neurons</span></a></li>
 <li class="ltx_tocentry ltx_tocentry_chapter">
-<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology</span></a>
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a>
 <ol class="ltx_toclist ltx_toclist_chapter">
-<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Physical/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>The physical model</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physology-Addendum/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Addendum</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Electrodiffusion/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Electrodiffusion</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-DerivingRestingPotential/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Resting potential</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-DerivingActionPotential/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Action potential</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-HodgkinHuxley/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.6 </span>Hodgkin&amp;Huxley’s empirical description</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Experimental/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Experimental evidence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../Physiology-StateOfTheArt/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Physical/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>The physical model</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physology-Addendum/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Addendum</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Electrodiffusion/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Electrodiffusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-DerivingRestingPotential/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Resting potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-DerivingActionPotential/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.6 </span>Action potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-HodgkinHuxley/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Hodgkin&amp;Huxley’s empirical description</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Experimental/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8 </span>Experimental evidence</span></a></li>
 <li class="ltx_tocentry ltx_tocentry_section">
-<a href="index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8 </span>Fallacies</span></a>
+<a href="index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9 </span>Fallacies</span></a>
 <ol class="ltx_toclist ltx_toclist_section">
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Fallacies-ElectricalCuircuit.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.1 </span>Equivalent electrical circuit</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-FallaciesPointLike.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.2 </span>Point-like neuron</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-FallaciesPassiveMembrane.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.3 </span>Passive distributed membrane</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-Wrong_isolator.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.4 </span>Membrane as a wrong isolator</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="subsec_EnergyConsumption.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.5 </span>Energy consumption</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-DelayedCurrent.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.6 </span>’Delayed rectifying’ current</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-FallaciesRefractoriness.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.7 </span>Membrane refractoriness</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.8 </span>Membrane as low-pass filter</span></span></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-FallaciesAPThresholds.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.9 </span>Thresholds of initiating AP</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Fallacies-ElectricalCuircuit.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.1 </span>Equivalent electrical circuit</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-FallaciesPointLike.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.2 </span>Point-like neuron</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-FallaciesPassiveMembrane.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.3 </span>Passive distributed membrane</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-Wrong_isolator.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.4 </span>Membrane as a wrong isolator</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="subsec_EnergyConsumption.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.5 </span>Energy consumption</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-DelayedCurrent.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.6 </span>’Delayed rectifying’ current</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-FallaciesRefractoriness.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.7 </span>Membrane refractoriness</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.8 </span>Membrane as low-pass filter</span></span></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physiology-FallaciesAPThresholds.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.9 </span>Thresholds of initiating AP</span></a></li>
 </ol>
 </li>
 </ol>
 </li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
 </ol></nav>
 <div class="ltx_para">
-<p class="ltx_p"><a href="../simulator/ToIssue.html" title="" class="ltx_ref ltx_href">Report issue</a>
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href">Report issue</a>
 <a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
-<a href="../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
-<a href="../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
 <a href="https://github.com/jvegh/DynamicAbstractNeuralComputing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
 <img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
 </p>
@@ -114,12 +118,12 @@
 <div class="ltx_page_main">
 <header class="ltx_page_header">
 <div class="ltx_align_center">
-<a href="index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8 </span>Fallacies</span></a><a href="sec_Physiology-FallaciesRefractoriness.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.7 </span>Membrane refractoriness</span></a><a href="sec_Physiology-FallaciesAPThresholds.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.9 </span>Thresholds of initiating AP</span></a>
+<a href="index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9 </span>Fallacies</span></a><a href="sec_Physiology-FallaciesRefractoriness.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.7 </span>Membrane refractoriness</span></a><a href="sec_Physiology-FallaciesAPThresholds.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.9 </span>Thresholds of initiating AP</span></a>
 </div></header>
 <div class="ltx_page_content">
 <section class="ltx_subsection ltx_authors_1line">
 <h1 class="ltx_title ltx_title_subsection">
-<span class="ltx_tag ltx_tag_subsection">3.8.8 </span>Membrane as low-pass filter</h1>
+<span class="ltx_tag ltx_tag_subsection">3.9.8 </span>Membrane as low-pass filter</h1>
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">The fallacy that in the neuronal <math id="p1.m1" class="ltx_Math" alttext="RC" display="inline"><mrow><mi>R</mi><mo>⁢</mo><mi>C</mi></mrow></math> circuit the elements are switched in parallel, implies
@@ -129,8 +133,8 @@ oscillator belonging to high-pass filters in the world of instant interaction of
 However, neurophysiology sticks to assuming that
 ’the cell membrane composed of a resistance and a capacitance in parallel (RC circuit)’
 and it should show the signs of a Low-Pass Filter.
-The experimental work <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib140" title="" class="ltx_ref">140</a>]</cite>
-(their figure is reproduced in Fig. <a href="#fig:Fallacies-LowPassFilter" title="Figure 3.29 ‣ 3.8.8 Membrane as low-pass filter ‣ 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.29</span></a>)
+The experimental work <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib142" title="" class="ltx_ref">142</a>]</cite>
+(their figure is reproduced in Fig. <a href="#fig:Fallacies-LowPassFilter" title="Figure 3.28 ‣ 3.9.8 Membrane as low-pass filter ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.28</span></a>)
 ’demonstrated’ experimentally the ’low-pass’ behavior of their neuron.
 It shows an example when one proves ’experimentally’ what they want to believe. Likely Feynman’s warning was forgotten: ”The first principle is that you must not fool yourself – and you are the easiest person to fool.”</p>
 </div>
@@ -142,21 +146,21 @@ Furthermore, the physiological notions are
 interpreted for a ’steady state’, i.e., using alternating current invalidates their basic assumptions.
 It is senseless to check its signal-passing feature: it is a wrong question to nature.
 The statement is valid for other measurements using alternating currents, too.
-According to <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib110" title="" class="ltx_ref">110</a>]</cite>, page 22,
+According to <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib107" title="" class="ltx_ref">107</a>]</cite>, page 22,
 ”Also included are <math id="p2.m1" class="ltx_Math" alttext="L_{ij}" display="inline"><msub><mi>L</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> determined using sinusoidally varying
 voltage and pressure. This kind of experiment gives values of
 <math id="p2.m2" class="ltx_Math" alttext="L_{ij}" display="inline"><msub><mi>L</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub></math> which are frequency dependent. However, the values approach a
 constant value·at sufficiently low frequency.”</p>
 </div>
-<figure id="fig:Fallacies-LowPassFilter" class="ltx_figure"><img src="fig/LowPassFilter_Koch.jpg" id="Ch3.F29.g1" class="ltx_graphics ltx_img_square" width="509" height="421" alt="Refer to caption">
-<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 3.29: </span>Illustrating the fallacy that neurons represent a low-pass filter. <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib21" title="" class="ltx_ref">21</a>]</cite> Fig. 1.4  </figcaption>
+<figure id="fig:Fallacies-LowPassFilter" class="ltx_figure"><img src="fig/LowPassFilter_Koch.jpg" id="Ch3.F28.g1" class="ltx_graphics ltx_img_square" width="509" height="421" alt="Refer to caption">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 3.28: </span>Illustrating the fallacy that neurons represent a low-pass filter. <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib22" title="" class="ltx_ref">22</a>]</cite> Fig. 1.4  </figcaption>
 </figure>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">Any foreign input current into the membrane, whether it is noise or a sine signal,
 increases the momentary and the average resting potential of the membrane,
 that is, decreases the probability that the synaptic trigger
 arrives at a moment when the synaptic input is enabled.
-For how synaptic inputs are enable in function of artificial currents, see our Figure <a href="../sec_Physiology-DerivingActionPotential/sec_Physiology-SynapticControl.html#fig:ArtificialCurrent_AP" title="Figure 3.17 ‣ 3.5.7 Synaptic control ‣ 3.5 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.17</span></a>.
+For how synaptic inputs are enable in function of artificial currents, see our Figure <a href="../sec_Physiology-DerivingActionPotential/sec_Physiology-SynapticControl.html#fig:ArtificialCurrent_AP" title="Figure 3.15 ‣ 3.6.7 Synaptic control ‣ 3.6 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.15</span></a>.
 The arrival time of the spike from the presynaptic neuron is independent
 from the operation of the postsynaptic neuron, so the signals arrive at a ’random time’
 in the neuron’s local time system.
@@ -167,7 +171,7 @@ the less is the chance to re-open the neuron’s synaptic inputs, i.e.,
 to receive inputs from the ’regularly firing cell’:
 the triggers arrive with a high probability in the absolute refractory period.
 
-In the case of varying frequencies, this effect, combined with the finite ion current speed, makes the measured firing rate unpredictable. In a later research, it was noticed that <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib133" title="" class="ltx_ref">133</a>]</cite>
+In the case of varying frequencies, this effect, combined with the finite ion current speed, makes the measured firing rate unpredictable. In a later research, it was noticed that <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib137" title="" class="ltx_ref">137</a>]</cite>
 the too high current blocks spiking (more precisely,
 receiving the triggering signal).
 
@@ -175,7 +179,7 @@ receiving the triggering signal).
 </div>
 <div id="p4" class="ltx_para">
 <p class="ltx_p">From our conceptual model of generating
-AP (see Fig. <a href="../../ch_Single/sec_Single-ActionPotential/sec_Single-OperationConceptual.html#fig:AP_Conceptual" title="Figure 1.6 ‣ 1.8.1 The conceptual operation ‣ 1.8 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6</span></a>),
+AP (see Fig. <a href="../../ch_Single/sec_Single-ActionPotential/sec_Single-OperationConceptual.html#fig:AP_Conceptual" title="Figure 1.6 ‣ 1.7.1 The conceptual operation ‣ 1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6</span></a>),
 it is immediately clear that although in the ’native mode’ of operation,
 the falling edge of the
 AP
@@ -185,21 +189,21 @@ However, in ’artificial’ mode, the foreign current can keep the voltage abov
 (for shorter or longer periods, additionally),
 so the synaptic signal cannot enter the membrane, given that
 in periods when the membrane has potential value above the threshold,
-the synaptic inputs are not enabled; see also Figure <a href="../sec_Physiology-DerivingActionPotential/sec_Physiology-SynapticControl.html#fig:ArtificialCurrent_AP" title="Figure 3.17 ‣ 3.5.7 Synaptic control ‣ 3.5 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.17</span></a>.
+the synaptic inputs are not enabled; see also Figure <a href="../sec_Physiology-DerivingActionPotential/sec_Physiology-SynapticControl.html#fig:ArtificialCurrent_AP" title="Figure 3.15 ‣ 3.6.7 Synaptic control ‣ 3.6 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.15</span></a>.
 The synaptic inputs are re-enabled only later when the membrane’s potential is
 under the threshold potential when a new synaptic trigger arrives.
 That is, the triggering effect
 of the ”regularly firing cells” is suppressed by the artificially
 increased neuronal membrane voltage.
-<span class="ltx_text ltx_font_italic">The effect has nothing to do with the effect ’Low-Pass Filter’</span>. See also section <a href="../../ch_Physics/sec_Physics-MembraneElectricity/index.html" title="2.5 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a>.</p>
+<span class="ltx_text ltx_font_italic">The effect has nothing to do with the effect ’Low-Pass Filter’</span>. See also section <a href="../../ch_Physics/sec_Physics-MembraneElectricity/index.html" title="2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.6</span></a>.</p>
 </div>
 </section>
 </div>
 <footer class="ltx_page_footer">
 <div class="ltx_align_center">
-<a href="sec_Physiology-FallaciesRefractoriness.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.7 </span>Membrane refractoriness</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physiology-FallaciesAPThresholds.html" title="In 3.8 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.1.14" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8.9 </span>Thresholds of initiating AP</span></a>
+<a href="sec_Physiology-FallaciesRefractoriness.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.7 </span>Membrane refractoriness</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physiology-FallaciesAPThresholds.html" title="In 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9.9 </span>Thresholds of initiating AP</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Tue Jan 13 21:02:55 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Tue Feb 17 16:52:46 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>

@@ -1,0 +1,588 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0</title>
+<!--Generated on Tue Feb 17 16:52:46 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 17, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up" href="../index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="prev" href="index.html" title="2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="next" href="sec_Physics-OtherIssues.html" title="2.2.2 Other issues ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-OtherIssues.html" title="2.2.2 Other issues ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-Instant.html" title="2.2.3 Instant Interaction ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-Resources.html" title="2.2.4 Locality and finite resources ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-Complete.html" title="2.2.5 Complete measurement ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-Mathematics.html" title="2.2.6 Mathematical issue ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-Biology.html" title="2.2.7 Physics for biology ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Introduction/index.html" title="2.1 Introduction ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="index.html" title="2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Spatiotemporal/index.html" title="2.3 Spatiotemporal ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Thermodynamics/index.html" title="2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Electricity/index.html" title="2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-MembraneElectricity/index.html" title="2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-NeuronControlCircle/index.html" title="2.7 Neuron as control circle ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Components/index.html" title="2.8 Neuronal components ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-MembranesChannels/index.html" title="2.9 Neuronal operation ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_PHYSICS_MEASURING/index.html" title="2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Single/index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Physiology/index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<meta name="keywords" lang="en" content="Action Potential, Coulomb’s law, Kirchhoff’s Laws, Maxwell equations, McCulloch-Pitts, clock reset, delayed current, instant interaction, ion channel, multi-compartment, neuron model, retarded time, telegrapher’s equations">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">Dynamic Abstract Neural Computing
+<br class="ltx_break">with Electronic Simulation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.0</em>
+<br class="ltx_break">@February 17, 2026</p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Single/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics for neurons</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Introduction/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Science methods</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.1 </span>Dichotomies in modeling</span></span>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Physics-ElectricalMechanical" title="In 2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Electrical vs Mechanical</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection">
+<a href="#sec:Physics-InstantInteraction" title="In 2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Instant interaction</span></a>
+<ol class="ltx_toclist ltx_toclist_subsubsection">
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a href="#sec:Physics-Speeds" title="In Instant interaction ‣ 2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Speeds</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a href="#sec:Physics-SpeedLight" title="In Instant interaction ‣ 2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">In observations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a href="#sec:Physics-SpeedNeuro" title="In Instant interaction ‣ 2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">In neuroscience</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a href="#PHYSICS_SPEEDS_FINITE" title="In Instant interaction ‣ 2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">In interactions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_paragraph"><a href="#PHYSICS_SPEEDS_LAWS" title="In Instant interaction ‣ 2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">In sciences’s laws</span></a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-OtherIssues.html" title="In 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.2 </span>Other issues</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Instant.html" title="In 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.3 </span>Instant Interaction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Resources.html" title="In 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.4 </span>Locality and finite resources</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Complete.html" title="In 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.5 </span>Complete measurement</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Mathematics.html" title="In 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.6 </span>Mathematical issue</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Biology.html" title="In 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.7 </span>Physics for biology</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Spatiotemporal/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Spatiotemporal</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Thermodynamics/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Ions’ thermodynamics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Electricity/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Ions’ electricity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-MembraneElectricity/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.6 </span>Electrolyte’s electricity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-NeuronControlCircle/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.7 </span>Controling potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Components/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.8 </span>Neuronal components</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-MembranesChannels/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.9 </span>Neuronal operation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_PHYSICS_MEASURING/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10 </span>Measuring</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physiology/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href">Report issue</a>
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="https://github.com/jvegh/DynamicAbstractNeuralComputing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Science methods</span></a><a href="index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Science methods</span></a><a href="sec_Physics-OtherIssues.html" title="In 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.2 </span>Other issues</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.1 </span>Dichotomies in modeling</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">The paper <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib8" title="" class="ltx_ref">8</a>]</cite>, which, in the context of this section, tends to be the precursor of our paper, sheds light on some remarkable dichotomies,
+scrutinizing which can result in ”a sound basis for unification of the physics of nerve impulses”.
+By deeply agreeing with that they have a ”potential impact on our understanding of (the physical nature of) neuronal signaling”, we list and uncover more dichotomies; furthermore, we uncover their fundamental,
+partly philosophical reasons.</p>
+</div>
+<section id="sec:Physics-ElectricalMechanical" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Electrical vs Mechanical</h2>
+
+<div id="SSSx1.p1" class="ltx_para">
+<p class="ltx_p">During centuries, science developed its method to derive abstract concepts
+by reducing the features of a real object to an abstract one that cannot be reduced further, such as mass and charge. It derived laws for the forces acting on those abstract objects,
+such as Newton’s universal law of gravitation and Coulomb’s law of electricity.
+
+Then one could apply Newton’s laws of motion. Experience shows that the generated forces, independently of their origin, can be summed and one can apply
+the laws of motion by using the resultant force.
+Ions are special from the point of view of reducing the ’material point’
+to one single abstraction: <span class="ltx_text ltx_font_italic">the ions are charge and mass simultaneously, without a further possibility of reduction</span>.
+Notice that in the electrical abstraction, no mass is present,
+so one can use the equations assuming ’instant interaction’,
+which leads to non-physical explanations of the observations (such as ’delayed current’).
+In the mechanical abstraction, mass is to be moved,
+making the finite-speed interaction evident. The same physical phenomenon,
+the interaction (or movement) of ions is described using an ’infinite’ electrical speed and
+a million times less mass propagation speed, respectively, which leads
+to an unresolvable discrepancy, given that physics is not prepared to handle
+different speeds in the same interaction event <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib20" title="" class="ltx_ref">20</a>]</cite>.
+This item is listed in Table 1 in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib8" title="" class="ltx_ref">8</a>]</cite>
+as the ”Electrical vs Mechanical” dichotomy.</p>
+</div>
+<div id="SSSx1.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">To deliver a
+current, one needs moving charged particles that need acting of some
+external (electric, magnetic, or chemical) force or a mixture of forces.
+We have speeds of
+<a href="../../Ch_Glossary/index.html#glo.main.EM"><span href="../../Ch_Glossary/index.html#glo.main.EM" title="electromagnetic" class="ltx_glossaryref">EM</span></a> interaction, thermal motion of the charge
+carriers, macroscopic current, drift speed</span>, and their mixing, simultaneously,
+in the same phenomenon. In the theoretical description of
+processes, instant interaction (i.e., the abstraction of non-physical,
+infinitely large interaction speed) is used in most cases. In the
+cases when absolutely needed, the generic notion of ”speed” is
+used without specifying which one of the mentioned speeds it means.</p>
+</div>
+<div id="SSSx1.p3" class="ltx_para">
+<p class="ltx_p">The low speed of ions in electrolytes introduces further problems.
+Any change in the local value of the state variables will be seen
+by the farther parts of the cell with a delay
+The material transport represents simultaneously mass and charge,
+so the transport itself changes the gradient. This process keeps the entire volume of the electrolyte in (more or less intensive) continuous change. Furthermore, the biological objects inside the cell
+can absorb ions and charge up. With their potential, they change the local gradients, accelerating or decelerating the ions.
+Not to mention that biological objects can be active in the sense that
+(depending on the environmental conditions) they can let ions from one separated volume part to the other.</p>
+</div>
+</section>
+<section id="sec:Physics-InstantInteraction" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Instant interaction</h2>
+
+<div id="SSSx2.p1" class="ltx_para">
+<p class="ltx_p"><a name="MixingSpeeds" id="MixingSpeeds" class="ltx_anchor">Physics notoriously suffers from the lack of handling
+different simultaneous interactions</a>; facing such a case leads to misunderstandings, debates and causality problems.
+Such a famous case is the interaction speed of entanglement.
+In that time, E. Schrödinger introduced his famous Law Of Motion in quantum-mechanics entirely analogously
+as I. Newton introduced his Laws of Motion.
+Similarly to the Newtonian ’absolute time’, the quantum mechanical interaction is supposed to be ’instant’
+(this is the price for having ’nice’ equations in classical and quantum mechanics),
+i.e., its speed is supposed to be infinitely high.
+However, at that time was already known that the electric interaction (propagation of electromagnetic waves) is finite,
+so if an object has quantum mechanical interaction (aka entanglement)
+and electrical interaction, the corresponding forces start at the same time, but arrive at the other object at different times.
+The entanglement arrives instantly, the electromagnetic effect arrives at the time we can calculate from the interaction speed and the spatial distance of the objects.
+This leads to causality problems: the effect of the two interactions of photons entangled earlier in an exploded supernova should be measured at two different times; meaning a ”spooky remote interaction” as A. Einstein coined,
+and leads to contradictions such as the Einstein–Podolsky–Rosen paradox.
+Actually, the issue roots in the improper handling of mixing interaction speeds:
+the Schrödinger-equation introduces the infinitely large interaction speed,
+while the
+<a href="../../Ch_Glossary/index.html#glo.main.EM"><span href="../../Ch_Glossary/index.html#glo.main.EM" title="electromagnetic" class="ltx_glossaryref">EM</span></a> interaction has finite speed.</p>
+</div>
+<div id="SSSx2.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The confusion and question marks in connection with describing the life by science mostly arise from the interpretation of
+notion ’speed’ in physics.</span>
+When discussing the underlying physical laws, we
+go back to the very basic physical notions instead of taking over the
+approximations and abstractions
+used in the <span class="ltx_text ltx_font_italic">classical physics for non-biological matter</span> and
+less complex interactions.
+As we emphasized many times, we construct laws and conclusions based
+on somewhat simplified abstractions about nature, in all fields of science.
+The notions and laws depend
+on the circle of phenomena we know and want to describe.
+The Newtonian and Einsteinian worlds are
+basically distinguished by considering <span class="ltx_text ltx_font_italic">speed dependence</span> that actually means <span class="ltx_text ltx_font_italic">explicite time dependence</span>.
+Interesting consequences are that in the Einsteinian world,
+the mass is not constant, the time and space are not absolute, and so on.
+We can be prepared to some similar counter-intuitive experiences in physiology ”we must be prepared to find it working in a manner that cannot be reduced to the <span class="ltx_text ltx_font_bold">ordinary</span> laws of physics”<cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib9" title="" class="ltx_ref">9</a>]</cite>.
+Here we scrutinize the basic notions and discover some differences
+between physics and biology
+as consequences of the required different abstractions and approximations.</p>
+</div>
+<div id="SSSx2.p3" class="ltx_para">
+<p class="ltx_p">During our college studies, we mentioned that light is an electromagnetic
+wave with a vast but finite propagation speed. Still, we forgot to
+highlight that, at the same time, it is the propagation speed of the
+electric (, and magnetic, and gravitational) interaction force fields
+as well. The effect of ”Retarded-Time Potential” is also known
+in physics and communication engineering. Algorithms ”marching-on-in
+time” and ”Analytical Retarded-Time Potential Expressions” are
+derived to handle the problem; for a discussion, see <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib96" title="" class="ltx_ref">96</a>]</cite>.
+
+Telegrapher’s equations (unfortunately, also used to describe biological signal transfer)
+explicitly assume a finite propagation speed millions of times slower
+than the (implicitly assumed) <a href="../../Ch_Glossary/index.html#glo.main.EM"><span href="../../Ch_Glossary/index.html#glo.main.EM" title="electromagnetic" class="ltx_glossaryref">EM</span></a> interaction’s. The issue is not confined to large
+distances: designers of micro-electronic devices also must consider
+the effect: they introduced clock time domains and clock distribution
+trees; see, for example <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib97" title="" class="ltx_ref">97</a>, <a href="../../bib.html#bib23" title="" class="ltx_ref">23</a>]</cite>.</p>
+</div>
+<div id="SSSx2.p4" class="ltx_para">
+<p class="ltx_p">Science uses ’instant’ in the sense that one interaction
+is much faster than the process under study; we consider the faster interaction as instant.
+
+The approach of classical science is based on the oversimplified
+approximation that the interaction speed is <em class="ltx_emph ltx_font_italic">always</em> much higher
+than the speed of changes it causes and that the processes can <em class="ltx_emph ltx_font_italic">always</em>
+be described by a single stage. In our approach, for biology, we put together a
+<span class="ltx_text ltx_font_italic">series of stages</span> to describe the observed complex phenomena, where the stages provide input and output
+for each other, involve more than one interaction speed, and use per-stage-valid
+approximations. We simplify the approximations by omitting the less
+significant interactions and introduce ideas for accounting for the different
+interaction speeds. This way, we reduce the problem to a case that
+science can describe mathematically. <em class="ltx_emph ltx_font_italic">This procedure is fundamentally different
+from applying some mathematical equations derived for an abstracted
+case of science to a complex biological phenomenon without validating
+that we use the appropriate formalism</em>.</p>
+</div>
+<section id="sec:Physics-Speeds" class="ltx_paragraph">
+<h3 class="ltx_title ltx_title_paragraph">Speeds</h3>
+
+<div id="SSSx2.Px1.p1" class="ltx_para">
+<p class="ltx_p">The role of speed and time, particularly in
+the context of an object’s changing location over time, has long held
+a mystique in the realm of scientific discovery (and recently returned
+to be mystic again in cosmology). This intrigue can
+be traced back to historical debates, such as <a href="https://en.wikipedia.org/wiki/Zeno's_paradoxes" title="" class="ltx_ref ltx_href">Zeno’s paradoxes</a>. The
+acknowledgment that an object’s movement speed can influence our
+observations is a topic that has sparked significant scientific discourse
+over the years. In this section, we aim to draw parallels between
+the historical debate on the finite speed of light and its contemporary
+implications in various scientific disciplines, such as the finite
+speed of ionic currents in biology.</p>
+</div>
+<div id="SSSx2.Px1.p2" class="ltx_para">
+<p class="ltx_p">It has been a long-standing mystery that interactions with different speeds play
+their role <span class="ltx_text ltx_font_italic">simultaneously</span>. The issue forces researchers to give
+non-scientific explanations to everyday phenomena only because <span class="ltx_text ltx_font_italic">they
+routinely assume that the interactions have the same speed, and they use
+the laws about strictly pair-wise interactions</span>. They have no choice:
+there is no formalism to handle non-equal speeds.</p>
+</div>
+<div id="SSSx2.Px1.p3" class="ltx_para">
+<p class="ltx_p">We need different abstractions (finite-speed interaction in
+modern physics) for different phenomena that require different mathematical
+handling, which is not as simple and friendly. The <span class="ltx_text ltx_font_italic">speeds of
+observation</span> and propagation of electric fields remain the same in
+biology, and it is easy to extrapolate, mistakenly, that <span class="ltx_text ltx_font_italic">all</span>
+interactions have infinitely large interaction speeds. However, also
+<span class="ltx_text ltx_font_italic">slow</span> interaction speeds exist, furthermore, <span class="ltx_text ltx_font_italic">different interaction speeds
+can intermix in the same phenomenon. Neglecting that effect introduces
+the need to assume fake mechanisms and effects</span> for explaining
+some details; which are naturally explained by assuming finite interaction
+speeds and their combinations. More discussion in section <a href="../sec_Physics-Thermodynamics/sec_Physics-ThermodynamicsWhyDifferent.html#sec:Physics-ThermodynamicsMixingSpeeds" title="Mixing speeds ‣ 2.4.1 Why cellular thermodynamics is different ‣ 2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.4.1</span></a>.</p>
+</div>
+</section>
+<section id="sec:Physics-SpeedLight" class="ltx_paragraph">
+<h3 class="ltx_title ltx_title_paragraph">Speed of light</h3>
+
+<div id="SSSx2.Px2.p1" class="ltx_para">
+<p class="ltx_p">In 1676, the Danish astronomer Ole Rømer was making meticulous observations
+of Jupiter’s moon Io and concluded not only that the speed of light
+is finite, but he measured its value with sufficient accuracy. Rømer
+never published a formal description of his method, possibly because
+of the opposition of his bosses, Cassini and Picard, to his ideas.
+Cassini knew Rømer’s idea and the measurement data. However, instead
+of accepting the finite value of the speed of observation, he made
+periodic corrections to the tables of eclipses of Io to take account
+of its irregular orbital motion: <span class="ltx_text ltx_font_italic"><a name="ResettingClock" id="ResettingClock" class="ltx_anchor">
+periodically resetting the clock</a>
+</span>.
+The speed of light must remain infinitely large.
+</p>
+</div>
+<div id="SSSx2.Px2.p2" class="ltx_para">
+<p class="ltx_p">However, the theory of finite speed quickly gained support among other
+natural philosophers of the period, such as Christiaan Huygens and
+Isaac Newton <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib98" title="" class="ltx_ref">98</a>]</cite>. Although Newton surely knew that
+the observation speed was finite, in his ”Philosophiae Naturalis
+Principiai Mathematica” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib99" title="" class="ltx_ref">99</a>]</cite>, published
+in 1687, he decided to refer to observations that they happen ”at
+the same time” despite knowing that what we observe at the same
+times, happen at different times. Using instant interaction results
+in ”nice’” mathematical laws and enables us to describe most of
+nature’s experiences with sufficient accuracy.
+Einstein, in 1905, discovered <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib100" title="" class="ltx_ref">100</a>]</cite> that the speed of observation (in moving
+reference frames) may play a decisive role in interpreting scientific
+phenomena. The results he derived using Minkowski-coordinates <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib95" title="" class="ltx_ref">95</a>]</cite> were
+counter-intuitive, with many unexpected consequences. Instead of introducing
+improvement(s) or correction(s) to the existing classic principles
+and methods, he introduced a new principle: the finite (limiting) interaction speed.
+The <span class="ltx_text ltx_font_italic">disciplinary analysis of the reception of
+Minkowski’s Cologne lecture reveals an overwhelmingly
+positive response on the part of mathematicians, and a decidedly mixed
+reaction on the part of physicists</span> <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib101" title="" class="ltx_ref">101</a>]</cite>
+has turned to the exact opposite. Today, physics generally accepts
+the description, that is, the existence of finite interaction speed
+(resulting in the birth of a series of modern science disciplines).
+However, other science disciplines, including biology and computing
+science, refute (or at least do not use) it; despite that its effects are evident.</p>
+</div>
+</section>
+<section id="sec:Physics-SpeedNeuro" class="ltx_paragraph">
+<h3 class="ltx_title ltx_title_paragraph">Speed in neuroscience</h3>
+
+<div id="SSSx2.Px3.p1" class="ltx_para">
+<p class="ltx_p">Helmholtz, in 1850, sent a short report off to the Academy <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib102" title="" class="ltx_ref">102</a>]</cite>
+”I have found that a measurable time passes when the stimulus exerted
+by a momentary electric current on the hip plexus (Hüftgeflecht) of
+a frog propagates itself to the nerves of the thigh and enters the
+calf muscle.” His teacher ”had thought that the speed of nervous
+conduction might be in excess of the speed of light and could probably
+never be measured. Helmholtz’s father, on hearing of the experiment
+and the surprisingly slow measured speed, wrote to his son that he
+would as soon believe this result as that one can see the light of
+a star that burned out a million years ago” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib103" title="" class="ltx_ref">103</a>]</cite>.</p>
+</div>
+<div id="SSSx2.Px3.p2" class="ltx_para">
+<p class="ltx_p">With the development of measurement technology, it became evident
+that finite speed is a general feature of the ”nervous connection”.
+(Somehow, ”the speed of nervous conduction” has been renamed to
+”conduction velocity”, neglecting the clear distinction that physics
+makes between the two wording.) With the dawn of instrumental electronics
+and computing, the McCulloch-Pitts model <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib104" title="" class="ltx_ref">104</a>]</cite>
+
+introduced the picture that the brain can be modeled by a network
+of simple perceptron nodes connected by wires; that is, it comprises
+a two-state equipotential membrane connected with perfect wires. The
+experimental research also quickly (re-)discovered that those wires
+forward signals in a particular way; the speed of the potential wave
+is finite.
+Furthermore, <span class="ltx_text ltx_font_italic">the axons are not equipotential during transmission</span>.
+Although its structure is practically identical with axons, <span class="ltx_text ltx_font_italic">biology
+assumes that, unlike an axon, the membrane remains equipotential during
+its operation, although the evidence shows the opposite</span>: ’the action potential spreads as a traveling wave from the initial site of depolarization
+to involve the entire plasma membrane’ <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib89" title="" class="ltx_ref">89</a>]</cite>.
+</p>
+</div>
+<div id="SSSx2.Px3.p3" class="ltx_para">
+<p class="ltx_p">When seeing that assuming an equipotential membrane was wrong and
+a single equipotential surface (in other words, classic physics’ instant
+interaction) cannot describe neurons adequately, multi-compartment
+models (typically comprising equipotential cylinders with different
+potentials) have been introduced <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib43" title="" class="ltx_ref">43</a>]</cite>. (Notice that it is a consequence of the wrong oscillator model hypothesized by Hodgkin an Huxley: the membrane is modeled as a series of resistors and capacitors.) Then
+(forgetting that Ohm’s Law is valid only for classic physics’s ’instant
+interaction’, furthermore, that no external potential is connected
+to either of the compartments, and no charge is present at the beginning,
+except at the input of the first compartment), the individually
+
+equipotential
+compartment pieces were connected by individual resistors. This model shows that
+the more compartments,
+the better the agreement (accuracy) with experiments.
+It happens because the shorter is the size of the compartment
+(approaches a differential equation), the less noticeable is the deviation
+from the true non-equipotential surface. This conclusion means that
+charging the capacitance attached to the compartment takes time, resulting
+in a delayed distributed current. Using infinitely many
+compartments, we would arrive at the differential equations describing
+a delayed distributed current on the surface of the non-equidistant
+membrane. However, biology did entirely not give up its position.
+It admitted that membrane current exists, but only between compartments,
+and its speed must be infinite (or, at least, the speed of
+ <a href="../../Ch_Glossary/index.html#glo.main.EM"><span href="../../Ch_Glossary/index.html#glo.main.EM" title="electromagnetic" class="ltx_glossaryref">EM</span></a> interaction). However, at least the compartment pieces must be equipotential.
+Instead of fixing the wrong hypothesis, biology is ”periodically
+resetting the clock”. Instead of accepting that the charged ions
+represent a ”slow current” (compared to the ”fast current” represented by electrons and their charge transmission method), biology introduced changing conductance, delayed current, rectifying current,</p>
+</div>
+</section>
+<section id="PHYSICS_SPEEDS_FINITE" class="ltx_paragraph">
+<h3 class="ltx_title ltx_title_paragraph">Finite-speed interactions</h3>
+
+<div id="SSSx2.Px4.p1" class="ltx_para">
+<p class="ltx_p">When speaking about speed, especially about the speed of charged objects
+inside biological objects, one needs to consider microscopic and macroscopic
+levels of understanding. On the boundaries of the two levels, we need
+to make distinctions between different kinds of speeds, among others
+(in units of <math id="SSSx2.Px4.p1.m1" class="ltx_Math" alttext="m/s" display="inline"><mrow><mi>m</mi><mo>/</mo><mi>s</mi></mrow></math>), the propagation speed <math id="SSSx2.Px4.p1.m2" class="ltx_Math" alttext="10^{8}" display="inline"><msup><mn>10</mn><mn>8</mn></msup></math> of the electric
+field (aka potential gradient), the speed <math id="SSSx2.Px4.p1.m3" class="ltx_Math" alttext="10^{5}" display="inline"><msup><mn>10</mn><mn>5</mn></msup></math> of thermal motion and potential-accelerated motion, the
+apparent speed of current (potential-assisted speed of a macroscopic stream, both
+in metals and electrolytes; mainly due to the repulsion of nearby ions in the stream) <math id="SSSx2.Px4.p1.m4" class="ltx_Math" alttext="10^{1}" display="inline"><msup><mn>10</mn><mn>1</mn></msup></math>,
+for ion current inside a neuron
+(see Fig. 1 in  <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib48" title="" class="ltx_ref">48</a>]</cite>) <math id="SSSx2.Px4.p1.m5" class="ltx_Math" alttext="10^{-2}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></math>;
+diffusion speed of electrons in a wire <math id="SSSx2.Px4.p1.m6" class="ltx_Math" alttext="10^{-4}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></math>, drift speed
+of the individual carriers in aqueous solutions <math id="SSSx2.Px4.p1.m7" class="ltx_Math" alttext="10^{-7}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup></math>; and
+of ions moving in a narrow tube filled with viscous liquid <math id="SSSx2.Px4.p1.m8" class="ltx_Math" alttext="10^{-8}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>8</mn></mrow></msup></math>. Fortunately,
+in most <span class="ltx_text ltx_font_italic">but not all</span> cases, different mechanisms
+(such as the Grotthuss mechanism or free electron model; for a review,
+see <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib105" title="" class="ltx_ref">105</a>]</cite>) at the level of microscopic
+structure help to create the illusion of a high macroscopic propagation
+speed (million times higher than the speed of its microscopic carriers).
+<span class="ltx_text ltx_font_italic">The same carrier can have macroscopic speeds differing by orders of
+magnitude, depending on the context</span>; see a biological example at
+ion channels.
+
+When more than one of those
+speeds plays a role in the phenomenon we study, we must carefully
+consider its context and prepare for handling <span class="ltx_text ltx_font_italic">fast</span>
+and <span class="ltx_text ltx_font_italic">slow</span> effects, furthermore, their mixing.</p>
+</div>
+<div id="SSSx2.Px4.p2" class="ltx_para">
+<p class="ltx_p">When an object can interact with another in a way abstracted by science
+as more than one interaction type, we need to find the relation (the ’extraordinary’ law) between
+them. Such a famous case is electricity and magnetism.
+Their interrelation
+is defined by the Maxwell equations: how an electrical field creates
+
+a magnetic one and vice versa (notice that the law is about their
+<em class="ltx_emph ltx_font_italic">space derivatives, aka space gradients</em> instead of the entities themselves).
+While we understand that the speeds of electromagnetic and gravitational
+interactions are finite, we can use the ’instant interaction’ approximation
+in classical physics because one effect of the first particle
+reaches the second particle simultaneously with the other effect,
+leading to the absence of a time-dependent term in the mathematical
+formulation.</p>
+</div>
+<div id="SSSx2.Px4.p3" class="ltx_para">
+<p class="ltx_p">An apparently
+similar case is found in electrodiffusion, where ions can be abstracted
+as mass and charge, one belonging to thermodynamics and the other
+to electricity. There is, however, an essential difference between
+those cases: the interaction speeds are the same in the first case
+(moreover, in the spirit of classical physics,
+the interactions are instant) and differ by several orders of magnitude
+in the second one.
+Of course, the Maxwell equations can be nicely solved
+and modeled also for biology
+if one introduces <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib106" title="" class="ltx_ref">106</a>]</cite>
+that the axial currents have the same speed (BTW: which was measured as <math id="SSSx2.Px4.p3.m1" class="ltx_Math" alttext="20\ m/s" display="inline"><mrow><mrow><mn>20</mn><mo lspace="0.500em">⁢</mo><mi>m</mi></mrow><mo>/</mo><mi>s</mi></mrow></math>) as the electric and magnetic waves,
+furthermore the longitudinal current is (?)defined(?) to have no attenuation.
+Furthermore, it is likely also defined that current needs no driving force
+and this is why the positive and negative ions flow in the same direction. It is really
+a novel paradigm leading to ”(mis)<a href="https://www.nature.com/articles/s41598-018-31054-9" title="" class="ltx_ref ltx_href">understanding cell interactions</a>”, but definitely describes some alternative nature.</p>
+</div>
+</section>
+<section id="PHYSICS_SPEEDS_LAWS" class="ltx_paragraph">
+<h3 class="ltx_title ltx_title_paragraph">Speed in laws of science</h3>
+
+<div id="SSSx2.Px5.p1" class="ltx_para ltx_noindent">
+<p class="ltx_p">Actually, the famous Coulomb’s Law is expressed as
+</p>
+<table id="eq:CoulombTimeDependentSpaceTime" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E1.m1" class="ltx_Math" alttext="\frac{F(t)}{Q_{1}}=k\frac{Q_{2}}{{\overrightarrow{r}}^{2}}" display="block"><mrow><mfrac><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><msub><mi>Q</mi><mn>1</mn></msub></mfrac><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mfrac><msub><mi>Q</mi><mn>2</mn></msub><msup><mover accent="true"><mi>r</mi><mo stretchy="false">→</mo></mover><mn>2</mn></msup></mfrac></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><math id="SSSx2.Px5.p1.m1" class="ltx_Math" alttext="\overrightarrow{r}" display="inline"><mover accent="true"><mi>r</mi><mo stretchy="false">→</mo></mover></math> is a space-time distance.
+That is, in the Newtonian approximation, time is identical at all places,
+so we used to omit it.
+However, physics knows also the notion of <span class="ltx_text ltx_font_italic">retarded time</span>.
+
+Considering the finite field propagation speed requires revisiting
+the fundamental physical laws. (in a Lorentz-transformed form) should be written as</p>
+<table id="eq:CoulombTimeDependent" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E2.m1" class="ltx_Math" alttext="\frac{F(t)}{Q_{1}}=k\frac{Q_{2}}{r^{2}}(t{-\frac{r}{c}})" display="block"><mrow><mfrac><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><msub><mi>Q</mi><mn>1</mn></msub></mfrac><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><mfrac><msub><mi>Q</mi><mn>2</mn></msub><msup><mi>r</mi><mn>2</mn></msup></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mfrac><mi>r</mi><mi>c</mi></mfrac></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.2)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SSSx2.Px5.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p">The electrostatic field that charge <math id="SSSx2.Px5.p2.m1" class="ltx_Math" alttext="Q_{1}" display="inline"><msub><mi>Q</mi><mn>1</mn></msub></math> experiences
+due to the finite propagation speed <math id="SSSx2.Px5.p2.m2" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> of the electric
+field (or interaction) corresponds to that <math id="SSSx2.Px5.p2.m3" class="ltx_Math" alttext="Q_{2}" display="inline"><msub><mi>Q</mi><mn>2</mn></msub></math> at
+a distance <math id="SSSx2.Px5.p2.m4" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> <span class="ltx_text ltx_font_italic">generated <math id="SSSx2.Px5.p2.m5" class="ltx_Math" alttext="\frac{r}{c}" display="inline"><mfrac><mi>r</mi><mi>c</mi></mfrac></math> time ago</span>
+(<math id="SSSx2.Px5.p2.m6" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> is the constant describing the electric interaction). This term
+has no role if the two charges do not change their position; similarly
+to that in the special theory of relativity, only the relative movement
+leads to complications. If the distance changes, its effect is so
+tiny that the term can usually be omitted. So, our college knowledge
+can serve as a good first approximation.</p>
+</div>
+<div id="SSSx2.Px5.p3" class="ltx_para">
+<p class="ltx_p">This speed term pops another law from classical physics into our minds:
+Kirchhoff’s junction rule. The law is perfect in the approximation
+’instant interaction’ that classical
+physics uses, but not for biology.
+
+First, because it expresses charge conservation, <span class="ltx_text ltx_font_italic">it
+is invalid when charges are ”created” inside biological objects</span>
+(ions diffuse into the junction; see the role of ion channels in the
+wall of membranes). Second, it is not valid for input currents arriving
+with finite speeds into finite-size space regions, but it is valid for a single point in space-time
+(in other words, in differential equation form).
+As we discuss in section <a href="../sec_Physics-Electricity/sec_PHYSICS_ELECTRICFundamental.html#sec:Physics-Current" title="Current ‣ 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5.2</span></a>,
+using a wrong definition of current means assuming ’instant interaction’, that is, that neural signals propagate with the speed of light.
+The currents (and
+the voltages), measured at two different points in space-time, are
+different. Consequently, for extended objects (such as a line-like finite-size
+neuron), it is valid only with a time delay</p>
+<table id="eq:Kirchoff_biology" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E3.m1" class="ltx_Math" alttext="I_{out}(t)=-I_{in}(t-\Delta t)" display="block"><mrow><mrow><msub><mi>I</mi><mrow><mi>o</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>t</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><msub><mi>I</mi><mrow><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>t</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.3)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">The time delay in biology is in the <math id="SSSx2.Px5.p3.m1" class="ltx_Math" alttext="1\ msec" display="inline"><mrow><mn>1</mn><mo lspace="0.500em">⁢</mo><mi>m</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>c</mi></mrow></math>
+range.
+<span class="ltx_text ltx_font_italic">We must not describe the axon or the membrane by the differential form the non-differential form Kirchoff equation:
+the input and the output currents flow at different times (the charge carriers need time to reach from input to output)</span>. <span class="ltx_text ltx_font_italic">We must not describe the axon or the membrane with the non-differential form of the Kirchoff equation:
+the input and the output currents flow at different times (the charge carriers need time to reach from input to output); only the differential
+equation form expresses charge conservation</span> (furthermore, in the case of ”producing” ions, even by the differential form is invalid).
+For its exact interpretation see sections on
+axonal charge delivery
+and on the
+true membrane current, Fig. <a href="../../ch_Physiology/sec_Physiology-Experimental/sec_Axonal-charge-delivery.html#fig:The-ghost-image_AP" title="Figure 3.22 ‣ 3.8.2 Axon ‣ 3.8 Experimental evidence ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.22</span></a>,
+and the text around it. <span class="ltx_text ltx_font_italic">Studying electric phenomena on structured
+media, such as biological cells, needs much care</span>. We must not apply
+laws derived from entirely different conditions (mainly metals).</p>
+</div>
+</section>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Science methods</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physics-OtherIssues.html" title="In 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2.2 </span>Other issues</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Feb 17 16:52:46 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

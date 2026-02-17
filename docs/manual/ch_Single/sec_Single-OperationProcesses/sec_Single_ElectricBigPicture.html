@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1.4.1 Operation in a nutshell ‣ 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0</title>
+<!--Generated on Tue Feb 17 16:52:46 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 17, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up" href="../index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="prev" href="index.html" title="1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="next" href="sec_Single_AP_Synaptic.html" title="1.4.2 Synaptic control ‣ 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Single_AP_Synaptic.html" title="1.4.2 Synaptic control ‣ 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Single-OperationSynchronization.html" title="1.4.3 Synchronization ‣ 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Single-OperationLearning.html" title="1.4.4 Learning ‣ 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-Introduction/index.html" title="1.1 Introduction ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_SingleModeli/index.html" title="1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../Single-Concepts/index.html" title="1.3 Concepts of the play ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="index.html" title="1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-NeuronControlCircle/index.html" title="1.5 Neuron as control circuit ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-RestingPotential/index.html" title="1.6 Resting potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-ActionPotential/index.html" title="1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-TransmittingPotential/index.html" title="1.8 Transmitting action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Single-RestingConsequences/index.html" title="1.9 Consequences of the resting potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../Single-Implications/index.html" title="1.10 Implications for computing, communication, information ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Physics/index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Physiology/index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<meta name="keywords" lang="en" content="lipids, melting">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">Dynamic Abstract Neural Computing
+<br class="ltx_break">with Electronic Simulation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.0</em>
+<br class="ltx_break">@February 17, 2026</p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-Introduction/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_SingleModeli/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Modeling</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../Single-Concepts/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Concepts</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Processes</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4.1 </span>Operation in a nutshell</span></span></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Single_AP_Synaptic.html" title="In 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4.2 </span>Synaptic</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Single-OperationSynchronization.html" title="In 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4.3 </span>Synchronization</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Single-OperationLearning.html" title="In 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4.4 </span>Learning</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-NeuronControlCircle/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.5 </span>Control circuit</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-RestingPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.6 </span>Resting potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-ActionPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.7 </span>Action potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-TransmittingPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.8 </span>Transmitting potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-RestingConsequences/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.9 </span>Consequences</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../Single-Implications/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.10 </span>Implications</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physics/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physiology/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href">Report issue</a>
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="https://github.com/jvegh/DynamicAbstractNeuralComputing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Processes</span></a><a href="index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Processes</span></a><a href="sec_Single_AP_Synaptic.html" title="In 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4.2 </span>Synaptic</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.4.1 </span>Operation in a nutshell</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><a name="PhysicalPicureNeuron" id="PhysicalPicureNeuron" class="ltx_anchor">We have Schrödinger’s comments in mind when constructing the physical picture
+about neurons</a>, that we must be very careful. <span class="ltx_text ltx_font_italic">We must not use the
+’ordinary’ laws of physics derived for non-living matter without revisiting them</span> because ”<span class="ltx_text ltx_font_italic">the construction is different from anything we have yet tested in the physical laboratory</span>” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib9" title="" class="ltx_ref">9</a>]</cite>.
+The fundamental principles are the same, but we must use different
+<a href="../../ch_Physics/sec_Physics-Abstraction/index.html#Abstractions" title="range of phenomena, we use approximations and omissions, and we create abstractions ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">approximations
+and abstractions</a> for the different disciplines and for living material. For this reason,
+maybe it is more correct to call those laws for living matter ’non-disciplinary’
+instead of ’non-ordinary’ laws.
+We must also include the discoveries from the past seven decades,
+among others that in the transient state a neuron shall be modeled
+as a serial (i.e., differentiator-type) <a href="../../ch_Physics/sec_Physics-Electricity/sec_PHYSICS_MEASURINGOSCILLATOR.html#PhysicsOscillator" title="oscillator circuits ‣ 2.5.5 Oscillator ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">electrical oscillator</a>, which has gated current
+inputs (instead of a parallel oscillator
+without gating inputs, which is a good model only in the resting state) and provides a timed output. We explicitly add that the charge carriers, the neuron
+works with, are <span class="ltx_text ltx_font_italic">ions</span> (instead of electrons) and that the signal propagation
+mechanism is <span class="ltx_text ltx_font_italic">bioelectric</span> (instead purely an electric field
+or mechanical wave propagation or ”protein mechanism”), in many cases even without having free carriers in the respective volume. (We do not consider the
+ideas that the associated mechanical, optical, etc. changes cause electric phenomena. They reverse the true causality: they do not have
+a triggering cause; the view inherited from the narrative biology.)
+Electrochemical operation,
+especially that of <a href="../../ch_Physics/sec_Physics-MembraneElectricity/sec_Physics-ElectrolyteThermalField.html#ThermodynamicElectricField" title=", we can derive the equivalent ”thermodynamic electrical field ‣ 2.6.3 Deriving ”thermodynamic electrical field” ‣ 2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">semipermeable membranes</a>, requires special attention:
+charge carriers are ”created” inside the biological matter.
+Omitting purposefully the clear physical background results in performing
+<a href="../../ch_Physics/sec_PHYSICS_MEASURING/fig_Physics-Clamping.html#voltage-clamping" title="The very common measuring method reveals some fundamental differences between the electric behavior of conductors and living matter. ”The reason for voltage-clamping ‣ 2.10.4 Voltage/current clamping/patching ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">wrong measurements</a> and introducing <a href="../../ch_Physiology/sec_Physiology-Fallacies/index.html#PhysiologyFallacy" title="assumptions and approximations must be revisited. Maybe the discovery supersedes one or more of the old items, provides a new hypothesis in place of an old one, turns a hypothesis into fact, or question marks the overall validity (at least part) of the set of approximations and abstractions. Alternatively, it turns a hypothesis into a fallacy ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">wrong concepts</a> into biology.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">These distinctions involve numerous special features as follows.
+The play is divided into scenes and acts, where actors play roles in front of sets.
+Here we will only give a ”guide” summary. Some parts of the plot are discussed in detail, others only in outline.
+Fundamentally, in this chapter we provide a mostly narrative discussion, the detailed explanation (assuming a deeper knowledge in physics and mathematics) is left for other chapters.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">In the non-disciplinary physical model (the ’abstract physical neuron’, as we call it), a neuron (highly simplified) is a sphere with two lipid layers (membrane), a similarly insulating output tube (axon), and an incompressible, partially ionized electrolyte fluid with different composition and concentration inside and outside.
+They contain ions, simple chemical molecules, and complex biological formations.
+These components may have gradients and move at continuously changing speeds that can vary by several orders of magnitude during operation. The lipid layer is partially permeable (controlled or uncontrolled) for the components above (channels, mainly ion channels).</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Between the membrane and the axon, there is a large amount of uncontrolled ion channels (<a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>). The membrane represents a confined space in which ions behave differently from in an infinite space; furthermore, it significantly alters the properties of the few-nanometer-thick layer near the membrane.
+The elastic wall of the membrane is covered with ion layers, and therefore, a potential difference is created there (the resting potential).
+In this layer, the concentration and potential change significantly with distance from the membrane due to interactions between the membrane’s ion layers and the electrolyte.
+Ions sent by other neurons can enter the internal volume through controlled inputs (synapse).</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">The membrane functions as a <a href="../sec_Single-NeuronControlCircle/index.html#ControlTheory" title="From control theory ‣ 1.5 Neuron as control circuit ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><a href="../../Ch_Glossary/index.html#glo.main.PID"><span href="../../Ch_Glossary/index.html#glo.main.PID" title="Proportional-Integral-Derivative" class="ltx_glossaryref">PID</span></a> control circuit</a>.
+Under a small external influence, neuron remains in its resting state and regulates itself through non-controlled ion channels in its membrane.
+If the external influence exceeds a threshold, the controlled channels suddenly release a large amount of ions into the internal space, putting the neuron into a transient state.
+The membrane potential changes suddenly (within a few dozen nanoseconds), and, due to the mutual repulsion of ions, the pressure acting on the membrane wall and the ion concentration in the layer near the membrane also increase significantly and suddenly.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Since <span class="ltx_text ltx_font_italic">the same physical action generates the voltage gradient and the concentration gradient</span> (and, consequently, the pressure), they are inseparable and proportional to each other.
+Generating a voltage change (clamping, direct current, magnetic pulse), or a pressure change (ultrasound, mechanical, shock waves) on the membrane mutually cause the other to change. Inputing ions (synaptic input) generates both changes.
+The control circuit tries to restore the resting state, during which the mentioned changes decrease proportionally together.
+The transient state of the neuron can, in principle, be described by any of the mentioned entities, but, as a practical matter, <span class="ltx_text ltx_font_italic">the effects of changes in the other entities must also be taken into account</span>: <span class="ltx_text ltx_font_italic">no single discipline can describe the changes</span>.
+The elastic membrane implements an almost critically damped vibration, but the ”vibrating mass” and the ”spring force” are constantly changing.
+In an electric resonant circuit, the capacitor’s voltage and capacitance change due to the finite amount of charge.
+<span class="ltx_text ltx_font_italic">The pressure wave caused by a force shock and the voltage wave caused by a voltage shock describe the same effect</span>.
+In both cases, the other effect must be taken into account to some measure: an infinitesimal movement of the ion also involves a change in both pressure and voltage.
+Changes in pressure and charge alter the membrane’s thickness (and therefore its capacity), and both voltage and pressure can cause a structural change (phase change, ”melting”) of the lipid chains that make up the membrane.
+
+In the case of the pressure wave, the speed is naturally finite (mass must be moved). For the electric wave, there are laws regarding only instantaneous interaction; so, they must be adapted to slow ion currents based on physical assumptions.
+It is simpler to describe the generation of the action potential as an electrical oscillation, and its propagation as a pressure wave (although this only represents well the wave front: the <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a> lasts as long as there is a non-equilibrium charge in the neuron: the repulsion between the ions pushes the ions out of the closed space, so the intensity of the wave continuously decreases).
+Hyperpolarization is described in the electrical view as a capacitive current in the sequential oscillator circuit, in the thermodynamic view as a suction effect occurring in the opposite phase of the membrane.
+In both cases, however, it must be taken into account that charge and mass are inseparable in ions, and that their cross-disciplinary effects significantly reduce the applicability of the disciplinary laws.</p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">In simple words, a neuron combines different disciplines; it works like a two-tact biological internal combustion engine, and can be described theoretically as a special Carnot-type thermodynamic engine, see section <a href="../../ch_Physics/sec_Physics-Thermodynamics/index.html" title="2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.4</span></a>. The synaptic input currents operate the ignition. The influx of <math id="p7.m1" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math> ions acts like an explosion, producing a large pressure impulse due to electrical repulsion between ions; see Appendix <a href="../../ch_Physics/sec_Physics-Electricity/sec_Physics-ElectrodiffusionDynamics.html" title="2.5.6 Ions’ dynamics ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5.6</span></a>. The neuron’s volume remains practically unchanged (represents an iso-volume process), and the pressure wave vibrates the particles (including the dissociated ions) in the form of a longitudinal and the created offset potential moves the ions out of the neuron through the only available output channel: the axon. The pressure wave is similar to a sound wave, with a negligible material transport.
+The force analysis shows that the pressure wave
+causes a longitudinal vibration, while the changed potential adds
+a potential-dependent longitudinal force component for moving the ions.</p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">In the first stroke, the pressure impulse invests energy into compressing the elastic membrane and starting a compression wave (a soliton). In the second stroke, the elastic membrane pumps out some electrolyte (the driving force is the a combined thermoelectrical/mechanical force rather than some magic battery) through the ion channels in the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>, which ”resists” it, thereby generating a potential wave known as <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a>; well described by electricity. The force analysis shows that the pressure wave
+causes a longitudinal vibration, while the changed potential adds
+a potential-dependent longitudinal force component for moving the ions.
+ions.
+The compression
+produces heat, as evidenced by a rise in temperature. The expansion consumes heat, as evidenced by a decrease in temperature. These are well-understood processes in thermodynamics.
+However, they are still unexplained in biophysics, although they were observed
+seven decades ago <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib62" title="" class="ltx_ref">62</a>]</cite>.
+The elastic membrane functions as a damped oscillator, which, in its negative amplitude phase, reverses the direction of electrolyte flow (and, consequently, the direction of the current carried by the ions).
+In the discipline of electricity (when using the serial <math id="p8.m1" class="ltx_Math" alttext="RC" display="inline"><mrow><mi>R</mi><mo>⁢</mo><mi>C</mi></mrow></math> model), it can be interpreted as a capacitive current, which in physiology is observed as hyperpolarization that inverts the polarity of the output voltage.
+The ions represent both mass and charge simultaneously, and, correspondingly, one can observe, in addition to the electrical potential wave, mechanical, optical, and other features changing.
+In different disciplines, pressure and voltage represent the same phenomenon, using concepts from various disciplines, although the
+speed of those waves are strongly different.</p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p">Today, two major branches of disciplinary theories compete
+for being applied to describe the neuronal operation <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib63" title="" class="ltx_ref">63</a>, <a href="../../bib.html#bib8" title="" class="ltx_ref">8</a>, <a href="../../bib.html#bib47" title="" class="ltx_ref">47</a>, <a href="../../bib.html#bib64" title="" class="ltx_ref">64</a>, <a href="../../bib.html#bib65" title="" class="ltx_ref">65</a>, <a href="../../bib.html#bib66" title="" class="ltx_ref">66</a>]</cite>. Those cited references also compare those theories.
+The electrical view essentially stems from the (Nobel Prize-winning) work of Hodgkin and Huxley <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib6" title="" class="ltx_ref">6</a>]</cite>. They could not make a perfect job, mainly due to the lack of
+discoveries made several decades later, including ours, about handling
+the finite speed of the biological ionic currents (and, due to that, the dynamic features), which drastically change
+their conclusions. In contrast with their <span class="ltx_text ltx_font_italic">empirical description</span>, which delivered mathematically formulated measured observations, our discussion, although it follows essentially
+the same principles, reinterprets and pinpoints the used fundamental terms, sets up a physical model, and <span class="ltx_text ltx_font_italic">explains</span> the physically underpinned processes. “However, the theory could not explain the physical
+phenomena such as reversible heat changes, density changes,
+and geometrical changes observed in the experiments” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib64" title="" class="ltx_ref">64</a>]</cite>.
+By using the correct (non-disciplinary) discussion of the phenomena,
+we can explain all those observations.
+The thermodynamic view roots in the (possibly Nobel-prize-winning)
+idea of Heimburg and Jackson <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib67" title="" class="ltx_ref">67</a>]</cite>. They proposed that the action potential is essentially a sound wave (a soliton). “However, there are several other questions that this has to answer like ion flow involvement in nerve signal propagation as stated by the <a href="../../Ch_Glossary/index.html#glo.main.HH"><span href="../../Ch_Glossary/index.html#glo.main.HH" title="Hodgkin and Huxley" class="ltx_glossaryref">HH</span></a> model and also the faster propagation in myelinated nerves than in unmyelinated” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib64" title="" class="ltx_ref">64</a>]</cite>.
+If we consider that the ion flow means charge propagation in a membrane tube where the specific capacity depends on the thickness (of the myelin sheath) of the wall <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib68" title="" class="ltx_ref">68</a>]</cite>, the faster propagation is not mysterious anymore.
+Those apparent contradictions are simply consequences of the non-disciplinary features of ions.
+Given that
+our model natively connects charge and mass of ions <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib20" title="" class="ltx_ref">20</a>]</cite>, it has a good chance of explaining the missing phenomena.</p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Processes</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Single_AP_Synaptic.html" title="In 1.4 Processes of operation ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4.2 </span>Synaptic</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Feb 17 16:52:46 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

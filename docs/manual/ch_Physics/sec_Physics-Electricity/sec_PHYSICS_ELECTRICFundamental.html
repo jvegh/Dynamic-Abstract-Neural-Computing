@@ -1,0 +1,552 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0</title>
+<!--Generated on Tue Feb 17 16:52:46 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 17, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up" href="../index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="prev" href="sec_PHYSICS_ElectricWhyDifferent.html" title="2.5.1 Why ions’ electricity is different ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="next" href="sec_Physics-IonicPeculiarities.html" title="2.5.3 Peculiarities of ion current ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_PHYSICS_ElectricWhyDifferent.html" title="2.5.1 Why ions’ electricity is different ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-IonicPeculiarities.html" title="2.5.3 Peculiarities of ion current ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-Imitating.html" title="2.5.4 Imitating ion’s electricity ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_PHYSICS_MEASURINGOSCILLATOR.html" title="2.5.5 Oscillator ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_Physics-ElectrodiffusionDynamics.html" title="2.5.6 Ions’ dynamics ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Introduction/index.html" title="2.1 Introduction ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Abstraction/index.html" title="2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Spatiotemporal/index.html" title="2.3 Spatiotemporal ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Thermodynamics/index.html" title="2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="index.html" title="2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-MembraneElectricity/index.html" title="2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-NeuronControlCircle/index.html" title="2.7 Neuron as control circle ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Components/index.html" title="2.8 Neuronal components ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-MembranesChannels/index.html" title="2.9 Neuronal operation ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_PHYSICS_MEASURING/index.html" title="2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Single/index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Physiology/index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<meta name="keywords" lang="en" content="Kirchoff’s Laws, Kirchoff’s law, capacity, conduction speed, delayed current, electric dipole, equivalent electrical circuit, limiting speed">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">Dynamic Abstract Neural Computing
+<br class="ltx_break">with Electronic Simulation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.0</em>
+<br class="ltx_break">@February 17, 2026</p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Single/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics for neurons</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Introduction/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Abstraction/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Science methods</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Spatiotemporal/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Spatiotemporal</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Thermodynamics/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Ions’ thermodynamics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Ions’ electricity</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_PHYSICS_ElectricWhyDifferent.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.1 </span>Why different</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.2 </span>Concepts</span></span>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:PHYSICS_ELECTRICCHARGE" title="In 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Charge</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Physics-Gradient" title="In 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Electric field</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:PHYSICS_VOLTAGE" title="In 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Voltage</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Physics-Current" title="In 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Current</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:PHYSICS_RESISTANCECONDUCTANCE" title="In 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Resistance/Conductance</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:PHYSICS_CAPACITANCE" title="In 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Capacitance</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-IonicPeculiarities.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.3 </span>Peculiarities</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Imitating.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.4 </span>Imitating ion’s electricity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_PHYSICS_MEASURINGOSCILLATOR.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.5 </span>Oscillator</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-ElectrodiffusionDynamics.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.6 </span>Dynamics</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-MembraneElectricity/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.6 </span>Electrolyte’s electricity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-NeuronControlCircle/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.7 </span>Controling potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Components/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.8 </span>Neuronal components</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-MembranesChannels/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.9 </span>Neuronal operation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_PHYSICS_MEASURING/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10 </span>Measuring</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physiology/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href">Report issue</a>
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="https://github.com/jvegh/DynamicAbstractNeuralComputing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Ions’ electricity</span></a><a href="sec_PHYSICS_ElectricWhyDifferent.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.1 </span>Why different</span></a><a href="sec_Physics-IonicPeculiarities.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.3 </span>Peculiarities</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.5.2 </span>Fundamental concepts</h1>
+
+<section id="sec:PHYSICS_ELECTRICCHARGE" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Charge</h2>
+
+<div id="SSSx1.p1" class="ltx_para">
+<p class="ltx_p">Charge is one of the fundamental properties of matter,
+one of the fundamental abstractions in science, and the primary abstraction in connection with electrical concepts.
+Although charge is an abstract property, it must always have a carrier. Without a carrier, no current and voltage can happen;
+although the transition between the discrete and continuous view
+is implicite and tacit.
+In contrast with classical electricity,
+significance should be attached to the circles representing the ion and electron, in the sense of implying a relative size and mass.
+In a useful first construct, they are hard-sphere objects.
+The most important opening idea, electrically, is that they have a property called ”charge” which is the same size, but opposite in polarity for the ion and electron and the ions can have multiple charge.
+The ions are about <math id="SSSx1.p1.m1" class="ltx_Math" alttext="50,000-100,000" display="inline"><mrow><mn>50</mn><mo>,</mo><mrow><mn>000</mn><mo>−</mo><mn>100</mn></mrow><mo>,</mo><mn>000</mn></mrow></math> times heavier and about the same factor larger than electrons, and this difference leads to crucial other differences, for example in their speed and conduction mechanism.
+For the sake of simplicity, we always think about positive ions,
+although we know also there are negative ions.
+An essential implication is that the ion and electron will strongly attract each other, while two positive ions or two electrons would strongly repel each other.
+All charges observed in nature are multiples of these elementary charges. The
+<a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">charge</a> generates an <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">electric field</a>, its spatial integral results
+in potential difference or <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">voltage</a>, and its movement (its time derivative) generates a <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">current</a>
+(furthermore, electromagnetic waves that we do not discuss here).</p>
+</div>
+<div id="SSSx1.p2" class="ltx_para">
+<p class="ltx_p">One of the fundamental symmetries of nature is the <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">conservation of electric charge</a>; it is valid, of course, for living matter as well. No known physical process produces a net change in electric charge.
+Claims such as ”the current cannot disappear, it has to go somewhere” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib22" title="" class="ltx_ref">22</a>]</cite>, page 9, are wrong. On the one side <span class="ltx_text ltx_font_italic">only charge conserves, its time derivative, the current, does not</span>. On the other,
+<span class="ltx_text ltx_font_italic">charge conserves only globally, but not locally</span>:
+the charge moves from one place to another. The case is similar to the case of general relativity, and also its reason is the same: the finite speed of interaction. In the general theory of relativity, local and global energies had to be introduced; for its mathematical handling, see, also <a href="https://en.wikipedia.org/wiki/Noether's_theorem" title="" class="ltx_ref ltx_href">Noether’s theorem</a>.
+In the case of biology, the
+speed of interaction is the conduction velocity.
+It is a limiting speed in the sense as the concept is used in
+the theories of relativity: in biology, no effect can be faster
+than the (actual) conduction speed.
+Further complication arise from thermoelectricity and neurotransmitters. They, apparently, ”produce” new charges in a biological matter.
+</p>
+</div>
+<div id="SSSx1.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">In no case can one think that ions in living matter
+behave as electrons in metallic conductors. Although biology does not say that explicitly, implicitly it says so by using the equations
+describing electrons in solids.</span> Using the fundamental laws of electricity without changes means assuming that the ions
+travel at the same speed in electrolytes as electrons in metal conductors, surely misleading researchers.
+One must be especially careful that the electric testing circuits are hybrid:
+in half of the circuit, the charge carriers are electrons, while in the
+other half, they are ions. There are two points where the charge carriers
+must be converted there and back, with all potential, speed and timing issues.
+The media and the charge carriers in those two halves are entirely different.</p>
+</div>
+</section>
+<section id="sec:Physics-Gradient" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Electric field</h2>
+
+<div id="SSSx2.p1" class="ltx_para">
+<p class="ltx_p">A charge generates an <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">electric field</a>. In the continuous view,
+physics uses the approximation that some electrical fluid coates surfaces and generates a field.
+However, in classical electricity, it is a static view which assumes instant interaction.
+That is, surfaces are equipotential and the charges are fixed to a position somehow. In the particle view, there are no laws of motion: the charges have no carriers.
+Another discipline, classical mechanics, deals with the mass of the carrier and enables to consider the motion of the charged particles.
+The main interest of the physical electricity simplified the things by assuming a great degree of
+collectivism of electrons, that is, that they form an electron cloud.
+In a solid, electrons move as if they had no mass (they immediately go to the right place in the electric field acting on them).
+Although the drift speed of electrons is low, the charge transmission mechanism creates the illusion that their interaction with the
+external fields is ”instant”, that is, their apparent speed
+is infinitely large. In living matter, sometimes there are no
+<span class="ltx_text ltx_font_italic">free</span> charge carriers in the medium in question. For example,
+the attraction of the ions on the opposite surface of the membrane
+keeps them in place, and extra ions must arrive into the volume
+to have freely moving charge carriers (which can produce local field and forward potential).</p>
+</div>
+<div id="SSSx2.p2" class="ltx_para">
+<p class="ltx_p">An isolated single charge can be called an ”electric monopole”. Equal positive and negative charges placed close to each other constitute an <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">electric dipole</a>; solved salts in biological liquids typically represent dipoles.
+From some point, they have a fraction of a unit charge. From our point, it is important that the dipoles are directed.
+
+Their orientation can be affected by external fields, furthermore the nearby dipoles affect each other’s field and dipole moment.</p>
+</div>
+<div id="SSSx2.p3" class="ltx_para">
+<p class="ltx_p">It is a common fallacy in physiology that the applied potential <math id="SSSx2.p3.m1" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> generates
+a current. Instead, even in invasive measurements, its gradient (<math id="SSSx2.p3.m2" class="ltx_Math" alttext="E=U/z" display="inline"><mrow><mi>E</mi><mo>=</mo><mrow><mi>U</mi><mo>/</mo><mi>z</mi></mrow></mrow></math>) has the effect, where <math id="SSSx2.p3.m3" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> is the distance, for example, between the clamping point and the membrane or the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>.
+<span class="ltx_text ltx_font_italic">Inside the cells, there are no batteries.</span>
+Instead, the different ion concentrations produce electric gradient (<math id="SSSx2.p3.m4" class="ltx_Math" alttext="E=\frac{dU}{dz}" display="inline"><mrow><mi>E</mi><mo>=</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>U</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>z</mi></mrow></mfrac></mrow></math>) that forms the driving force for moving the ions, among others, through the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>.</p>
+</div>
+</section>
+<section id="sec:PHYSICS_VOLTAGE" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Voltage</h2>
+
+<div id="SSSx3.p1" class="ltx_para">
+<p class="ltx_p">It is worth to recall some features of <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">voltage</a>.
+Classical electricity applies a hybrid approach, again.
+In classical circuits, the voltage arrives instantly, but
+in the discrete elements, such as condensers and solenoids,
+have a mathematically described time course.
+We must extend the notion of electric field by considering
+the contribution of a <a href="../sec_Physics-MembraneElectricity/sec_Physics-ElectrolyteThermalField.html#ThermodynamicElectricField" title=", we can derive the equivalent ”thermodynamic electrical field ‣ 2.6.3 Deriving ”thermodynamic electrical field” ‣ 2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">pseudo-electric field</a> arising from thermodynamics.</p>
+</div>
+<div id="SSSx3.p2" class="ltx_para">
+<p class="ltx_p">For a biological interpretation, we can start from the picture
+used in the case of condensers: charges arrive into a discrete element
+with a macroscopic feature (called capacity) of that
+discrete object of the electric circuit. We assume that a driving force exists across the two ends of the condenser. In physical electricity, the ideal condenser is point-like and a voltage generator provides the voltage switched on the device. Given that it is sizeless and the interaction is instant, the derivative <math id="SSSx3.p2.m1" class="ltx_Math" alttext="\frac{dU}{dx}" display="inline"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>U</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></math> cannot be interpreted within the condenser. In that abstraction, the electric field is a step-like function, see, for example, Fig. <a href="../sec_Physics-MembraneElectricity/sec_Physics-TwoSegments.html#fig:Physics-Capacitor" title="Figure 2.7 ‣ Simple conducting sheet (a classical condenser) ‣ 2.6.5 Two segments ‣ 2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.7</span></a>.</p>
+</div>
+<div id="SSSx3.p3" class="ltx_para">
+<p class="ltx_p"><a name="voltage_gradient" id="voltage_gradient" class="ltx_anchor">In biology, the objects are extended and the charge carriers are slow ions, so we can ask how the voltage gradient</a> <math id="SSSx3.p3.m1" class="ltx_Math" alttext="\frac{dU}{dx}" display="inline"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>U</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></math> (and <math id="SSSx3.p3.m2" class="ltx_Math" alttext="\frac{dU}{dt}" display="inline"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>U</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></math>) changes
+across biological objects. Here, again, comes into the picture the different charge propagation mechanism. As we discuss in section <a href="../sec_Physics-Thermodynamics/sec_Nernst-time-derivatives.html" title="2.4.5 Laws of motion: time derivatives ‣ 2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.4.5</span></a>, the electric and thermodynamic interaction speeds are very different, and the ions have the attributes mass and charge simultaneously, the <span class="ltx_text ltx_font_italic">potential of the charge
+can travel only with the speed of the slow ions, so the transport equations such as Eq. (<a href="../sec_Physics-Thermodynamics/sec_Physics-SteadyState.html#eq:NernstPlanck" title="In 2.4.4 Steady state ‣ 2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.9</span></a>)</span> have a wrong theoretical foundation; consequently they need context-dependent half-empirical coefficients.</p>
+</div>
+<div id="SSSx3.p4" class="ltx_para">
+<p class="ltx_p">In biology, thermodynamical processes produce the voltage and it has a time course. <span class="ltx_text ltx_font_bold ltx_font_italic">Believing that an equivalent battery provides
+a constant voltage results in attributing changing conductance
+to the membrane</span>, as we discuss in section <a href="#sec:PHYSICS_RESISTANCECONDUCTANCE" title="Resistance/Conductance ‣ 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5.2</span></a>.</p>
+</div>
+<div id="SSSx3.p5" class="ltx_para">
+<p class="ltx_p">It is important, that a voltage can be generated either by
+driving a current through a solid (in the continuous view) or placing charges in different points (in the discrete view). Electricity explains that voltage can be measured without or with electric current; having entirely different physical background.
+Accumulating charge on an insulator results in producing an electrostatic field. Of course, while charging, a current flows and energy is needed to produce a voltage, but it is a one-time action; the created potential difference persists.
+In a condenser, a counterforce counterbalances the attraction between opposite charges on the opposite plates, no charge movement takes place, and no energy is needed to keep up the voltage.
+Another possibility
+is when the charge moves (either an electron of the ’free electron cloud’ moves against the friction of a solid or an ion moves
+with the Stokes-Einstein speed against viscosity) in a medium, see Fig. <a href="#tab:Electric_ResistanceTypes" title="Figure 2.3 ‣ Resistance/Conductance ‣ 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a>.
+Notice the difference the thermodynamic feature of charge carriers
+means: only an elecric field can move the electrons, while
+thermodynamic force can also move the ions.
+Anyhow, if moving charge carriers against resistance,
+it produces a voltage difference.
+In these latter cases, a current (charge transfer) and potential difference can be observed
+across the considered space region (a solid conductor or an ion channel).
+See the case of <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>,
+where a combination of mechanic pressure, thermodynamic and electrical
+force field moves the ions and creates a voltage measured as <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a>.)
+The important difference between producing a voltage difference
+by charge-up and flowing current is that charge-up is
+a one-time action, when setting up a voltage difference;
+while generating a current to keep up the voltage
+requieres continuous energy investment.
+Biology typically uses only the continuous view.</p>
+</div>
+<div id="SSSx3.p6" class="ltx_para">
+<p class="ltx_p">It is a common fallacy in physiology that the applied potential <math id="SSSx3.p6.m1" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> generates
+a current. Hovever, it is a kind of potential energy.
+Instead, its gradient (<math id="SSSx3.p6.m2" class="ltx_Math" alttext="E=U/d" display="inline"><mrow><mi>E</mi><mo>=</mo><mrow><mi>U</mi><mo>/</mo><mi>d</mi></mrow></mrow></math>) has an effect, where <math id="SSSx3.p6.m3" class="ltx_Math" alttext="d" display="inline"><mi>d</mi></math> is the distance. The field exerts force on a charge carrier in the respective
+space region. For example, between the clamping point and the membrane or the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> the force field exists, but the current cannot start
+until charge carriers appear in the axon. It is important to distinguish potential and the difference of potentials in two different points. The latter, together with the distance of the points, leads to a gradient.</p>
+</div>
+<div id="SSSx3.p7" class="ltx_para">
+<p class="ltx_p">By saying that charge generates potential and having in mind
+that the charge carriers have a finite speed,
+one must conclude that
+the potential in biological matter can be the function of time
+in volumes and surfaces when charge relocates due to different processes. It differs from the case of physical electricity
+where the instant interaction means that the changes
+reach the different parts of the volume or the surface.
+In the case of living matter, internal processes change
+continuously the mass and charge disctribution: no uniform
+bulk concentration and uniform mebrane potential exists.
+The continuous change is required for life.</p>
+</div>
+</section>
+<section id="sec:Physics-Current" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Current</h2>
+
+<div id="SSSx4.p1" class="ltx_para">
+<p class="ltx_p">Charge and current are the same thing in discrete and continuous views, respectively.
+In the macroscopic world, we describe the current as the statistical
+time course of charge carriers carrying charge <math id="SSSx4.p1.m1" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math> through
+a cross section <math id="SSSx4.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. At any point and at any time, the incoming charge equals the outgoing charge.
+
+Kirchoff’s law expresses <span class="ltx_text ltx_font_italic">charge conservation at any point, in a differential form</span><a name="electric_current" id="electric_current" class="ltx_anchor">.
+The correct definition of current</a> is a differential one: <math id="SSSx4.p1.m3" class="ltx_Math" alttext="i=dq/dt" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>q</mi></mrow><mo>/</mo><mi>d</mi></mrow><mo>⁢</mo><mi>t</mi></mrow></mrow></math>, as given for physiology by Appendix A.3.4 of <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib2" title="" class="ltx_ref">2</a>]</cite>.
+By using this definition, A.3.5 correctly defines that ”Ohm’s law states that the ratio of voltage to current is a constant:
+<math id="SSSx4.p1.m4" class="ltx_Math" alttext="R=V/i" display="inline"><mrow><mi>R</mi><mo>=</mo><mrow><mi>V</mi><mo>/</mo><mi>i</mi></mrow></mrow></math>”. So is its reciprocal, the conductance. By <span class="ltx_text ltx_font_italic">measuring simultaneously</span>
+the two charge-related secondary entities, one can derive the ternary quantity <span class="ltx_text ltx_font_italic">”resistance”, the opposition of material to current; an attribute of
+the medium</span> where the measurement is caried out,
+instead of being a charge-related feature.</p>
+</div>
+<div id="SSSx4.p2" class="ltx_para">
+<p class="ltx_p">The other way round, as given by Eq. (1.4) in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib22" title="" class="ltx_ref">22</a>]</cite>, is wrong.
+”It is straightforward to describe the dynamics of this circuit by applying Kirchhoff’s
+current law, which states that the sum of all currents flowing into or out of any electrical
+node must be zero (<span class="ltx_text ltx_font_italic">the current cannot disappear, it has to go somewhere</span>).” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib22" title="" class="ltx_ref">22</a>]</cite>
+<span class="ltx_text ltx_font_italic">It is straightforward, but, unfortunately, it is not true</span>.
+The sentence is true only in the picture of ’instant interaction’,
+which is not the case for ions in electrolytes.
+Kirchoff’s law expresses charge conservation in a simplified form,
+and only in the case of ’instant interaction’.
+
+<span class="ltx_text ltx_font_italic">The charge, instead of current, cannot disappear, it has to go somewhere</span>. <span class="ltx_text ltx_font_bold ltx_font_italic">There is no conservation law for the time derivative of the charge, only for the charge itself.
+Mismatching charge and its derivative misguides understanding neurophysical phenomena.</span>
+The non-differential definition contradicts charge conservation and also, contradicts itself: the charge carriers are ions rather than electrons.
+The current can be interpreted in its integral form as current conservation only if the electric interaction is instant,
+the discrete components are point-like,
+and the measured system is closed (or complete).
+However, it is not necessarily valid in its integral form.
+The latter form is an approximation, (more or less) valid for classical physics,
+but surely not valid for biology.
+The current can temporarily disappear (it can be stored, delayed, say on the membrane of axon or exit to a non-measured
+segment in the system) or ”created” (enter from a non-measured segment, say, through ion channels) or
+be distributed within the ”wire” such as on the surface of the dendritic tree.</p>
+</div>
+<div id="SSSx4.p3" class="ltx_para">
+<p class="ltx_p">Ions differ from electrons we used to in physical electricity in many features. Their conduction mechanisms
+are entirely different, and they are not necessarily present
+in the discussed medium (say, when the medium is surrounded by charged surface, the field moves free ions out of the volume). They may be produced by biological mechanisms,
+and they are slow (have a couple of <math id="SSSx4.p3.m1" class="ltx_Math" alttext="m/s" display="inline"><mrow><mi>m</mi><mo>/</mo><mi>s</mi></mrow></math> speed, creating the illusion
+of ’delayed current’).
+
+Figure <a href="#tab:Electric_ResistanceTypes" title="Figure 2.3 ‣ Resistance/Conductance ‣ 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a> illustrates how
+classical electronics and biology considers charges and their moving.
+Both disciplines provide an atomic level description, but unfortunately they use the same words for their concepts, although
+their meaning can be entirely different.</p>
+</div>
+</section>
+<section id="sec:PHYSICS_RESISTANCECONDUCTANCE" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Resistance/Conductance</h2>
+
+<div id="SSSx5.p1" class="ltx_para">
+<p class="ltx_p">Voltage and current, the secondary electric entities, derive directly from charge, the primary quantity, and (except time) no external quantity is used. In contrast, when deriving resistance or conductance, one measures how the tested object relates to electricity. At this point comes to the light the meaning of E. Schrödinger’s warning about how do we test in
+physics laboratories. Although physics knows (based on their
+electric behavior) conductors, insulators and semiconductors,
+the <span class="ltx_text ltx_font_italic">characteristics of the material</span> under testing
+is never mismatched into electrical terms. Paper <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib116" title="" class="ltx_ref">116</a>]</cite> discusses why introducing
+a fundamental circuit element (the memristor) led to decades-long confusion, when attempting to introduce new laws of electicity.
+Introducing neuron (in the form of equivalent circuits where
+
+the ”living matter” changes its electrical characteristics
+without any causality), that changes the rules of the game in
+electricity, has led to similar confusion.
+Physics provides examples when the relation of voltage and current seems to change
+and deviate from the Ohmic case. However, the first principle
+of energy conservation
+provides a hint to the correct interpretation. In physics, the energy and the charge conserves (instead of current as <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib22" title="" class="ltx_ref">22</a>]</cite>, page 9, claimed), so we could introduce
+capacitive and inductive current, capacitive and inductive energy.</p>
+</div>
+<div id="SSSx5.p2" class="ltx_para">
+<p class="ltx_p">When those secondary entities
+interact with some macroscopic material, their relation to that material
+defines a feature, such as dielectricity or resistance. <span class="ltx_text ltx_font_italic">Those
+ternary entities manifest (i.e., are measurable) only when charge
+is present.</span> Experience shows that, <span class="ltx_text ltx_font_italic">in the presence of electric
+potential</span>, different media show different resistance against <span class="ltx_text ltx_font_italic">transferring
+charges</span>, so we define resistance/conductance <span class="ltx_text ltx_font_italic">as one of the
+media’s macroscopic features</span> (which is connected to microscopic features
+by Stokes’s Law). There is a crucial difference between the current propagation’s mechanisms in solids and in biological materials.</p>
+</div>
+<figure id="tab:Electric_ResistanceTypes" class="ltx_figure">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt">Solid state</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt">Ion channel</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_t"><img src="fig/SolidResistance.png" id="Ch2.F3.g1" class="ltx_graphics ltx_img_square" width="269" height="246" alt="Refer to caption"></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><img src="fig/IonicResistance.jpg" id="Ch2.F3.g2" class="ltx_graphics ltx_img_square" width="269" height="230" alt="Refer to caption"></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_t">Current conveyed by electrons in solids</td>
+<td class="ltx_td ltx_align_center ltx_border_t">Current conveyed by ions in ion channel</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_t"><a href="https://en.wikipedia.org/wiki/Ohm's_law" title="" class="ltx_ref ltx_href">Ohm’s law</a></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><a href="https://doi.org/10.1016/j.memsci.2017.11.073" title="" class="ltx_ref ltx_href"><cite class="ltx_cite ltx_citemacro_cite">[<span class="ltx_ref">70</span>]</cite></a></td>
+</tr>
+</tbody>
+</table>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure">Figure 2.3: </span>Electric resistance types</figcaption>
+</figure>
+<div id="SSSx5.p3" class="ltx_para">
+<p class="ltx_p">As we derive in Eq.(<a href="sec_Physics-IonicPeculiarities.html#eq:ConcentrationCurrent" title="In Current’s speed ‣ 2.5.3 Peculiarities of ion current ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.29</span></a>),
+we can define a current for electrons and ions moving in an external force field,
+but the physical background in the two cases are entirely different.
+The technical current direction is opposite with the
+flow of electrons (and negative ions) but agrees with the direction
+of positive ions. The ions are much heavier than electrons, and even
+they can combine in electrolytes with water molecules, so their mass
+ratio can reach the order of <math id="SSSx5.p3.m1" class="ltx_Math" alttext="50,000-100,000" display="inline"><mrow><mn>50</mn><mo>,</mo><mrow><mn>000</mn><mo>−</mo><mn>100</mn></mrow><mo>,</mo><mn>000</mn></mrow></math>.
+The charge propagation mechanism is entirely different (see also Fig. <a href="#tab:Electric_ResistanceTypes" title="Figure 2.3 ‣ Resistance/Conductance ‣ 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a>).
+As the Drude model describes, in solids,
+electrons (shown in the figure in blue) constantly bounce among heavier, stationary crystal ions (shown in red), that make up the structure of the material. With each collision, though, the electron is deflected in a random direction <span class="ltx_text ltx_font_italic">with a velocity that is much larger than the velocity gained by the electric field</span>. The net result is that electrons take a zigzag path due to the collisions, but generally drift in a direction along the electric field. Important, that the collisions are inelastic, so the electrons lose (most of) their energy. The energy is absorbed by the solid’s gridpoints, which later is released in form of heat. The process is irreversible.</p>
+</div>
+<div id="SSSx5.p4" class="ltx_para">
+<p class="ltx_p">In biological matter, ions convey electricity. So called ion channels
+are used for the transfer. Here diffusion and electromigration takes place, by orders of magnitude different speeds. The ions traverse typically without collision, under the effect of an electric field. The process is mostly reversible. See also section <a href="../../ch_Single/sec_Single-RestingConsequences/sec_Physics-HeatAbsorption.html" title="1.9.2 Heat emission/absorption ‣ 1.9 Consequences of the resting potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.9.2</span></a> and Equ.(<a href="sec_Physics-IonicPeculiarities.html#eq:StokesEinsteinSpeeddV" title="In Current’s speed ‣ 2.5.3 Peculiarities of ion current ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.35</span></a>).</p>
+</div>
+<div id="SSSx5.p5" class="ltx_para">
+<p class="ltx_p">Resistance, as can be concluded from its name, means that in a medium some external (electrical, mechanical, thermodynamic, or any other) power exerts a force on an electric charge
+and the medium exerts a counterforce on the charge (resists moving the charge). In the case of solids (metals), the medium
+has free charge carriers (electrons) inside, which mediate
+the electric field applied to a space segment of the solid.
+Due to the charge transmission mechanism, the charge carriers form ”instantly” a field inside the solid. However, it is known that the propagation speed is finite: it takes about <math id="SSSx5.p5.m1" class="ltx_Math" alttext="1\text{\,}\mathrm{ns}" display="inline"><mrow><mn>1</mn><mtext> </mtext><mi class="ltx_unit">ns</mi></mrow></math> to propagate to a <math id="SSSx5.p5.m2" class="ltx_Math" alttext="30\text{\,}\mathrm{cm}" display="inline"><mrow><mn>30</mn><mtext> </mtext><mi class="ltx_unit">cm</mi></mrow></math> distance, forcing the designers of electronic circuits
+to introduce ”clock domains”, ”clock distribution tree” and so on, when the accurate timing of signals is of importance.
+In the case of electrolytes, the charge carriers are ions
+with 50,000 times higher mass and a million times lower propagation speed, so the timing requirements are even more critical.
+In living structures, in closed volume segments, local
+electrical fields (typically of biological/chemical/enzymatical origin)
+may be present,
+so no freely moving charge carriers can be present in the volume
+and the permanently present electric field may change the phenomena drastically.
+Furthermore, biologically active structures may ”produce”
+charge carriers inside.
+The fundamental laws of electricity are the same, but describing electrical processes of living matter with
+internal processes inside need more care
+than in the case of non-living matter without such processes.</p>
+</div>
+<div id="SSSx5.p6" class="ltx_para">
+<p class="ltx_p">When measuring resistance by dividing the measured values of voltage and current,
+a quantity of dimension resistance or conductance can be derived.
+Measuring those two charge-related characteristics
+requires performing two independent measurements,
+using two independent measuring devices; furthermore, assuring that one uses
+matching values (measured simultaneously) for the calculation. This is why, for comfort, resistance/conductance
+measuring devices have been developed and are in use.
+Of course, even that instrument cannot measure directly the ratio of
+those two secondary quantities, it makes (a little and forgivable) cheating. It reduces the measurement to measuring current
+by applying a little voltage (of known value) to the device under test,
+and displays the calculated result in units of resistance/conductance.
+The device uses the differential form of
+deriving the current: measures
+the voltage and the current at the
+same time. Here comes into the play the cheating: instead of actually measuring the voltage, the device uses voltage measured earlier and current value measured at the time of measurement.
+In the case of ’instant interaction’, the two measurement are simultaneous.
+The procedure is anyhow an invasion into the circuit, but
+(when used with care and knowing how the device works)
+perfect for performing a simplified and bequem measurement.
+When implemented with modern technology, in most cases
+the unwanted offset does not have significant effect.
+However, in biology, the ’service current’ needed for the measurement
+is in the range of the currents due to biological effects,
+and can bias measured values.</p>
+</div>
+<div id="SSSx5.p7" class="ltx_para">
+<p class="ltx_p">Two more kinds of issues come to the light when measuring in biological circuits. As we mentioned, although the measurement device
+works with electrons and in the half with ’instant interaction’,
+the current keeps the timing of the slow current in the biological time; that is, one uses a ’delayed current’ value in measuring
+the resistance. This is why good physiology textbooks (such as <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib2" title="" class="ltx_ref">2</a>]</cite> emphasize that
+resistance/conductance is a ’steady-state’ characteristics.
+Forgetting this fundamental feature results more or less
+distorted values; an extreme example is ’demonstrating’ that
+the neuron is a low-pass filter, see section <a href="../../ch_Physiology/sec_Physiology-Fallacies/sec_Physiology-FallaciesLowPassFilter.html" title="3.9.8 Membrane as low-pass filter ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.9.8</span></a>.</p>
+</div>
+<div id="SSSx5.p8" class="ltx_para">
+<p class="ltx_p">Another issue is that the device of course cannot distinguish what the
+experimenter wants to measure and cannot separate its own current that its required voltage produces
+from the current that the tested object autonomously generates.
+It works with ’instant’ electricity: it works
+using Ohm’s law, and divides the momentary value of the measured current with the known value of
+the generating voltage. In the case of technical electricity, the
+current instantly follows its driving force.
+In biology, however, the charge carriers are slow (at least in the biological half of the circuit), so it needs time until the effect of
+the voltage change gets observable. In the case of changing gradients, the conductance meter uses non-matching pairs of voltage and current data: the device is designed for measuring in a ’steady-state’.
+The gradient and its effect are shifted by the time period that the charge carrier needs to travel from the place of its ”excitation”
+to the place of the measurement.
+It is in the order of nanoseconds in technical circuits and it can be in the order of fragments of milliseconds, depending on the speed of the ions (depends on the gradient) and the distance traveled, in biological matter.
+So, the measured conductance is surely wrong, the question is only how much it is wrong.</p>
+</div>
+<div id="SSSx5.p9" class="ltx_para">
+<p class="ltx_p">Notice that the middle figure in Fig. <a href="../../ch_Single/sec_Single-ActionPotential/Single-APImplementation.html#fig:ActionPotentialTest" title="Figure 1.7 ‣ 1.7.2 The implementation of the ActionPotential ‣ 1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.7</span></a> shows two essential potential gradient
+contributions. Given that for the current</p>
+<table id="Ch2.Ex6" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.Ex6.m1" class="ltx_Math" alttext="I=\frac{U}{R}" display="block"><mrow><mi>I</mi><mo>=</mo><mfrac><mi>U</mi><mi>R</mi></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">or, in another form</p>
+<table id="Ch2.Ex7" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.Ex7.m1" class="ltx_Math" alttext="\frac{I_{true}+I_{clamp}}{U}=\frac{1}{R}" display="block"><mrow><mfrac><mrow><msub><mi>I</mi><mrow><mi>t</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mi>e</mi></mrow></msub><mo>+</mo><msub><mi>I</mi><mrow><mi>c</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mi>p</mi></mrow></msub></mrow><mi>U</mi></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>R</mi></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">That is, when one measures using voltage clamp (see Fig. <a href="../sec_PHYSICS_MEASURING/fig_Physics-Clamping.html" title="2.10.4 Voltage/current clamping/patching ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.10.4</span></a>),
+the price paid for fixing the voltage is adding the feedback current
+to the measured current, and calculate the conductance from a wrong
+value pair. Apparently, the conductance increases as the ’foreign’ current (that is compensated by the feedback) changes,
+creating the illusion that ”the conductance changes”.
+The conductance does not change, it is the effect
+of the used current feedback, needed to keep the voltage constant
+against neuronal operation.</p>
+</div>
+</section>
+<section id="sec:PHYSICS_CAPACITANCE" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Capacitance</h2>
+
+<div id="SSSx6.p1" class="ltx_para">
+<p class="ltx_p">In technical electricity, capacity means that charge is accumulated in a discrete circuit element. Experience shows that the voltage measurable
+on the element is proportional to the stored charge. The factor of proportionality is called capacity.</p>
+</div>
+<div id="SSSx6.p2" class="ltx_para">
+<p class="ltx_p">Actually, the <span class="ltx_text ltx_font_italic">charge disappears</span> from the wires, so the capacity comprises a static and a dynamic component:
+part of the charge remains permanently in the element, part of it
+just is travelling on the surfaces of its plates, between the
+junctions of the wires to the capacitor.
+As we discussed, in the engineering the current is instant, so
+the dynamic component is missing: the charge instantly arrives
+from the beginning junction to the end, while it is accumulated in its two extended pieces of wire, as discussed in section <a href="../sec_Physics-MembraneElectricity/sec_Physics-TwoSegments.html#sec:Physics-SimpleSheet" title="Simple conducting sheet (a classical condenser) ‣ 2.6.5 Two segments ‣ 2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.6.5</span></a>.</p>
+</div>
+<div id="SSSx6.p3" class="ltx_para">
+<p class="ltx_p">The slow ions also cause deviations in charge storing.
+In biology, the circuit elements are extended and it takes time
+until they appear on its output. The biological condenser stores
+the charge also in the form that the charge carriers travel on its surface. Given that the rush-in mechanism means that the ions appear
+”instantly” on the condenser’s surface through the ion channels in its wall, and they must travel from their ”place of creation” to the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>,
+the capacity of the condenser changes when a current flows.</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="sec_PHYSICS_ElectricWhyDifferent.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.1 </span>Why different</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physics-IonicPeculiarities.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.3 </span>Peculiarities</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Feb 17 16:52:46 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

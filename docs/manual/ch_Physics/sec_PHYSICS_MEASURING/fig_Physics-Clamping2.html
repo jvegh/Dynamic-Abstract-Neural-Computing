@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>2.10.3 Interpreting conductance in electrolytes ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0</title>
+<!--Generated on Tue Feb 17 16:52:46 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 17, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up" href="../index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="up up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="prev" href="sec_PHYSICS_MEASURINGSAPACITANCE.html" title="2.10.2 Capacitance ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="next" href="fig_Physics-Clamping.html" title="2.10.4 Voltage/current clamping/patching ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="fig_Physics-Multimeter.html" title="2.10.1 Electrical measurement ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="sec_PHYSICS_MEASURINGSAPACITANCE.html" title="2.10.2 Capacitance ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="fig_Physics-Clamping.html" title="2.10.4 Voltage/current clamping/patching ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="subsection" href="Physics-Interfacing.html" title="2.10.5 Interfacing biology ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Introduction/index.html" title="2.1 Introduction ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Abstraction/index.html" title="2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Spatiotemporal/index.html" title="2.3 Spatiotemporal ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Thermodynamics/index.html" title="2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Electricity/index.html" title="2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-MembraneElectricity/index.html" title="2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-NeuronControlCircle/index.html" title="2.7 Neuron as control circle ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-Components/index.html" title="2.8 Neuronal components ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="../sec_Physics-MembranesChannels/index.html" title="2.9 Neuronal operation ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="section" href="index.html" title="2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Single/index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Physiology/index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0">
+<meta name="keywords" lang="en" content="Maxwell-demon, Ohm’s law, conductance, free electron cloud, instant interaction">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">Dynamic Abstract Neural Computing
+<br class="ltx_break">with Electronic Simulation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.0</em>
+<br class="ltx_break">@February 17, 2026</p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Single/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics for neurons</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Introduction/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Abstraction/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Science methods</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Spatiotemporal/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Spatiotemporal</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Thermodynamics/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Ions’ thermodynamics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Electricity/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Ions’ electricity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-MembraneElectricity/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.6 </span>Electrolyte’s electricity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-NeuronControlCircle/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.7 </span>Controling potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Components/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.8 </span>Neuronal components</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-MembranesChannels/index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.9 </span>Neuronal operation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10 </span>Measuring</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="fig_Physics-Multimeter.html" title="In 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.1 </span>Electrical measurement</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_PHYSICS_MEASURINGSAPACITANCE.html" title="In 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.2 </span>Capacitance</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.3 </span>Conductance</span></span>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Physics-ElectrolytesConductivity" title="In 2.10.3 Interpreting conductance in electrolytes ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Electrolytes</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Physics-Invasions" title="In 2.10.3 Interpreting conductance in electrolytes ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Invasions</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="fig_Physics-Clamping.html" title="In 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.4 </span>Clamping/patching</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="Physics-Interfacing.html" title="In 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.5 </span>Interfacing biology</span></a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physiology/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href">Report issue</a>
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="https://github.com/jvegh/DynamicAbstractNeuralComputing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10 </span>Measuring</span></a><a href="sec_PHYSICS_MEASURINGSAPACITANCE.html" title="In 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.2 </span>Capacitance</span></a><a href="fig_Physics-Clamping.html" title="In 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.4 </span>Clamping/patching</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.10.3 </span>Interpreting conductance in electrolytes</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Figure <span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_tag">2.10.3</span></span> shows, how the measurable membrane potential drastically changes in the function of the measuring (clamping) current intensity.
+At the positions labeled as ”Electrotonic potential” the neuron is in steady state: neither its condenser charges/discharges, nor its ion channels open.
+When starting from the resting potential, the membrane follows a charge-up function, a saturating exponential.
+We just note here that the shape of the front side may depend on where the current is introduced.
+If the microelectrode is inserted directly into the cell, the current causes really a charge-up current.
+If it is inserted to an axon from an upstream neuron, where no charge carriers are present at the resting potential, the axon must let ions in the tube.
+This effect also results in a saturating voltage, as experienced by Hodgkin-Huxley <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib6" title="" class="ltx_ref">6</a>]</cite>, see Fig. <a href="../../ch_Physiology/sec_Physiology-HodgkinHuxley/Physiology-HHElectricity.html#fig:ClampingOnOff_HH" title="Figure 3.18 ‣ Oscillator type ‣ 3.7.5 Electricity ‣ 3.7 Hodgkin&amp;Huxley’s empirical description ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.18</span></a>.
+In the two cases the timing constants are similar, but definitely different.</p>
+</div>
+<figure id="fig1" class="ltx_figure">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="background-color:#FFFFE6;border-color: #4D4DFF;">
+</span></p>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">The figure enables one to explain what is misinterpreted in biology in connection with Ohm’s law (and why using a conductance meter in such a case is wrong).
+
+Let us divide the membrane current (labeled as ”Membrane current”) with the <math id="p2.m1" class="ltx_Math" alttext="V_{m}" display="inline"><msub><mi>V</mi><mi>m</mi></msub></math> membrane potential, into regions.
+In the ”flat” regions (in steady state) we receive the same value and the result can be interpreted as ”conductance”. In those regions
+the cell behaves ’Ohmic’. However, it is ’non-ohmic’ around the
+rising and falling edges of the test current, furthermore,
+if the amplitude of the signal is higher then some threshold value.
+After receiving the rising edge of the measuring signal, the membrane’s condenser stores part of the charge.
+If one knows the laws of electricity, fits a saturating exponential to the curve as the membran potential rises when the condenser charges and the physics is all right.
+If one believes that the condenser must take instantly the voltage, might say that <math id="p2.m2" class="ltx_Math" alttext="V_{m}/I_{m}" display="inline"><mrow><msub><mi>V</mi><mi>m</mi></msub><mo>/</mo><msub><mi>I</mi><mi>m</mi></msub></mrow></math> changes, that is the membrane’s conductance/capacitance changes and has a time constant.
+Similar explanation can be given, when the falling edge arrives and the condenser discharges.
+When the current exceeds a threshold value, the ion channels in membrane’s wall open and an extra current (not from the current generator) flows into the membrane.
+If one believes that the correct value that must be used in deriving conductance is the one that the test generator provides (and the conductance meter does so), divides the test current (instead of the total current) with the measured membrane potential evoked by the total current, uses non-matching value pairs.
+Non-understanding physics results in claming non-Ohmic behavior.
+Neither the conductance nor the capacitance of a cell changes
+under the effect of electric test signals. Only the measurement is wrong.</p>
+</div>
+<section id="sec:Physics-ElectrolytesConductivity" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Measuring electrolytes</h2>
+
+<div id="SSSx1.p1" class="ltx_para">
+<p class="ltx_p">Substances that give ions when dissolved in water are called electrolytes. Certain chemical elements can naturally hold a positive or a negative electrical charge, and they react to their micro- and macro electric environment. A molecule has internal attraction forces that keep its ions in place, and has two charge centers (dipoles). When another dipole or a macroscopic external electric field (which can be of electrical or chemical origin) appears near the molecule, its perturbing effect can affect the relation of the ions to each other. Initially, the two charge centers increase their distance (the molecule polarizes). When that disturbance is strong enough, the ions can entirely separate (the molecule ionizes).
+The local electric field fluctuates, so the state of the ions is dynamic: they dissociate, free ions recombine.
+The ions can exist in ionized and polarized states.
+The state (and behavior) of ions depends on their environment.</p>
+</div>
+<div id="SSSx1.p2" class="ltx_para">
+<p class="ltx_p">A small part (about <math id="SSSx1.p2.m1" class="ltx_Math" alttext="10^{-3}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></math>) of the molecules dissociates (i.e. the ions leave their counterpart with opposite charge behind) and they move freely in the volume. In other words, the electrolyte liquid can then conduct electricity due to the mobility of the positive and negative ions, which are called cations and anions, respectively.
+The rest of molecules can be in a more or less polarized state, providing a possibility of producing internal electric field.
+The macroscopic state of the molecules depends on,
+for example, how far they are from the boundary of the segment; whether global or local external invasion is applied.</p>
+</div>
+<div id="SSSx1.p3" class="ltx_para">
+<p class="ltx_p">Thermolectric experience shows that, when applying such changes, reaching a steady state
+is a temporal <em class="ltx_emph ltx_font_italic">process</em>, and even the spatial and temporal development
+of the concentration gradients can be measured as individual
+processes (the voltage gradient is too fast to measure it). It is also evident from experiments that diffusion is a
+fast <em class="ltx_emph ltx_font_italic">process</em> and that the propagation of the electrostatic
+field is unimaginably fast ; see our discussion around Eq. (<a href="../sec_Physics-Thermodynamics/sec_Fick-Electrodiffusion.html#eq:PhysicsGradientRatio" title="In 2.4.7 Fick’s Law ‣ 2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.24</span></a>), but it must be process, too. In other words,
+we have two enormously different interaction speeds. Eq. (<a href="../sec_Physics-Thermodynamics/sec_Physics-SteadyState.html#eq:NernstPlanck" title="In 2.4.4 Steady state ‣ 2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.9</span></a>)
+provides only position derivatives.
+However, Eq.(<a href="../sec_Physics-Thermodynamics/sec_Nernst-time-derivatives.html#eq:Nernst-dVdt" title="In 2.4.5 Laws of motion: time derivatives ‣ 2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.13</span></a>) and Eq.(<a href="../sec_Physics-Thermodynamics/sec_Nernst-time-derivatives.html#eq:Nernst-dCdt" title="In 2.4.5 Laws of motion: time derivatives ‣ 2.4 Ions’ thermodynamics ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.16</span></a>) provide the time derivatives for describing
+the time course of the processes.</p>
+</div>
+<div id="SSSx1.p4" class="ltx_para">
+<p class="ltx_p">In physiology, electrolyte solutions do not surely satisfy
+<a href="fig_Physics-Multimeter.html#electric_resistance" title="When measuring electric resistance ‣ 2.10.1 Electrical measurement ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">the conditions</a>
+we use for the notions of electricity in physics, see section <a href="../sec_Physics-Electricity/index.html" title="2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a>.
+The number of charged objects (the ion concentration) may change in
+time (even without the presence of biological structures), and a chemical driving force may also move the objects independently
+from the electrical field. When measuring only the macroscopic electric
+parameters voltage and current, and especially when
+<a href="fig_Physics-Multimeter.html#electric_conductance" title="The difficulties of making electric measurement ‣ 2.10.1 Electrical measurement ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">measuring current believing we measure
+directly conductance;</a> in addition, measuring it in a wrong way; (for the details see section <span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_tag">2.10.3</span></span>) <em class="ltx_emph ltx_font_italic">we
+attribute the consequences of the injected charge carriers’ low propagation speed to the
+medium</em> and we describe the phenomenon that ”the conductance changes”
+in the function of the voltage <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib128" title="" class="ltx_ref">128</a>]</cite>.
+(We know that the macroscopical speed of current changes with the <a href="fig_Physics-Clamping.html#voltage-clamping" title="The very common measuring method reveals some fundamental differences between the electric behavior of conductors and living matter. ”The reason for voltage-clamping ‣ 2.10.4 Voltage/current clamping/patching ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">clamping speed</a>, see Eq.(<a href="../sec_Physics-Electricity/sec_Physics-IonicPeculiarities.html#eq:StokesEinsteinSpeeddV" title="In Current’s speed ‣ 2.5.3 Peculiarities of ion current ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.35</span></a> and section <a href="../../ch_Physiology/sec_Physiology-Experimental/sec_Physiology-StokesLaw.html" title="3.8.1 Stokes-Einstein relation ‣ 3.8 Experimental evidence ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.8.1</span></a>),
+that might change the time difference between the non-matching value pairs, leading to the illusion that the conductance changes.)
+The measurement must be
+fixed:
+the
+<a href="fig_Physics-Multimeter.html#electric_resistance" title="When measuring electric resistance ‣ 2.10.1 Electrical measurement ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">tacit assumptions</a> about notions of electricity must be fulfilled.</p>
+</div>
+<div id="SSSx1.p5" class="ltx_para">
+<p class="ltx_p">Conductance is a “steady-state”
+notion; see its definition in section <span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_tag">2.10.3</span></span> and in section A.3.12 in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib2" title="" class="ltx_ref">2</a>]</cite>:
+”the input impedance measured <em class="ltx_emph ltx_font_italic">after the voltage has reached
+a steady state</em> following a step change in injected current is defined
+as input resistance”, or ”the input resistance …obtained
+by dividing the <em class="ltx_emph ltx_font_italic">steady-state</em> voltage change by the current
+using it” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib22" title="" class="ltx_ref">22</a>]</cite>. <span class="ltx_text ltx_font_italic">Using quickly changing (alternating) currents, either sinusoidal or random for measuring conductance, measures some ill-defined current.</span>
+The experience is resemblant to studying <a href="https://en.wikipedia.org/wiki/Dielectric" title="" class="ltx_ref ltx_href">dielectric dispersion</a> in physics.
+”Because there is a lag between changes in polarisation and changes in the electric field, the permittivity of the dielectric is a complex function of the frequency of the electric field.”
+Rearranging charges inside the tested medium needs time.
+Different polarization types have similar behavior, at much higher frequencies, because of the much shorter distances that rearranging the charges need.
+In the case of neurons, charges must be rearranged on nearly <math id="SSSx1.p5.m1" class="ltx_Math" alttext="0.1~{}mm" display="inline"><mrow><mn>0.1</mn><mo lspace="0.330em">⁢</mo><mi>m</mi><mo>⁢</mo><mi>m</mi></mrow></math> distances, and ”can no longer follow the oscillations of the electric field” at much lower frequencies; see section <a href="../../ch_Physiology/sec_Physiology-Fallacies/sec_Physiology-FallaciesLowPassFilter.html" title="3.9.8 Membrane as low-pass filter ‣ 3.9 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.9.8</span></a>.
+Yes, ”the construction is different from anything we have yet tested in the physical laboratory”.</p>
+</div>
+<div id="SSSx1.p6" class="ltx_para">
+<p class="ltx_p">Physiologists seem to forget the definition and they measure something they think to be ”conductance” in non-steady state. They are ”<a href="../sec_Physics-Abstraction/sec_Physics-Dichotomies.html#ResettingClock" title="periodically resetting the clock ‣ Speed of light ‣ Instant interaction ‣ 2.2.1 Dichotomies in modeling ‣ 2.2 Science methods ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">resetting the clock</a>”,
+instead of explicitly admitting that the current speed is finite;
+despite that they measure it to be in the few <math id="SSSx1.p6.m1" class="ltx_Math" alttext="m/s" display="inline"><mrow><mi>m</mi><mo>/</mo><mi>s</mi></mrow></math> range.
+The conductance (per definitionem) does not change; only the (maybe:
+foreign) charge carriers may need time to deliver the current:
+<em class="ltx_emph ltx_font_italic">we calculate the conductance from non-matching value pairs</em> (or not-steady-state).
+Wording that biological systems show “non-ohmic behavior”
+means that they are not metals (they have a charge transfer mechanism differing from the ”free electron cloud”): we abstracted the notion of conductance
+for metals (or at least steady-state).
+
+Physics describes biological operations perfectly; although, it may use ’non-ordinary’ laws. Electric
+operations are also ohmic in biology, but one has to use the correct
+(time-aware, i.e., considering the speed of the charged carrier) interaction
+speed, correct definition and measurement method. <em class="ltx_emph ltx_font_italic">Using the Newtonian ’instant interaction’ as the speed
+of charged ions or the macroscopic speed of their current,
+is a catastrophic
+hypothesis and contradicts all our phenomena</em>.
+</p>
+</div>
+<div id="SSSx1.p7" class="ltx_para">
+<p class="ltx_p">The ohmic behavior means that voltage and current relate to each other,
+as we learned in college, only when the electrostatic interaction
+speed is very high (in the mathematical/physical description, the
+interaction is instant); furthermore, free charge carriers are present in the volume. In biological systems, it is not necessarily
+the case: the macroscopic speed of ionic
+current conveying electrostatic interaction is very low, and so they
+may follow the electrical field propagation apparently with a time shift
+(if they are improperly distributed, as was early explicitly noticed <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib6" title="" class="ltx_ref">6</a>]</cite>).
+As Fig. <a href="../../ch_Physiology/sec_Physiology-Experimental/sec_Axonal-charge-delivery.html#fig:The-time-course_Clamping" title="Figure 3.23 ‣ 3.8.2 Axon ‣ 3.8 Experimental evidence ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.23</span></a> displays, when
+measuring the secondary entities (instead of a ternary one), everything
+comes to the right: the voltage and current change using the same
+time course. Of course, as the are derived form the same primary entity ’charge’. One should <em class="ltx_emph ltx_font_italic">measure</em> the voltage instead of <em class="ltx_emph ltx_font_italic">assuming</em>
+the potential appears immediately, even without charge carriers (the locally present individual charges generate the potential).
+Furthermore, one should not introduce a foreign current into a system
+(by measuring its conductance or fixing its electric state by
+adding some feedback current by <a href="fig_Physics-Clamping.html#voltage-clamping" title="The very common measuring method reveals some fundamental differences between the electric behavior of conductors and living matter. ”The reason for voltage-clamping ‣ 2.10.4 Voltage/current clamping/patching ‣ 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref">clamping/patching</a>) when studying the electrical features of that system.</p>
+</div>
+</section>
+<section id="sec:Physics-Invasions" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Electrical and chemical invasions</h2>
+
+<div id="SSSx2.p1" class="ltx_para">
+<p class="ltx_p">When thermal or electrical invasion happens, the ion’s distribution changes.
+(Above we assumed an infinitely large volume. Limiting the volume’s size
+means an asymmetry for the ions in the volume and brings to light
+unexpected phenomena.)
+We must also discuss another fallacy that the
+structured biological objects behave as the metals do under the effect
+of electrical forces. To derive an abstraction similar to the ones as
+sciences derive their Laws, we assumed that the ions are tiny charged heavy
+balls, and they attempt to have a uniformly distributed concentration
+and potential in the considered space segment. We discuss the cases
+when an external electrical invasion happens in one segment, when an
+external chemical invasion happens in one segment, the case when a
+physical surface mechanically separates the ions in two neighboring
+segments with different features, when the two separated segments
+are not symmetrical due to ’Maxwell-demon’-like transmit gates (semipermeable
+membrane); and when a physical effect concerts the operation of the
+demons.
+</p>
+</div>
+<div id="SSSx2.p2" class="ltx_para">
+<p class="ltx_p">The cellular electrodiffusion phenomena are very complex, and it is
+not a simple task to choose which physical/chemical effects can be
+omitted so that their omission does not prevent us from explaining
+physiological phenomena. We discuss mainly the commonly used fundamental
+omission that the speed of ionic movement cannot play a role in describing
+neuronal operation.</p>
+</div>
+<div id="SSSx2.p3" class="ltx_para">
+<p class="ltx_p">See also section <a href="../sec_Physics-MembranesChannels/sec_PHYSICS_EquivalentCircuit.html" title="2.9.3 Equivalent circuits ‣ 2.9 Neuronal operation ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.9.3</span></a>.</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="sec_PHYSICS_MEASURINGSAPACITANCE.html" title="In 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.2 </span>Capacitance</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="fig_Physics-Clamping.html" title="In 2.10 Measuring ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.10.4 </span>Clamping/patching</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Feb 17 16:52:46 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

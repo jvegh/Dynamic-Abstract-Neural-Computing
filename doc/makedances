@@ -79,8 +79,10 @@ if ($dopdf) {
 #      "$MANDIR/schema.tex", "$MANDIR/pods"],
     indexoptions => [],
     force        => $force);
-  copy("$MANDIR/manual.pdf", "$LATEXMLDIR/manual.pdf");
-  copy("$MANDIR/manual.pdf", "$WEBDIR/manual.pdf");
+#  copy("$MANDIR/manual.pdf", "$LATEXMLDIR/manual.pdf");
+#  copy("$MANDIR/manual.pdf", "$WEBDIR/manual.pdf");
+   copy("$MANDIR/README.md", "$LATEXMLDIR/README.md");
+   copy("$MANDIR/README.md", "$WEBDIR/README.md");
 }
 
 if ($dohtml) {

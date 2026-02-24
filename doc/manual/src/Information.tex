@@ -1,11 +1,26 @@
+% Last edited 2026.02.21
+\chapter[Information]{Neural information\label{ch:Information}}
+	\input{src/Information-Foreword}
 \iflatexml
 \else
 \minitoc
 \fi
-\chapter[Information]{Neural information\label{ch:Information}}
-	\input{src/Information-Foreword}
-%	\hypertarget{information-biology}{}
 
+\quotationbox{
+"The ultimate aim of computational neuroscience is
+to explain how electrical and chemical signals are used in the brain
+to represent and process information"
+\cite{SejnowskiComputationalNeuroscience:1988}~@1988.
+"The fundamental task of the nervous system is to communicate and process information' \dots "neurons convey
+		neural information by virtue of electrical and chemical signals'
+\cite{JohnstonWuNeurophysiology:1995}@1995.\\
+"Information is carried within neurons and from
+neurons to their target cells by electrical and chemical
+signals. \textbf{Transient electrical signals} are particularly
+important for carrying \textbf{time-sensitive information} rapidly and over long distances"~\cite{PrinciplesNeuralScience:2013}, page 126.~@2013
+}
+
+\quotationbox{
 "In the terminology of communication theory and information
 theory, [a neuron] is a \hypertarget{NeuronInformationBroadcast}{multiaccess, partially degraded broadcast channel}
 that performs computations on data received at thousands of
@@ -15,14 +30,15 @@ Moreover, [a neuron] engages in an extreme form of
 network coding; \textit{it does not store or forward the information it
 receives but rather fastidiously computes a certain functional of
 the union of all its input spike trains} which it then conveys to a
-multiplicity of select recipients"~\cite{EnergyEfficientNeuralComputing:2010}.
+multiplicity of select recipients"~\cite{EnergyEfficientNeuralComputing:2010}.~@2010
+}
 \index{Shannon, Claude}
 Will be based on \cite{VeghNeuralShannon:2022}
 \cite{RoleOfInformationTransferSpeed:2022}
 \cite{VeghChannelCapacity:2023}
 
 %
-The theoretical model~\cite{VeghNeuralShannon:2022} described how
+The 	\hypertarget{information-biology}{theoretical model}~\cite{VeghNeuralShannon:2022} described how
 the slow operation of biological objects explains biological phenomena,
 but  due to the lack of dedicated measurements
 it could only indirectly underpin the theory's correctness. Now, we

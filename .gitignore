@@ -12,15 +12,21 @@ _site/
 *.ist
 *.lof
 *.lot
+*.cache
 doc/*.log
 doc/manual.*.log
 doc/manual/*.log
 doc/manual/*.aux
 doc/manual/*.glsdefs
+doc/manual/*.idx
 doc/manual/*.ist
+doc/manual/*.ilg
+doc/manual/*.ind
 doc/manual/*.lof
 doc/manual/*.lot
-
+doc/manual/*.toc
+doc/manual/*.xml
+doc/manual/*.mt*
 
 # Additional Ruby/bundler ignore for when you run: bundle install
 /vendor

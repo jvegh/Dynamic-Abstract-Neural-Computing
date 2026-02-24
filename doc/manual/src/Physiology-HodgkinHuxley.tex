@@ -1,3 +1,4 @@
+%Last edited 2026.02.21
 % Evaluating the Hodgkin-Huxley model
 
 \section{Hodgkin\&Huxley's empirical description\label{sec:Physiology-HodgkinHuxley}}
@@ -21,16 +22,26 @@ and derived equations, which, not surprisingly, described the \textit{empirical 
 The importance of their work is best highlighted by that it inspired 
 different disciplines for discussion. 
 
-\begin{advanced}
+\quotationbox{
 "although highly successful
 in predicting and explaining many of the electric characteristics of the action
 potential, the HH model, nevertheless cannot accommodate the various non-
 electrical physical manifestations (mechanical, thermal and optical changes)
 that accompany action potential propagation, and for which there is ample
 experimental evidence.~\cite{NerveSignalAsWindow:2023}
-\end{advanced}
+}
 
 A technical reason is described in~\cite{HodgkinMemoryBook:1992}: "The fact that the whole process for calculation of a $4-5\ ms$ interval, showing the initiation of and recovery following an action potential, could be accomplished in 8 hours is astonishing." The must-be oversimplification does not belong to the core of the theory. When using the recent computing systems, not necessarily the old oversimplified models should be coded. One could also use modern, more compute intensive, and physically correct models.
+
+\subsubsection{Model summary\label{sec:Physiology-HodgkinHuxleyModelSummary}}
+\begin{figure}
+\centering
+	\includegraphics[width=\textwidth]
+	{fig/HHModelHeimburg.png}
+	\caption{The Hodgkin-Huxley model as reproduced by~\cite{HeimburgPhysikOfNerves:2009}}
+	\label{fig:HHModelSummary}
+\end{figure}
+
 
 \subsubsection{Self-evaluation\label{sec:Physiology-HodgkinHuxleySelfEvaluation}}
 In their brilliant publication~\cite{HodgkinHuxley:1952}, 
@@ -169,7 +180,8 @@ However, the currents are not necessarily constant.
 \begin{figure}
 \centering
 \includegraphics[width=.65\textwidth]{fig/HHcirdiagm.png} 
-\caption{The equivalent circuit for the Hodgkin-Huxley model\label{fig:HH_EquivalentCircuit}}
+\caption{The equivalent circuit for the Hodgkin-Huxley model}
+\label{fig:HH_EquivalentCircuit}
 \end{figure}
 
 
@@ -202,22 +214,24 @@ This difference is significant in understand how the basic neuronal circuit work
 Introducing equivalent circuits prevents explaining the fundamental 
 electric phenomena.
 
-\begin{advanced}
+%\begin{advanced}
+\quotationbox{
 This was how — Richard P. Feynman approached all knowledge: What can I know for sure, and how can I come to know it?
 It resulted in his famous quote, “\textit{You must not fool yourself, and you are the easiest person to fool.}”
 Feynman believed it and practiced it in all of his intellectual work.
-\end{advanced}
+}
+%\end{advanced}
 
 \subsubsection{Oscillator type\label{sec:Physiology-HHOscillator}}
 
 If we apply a continuous square wave voltage waveform to an integrator-type electric RC circuit, we receive an output wave form shown in Fig.~\ref{fig:RCLongWaveform}. After switching a voltage to the circuit, a charge-up process starts, then the output voltage saturates.
 After switching the voltage off, the condenser discharges.  \textit{The time constant $\tau$ for the charge and discharge processes are identical.} If the time period of the input square wave waveform is made longer
 (in the figure with a half-period “$8*\tau$”), the capacitor would then stay fully charged longer and also stay fully discharged longer.
-
-
 \begin{figure*}
+\centering
 \includegraphics[width=.65\textwidth]{fig/RCLongWaveform.jpg}
-		\caption{The output waveform of an integrator-type electric $RC$ circuit at a long ($8*\tau$) pulse width square wave input (see Eq.(https://www.electronics-tutorials.ws/) \label{fig:RCLongWaveform}}
+		\caption{The output waveform of an integrator-type electric $RC$ circuit at a long ($8*\tau$) pulse width square wave input (see Eq.(https://www.electronics-tutorials.ws/) }
+		\label{fig:RCLongWaveform}
 \end{figure*}
 
 HH measured~\cite{HodgkinHuxley:1952} the time course of the neuronal membrane (i.e., a neuronal $RC$ circuit)
@@ -234,14 +248,15 @@ mind when formulating them".
 
 
 \begin{figure}
+\centering
 \iflatexml
 \includegraphics[width=.65\textwidth]{fig/HodgkinHuxleyFig2Simple.svg}
 \else
 \includegraphics[width=.65\textwidth]{fig/HodgkinHuxleyFig2Simple.pdf}
 \fi
-\caption{\label{fig:ClampingOnOff_HH}The green and red diagram lines are calculated for the clamping-on and clamping-off case. The dashed blue line models the case that the neuron is a purely electric system, as opposed to the case of clamping the axonal tube
+\caption{The green and red diagram lines are calculated for the clamping-on and clamping-off case. The dashed blue line models the case that the neuron is a purely electric system, as opposed to the case of clamping the axonal tube
 with ion channels in its wall.  The black bulbs are for measured points. Moreover, the fitted polynomial line is reproduced from~\cite{HodgkinHuxley:1952}.	
-}	
+}	\label{fig:ClampingOnOff_HH}
 \end{figure}
 
 Figure~\ref{fig:ClampingOnOff_HH} shows \textit{two} switch-on diagram lines, with two different $\tau$~time constants. 

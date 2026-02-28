@@ -1,11 +1,12 @@
 \documentclass{book}
-\def\MyVersion{0.2.1}
+\def\MyVersion{0.2.2}
 \tolerance 500%
 \renewcommand{\topfraction}{.8}
 \renewcommand{\floatpagefraction}{.8}
 \emergencystretch 1em\relax
 \hfuzz .2pt\relax
 
+\usepackage{minitoc}
 \usepackage{graphicx}
 \usepackage{latexml}
 \usepackage{siunitx}
@@ -20,6 +21,7 @@
 %    \begin{center}\large#1\end{center}
 %    \vskip0.5em}%
 %}
+%
 
 \newcommand{\warningbox}[1]
 {
@@ -32,8 +34,8 @@
 
 \newcommand{\quotationbox}[1]
 { 
-{\noindent
- \fcolorbox{blue!70!white}{orange!10!white}{\parbox{\textwidth}{
+{\centering
+ \fcolorbox{blue!70!white}{orange!10!white}{\parbox{.9\textwidth}{
    \color{black}
    \textbf{Quotation: }{#1}
 }
@@ -41,15 +43,15 @@
 
 \newcounter{numericctr}
 \newcommand{\numericalbox}[2]
-{{ 
+{ 
 \noindent
 \label{#1}
- \fcolorbox{blue!70!white}{green!10!white}{\parbox{\textwidth}{
+ \fcolorbox{blue!70!white}{green!10!white}{.9\parbox{\.9textwidth}{
    \refstepcounter{numericctr}% increment the environment's counter
    \color{black}
    \textsc{Numerical \#\thenumericctr: }{#2}
-}
 }}}
+
 
 \numberwithin{numericctr}{chapter}
 
@@ -57,7 +59,7 @@
 { 
 { 
 \noindent
- \fcolorbox{blue!70!white}{green!10!white}{\parbox{\textwidth}{
+ \fcolorbox{blue!70!white}{green!10!white}{\parbox{.9\textwidth}{
    \color{black}
    \textbf{Supplement: }{#1}
 }
@@ -74,31 +76,22 @@
 \usepackage{glossaries}
 \makeglossaries
 \usepackage{hyperref}
-\iflatexml
-\else
-\usepackage{minitoc}
-\fi
 
 \input{src/Glossary}
 \input{src/TitlePage}
 %============================================================
 %============================================================
 \begin{document}%\label{top}
-\iflatexml
-\else
-\dominitoc%Initialize
-\fi
 
-%\newenvironment{advanced}
-%    {\begin{center}
-%    \begin{tabular}{p{0.9\textwidth}}
-%    \end{tabular} 
-%    \end{center}
-%    }
 
 \frontmatter
     \input{src/Heading}
 \mainmatter
+\tableofcontents
+\iflatexml
+\else
+\dominitoc%Initialize
+\fi
 	\input{src/Foreword}
 	\input{src/StateOfTheArt}
 %%
@@ -135,6 +128,7 @@
 \listoffigures
 \vfill
 \pagebreak
+
 
 \iflatexml
 \chapter*{Index\label{Ch:Index}}\label{index}\label{Index}

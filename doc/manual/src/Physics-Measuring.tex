@@ -2,11 +2,11 @@
 
 \section[Measuring]{Measuring\label{sec:PHYSICS_MEASURING}}
 \warningbox{
-An intuitive grasp of concepts of measuring, electricity, and electrical circuits, is helpful for understanding some of the basic theory concpts in cellular neurophysiology.}
+An intuitive grasp of concepts of measuring, electricity and electrical circuits, and thermodynamics, is helpful for understanding some of the basic theory concpts in cellular neurophysiology.}
 
 
 \subsection{Electrical measurement\label{sec:Physics-MeasurementElectrical}}
-The difficulties of making \hypertarget{electric_conductance}{electric measurement} on living matter
+The difficulties of performing \hypertarget{electric_conductance}{electric measurement} on living matter
 were known since the beginnings: "Since it is quite generally
 believed that the depolarization of a nerve fiber membrane, during
 excitation and propagation, involves an increased permeability to
@@ -40,13 +40,13 @@ Recall that the current delivered by the ions means at the same time a change in
 \includegraphics[width=.65\textwidth]{fig/mmet.png}
 
 \caption{Though most modern meters have solid state digital readouts, the physics is more readily demonstrated with a \href{http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/movcoil.html}{moving coil current detector} called a galvanometer. Since the modifications of the current sensor are compact, it is practical to have all three functions in a single instrument with multiple ranges of sensitivity. Schematically, a single range "multimeter" might be designed as illustrated.
-“from Hyperphysics by Rod Nave, Georgia State University". \copyright hyperphysics.phy-astr.gsu.edu/hbase/}
+“from Hyperphysics by Rod Nave, Georgia State University". \copyright \href{hyperphysics.phy-astr.gsu.edu/hbase/}}
 \label{fig:Physics-Multimeter}
 \end{figure}
 
 
 The electric measurement means an intrusion into the measured system. To measure voltage and current (we call them secondary entities), we can minimize the intervention. 
-However, to measure conductance, we must generate charge (see Fig.~\ref{fig:Physics-Multimeter}): we must apply some
+However, \textit{to measure conductance, we must generate charge inside the measured system} (see Fig.~\ref{fig:Physics-Multimeter}): we must apply some
 voltage to the medium and measure the current with which the medium
 responds; that is, a foreign voltage falsifies the measurement result. The fact is known in neurophysiology (but either forgotten
 or not understood), see \cite{JohnstonWuNeurophysiology:1995}, section
@@ -54,7 +54,7 @@ A.3.12: "\textit{(input impedance) can be measured by applying a voltage
 and measuring the resulting current or by injecting a current and
 measuring the resulting voltage}". We often forget that we concluded
 the notion for metals and that if the number of moved charge carriers
-changes during the measurement, or a "foreign" (not considered)
+changes during the measurement (see section~\cite{sec:Calculating-ion's-speed}), or a "foreign" (not considered)
 force field also affects the object, our measurement will produce
 fake results; see for example electromagnetic forces and the decades-long
 history of memristors \cite{RejectingMemristor:2018}. Moreover,
@@ -86,23 +86,25 @@ device sees its own effect: the voltage it applies generates an ion inflow,
 moves the ions it produces, and measures the resulting output current}.
 Recall Eq.(\ref{eq:StokesCurrent}): the current grows as the number of charge carriers $n$ increases; a real danger when measuring conductance in the presence of ion channels.
 Different devices and different settings provide different conductance
-values for the same membrane. (Assuming some resting conduction in
-axons is a self-contradiction. To have conduction, charge carriers
-need to be present, which means the presence of ions that means potential
-above the resting potential. Those ions flow out to the galvanically
-connected membrane. \textit{The measurement device generates the "resting conductance"
-attributed to axons and membrane}.
-\index{resting conductance}
+values for the same membrane.\index{resting conductance}
 It is a systematic error due to the incomplete understanding of the physics
 of electric measurements. See Fig. 6 in~\cite{HodgkinHuxley:1952}
 at high clamp voltage, the device's voltage contribution is insignificant.
 However, it is at least comparable to the measured effect at low clamp
-voltage.)
+voltage.
+(Assuming a resting conduction in
+axons is a self-contradiction. To have conduction, \textit{free charge carriers}
+need to be present, which means the presence of ions inside the axon, that means potential
+above the resting potential. Those ions flow out to the galvanically
+connected membrane. \textit{The measurement device generates the "resting conductance"
+attributed to axons and membrane}.)
+
 
 Furthermore, \textit{one must forget to make parallels with the single-speed
 electric circuits}, especially using their ready-made equations (used
-outside their range of validity) assuming a voltage generator:
-biological circuits are different. Biological interactions are governed
+outside their range of validity) assuming a voltage generator.
+Biological circuits are different: their voltage continuously changes 
+due to material transport and the currents are a million times slower. Biological interactions are governed
 by more complex laws, especially if interactions at enormously different
 speeds play a role. However, like in the case of modern versus classic
 physics, the first principles can provide good hints in the limiting
@@ -110,11 +112,11 @@ case. If we face a controversy, we apply the wrong basic assumptions
 and omissions/approximations.
 
 
-Ohm's Law is valid only in its \textit{differential form}. 
+Ohm's Law is valid only in its \textit{differential form} but not in \textit{integral form}. 
 \index{Ohm's Law} 
 The charge, whether injected artificially or natively through the synapses into the membrane,
 needs time to travel from their entry point to their exit.
-The two definitions are equivalent only if the current's speed is infinitely large (instant interaction) or in other words, it does not depend on the time.
+The two definitions are equivalent only if the current's speed is infinitely large (instant interaction) or in other words, it does not depend on the time; furthermore, if the driving force is constant and purely of electrical origin.
 The non-differential definition fixes current
 and makes material's features variable. \textit{The wrong definition rejects known laws of physics and introduces 
 new laws which it does not define.
@@ -125,7 +127,7 @@ node". In classical electricity, the abstraction
 'instant interaction' means that the node is discrete and sizeless. \textit{Kirchoff's law implies that the current enters and exits the node simultaneously}, which is not 
 \index{Kirchoff's Laws}
 the case in biology. It is a self-contradiction:
-the change in the current's time course (a charge related electric entity)
+the change in the current's time course (a charge-related electric entity)
 is transferred to the medium.
 Due to the wrong definition one simply divides non-matching data value pairs and
 attributes the effect of the wrong definition (using inappropriate abstraction of "instant interaction") to the process under study.
@@ -134,7 +136,11 @@ and directs physiology towards a wrong direction (it did not ask:
 why charge conservation is not valid).
 \index{Kirchoff's Laws}
 In classical electricity, in the world of 'instant interaction' the Kirchoff's law is a
-good \textit{approximation} (but correct books also mention that on a $30~cm$ piece of wire there exist a $1\ ns$ delay). However, the case is different in physiology: the speed of current is in the range of $m/s$; there is a "phase delay"
+good \textit{approximation} (but correct books also mention that on a 
+\SI{300}{\milli\meter} %$30~cm$
+piece of wire there exist a \SI{1}{\nano\second}.
+%$1\ ns$ delay).
+However, the case is different in physiology: the speed of current is in the range of $m/s$; there is a "phase delay"
 between the voltage and the current. 
 
 
@@ -186,13 +192,13 @@ the cell behaves 'Ohmic'. However, it is 'non-ohmic' around the
 rising and falling edges of the test current, furthermore,
 if the amplitude of the signal is higher then some threshold value.
 After receiving the rising edge of the measuring signal, the membrane's condenser stores part of the charge.
-If one knows the laws of electricity, fits a saturating exponential to the curve as the membran potential rises when the condenser charges and the physics is all right.
+If one knows the laws of electricity, fits a saturating exponential to the curve as the membrane potential rises when the condenser charges and the physics is all right.
 If one believes that the condenser must take instantly the voltage, might say that $V_m/I_m$ changes, that is the membrane's conductance/capacitance changes and has a time constant.
 Similar explanation can be given, when the falling edge arrives and the condenser discharges.
 %
 When the current exceeds a threshold value, the ion channels in membrane's wall open and an extra current (not from the current generator) flows into the membrane.
 If one believes that the correct value that must be used in deriving conductance is the one that the test generator provides (and the conductance meter does so), divides the test current (instead of the total current) with the measured membrane potential evoked by the total current, uses non-matching value pairs. 
-Non-understanding physics results in claming non-Ohmic behavior.
+Non-understanding physics results in claiming non-Ohmic behavior.
 Neither the conductance nor the capacitance of a cell changes
 under the effect of electric test signals. Only the measurement is wrong. 
 
@@ -210,7 +216,6 @@ The local electric field fluctuates, so the state of the ions is dynamic: they d
 The ions can exist in ionized and polarized states.
 The state (and behavior) of ions depends on their environment.
 
-%We apply two approximations to the solution. 
 A small part (about $10^{-3}$) of the molecules dissociates (i.e. the ions leave their counterpart with opposite charge behind) and they move freely in the volume. In other words, the electrolyte liquid can then conduct electricity due to the mobility of the positive and negative ions, which are called cations and anions, respectively. 
 The rest of molecules can be in a more or less polarized state, providing a possibility of producing internal electric field.
 The macroscopic state of the molecules depends on,
@@ -237,22 +242,20 @@ from the electrical field. When measuring only the macroscopic electric
 parameters voltage and current, and especially when 
 \hyperlink{electric_conductance}
 {measuring current believing we measure
-directly conductance;} in addition, measuring it in a wrong way; (for the details see section~\ref{sec:PHYSICS_MEASURINGCONDUCTANCE}) \emph{we
+directly conductance;} in addition, measuring it in a wrong way; (for the details, see section~\ref{sec:PHYSICS_MEASURINGCONDUCTANCE}) \emph{we
 attribute the consequences of the injected charge carriers' low propagation speed to the
 medium} and we describe the phenomenon that "the conductance changes"
 in the function of the voltage~\cite{KochVoltageDependentConductance:1999}.
-(We know that the macroscopical speed of current changes with the \hyperlink{voltage-clamping}{clamping speed}, see Eq.(\ref{eq:StokesEinsteinSpeeddV} and section~\ref{sec:Physiology-StokesLaw}),
+(We know that the macroscopical speed of current changes with the \hyperlink{voltage-clamping}{clamping speed}, see Eq.(\ref{eq:StokesEinsteinSpeeddV}) and section~\ref{sec:Physiology-StokesLaw}),
 that might change the time difference between the non-matching value pairs, leading to the illusion that the conductance changes.)
-The measurement must be
-fixed:
- the 
+The measurement must be fixed:  the 
 \hyperlink{electric_resistance}
 {tacit assumptions} about notions of electricity must be fulfilled. 
 
 
 
 Conductance is a ``steady-state''
-notion; see its definition in section~\ref{sec:PHYSICS_MEASURINGCONDUCTANCE} and in section A.3.12 in~\cite{JohnstonWuNeurophysiology:1995}:
+notion; see its definition in section~\ref{sec:PHYSICS_MEASURINGCONDUCTANCE} and in section A.3.12 of~\cite{JohnstonWuNeurophysiology:1995}:
 "the input impedance measured \emph{after the voltage has reached
 	a steady state} following a step change in injected current is defined
 as input resistance", or "the input resistance \dots obtained
@@ -279,7 +282,7 @@ Wording that biological systems show ``non-ohmic behavior''
 means that they are not metals (they have a charge transfer mechanism differing from the "free electron cloud"): we abstracted the notion of conductance
 for metals (or at least steady-state).
 \index{free electron cloud}
-Physics describes biological operations perfectly; although, it may use 'non-ordinary' laws. Electric
+Physics describes biological operations perfectly; although, it may use 'non-ordinary' laws (in this case: for slow current). Electric
 operations are also ohmic in biology, but one has to use the correct
 (time-aware, i.e., considering the speed of the charged carrier) interaction
 speed, correct definition and measurement method. \emph{Using the Newtonian 'instant interaction' as the speed
@@ -398,7 +401,7 @@ axon. This is made possible by the highly conductive internal
 current electrode, which short-circuits the axoplasmic
 resistance, reducing axial resistance to zero. This low-resistance pathway eliminates all variations in
 electrical potential along the axon core."
-(Fig.~7.2 in~\cite{PrinciplesNeuralScience:2013}) 
+(Fig.~7.2 of~\cite{PrinciplesNeuralScience:2013}) 
 }
 \label{fig:Physics-ClampingKandel}
 \end{figure}
@@ -406,8 +409,7 @@ electrical potential along the axon core."
 \begin{figure}
 \includegraphics[width=.8\textwidth]{fig/ClampingGENESIS.png}
 \caption{Simulating a voltage clamped neuron by the program GENESYS~\cite{TheBoookOfGENESIS:2003}, Fig.~4.7.
-Figure~\ref{fig:Physics-VoltageClampingGenesis}
- clearly shows that the source of the "K conductance" and "K current"
+The figure clearly shows that the source of the "K conductance" and "K current"
 is the "injection current". The rising edge of the current triggers an action potential
 (note the very sharp gradient at $t=2$) and then (as the negative feedback is defined)
 the injecting current is converted to "K current" (as mis-identified: a real current,

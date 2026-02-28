@@ -1,16 +1,16 @@
 # Dynamic abstract (biological) neural computing
 
-The project establishes the physical basis of neuronal computing
+The project establishes the correct physical foundations of neuronal computing
 (and in general, neuronal operation) which is behind
 the operation of the brain.
 
 
 ## Description/theory
 
-This is the detailed operation of neurons. It describes the operation
+This is the detailed operation of abstract biological neurons. It describes the operation
 without physiological and biochemical details, using the correct physics.
 It provides a new, unified (cross-disciplinary), model of operation,
-which explains the experienced mechanical, thermodynamic and electrical
+which explains the observed mechanical, thermodynamic and electrical
 observations without contradiction. It also shows that the
 apparent contradictions are the result of the attempts to describe
 living matter using the disciplinary laws derived for inanimate matter.
@@ -20,11 +20,12 @@ description of the action potential from the first principles
 and explains the observed features of its transmission using
 the soliton model and the cross-disciplinary theory.
 Among others, it derives the correct origin of the resting potential
-and the dynamic operation of the neuron.
+and the dynamic operation, based on the derived laws of motion, of the neuron.
 The theory fixes the mistakes in the classical Hodgkin-Huxley theory
 and explains that the discrete nature of neural electricity (the slow current)
 drastically changes the picture how neurons compute.
-For those discussions, one has to reinterpret physical laws for living matter.
+For those discussions, one has to reinterpret physical laws for living matter
+(aka: derive the non-ordinary laws of science Scrödinger predicted).
 
 
 ## Neuronal simulator
@@ -37,7 +38,7 @@ simulate the time-dependent processes of living matter.
 ## Authors
 
 
-ex. Végh, János (Vegh [dot] Janos at a GMail address)
+ex. Végh, János (Vegh [optional dot] Janos at a GMail address)
 
 ## Keywords
 Neuronal operation, event controlled, thermodynamic model, electrical model,

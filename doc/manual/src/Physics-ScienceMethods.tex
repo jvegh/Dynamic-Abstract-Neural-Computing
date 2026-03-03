@@ -158,7 +158,7 @@ interaction speed has noticeable effects on the operation of the system.
 Furthermore, connecting the discrete and continuous views needs care
 in the case of biological object and processes.
 
-\subsection[Disciplines]{Science disciplines\label{sec:Physics-ScienceDisciplines}}
+\subsection[Disciplinarity]{Science disciplinarity\label{sec:Physics-ScienceDisciplinarity}}
 For centuries, science developed its methods for deriving abstract concepts
 by reducing the features of a real object to an abstract (idealized) one that cannot be reduced further, such as mass or charge.
 Ions are an exception when using the concepts of classical disciplinary physics: \textit{the ions are charge and mass simultaneously, without a further possibility of reduction}.
@@ -214,43 +214,70 @@ that
 can be applied without thinking about whether they can bw applied 
 to living matter.}
 
+\subsection{Spatiotemporal\label{sec:Physics-Spatiotemporal}}
 
-\subsection{Complete measurement\label{sec:Physics-Complete}}
+%\subsection{Time, space, and matter\label{sec:Physics-TimeSpaceMatter}}
 
-In physics, measurement means quantifying something 
-relevant to the process under study.  A 'complete' measurement
-measures all relevant quantities. \textit{The different disciplines of physics restrict the measured quantities to the ones which are, in general, that the discipline studies.
-The remaining quantities remain outside the scope of the discipline.}
-The fundamental physical quantities of mechanics are length, mass, and time, which form the basis for defining all other quantities like velocity, force, and energy in that field.
-The fundamental physical quantities in thermodynamics are Temperature, Energy (Internal Energy, Heat, Work), and Entropy, which characterize systems at equilibrium and describe energy transformations; Pressure and Volume are also key variables. 
-Those of electricity include electrical charge (Coulomb), the basis of all electrical phenomena; electrical current (Ampere), the rate of charge flow; voltage (Volt), the potential difference driving current; resistance (Ohm), opposition to current; power (Watt), the rate of energy transfer; and energy (Joule), the capacity to do work. 
-As seen, there is little overlap of the studied quantities. 
-\index{complete measurement}
+Classical physics is based on the Newtonian idea that  space and time are absolute so everything happens simultaneously. Moreover, their observationis also instantaneous. Consequently, when their objects
+interact, it must be instantaneous; in other words,
+all interactions have the same (and, logically: infinitely high) speed. Furthermore, electromagnetic
+waves with the same high (logically, infinitely high) speed inform the observer. This
+self-consistent abstraction enables us to provide a "nice"
+mathematical description of nature in various phenomena: the classic
+science. In the first year of college, we learned that the idea resulted
+in "nice" reciprocal square dependencies, Kepler's and Coulomb's
+\index{Kepler's Law}
+\index{Coulomb's law}
+laws. We discussed that the macroscopic phenomenon "current" is
+implemented at the microscopic level by transferring (in different
+forms) discrete charge, and that movement of charges has no effect on the environment. Furthermore, that \textit{without charge (and, without atomic charge carriers),
+neither potential nor current exists}. In the next semester, we learned
+that the speed of light is finite and that solids show a macroscopic
+behavior "resistance" against forwarding microscopic charges.
+One semester later, we learned that nature behaves differently
+at high speeds, at low sizes and energies;
+furthermore, that the transition between the continuous and discrete 
+views needs new concepts.
 
-\textit{A disciplinary study (such as the electrical and thermodynamic ones in physiology) provides an incomplete set of measured quantities}. None of the disciplines alone can describe electrolytes, since they consider different and incomplete sets of physical quantities: thermodynamics misses charge, electricity misses mass.
-As discussed in connection with the Onsager relations, a disciplinary (incomplete) measurement does not discover that an unexpected change (a miracle) in the value of one of the quantities belonging to another discipline is accompanied by a change in the
-value of the other quantity. This change is clearly the case with the measurements performed in the spirit of \gls{HH}: the values the
-electrical instruments provide are accompanied by the values
-of mechanical/thermodynamic quantities which are not measured, partly due to the obvious 
-measuring difficulties and because they are outside the scope of the discipline electricity.  The theory, however,should not remain disciplinary.
-If one attempts to reduce ion-related phenomena to a single abstraction (see the mentioned theoretical descriptions),
-one experiences that some quantity (the charge or the mass)
-changes in an uncontrolled way.
-The fundamental reason of the incompatibility on the disciplinary theories 
-is that they consider an incomplete set of physical quantities.
-As Feynman R. P~\cite{FeynmanThinking:1980} told, "\textit{many of the interesting phenomena bridge the gaps between fields}". The disciplinary separation in classical science does not apply to the study of living matter.
-\textit{We must make a complete measurement and interpret them in a cross-disciplinary way.}
+In biology, it was evident that
+the transfer (conduction) time must be considered together with the computing (synaptic) time (in this sense, presynaptic to postsynaptic transmission time).  The name "\hypertarget{spatiotemporal}{spatiotemporal}"
+and a (separated) time dependence is commonly used~\cite{PerturbationNeuralComputation:2002},
+in the sense that  Precise Firing Sequence (PFS) "\textit{tended to be correlated with the animal's behavior}"; furthermore, that "\textit{the results suggest that relevant information is carried by the fine temporal structure of cortical activity}"~\cite{SpatiotemporalPrut:1998}.
+\index{time-space}
+The "\textit{neural dynamics}" was studied 
+and "\textit{spatiotemporal spreading of population activity was mapped}"~\cite{SpatiotemporalPlenz:1996} by methods used to describe the \textit{static computing methods}: 
+interspike intervals histograms, auto-correlation and cross-correlation.
+Because of the peculiarities of this information handling, \textit{there are severe doubts whether 
+the notions of the classic neural information theory are valid
+for biological computing systems}~\cite{VeghNeuralShannon:2022}.
+The correct method of describing biological computation is still missing, given that the significant item of the computing
+is missed: \textit{the time and position are connected through the 
+	information transfer speed} (called conduction velocity).
 
 
-Thermodynamics provides a framework for handling ions and determining their thermodynamic properties. However,
-as good thermodynamic textbooks (including the one on the thermodynamics of the membrane~\cite{ThermalBiophysics:2007}) emphasize, \textit{thermodynamics
-derives its concepts for non-interacting particles}, so one cannot expect 
-its validity for ionic solutions~\cite{VeghNon-ordinaryLaws:2025}
-(Boltzmann assumed that, in the absence of long-range interaction between the particles, the sizes of cells in the phase space do not change).
-In addition, he required  the presence of a vast number of particles
-in a homogeneous, isotropic, infinite volume,
-which is typically not the case in biology.
+Will be based on~\cite{RoleOfInformationTransferSpeed:2022,VeghIntroducingTemporalBehaviorScience:2020,BuzsakiVeghSpaceTime:2023}
 
+ 
+\begin{figure}
+\iflatexml
+\includegraphics[width=\textwidth]{fig/RelativisticComputation.png}
+\else
+\includegraphics[width=.65\textwidth]{fig/RelativisticComputation.pdf}
+\fi
+
+	
+	\caption{The temporal diagram, i.e., the way of calculation to combine the spatial distance (transmission time, blue arrows) and computing time (green arrows) illustrated in the time-space coordinate system. The orange-green vertical arrow shows that the second computing unit must idly wait until the transmitted result reaches its position, because of the finite transmission time. The axes $x$ and $y$ refer to space coordinates (transformed to time using the conduction velocity), the axis $t$ refers to the time itself. The arrows starting from points 0, 1 and 2
+		on the $x$ axis illustrate timing for three different propagation speeds.
+		The red vector points from the 
+		beginning to the end of the process. 
+		Its length may serve as a statistical
+		entity to describe temporal distance of the units. \label{fig:RelativisticComputation}}
+\end{figure}
+
+In Fig.~\ref{fig:RelativisticComputation}, for visibility, two spatial
+and one temporal coordinate are shown. In the following figures,
+some illustration enable to omit one more spatial dimension, i.e., 
+effectively to draw the events as a two-dimensional diagram.
 
 
 \subsection[Dichotomies]{Dichotomies in modeling\label{sec:Physics-Dichotomies}}
@@ -369,120 +396,42 @@ However, no thermodynamic explanation has been given so far.
 Our discussion provides, in line with the experimental results,
 a complex unified electrical/thermodynamic description of neuronal operation.
 
-\subsection{Mathematics\label{sec:Physics-Mathematics}}
+
+\subsection{Complete measurement\label{sec:Physics-Complete}}
+
+In physics, measurement means quantifying something 
+relevant to the process under study.  A 'complete' measurement
+measures all relevant quantities. \textit{The different disciplines of physics restrict the measured quantities to the ones which are, in general, that the discipline studies.
+The remaining quantities remain outside the scope of the discipline.}
+The fundamental physical quantities of mechanics are length, mass, and time, which form the basis for defining all other quantities like velocity, force, and energy in that field.
+The fundamental physical quantities in thermodynamics are Temperature, Energy (Internal Energy, Heat, Work), and Entropy, which characterize systems at equilibrium and describe energy transformations; Pressure and Volume are also key variables. 
+Those of electricity include electrical charge (Coulomb), the basis of all electrical phenomena; electrical current (Ampere), the rate of charge flow; voltage (Volt), the potential difference driving current; resistance (Ohm), opposition to current; power (Watt), the rate of energy transfer; and energy (Joule), the capacity to do work. 
+As seen, there is little overlap of the studied quantities. 
+\index{complete measurement}
+
+\textit{A disciplinary study (such as the electrical and thermodynamic ones in physiology) provides an incomplete set of measured quantities}. None of the disciplines alone can describe electrolytes, since they consider different and incomplete sets of physical quantities: thermodynamics misses charge, electricity misses mass.
+As discussed in connection with the Onsager relations, a disciplinary (incomplete) measurement does not discover that an unexpected change (a miracle) in the value of one of the quantities belonging to another discipline is accompanied by a change in the
+value of the other quantity. This change is clearly the case with the measurements performed in the spirit of \gls{HH}: the values the
+electrical instruments provide are accompanied by the values
+of mechanical/thermodynamic quantities which are not measured, partly due to the obvious 
+measuring difficulties and because they are outside the scope of the discipline electricity.  The theory, however,should not remain disciplinary.
+If one attempts to reduce ion-related phenomena to a single abstraction (see the mentioned theoretical descriptions),
+one experiences that some quantity (the charge or the mass)
+changes in an uncontrolled way.
+The fundamental reason of the incompatibility on the disciplinary theories 
+is that they consider an incomplete set of physical quantities.
+As Feynman R. P~\cite{FeynmanThinking:1980} told, "\textit{many of the interesting phenomena bridge the gaps between fields}". The disciplinary separation in classical science does not apply to the study of living matter.
+\textit{We must make a complete measurement and interpret them in a cross-disciplinary way.}
 
 
-Galilei said, "Mathematics is the language in which God has written
-the universe". However, it is not sure that when we attempt to read
-\index{Galilei, Galileo}
-a piece of the universe written in that language, we use the right
-piece and dialect of the language, and even that humans already invented the
-needed piece. Not mentioning whether one understands the
-given piece correctly.  
-For example,  \href{https://en.wikipedia.org/wiki/Calculus} {mathematical calculus}
-(integral and differential) was invented mainly for the practical needs of analyzing spatial motion of celestial bodies.
-Similarly, Minkowski's mathematics theory proliferated widely~ \cite{EinsteinMinkowskiRelativity:1977}
-\index{Minkowski, Herman}
-\index{mathematics of finite speeds ~\cite{EinsteinMinkowskiRelativity:1977}}
-only after inventing the special theory of relativity.
-Although the mathematical description was developed earlier, there was no practical
-need to apply it.
-The classical laws of motion were valid only until more meticulous observations required
-to consider speed and acceleration (time derivatives of position) dependence in addition to position dependence.
-Newton's \textit{static} laws remained valid, but for the \textit{dynamic} description we must revisit the second law of motion. 
-
-Also, we must not forget that "mathematics is not just a language. Mathematics is a language plus reasoning. It's like a language plus logic. Mathematics is a tool for reasoning." (Richard P. Feynman)
-Mathematical formulas work with numbers but math theorems and statements begin with "If ... then".
-They have their range of validity, even when they describe nature.
-Using mathematics to describe the classical equations of motion,
-to calculate forces and times that speed up bodies
-above the speed of light is possible, but in that case mathematics is applied to
-an inappropriate approximation to nature. When approaching the speed of light,
-different physical approximations (that calls for a different mathematical handling) are to be used.
-\textit{A mathematical formula, without naming which interactions it describes
- and naming
-under which conditions and approximations the formula can be applied, are just numbers without meaning.
-It surely describes something but only eventually describes what we studied.}
-Galilei made measurements with objects having friction, but his careful analysis
-extrapolated his results to the abstraction that no friction was present.
-\textit{We know his name because of making meticulous abstractions and omissions (and mainly:
-recognizing the need to do so!)} instead of publishing a vast amount of
-half-understood measured data.
-
-
-The discrete-continuous dichotomy raises the interesting question: how long quantities describing matter remain differentiable? At macroscopic quantities, for example, 
-in technical electricity, surely yes: for a large number of
-charge carriers flowing through a cross section, the statistical
-fluctuation of the number of charge carriers obviously is sufficiently small to operate with the approximation that
-the fluctuation is zero, so the definition that at a cross section $I=\frac{dQ}{dt}$ defines the current has sense.
-Even one can approximate the current by saying that
-$dQ$ cannot be smaller than the elementary charge. Mathematically, one can say that the time course of a single
-charge carrier is a $\delta$-function, which is surely not differentiable. Then, is the rush-in current with its 
-$10^7$ charge carriers differentiable? If it happens 
-in fractions of a nanosecond, over a surface of the membrane?
-The same question for the single ion channels?
-Or, when that amount of rush-in current is distributed
-over a several millisecond range? In a microsecond,
-in average, about thousand electrons represents the current,
-at the beginning and the end of an \gls{AP}, only a few dozens.
-These are reasonable questions when measuring voltage gradient
-that such a low current current generates on a resistor
-represented by some ion channel. 
-
-Experience shows that thermodynamics describes correctly the
-macroscopic behavior of physical media when an enormous 
-number of microscopic objects are present in a macroscopic
-volume. Are the biological objects large enough to
-neglect the statistical fluctations of the objects
-they contain? The Nernst-Planck equation (and the corresponding transport equations) relates concentration and voltage gradients.
-Are those laws valid at the size of ion channels, where
-it is hard to interpret those derivatives?
-Do those statistical laws valid for the quasi-continuous 
-infinite volumes remain valid for non-infinite closed volumes
-or for the individual ions? (recall that thermodynamics 
-follows the hybrid path that calculates the \textit{probable number}
-in a volume in the phase space and works that as if it were
-the \textit{actual number} of particles. 
-
-Mathematics and physics do not have methods behind the
-pairwise, instant interactions.
-
-The interdependent behavior of charge and mass has an interesting, entirely
-mathematical consequence as well. 
-The definition of a partial derivative of a function of several variables is its derivative with respect to one of those variables,
-\textit{with the others held constant}. In the case of ions, changing the function with respect to mass or charge means simultaneously changing also the other; that is, the partial derivatives depend on each other.
-In other words, one cannot calculate the partial derivatives; only the total derivative.
-As a consequence, equations that use the partial derivatives of concentration and electrical potential are either incorrect or approximations. Classical mathematics cannot be applied.
-Consequently, in the case of ions and electrolytes, one must not use the well-established concepts (enthalpy, entropy, etc) of thermodynamics in unchanged form. (BTW: the discrete nature of charged particles 
-leaves the question open, under which conditions remains the 
-ion current differentiable.)
-
-
-Science has a well-established method for deriving its laws. It groups resemblant phenomena to major disciplines and they branch along even more resemblance to sub-disciplines.
-The hierarchy is not strict, given that "{nature is not interested in our separations, and many of the interesting phenomena bridge the gaps between fields.}" ~\cite{FeynmanThinking:1980}.
-Mathematics is a discipline on its own right. It abstracted its notions from nature's concrete objects and phenomena, its abstract methods serve as a solid base for the fellow sciences and are frequently used to describe new discoveries.
-It is commonly accepted that physics is  the very basic tool to study nature at some elementary level.
-Chemistry, at another level of abstracting nature, is based upon its laws, and constructs its laws for the phenomena it researches.
-The laws of physics are borrowed and respected, and the laws of chemistry cannot conflict with the laws of chemistry.
-Biology is the discipline studying living matter, and is considered to be an even higher level abstraction, with its own laws. These laws, as expected, cannot conflict with the laws of chemisty and physics.
-Howevever, it looks like some laws, mainly the ones belonging to thermodynamics, are are not perfect for describing biological phenomena. Especially, the life itself seems to contradict 
-the second law of thermodynamics. E.~Schrödinger suspected that 
-some non-ordinary laws are to be derived to describe life.
-
-Classical physics is simplifying the things until can attribute 
-a single substance (such as mass or charge) to the tested object
-and in its laboratories derives accurately the laws and determines
-the attibutes of the substances. As E.~Schrödinger has drawn the attention to, "the construction [of living matter] is different from anything we have yet tested in the physical laboratory".
-Science experienced many times that the approximation do not
-describe some phenomena accurately. At that times, scrutinizing the 
-fundamental assumptions (such as whether the \indexit{Galillei's relativity principle} remain valid when approaching the speed of light,
-or the matter remains continuous when decreasing extremely the 
-tested sample) has led to establishing new scientific fields,
-such as theories of relativity or theory of quantum mechanics.
-
-
-
-%\subsection{Other issues\label{sec:Physics-OtherIssues}}
+Thermodynamics provides a framework for handling ions and determining their thermodynamic properties. However,
+as good thermodynamic textbooks (including the one on the thermodynamics of the membrane~\cite{ThermalBiophysics:2007}) emphasize, \textit{thermodynamics
+derives its concepts for non-interacting particles}, so one cannot expect 
+its validity for ionic solutions~\cite{VeghNon-ordinaryLaws:2025}
+(Boltzmann assumed that, in the absence of long-range interaction between the particles, the sizes of cells in the phase space do not change).
+In addition, he required  the presence of a vast number of particles
+in a homogeneous, isotropic, infinite volume,
+which is typically not the case in biology.
 
 
 
@@ -884,6 +833,123 @@ and on the
 and the text around it. \textit{Studying electric phenomena on structured
 media, such as biological cells, needs much care}. We must not apply
 laws derived from entirely different conditions (mainly metals).
+
+
+
+\subsection{Mathematics\label{sec:Physics-Mathematics}}
+
+
+Galilei said, "Mathematics is the language in which God has written
+the universe". However, it is not sure that when we attempt to read
+\index{Galilei, Galileo}
+a piece of the universe written in that language, we use the right
+piece and dialect of the language, and even that humans already invented the
+needed piece. Not mentioning whether one understands the
+given piece correctly.  
+For example,  \href{https://en.wikipedia.org/wiki/Calculus} {mathematical calculus}
+(integral and differential) was invented mainly for the practical needs of analyzing spatial motion of celestial bodies.
+Similarly, Minkowski's mathematics theory proliferated widely~ \cite{EinsteinMinkowskiRelativity:1977}
+\index{Minkowski, Herman}
+\index{mathematics of finite speeds ~\cite{EinsteinMinkowskiRelativity:1977}}
+only after inventing the special theory of relativity.
+Although the mathematical description was developed earlier, there was no practical
+need to apply it.
+The classical laws of motion were valid only until more meticulous observations required
+to consider speed and acceleration (time derivatives of position) dependence in addition to position dependence.
+Newton's \textit{static} laws remained valid, but for the \textit{dynamic} description we must revisit the second law of motion. 
+
+Also, we must not forget that "mathematics is not just a language. Mathematics is a language plus reasoning. It's like a language plus logic. Mathematics is a tool for reasoning." (Richard P. Feynman)
+Mathematical formulas work with numbers but math theorems and statements begin with "If ... then".
+They have their range of validity, even when they describe nature.
+Using mathematics to describe the classical equations of motion,
+to calculate forces and times that speed up bodies
+above the speed of light is possible, but in that case mathematics is applied to
+an inappropriate approximation to nature. When approaching the speed of light,
+different physical approximations (that calls for a different mathematical handling) are to be used.
+\textit{A mathematical formula, without naming which interactions it describes
+ and naming
+under which conditions and approximations the formula can be applied, are just numbers without meaning.
+It surely describes something but only eventually describes what we studied.}
+Galilei made measurements with objects having friction, but his careful analysis
+extrapolated his results to the abstraction that no friction was present.
+\textit{We know his name because of making meticulous abstractions and omissions (and mainly:
+recognizing the need to do so!)} instead of publishing a vast amount of
+half-understood measured data.
+
+
+The discrete-continuous dichotomy raises the interesting question: how long quantities describing matter remain differentiable? At macroscopic quantities, for example, 
+in technical electricity, surely yes: for a large number of
+charge carriers flowing through a cross section, the statistical
+fluctuation of the number of charge carriers obviously is sufficiently small to operate with the approximation that
+the fluctuation is zero, so the definition that at a cross section $I=\frac{dQ}{dt}$ defines the current has sense.
+Even one can approximate the current by saying that
+$dQ$ cannot be smaller than the elementary charge. Mathematically, one can say that the time course of a single
+charge carrier is a $\delta$-function, which is surely not differentiable. Then, is the rush-in current with its 
+$10^7$ charge carriers differentiable? If it happens 
+in fractions of a nanosecond, over a surface of the membrane?
+The same question for the single ion channels?
+Or, when that amount of rush-in current is distributed
+over a several millisecond range? In a microsecond,
+in average, about thousand electrons represents the current,
+at the beginning and the end of an \gls{AP}, only a few dozens.
+These are reasonable questions when measuring voltage gradient
+that such a low current current generates on a resistor
+represented by some ion channel. 
+
+Experience shows that thermodynamics describes correctly the
+macroscopic behavior of physical media when an enormous 
+number of microscopic objects are present in a macroscopic
+volume. Are the biological objects large enough to
+neglect the statistical fluctations of the objects
+they contain? The Nernst-Planck equation (and the corresponding transport equations) relates concentration and voltage gradients.
+Are those laws valid at the size of ion channels, where
+it is hard to interpret those derivatives?
+Do those statistical laws valid for the quasi-continuous 
+infinite volumes remain valid for non-infinite closed volumes
+or for the individual ions? (recall that thermodynamics 
+follows the hybrid path that calculates the \textit{probable number}
+in a volume in the phase space and works that as if it were
+the \textit{actual number} of particles. 
+
+Mathematics and physics do not have methods behind the
+pairwise, instant interactions.
+
+The interdependent behavior of charge and mass has an interesting, entirely
+mathematical consequence as well. 
+The definition of a partial derivative of a function of several variables is its derivative with respect to one of those variables,
+\textit{with the others held constant}. In the case of ions, changing the function with respect to mass or charge means simultaneously changing also the other; that is, the partial derivatives depend on each other.
+In other words, one cannot calculate the partial derivatives; only the total derivative.
+As a consequence, equations that use the partial derivatives of concentration and electrical potential are either incorrect or approximations. Classical mathematics cannot be applied.
+Consequently, in the case of ions and electrolytes, one must not use the well-established concepts (enthalpy, entropy, etc) of thermodynamics in unchanged form. (BTW: the discrete nature of charged particles 
+leaves the question open, under which conditions remains the 
+ion current differentiable.)
+
+
+Science has a well-established method for deriving its laws. It groups resemblant phenomena to major disciplines and they branch along even more resemblance to sub-disciplines.
+The hierarchy is not strict, given that "{nature is not interested in our separations, and many of the interesting phenomena bridge the gaps between fields.}" ~\cite{FeynmanThinking:1980}.
+Mathematics is a discipline on its own right. It abstracted its notions from nature's concrete objects and phenomena, its abstract methods serve as a solid base for the fellow sciences and are frequently used to describe new discoveries.
+It is commonly accepted that physics is  the very basic tool to study nature at some elementary level.
+Chemistry, at another level of abstracting nature, is based upon its laws, and constructs its laws for the phenomena it researches.
+The laws of physics are borrowed and respected, and the laws of chemistry cannot conflict with the laws of chemistry.
+Biology is the discipline studying living matter, and is considered to be an even higher level abstraction, with its own laws. These laws, as expected, cannot conflict with the laws of chemisty and physics.
+Howevever, it looks like some laws, mainly the ones belonging to thermodynamics, are are not perfect for describing biological phenomena. Especially, the life itself seems to contradict 
+the second law of thermodynamics. E.~Schrödinger suspected that 
+some non-ordinary laws are to be derived to describe life.
+
+Classical physics is simplifying the things until can attribute 
+a single substance (such as mass or charge) to the tested object
+and in its laboratories derives accurately the laws and determines
+the attibutes of the substances. As E.~Schrödinger has drawn the attention to, "the construction [of living matter] is different from anything we have yet tested in the physical laboratory".
+Science experienced many times that the approximation do not
+describe some phenomena accurately. At that times, scrutinizing the 
+fundamental assumptions (such as whether the \indexit{Galillei's relativity principle} remain valid when approaching the speed of light,
+or the matter remains continuous when decreasing extremely the 
+tested sample) has led to establishing new scientific fields,
+such as theories of relativity or theory of quantum mechanics.
+
+
+
+%\subsection{Other issues\label{sec:Physics-OtherIssues}}
 
 
 

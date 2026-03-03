@@ -1,0 +1,82 @@
+% Physics: consequences of the correct physical mechanisms
+
+
+\section[Implications]{Implications for computing, communication, information\label{Physics-Implications}}
+
+
+\subsection{Physics\label{sec:Physics-ImplicationsPhysics}}
+
+\subsubsection{Reversal potential\label{sec:Physics-RestingReversal}}
+From our picture, it is clear that the reversal potential is reached 
+when the potential on the inner segment is lowered or lifted in such a way 
+that the orange sloping potential in Fig.~\ref{fig:RestingPotential4} turns horizontal. To reach it (provided that
+the potential on the other side is kept fixed), the concentrations on the
+invasion site must be  changed. The invasions resulting in the exact (but opposite) change of potentials from the two sides leads to different concentrations.
+The invasion acts as changing the potential at the corresponding surface side of the membrane. Given that the difference between the two potentials on the two surfaces defines the driving forces, the concentration on the other side is also affected.
+That is, the reversal potential exists, but its value depends on the context, see the discussion about invasions.
+
+ 
+%\subsubsection{Membrane's charge\label{sec:Physics-ChargeOnMembrane}}
+
+\cite{KochBiophysics:1999}, page 7 provides a numeric estimation that "a spherical cell of $5-\mu m$ radius with a resting potential
+of $-70\ mV$ stores about $0.22 * 10^{-12}$ coulomb of charge just below the membrane and
+an equal but opposite amount of charge outside".
+As we estimated above, a charge in the same order of magnitude (or above it)
+is involved in forming and action potential, so the assumption that
+the membrane is a kind of electric circuit with a fixed potential
+and the moving ion current does not change membrane's potential,
+is far from reality. That amount of charge represents $10^7$ ions.
+From this we can estimate that the ions are at a $0.5\ nm$ distance from each other.
+
+As the caption of Fig.~11.22 in~\cite{MolecularBiology:2002} formulated:
+"A small flow of ions carries sufficient charge
+to cause a large change in the membrane potential."
+
+
+
+\subsection[Information]{Delivering information\label{sec:Single-OperationInformation}}
+
+As follows from our interpretation, the appearance of a huge voltage gradient
+(evoked by the sudden rush-in current) represents the output
+information the neuron delivers, and also the input information
+it receives from its upstream neurons through its synapses.
+\index{voltage gradient}
+Given that the input currents delivered by the spikes
+are gated  by the neuron, the information that can be
+accounted in the computation must be in the front side of spikes. (The back side is mainly needed for restoring the resting potential.)
+
+The front side (in the form of a sudden step in the value of the voltage gradient) delivers an extremely precise timing information about at what time the rush-in event in the sender happened, explaining the half-understood experience~\cite{SubmillisecondResolution:2008} why
+"the timing of spikes is important with a
+precision roughly two orders of magnitude greater than the temporal
+dynamics of the stimulus". If exceeding the threshold
+is the consequence of the charge arriving from a single
+upstream neuron, the neuron simply transmits the timing information it received. If several smaller gradients
+are summed (and recall that the component gradients decay with
+time after their arrival) for reaching the gradient,
+then their information content is weighted.
+
+
+\subsection[Computing]{Implications for computing\label{sec:Single-ImplicationsComputing}}
+ 
+Fig.~\ref{fig:AP_Conceptual} also reveals some secrets of the effective
+biological computing.
+\begin{itemize}
+\item biology makes the "weighted summing" of neuron's synaptic inputs 
+simultaneously, in one single operation making multiplication and integration, furthermore selecting the time window and its effective synaptic inputs
+\item the heavily used neuronal information "is stored, as it should be, in every circuit"~\cite{SterlingPrinciples:2017}
+\item "information stored
+directly at a synapse can be retrieved directly"~\cite{SterlingPrinciples:2017}
+\item part of the information (in 'volatile' memory) is stored only
+for the period when it might be needed (a real temporary cache)
+\item "Computing" is much shorter than "Delivering"
+\item asynchronous; the operation time varies (no pipelining)
+\item "Send only information that is needed, and send it as slowly as possible"~\cite{SterlingPrinciples:2017}
+\item using voltage temporal gradients enables transferring more information and functionality;
+for example, synchronization~\cite{LosonczyIntegrative:2006}
+\item for simulation: there is no need to send and integrate spike shapes,
+only \textit{the time of arrival/sending} 
+
+\end{itemize} 
+
+
+\subsection[Communication]{Implications for communication\label{sec:Single-ImplicationsCommunication}}

@@ -6,22 +6,16 @@
 \emergencystretch 1em\relax
 \hfuzz .2pt\relax
 
-\usepackage{minitoc}
 \usepackage{graphicx}
 \usepackage{latexml}
+\iflatexml
+\else
+\usepackage{minitoc}
+\fi
 \usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage[makeroom]{cancel}
 \usepackage{amsmath}
-
-%\usepackage{titling}
-%\newcommand{\subtitle}[1]{%
-%  \posttitle{%
-%    \par\end{center}
-%    \begin{center}\large#1\end{center}
-%    \vskip0.5em}%
-%}
-%
 
 \newcommand{\warningbox}[1]
 {
@@ -46,12 +40,11 @@
 { 
 \noindent
 \label{#1}
- \fcolorbox{blue!70!white}{green!10!white}{.9\parbox{\.9textwidth}{
+ \fcolorbox{blue!70!white}{green!10!white}{\parbox{.95\textwidth}{
    \refstepcounter{numericctr}% increment the environment's counter
    \color{black}
    \textsc{Numerical \#\thenumericctr: }{#2}
 }}}
-
 
 \numberwithin{numericctr}{chapter}
 
@@ -88,13 +81,9 @@
     \input{src/Heading}
 \mainmatter
 \tableofcontents
-\iflatexml
-\else
-\dominitoc%Initialize
-\fi
 	\input{src/Foreword}
 	\input{src/StateOfTheArt}
-%%
+%
 	\input{src/Single}
 	\input{src/Physics}
 	\input{src/Physiology}

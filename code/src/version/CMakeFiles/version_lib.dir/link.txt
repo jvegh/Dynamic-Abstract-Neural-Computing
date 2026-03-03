@@ -1,0 +1,2 @@
+/usr/bin/ar qc libversion_lib.a CMakeFiles/version_lib.dir/version_lib_autogen/mocs_compilation.cpp.o CMakeFiles/version_lib.dir/version.cpp.o
+/usr/bin/ranlib libversion_lib.a

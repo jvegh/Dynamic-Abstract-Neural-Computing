@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1.3.3 Stages of operation ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2</title>
+<!--Generated on Tue Mar  3 16:59:57 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on March 3, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="up up" href="../index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="up up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="prev" href="sec_Single-LifeCycle.html" title="1.3.2 Life cycle ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="next" href="sec_Single-Computing.html" title="1.3.4 Computing ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="subsection" href="Single-Concepts.html" title="1.3.1 Concepts of the play ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="subsection" href="sec_Single-LifeCycle.html" title="1.3.2 Life cycle ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="subsection" href="sec_Single-Computing.html" title="1.3.4 Computing ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="subsection" href="sec_Single-OperationProcesses.html" title="1.3.5 Processes of operation ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="section" href="../sec_Single-Introduction/index.html" title="1.1 Introduction ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="section" href="../sec_SingleModeling/index.html" title="1.2 Modeling ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="section" href="index.html" title="1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="section" href="../sec_Single-Nutshell/index.html" title="1.4 Our unified model in a nutshell ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="section" href="../sec_Single-NeuronControlCircle/index.html" title="1.5 Neuron as control circuit ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="section" href="../sec_Single-RestingPotential/index.html" title="1.6 Resting potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="section" href="../sec_Single-ActionPotential/index.html" title="1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="section" href="../sec_Physics-TransmittingPotential/index.html" title="1.8 Transmitting action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Physics/index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Physiology/index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2">
+<meta name="keywords" lang="en" content="depolarization, hyperpolarization, local time, refractory period, slow current, voltage gradient">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">Dynamic Abstract Neural Computing
+<br class="ltx_break">with Electronic Simulation
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics, physiology, computing,and information science
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.2</em>
+<br class="ltx_break">@March 3, 2026</span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-Introduction/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_SingleModeling/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Modeling</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Creating the brain</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="Single-Concepts.html" title="In 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.1 </span>Concepts</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Single-LifeCycle.html" title="In 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.2 </span>Life cycle</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.3 </span>Stages</span></span>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Single-OperationComputing" title="In 1.3.3 Stages of operation ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Single-OperationDelivering" title="In 1.3.3 Stages of operation ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Delivering</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Single-OperationRelaxing" title="In 1.3.3 Stages of operation ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Relaxing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Single-OperationClassicStages" title="In 1.3.3 Stages of operation ‣ 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Classic</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Single-Computing.html" title="In 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.4 </span>Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Single-OperationProcesses.html" title="In 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.5 </span>Processes</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-Nutshell/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Unified model</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-NeuronControlCircle/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.5 </span>Control circuit</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-RestingPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.6 </span>Resting potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Single-ActionPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.7 </span>Action potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-TransmittingPotential/index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.8 </span>Transmitting potential</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physics/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physiology/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href" style="font-size:90%;">Report issue</a><span class="ltx_text" style="font-size:90%;">
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</span></p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Creating the brain</span></a><a href="sec_Single-LifeCycle.html" title="In 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.2 </span>Life cycle</span></a><a href="sec_Single-Computing.html" title="In 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.4 </span>Computing</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.3.3 </span>Stages of operation</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Initially, a neuron is in stage ”Relaxing” which is the ground state of its operation.
+(We also introduce a ”Sleeping” or ”Standby” helper stage, which can be imagined
+as a low-power mode in electronical or state maintenance mode of biological computing; or ”creating the neuron” in biology; a ”no payload activity” stage.) The stage transition from ”Sleeping” also <span class="ltx_text ltx_font_italic">resets the internal stage variable</span> membrane potential (to the value of the resting potential).
+In biology, a ”leakage” background activity takes place: it changes (among others) the stage variable towards the system’s ”no activity” value.</p>
+</div>
+<figure id="fig:NeuronStateMachine" class="ltx_figure"><object type="image/svg+xml" data="fig/NeuronStateMachineSimple.svg" id="Ch1.F4.g1" class="ltx_graphics ltx_img_square" width="389" height="381"></object>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 1.4: </span>The model of neuron as an abstract state machine</figcaption>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">An event (in form of a pulse of slow ions) arriving from the environment acts as a ”look at me” signal
+
+and the system passes to ”Computing” stage: an excitation begins.
+The external signal
+acts as triggering a stage change and, simultaneously, contributes to the value of the internal stage variable (membrane voltage).
+During normal operation, when the stage variable reaches the critial value (the threshold potential),
+the system generates an event: passes to stage ”Delivering” and ”flushes” the collected charge.
+In that stage, it starts to deliver a signal toward the environment
+(to the other neurons connected to its axon) and after a fixed period, passes to stage ”Relaxing”,
+without resetting the stage variable. From this event on, it is again in stage
+”Relaxing”, where the ”leakage” and the input pulses from the upstream neurons contribute to its
+stage variable. Process ”Delivering” operates an independent subsystem (”Firing”): happens simultaneously with
+process of ”Relaxing” which, after some time, usually passes to the next ”Computing”.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The stages ”Computing” and ”Delivering” mutually block
+each other and the I/O operations happen in parallel with them</span>. They have temporal lengths, and they must follow in the well-defined order (a ”proper sequencing” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib3" title="" class="ltx_ref">3</a>, <a href="../../bib.html#bib25" title="" class="ltx_ref">25</a>]</cite>) ”Computing”<math id="p3.m1" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo stretchy="false">⇒</mo></math> ”Delivering”<math id="p3.m2" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo stretchy="false">⇒</mo></math>”Relaxing”. Theoretically, <span class="ltx_text ltx_font_italic">a three-state system is needed to define the direction of time</span> <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib60" title="" class="ltx_ref">60</a>]</cite>; a fundamental issue for quantum-based computing is the lack of a third state. In electronical computing we can introduce this as ”up” edge and ”down” edge, with a ”hold” stage between. A charge-up process must always happen before discharging. Stage ”Delivering” has a fixed period, stage ”Computing” has a variable period (depends mainly on the upstream neurons), and the total length of the computing period equals their sum. The (physiologically defined) length of the ”Delivering” period limits neuron’s firing rate; the length of ”Computing” is usually much shorter.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">In any stage, a ”leak current” (through ion channels, but mainly the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> instead of the membrane)
+changing the stage variable is present; <span class="ltx_text ltx_font_bold ltx_font_italic">the continuous change (the presence of a voltage gradient) has a fundamental importance for a biological computing system</span>
+
+This current is proportional to the stage variable (membrane current); it is <span class="ltx_text ltx_font_bold ltx_font_italic">not</span> identical with the fixed-size ”leak current” assumed in the Hodgkin-Huxley model <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib8" title="" class="ltx_ref">8</a>]</cite>.
+The event which is issued when stage ”Computing” ends and ”Delivering” begins, separates two physically different operating modes: inputting payload signals for computing
+and inputting ”servo” ions for transmitting
+(signal transmission to fellow neurons begins and happens in parallel
+with further computation(s)).
+Given that stages ”Computing” and ”Delivering” take time,
+and the next ”Computing” can only start through the stage ”Relaxing”,
+furthermore ”Delivering” can only begin after ”Computing” finished,
+<span class="ltx_text ltx_font_italic">these stages mutually block each other</span> (and the length of the ”Delivering” period limits neuron’s firing rate).</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">There are two more possible stage transitions from the stage ”Computing”.
+First, the stage variable (due to ”leaking”) may approach its initial value (the resting potential) without firing and the system passes to stage ”Relaxing”; in this case we consider that the excitation ”Failed”.
+This happens when leaking is more intense than the input current pulses (the input firing rate is too low or a random firing event started the computing).
+Second, an external pulse may have the effect to force the system (independently from the value of the stage variable) to pass instantly to stage ”Delivering”, and after that, to ”Relaxing”. (When several neurons share that input signal,
+they will go to ”Relaxing” at the same time: they get synchronized; a simple way of synchronizing low-precision asynchronous oscillators.)</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Anyhow: a neuron operates in cooperation with in its environment (the fellow neurons, with outputs distributed in space and time).
+It receives multiple inputs at different times (at different offset times from the different upstream neurons) and in different stages.
+In stage ”Computing”, the synaptic inputs are open, while
+in stage ”Delivering”, the synaptic inputs are closed (the input is ineffective).
+It produces multiple outputs (in the sense that the signal may branch along its path), in form of a signal with temporal course.</p>
+</div>
+<section id="sec:Single-OperationComputing" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Stage ’Computing’</h2>
+
+<div id="SSSx1.p1" class="ltx_para">
+<p class="ltx_p">The neuron receives its inputs as ’Axonal inputs’. For the first input in stage ’Relaxing’,
+the neuron enters stage ’Computing’.
+The time of this event is the base time used for calculating the neuron’s ”local time” (in describing the operation and in the simulator).
+
+Notice that producing the result is a cooperation
+between the neuron and its upstream neurons (the neuron gates its input currents). One of the upstream neurons
+opens computing, and the receiving neuron terminates it.</p>
+</div>
+<div id="SSSx1.p2" class="ltx_para">
+<p class="ltx_p">The physical implementation is
+a steep current gradient which evokes a steep <a href="../../ch_Physics/sec_Physics-Electricity/sec_PHYSICS_ELECTRICFundamental.html#voltage_gradient" title="In biology, the objects are extended and the charge carriers are slow ions, so we can ask how the voltage gradient ‣ Voltage ‣ 2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref">voltage gradient</a> <math id="SSSx1.p2.m1" class="ltx_Math" alttext="dV/dt" display="inline"><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>V</mi></mrow><mo>/</mo><mi>d</mi></mrow><mo>⁢</mo><mi>t</mi></mrow></math>
+on the condenser ’membrane’ in its intracellular segment, see section <a href="../sec_Single-ActionPotential/sec_Single-OperationConceptual.html#subsec:Single-PSP" title="Post-synaptic potentials (PSP) ‣ 1.7.1 The conceptual operation ‣ 1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.7.1</span></a>.
+
+The membrane is connected to the axon through a resistor
+’AIS’
+(these components, switched in serial, constitute the <a href="../../ch_Physics/sec_Physics-Electricity/sec_PHYSICS_MEASURINGOSCILLATOR.html#PhysicsOscillator" title="oscillator circuits ‣ 2.5.6 Oscillator ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref">neuronal oscillator</a>).
+Given that the current creates a potential gradient on the membrane, the
+increased potential starts a current (”Leaking”) proportional to the voltage difference
+between the membrane and the axon (across the AIS). This current decreases
+the membrane’s potential (discharges the condenser). In lack of further
+excitation, the membrane’s potential decreases back to its resting value
+and the neuron returns to stage ’Relaxing’.</p>
+</div>
+<div id="SSSx1.p3" class="ltx_para">
+<p class="ltx_p">However, for repeated excitation, when the next ’Axonal input’ arrive(s) before
+the neuron returns to stage ’Relaxing’, the voltage increases further, and it might reach
+a threshold voltage. In such a case, the neuron enters stage ’Delivering’
+(the red section of the broken diagram line). The time at which point this happens
+depends on the arrival of spikes and the discharge of the membrane (when the
+difference of the received charge and the loss due to discharge evokes
+a sufficiently large voltage on the condenser’s capacity). At that point,
+the computation is finished. <span class="ltx_text ltx_font_italic">The result of the computation is
+the time</span> passed between receiving the first ’Axonal input’ and the time when
+the neuron closes its input sources (and simultaneously, opens the ion channels
+in its wall, see below, to enter stage ”Delivering”). No more input shall be received, so
+the neuron disables its synaptic inputs, and prepares for delivering
+the result of its ’computation’ (nothing shall be stored: the result is the time of sending the message, but the delivery period takes time; is a fixed-length
+process, will follow immediately).
+In this stage, the role of the slow speed is not evident. The current
+arrives through an axon, passes the terminal and arrives at the AIS;
+the time components cannot be separated.</p>
+</div>
+</section>
+<section id="sec:Single-OperationDelivering" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Stage ’Delivering’</h2>
+
+<div id="SSSx2.p1" class="ltx_para">
+<p class="ltx_p">In this stage,
+the result is ready: the time between the arrival of the first
+synaptic input and reaching the membrane’s threshold voltage is measured.
+No more input is desirable, so the neuron’s input synapses remain closed.
+Simultanously, the neuron starts it ”servo” mechanism: it opens its ion channels
+and an intense ion current starts to charge the membrane.
+It is an ’instant’ current.
+The voltage on the membrane quickly rises, but it takes a short time
+until its peak voltage reached.
+Given that the charge-up current is instant and the increased
+membrane voltage drives an outward current, the membrane voltage
+gradually decays.
+When the voltage drops below the threshold voltage, the neuron re-opens its synaptic inputs and passes to stage ”Relaxing”: it is ready for the next operation. The signal transmission to downstream neurons
+happens in parallel with the recent ”Delivering” stage and
+the next ”Relaxing” and maybe ”Computing” stages.</p>
+</div>
+<div id="SSSx2.p2" class="ltx_para">
+<p class="ltx_p">Delivering the result needs huge power because of the noisy environment and
+the huge distances, so at the beginning of the ’Delivery’ phase,
+the neuron switches in a ’servo’ mechanism. Exceeding the threshold voltage
+(either as a consequence of the ’spatiotemporal’ summing several spikes or a single spike with sufficiently large voltage gradient <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib61" title="" class="ltx_ref">61</a>]</cite>) opens the voltage-gated ion channels in the membrane’s wall.
+Due to the
+vast voltage gradient across the two segments of the membrane, an enormous
+amount of ions rush-in into the intracellular space and the intense current
+increases the membrane’s potential; for the details see section <a href="../../ch_Physics/sec_Physics-Electricity/index.html" title="2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a>. The amount of the rushed-in ions
+is several times more than those received during the stage ’Computing’.</p>
+</div>
+<div id="SSSx2.p3" class="ltx_para">
+<p class="ltx_p">The ion channels over the surface of the neuron open
+at the same time, and they are open only for a very short period
+(actually, they implement a sudden ”step current”). However, this
+current on the surface is created at different distances from the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> and (due to the final speed of the ions) and the time until the ions
+arrive at the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> depends on the distance to <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>.
+Due to this effect, the current quickly increases;
+until it reaches a maximum.
+The time when the <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a> reaches maximum value (due to the event that
+the current from the most distant places of the membrane could reach <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>),
+and from this point it starts to decrease.
+(there is no other special threshold voltage value:
+the charge from the rush-in current distributes on the surface;
+the current injection can charge the fixed capacity
+membrane to that voltage).
+At this point the neuronal condenser is maximally depolarized.
+</p>
+</div>
+<div id="SSSx2.p4" class="ltx_para">
+<p class="ltx_p">The neuronal condenser is loaded to its maximum, and the resistor (the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>)
+enables a current to flow out, so the condenser (the membrane) discharges (repolarizes).
+Here enters into the picture that the neuron is resemblant to a serial oscillator.
+The condenser stores the charge for some period, and releases it to the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> at a later time. As a result, the direction of the current on the neuron’s
+membrane reverses, see the shape of the output voltage in table <a href="../../ch_Physics/sec_Physics-Electricity/sec_PHYSICS_MEASURINGOSCILLATOR.html#RCDifferentiatorCircuit" title="Table 2.1 ‣ 2.5.6 Oscillator ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a>.
+The essential difference between the serial and parallel <math id="SSSx2.p4.m1" class="ltx_Math" alttext="RC" display="inline"><mrow><mi>R</mi><mo>⁢</mo><mi>C</mi></mrow></math> oscillators is
+that the differentiator circuit can produce opposite voltage on its output
+without assuming any additional mechanism, such as an outward current,
+given that <span class="ltx_text ltx_font_italic">a current pulse has rising and falling edges which can natively produce
+positive and negative voltage derivatives</span>.
+As the result of the process, the potential reaching the AIS goes to negative;
+a phenomenon called hyperpolarization.
+</p>
+</div>
+<div id="SSSx2.p5" class="ltx_para">
+<p class="ltx_p">Notice that the current in the red section (plus also in the blue section)
+of the diagram line still originates from the rushed-in charge. The observer
+sees the sum of the resistive and capacitive currents;
+maybe new axonal inputs superimposed.
+The ion current’s finite speed plays again. When the axonal arbors re-open,
+the ion flows into the membrane at some distant point, so its effect
+will be observed some time later; apparently when the neuron membrane is
+about its hyperpolarized state.</p>
+</div>
+</section>
+<section id="sec:Single-OperationRelaxing" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Stage ’Relaxing’</h2>
+
+<div id="SSSx3.p1" class="ltx_para">
+<p class="ltx_p">In this stage,
+the neuron re-opens its synaptic gates. Recall that the ion channels
+used for generating an intense membrane current
+are already closed. The neuron passes to stage ’Relaxing’ and is ready for a new computation:
+the previous result is under delivering (parallelly, independently),
+the axonal inputs are open again.
+However, the membrane’s potential at this point may differ from the
+resting potential. A new computation begins
+(the neuron passes to the stage ”Computing”)
+when a new axonal input arrives. Given that the computation is analog, a current flows through the AIS, and the result is the length of the period to reach
+the threshold value, the
+membrane voltage plays the role of an accumulator (with a time-dependent content): a non-zero initial value acts as a short-time memory in the next computing cycle.
+The local time is reset when a new computing cycle begins, but not when eventually the resting potential reached.
+</p>
+</div>
+<div id="SSSx3.p2" class="ltx_para">
+<p class="ltx_p">As the membrane’s voltage drops below the threshold voltage,
+the neuron re-opens its synaptic gates (the ion channels in the membrane’s wall
+are already closed). The neuron passes to stage ’Relaxing’ and is ready for a new computation:
+the previous result is under delivering (parallelly, independently),
+the axonal inputs are open again.
+However, the membrane’s potential at this point may differ from the
+resting potential. Given that the computation is analog, the
+membrane voltage plays the role of an accumulator (with a time-dependent content,
+given that the current flows though the AIS). A new computation begins
+(the neuron passes to the stage ”Computing”)
+when a new axonal input arrives. Given that the result is the time to reach
+the threshold value, the non-zero initial value acts as a short-time memory.</p>
+</div>
+<div id="SSSx3.p3" class="ltx_para">
+<p class="ltx_p">The ion current’s finite speed plays again. When the axonal arbors re-open,
+the ion flows into the membrane at some distant point, so its effect
+will be observed some time later; apparently when the neuron membrane is
+about its hyperpolarized state.</p>
+</div>
+</section>
+<section id="sec:Single-OperationClassicStages" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection">Classic stages</h2>
+
+<div id="SSSx4.p1" class="ltx_para">
+<p class="ltx_p">We can map our ’modern’ stages to those ’classic’ stages and we can see
+why defining the length of the Action Potential
+is problematic.
+The effect of slow current affects the apparent boundary between our
+”Delivering” stage and ”Relaxing” stages.
+Classical physiology sees the difference and distinguishes ’absolute’ and
+’relative’ refractory periods with a smeared boundary between. Furthermore,
+it defines the length of the spike with some characteristic point,
+such as reaching the resting value for the first or second time, or
+reaching the maximum polarization/hyperpolarization. Our derivation of the stages (see Fig. <a href="../sec_Single-ActionPotential/sec_Single-OperationConceptual.html#fig:AP_Conceptual" title="Figure 1.6 ‣ 1.7.1 The conceptual operation ‣ 1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6</span></a>) defines clear-cut breakpoints between them.</p>
+</div>
+<div id="SSSx4.p2" class="ltx_para">
+<p class="ltx_p">We can define the length of the spike as the sum of the variable-size length of period ”Computing” and fixed-size period ”Delivering”. The ”absolute refractory”
+period is defined as the period while the neuron membrane’s voltage keeps
+the gates of the synaptic inputs closed (the value of membrane voltage is above their threshold). That period is apparently extended
+(and interpreted as a ”relative refractory” period, which sensitively depends
+on the conduction velocity <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib62" title="" class="ltx_ref">62</a>]</cite>)
+by the period when although the gating is re-enabled, but the slow current did not
+yet arrive to the
+<a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> where it contributes to the measured
+<a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a>, see Fig. <a href="../sec_Single-ActionPotential/sec_Single-OperationConceptual.html#fig:AP_Conceptual" title="Figure 1.6 ‣ 1.7.1 The conceptual operation ‣ 1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6</span></a>. <span class="ltx_text ltx_font_italic">Only one refractory period exists,
+plus the effect of the slow current.</span>
+</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="sec_Single-LifeCycle.html" title="In 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.2 </span>Life cycle</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Single-Computing.html" title="In 1.3 Creating the brain ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.2" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3.4 </span>Computing</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Mar  3 16:59:57 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

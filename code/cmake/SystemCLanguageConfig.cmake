@@ -1,0 +1,3 @@
+set (SystemC_TARGET_ARCH linux64)
+set (SystemC_CXX_STANDARD 21)
+set (SystemC_CXX_STANDARD_REQUIRED ON)

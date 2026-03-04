@@ -25,8 +25,9 @@ The theory fixes the mistakes in the classical Hodgkin-Huxley theory
 and explains that the discrete nature of neural electricity (the slow current)
 drastically changes the picture how neurons compute.
 For those discussions, one has to reinterpret physical laws for living matter
-(aka: derive the non-ordinary laws of science Scrödinger predicted).
+(aka: derive the non-ordinary laws of science Schrödinger predicted).
 
+* [Go to the page]("https://jvegh.github.io/Dynamic-Abstract-Neural-Computing/manual/ch_Foreword/index.html")
 
 ## Neuronal simulator
 
@@ -43,7 +44,6 @@ ex. Végh, János (Vegh [optional dot] Janos at a GMail address)
 ## Keywords
 Neuronal operation, event controlled, thermodynamic model, electrical model,
 Hodgkin-Huxley model, heat absorption by neurons, leakage current
-
 
 
 ## Version History

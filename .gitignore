@@ -27,7 +27,8 @@ doc/manual/*.lot
 doc/manual/*.toc
 doc/manual/*.xml
 doc/manual/*.mt*
-../code/*
+code/*
+code/build/*
 
 # Additional Ruby/bundler ignore for when you run: bundle install
 /vendor

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #https://medium.com/@techAsthetic/getting-started-with-systemc-setup-code-and-run-baad1943ec4b
 #cmake_minimum_required(VERSION 3.0)
 
@@ -192,6 +193,8 @@ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/appdir/usr/
     DESTINATION ${CMAKE_INSTALL_PREFIX}
 )
 =======
+=======
+>>>>>>> doc
 cmake_minimum_required(VERSION 3.22.1)
 project(QT6HW)
 
@@ -199,12 +202,12 @@ project(QT6HW)
 set(SYSTEMC_HOME /opt/systemc)
 set(SYSTEMC_INCLUDE_DIR $ENV{SYSTEMC_HOME}/include)
 set(SYSTEMC_LIBRARY_DIR $ENV{SYSTEMC_HOME}/lib)
-#set(SystemCLanguage_DIR "~/systemc-3.02/build")
+#set(SystemCLanguage_DIR "~/systemc-3.0.2/build")
 set(CMAKE_PREFIX_PATH "~/Qt/6.10.2/gcc_64")
 set(CMAKE_PREFIX_PATH "~/systemc-3.02/build")
 #set(Qt6_DIR=$HOME/Qt/6.10.2/gcc_64)
 find_package(Qt6 COMPONENTS Core Widgets)
-set(CMAKE_MODULE_PATH  "~/systemc-3.02/build")
+set(CMAKE_MODULE_PATH  "~/systemc-3.0.2/build")
 set(CMAKE_CXX_STANDARD 17)
 find_package(SystemCLanguage)
 
@@ -215,5 +218,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR}
 
 
 target_link_libraries(${PROJECT_NAME} PUBLIC Qt6::Core Qt6::Widgets ${SYSTEMC_LIBRARY_DIR}/libsystemc.so)
+<<<<<<< HEAD
 
 >>>>>>> code
+=======
+>>>>>>> doc

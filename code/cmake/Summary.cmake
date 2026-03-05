@@ -93,6 +93,17 @@ endfunction()
 # Usage:
 #   caffe_print_configuration_summary()
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+function(caffe_print_configuration_summary)
+  caffe_extract_caffe_version()
+  set(Caffe_VERSION ${Caffe_VERSION} PARENT_SCOPE)
+
+  caffe_merge_flag_lists(__flags_deb CMAKE_CXX_FLAGS_DEBUG   CMAKE_CXX_FLAGS)
+  caffe_merge_flag_lists(__flags_rel CMAKE_CXX_FLAGS_RELEASE CMAKE_CXX_FLAGS)
+#  message (STATUS "Settings to build SystemC ${SystemCLanguage_VERSION} (${SystemCLanguage_VERSION_RELEASE_DATE}) and TLM ${SystemCTLM_VERSION} (${SystemCTLM_VERSION_RELEASE_DATE})")
+=======
 function(configuration_summary)
   caffe_extract_caffe_version()
   set(Caffe_VERSION ${Caffe_VERSION} PARENT_SCOPE)

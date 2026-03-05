@@ -6,11 +6,10 @@
 #include <QSettings>
 #include <QMessageBox>
 #include <QVector>
-#include "ScQtAbout.h"
-#include "ScQtSimulator.h"
+#include <ScQtAbout.h>
+#include <ScQtSimulator.h>
 #include "SimulatorControlWindow.h"
 //#include "ScQtNeuron_Plot_AP.h"
-#include "neurontab.h"
 #include "ScQtNeuron_AP_Window.h"
 /*
 //#include "filefilters.h"

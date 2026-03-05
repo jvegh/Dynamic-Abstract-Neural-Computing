@@ -78,8 +78,9 @@ target_sources(neuron_lib
 # Also link Qt and VSRTL libraries.
 target_link_libraries(${NEURON_LIB} PUBLIC
     fancytabbar_lib
- #   ${VSRTL_GRAPHICS_LIB}
+    ${VSRTL_GRAPHICS_LIB}
     Qt6::Charts
-   # dwarf++
-    )
+    dwarf++
+)
+
 

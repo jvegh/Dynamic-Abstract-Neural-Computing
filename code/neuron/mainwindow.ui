@@ -95,14 +95,11 @@
     <string>Settings</string>
    </property>
   </action>
-<<<<<<< HEAD
-=======
   <action name="actionSystem_calls">
    <property name="text">
     <string>System calls</string>
    </property>
   </action>
->>>>>>> code
   <action name="actionView">
    <property name="text">
     <string>View</string>
@@ -113,11 +110,7 @@
   <customwidget>
    <class>FancyTabBar</class>
    <extends>QWidget</extends>
-<<<<<<< HEAD
-   <header>../3rdParty/fancytabbar/fancytabbar.h</header>
-=======
    <header>fancytabbar/fancytabbar.h</header>
->>>>>>> code
    <container>1</container>
   </customwidget>
  </customwidgets>

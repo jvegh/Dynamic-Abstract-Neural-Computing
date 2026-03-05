@@ -140,7 +140,8 @@ enum class  GenCompStageMachine_t :int8_t {
 
 using namespace std;
 
-extern string GenCompStagesString[];
+//extern string GenCompStagesString[];
+
 const char* GenCompStageMachineType2String(GenCompStageMachine_t e);
 /** @}*/
 

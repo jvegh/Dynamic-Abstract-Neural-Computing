@@ -9,8 +9,9 @@
 #include <QSystemTrayIcon>
 //#include "QStuff.h"
 //#include "Stuff.h"
+#include "neurontab.h"
 //#include "edittab.h"
-#include "../version/version.h"
+//#include "../version/version.h"
 
 extern struct SystemDirectories Directories;
 
@@ -334,7 +335,7 @@ void ScQtNeuron_MainWindow::version() {
     QMessageBox aboutDialog(this);
     aboutDialog.setWindowIcon(QIcon(":/icons/neurer.png"));
 
-    aboutDialog.setText("NeuRipes :" + getRipesVersion());
+    aboutDialog.setText("NeuronScQt :" /*+ Ripes::getRipesVersion()*/);
     aboutDialog.exec();
 }
 

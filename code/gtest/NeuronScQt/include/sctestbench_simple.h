@@ -7,7 +7,7 @@ SC_MODULE(SimpleTB_t)
 {
   // Constructor
 public:
-  SC_HAS_PROCESS(SimpleTB_t);
+//  SC_HAS_PROCESS(SimpleTB_t);
     public:
   SimpleTB_t( sc_module_name nm) : sc_module(nm)
   {

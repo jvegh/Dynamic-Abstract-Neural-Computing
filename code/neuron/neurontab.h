@@ -23,7 +23,7 @@ class NeuronTab : public RipesTab {
 
 public:
   NeuronTab(QToolBar *controlToolbar, QToolBar *additionalToolbar,
-               QMainWindow *parent = nullptr);
+               ScQtNeuron_MainWindow *parent = nullptr);
   ~NeuronTab() override;
 
 //  void initRegWidget();

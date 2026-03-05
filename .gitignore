@@ -12,7 +12,9 @@ _site/
 *.ist
 *.lof
 *.lot
+*Cache*
 *.cache
+CMakeCache.txt
 doc/*.log
 doc/manual.*.log
 doc/manual/*.log

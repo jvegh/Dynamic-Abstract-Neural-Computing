@@ -7,17 +7,17 @@
 #include <QSpinBox>
 #include <QTemporaryFile>
 //#include "ScQtNeuron_Plot_AP.h"
-//#include "ScQtNeuron_MainWindow.h"
-//#include "consolewidget.h"
+#include "ScQtNeuron_MainWindow.h"
+#include "consolewidget.h"
 
 //#include "syscall/systemio.h"
-//#include "neuronhandler.h"
+#include "neuronhandler.h"
 #include "neurontab.h"
 #include "ui_neurontab.h"
 
-class ScQtNeuron_MainWindow;
+
 NeuronTab::NeuronTab(QToolBar *controlToolbar,
-                           QToolBar *additionalToolbar, QMainWindow *parent)
+                           QToolBar *additionalToolbar, ScQtNeuron_MainWindow *parent)
     : RipesTab(additionalToolbar, parent) {
     m_ui = new Ui::NeuronTab;
   m_ui->setupUi(this);

@@ -20,8 +20,9 @@ file(GLOB_RECURSE TEST_INCLUDES
     include/*.h
 )
 
+
 link_directories(
-    ${SystemC_LIBRARY_DIRS}
+    ${SystemC_LIBRARY_DIR}
 #  ${NEURON_LIB}
 #    /opt/systemc/lib
 )
@@ -56,7 +57,7 @@ target_link_libraries(
 
 #    BasicModules
 # SystemC::systemc
-       ${SystemC_LIBRARIES}
+       ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
        ${GTEST_LIBRARIES}
        pthread
 )

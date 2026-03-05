@@ -27,11 +27,9 @@ doc/manual/*.lot
 doc/manual/*.toc
 doc/manual/*.xml
 doc/manual/*.mt*
-code/*
-code/build/*
+code/build/
+code/3rdParty/
 
-# Additional Ruby/bundler ignore for when you run: bundle install
-/vendor
 
 # Specific ignore for GitHub Pages
 # GitHub Pages will always use its own deployed version of pages-gem 

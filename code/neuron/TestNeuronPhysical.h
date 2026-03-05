@@ -16,7 +16,7 @@
  *  @{
  */
 
-#include "NeuronPhysical.h"
+#include "neurons/NeuronPhysical.h"
 
 /**
  * \class NeuronPhysicalTEST

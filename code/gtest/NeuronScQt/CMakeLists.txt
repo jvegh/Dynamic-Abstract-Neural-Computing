@@ -4,16 +4,18 @@
 # @author János Végh
 
 message(HIGHLIGHTED "                    Gtest tests")
+#	find_package(SystemC REQUIRED)
+#    find_package(GTest REQUIRED)
+
 
 include_directories(
-    include
     ../../neuron
     ../../neuron/neurons
-    include
     ${CMAKE_INSTALL_PREFIX}/include
     ${CMAKE_SOURCE_DIR}/test/include
     ${GTEST_INCLUDE_DIRS}
-    /opt/systemc/include
+    ${SYSTEMC_INCLUDE_DIR}
+    include
     )
 
 file(GLOB_RECURSE TEST_INCLUDES
@@ -23,23 +25,18 @@ file(GLOB_RECURSE TEST_INCLUDES
 
 link_directories(
     ${SystemC_LIBRARY_DIR}
-#  ${NEURON_LIB}
-#    /opt/systemc/lib
+  ../../neuron
 )
 
 set(TEST_SOURCES
     sctestbench_simple.cpp
-#    TestAbstractPUBase.cpp
+    TestAbstractPUBase.cpp
 #    TestBioPUBase.cpp
 #    TestTechPUBase.cpp
 #   TestNeuronDemo.cpp
 #    TestNeuronPhysical.cpp
 #    TestStuff.cpp
 #    TestUtils.cpp
-#    TestTopology.cpp
-#    TestscGridPoint.cpp
-#    TestRouting.cpp
-#    TestHThread.cpp
 )
 
 
@@ -53,10 +50,7 @@ ADD_EXECUTABLE(
 
 target_link_libraries(
     ${PROJECT_NAME}_GTEST
-#      ${NEURON_LIB}
-
-#    BasicModules
-# SystemC::systemc
+      ${NEURON_LIB}
        ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
        ${GTEST_LIBRARIES}
        pthread
@@ -69,7 +63,8 @@ link_directories(
 install(TARGETS ${PROJECT_NAME}_GTEST
    RUNTIME
    DESTINATION bin
-   COMPONENT tests)
+   COMPONENT tests
+)
 
 
 INSTALL(FILES ${TEST_SOURCES} CMakeLists.txt ${TEST_SOURCES} testbench_simple.cpp

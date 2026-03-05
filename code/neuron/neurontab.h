@@ -6,7 +6,6 @@
 #include <QToolBar>
 #include <QWidget>
 
-//#include "processors/interface/ripesprocessor.h"
 #include "ripestab.h"
 class ScQtNeuron_MainWindow;
 class ScQtNeuronVoltagePlot;
@@ -17,14 +16,14 @@ class NeuronTab;
 
 struct Layout;
 
-class NeuronTab : public Ripes::RipesTab {
+class NeuronTab : public RipesTab {
   friend class RunDialog;
   friend class MainWindow;
   Q_OBJECT
 
 public:
   NeuronTab(QToolBar *controlToolbar, QToolBar *additionalToolbar,
-               ScQtNeuron_MainWindow *parent = nullptr);
+               QMainWindow *parent = nullptr);
   ~NeuronTab() override;
 
 //  void initRegWidget();
@@ -46,9 +45,6 @@ private slots:
 private:
   void setupSimulatorActions(QToolBar *controlToolbar);
   void enableSimulatorControls();
-//  void updateInstructionModel();
-//  void updateRegisterModel();
-//  void loadLayout(const Layout &);
   void loadNeuronToWidget(const Layout *);
 
   Ui::NeuronTab *m_ui = nullptr;
@@ -67,5 +63,4 @@ private:
 
   QSpinBox *m_autoClockInterval = nullptr;
   private:
-//  ScQtNeuronVoltagePlot* VoltagePlot;
 };

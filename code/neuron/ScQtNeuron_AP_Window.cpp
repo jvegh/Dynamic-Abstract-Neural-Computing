@@ -74,6 +74,9 @@ void ScQtNeuron_AP_Window::GetData(QString fileName)
 void ScQtNeuron_AP_Window::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
     GetData("/home/jvegh/REPO/LaTeX/figures/dVdt_vs_V_3D/data.csv");
+    customPlot->setMinimumSize(160, 160);
+    customPlot->resize(480, 320);
+    customPlot->move(600,800);
   // include this section to fully disable antialiasing for higher performance:
   /*
   customPlot->setNotAntialiasedElements(QCP::aeAll);

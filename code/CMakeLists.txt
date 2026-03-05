@@ -44,6 +44,11 @@ set(CMAKE_PREFIX_PATH "~/systemc-3.0.2/build")
 find_package(SystemCLanguage)
 
 
+# Instruct CMake to run moc automatically when needed.
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
 
 set(CMAKE_PREFIX_PATH "~/Qt/6.10.2/gcc_64")
 find_package(Qt6 COMPONENTS Core Widgets)
@@ -59,11 +64,14 @@ include_directories(${Qt6Charts_INCLUDE_DIRS})
 #target_link_libraries(${PROJECT_NAME} PUBLIC #Qt6::Core Qt6::Widgets
 #${SYSTEMC_LIBRARY_DIR}/libsystemc.so)
 
+message(HIGHLIGHTED "Configuring 'NeuronScQt' libraries")
 
 #add_subdirectory(3rdParty/qcustomplot)
-#add_subdirectory(3rdParty/fancytabbar)
-include_directories(neuron)
-include_directories(neuron/neurons)
+add_subdirectory(3rdParty/fancytabbar)
+
+set(NEURON_LIB neuron_lib)
+add_subdirectory(neuron)
+#include_directories(neuron/neurons)
 
 
 # ---[ Install GTest
@@ -85,9 +93,6 @@ endif(BUILD_DOCS)
 qt_add_executable(${PROJECT_NAME} src/main.cpp src/MyWindow.cpp include/MyWindow.h)
 set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
 target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR})
-
-#add_subdirectory(3rdParty/qcustomplot)
-#add_subdirectory(3rdParty/fancytabbar)
 
 
 target_link_libraries(${PROJECT_NAME} PUBLIC

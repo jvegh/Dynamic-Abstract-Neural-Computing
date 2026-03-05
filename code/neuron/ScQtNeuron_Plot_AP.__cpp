@@ -1,0 +1,210 @@
+/***************************************************************************
+**                                                                        **
+**  QCustomPlot, an easy to use, modern plotting widget for Qt            **
+**  Copyright (C) 2011-2022 Emanuel Eichhammer                            **
+**                                                                        **
+**  This program is free software: you can redistribute it and/or modify  **
+**  it under the terms of the GNU General Public License as published by  **
+**  the Free Software Foundation, either version 3 of the License, or     **
+**  (at your option) any later version.                                   **
+**                                                                        **
+**  This program is distributed in the hope that it will be useful,       **
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of        **
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         **
+**  GNU General Public License for more details.                          **
+**                                                                        **
+**  You should have received a copy of the GNU General Public License     **
+**  along with this program.  If not, see http://www.gnu.org/licenses/.   **
+**                                                                        **
+****************************************************************************
+**           Author: Emanuel Eichhammer                                   **
+**  Website/Contact: https://www.qcustomplot.com/                         **
+**             Date: 06.11.22                                             **
+**          Version: 2.1.1                                                **
+****************************************************************************/
+
+
+
+#include <QDebug>
+#include <QScreen>
+//#include <QMessageBox>
+//#include <QMetaEnum>
+#include <QFile>
+#include "ScQtNeuron_MainWindow.h"
+#include "ScQtNeuron_Plot_AP.h"
+
+ScQtNeuronVoltagePlot::ScQtNeuronVoltagePlot(ScQtNeuron_MainWindow *parent
+) :
+  QCustomPlot()
+    ,m_parent(parent)
+ {
+//  ui->setupUi(this);
+    setGeometry(400, 250, 542, 390);
+    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
+    setupPlayground();
+    connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
+    dataTimer.start(10); // Interval 0 means to refresh as fast as possible
+    index = 200;
+ }
+
+void ScQtNeuronVoltagePlot::ProcessLine(QString line)
+{
+    QStringList firstColumn;
+     // Handle the first two items only
+//    while (!s1.atEnd()){
+    first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
+    second.append(line.split(",").at(1));
+    Time.push_back(line.split(",").at(0).toDouble());
+    Voltage.push_back(line.split(",").at(1).toDouble());
+ //    std::cout << line.toStdString() << '\n';
+}
+
+void ScQtNeuronVoltagePlot::GetData(QString fileName)
+{
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QTextStream in(&file);
+    QString line = in.readLine();   // Skip the heading line
+    while (!in.atEnd()) {
+        line = in.readLine();
+        ProcessLine(line);
+    }
+}
+
+void ScQtNeuronVoltagePlot::realtimeDataSlot()
+{
+  static QTime timeStart = QTime::currentTime();
+  // calculate two new data points:
+//  double key = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
+  if(!Voltage.size()) return; // Protect at the beginning
+  double Volt = Voltage[index];
+  double key = Time[index++];
+  if(index>=Voltage.count())
+      index = 0;
+   static double lastPointKey = 0;
+  if (key-lastPointKey > 0.005) // at most add point every 5 us
+  {
+    graph(0)->addData(key, Volt);
+    // rescale value (vertical) axis to fit the current data:
+    graph(0)->rescaleValueAxis();
+    //graph(1)->rescaleValueAxis(true);
+    lastPointKey = key;
+    if(index>sizeof(Voltage))
+        Voltage.clear();
+  }
+  // make key axis range scroll with the data (at a constant range size of 10):
+  xAxis->setRange(key, 5, Qt::AlignRight);
+  replot();
+  
+  // calculate frames per second:
+  static double lastFpsKey;
+  static int frameCount;
+  ++frameCount;
+  if (key-lastFpsKey > 1) // average fps over 2 seconds
+  {
+    m_parent->statusBar()->showMessage(
+          QString("%1 FPS, Total Data points: %2")
+          .arg(frameCount/(key-lastFpsKey), 0, 'f', 0)
+          .arg(graph(0)->data()->size()
+//                   +graph(1)->data()->size()
+                   )
+          , 0);
+    lastFpsKey = key;
+    frameCount = 0;
+  }
+}
+
+void ScQtNeuronVoltagePlot::setupPlayground(void)
+{
+    // include this section to fully disable antialiasing for higher performance:
+    /*
+  customPlot->setNotAntialiasedElements(QCP::aeAll);
+  QFont font;
+  font.setStyleStrategy(QFont::NoAntialias);
+  customPlot->xAxis->setTickLabelFont(font);
+  customPlot->yAxis->setTickLabelFont(font);
+  customPlot->legend->setFont(font);
+  */
+    index = 0;
+    addGraph(); // blue line
+    graph(0)->setPen(QPen(QColor(40, 110, 255)));
+    index = 0;
+
+    QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
+    timeTicker->setTimeFormat("%s:%z"); //"%m:%s:%Z"
+    xAxis->setTicker(timeTicker);
+    axisRect()->setupFullAxesBox();
+    xAxis->setRange(-30, 110);
+
+    // make left and bottom axes transfer their ranges to right and top axes:
+    //connect(m_parent->VoltagePlot->xAxis, SIGNAL(rangeChanged(QCPRange)), m_parent->VoltagePlot->xAxis2, SLOT(setRange(QCPRange)));
+    //connect(m_parent->VoltagePlot->yAxis, SIGNAL(rangeChanged(QCPRange)), m_parent->VoltagePlot->yAxis2, SLOT(setRange(QCPRange)));
+
+    // setup a timer that repeatedly calls MainWindow::realtimeDataSlot:
+    connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
+    dataTimer.start(10); // Interval 0 means to refresh as fast as possible
+    replot();
+ }
+
+ScQtNeuronVoltagePlot::~ScQtNeuronVoltagePlot()
+{
+//  delete ui;
+}
+
+void ScQtNeuronVoltagePlot::screenShot()
+{
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+  QPixmap pm = QPixmap::grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
+#elif QT_VERSION < QT_VERSION_CHECK(5, 5, 0)
+  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
+#elif QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+#else
+  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+#endif
+  QString fileName = demoName.toLower()+".png";
+  fileName.replace(" ", "");
+  pm.save("./screenshots/"+fileName);
+  qApp->quit();
+}
+#include "moc_ScQtNeuron_Plot_AP.cpp"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

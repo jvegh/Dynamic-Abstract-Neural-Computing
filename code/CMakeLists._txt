@@ -58,24 +58,18 @@ include_directories(${Qt6Charts_INCLUDE_DIRS})
 
 
 
-# We need to add .h files (at least those that define a custom Qt class), see https://stackoverflow.com/a/14011060
-qt_add_executable(${PROJECT_NAME} src/main.cpp src/MyWindow.cpp include/MyWindow.h)
-set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
-target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR})
-
-
 target_link_libraries(${PROJECT_NAME} PUBLIC #Qt6::Core Qt6::Widgets
 ${SYSTEMC_LIBRARY_DIR}/libsystemc.so)
 
 
-add_subdirectory(3rdParty/qcustomplot)
-add_subdirectory(3rdParty/fancytabbar)
+#add_subdirectory(3rdParty/qcustomplot)
+#add_subdirectory(3rdParty/fancytabbar)
 
 
 # ---[ Install GTest
 if(BUILD_GTESTS)
     find_package(GTest REQUIRED)
-#    add_subdirectory(gtest)
+    add_subdirectory(gtest)
     message(HIGHLIGHTED "Testing with GTest installed")
 endif()
 
@@ -85,6 +79,13 @@ if(BUILD_DOCS)
 #??  add_subdirectory(doc) # The doxygen documentation
   set(doxyfile_in "${CMAKE_SOURCE_DIR}/doc/Doxyfile.in")
 endif(BUILD_DOCS)
+
+
+# We need to add .h files (at least those that define a custom Qt class), see https://stackoverflow.com/a/14011060
+qt_add_executable(${PROJECT_NAME} src/main.cpp src/MyWindow.cpp include/MyWindow.h)
+set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
+target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR})
+
 
 # Print configuration summary
 include(Summary)

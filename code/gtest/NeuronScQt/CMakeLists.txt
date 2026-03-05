@@ -4,9 +4,6 @@
 # @author János Végh
 
 message(HIGHLIGHTED "                    Gtest tests")
-#	find_package(SystemC REQUIRED)
-#    find_package(GTest REQUIRED)
-
 
 include_directories(
     include
@@ -23,8 +20,9 @@ file(GLOB_RECURSE TEST_INCLUDES
     include/*.h
 )
 
+
 link_directories(
-    ${SystemC_LIBRARY_DIRS}
+    ${SystemC_LIBRARY_DIR}
 #  ${NEURON_LIB}
 #    /opt/systemc/lib
 )
@@ -59,7 +57,7 @@ target_link_libraries(
 
 #    BasicModules
 # SystemC::systemc
-       ${SystemC_LIBRARIES}
+       ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
        ${GTEST_LIBRARIES}
        pthread
 )

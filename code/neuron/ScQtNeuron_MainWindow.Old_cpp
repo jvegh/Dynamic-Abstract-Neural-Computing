@@ -1,0 +1,294 @@
+#include "ui_ScQtNeuron_MainWindow.h"
+#include "ScQtNeuron_Plot_AP.h"
+//#include <QMdiSubWindow>
+#include <QtCore>
+#include <QFileSystemModel>
+#include <QCloseEvent>
+#include <QStatusBar>
+//#include "QStuff.h"
+//#include "Stuff.h"
+#include "neurontab.h"
+#include "ScQtNeuron_MainWindow.h"
+
+extern struct SystemDirectories Directories;
+//namespace Ripes {
+
+ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    Ui(new Ui::ScQtNeuron_MainWindow)
+{
+    Ui->setupUi(this);
+    this->setStyleSheet("background-color: light grey;");
+//??    menubar->setStyleSheet("menu-color: grey;");
+    //??Neuron::NeuronHandler::get();
+
+
+    // Initialize fonts
+    QFontDatabase::addApplicationFont(
+        ":/fonts/Inconsolata/Inconsolata-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/fonts/Inconsolata/Inconsolata-Bold.ttf");
+
+    // Create tabs
+    m_stackedTabs = new QStackedWidget(this);
+    Ui->centrallayout->addWidget(m_stackedTabs);
+    // Setup status bar
+    //    setupStatusBar();
+        (void)statusBar();
+
+    auto *controlToolbar = addToolBar("Simulator control");
+    controlToolbar->setVisible(true); // Always visible
+
+
+    auto *neuronToolBar = addToolBar("Neuron");
+    neuronToolBar->setVisible(false);
+    auto *neuronTab = new NeuronTab(controlToolbar, neuronToolBar, this);
+    m_stackedTabs->insertWidget(NeuronTabID, neuronTab);
+    VoltagePlot = new ScQtNeuronVoltagePlot(this);
+    VoltagePlot->setupPlayground();
+    VoltagePlot->setupPlayground();
+    VoltagePlot->replot();
+
+    connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
+    dataTimer.start(10); // Interval 0 means to refresh as fast as possible
+
+//    m_tabWidgets[NeuronTabID] = {neuronTab, neuronToolBar};
+
+/*
+     auto *editToolbar = addToolBar("Edit");
+    editToolbar->setVisible(false);
+    auto *editTab = new EditTab(editToolbar, this);
+    m_stackedTabs->insertWidget(EditTabID, editTab);
+    m_tabWidgets[EditTabID] = {editTab, editToolbar};
+*/
+    // This provides synchronization between voltage window and phase window
+/*    connect( ui->voltageWindow->xAxis, SIGNAL( rangeChanged(QCPRange) ), ui->residualWindow, SLOT( setRange(QCPRange) ) );
+    connect( ui->voltageWindow->xAxis, SIGNAL( rangeChanged(QCPRange) ), ui->navigatorWindow, SLOT( setLupe(QCPRange) ) );
+    connect( ui->voltageWindow->yAxis, SIGNAL( rangeChanged(QCPRange) ), ui->navigatorWindow, SLOT( setLupe(QCPRange) ) );
+*/
+
+
+//    setStyleSheet("border: 1px solid green");
+    setWindowTitle( "ScQtNeuron" );
+    setIconSize(QSize(24,24));
+    setWindowIcon( QPixmap( ":/images/ESlogo.png" ) );
+    setMinimumSize( QSize( 600, 400 ) );
+    // SetFileMenu();
+    /*
+    SetProcessMenu();
+//    initFileFilterList();
+    SetupSystemDirectories(this); // Establish system and user directories
+    readSettings(); // Read window-related settings
+*/    setupToolBoxes();   // Set up the tool box contents
+//    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
+//     ui->VoltageFrame = new ScQtNeuronVoltagePlot(this);
+     S = new SimulatorControlWindow(this);
+     S->show();
+    statusBar()->showMessage("Simulator is ready to work",2000);
+     // setup a timer that repeatedly calls MainWindow::realtimeDataSlot:
+    // setup a timer that repeatedly calls MainWindow::realtimeDataSlot:
+
+}
+
+ScQtNeuron_MainWindow::~ScQtNeuron_MainWindow()
+{
+    delete Ui;
+//    delete ESsistMe_FitDialog;
+}
+
+void ScQtNeuron_MainWindow::fitToView() {
+//    statusBar()->showMessage("Timer", 800);
+//    QTimer::singleShot(1000, this, &fitToView(); });
+/*    static_cast<ProcessorTab *>(m_tabWidgets.at(ProcessorTabID).tab)
+    ->fitToScreen();
+*/
+}
+
+void ScQtNeuron_MainWindow::setupStatusBar() {
+    statusBar()->showMessage("");
+/*
+    // Setup selected processor & ISA info status widget (right-aligned =>
+    // permanent)
+    setupPermanentStatusWidget(ProcessorInfo);
+    auto updateProcessorInfo = [=] {
+        const auto &desc =
+            ProcessorRegistry::getDescription(ProcessorHandler::getID());
+        QString status = "Processor: " + desc.name + "    ISA: " +
+                         ProcessorHandler::getProcessor()->implementsISA()->name();
+        ProcessorInfoStatusManager::get().setStatusPermanent(status);
+    };
+    connect(ProcessorHandler::get(), &ProcessorHandler::processorChanged,
+            updateProcessorInfo);
+    updateProcessorInfo();
+
+    // Setup processorhandler status widget
+    setupStatusWidget(Processor);
+
+    // Setup syscall status widget
+    setupStatusWidget(Syscall);
+
+    // Setup systemIO status widget
+    setupStatusWidget(SystemIO);
+
+    // Setup general info status widget
+    setupStatusWidget(General);
+*/
+}
+
+void ScQtNeuron_MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (maybeClose()) {
+//        writeSettings();
+//        writeSettings();    // Qrite out window-related settings
+
+        qInfo() << qAppName() << " normally terminated by user";
+        event->accept();
+
+/*   CloseSystemFiles(GetAppName() + " simulator GUI version has terminated");
+*/    } else {
+        event->ignore();
+    }
+}
+
+
+bool ScQtNeuron_MainWindow::maybeClose()
+{
+        QMessageBox::StandardButton ret;
+        ret = QMessageBox::warning(this, tr("Application"),
+                     tr("Closing this window will exit the simulator tool.\n"
+                        "Are you sure you want exit?"),
+                     QMessageBox::Yes  | QMessageBox::Cancel);
+        if (ret == QMessageBox::Yes)
+    {
+      return true;
+    }
+        else if (ret == QMessageBox::Cancel)
+            return false;
+    return false;
+
+}
+
+void ScQtNeuron_MainWindow::addTreeRoot(QString name, QString description)
+{
+/*    // QTreeWidgetItem(QTreeWidget * parent, int type = Type)
+    QTreeWidgetItem *treeItem = new QTreeWidgetItem(ui->treeWidget);
+
+    // QTreeWidgetItem::setText(int column, const QString & text)
+    treeItem->setText(0, name);
+    treeItem->setText(1, description);
+    addTreeChild(treeItem, name + "A", "Child_first");
+    addTreeChild(treeItem, name + "B", "Child_second");
+*/
+}
+
+void ScQtNeuron_MainWindow::addTreeChild(QTreeWidgetItem *parent,
+                  QString name, QString description)
+{
+    // QTreeWidgetItem(QTreeWidget * parent, int type = Type)
+    QTreeWidgetItem *treeItem = new QTreeWidgetItem();
+
+    // QTreeWidgetItem::setText(int column, const QString & text)
+    treeItem->setText(0, name);
+    treeItem->setText(1, description);
+
+    // QTreeWidgetItem::addChild(QTreeWidgetItem * child)
+    parent->addChild(treeItem);
+}
+
+
+
+void ScQtNeuron_MainWindow::setupToolBoxes(void)
+{
+ /*  QFileSystemModel *model = new QFileSystemModel;
+    model->setRootPath(model->index(QString('~')));
+    ui->dirTreeView->setModel(model);
+    ui->dirTreeView->setRootIndex(QString("~/REPO/"));
+ //   ui->dirTreeView->setRootIndex(QString(Directories.Home.c_str()));
+*/
+    QFileSystemModel *dirModel = new QFileSystemModel(this);
+//    dirModel->setRootPath(QString(Directories.Home.c_str()));
+    dirModel->setRootPath(QString("~/REPO/"));
+
+//    ui->dirTreeView->setModel(dirModel);
+//    ui->dirTreeView->setRootIndex(dirModel->setRootPath(Directories.UserData.c_str()+'/'));
+//    ui->dirTreeView->setRootIndex(dirModel->setRootPath("~/REPO/"));
+
+}
+
+void ScQtNeuron_MainWindow::realtimeDataSlot()
+{
+    static QTime timeStart = QTime::currentTime();
+    if(!Voltage.size())return;
+    // calculate two new data points:
+    //  double key = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
+    double Volt = Voltage[index];
+    double key = Time[index++];
+    if(index>=Voltage.count())
+        index = 0;
+    static double lastPointKey = 0;
+    /*
+    if (key-lastPointKey > 0.005) // at most add point every 5 us
+    {
+        // add data to lines:
+        //  Time.push_back(line.split(",").at(0).toDouble());
+        //  Voltage.push_back(line.split(",").at(1).toDouble());
+
+        VoltagePlot->graph(0)->addData(key, Volt);
+        // rescale value (vertical) axis to fit the current data:
+        //ui->customPlot->graph(0)->rescaleValueAxis();
+        //ui->customPlot->graph(1)->rescaleValueAxis(true);
+        lastPointKey = key;
+        //    if(index>sizeof(Voltage))
+        //        Voltage.clear();
+    }
+    // make key axis range scroll with the data (at a constant range size of 10):
+    VoltagePlot->xAxis->setRange(key, 5, Qt::AlignRight);
+    VoltagePlot->replot();
+*/
+
+/*    // calculate frames per second:
+    static double lastFpsKey;
+    static int frameCount;
+    ++frameCount;
+    if (key-lastFpsKey > 1) // average fps over 2 seconds
+    {
+        ui->statusBar->showMessage(
+            QString("%1 FPS, Total Data points: %2")
+                .arg(frameCount/(key-lastFpsKey), 0, 'f', 0)
+                .arg(ui->customPlot->graph(0)->data()->size()
+                     //                   +ui->customPlot->graph(1)->data()->size()
+                     )
+            , 0);
+        lastFpsKey = key;
+        frameCount = 0;
+    }
+*/
+}
+#if 0
+
+void ScQtNeuron_MainWindow::ProcessLine(QString line)
+{
+    QStringList firstColumn;
+        // Handle the first two items only
+    //    while (!s1.atEnd()){
+    first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
+    second.append(line.split(",").at(1));
+    Time.push_back(line.split(",").at(0).toDouble());
+    Voltage.push_back(line.split(",").at(1).toDouble());
+    //    std::cout << line.toStdString() << '\n';
+}
+void ScQtNeuron_MainWindow::GetData(QString fileName)
+{
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+
+    QTextStream in(&file);
+    QString line = in.readLine();   // Skip the heading line
+    while (!in.atEnd()) {
+        line = in.readLine();
+        ProcessLine(line);
+    }
+}
+#endif
+//}// Namespace Ripes
+#include "moc_ScQtNeuron_MainWindow.cpp"

@@ -205,13 +205,13 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_DESCRIPTION:STATIC=A SystemC-based time-aware neuron simulator with Qt GUI
+CMAKE_PROJECT_DESCRIPTION:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_HOMEPAGE_URL:STATIC=https://github.com/jvegh/ScQtNeuron
+CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=NeuronScQt
+CMAKE_PROJECT_NAME:STATIC=QT6HW
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.0.1
@@ -385,6 +385,15 @@ OPENGL_opengl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libOpenGL.so
 
 //Path to a file.
 OPENGL_xmesa_INCLUDE_DIR:PATH=OPENGL_xmesa_INCLUDE_DIR-NOTFOUND
+
+//Value Computed by CMake
+QT6HW_BINARY_DIR:STATIC=/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/build
+
+//Value Computed by CMake
+QT6HW_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+QT6HW_SOURCE_DIR:STATIC=/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code
 
 //Additional directories where find(Qt6 ...) host Qt components
 // are searched
@@ -630,7 +639,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

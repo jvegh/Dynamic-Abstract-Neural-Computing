@@ -4,9 +4,6 @@
 # @author János Végh
 
 message(HIGHLIGHTED "                    Gtest tests")
-	find_package(SystemC REQUIRED)
-    find_package(GTest REQUIRED)
-
 
 include_directories(
     include

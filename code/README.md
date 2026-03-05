@@ -34,7 +34,7 @@ A simulator is attached as an independent object.
 The simulator is based on a SystemC engine, so it can
 simulate the time-dependent processes of living matter.
 
-* [The thepry esablishing the code](https://jvegh.github.io/Dynamic-Abstract-Neural-Computing)
+* [The theory establishing the code](https://jvegh.github.io/Dynamic-Abstract-Neural-Computing)
 
 ## Authors
 

@@ -14,7 +14,8 @@ include_directories(
     ${CMAKE_INSTALL_PREFIX}/include
     ${CMAKE_SOURCE_DIR}/test/include
     ${GTEST_INCLUDE_DIRS}
-    ${SYSTEMC_INCLUDE_DIR}
+#    ${SYSTEMC_INCLUDE_DIR}
+    /opt/systemc/include
     include
     )
 
@@ -33,7 +34,7 @@ set(TEST_SOURCES
     TestAbstractPUBase.cpp
 #    TestBioPUBase.cpp
 #    TestTechPUBase.cpp
-#   TestNeuronDemo.cpp
+#    TestNeuronDemo.cpp
 #    TestNeuronPhysical.cpp
 #    TestStuff.cpp
 #    TestUtils.cpp
@@ -51,7 +52,7 @@ ADD_EXECUTABLE(
 target_link_libraries(
     ${PROJECT_NAME}_GTEST
       ${NEURON_LIB}
-       ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
+       /opt/systemc/lib/libsystemc.so
        ${GTEST_LIBRARIES}
        pthread
 )

@@ -37,9 +37,9 @@ include(BuildType)
 
 
 
-set(SYSTEMC_HOME /opt/systemc)
-set(SYSTEMC_INCLUDE_DIR $ENV{SYSTEMC_HOME}/include)
-set(SYSTEMC_LIBRARY_DIR $ENV{SYSTEMC_HOME}/lib)
+set(SYSTEMC_HOME "/opt/systemc")
+set(SYSTEMC_INCLUDE_DIR ${SYSTEMC_HOME}/include)
+set(SYSTEMC_LIBRARY_DIR ${SYSTEMC_HOME}/lib)
 set(CMAKE_PREFIX_PATH "~/systemc-3.0.2/build")
 find_package(SystemCLanguage)
 
@@ -51,7 +51,8 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 set(CMAKE_PREFIX_PATH "~/Qt/6.10.2/gcc_64")
-find_package(Qt6 COMPONENTS Core Widgets)
+#find_package(Qt6 COMPONENTS Core Widgets)
+find_package(Qt6 CONFIG REQUIRED COMPONENTS Widgets Concurrent PrintSupport)
 set(CMAKE_CXX_STANDARD 17)
 set(SystemC_CXX_STANDARD_REQUIRED )
 
@@ -66,7 +67,7 @@ include_directories(${Qt6Charts_INCLUDE_DIRS})
 
 message(HIGHLIGHTED "Configuring 'NeuronScQt' libraries")
 
-#add_subdirectory(3rdParty/qcustomplot)
+#add_subdirectory(3rdParty/QCustomPlot)
 add_subdirectory(3rdParty/fancytabbar)
 
 set(NEURON_LIB neuron_lib)
@@ -97,5 +98,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR}
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
                       Qt6::Core Qt6::Widgets
-                      ${SYSTEMC_LIBRARY_DIR}/libsystemc.so)
+                     /opt/systemc/lib/libsystemc.so
+#                      ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
+                    )
 

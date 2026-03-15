@@ -21,7 +21,7 @@
 //#include <QMainWindow>
 #include <QWindow>
 #include <QTimer>
-#include "../../3rdParty/qcustomplot/include/qcustomplot.h"
+#include "../3rdParty/qcustomplot/include/qcustomplot.h"
 
 class ScQtNeuron_MainWindow;
 class SimulatorControlWindow;

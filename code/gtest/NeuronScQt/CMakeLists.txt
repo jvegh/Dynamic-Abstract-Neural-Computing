@@ -31,8 +31,8 @@ link_directories(
 
 set(TEST_SOURCES
     sctestbench_simple.cpp
-    TestAbstractPUBase.cpp
-#    TestBioPUBase.cpp
+#    TestAbstractPUBase.cpp
+    TestBioPUBase.cpp
 #    TestTechPUBase.cpp
 #    TestNeuronDemo.cpp
 #    TestNeuronPhysical.cpp

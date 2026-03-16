@@ -16,7 +16,7 @@ function(create_neuron_lib NAME)
         ${ARGN})
 
     file(GLOB LIB_SOURCES *.cpp neurons/*.cpp)
-    file(GLOB LIB_HEADERS *.h neurons/*.h)
+    file(GLOB LIB_HEADERS *.h neurons/include/*.h)
     file(GLOB LIB_UI *.ui neurons/*.ui)
  #   file(GLOB LIB_SOURCES ../scr/version/*.cpp)
  #   file(GLOB LIB_HEADERS ../scr/version/neurons/*.h)
@@ -34,6 +34,8 @@ function(create_neuron_lib NAME)
         ${CMAKE_CURRENT_SOURCE_DIR}
         /opt/systemc/include
         ../src
+        include
+        neurons/include
         )
 
     target_link_libraries(${LIB_NAME} PUBLIC Qt6::Gui)
@@ -45,9 +47,6 @@ function(create_neuron_lib NAME)
         target_link_libraries(${NEURON_LIB} PUBLIC ${LIB_NAME})
     endif()
 
-    if(OPTIONS_LINK_ISA_LIB)
-        target_link_libraries(${LIB_NAME} PUBLIC ${ISA_LIB})
-    endif()
 endfunction()
 
 # Error flags on everything but MSVC
@@ -64,8 +63,8 @@ create_neuron_lib(${NEURON_LIB} FIXED_NAME EXCLUDE_SRC_INC)
 
 target_sources(neuron_lib
   PRIVATE
-    neurons/EventGencomp.h
-    neurons/scGenComp_Config.h
+    include/EventGencomp.h
+    include/scGenComp_Config.h
 #    ../src/version
  #   neurons/GencompMachineStates.h
 )

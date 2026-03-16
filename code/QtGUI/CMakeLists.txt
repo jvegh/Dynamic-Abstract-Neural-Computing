@@ -10,7 +10,7 @@ endfunction()
 # will be linked to the newly defined library.
 function(create_qtgui_lib NAME)
     cmake_parse_arguments(OPTIONS
-        "LINK_TO_QTGUI_LIB;LINK_ISA_LIB;FIXED_NAME;EXCLUDE_SRC_INC" # options
+        "LINK_TO_QTGUI_LIB;FIXED_NAME;EXCLUDE_SRC_INC" # options
         ""                             # 1-valued keywords
         ""                             # multi-valued keywords
         ${ARGN})
@@ -31,8 +31,10 @@ function(create_qtgui_lib NAME)
     target_include_directories (${LIB_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         /opt/systemc/include
+        include
         ../include
-        ../neuron ../neuron/neurons
+        ../neuron/include
+        ../neuron/neurons/include
         )
 
     target_link_libraries(${LIB_NAME} PUBLIC Qt6::Gui)
@@ -62,7 +64,7 @@ target_sources(qtgui_lib
   PRIVATE
 )
 
-# Also link Qt and VSRTL libraries.
+# Also link Qt library
 target_link_libraries(${QTGUI_LIB} PUBLIC
     fancytabbar_lib
     )

@@ -67,7 +67,7 @@ include_directories(${Qt6Charts_INCLUDE_DIRS})
 
 message(HIGHLIGHTED "Configuring 'NeuronScQt' libraries")
 
-#add_subdirectory(3rdParty/QCustomPlot)
+add_subdirectory(3rdParty/qcustomplot)
 add_subdirectory(3rdParty/fancytabbar)
 
 set(NEURON_LIB neuron_lib)

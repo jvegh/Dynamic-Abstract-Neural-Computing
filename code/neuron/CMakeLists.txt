@@ -61,7 +61,7 @@ endif()
 # Create the parent library. This will include everything in the current directory.
 create_neuron_lib(${NEURON_LIB} FIXED_NAME EXCLUDE_SRC_INC)
 
-target_sources(neuron_lib
+target_sources(${NEURON_LIB}
   PRIVATE
     include/EventGencomp.h
     include/scGenComp_Config.h

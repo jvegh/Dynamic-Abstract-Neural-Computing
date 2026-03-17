@@ -61,6 +61,10 @@ include_directories(${Qt6Widgets_INCLUDE_DIRS})
 include_directories(${Qt6Core_INCLUDE_DIRS})
 include_directories(${Qt6Charts_INCLUDE_DIRS})
 
+include_directories(QtGUI)
+include_directories(neuron/include)
+include_directories(neuron/neurons/include)
+
 
 #target_link_libraries(${PROJECT_NAME} PUBLIC #Qt6::Core Qt6::Widgets
 #${SYSTEMC_LIBRARY_DIR}/libsystemc.so)
@@ -96,11 +100,18 @@ endif(BUILD_DOCS)
 qt_add_executable(${PROJECT_NAME} src/main.cpp src/MyWindow.cpp include/MyWindow.h)
 set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
 target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR})
-
+target_link_directories(${PROJECT_NAME} PUBLIC
+      3rdParty/qcustomplot
+      neuron
+      QtGUI
+)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
-                      Qt6::Core Qt6::Widgets
-                     /opt/systemc/lib/libsystemc.so
-#                      ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
+                      ${QTGUI_LIB}
+                      libQCustomPlot
+                      ${NEURON_LIB}
+#                     /opt/systemc/lib/libsystemc.so
+                      ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
+                      Qt6::Core Qt6::Widgets Qt6::PrintSupport
                     )
 

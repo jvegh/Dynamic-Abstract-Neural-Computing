@@ -74,7 +74,7 @@ set(NEURON_LIB neuron_lib)
 set(QTGUI_LIB qtgui_lib)
 add_subdirectory(neuron)
 add_subdirectory(QtGUI)
-#include_directories(neuron/neurons)
+#add_subdirectory(demos)
 
 
 # ---[ Install GTest

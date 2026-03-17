@@ -26,7 +26,7 @@ file(GLOB_RECURSE TEST_INCLUDES
 
 link_directories(
     ${SystemC_LIBRARY_DIR}
-  ../../neuron
+#  ../../neuron
 )
 
 set(TEST_SOURCES

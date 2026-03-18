@@ -27,6 +27,7 @@
 #define PU_ToBeFailedTime    sc_core::sc_time(90,SC_US) // During "Computing"
 #define PU_FailedTime        PU_SynchronizeTime3+PU_DeliveringPeriod-sc_core::sc_time(15,SC_US) // After finishing test 'Synchronize'
 
+extern string GenCompStagesString[];
 scGenComp_PU_AbstractTEST::
     scGenComp_PU_AbstractTEST(sc_core::sc_module_name nm
                               ,sc_core::sc_time FixedComputingTime

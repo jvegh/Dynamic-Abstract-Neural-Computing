@@ -39,17 +39,23 @@ include(BuildType)
 
 
 # ---[ Install SystemC
-set(SYSTEMC_HOME /opt/systemc)
-set(SYSTEMC_INCLUDE_DIR $ENV{SYSTEMC_HOME}/include)
-set(SYSTEMC_LIBRARY_DIR $ENV{SYSTEMC_HOME}/lib)
+set(SYSTEMC_HOME "/opt/systemc")
+set(SYSTEMC_INCLUDE_DIR ${SYSTEMC_HOME}/include)
+set(SYSTEMC_LIBRARY_DIR ${SYSTEMC_HOME}/lib)
+
 set(CMAKE_PREFIX_PATH "~/systemc-3.0.2/build")
 find_package(SystemCLanguage)
 
 
 # ---[ Install Qt6
+# Instruct CMake to run moc automatically when needed.
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
 
 set(CMAKE_PREFIX_PATH "~/Qt/6.10.2/gcc_64")
-find_package(Qt6 COMPONENTS Core Widgets)
+find_package(Qt6 CONFIG REQUIRED COMPONENTS Core Widgets Concurrent PrintSupport)
 set(CMAKE_CXX_STANDARD 17)
 set(SystemC_CXX_STANDARD_REQUIRED )
 # Set Qt includes
@@ -57,15 +63,24 @@ include_directories(${Qt6Widgets_INCLUDE_DIRS})
 include_directories(${Qt6Core_INCLUDE_DIRS})
 include_directories(${Qt6Charts_INCLUDE_DIRS})
 
+include_directories(QtGUI)
+include_directories(neuron/include)
+include_directories(neuron/neurons/include)
+
 
 #target_link_libraries(${PROJECT_NAME} PUBLIC #Qt6::Core Qt6::Widgets
 #${SYSTEMC_LIBRARY_DIR}/libsystemc.so)
 
+message(HIGHLIGHTED "Configuring 'NeuronScQt' libraries")
 
-#add_subdirectory(3rdParty/qcustomplot)
-#add_subdirectory(3rdParty/fancytabbar)
-include_directories(neuron)
-include_directories(neuron/neurons)
+add_subdirectory(3rdParty/qcustomplot)
+add_subdirectory(3rdParty/fancytabbar)
+
+set(NEURON_LIB neuron_lib)
+set(QTGUI_LIB qtgui_lib)
+add_subdirectory(neuron)
+add_subdirectory(QtGUI)
+#add_subdirectory(demos)
 
 
 # ---[ Install GTest
@@ -88,9 +103,17 @@ qt_add_executable(${PROJECT_NAME} src/main.cpp src/MyWindow.cpp include/MyWindow
 set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
 target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR})
 
-#add_subdirectory(3rdParty/qcustomplot)
-#add_subdirectory(3rdParty/fancytabbar)
+target_link_directories(${PROJECT_NAME} PUBLIC
+      3rdParty/qcustomplot
+      neuron
+      QtGUI
+)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
-                      Qt6::Core Qt6::Widgets
-                      ${SYSTEMC_LIBRARY_DIR}/libsystemc.so)
+                      ${QTGUI_LIB}
+                      libQCustomPlot
+                      ${NEURON_LIB}
+                      ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
+                      Qt6::Core Qt6::Widgets Qt6::PrintSupport
+    )
+

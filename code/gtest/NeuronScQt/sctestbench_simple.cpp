@@ -17,6 +17,7 @@ using namespace std;
 
 void SimpleTB_t::test_thread()
 {
+     std::cout << sc_core::sc_time_stamp();
     ErrorCode = RUN_ALL_TESTS();
     if (not sc_end_of_simulation_invoked())
         sc_stop(); //< invoke end_of_simulation

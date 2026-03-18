@@ -60,7 +60,7 @@ scGenComp_PU_Abstract(sc_core::sc_module_name nm
     // Make sure if not using variable computing time with a central clock
     assert(!((SC_ZERO_TIME == FixedComputingTime) && CentralClockMode));
     // *** The stuff below in the constructor are SystemC specific, do not touch!
-    typedef scGenComp_PU_Abstract SC_CURRENT_USER_MODULE; // Needed if some routines are listed in this constructor
+ //   typedef scGenComp_PU_Abstract SC_CURRENT_USER_MODULE; // Needed if some routines are listed in this constructor
     // Operating
     SC_METHOD(DeliveringBegin_method);
     sensitive << EVENT_GenComp.DeliveringBegin;

@@ -1,0 +1,240 @@
+/*
+ * The idea taken from
+ * https://github.com/fabienpn/simple-qt-thread-example
+ */
+
+#ifndef SQCTSIMULATOR_H
+#define SQCTSIMULATOR_H
+
+#include <QObject>
+#include <QMutex>
+#include <systemc>
+#include <bitset>
+#include <string>
+#include "EventGencomp.h"
+
+using namespace sc_core; using namespace sc_dt; using namespace std;
+/*! \var typedef GenCompPUObservingBits_t
+ * \brief the names of the bits in the bitset describing
+ * which signals in scGenComp_PU_Abstract are monitored by the scGenComp_Simulator
+ */
+typedef enum
+{
+    gcob_ObserveGroup,              ///< The module's group is observed (by the simulator)
+    gcob_ObserveModule,             ///< The module is observed (by the simulator)
+    gcob_ObserveComputingBegin,     ///< Observe 'ComputingBegin'
+    gcob_ObserveComputingEnd,       ///< Observe 'ComputingEnd'
+    gcob_ObserveDeliveringBegin,    ///< Observe 'DeliveringBegin'
+    gcob_ObserveDeliveringEnd,      ///< Observe 'DeliveringEnd'
+    gcob_ObserveFailed,             ///< Observe 'Failed's of the PU
+    gcob_ObserveHeartbeat,          ///< Observe 'Heartbeat's of the PU
+    gcob_ObserveInputReceived,      ///< Observe 'Input's of the PU
+    gcob_ObserveInitialize,         ///< Observe 'Initialize' of the PU
+    gcob_ObserveRelaxingBegin,      ///< Observe 'RelaxingBegin'
+    gcob_ObserveRelaxingEnd,        ///< Observe 'RelaxingEnd'
+    gcob_ObserveSynchronize,        ///< Observe 'Synchronize'
+    gcob_ObserveValueChanged,       ///< Observe 'Value changed'
+    gcob_Max                        // just maintains the number of bits used
+} GenCompPUObservingBits_t;
+extern string GenCompObserveStrings[];
+
+
+class scGenComp_EventHandler_Abstract: public sc_core::sc_module
+{
+public:
+    /*!
+     * \brief Create an abstract event handler for the general computing
+     * @param[in] nm the SystemC name of the module
+      */
+    scGenComp_EventHandler_Abstract(sc_core::sc_module_name nm
+                          );
+
+    virtual ~scGenComp_EventHandler_Abstract(void); // Must be overridden
+
+    /** @brief Notify the observer about some important change
+     * @param[in] ObservedBit The event that occured
+     */
+    void ObserverNotify(GenCompPUObservingBits_t ObservedBit);
+
+    /*!
+     * \brief Get value of an observing bit for this scGenComp_PU_Abstract
+     * \param B is the bit to get in mObservedBits
+     * \return is the requested value of the bit
+     */
+    bool ObservingBit_Get(GenCompPUObservingBits_t B)
+    {
+        assert(B < gcob_Max);  // Check if wrong bit
+        return mObservedBits[B];
+    }
+
+    EVENT_GenComp_type EVENT_GenComp;
+protected:
+    /**
+     * Store here which events the unit wants to be observed
+     *
+     * @see #GenCompPUObservingBits_t
+     */
+    bitset<gcob_Max> mObservedBits;   //< The bits of the GenComp_PU stage
+private:
+#if 0
+    void ComputingBegin_method()=0;
+    /**
+     * @brief Computing has finished
+     * Usually activated by      EVENT_GenComp_type::ComputingEnd
+     */
+    void ComputingEnd_method()=0;
+    /**
+     *  Start internal result delivering. Usually activated by EVENT_GenComp_type::DeliveringBegin
+     */
+    void DeliveringBegin_method()=0;
+    /**
+     *  Finish internal result delivering. Usually activated by EVENT_GenComp_type::DeliveringEnd */
+    void DeliveringEnd_method()=0;
+    /**
+     * @brief Module failed.
+     *
+     * Usually activated by EVENT_GenComp.Failed
+     * - In biological computing, it means a failed charge-up; passes to 'Relaxing'
+     * - In technical computing, it results in a failed operation
+     */
+    void Failed_method()=0;
+    /**
+     * @brief A periodic signal as a timebase to refresh state. Used internally, to avoid using clock signals.
+     *
+     * Usually activated by EVENT_GenComp::Heartbeat. A heartbeat can be useful in stages
+     *  Relaxing, Processing, and Delivering
+     *
+     * Branches according to PU's recent stage and calls (see the corresponding state machine diagram)
+     *    -  virtual void Heartbeat_Computing_Do()
+     *    -  virtual void Heartbeat_Delivering_Do()
+     *    -  virtual void Heartbeat_Relaxing_Do()
+     *
+     * These routines also calculate the new \gls{PU} parameters. Those parameters
+     * enable to return the status if to stop processing.
+     * Similarly, it branches according to PU's stage and calls
+     *
+     *    -  virtual bool Heartbeat_Computing_Stop()
+     *    -  virtual bool Heartbeat_Delivering_Stop()
+     *    -  virtual bool Heartbeat_Relaxing_Stop()
+     *
+     *    routines in the corresponding stage,
+     *    which return true if the given phase is to terminate
+     *
+     * Usage
+     *   - For technical computing, it is used to display time delays
+     *   - For biological computing, it is used to solve PDEs.
+     *  The same differential equation is solved, but the terms are depending on the stage
+     */
+    void Heartbeat_method()=0;
+#endif //0
+    /**
+     * @brief Initialize_method
+     *
+     * Usually activated by EVENT_GenComp.Initialize
+     */
+//    virtual void Initialize_method()=0;
+#if 0
+    /**
+     * @brief InputReceived_method
+     *
+     * An external input received.
+     * Inputs can be received in 'Relaxing', and 'Computing'; in stage 'Delivering' they are neglected
+     * If sufficient number of inputs received and NOT using external synchnonization,
+     * calls ComputingBegin_method()
+     *
+     * Usually activated by      EVENT_GenComp.InputReceived
+     */
+    void InputReceived_method()=0;
+    /**
+     * @brief Relaxing has started
+     *
+     * Usually activated by event EVENT_GenComp.RelaxingBegin
+     * issued in Delivering_End()
+     * After delivered the result internally to the 'output section', resetting begins
+     */
+    void RelaxingBegin_method()=0;
+    /**
+     * @brief Synchronize the PU to some external condition
+     *
+     * Usually activated by     EVENT_GenComp.Synchronize
+
+     * - In biological computing, it results in issuing EVENT_GenComp.EndComputing (immediate spiking; passing to 'Delivering')
+     * - In technical computing, it results in issuing EVENT_GenComp.ComputingBegin (starting computing; passing to 'Computing')
+     */
+    virtual void Synchronize_method()=0;
+    /**
+     * @brief Transmission period has started
+     *
+     * Usually activated by DeliveringBegin
+     * Happens in parallel with delivering
+     */
+    void TransmissionBegin_method()=0;
+#endif //0
+};// of class scGenComp_EventHandler_Abstract
+
+
+/** @brief
+ *  The simulator is controlled by events from the UI.
+ *  When started, calls sc_start(), then calls its method 'run',
+ *  where it waits for SC events
+ *
+ */
+//
+class scQtSimulator2 : public QObject, scGenComp_EventHandler_Abstract
+{
+    Q_OBJECT
+
+public:
+    explicit scQtSimulator2(sc_core::sc_module_name nm, QObject *parent = 0);
+    /**
+     * @brief Requests the process to start
+     *
+     */
+    void requestWork();
+    /**
+     * @brief Requests the process to abort
+     *
+     * It is thread safe as it uses #mutex to protect access to #_abort variable.
+     */
+//    void abort();
+    virtual void Initialize_method();
+    /// The event specific to this class
+    EVENT_GenComp_type EVENT_GenComp;
+
+private:
+    /**
+     * @brief Protects access to #_abort
+     */
+//    QMutex mutex;
+
+signals:
+    /**
+     * @brief This signal is emitted when the Worker request to Work
+     * @sa requestWork()
+     */
+    void workRequested();
+    /**
+     * @brief This signal is emitted when counted value is changed (every sec)
+     */
+    void valueChanged(const QString &value);
+    /**
+     * @brief This signal is emitted when process is finished (either by counting 15 sec or being aborted)
+     */
+    void finished();
+    /**
+     * @brief This signal is emitted when process is initialized
+     */
+    void initialized();
+
+public slots:
+    /**
+     * @brief Does something
+     *
+     * Counts 15 sec in this example.
+     * Counting is interrupted if #_aborted is set to true.
+     */
+    void start();
+    void initialize();
+};
+
+#endif // SQCTSIMULATOR_H

@@ -1,4 +1,4 @@
-# This is the main CMakeLists file for NeuronScQt demo programs
+# This is the main CMakeLists file for ScQtNeuron demo programs
 #
 # @author János Végh
 
@@ -7,7 +7,3 @@
 message(HIGHLIGHTED "Configuring 'Demo' executables")
 
 #add_subdirectory(AP_Conceptual)
-#add_subdirectory(scQtSimulator)
-#add_subdirectory(CustomPlotRealTime)
-add_subdirectory(CustomPlotAnimate)
-#add_subdirectory(MultiThread)

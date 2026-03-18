@@ -1,0 +1,105 @@
+/*
+   Copyright 2013 Fabien Pierre-Nicolas.
+      - Primarily authored by Fabien Pierre-Nicolas
+
+   This file is part of simple-qt-thread-example, a simple example to demonstrate how to use threads.
+   This example is explained on http://fabienpn.wordpress.com/qt-thread-simple-and-stable-with-sources/
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This progra is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "scQtSimulator2.h"
+#include <QTimer>
+#include <QEventLoop>
+
+#include <QThread>
+#include <QDebug>
+
+scGenComp_EventHandler_Abstract::
+scGenComp_EventHandler_Abstract(sc_core::sc_module_name nm)
+                :sc_core::sc_module(nm)
+{
+    typedef scGenComp_EventHandler_Abstract SC_CURRENT_USER_MODULE; // Needed if some routines are listed in this constructor
+    // Operating
+/*    SC_METHOD(DeliveringBegin_method);
+    sensitive << EVENT_GenComp.DeliveringBegin;
+    dont_initialize();
+    SC_METHOD(DeliveringEnd_method);
+    sensitive << EVENT_GenComp.DeliveringEnd;
+    dont_initialize();*/
+
+}
+
+scGenComp_EventHandler_Abstract::
+    ~scGenComp_EventHandler_Abstract()
+{}                                           // Must be overridden
+
+scQtSimulator2::scQtSimulator2(sc_core::sc_module_name nm, QObject *parent) :
+    QObject(parent), scGenComp_EventHandler_Abstract(nm)
+{
+    typedef scQtSimulator2 SC_CURRENT_USER_MODULE; // Needed if some routines are listed in this constructor
+    SC_METHOD(Initialize_method);
+    sensitive << EVENT_GenComp.Initialize;
+        dont_initialize();
+
+
+//    _working =false;
+//    _abort = false;
+}
+
+void scQtSimulator2::requestWork()
+{
+//    mutex.lock();
+    //_working = true;
+//    _abort = false;
+    qDebug()<<"Request worker start in Thread "<<thread()->currentThreadId();
+//    mutex.unlock();
+
+    emit workRequested();
+}
+
+    void scQtSimulator2::start()
+{
+    qDebug()<<"Starting worker process in Thread "<<thread()->currentThreadId();
+
+    for (int i = 0; i < 15; i ++) {
+        if( QThread::currentThread()->isInterruptionRequested() )
+            break;
+
+        // This will stupidly wait 1 sec doing nothing...
+        QEventLoop loop;
+        QTimer::singleShot(1000, &loop, SLOT(quit()));
+        loop.exec();
+
+        // Once we're done waiting, value is updated
+        emit valueChanged(QString::number(i));
+    }
+
+     qDebug()<<"Worker process finished in Thread "<<thread()->currentThreadId();
+
+    //Once 15 sec passed, the finished signal is sent
+    emit finished();
+}
+
+void scQtSimulator2::Initialize_method()
+{
+    qDebug()<<"Starting worker process in Thread "<<thread()->currentThreadId();
+    emit initialize();
+}
+
+void scQtSimulator2::initialize()
+{
+    qDebug()<<"Starting worker process in Thread "<<thread()->currentThreadId();
+    emit initialize();
+}

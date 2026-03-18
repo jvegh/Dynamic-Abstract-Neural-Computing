@@ -15,6 +15,7 @@ _site/
 *Cache*
 *.cache
 CMakeCache.txt
+CMakeFiles/*
 doc/*.log
 doc/manual.*.log
 doc/manual/*.log

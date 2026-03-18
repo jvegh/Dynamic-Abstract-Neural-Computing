@@ -255,10 +255,10 @@ void ScQtNeuron_MainWindow::setupMenus() {
     m_ui->menuFile->addAction(exitAction);
 */
 
-//    auto *wikiAction = new QAction(QIcon(":/icons/info.svg"), "Wiki", this);
+    auto *wikiAction = new QAction(QIcon(":/icons/info.svg"), "Wiki", this);
 /*    saveAction->setShortcut(QKeySequence::Save);
     connect(wikiAction, &QAction::triggered, this,
-            &MainWindow::saveFilesTriggered);
+            &ScQtNeuron_MainWindow::saveFilesTriggered);
 */
     connect(ui->actionOpen_wiki, &QAction::triggered, this, &ScQtNeuron_MainWindow::wiki);
     connect(ui->actionVersion, &QAction::triggered, this, &ScQtNeuron_MainWindow::version);
@@ -327,7 +327,7 @@ void ScQtNeuron_MainWindow::setupExamplesMenu(QMenu *parent) {
 
 void ScQtNeuron_MainWindow::wiki() {
     QDesktopServices::openUrl(QUrl(QString(
-        "https://jvegh.github.io/DynamicAbstractNeuralComputing")));
+        "https://jvegh.github.io/Dynamic-Abstract-Neural-Computing")));
 }
 
 void ScQtNeuron_MainWindow::version() {

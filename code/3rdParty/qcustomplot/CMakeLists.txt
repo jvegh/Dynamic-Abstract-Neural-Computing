@@ -34,7 +34,7 @@ QT6_WRAP_CPP(qcustomplot_moc include/qcustomplot.h)
 
   # Executables fail to build with Qt 6 in the default configuration
   # without -fPIE. We add that here.
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt6Widgets_EXECUTABLE_COMPILE_FLAGS}  -std=c++11 -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt6Widgets_EXECUTABLE_COMPILE_FLAGS}  -std=c++17 -Wall")
 
 ADD_LIBRARY(QCustomPlot
     qcustomplot.cpp

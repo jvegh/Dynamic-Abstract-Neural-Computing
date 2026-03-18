@@ -24,7 +24,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${S
 include(Colorize)
 
     set(MyVersion "0.0.6")
-    set(MyDate "2026.03.03")
+    set(MyDate "2026.03.18")
 
   project(NeuronScQt VERSION ${MyVersion}
         LANGUAGES C CXX
@@ -66,6 +66,7 @@ include_directories(${Qt6Charts_INCLUDE_DIRS})
 include_directories(QtGUI)
 include_directories(neuron/include)
 include_directories(neuron/neurons/include)
+
 
 
 #target_link_libraries(${PROJECT_NAME} PUBLIC #Qt6::Core Qt6::Widgets
@@ -111,7 +112,7 @@ target_link_directories(${PROJECT_NAME} PUBLIC
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
                       ${QTGUI_LIB}
-                      libQCustomPlot
+                      QCustomPlot
                       ${NEURON_LIB}
                       ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
                       Qt6::Core Qt6::Widgets Qt6::PrintSupport

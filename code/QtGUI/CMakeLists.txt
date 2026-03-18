@@ -35,6 +35,7 @@ function(create_qtgui_lib NAME)
         ../include
         ../neuron/include
         ../neuron/neurons/include
+        ../3rdParty/qcustomplot/include
         ../3rdParty/fancytabbar
         )
 

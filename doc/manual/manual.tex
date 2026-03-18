@@ -1,5 +1,5 @@
 \documentclass{book}
-\def\MyVersion{0.2.2}
+\def\MyVersion{0.2.3}
 \tolerance 500%
 \renewcommand{\topfraction}{.8}
 \renewcommand{\floatpagefraction}{.8}
@@ -28,12 +28,12 @@
 
 \newcommand{\quotationbox}[1]
 { 
-{\centering
+\noindent
  \fcolorbox{blue!70!white}{orange!10!white}{\parbox{.9\textwidth}{
    \color{black}
    \textbf{Quotation: }{#1}
 }
-}}}
+}}
 
 \newcounter{numericctr}
 \newcommand{\numericalbox}[2]

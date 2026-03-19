@@ -5,6 +5,7 @@ cmake_policy(SET CMP0048 NEW)
 cmake_policy(SET CMP0007 NEW)
 cmake_policy(SET CMP0071 NEW)
 cmake_policy(SET CMP0084 NEW)
+cmake_policy(SET CMP0153 OLD)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${SYSTEMC_HOME})
 
@@ -78,7 +79,6 @@ qt6_add_resources(ICONS_SRC ${CMAKE_CURRENT_SOURCE_DIR}/resources/icons/icons.qr
 #qt6_add_resources(EXAMPLES_SRC examples/examples.qrc)
 #qt6_add_resources(LAYOUTS_SRC ${CMAKE_SOURCE_DIR}/src/processors/layouts.qrc)
 qt6_add_resources(FONTS_SRC resources/fonts/fonts.qrc)
-message(HIGHLIGHTED "Looking for 'ICONS_SRC'=" ${ICONS_SRC})
 
 
 #target_link_libraries(${PROJECT_NAME} PUBLIC #Qt6::Core Qt6::Widgets

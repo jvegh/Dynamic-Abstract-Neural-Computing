@@ -45,6 +45,7 @@ include(BuildType)
 set(SYSTEMC_HOME "/opt/systemc")
 set(SYSTEMC_INCLUDE_DIR ${SYSTEMC_HOME}/include)
 set(SYSTEMC_LIBRARY_DIR ${SYSTEMC_HOME}/lib)
+set(SystemC_INCLUDE_DIRS ${SYSTEMC_INCLUDE_DIR})
 
 set(CMAKE_PREFIX_PATH "~/systemc-3.0.2/build")
 find_package(SystemCLanguage)
@@ -62,6 +63,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_PREFIX_PATH "~/Qt/6.10.2/gcc_64")
 find_package(Qt6 CONFIG REQUIRED COMPONENTS Core Widgets Concurrent PrintSupport)
 set(CMAKE_CXX_STANDARD 17)
+
+set(SystemC_CXX_STANDARD ${CMAKE_CXX_STANDARD})
 set(SystemC_CXX_STANDARD_REQUIRED )
 # Set Qt includes
 include_directories(${Qt6Widgets_INCLUDE_DIRS})
@@ -81,9 +84,6 @@ qt6_add_resources(ICONS_SRC ${CMAKE_CURRENT_SOURCE_DIR}/resources/icons/icons.qr
 qt6_add_resources(FONTS_SRC resources/fonts/fonts.qrc)
 
 
-#target_link_libraries(${PROJECT_NAME} PUBLIC #Qt6::Core Qt6::Widgets
-#${SYSTEMC_LIBRARY_DIR}/libsystemc.so)
-
 message(HIGHLIGHTED "Configuring 'NeuronScQt' libraries")
 
 add_subdirectory(3rdParty/qcustomplot)
@@ -93,6 +93,7 @@ set(NEURON_LIB neuron_lib)
 set(QTGUI_LIB qtgui_lib)
 add_subdirectory(neuron)
 add_subdirectory(QtGUI)
+add_subdirectory(src)
 #add_subdirectory(demos)
 
 ######################################################################
@@ -128,11 +129,13 @@ target_link_directories(${PROJECT_NAME} PUBLIC
       3rdParty/qcustomplot
       neuron
       QtGUI
+      src/version
 )
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
                       ${QTGUI_LIB}
                       QCustomPlot
+                      version_lib
                       ${NEURON_LIB}
                       ${SYSTEMC_LIBRARY_DIR}/libsystemc.so
                       Qt6::Core Qt6::Widgets Qt6::PrintSupport

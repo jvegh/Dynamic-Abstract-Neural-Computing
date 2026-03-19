@@ -26,6 +26,15 @@ int guiMode(QApplication &app) {
    return app.exec();
 }
 
+/*
+#include <QtWidgets/QApplication>
+#include <QtCore/QDebug>
+#include <QtGui/QIcon>
+#include <QtWidgets/QSystemTrayIcon>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
+*/
+
 int sc_main(int argc, char *argv[])
 {
     sc_set_time_resolution(1,SC_US);
@@ -34,12 +43,21 @@ int sc_main(int argc, char *argv[])
 //??    Q_INIT_RESOURCE(layouts);
     Q_INIT_RESOURCE(fonts);
 
-    QApplication app(argc, argv);
+
+/*
+    QSystemTrayIcon trayIcon;
+    trayIcon.setIcon(QIcon(":/icons/neurer.png"));
+    trayIcon.show();
+*/    QApplication app(argc, argv);
+    app.setStyleSheet("QWindow { background-color: yellow }");
+/*    return app.exec();
+    QApplication app(argc, argv);*/
     QCoreApplication::setApplicationName("ScQtNeuron");
     MyWindow m;
     return guiMode(app);
     m.resize(800, 600);
     m.show();
+
     /*
   QCommandLineParser parser;
   Ripes::CLIModeOptions options;

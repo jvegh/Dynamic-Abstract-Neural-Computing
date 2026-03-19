@@ -1,3 +1,6 @@
+message(HIGHLIGHTED "                    other sources")
+set(SystemC_CXX_STANDARD 17)
+
 function(check_nonempty_string STR)
     if ("${STR}" STREQUAL "")
         message(FATAL_ERROR "Empty string")
@@ -6,11 +9,10 @@ endfunction()
 
 
 include_directories(
-    ../../neuron
-    ../3rdParty/qcustomplot/include
     /opt/systemc/include
     ${SystemC_INCLUDE_DIRS}
     include
+#    version
     )
 
 
@@ -39,7 +41,7 @@ function(create_ripes_lib NAME)
     add_library(${LIB_NAME} STATIC ${LIB_SOURCES} ${LIB_HEADERS} ${LIB_UI})
     set(SystemC_CXX_STANDARD 17)
 
-    target_compile_features(${LIB_NAME} PRIVATE SystemC_CXX_STANDARD)
+#    target_compile_features(${LIB_NAME} PRIVATE SystemC_CXX_STANDARD)
     target_include_directories (${LIB_NAME} PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         )
@@ -49,9 +51,9 @@ function(create_ripes_lib NAME)
         target_include_directories(${LIB_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src)
     endif()
 
-    if(OPTIONS_LINK_TO_RIPES_LIB)
-        target_link_libraries(${RIPES_LIB} PUBLIC ${LIB_NAME})
-    endif()
+#    if(OPTIONS_LINK_TO_RIPES_LIB)
+#        target_link_libraries(${RIPES_LIB} PUBLIC ${LIB_NAME})
+#    endif()
 
     if(OPTIONS_LINK_ISA_LIB)
         target_link_libraries(${LIB_NAME} PUBLIC ${ISA_LIB})
@@ -68,19 +70,19 @@ elseif(MINGW)
 endif()
 
 # Create the parent library. This will include everything in the current directory.
-create_ripes_lib(${RIPES_LIB} FIXED_NAME EXCLUDE_SRC_INC)
+#create_ripes_lib(${RIPES_LIB} FIXED_NAME EXCLUDE_SRC_INC)
 
 # All of the following subdirectories will create separate libraries and link them into
 # ripes_lib
-add_subdirectory(version)
+#add_subdirectory(version)
 #add_subdirectory(cli)
 
 
 # Also link Qt and VSRTL libraries.
-target_link_libraries(${RIPES_LIB}  PUBLIC
-    fancytabbar_lib
+#target_link_libraries(${RIPES_LIB}  PUBLIC
+#    fancytabbar_lib
   #  ${VSRTL_GRAPHICS_LIB}
-    Qt6::Charts
+#    Qt6::Charts
     #dwarf++
-    )
+#    )
 

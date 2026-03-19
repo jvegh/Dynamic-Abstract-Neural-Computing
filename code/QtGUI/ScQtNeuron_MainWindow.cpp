@@ -10,7 +10,7 @@
 //#include "QStuff.h"
 //#include "Stuff.h"
 //#include "edittab.h"
-//#include "../version/version.h"
+#include "gitversion.h"
 
 extern struct SystemDirectories Directories;
 
@@ -19,8 +19,9 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     ui(new Ui::ScQtNeuron_MainWindow)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: light grey;");
-//??    menubar->setStyleSheet("menu-color: grey;");
+     this->setStyleSheet("color: Navy;"
+//                        "border: 1px blue;"
+                            "background-color:  LightGray;");
     //??Neuron::NeuronHandler::get();
     QMainWindow::setWindowIcon(QIcon(":/icons/neurer.png"));
 
@@ -45,11 +46,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     auto *neuronTab = new NeuronTab(controlToolbar, neuronToolbar, this);
     m_stackedTabs->insertWidget(NeuronTabID, neuronTab);
 
-    qApp->setStyleSheet("color: blue;"
-                            "background-color: yellow;"
-                            "selection-color: yellow;"
-                            "selection-background-color: blue;");
-
 /*
      auto *editToolbar = addToolBar("Edit");
     editToolbar->setVisible(false);
@@ -62,7 +58,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     ui->tabbar->addFancyTab(QIcon(":/icons/neurer.png"), "Neuron");
 
 
-//    setStyleSheet("border: 1px solid green");
     setWindowTitle( "NeuronScQt main window" );
     setIconSize(QSize(24,24));
     QSystemTrayIcon(this).setIcon( QIcon( ":/images/ESlogo.png" ) );
@@ -338,9 +333,9 @@ void ScQtNeuron_MainWindow::wiki() {
 
 void ScQtNeuron_MainWindow::version() {
     QMessageBox aboutDialog(this);
-    aboutDialog.setWindowIcon(QIcon(":/icons/neurer.png"));
+//    aboutDialog.setWindowIcon(QIcon(":/icons/neurer.png"));
 
-    aboutDialog.setText("NeuronScQt :" /*+ Ripes::getRipesVersion()*/);
+ //   aboutDialog.setText("NeuronScQt :"+ getGitVersion());
     aboutDialog.exec();
 }
 

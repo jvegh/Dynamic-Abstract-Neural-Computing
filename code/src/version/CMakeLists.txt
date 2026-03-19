@@ -1,4 +1,4 @@
-create_ripes_lib(version LINK_TO_RIPES_LIB)
+#create_ripes_lib(version LINK_TO_RIPES_LIB)
 
 # -----------------------------------------------------------------------------
 # Version control file

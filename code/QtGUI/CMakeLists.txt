@@ -37,6 +37,7 @@ function(create_qtgui_lib NAME)
         ../neuron/neurons/include
         ../3rdParty/qcustomplot/include
         ../3rdParty/fancytabbar
+        ../src/version
         )
 
     target_link_libraries(${LIB_NAME} PUBLIC Qt6::Gui)

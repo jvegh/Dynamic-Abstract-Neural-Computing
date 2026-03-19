@@ -45,6 +45,11 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     auto *neuronTab = new NeuronTab(controlToolbar, neuronToolbar, this);
     m_stackedTabs->insertWidget(NeuronTabID, neuronTab);
 
+    qApp->setStyleSheet("color: blue;"
+                            "background-color: yellow;"
+                            "selection-color: yellow;"
+                            "selection-background-color: blue;");
+
 /*
      auto *editToolbar = addToolBar("Edit");
     editToolbar->setVisible(false);
@@ -327,7 +332,8 @@ void ScQtNeuron_MainWindow::setupExamplesMenu(QMenu *parent) {
 
 void ScQtNeuron_MainWindow::wiki() {
     QDesktopServices::openUrl(QUrl(QString(
-        "https://jvegh.github.io/Dynamic-Abstract-Neural-Computing")));
+//        "https://jvegh.github.io/Dynamic-Abstract-Neural-Computing")));
+        "https://jvegh.github.io/DANCES")));
 }
 
 void ScQtNeuron_MainWindow::version() {

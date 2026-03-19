@@ -38,7 +38,9 @@ include(Colorize)
 include(BuildType)
 
 
-# ---[ Install SystemC
+######################################################################
+## Install and set up  SystemC
+######################################################################
 set(SYSTEMC_HOME "/opt/systemc")
 set(SYSTEMC_INCLUDE_DIR ${SYSTEMC_HOME}/include)
 set(SYSTEMC_LIBRARY_DIR ${SYSTEMC_HOME}/lib)
@@ -47,7 +49,9 @@ set(CMAKE_PREFIX_PATH "~/systemc-3.0.2/build")
 find_package(SystemCLanguage)
 
 
-# ---[ Install Qt6
+######################################################################
+## Install and set up GUI
+######################################################################
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -67,6 +71,14 @@ include_directories(QtGUI)
 include_directories(neuron/include)
 include_directories(neuron/neurons/include)
 
+######################################################################
+## Resources setup
+######################################################################
+qt6_add_resources(ICONS_SRC ${CMAKE_CURRENT_SOURCE_DIR}/resources/icons/icons.qrc)
+#qt6_add_resources(EXAMPLES_SRC examples/examples.qrc)
+#qt6_add_resources(LAYOUTS_SRC ${CMAKE_SOURCE_DIR}/src/processors/layouts.qrc)
+qt6_add_resources(FONTS_SRC resources/fonts/fonts.qrc)
+message(HIGHLIGHTED "Looking for 'ICONS_SRC'=" ${ICONS_SRC})
 
 
 #target_link_libraries(${PROJECT_NAME} PUBLIC #Qt6::Core Qt6::Widgets
@@ -83,8 +95,10 @@ add_subdirectory(neuron)
 add_subdirectory(QtGUI)
 #add_subdirectory(demos)
 
+######################################################################
+##  GTest setup
+######################################################################
 
-# ---[ Install GTest
 if(BUILD_GTESTS)
     find_package(GTest REQUIRED)
     add_subdirectory(gtest)
@@ -92,7 +106,10 @@ if(BUILD_GTESTS)
 endif()
 
 
-# ---[ Install Doxygen
+######################################################################
+##  Doxygen setup
+######################################################################
+
 if(BUILD_DOCS)
   find_package(Doxygen)
 #??  add_subdirectory(doc) # The doxygen documentation
@@ -100,7 +117,10 @@ if(BUILD_DOCS)
 endif(BUILD_DOCS)
 
 # We need to add .h files (at least those that define a custom Qt class), see https://stackoverflow.com/a/14011060
-qt_add_executable(${PROJECT_NAME} src/main.cpp src/MyWindow.cpp include/MyWindow.h)
+qt_add_executable(${PROJECT_NAME}  ${SYSTEM_FLAGS} ${ICONS_SRC} ${FONTS_SRC} #${EXAMPLES_SRC} ${LAYOUTS_SRC}
+  src/main.cpp src/MyWindow.cpp include/MyWindow.h
+)
+
 set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
 target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR})
 

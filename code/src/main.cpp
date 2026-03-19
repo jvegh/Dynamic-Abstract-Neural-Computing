@@ -29,11 +29,11 @@ int guiMode(QApplication &app) {
 int sc_main(int argc, char *argv[])
 {
     sc_set_time_resolution(1,SC_US);
- /*   Q_INIT_RESOURCE(icons);
-    Q_INIT_RESOURCE(examples);
-    Q_INIT_RESOURCE(layouts);
+   Q_INIT_RESOURCE(icons);
+//??   Q_INIT_RESOURCE(examples);
+//??    Q_INIT_RESOURCE(layouts);
     Q_INIT_RESOURCE(fonts);
-*/
+
     QApplication app(argc, argv);
     QCoreApplication::setApplicationName("ScQtNeuron");
     MyWindow m;

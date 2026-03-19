@@ -7,7 +7,16 @@
 
 #include <QObject>
 #include <QMutex>
+#include <QTime>
 #include <QWaitCondition>
+
+
+/*!
+ * \class ScQtSimulator
+ * \brief  Implements a general SystemC simulator, based on Qt technology
+ *
+
+ */
 
 
 class ScQtSimulator : public QObject
@@ -23,7 +32,6 @@ public:
         Method1 = 1,
         Method2 = 2,
         Method3 = 3
-
     };
     /**
      * @brief Requests for the method @em method to be executed
@@ -38,6 +46,16 @@ public:
      * It is thread safe as it uses #mutex to protect access to #_abort variable.
      */
     void abort();
+    QTime MyTime = QTime::currentTime();
+    int64_t m_clock_time_begin;   // The beginning of this simulation, ms
+    // Return user time of simulation, in seconds
+    double userTime_Get(void)
+    {
+        int64_t clock_time = MyTime.msecsSinceStartOfDay() - m_clock_time_begin;
+        if(clock_time <0)  // we are overnight
+            clock_time += 24*60*60*1000;
+        return clock_time;
+    }
 
 private:
     /**
@@ -81,7 +99,6 @@ private:
      * Counting is interrupted if #_abort or #_interrupt is set to true.
      */
     void doMethod3();
-
 signals:
     /**
      * @brief This signal is emitted when counted value is changed (every sec)

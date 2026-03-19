@@ -27,6 +27,7 @@
 #include <qdialog.h>
 #include "ScQtSimulator.h"
 #include "TestNeuronPhysical.h"
+#include "Utils.h"
 
 namespace Ui
 {
@@ -45,7 +46,7 @@ public:
     ~SimulatorControlWindow();
     Ui::SimulatorControlWindow *ui;
     NeuronPhysicalTEST *MyNeuron;
-
+    ScQtNeuron_MainWindow* parent_Get() { return m_parent;}
 private:
     /**
      * @brief Thread object which will let us manipulate the running thread

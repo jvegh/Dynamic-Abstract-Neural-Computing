@@ -2,12 +2,11 @@
 #include <QResource>
 //#include <systemc.h>
 
-#include "MyWindow.h"
+//#include "MyWindow.h"
 #include "ScQtNeuron_MainWindow.h"
 
 int guiMode(QApplication &app) {
     ScQtNeuron_MainWindow m;
-//    MyWindow    m;
 
 #ifdef Q_OS_WASM
     // In the WASM build, we'll just want a full-screen application that can't be
@@ -49,15 +48,15 @@ int sc_main(int argc, char *argv[])
     trayIcon.setIcon(QIcon(":/icons/neurer.png"));
     trayIcon.show();
 */    QApplication app(argc, argv);
-    app.setStyleSheet("QWindow { background-color: yellow }");
+
 /*    return app.exec();
     QApplication app(argc, argv);*/
     QCoreApplication::setApplicationName("ScQtNeuron");
-    MyWindow m;
+//    MyWindow m;
     return guiMode(app);
-    m.resize(800, 600);
+/*    m.resize(800, 600);
     m.show();
-
+*/
     /*
   QCommandLineParser parser;
   Ripes::CLIModeOptions options;

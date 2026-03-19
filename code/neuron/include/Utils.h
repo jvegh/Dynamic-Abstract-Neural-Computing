@@ -59,6 +59,26 @@ YFromPosition_Get(int x, int y);
 #endif
     // Define sc_time unit
 
+#define CLOCK_TIME_UNIT_PS 0
+#define CLOCK_TIME_UNIT_NS 1
+#define CLOCK_TIME_UNIT_US 2
+#define CLOCK_TIME_UNIT_MS 3
+#define CLOCK_TIME_UNIT_S  4
+#define CLOCK_TIME_UNIT_DEFAULT CLOCK_TIME_UNIT_S
+
+    /**
+     * @brief Return the string corresponding to clock time T
+     * @param T the clock time to convert
+     * @param U the requested unit, see CLOCK_TIME_UNIT_xx
+     * @param d decimals (after period)
+     * @param w width (field total width
+     * @return the requested string
+     */
+    string
+time_String_Get(double T, int32_t U=CLOCK_TIME_UNIT_DEFAULT, const int32_t d = 3, const int32_t w=8);
+
+    // Define sc_time unit
+
 #define SC_TIME_UNIT_PS 0
 #define SC_TIME_UNIT_NS 1
 #define SC_TIME_UNIT_US 2
@@ -76,6 +96,7 @@ YFromPosition_Get(int x, int y);
      */
     string
 sc_time_String_Get( sc_core::sc_time T, int32_t U=SC_TIME_UNIT_DEFAULT, const int32_t d = 3, const int32_t w=8);
+
 
 /*
 

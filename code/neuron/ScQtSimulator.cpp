@@ -2,12 +2,12 @@
       - Started from the example by Fabien Pierre-Nicolas on http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
  */
 
+#include <systemc>
 #include <QTimer>
 #include <QEventLoop>
-
 #include <QThread>
 #include <QDebug>
-#include <systemc>
+
 #include "ScQtSimulator.h"
 
 ScQtSimulator::ScQtSimulator(QObject *parent) :
@@ -16,6 +16,7 @@ ScQtSimulator::ScQtSimulator(QObject *parent) :
     _abort = false;
     _interrupt = false;
     sc_start( sc_core::SC_ZERO_TIME);
+    m_clock_time_begin = MyTime.msecsSinceStartOfDay();
 }
 
 void ScQtSimulator::requestMethod(ScQtSimulator::Method method)
@@ -50,27 +51,6 @@ void ScQtSimulator::doMethod1()
 
     qDebug()<<"Starting Method1 in Thread "<<thread()->currentThreadId();
     emit eventHappened();
-
-/*
-    for (int i = 0; i < 10; i ++) {
-
-        mutex.lock();
-        bool abort = _abort;
-        bool interrupt = _interrupt;
-        mutex.unlock();
-
-        if (abort || interrupt) {
-            qDebug()<<"Interrupting Method1 in Thread "<<thread()->currentThreadId();
-            break;
-        }
-
-        QEventLoop loop;
-        QTimer::singleShot(1000, &loop, SLOT(quit()));
-        loop.exec();
-
-        emit valueChanged(QString::number(i));
-    }
-*/
 }
 
 void ScQtSimulator::doMethod2()

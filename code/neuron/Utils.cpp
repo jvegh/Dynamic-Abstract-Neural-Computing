@@ -129,23 +129,48 @@ PositionOfFirstZero_Get(SC_GRIDPOINT_MASK_TYPE Mask, const int Length)
         return oss.str();
    }
    #endif
-/* Convert the simulated time to string
- *  @param[in] U The unit of the returned number; by default SC_TIME_US
- *  @param[in] T the sc_time; by sefault sc_time_stamp()
- *  @param[in] d decimals; by default 2
- *  @param[in] w field width; by default
+
+/* Convert the clock time in a double to string
+ *  @param[in] U The unit of the returned number; by default TIME_MS
+ *  @param[in] T the  clock time; by sefault 0
+ *  @param[in] d decimals; by default 3
+ *  @param[in] w field width; by default 8
  */
-   string sc_time_String_Get(sc_core::sc_time T, int32_t U, const int32_t d, const int32_t w)
-   {   switch(U)
+string
+time_String_Get(double T, int32_t U, const int32_t d, const int32_t w)
+{
+    switch(U)
+    {
+    case SC_TIME_UNIT_PS: U = 1000*1000*1000*1000; break;
+    case SC_TIME_UNIT_NS: U = 1000*1000*1000; break;
+    case SC_TIME_UNIT_US: U = 1000*1000; break;
+    case SC_TIME_UNIT_MS: U = 1000; break;
+    case SC_TIME_UNIT_S : U = 1; break;
+    default: U=-1;
+    };
+    //       if(T == sc_core::SC_ZERO_TIME) T = sc_core::sc_time_stamp(); // Allow to print also zero time
+    ostringstream oss;
+    oss << std::fixed << std::setprecision(d) << std::setw(w) << T*U;
+    return oss.str();
+}
+
+/* Convert the simulated time to string
+ *  @param[in] U The unit of the returned number; by default SC_TIME_S
+ *  @param[in] T the sc_time; by sefault sc_time_stamp()
+ *  @param[in] d decimals; by default 3
+ *  @param[in] w field width; by default 8
+ */
+string
+sc_time_String_Get(sc_core::sc_time T, int32_t U, const int32_t d, const int32_t w)
+{   switch(U)
         {
-        case SC_TIME_UNIT_PS: U = T.value(); break;
+        case SC_TIME_UNIT_PS: U = 1000*1000*1000*1000; break;
         case SC_TIME_UNIT_NS: U = 1000*1000*1000; break;
         case SC_TIME_UNIT_US: U = 1000*1000; break;
         case SC_TIME_UNIT_MS: U = 1000; break;
         case SC_TIME_UNIT_S : U = 1; break;
         default: U=-1;
         };
- //       if(T == sc_core::SC_ZERO_TIME) T = sc_core::sc_time_stamp(); // Allow to print also zero time
         ostringstream oss;
         oss << std::fixed << std::setprecision(d) << std::setw(w) << T.to_seconds()*U;
         return oss.str();

@@ -34,8 +34,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_stackedTabs = new QStackedWidget(this);
     ui->centrallayout->addWidget(m_stackedTabs);
     // Setup status bar
-    //    setupStatusBar();
-        (void)statusBar();
+        setupStatusBar();
+    //    (void)statusBar();
 
     auto *controlToolbar = addToolBar("Simulator control");
     controlToolbar->setVisible(true); // Always visible

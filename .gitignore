@@ -32,6 +32,7 @@ doc/manual/*.xml
 doc/manual/*.mt*
 code/build/
 code/3rdParty/
+code/.qtcreator/
 
 
 # Specific ignore for GitHub Pages

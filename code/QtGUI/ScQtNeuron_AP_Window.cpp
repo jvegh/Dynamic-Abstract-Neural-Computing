@@ -122,16 +122,19 @@ void ScQtNeuron_AP_Window::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
 void ScQtNeuron_AP_Window::realtimeDataSlot()
 {
-  static QTime timeStart = QTime::currentTime();
+//  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
 //  double key = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
   double Value;
+if(!Voltage.count())
+      return; // No measured data yet
   switch(m_Mode)
   {
   case 0: Value =  Voltage[index]; break;
   case 1: Value = dVdt[index]; break;
   }
   double key = Time[index++];
+  // Reset the display cycle
   if(index>=Voltage.count())
       index = 0;
    static double lastPointKey = 0;

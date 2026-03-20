@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manual.aux
+The style file: elsarticle-num.bst
+Database file #1: ../../../LaTeX/CommonBibliography.bib
+Database file #2: ../../..//LaTeX/CommonPrivateBibliography.bib
+Database file #3: ../../../LaTeX/CommonNeuronalBibliography.bib
+Database file #4: ../../../LaTeX/CommonAIBibliography.bib
+Warning--empty chapter and pages in Schrodinger:1992
+Warning--empty chapter and pages in CardiacAPS:1980
+Warning--empty publisher in TheBoookOfGENESIS:2003
+Warning--empty pages in PhysicsForHodgkinHuxley:2024
+Warning--empty chapter and pages in InformationTheoryIntersection:2008
+You've used 175 entries,
+            2952 wiz_defined-function locations,
+            1925 strings with 44450 characters,
+and the built_in function-call counts, 50934 in all, are:
+= -- 5086
+> -- 1317
+< -- 17
++ -- 552
+- -- 377
+* -- 3662
+:= -- 6843
+add.period$ -- 274
+call.type$ -- 175
+change.case$ -- 171
+chr.to.int$ -- 27
+cite$ -- 180
+duplicate$ -- 1498
+empty$ -- 6019
+format.name$ -- 474
+if$ -- 13559
+int.to.chr$ -- 0
+int.to.str$ -- 175
+missing$ -- 182
+newline$ -- 677
+num.names$ -- 176
+pop$ -- 1056
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 3387
+stack$ -- 0
+substring$ -- 2413
+swap$ -- 469
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 5
+while$ -- 313
+width$ -- 178
+write$ -- 1663
+(There were 5 warnings)

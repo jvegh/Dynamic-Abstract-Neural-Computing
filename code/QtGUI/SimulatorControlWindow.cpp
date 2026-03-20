@@ -55,7 +55,8 @@ void SimulatorControlWindow::on_eventHappened()
 {
     qDebug()<<"Event happened @ "<< 1000*sc_time_stamp().to_seconds() << ":" << MyNeuron->MembraneAbsolutePotential_Get();
     ui->SimulatedTime->setText(QString(sc_time_String_Get(sc_core::sc_time_stamp()).c_str()));
-    ui->timeUser->setText(QString(time_String_Get(parent_Get()->m_Simulator->userTime_Get()*1000).c_str()));
+    ui->timeUser->setText(QString(time_String_Get(parent_Get()->m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
+    ui->timeSystem->setText(QString(time_String_Get(parent_Get()->m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
 //        QString message = tr("An event happened");
 //        parent_Get()->statusBar()->showMessage(message, 1200);
 }

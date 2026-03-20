@@ -47,7 +47,7 @@ the similar macro definitions in included other modules may overload them
     @endcode
     and use the macros as as
     @code{.cpp}
-    BENCHMARK_TIME_RESET(&t,&x,&s); // Reset at the very begining, say in the constructor
+    BENCHMARK_TIME_RESET(&t,&x,&s); // Reset at the very beginning, say in the constructor
     @endcode
     Later put the benchmarked code between macros, used as brackets
     @code{.cpp}

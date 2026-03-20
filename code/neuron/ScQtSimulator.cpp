@@ -10,13 +10,48 @@
 
 #include "ScQtSimulator.h"
 
+/*
+In your class (or member function) define
+    @code{.cpp}
+chrono::steady_clock::time_point t =chrono::steady_clock::now();
+std::chrono::duration< int64_t, nano> x,s=(std::chrono::duration< int64_t, nano>)0;
+@endcode
+    and use the macros as as
+    @code{.cpp}
+BENCHMARK_TIME_RESET(&t,&x,&s); // Reset at the very begining, say in the constructor
+@endcode
+    Later put the benchmarked code between macros, used as brackets
+    @code{.cpp}
+BENCHMARK_TIME_BEGIN(&t,&x);    // Begin the benchmarking here
+your code
+    BENCHMARK_TIME_END(&t,&x,&s);   // End benchmarking here
+@endcode
+    After using these macros, the benchmarked time values are returned:
+                                               (since BEGIN) in x (nanoseconds)
+                                               and the sum of all benchmarked time (since RESET) in s (nanoseconds).
+                                                       Access the result as
+                                                       @code{.cpp}
+                                                       std::cerr  << "Simulation took " << s.count()/1000/1000. << " msec CLOCK time" << endl;
+@endcode
+
+        In an object, you can RESET in the constructor,
+    in the member functions between BEGIN and END measure the
+            one-time utilization, and in the destructor to read out the total benchmarked time.
+        Or to benchmark (in multiple variables) execution CLOCK time  about critical sections of your code.
+*/
+
 ScQtSimulator::ScQtSimulator(QObject *parent) :
     QObject(parent)
 {
     _abort = false;
     _interrupt = false;
     sc_start( sc_core::SC_ZERO_TIME);
-    m_clock_time_begin = MyTime.msecsSinceStartOfDay();
+    m_clock_time_begin = QTime::currentTime();
+    // Now initialize the system time clock
+    m_system_t =chrono::steady_clock::now();
+    m_system_x = m_system_s = (std::chrono::duration< int64_t, nano>)0;
+//    std::chrono::duration< int64_t, nano> x,s=(std::chrono::duration< int64_t, nano>)0;
+    BENCHMARK_TIME_RESET(&m_system_t,&m_system_x,&m_system_s); // Reset at the very beginning, say in the constructor
 }
 
 void ScQtSimulator::requestMethod(ScQtSimulator::Method method)
@@ -44,8 +79,9 @@ void ScQtSimulator::doMethod1()
     sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity();
 //    sc_start( sc_core::sc_time_to_pending_activity() );
 //        std::cerr << ThisTime.to_string() << "\n";
-     sc_core::sc_start( ThisTime);
-
+    BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin the benchmarking here
+     sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
+    BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
 //    qDebug()<< ThisTime.to_string();
     mutex.unlock();
 

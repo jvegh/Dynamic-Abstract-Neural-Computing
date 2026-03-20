@@ -10,12 +10,18 @@
 #include <QTime>
 #include <QWaitCondition>
 
+using namespace std;
+
+// The benchmarking is abused here; to not repeat the code, is used unconditionally
+#define MAKE_TIME_BENCHMARKING  // uncomment to measure the clock time with benchmarking macros
+#ifdef MAKE_TIME_BENCHMARKING
+#include "MacroTimeBenchmarking.h"    // Must be after the '#define MAKE_TIME_BENCHMARKING' to have its effect
+#endif
+
 
 /*!
  * \class ScQtSimulator
  * \brief  Implements a general SystemC simulator, based on Qt technology
- *
-
  */
 
 
@@ -46,18 +52,26 @@ public:
      * It is thread safe as it uses #mutex to protect access to #_abort variable.
      */
     void abort();
-    QTime MyTime = QTime::currentTime();
-    int64_t m_clock_time_begin;   // The beginning of this simulation, ms
+    QTime m_clock_time_begin;   // The beginning of this simulation, [ms]
     // Return user time of simulation, in seconds
     double userTime_Get(void)
     {
-        int64_t clock_time = MyTime.msecsSinceStartOfDay() - m_clock_time_begin;
-        if(clock_time <0)  // we are overnight
-            clock_time += 24*60*60*1000;
-        return clock_time;
+        int64_t TimeDiff = m_clock_time_begin.secsTo(QTime::currentTime());
+    //    if(clock_time <0)  // we are overnight
+    //        clock_time += 24*60*60*1000;
+        return TimeDiff;
+    }
+    // Return processor time, [us]
+    double systemTime_Get()
+    {
+        return std::chrono::duration_cast<std::chrono::microseconds>(m_system_s).count();
     }
 
 private:
+    // Define time benchmarking variables
+    chrono::steady_clock::time_point m_system_t =chrono::steady_clock::now();
+    std::chrono::duration< int64_t, nano> m_system_x,m_system_s = (std::chrono::duration< int64_t, nano>)0;
+
     /**
      * @brief Currently requested method
      */

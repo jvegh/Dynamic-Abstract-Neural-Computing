@@ -148,8 +148,7 @@ time_String_Get(double T, int32_t U, const int32_t d, const int32_t w)
     case SC_TIME_UNIT_S : U = 1; break;
     default: U=-1;
     };
-    //       if(T == sc_core::SC_ZERO_TIME) T = sc_core::sc_time_stamp(); // Allow to print also zero time
-    ostringstream oss;
+     ostringstream oss;
     oss << std::fixed << std::setprecision(d) << std::setw(w) << T*U;
     return oss.str();
 }

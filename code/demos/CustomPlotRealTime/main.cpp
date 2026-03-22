@@ -34,7 +34,7 @@ int sc_main(int argc, char **argv)
   QApplication::setGraphicsSystem("raster");
 #endif
   QApplication a(argc, argv);
-  VoltageWindow w;
+  VoltageWindow w(&a);
   w.show();
   
   return a.exec();

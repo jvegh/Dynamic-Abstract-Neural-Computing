@@ -25,17 +25,7 @@
 
 /************************************************************************************************************
 **                                                                                                         **
-**  This is the example code for QCustomPlot.                                                              **
-**                                                                                                         **
-**  It demonstrates basic and some advanced capabilities of the widget. The interesting code is inside     **
-**  the "setup(...)Demo" functions of VoltageWindow.                                                          **
-**                                                                                                         **
-**  In order to see a demo in action, call the respective "setup(...)Demo" function inside the             **
-**  VoltageWindow constructor. Alternatively you may call setupDemo(i) where i is the index of the demo       **
-**  you want (for those, see VoltageWindow constructor comments). All other functions here are merely a       **
-**  way to easily create screenshots of all demos for the website. I.e. a timer is set to successively     **
-**  setup all the demos and make a screenshot of the window area and save it in the ./screenshots          **
-**  directory.                                                                                             **
+**  This started from the example code RealTimePlot for QCustomPlot.                                                              **
 **                                                                                                         **
 *************************************************************************************************************/
 
@@ -56,7 +46,7 @@ class VoltageWindow : public QMainWindow
   Q_OBJECT
   
 public:
-  explicit VoltageWindow(QWidget *parent = 0);
+  explicit VoltageWindow(QApplication *a, QWidget *parent = 0);
   ~VoltageWindow();
   
   void setupRealtimeDataDemo(QCustomPlot *customPlot);
@@ -79,6 +69,7 @@ private:
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;
   int currentDemoIndex;
+  QApplication* qapp; //?
 };
 
 #endif // VoltageWindow_H

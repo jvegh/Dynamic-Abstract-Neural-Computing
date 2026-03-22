@@ -23,60 +23,32 @@
 **          Version: 2.1.1                                                **
 ****************************************************************************/
 
-/************************************************************************************************************
-**                                                                                                         **
-**  This is the example code for QCustomPlot.                                                              **
-**                                                                                                         **
-**  It demonstrates basic and some advanced capabilities of the widget. The interesting code is inside     **
-**  the "setup(...)Demo" functions of VoltageWindow.                                                          **
-**                                                                                                         **
-**  In order to see a demo in action, call the respective "setup(...)Demo" function inside the             **
-**  VoltageWindow constructor. Alternatively you may call setupDemo(i) where i is the index of the demo       **
-**  you want (for those, see VoltageWindow constructor comments). All other functions here are merely a       **
-**  way to easily create screenshots of all demos for the website. I.e. a timer is set to successively     **
-**  setup all the demos and make a screenshot of the window area and save it in the ./screenshots          **
-**  directory.                                                                                             **
-**                                                                                                         **
-*************************************************************************************************************/
-
 #include "VoltageWindow.h"
 #include "ui_VoltageWindow.h"
 #include <QDebug>
 #include <iostream>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#  include <QDesktopWidget>
-#endif
 #include <QScreen>
 #include <QMessageBox>
 #include <QMetaEnum>
+#include <QApplication>
 
 #include <QFile>
 
-VoltageWindow::VoltageWindow(QWidget *parent) :
+VoltageWindow::VoltageWindow(QApplication *a, QWidget *parent ):
   QMainWindow(parent),
   ui(new Ui::VoltageWindow)
 {
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
-  
+  qapp = a;
   setupRealtimeDataDemo(ui->customPlot);
   setWindowTitle("QCustomPlot: "+demoName);
   statusBar()->clearMessage();
   ui->customPlot->replot();
-  // 10: setupRealtimeDataDemo(ui->customPlot);
-  //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
+   //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
   QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
-/*oid VoltageWindow::setupDemo(int demoIndex)
-{
-  setupRealtimeDataDemo(ui->customPlot);
-  setWindowTitle("QCustomPlot: "+demoName);
-  statusBar()->clearMessage();
-  currentDemoIndex = demoIndex;
-  ui->customPlot->replot();
-}
-*/
 
 void VoltageWindow::ProcessLine(QString line)
 {
@@ -128,7 +100,8 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->xAxis->setTicker(timeTicker);
   customPlot->axisRect()->setupFullAxesBox();
   customPlot->yAxis->setRange(-30, 110);
-  
+  customPlot->yAxis2->setRange(-1000, 3000);
+
   // make left and bottom axes transfer their ranges to right and top axes:
   connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
   connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
@@ -141,9 +114,10 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
 void VoltageWindow::realtimeDataSlot()
 {
-  static QTime timeStart = QTime::currentTime();
+//  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
 //  double key = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
+    if(!Voltage.count()) return;
   double Volt = Voltage[index];
   double key = Time[index++];
   if(index>=Voltage.count())
@@ -194,46 +168,11 @@ VoltageWindow::~VoltageWindow()
 void VoltageWindow::screenShot()
 {
   QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-  QString fileName = demoName.toLower()+".png";
+    QString fileName = demoName.toLower()+".pdf";
   fileName.replace(" ", "");
-  pm.save("./screenshots/"+fileName);
+  ui->customPlot->savePdf(fileName, 0, 0);
+
+//  pm.save("./screenshots/"+fileName);
+//  pm.save(fileName);
   qApp->quit();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

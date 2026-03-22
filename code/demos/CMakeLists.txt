@@ -7,3 +7,4 @@
 message(HIGHLIGHTED "Configuring 'Demo' executables")
 
 #add_subdirectory(AP_Conceptual)
+add_subdirectory(CustomPlotRealTime)

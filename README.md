@@ -25,7 +25,7 @@ The theory fixes the mistakes in the classical Hodgkin-Huxley theory
 and explains that the discrete nature of neural electricity (the slow current)
 drastically changes the picture how neurons compute.
 For those discussions, one has to reinterpret physical laws for living matter
-(aka: derive the non-ordinary laws of science Scrödinger predicted).
+(aka: derive the non-ordinary laws of science Schrödinger predicted).
 
 
 ## Neuronal simulator
@@ -34,9 +34,11 @@ A simulator is attached as an independent object.
 The simulator is based on a SystemC engine, so it can
 simulate the time-dependent processes of living matter.
 
+* [The theory establishing the code](https://jvegh.github.io/Dynamic-Abstract-Neural-Computing/docs/manual/ch_Foreword/index.html)
+* [The code](https://jvegh.github.io/Dynamic-Abstract-Neural-Computing/code)
+
 
 ## Authors
-
 
 ex. Végh, János (Vegh [optional dot] Janos at a GMail address)
 

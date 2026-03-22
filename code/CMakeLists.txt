@@ -94,7 +94,7 @@ set(QTGUI_LIB qtgui_lib)
 add_subdirectory(neuron)
 add_subdirectory(QtGUI)
 add_subdirectory(src)
-#add_subdirectory(demos)
+add_subdirectory(demos)
 
 ######################################################################
 ##  GTest setup

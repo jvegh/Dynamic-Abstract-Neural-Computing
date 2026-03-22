@@ -50,20 +50,20 @@
       <widget class="QLabel" name="SimulatedTimeLabel">
        <property name="geometry">
         <rect>
-         <x>310</x>
+         <x>330</x>
          <y>20</y>
-         <width>101</width>
+         <width>81</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>Simulated(ms)</string>
+        <string>Neuron(ms)</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>166</x>
+         <x>180</x>
          <y>20</y>
          <width>51</width>
          <height>20</height>
@@ -78,20 +78,20 @@
         <rect>
          <x>0</x>
          <y>20</y>
-         <width>81</width>
+         <width>101</width>
          <height>17</height>
         </rect>
        </property>
        <property name="text">
-        <string>System(us)</string>
+        <string>Processor(us)</string>
        </property>
       </widget>
       <widget class="QLineEdit" name="timeSystem">
        <property name="geometry">
         <rect>
-         <x>80</x>
+         <x>100</x>
          <y>20</y>
-         <width>81</width>
+         <width>71</width>
          <height>21</height>
         </rect>
        </property>
@@ -105,7 +105,7 @@
       <widget class="QLineEdit" name="timeUser">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>230</x>
          <y>20</y>
          <width>91</width>
          <height>21</height>

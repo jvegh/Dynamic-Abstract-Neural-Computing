@@ -28,43 +28,39 @@
 **  This is the example code for QCustomPlot.                                                              **
 **                                                                                                         **
 **  It demonstrates basic and some advanced capabilities of the widget. The interesting code is inside     **
-**  the "setup(...)Demo" functions of MainWindow.                                                          **
+**  the "setup(...)Demo" functions of VoltageWindow.                                                          **
 **                                                                                                         **
 **  In order to see a demo in action, call the respective "setup(...)Demo" function inside the             **
-**  MainWindow constructor. Alternatively you may call setupDemo(i) where i is the index of the demo       **
-**  you want (for those, see MainWindow constructor comments). All other functions here are merely a       **
+**  VoltageWindow constructor. Alternatively you may call setupDemo(i) where i is the index of the demo       **
+**  you want (for those, see VoltageWindow constructor comments). All other functions here are merely a       **
 **  way to easily create screenshots of all demos for the website. I.e. a timer is set to successively     **
 **  setup all the demos and make a screenshot of the window area and save it in the ./screenshots          **
 **  directory.                                                                                             **
 **                                                                                                         **
 *************************************************************************************************************/
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef VoltageWindow_H
+#define VoltageWindow_H
 
 #include <QMainWindow>
 #include <QTimer>
-#include "../../3rdParty/qcustomplot/include/qcustomplot.h"
+#include "qcustomplot.h"
 
-//#include "../../qcustomplot.h" // the header file of QCustomPlot. Don't forget to add it to your project, if you use an IDE, so it gets compiled.
 
 namespace Ui {
-class MainWindow;
+class VoltageWindow;
 }
 
-class MainWindow : public QMainWindow
+class VoltageWindow : public QMainWindow
 {
   Q_OBJECT
   
 public:
-  explicit MainWindow(QWidget *parent = 0);
-  ~MainWindow();
+  explicit VoltageWindow(QWidget *parent = 0);
+  ~VoltageWindow();
   
-  void setupDemo(int demoIndex);
   void setupRealtimeDataDemo(QCustomPlot *customPlot);
   void setupParametricCurveDemo(QCustomPlot *customPlot);
-
-  void setupPlayground(QCustomPlot *customPlot);
 
   void ProcessLine(QString line);
   void GetData(QString fileName);
@@ -76,14 +72,13 @@ public:
 private slots:
   void realtimeDataSlot();
   void screenShot();
-  void allScreenShots();
-  
+
 private:
-  Ui::MainWindow *ui;
+  Ui::VoltageWindow *ui;
   QString demoName;
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;
   int currentDemoIndex;
 };
 
-#endif // MAINWINDOW_H
+#endif // VoltageWindow_H

@@ -3,7 +3,7 @@
 #
 # @author János Végh
 
-message(HIGHLIGHTED "                    CustomPlot demo ")
+message(HIGHLIGHTED "                    CustomPlotRealTime demo ")
   find_package(SystemC REQUIRED)
 
 
@@ -24,7 +24,7 @@ link_directories(
 
 set(DEMO_SOURCES
    main.cpp
-   mainwindow.cpp
+   VoltageWindow.cpp
 )
 
 

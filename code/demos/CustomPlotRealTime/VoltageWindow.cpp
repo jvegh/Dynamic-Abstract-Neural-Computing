@@ -28,19 +28,19 @@
 **  This is the example code for QCustomPlot.                                                              **
 **                                                                                                         **
 **  It demonstrates basic and some advanced capabilities of the widget. The interesting code is inside     **
-**  the "setup(...)Demo" functions of MainWindow.                                                          **
+**  the "setup(...)Demo" functions of VoltageWindow.                                                          **
 **                                                                                                         **
 **  In order to see a demo in action, call the respective "setup(...)Demo" function inside the             **
-**  MainWindow constructor. Alternatively you may call setupDemo(i) where i is the index of the demo       **
-**  you want (for those, see MainWindow constructor comments). All other functions here are merely a       **
+**  VoltageWindow constructor. Alternatively you may call setupDemo(i) where i is the index of the demo       **
+**  you want (for those, see VoltageWindow constructor comments). All other functions here are merely a       **
 **  way to easily create screenshots of all demos for the website. I.e. a timer is set to successively     **
 **  setup all the demos and make a screenshot of the window area and save it in the ./screenshots          **
 **  directory.                                                                                             **
 **                                                                                                         **
 *************************************************************************************************************/
 
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "VoltageWindow.h"
+#include "ui_VoltageWindow.h"
 #include <QDebug>
 #include <iostream>
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
@@ -52,21 +52,23 @@
 
 #include <QFile>
 
-MainWindow::MainWindow(QWidget *parent) :
+VoltageWindow::VoltageWindow(QWidget *parent) :
   QMainWindow(parent),
-  ui(new Ui::MainWindow)
+  ui(new Ui::VoltageWindow)
 {
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
   
-  setupDemo(10);
-  //setupPlayground(ui->customPlot);
+  setupRealtimeDataDemo(ui->customPlot);
+  setWindowTitle("QCustomPlot: "+demoName);
+  statusBar()->clearMessage();
+  ui->customPlot->replot();
   // 10: setupRealtimeDataDemo(ui->customPlot);
   //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
-  //QTimer::singleShot(4000, this, SLOT(screenShot()));
+  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
-void MainWindow::setupDemo(int demoIndex)
+/*oid VoltageWindow::setupDemo(int demoIndex)
 {
   setupRealtimeDataDemo(ui->customPlot);
   setWindowTitle("QCustomPlot: "+demoName);
@@ -74,8 +76,9 @@ void MainWindow::setupDemo(int demoIndex)
   currentDemoIndex = demoIndex;
   ui->customPlot->replot();
 }
+*/
 
-void MainWindow::ProcessLine(QString line)
+void VoltageWindow::ProcessLine(QString line)
 {
     QStringList firstColumn;
      // Handle the first two items only
@@ -86,7 +89,7 @@ void MainWindow::ProcessLine(QString line)
     Voltage.push_back(line.split(",").at(1).toDouble());
  //    std::cout << line.toStdString() << '\n';
 }
-void MainWindow::GetData(QString fileName)
+void VoltageWindow::GetData(QString fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -100,7 +103,7 @@ void MainWindow::GetData(QString fileName)
     }
 }
 
-void MainWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
+void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
   demoName = "Single AP draw demo";
 
@@ -130,13 +133,13 @@ void MainWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
   connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
   
-  // setup a timer that repeatedly calls MainWindow::realtimeDataSlot:
+  // setup a timer that repeatedly calls VoltageWindow::realtimeDataSlot:
   connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
   dataTimer.start(10); // Interval 0 means to refresh as fast as possible
 }
 
 
-void MainWindow::realtimeDataSlot()
+void VoltageWindow::realtimeDataSlot()
 {
   static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
@@ -183,70 +186,19 @@ void MainWindow::realtimeDataSlot()
 }
 
 
-void MainWindow::setupPlayground(QCustomPlot *customPlot)
-{
-  Q_UNUSED(customPlot)
-}
-
-MainWindow::~MainWindow()
+VoltageWindow::~VoltageWindow()
 {
   delete ui;
 }
 
-void MainWindow::screenShot()
+void VoltageWindow::screenShot()
 {
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-  QPixmap pm = QPixmap::grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
-#elif QT_VERSION < QT_VERSION_CHECK(5, 5, 0)
-  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
-#elif QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-#else
   QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-#endif
   QString fileName = demoName.toLower()+".png";
   fileName.replace(" ", "");
   pm.save("./screenshots/"+fileName);
   qApp->quit();
 }
-
-void MainWindow::allScreenShots()
-{
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-  QPixmap pm = QPixmap::grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
-#elif QT_VERSION < QT_VERSION_CHECK(5, 5, 0)
-  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
-#elif QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-#else
-  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-#endif
-  QString fileName = demoName.toLower()+".png";
-  fileName.replace(" ", "");
-  pm.save("./screenshots/"+fileName);
-  
-  if (currentDemoIndex < 19)
-  {
-    if (dataTimer.isActive())
-      dataTimer.stop();
-    dataTimer.disconnect();
-    delete ui->customPlot;
-    ui->customPlot = new QCustomPlot(ui->centralWidget);
-    ui->verticalLayout->addWidget(ui->customPlot);
-    setupDemo(currentDemoIndex+1);
-    // setup delay for demos that need time to develop proper look:
-    int delay = 250;
-    if (currentDemoIndex == 10) // Next is Realtime data demo
-      delay = 12000;
-    else if (currentDemoIndex == 15) // Next is Item demo
-      delay = 5000;
-    QTimer::singleShot(delay, this, SLOT(allScreenShots()));
-  } else
-  {
-    qApp->quit();
-  }
-}
-
 
 
 

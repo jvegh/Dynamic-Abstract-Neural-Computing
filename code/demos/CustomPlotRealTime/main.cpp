@@ -25,7 +25,7 @@
 
 #include <QApplication>
 #include <systemc>
-#include "mainwindow.h"
+#include "VoltageWindow.h"
 
 int sc_main(int argc, char **argv)
 //int main(int argc, char *argv[])
@@ -34,7 +34,7 @@ int sc_main(int argc, char **argv)
   QApplication::setGraphicsSystem("raster");
 #endif
   QApplication a(argc, argv);
-  MainWindow w;
+  VoltageWindow w;
   w.show();
   
   return a.exec();

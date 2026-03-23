@@ -177,7 +177,7 @@ if(!Voltage.count())
 
 ScQtNeuron_AP_Window::~ScQtNeuron_AP_Window()
 {
-  delete ui;
+    delete ui;
     delete customPlot;
 }
 

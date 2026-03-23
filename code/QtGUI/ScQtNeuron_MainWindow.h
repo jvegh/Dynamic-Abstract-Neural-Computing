@@ -8,6 +8,7 @@
 #include <QVector>
 #include "ScQtAbout.h"
 #include "ScQtSimulator.h"
+#include "VoltageWindow.h"
 #include "SimulatorControlWindow.h"
 //#include "ScQtNeuron_Plot_AP.h"
 #include "neurontab.h"
@@ -129,7 +130,7 @@ private:
     void addTreeRoot(QString name, QString description);
     void addTreeChild(QTreeWidgetItem *parent,
                       QString name, QString description);
-
+    VoltageWindow *m_VoltageWindow;
     NeuronPhysicalTEST *MyNeuron;
     // Tabs
     QStackedWidget *m_stackedTabs = nullptr;

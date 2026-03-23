@@ -20,6 +20,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
      this->setStyleSheet("color: Navy;"
+                            "border-color:  LightGray;"
 //                        "border: 1px blue;"
                             "background-color:  LightGray;");
     //??Neuron::NeuronHandler::get();
@@ -73,9 +74,12 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 //    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
     m_Simulator_ControlWindow = new SimulatorControlWindow(this);
     m_Simulator_ControlWindow->show();
-    m_Simulator_ControlWindow->move(QPoint(600,000)),
-    m_AP_Window = new ScQtNeuron_AP_Window(this);
+    m_Simulator_ControlWindow->move(QPoint(600,000));
+    m_VoltageWindow = new VoltageWindow(m_Simulator);
+    m_VoltageWindow->show();
+/*    m_AP_Window = new ScQtNeuron_AP_Window(this);
     m_AP_Window->show();
+*/
 // Not sure if needed
 //    connect(m_simulator, &ScQtSimulator::eventHappened, this, &ScQtNeuron_MainWindow::event_happened);
 #if 0

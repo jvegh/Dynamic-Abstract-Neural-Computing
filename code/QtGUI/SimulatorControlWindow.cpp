@@ -23,7 +23,11 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
     setMinimumSize(360, 280);
     resize(500, 300);
     move(600,800);
+    ui->StepNumberBox->setRange(1,100);
+    ui->StepTimeBox->setRange(10,1000);
+    //
     // The thread and the simulator are created in the constructor so it is always safe to delete them.
+    //
     thread = new QThread();
     parent_Get()->m_Simulator = new ScQtSimulator();
     parent_Get()->m_Simulator->moveToThread(thread);
@@ -91,9 +95,18 @@ void SimulatorControlWindow::on_spikeButton_clicked()
 }*/
 void SimulatorControlWindow::on_method1Button_clicked()
 {
+    if(ui->timeMode->isChecked())
+    {
+        std::cerr << ui->StepNumberBox->value() << " us time";
+//        parent_Get()->statusBar()->showMessage(message, 1200);
+    }
+    if(ui->stepMode->isChecked())
+    {
+        std::cerr << ui->StepTimeBox->value() << " steps";
+    }
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
-    QString message = tr("Method1 requested");
-    parent_Get()->statusBar()->showMessage(message, 1200);
+//    QString message = tr("Method1 requested");
+//    parent_Get()->statusBar()->showMessage(message, 1200);
 /*    std::cerr << ui->continuousMode->isChecked()<< ui->eventMode->isChecked()<< ui->timeMode->isChecked()
               << ui->stepMode->isChecked() << ui->spikeMode->isChecked()<< "\n";*/
 }

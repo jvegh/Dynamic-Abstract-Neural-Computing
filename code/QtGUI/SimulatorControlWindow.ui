@@ -19,7 +19,7 @@
      <x>0</x>
      <y>0</y>
      <width>481</width>
-     <height>261</height>
+     <height>303</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -170,7 +170,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="Simulatingmode">
+     <widget class="QGroupBox" name="SimulationMode">
       <property name="title">
        <string>Simulating mode</string>
       </property>
@@ -208,7 +208,7 @@
         <rect>
          <x>300</x>
          <y>20</y>
-         <width>71</width>
+         <width>61</width>
          <height>23</height>
         </rect>
        </property>
@@ -246,6 +246,59 @@
        </property>
        <property name="text">
         <string>Time</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="StepParametersBox">
+      <property name="title">
+       <string>Simulation break</string>
+      </property>
+      <widget class="QSpinBox" name="StepNumberBox">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>20</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>81</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>No. steps</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>20</y>
+         <width>91</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Time step(us)</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="StepTimeBox">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>20</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
        </property>
       </widget>
      </widget>

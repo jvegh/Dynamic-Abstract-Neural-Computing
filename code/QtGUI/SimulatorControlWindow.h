@@ -42,10 +42,10 @@ class SimulatorControlWindow : public QDialog
     friend class ScQtNeuron_AP_Window;
 
 public:
-    explicit SimulatorControlWindow(ScQtNeuron_MainWindow *parent = 0);
+    explicit SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeuron_MainWindow *parent = 0);
     ~SimulatorControlWindow();
     Ui::SimulatorControlWindow *ui;
-    NeuronPhysicalTEST *MyNeuron;
+    NeuronPhysical *m_Neuron;
     ScQtNeuron_MainWindow* parent_Get() { return m_parent;}
 private:
     /**

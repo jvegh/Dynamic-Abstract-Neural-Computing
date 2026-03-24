@@ -36,7 +36,7 @@ ScQtNeuron_AP_Window::ScQtNeuron_AP_Window(ScQtNeuron_MainWindow *parent) :
       customPlot->replot();
       break;
   }
-  setWindowTitle(WindowTitle + QString(m_Simulator_ControlWindow->MyNeuron->name()));
+  setWindowTitle(WindowTitle + QString(m_Simulator_ControlWindow->m_Neuron->name()));
   statusBar()->clearMessage();
 
    // 10: setupRealtimeDataDemo(ui->customPlot);
@@ -190,7 +190,7 @@ void ScQtNeuron_AP_Window::simulatorEvent()
     QString sim_time = QString(varAsString.c_str());
     m_Simulator_ControlWindow->ui->SimulatedTime->setText(sim_time);
 
-    SC = m_Simulator_ControlWindow->MyNeuron->MembraneRelativePotential_Get();
+    SC = m_Simulator_ControlWindow->m_Neuron->MembraneRelativePotential_Get();
     varAsString = std::to_string(SC);
     sim_time = QString(varAsString.c_str());
     m_Simulator_ControlWindow->ui->timeSystem->setText(sim_time);

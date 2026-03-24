@@ -10,8 +10,9 @@
 #include "ui_SimulatorControlWindow.h"
 #include "Utils.h"
 
-SimulatorControlWindow::SimulatorControlWindow(ScQtNeuron_MainWindow *parent) :
+SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeuron_MainWindow *parent) :
     QDialog(parent),
+    m_Neuron(Neuron),
     ui(new Ui::SimulatorControlWindow),m_parent(parent)
 {
     ui->setupUi(this);
@@ -24,7 +25,6 @@ SimulatorControlWindow::SimulatorControlWindow(ScQtNeuron_MainWindow *parent) :
     move(600,800);
     // The thread and the simulator are created in the constructor so it is always safe to delete them.
     thread = new QThread();
-    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
     parent_Get()->m_Simulator = new ScQtSimulator();
     parent_Get()->m_Simulator->moveToThread(thread);
     connect(thread, SIGNAL(started()), parent_Get()->m_Simulator, SLOT(mainLoop()));
@@ -53,7 +53,7 @@ void SimulatorControlWindow::on_resetButton_clicked()
 
 void SimulatorControlWindow::on_eventHappened()
 {
-    qDebug()<<"Event happened @ "<< 1000*sc_time_stamp().to_seconds() << ":" << MyNeuron->MembraneAbsolutePotential_Get();
+    qDebug()<<"Event happened @ "<< 1000*sc_time_stamp().to_seconds() << ":" << m_Neuron->MembraneAbsolutePotential_Get();
     ui->SimulatedTime->setText(QString(sc_time_String_Get(sc_core::sc_time_stamp()).c_str()));
     ui->timeUser->setText(QString(time_String_Get(parent_Get()->m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     ui->timeSystem->setText(QString(time_String_Get(parent_Get()->m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));

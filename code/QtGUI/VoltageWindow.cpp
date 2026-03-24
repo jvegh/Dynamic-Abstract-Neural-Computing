@@ -34,10 +34,11 @@
 
 #include <QFile>
 
-VoltageWindow::VoltageWindow(ScQtSimulator *Simulator, QWidget *parent ):
+VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
   QMainWindow(parent),
   ui(new Ui::VoltageWindow),
-    m_Simulator(Simulator)
+    m_Simulator(Simulator),
+    m_neuron(Neuron)
 {
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
@@ -119,8 +120,10 @@ void VoltageWindow::realtimeDataSlot()
 //  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
 //  double key = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
+double Volt;
+Volt = m_neuron->MembraneAbsolutePotential_Get();
     if(!Voltage.count()) return;
-  double Volt = Voltage[index];
+   Volt = Voltage[index];
   double key = Time[index++];
   if(index>=Voltage.count())
       index = 0;

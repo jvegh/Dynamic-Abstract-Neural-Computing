@@ -35,6 +35,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include "ScQtSimulator.h"
+#include "TestNeuronPhysical.h"
 #include "qcustomplot.h"
 
 
@@ -47,7 +48,7 @@ class VoltageWindow : public QMainWindow
   Q_OBJECT
   
 public:
-  explicit VoltageWindow(ScQtSimulator *Simulator, QWidget *parent = 0);
+  explicit VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
   ~VoltageWindow();
   
   void setupRealtimeDataDemo(QCustomPlot *customPlot);
@@ -67,6 +68,7 @@ private slots:
 private:
   Ui::VoltageWindow *ui;
     ScQtSimulator * m_Simulator;
+  NeuronPhysical *m_neuron;
   QString demoName;
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;

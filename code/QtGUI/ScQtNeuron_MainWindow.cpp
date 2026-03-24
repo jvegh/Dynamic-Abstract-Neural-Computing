@@ -72,10 +72,12 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     readSettings(); // Read window-related settings
 */    setupToolBoxes();   // Set up the tool box contents
 //    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
-    m_Simulator_ControlWindow = new SimulatorControlWindow(this);
+    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
+
+    m_Simulator_ControlWindow = new SimulatorControlWindow(MyNeuron,this);
     m_Simulator_ControlWindow->show();
     m_Simulator_ControlWindow->move(QPoint(600,000));
-    m_VoltageWindow = new VoltageWindow(m_Simulator);
+    m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
 /*    m_AP_Window = new ScQtNeuron_AP_Window(this);
     m_AP_Window->show();

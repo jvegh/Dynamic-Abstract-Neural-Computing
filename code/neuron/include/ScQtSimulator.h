@@ -5,6 +5,7 @@
 #ifndef SCQTSIMULATOR_H
 #define SCQTSIMULATOR_H
 
+#include "sysc/kernel/sc_time.h"
 #include <QObject>
 #include <QMutex>
 #include <QTime>
@@ -35,8 +36,8 @@ public:
      * @brief This enum describes the various available methods
      */
     enum Method {
-        Method1 = 1,
-        Method2 = 2,
+        Method_SingleSteps = 1,
+        Method_SimulatedTime = 2,
         Method3 = 3
     };
     /**
@@ -71,6 +72,8 @@ private:
     // Define time benchmarking variables
     chrono::steady_clock::time_point m_system_t =chrono::steady_clock::now();
     std::chrono::duration< int64_t, nano> m_system_x,m_system_s = (std::chrono::duration< int64_t, nano>)0;
+    uint64_t m_NoOfSteps = 1;
+    sc_core::sc_time m_TimeOfAStep = sc_core::sc_time(100,sc_core::SC_US);
 
     /**
      * @brief Currently requested method
@@ -94,18 +97,23 @@ private:
     QWaitCondition condition;
     /**
      * @brief 1st method which could be called
-     *
-     * Counts 10 sec in this example.
-     * Counting is interrupted if #_abort or #_interrupt is set to true.
-     */
-    void doMethod1();
+     *        break;
+
+     * Stepping is interrupted if #_abort or #_interrupt is set to true.
+
+    void doMethod1();*/
     /**
-     * @brief 2nd method which could be called
+     * @brief Single event stepping mode
      *
-     * Counts 20 sec in this example.
-     * Counting is interrupted if #_abort or #_interrupt is set to true.
+     * Simulating is interrupted if #_abort or #_interrupt is set to true.
      */
-    void doMethod2();
+    void doSimulationSteps();
+    /**
+     * @brief Simulated time limited stepping mode
+     *
+     * Simulating is interrupted if #_abort or #_interrupt is set to true.
+     */
+    void doSimulatedTime();
     /**
      * @brief 3rd method which could be called
      *

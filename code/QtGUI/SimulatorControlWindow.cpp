@@ -91,7 +91,7 @@ void SimulatorControlWindow::on_spikeButton_clicked()
 }*/
 void SimulatorControlWindow::on_method1Button_clicked()
 {
-    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method1);
+    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     QString message = tr("Method1 requested");
     parent_Get()->statusBar()->showMessage(message, 1200);
 /*    std::cerr << ui->continuousMode->isChecked()<< ui->eventMode->isChecked()<< ui->timeMode->isChecked()
@@ -100,14 +100,14 @@ void SimulatorControlWindow::on_method1Button_clicked()
 
 void SimulatorControlWindow::on_method2Button_clicked()
 {
-    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method1);
+    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SimulatedTime);
     QString message = tr("Method2 requested");
     parent_Get()->statusBar()->showMessage(message, 1200);
 }
 
 void SimulatorControlWindow::on_method3Button_clicked()
 {
-    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method1);
+    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method3);
     QString message = tr("Method3 requested");
     parent_Get()->statusBar()->showMessage(message, 1200);
 }

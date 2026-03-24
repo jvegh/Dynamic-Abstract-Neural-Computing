@@ -70,6 +70,7 @@ void ScQtSimulator::abort()
     condition.wakeOne();
 }
 
+#if 0
 void ScQtSimulator::doMethod1()
 {
 
@@ -78,7 +79,7 @@ void ScQtSimulator::doMethod1()
     sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity();
 //    sc_start( sc_core::sc_time_to_pending_activity() );
 //        std::cerr << ThisTime.to_string() << "\n";
-    BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin the benchmarking here
+    BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
      sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
     BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
 //    qDebug()<< ThisTime.to_string();
@@ -87,7 +88,45 @@ void ScQtSimulator::doMethod1()
     qDebug()<<"Starting Method1 in Thread "<<thread()->currentThreadId();
     emit eventHappened();
 }
+#endif
 
+void ScQtSimulator::doSimulationSteps()
+{
+    mutex.lock();
+    uint64_t i = 0;
+    while( (i++ < m_NoOfSteps)  && !_abort && !_interrupt ) {
+        sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity(); // Make a single simulation step
+            BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
+        sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
+            BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
+    }
+    mutex.unlock();
+    if (_abort || _interrupt) {
+        qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();
+    }
+    emit eventHappened();
+}
+
+void ScQtSimulator::doSimulatedTime()
+{
+    mutex.lock();
+    sc_core::sc_time TimeLimit = sc_core::sc_time_stamp() + m_TimeOfAStep;
+    while((sc_core::sc_time_stamp() < TimeLimit) && !_abort && !_interrupt )
+    {
+        sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity(); // Make a single simulation step
+            BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
+        sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
+            BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
+    }
+    mutex.unlock();
+    if (_abort || _interrupt) {
+        qDebug()<<"Interrupted doSimulatedTime in Thread "<<thread()->currentThreadId();
+    }
+    emit eventHappened();
+}
+
+
+#if 0
 void ScQtSimulator::doMethod2()
 {
     qDebug()<<"Starting Method2 in Thread "<<thread()->currentThreadId();
@@ -111,6 +150,7 @@ void ScQtSimulator::doMethod2()
         emit valueChanged(QString::number(i));
     }
 }
+#endif
 
 void ScQtSimulator::doMethod3()
 {
@@ -138,10 +178,9 @@ void ScQtSimulator::doMethod3()
 
 void ScQtSimulator::mainLoop()
 {
-    qDebug()<<"Starting ScQtSimulator mainLoop in Thread "<<thread()->currentThreadId();
+ //   qDebug()<<"Starting ScQtSimulator mainLoop in Thread "<<thread()->currentThreadId();
 
     forever {
-
         mutex.lock();
         if (!_interrupt && !_abort) {
             condition.wait(&mutex);
@@ -159,11 +198,11 @@ void ScQtSimulator::mainLoop()
         mutex.unlock();
 
         switch(method) {
-        case Method1:
-            doMethod1();
+        case Method_SingleSteps:
+            doSimulationSteps();
             break;
-        case Method2:
-            doMethod2();
+        case Method_SimulatedTime:
+            doSimulatedTime();
             break;
         case Method3:
             doMethod3();

@@ -1,3 +1,13 @@
+/** @file ScQtNeuron_MainWindow.cpp
+ *  @brief The main window for the SystemC-based neuron simulator, using Qt's stuff
+ *  Ideas taken from  http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
+ *  https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC
+ *  and https://github.com/mortbopet/Ripes
+ */
+/*
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
 #include "ScQtNeuron_MainWindow.h"
 #include "ui_ScQtNeuron_MainWindow.h"
 //#include "ScQtNeuron_ParameterWindow.h"
@@ -21,6 +31,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     ui->setupUi(this);
      this->setStyleSheet("color: Navy;"
                             "border-color:  LightGray;"
+//                        "background-color: rgb(50,50, 150);"
 //                        "border: 1px blue;"
                             "background-color:  LightGray;");
     //??Neuron::NeuronHandler::get();
@@ -30,6 +41,10 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     QFontDatabase::addApplicationFont(
         ":/fonts/Inconsolata/Inconsolata-Regular.ttf");
     QFontDatabase::addApplicationFont(":/fonts/Inconsolata/Inconsolata-Bold.ttf");
+
+    setMinimumSize(300, 420);
+    resize(500, 600);
+    move(200,300);
 
     // Create tabs
     m_stackedTabs = new QStackedWidget(this);
@@ -167,7 +182,6 @@ bool ScQtNeuron_MainWindow::maybeClose()
         else if (ret == QMessageBox::Cancel)
             return false;
     return false;
-
 }
 
 void ScQtNeuron_MainWindow::addTreeRoot(QString name, QString description)
@@ -198,7 +212,6 @@ void ScQtNeuron_MainWindow::addTreeChild(QTreeWidgetItem *parent,
 }
 
 
-
 void ScQtNeuron_MainWindow::setupToolBoxes(void)
 {
  /*  QFileSystemModel *model = new QFileSystemModel;
@@ -214,7 +227,6 @@ void ScQtNeuron_MainWindow::setupToolBoxes(void)
 //    ui->dirTreeView->setModel(dirModel);
 //    ui->dirTreeView->setRootIndex(dirModel->setRootPath(Directories.UserData.c_str()+'/'));
 //    ui->dirTreeView->setRootIndex(dirModel->setRootPath("~/REPO/"));
-
 }
 
 void ScQtNeuron_MainWindow::setupMenus() {
@@ -344,18 +356,6 @@ void ScQtNeuron_MainWindow::version() {
  //   aboutDialog.setText("NeuronScQt :"+ getGitVersion());
     aboutDialog.exec();
 }
-
-#if 0
-// Not sure if needed
-void ScQtNeuron_MainWindow::event_happened()
-{
-    QMessageBox aboutDialog(this);
-    aboutDialog.setWindowIcon(QIcon(":/icons/neurer.png"));
-
-    aboutDialog.setText("Event happened in Main");
-    aboutDialog.exec();
-}
-#endif
 
 
 #include "moc_ScQtNeuron_MainWindow.cpp"

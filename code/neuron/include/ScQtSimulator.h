@@ -1,6 +1,13 @@
+/** @file ScQtSimulator.h
+ *  @brief A semi general purpose simulator for SystemC task, using Qt's stuff
+ *  Ideas taken from  http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
+ *  https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC
+ *  and https://github.com/mortbopet/Ripes
+ */
 /*
-      - Started from the example by Fabien Pierre-Nicolas on http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
-  */
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
 
 #ifndef SCQTSIMULATOR_H
 #define SCQTSIMULATOR_H
@@ -13,18 +20,16 @@
 
 using namespace std;
 
-// The benchmarking is abused here; to not repeat the code, is used unconditionally
-#define MAKE_TIME_BENCHMARKING  // uncomment to measure the clock time with benchmarking macros
+// Benchmarking is abused here; to not repeat the code, is used unconditionally
+#define MAKE_TIME_BENCHMARKING  // Do not remove; used to measure processor time
 #ifdef MAKE_TIME_BENCHMARKING
 #include "MacroTimeBenchmarking.h"    // Must be after the '#define MAKE_TIME_BENCHMARKING' to have its effect
 #endif
 
-
 /*!
  * \class ScQtSimulator
- * \brief  Implements a general SystemC simulator, based on Qt technology
+ * \brief  Implements a semi-general SystemC simulator, based on Qt technology
  */
-
 
 class ScQtSimulator : public QObject
 {
@@ -43,7 +48,7 @@ public:
     /**
      * @brief Requests for the method @em method to be executed
      *
-     * This method will defines #_method and set #_abort to interrupt current method.
+     * This method defines #_method and set #_abort to interrupt current method.
      * It is thread safe as it uses #mutex to protect access to #_method and #_abort variable.
      */
     void requestMethod(Method method);
@@ -62,19 +67,19 @@ public:
     //        clock_time += 24*60*60*1000;
         return TimeDiff;
     }
-    // Return processor time, [us]
+    // Return processor time from the benchmark, [us]
     double systemTime_Get()
     {
         return std::chrono::duration_cast<std::chrono::microseconds>(m_system_s).count();
     }
-
+    void NoOfSteps_Set(uint64_t N = 1){ m_NoOfSteps = N;}
+    void TimeOfSteps_Set(sc_core::sc_time T = sc_core::sc_time(100,sc_core::SC_US)){ m_TimeOfAStep = T;}
 private:
-    // Define time benchmarking variables
+    // Define time benchmarking variables and utility functions
     chrono::steady_clock::time_point m_system_t =chrono::steady_clock::now();
     std::chrono::duration< int64_t, nano> m_system_x,m_system_s = (std::chrono::duration< int64_t, nano>)0;
     uint64_t m_NoOfSteps = 1;
     sc_core::sc_time m_TimeOfAStep = sc_core::sc_time(100,sc_core::SC_US);
-
     /**
      * @brief Currently requested method
      */
@@ -96,20 +101,13 @@ private:
      */
     QWaitCondition condition;
     /**
-     * @brief 1st method which could be called
-     *        break;
-
-     * Stepping is interrupted if #_abort or #_interrupt is set to true.
-
-    void doMethod1();*/
-    /**
      * @brief Single event stepping mode
      *
      * Simulating is interrupted if #_abort or #_interrupt is set to true.
      */
     void doSimulationSteps();
     /**
-     * @brief Simulated time limited stepping mode
+     * @brief Simulated-time-limited stepping mode
      *
      * Simulating is interrupted if #_abort or #_interrupt is set to true.
      */

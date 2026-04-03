@@ -163,7 +163,7 @@ public:
     {   return m_Neuron->MembraneResistanceGOhm_Get();}
     double MembraneTauMSec_Get()
     {   return m_Neuron->MembraneTauMSec_Get();}
-
+    double dVdtResulting_Get(void) {return m_Membrane_dVdt_Resulting;}
 protected:
 
     NeuronInputCurrent* m_RushinCurrent;

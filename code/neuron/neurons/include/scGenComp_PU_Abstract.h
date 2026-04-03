@@ -227,6 +227,12 @@ class scGenComp_PU_Abstract: public sc_core::sc_module
     EVENT_GenComp_t EVENT_GenComp;
     /// The flag describing the stage of the unit
     inline GenCompStageMachine_t StageFlag_Get(void){ return mStageFlag; }
+    /// Return simulated local sc_time converted to milliseconds
+    float LocalTimeInMillisec_Get(){    return scLocalTime_Get().to_seconds()*THOUSAND;}
+    /// Return simulated local sc_time converted to microseconds
+    float LocalTimeInMicrosec_Get(){    return scLocalTime_Get().to_seconds()*THOUSAND*THOUSAND;}
+    /// Return simulated local sc_time converted to nanoseconds
+    float LocalTimeInNanosec_Get(){    return scLocalTime_Get().to_seconds()*THOUSAND*THOUSAND*THOUSAND;}
 //  To be implemented
 //    virtual void TransmissionBegin_Do(){}
 protected:
@@ -305,13 +311,7 @@ protected:
     sc_core::sc_time scLocalTime_Get() const {return sc_core::sc_time_stamp()-mLocalTimeBase;}
     double scLocalTimeMS_Get(void){return scLocalTime_Get().to_seconds()*1000.;}
     // Return local time for calculations in derived classes, to avoid using direct SystemC calls
-    /// Return simulated local sc_time converted to milliseconds
-    float LocalTimeInMillisec_Get(){    return scLocalTime_Get().to_seconds()*THOUSAND;}
-    /// Return simulated local sc_time converted to microseconds
-    float LocalTimeInMicrosec_Get(){    return scLocalTime_Get().to_seconds()*THOUSAND*THOUSAND;}
-    /// Return simulated local sc_time converted to nanoseconds
-    float LocalTimeInNanosec_Get(){    return scLocalTime_Get().to_seconds()*THOUSAND*THOUSAND*THOUSAND;}
-    /**
+     /**
      * @brief scLocalTimeBase_Set
      * @param T The beginning of the simulated time of the recent operation
      */

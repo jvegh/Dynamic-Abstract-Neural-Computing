@@ -46,6 +46,7 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
   setWindowTitle("QCustomPlot: "+demoName);
   statusBar()->clearMessage();
   ui->customPlot->replot();
+  realtimeDataSlot();
    //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
@@ -82,6 +83,8 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
     GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
   // include this section to fully disable antialiasing for higher performance:
+    customPlot->legend->setVisible(true);
+    customPlot->legend->setFont(QFont("Helvetica", 9));
   /*
   customPlot->setNotAntialiasedElements(QCP::aeAll);
   QFont font;
@@ -92,16 +95,25 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   */
   customPlot->addGraph(); // blue line
   customPlot->graph(0)->setPen(QPen(QColor(40, 110, 255)));
+  customPlot->graph(0)->setName("ActionPotential");
   customPlot->addGraph(); // red line
   customPlot->graph(1)->setPen(QPen(QColor(255, 110, 40)));
+  customPlot->graph(1)->setName("dV/dt gradient");
+  customPlot->addGraph(); // green line
+  customPlot->graph(2)->setPen(QPen(QColor(31, 127, 31)));
+  customPlot->graph(2)->setName("Another");
   index = 0;
 
   QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
   timeTicker->setTimeFormat("%s:%z"); //"%m:%s:%Z"
   customPlot->xAxis->setTicker(timeTicker);
-  customPlot->axisRect()->setupFullAxesBox();
+  customPlot->xAxis->setLabel("Time (ms)");
   customPlot->yAxis->setRange(-30, 110);
-  customPlot->yAxis2->setRange(-1000, 3000);
+  customPlot->yAxis->setLabel("Voltage (mV)");
+   customPlot->yAxis2->setRange(-100, 200);
+  customPlot->yAxis2->setLabel("dV/dt (V/m)");
+   customPlot->axisRect()->setupFullAxesBox();
+   //??customPlot->yAxis2->setRotation (180);
 
   // make left and bottom axes transfer their ranges to right and top axes:
   connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
@@ -119,12 +131,14 @@ void VoltageWindow::realtimeDataSlot()
 {
 //  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
-//  double key = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
 double Volt;
-//Volt = m_neuron->MembraneAbsolutePotential_Get();
     if(!Voltage.count()) return;
    Volt = Voltage[index];
   double key = Time[index++];
+//  double key2 = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
+  double key2 = m_neuron->LocalTimeInMillisec_Get();
+  double Volt2 = m_neuron->MembraneRelativePotential_Get();
+  double DvDt = m_neuron->dVdtResulting_Get();
   if(index>=Voltage.count())
       index = 0;
    static double lastPointKey = 0;
@@ -134,16 +148,20 @@ double Volt;
     //  Time.push_back(line.split(",").at(0).toDouble());
     //  Voltage.push_back(line.split(",").at(1).toDouble());
 
+
       ui->customPlot->graph(0)->addData(key, Volt);
+    ui->customPlot->graph(1)->addData(key2, 10*Volt2);
+      ui->customPlot->graph(2)->addData(key2, DvDt/3);
     // rescale value (vertical) axis to fit the current data:
-    //ui->customPlot->graph(0)->rescaleValueAxis();
-    //ui->customPlot->graph(1)->rescaleValueAxis(true);
+    ui->customPlot->graph(0)->rescaleValueAxis();
+    ui->customPlot->graph(1)->rescaleValueAxis(true);
+    ui->customPlot->graph(2)->rescaleValueAxis(true);
     lastPointKey = key;
 //    if(index>sizeof(Voltage))
 //        Voltage.clear();
   }
   // make key axis range scroll with the data (at a constant range size of 10):
-  ui->customPlot->xAxis->setRange(key, 5, Qt::AlignRight);
+  ui->customPlot->xAxis->setRange(key, 2.5, Qt::AlignRight);
   ui->customPlot->replot();
 
   // calculate frames per second:

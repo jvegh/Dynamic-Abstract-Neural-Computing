@@ -1,3 +1,13 @@
+/** @file ScQtNeuron_MainWindow.cpp
+ *  @brief The main window for the SystemC-based neuron simulator, using Qt's stuff
+ *  Ideas taken from  http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
+ *  https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC
+ *  and https://github.com/mortbopet/Ripes
+ */
+/*
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
 #ifndef ScQtNeuron_MAINWINDOW_H
 #define ScQtNeuron_MAINWINDOW_H
 
@@ -47,16 +57,11 @@ struct PlotStyle
     QColor ConfidenceBands_PenColor;
     QColor MeasurementData_PenColor;
     QColor TheoryCurve_PenColor;
-   /* QCPGraph::LineStyle MeasurementData_LineStyle;
-    QCPScatterStyle  TheoryCurve_ScatterShape;
-    QCPScatterStyle  MeasurementData_ScatterShape;
-*/
     QColor ConfidenceBands_BrushColor;
     short int ConfidenceBands_LineWidth; // The width of the line
     short int TheoryCurve_LineWidth;
 
     Qt::PenStyle Theory_LineStyle; // The style of line drawing
-
 };
 class RipesTab;
 
@@ -64,7 +69,6 @@ struct TabWidgets {
     RipesTab *tab;
     QToolBar *toolbar;
 };
-
 
 class ScQtNeuron_MainWindow : public QMainWindow
 {
@@ -141,7 +145,6 @@ private:
 protected:
     Ui::ScQtNeuron_MainWindow *ui;
 };
-
 
 
 class global_options_ {

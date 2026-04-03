@@ -1,6 +1,13 @@
-/*
-      - Started from the example by Fabien Pierre-Nicolas on http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
+/** @file ScQtSimulator.h
+ *  @brief A semi general purpose simulator for SystemC task, using Qt's stuff
+ *  Ideas taken from  http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
+ *  https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC
+ *  and https://github.com/mortbopet/Ripes
  */
+/*
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
 
 #include <systemc>
 #include <QTimer>
@@ -10,35 +17,6 @@
 
 #include "ScQtSimulator.h"
 
-/*
-In your class (or member function) define
-    @code{.cpp}
-chrono::steady_clock::time_point t =chrono::steady_clock::now();
-std::chrono::duration< int64_t, nano> x,s=(std::chrono::duration< int64_t, nano>)0;
-@endcode
-    and use the macros as as
-    @code{.cpp}
-BENCHMARK_TIME_RESET(&t,&x,&s); // Reset at the very begining, say in the constructor
-@endcode
-    Later put the benchmarked code between macros, used as brackets
-    @code{.cpp}
-BENCHMARK_TIME_BEGIN(&t,&x);    // Begin the benchmarking here
-your code
-    BENCHMARK_TIME_END(&t,&x,&s);   // End benchmarking here
-@endcode
-    After using these macros, the benchmarked time values are returned:
-                                               (since BEGIN) in x (nanoseconds)
-                                               and the sum of all benchmarked time (since RESET) in s (nanoseconds).
-                                                       Access the result as
-                                                       @code{.cpp}
-                                                       std::cerr  << "Simulation took " << s.count()/1000/1000. << " msec CLOCK time" << endl;
-@endcode
-
-        In an object, you can RESET in the constructor,
-    in the member functions between BEGIN and END measure the
-            one-time utilization, and in the destructor to read out the total benchmarked time.
-        Or to benchmark (in multiple variables) execution CLOCK time  about critical sections of your code.
-*/
 
 ScQtSimulator::ScQtSimulator(QObject *parent) :
     QObject(parent)
@@ -92,7 +70,6 @@ void ScQtSimulator::doMethod1()
 
 void ScQtSimulator::doSimulationSteps()
 {
-    mutex.lock();
     uint64_t i = 0;
     while( (i++ < m_NoOfSteps)  && !_abort && !_interrupt ) {
         sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity(); // Make a single simulation step
@@ -100,7 +77,6 @@ void ScQtSimulator::doSimulationSteps()
         sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
             BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
     }
-    mutex.unlock();
     if (_abort || _interrupt) {
         qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();
     }
@@ -109,7 +85,6 @@ void ScQtSimulator::doSimulationSteps()
 
 void ScQtSimulator::doSimulatedTime()
 {
-    mutex.lock();
     sc_core::sc_time TimeLimit = sc_core::sc_time_stamp() + m_TimeOfAStep;
     while((sc_core::sc_time_stamp() < TimeLimit) && !_abort && !_interrupt )
     {
@@ -118,7 +93,6 @@ void ScQtSimulator::doSimulatedTime()
         sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
             BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
     }
-    mutex.unlock();
     if (_abort || _interrupt) {
         qDebug()<<"Interrupted doSimulatedTime in Thread "<<thread()->currentThreadId();
     }

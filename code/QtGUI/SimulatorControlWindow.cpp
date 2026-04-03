@@ -52,6 +52,11 @@ SimulatorControlWindow::~SimulatorControlWindow()
 
 void SimulatorControlWindow::on_resetButton_clicked()
 {
+    //    QString message = tr("Method3 requested");
+    parent_Get()->m_Simulator->TimesReset();  // Reset the three times
+    m_Neuron->Initialize_Do();  // Re-initialize the SystemC part
+    parent_Get()->VoltageWindow_Get()->ResetDisplay();
+    on_eventHappened();
     qDebug()<<"Reset simulator in Thread "<<this->QObject::thread()->currentThreadId();
 }
 
@@ -124,11 +129,6 @@ void SimulatorControlWindow::on_method2Button_clicked()
 void SimulatorControlWindow::on_method3Button_clicked()
 {
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method3);
-//    QString message = tr("Method3 requested");
-    parent_Get()->m_Simulator->TimesReset();  // Reset the three times
-    m_Neuron->Initialize_Do();  // Re-initialize the SystemC part
-    parent_Get()->VoltageWindow_Get()->ResetDisplay();
-    on_eventHappened();
 //    parent_Get()->statusBar()->showMessage(message, 1200);
 }
 

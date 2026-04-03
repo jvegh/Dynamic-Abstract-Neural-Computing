@@ -163,20 +163,19 @@ double Volt;
   // make key axis range scroll with the data (at a constant range size of 10):
   ui->customPlot->xAxis->setRange(key, 2.5, Qt::AlignRight);
   ui->customPlot->replot();
-  
   // calculate frames per second:
   static double lastFpsKey;
   static int frameCount;
   ++frameCount;
   if (key-lastFpsKey > 1) // average fps over 2 seconds
   {
-    ui->statusBar->showMessage(
+    statusBar()->showMessage(
           QString("%1 FPS, Total Data points: %2")
           .arg(frameCount/(key-lastFpsKey), 0, 'f', 0)
           .arg(ui->customPlot->graph(0)->data()->size()
 //                   +ui->customPlot->graph(1)->data()->size()
                    )
-          , 0);
+          , 1000);
     lastFpsKey = key;
     frameCount = 0;
   }

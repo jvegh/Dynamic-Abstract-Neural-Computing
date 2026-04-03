@@ -72,14 +72,14 @@ public:
     {
         return std::chrono::duration_cast<std::chrono::microseconds>(m_system_s).count();
     }
+    void NoOfSteps_Set(uint64_t N = 1){ m_NoOfSteps = N;}
+    void TimeOfSteps_Set(sc_core::sc_time T = sc_core::sc_time(100,sc_core::SC_US)){ m_TimeOfAStep = T;}
 private:
     // Define time benchmarking variables and utility functions
     chrono::steady_clock::time_point m_system_t =chrono::steady_clock::now();
     std::chrono::duration< int64_t, nano> m_system_x,m_system_s = (std::chrono::duration< int64_t, nano>)0;
     uint64_t m_NoOfSteps = 1;
     sc_core::sc_time m_TimeOfAStep = sc_core::sc_time(100,sc_core::SC_US);
-    void NoOfSteps_Set(uint64_t N = 1){ m_NoOfSteps = N;}
-    void TimeOfSteps(sc_core::sc_time T = sc_core::sc_time(100,sc_core::SC_US)){ m_TimeOfAStep = T;}
     /**
      * @brief Currently requested method
      */

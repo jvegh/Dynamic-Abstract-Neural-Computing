@@ -12,6 +12,8 @@
 #ifndef SCQTSIMULATOR_H
 #define SCQTSIMULATOR_H
 
+//#include <sysc>
+#include "sysc/kernel/sc_simcontext.h"
 #include "sysc/kernel/sc_time.h"
 #include <QObject>
 #include <QMutex>
@@ -67,10 +69,34 @@ public:
     //        clock_time += 24*60*60*1000;
         return TimeDiff;
     }
+    void userTime_Reset(void)
+    {
+        m_clock_time_begin = QTime::currentTime();
+    }
+    void scTime_Reset(void)
+    {
+        m_sc_time_begin = sc_core::sc_time_stamp();
+    }
+    sc_core::sc_time scTime_Get(void)
+    {
+        return sc_core::sc_time_stamp() - m_sc_time_begin;
+    }
+    void TimesReset()
+    {
+        scTime_Reset();
+        userTime_Reset();
+        systemTime_Reset();
+    }
     // Return processor time from the benchmark, [us]
     double systemTime_Get()
     {
         return std::chrono::duration_cast<std::chrono::microseconds>(m_system_s).count();
+    }
+    void systemTime_Reset()
+    {
+        m_system_t =chrono::steady_clock::now();
+        m_system_x = m_system_s = (std::chrono::duration< int64_t, nano>)0;
+        BENCHMARK_TIME_RESET(&m_system_t,&m_system_x,&m_system_s); // Reset at the very beginning, say in the constructor
     }
     void NoOfSteps_Set(uint64_t N = 1){ m_NoOfSteps = N;}
     void TimeOfSteps_Set(sc_core::sc_time T = sc_core::sc_time(100,sc_core::SC_US)){ m_TimeOfAStep = T;}
@@ -80,7 +106,8 @@ private:
     std::chrono::duration< int64_t, nano> m_system_x,m_system_s = (std::chrono::duration< int64_t, nano>)0;
     uint64_t m_NoOfSteps = 1;
     sc_core::sc_time m_TimeOfAStep = sc_core::sc_time(100,sc_core::SC_US);
-    /**
+    sc_core::sc_time m_sc_time_begin;
+    /*
      * @brief Currently requested method
      */
     Method _method;

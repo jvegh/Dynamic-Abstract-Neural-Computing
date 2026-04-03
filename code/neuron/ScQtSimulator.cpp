@@ -24,11 +24,7 @@ ScQtSimulator::ScQtSimulator(QObject *parent) :
     _abort = false;
     _interrupt = false;
     sc_start( sc_core::SC_ZERO_TIME);
-    m_clock_time_begin = QTime::currentTime();
-    // Now initialize the system time clock; reset system clock timer
-    m_system_t =chrono::steady_clock::now();
-    m_system_x = m_system_s = (std::chrono::duration< int64_t, nano>)0;
-    BENCHMARK_TIME_RESET(&m_system_t,&m_system_x,&m_system_s); // Reset at the very beginning, say in the constructor
+    TimesReset();
 }
 
 void ScQtSimulator::requestMethod(ScQtSimulator::Method method)

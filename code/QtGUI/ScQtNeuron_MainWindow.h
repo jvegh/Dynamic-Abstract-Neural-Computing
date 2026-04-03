@@ -110,6 +110,7 @@ public:
      void fitToView();
      void ProcessLine(QString line);
      void GetData(QString fileName);
+     VoltageWindow *VoltageWindow_Get(){return m_VoltageWindow;}
 
 //protected:
      void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;

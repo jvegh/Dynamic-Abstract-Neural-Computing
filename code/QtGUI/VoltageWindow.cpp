@@ -45,7 +45,7 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
   setupRealtimeDataDemo(ui->customPlot);
   setWindowTitle("QCustomPlot: "+demoName);
   statusBar()->clearMessage();
-  ui->customPlot->replot();
+//  ui->customPlot->replot();
   realtimeDataSlot();
    //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));

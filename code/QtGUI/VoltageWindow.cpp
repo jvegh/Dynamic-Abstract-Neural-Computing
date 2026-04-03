@@ -99,9 +99,11 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
   timeTicker->setTimeFormat("%s:%z"); //"%m:%s:%Z"
   customPlot->xAxis->setTicker(timeTicker);
+  customPlot->xAxis->setLabel("Time (ms)");
   customPlot->axisRect()->setupFullAxesBox();
   customPlot->yAxis->setRange(-30, 110);
-  customPlot->yAxis2->setRange(-1000, 3000);
+  customPlot->yAxis->setLabel("Voltage (mV)");
+   customPlot->yAxis2->setRange(-1000, 3000);
 
   // make left and bottom axes transfer their ranges to right and top axes:
   connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
@@ -119,12 +121,13 @@ void VoltageWindow::realtimeDataSlot()
 {
 //  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
-//  double key = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
 double Volt;
-Volt = m_neuron->MembraneAbsolutePotential_Get();
     if(!Voltage.count()) return;
    Volt = Voltage[index];
   double key = Time[index++];
+//  double key2 = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
+  double key2 = m_neuron->LocalTimeInMillisec_Get();
+  double Volt2 = m_neuron->MembraneRelativePotential_Get();
   if(index>=Voltage.count())
       index = 0;
    static double lastPointKey = 0;
@@ -134,7 +137,9 @@ Volt = m_neuron->MembraneAbsolutePotential_Get();
     //  Time.push_back(line.split(",").at(0).toDouble());
     //  Voltage.push_back(line.split(",").at(1).toDouble());
 
+
       ui->customPlot->graph(0)->addData(key, Volt);
+    ui->customPlot->graph(1)->addData(key2, Volt2);
     // rescale value (vertical) axis to fit the current data:
     //ui->customPlot->graph(0)->rescaleValueAxis();
     //ui->customPlot->graph(1)->rescaleValueAxis(true);

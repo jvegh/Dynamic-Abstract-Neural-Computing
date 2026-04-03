@@ -62,10 +62,20 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_PREFIX_PATH "~/Qt/6.10.2/gcc_64")
 find_package(Qt6 CONFIG REQUIRED COMPONENTS Core Widgets Concurrent PrintSupport)
-set(CMAKE_CXX_STANDARD 17)
 
-set(SystemC_CXX_STANDARD ${CMAKE_CXX_STANDARD})
-set(SystemC_CXX_STANDARD_REQUIRED )
+# Error flags on everything but MSVC
+if(NOT MSVC)
+    set(CMAKE_CXX_FLAGS "-Wextra -Wall \
+        -Wno-dev \
+        -Werror=switch -Werror=return-type \
+        -Werror=unreachable-code")
+endif()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt6Widgets_EXECUTABLE_COMPILE_FLAGS}  -std=c++17 -Wall")
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 # Set Qt includes
 include_directories(${Qt6Widgets_INCLUDE_DIRS})
 include_directories(${Qt6Core_INCLUDE_DIRS})

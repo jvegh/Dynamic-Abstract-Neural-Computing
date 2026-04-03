@@ -58,6 +58,8 @@ elseif(MINGW)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wa")
 endif()
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt6Widgets_EXECUTABLE_COMPILE_FLAGS}  -std=c++17 -Wall")
+
 # Create the parent library. This will include everything in the current directory.
 create_neuron_lib(${NEURON_LIB} FIXED_NAME EXCLUDE_SRC_INC)
 

@@ -26,7 +26,7 @@
 #include "VoltageWindow.h"
 #include "ui_VoltageWindow.h"
 #include <QDebug>
-#include <iostream>
+//#include <iostream>
 #include <QScreen>
 #include <QMessageBox>
 #include <QMetaEnum>
@@ -121,7 +121,7 @@ void VoltageWindow::realtimeDataSlot()
   // calculate two new data points:
 //  double key = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
 double Volt;
-Volt = m_neuron->MembraneAbsolutePotential_Get();
+//Volt = m_neuron->MembraneAbsolutePotential_Get();
     if(!Voltage.count()) return;
    Volt = Voltage[index];
   double key = Time[index++];
@@ -145,7 +145,7 @@ Volt = m_neuron->MembraneAbsolutePotential_Get();
   // make key axis range scroll with the data (at a constant range size of 10):
   ui->customPlot->xAxis->setRange(key, 5, Qt::AlignRight);
   ui->customPlot->replot();
-  
+
   // calculate frames per second:
   static double lastFpsKey;
   static int frameCount;

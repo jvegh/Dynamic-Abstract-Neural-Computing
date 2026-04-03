@@ -20,8 +20,8 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
     parent_Get()->statusBar()->showMessage(message, 1200);
 
     setWindowTitle(tr("Neuron-ScQt simulator control dialog"));
-    setMinimumSize(360, 280);
-    resize(500, 300);
+    setMinimumSize(360, 300);
+//    resize(500, 300);
     move(600,800);
     ui->StepNumberBox->setRange(1,100);
     ui->StepTimeBox->setRange(10,1000);
@@ -97,12 +97,15 @@ void SimulatorControlWindow::on_method1Button_clicked()
 {
     if(ui->timeMode->isChecked())
     {
-        std::cerr << ui->StepNumberBox->value() << " us time";
+        parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
+//        std::cerr << ui->StepNumberBox->value() << " us time";
 //        parent_Get()->statusBar()->showMessage(message, 1200);
     }
     if(ui->stepMode->isChecked())
     {
-        std::cerr << ui->StepTimeBox->value() << " steps";
+
+        parent_Get()->m_Simulator->TimeOfSteps_Set(sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US));
+//        std::cerr << ui->StepTimeBox->value() << " steps";
     }
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 //    QString message = tr("Method1 requested");

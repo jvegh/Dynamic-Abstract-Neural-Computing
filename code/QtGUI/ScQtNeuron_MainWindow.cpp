@@ -94,9 +94,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_Simulator_ControlWindow->move(QPoint(600,000));
     m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
-/*    m_AP_Window = new ScQtNeuron_AP_Window(this);
-    m_AP_Window->show();
-*/
 // Not sure if needed
 //    connect(m_simulator, &ScQtSimulator::eventHappened, this, &ScQtNeuron_MainWindow::event_happened);
 #if 0

@@ -58,7 +58,7 @@ private:
     void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
     ScQtNeuron_MainWindow *m_parent;
 private slots:
-    void on_method1Button_clicked();
+//    void on_method1Button_clicked();
     void on_method2Button_clicked();
     void on_method3Button_clicked();
     void on_resetButton_clicked();

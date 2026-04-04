@@ -99,7 +99,7 @@ void SimulatorControlWindow::on_stopButton_clicked()
 void SimulatorControlWindow::on_spikeButton_clicked()
 {
     qDebug()<<"Spike simulator in Thread "<<this->QObject::thread()->currentThreadId();
-}*/
+}
 void SimulatorControlWindow::on_method1Button_clicked()
 {
     if(ui->timeMode->isChecked())
@@ -117,10 +117,8 @@ void SimulatorControlWindow::on_method1Button_clicked()
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 //    QString message = tr("Method1 requested");
 //    parent_Get()->statusBar()->showMessage(message, 1200);
-/*    std::cerr << ui->continuousMode->isChecked()<< ui->eventMode->isChecked()<< ui->timeMode->isChecked()
-              << ui->stepMode->isChecked() << ui->spikeMode->isChecked()<< "\n";*/
 }
-
+*/
 void SimulatorControlWindow::on_method2Button_clicked()
 {
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SimulatedTime);

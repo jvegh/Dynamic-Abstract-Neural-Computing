@@ -71,14 +71,16 @@ void SimulatorControlWindow::on_eventHappened()
 }
 void SimulatorControlWindow::on_startButton_clicked()
 {
-    qDebug()<<"Start simulator in Thread "<<this->QObject::thread()->currentThreadId();
-    //          usleep( 100000 * 4);//;simWdw->intervalSpin->value() );
-
-//    sc_process_handle T =  sc_get_current_process_handle();
-    QString message = tr("Start button clicked");
-    parent_Get()->statusBar()->showMessage(message, 1200);
-
-}
+    if(ui->timeMode->isChecked())
+    {
+        parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
+    }
+    if(ui->stepMode->isChecked())
+    {
+        parent_Get()->m_Simulator->TimeOfSteps_Set(sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US));
+    }
+    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+ }
 void SimulatorControlWindow::on_stopButton_clicked()
 {
     qDebug()<<"Stop simulator in Thread "<<this->QObject::thread()->currentThreadId();

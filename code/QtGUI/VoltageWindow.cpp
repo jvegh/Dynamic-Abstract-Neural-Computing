@@ -78,14 +78,26 @@ void VoltageWindow::GetData(QString fileName)
     }
 }
 
+// Fill area between graph 0 and graph 1
+/* customPlot->graph(0)->setChannelFillGraph(customPlot->graph(1));
+customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
+*/
+
 void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
   demoName = "Single AP draw demo";
 
     GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
   // include this section to fully disable antialiasing for higher performance:
-    customPlot->legend->setVisible(true);
+    customPlot->legend->setVisible(true); // Ensure legend is visible
     customPlot->legend->setFont(QFont("Helvetica", 9));
+    customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
+    // Set position to upper left inside the axis rect
+    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft | Qt::AlignTop);
+    // Optional: Add a slight margin so it doesn't touch the edge
+//??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
+
+
   /*
   customPlot->setNotAntialiasedElements(QCP::aeAll);
   QFont font;
@@ -95,16 +107,18 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->legend->setFont(font);
   */
   customPlot->addGraph(); // blue line
-  customPlot->graph(0)->setPen(QPen(QColor(40, 110, 255)));
   customPlot->graph(0)->setName("ActionPotential");
+  customPlot->graph(0)->setPen(QPen(QColor(255, 110, 40)));
+  customPlot->graph(0)->setLineStyle((QCPGraph::LineStyle)1);
+
   customPlot->addGraph(); // red line
-  customPlot->graph(1)->setPen(QPen(QColor(255, 110, 40)));
+  customPlot->graph(1)->setPen(QPen(QColor(40, 110, 255)));
   customPlot->graph(1)->setName("dV/dt gradient");
-  customPlot->addGraph(); // green line
+  customPlot->graph(1)->setLineStyle((QCPGraph::LineStyle)1);
+
+  customPlot->addGraph(customPlot->xAxis,customPlot->yAxis2); // green line
   customPlot->graph(2)->setPen(QPen(QColor(31, 127, 31)));
   customPlot->graph(2)->setName("Another");
-  customPlot->graph(0)->setLineStyle((QCPGraph::LineStyle)1);
-  customPlot->graph(1)->setLineStyle((QCPGraph::LineStyle)1);
   customPlot->graph(2)->setLineStyle((QCPGraph::LineStyle)1);
   index = 0;
 
@@ -114,10 +128,23 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->xAxis->setLabel("Time (ms)");
   customPlot->yAxis->setRange(-30, 110);
   customPlot->yAxis->setLabel("Voltage (mV)");
-   customPlot->yAxis2->setRange(-100, 200);
+  // Create voltage gradient window
+
+  // Setup the second y axis
+  customPlot->yAxis2->setVisible(true); // Ensure second axis is visible
   customPlot->yAxis2->setLabel("dV/dt (V/m)");
-   customPlot->axisRect()->setupFullAxesBox();
-   //??customPlot->yAxis2->setRotation (180);
+
+  QSharedPointer<QCPAxisTickerFixed> fixedTicker(new QCPAxisTickerFixed);
+  fixedTicker->setTickStep(10); //
+  fixedTicker->setScaleStrategy(QCPAxisTickerFixed::ssMultiples);
+  customPlot->yAxis2->setTicker(fixedTicker);
+  customPlot->yAxis2->setTickLabels(true);
+
+
+   customPlot->yAxis2->setRange(-100, 200);
+  customPlot->yAxis2->setLabelColor(Qt::blue);
+  customPlot->yAxis2->setTickLabelColor(Qt::blue);
+  //??customPlot->yAxis2->setRotation (180);
 
   // make left and bottom axes transfer their ranges to right and top axes:
   connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
@@ -125,6 +152,8 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   
   // setup a timer that repeatedly calls VoltageWindow::realtimeDataSlot:
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
+  customPlot->axisRect()->setupFullAxesBox();
+  customPlot->replot();
 /*  connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
   dataTimer.start(10); // Interval 0 means to refresh as fast as possible
 */

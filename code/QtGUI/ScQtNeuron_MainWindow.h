@@ -16,13 +16,14 @@
 #include <QSettings>
 #include <QMessageBox>
 #include <QVector>
+#include "PhasePlotWindow.h"
 #include "ScQtAbout.h"
 #include "ScQtSimulator.h"
 #include "VoltageWindow.h"
 #include "SimulatorControlWindow.h"
 //#include "ScQtNeuron_Plot_AP.h"
 #include "neurontab.h"
-#include "ScQtNeuron_AP_Window.h"
+//#include "ScQtNeuron_AP_Window.h"
 /*
 //#include "filefilters.h"
 
@@ -88,7 +89,7 @@ public:
     QAction *processFitAction;
     ScQtSimulator * m_Simulator;
     SimulatorControlWindow *m_Simulator_ControlWindow;
-    ScQtNeuron_AP_Window *m_AP_Window;//, *m_dVdt_Window;
+ //   ScQtNeuron_AP_Window *m_AP_Window;//, *m_dVdt_Window;
 
      //    gsysHierarchyTree * hierTree;
     //    gsysPortViewer * portViewer;
@@ -98,7 +99,6 @@ public:
 //    QAction* fileSaveAction;
     QMenuBar *menubar;
     QMenu *fileMenu, *processMenu;
-//    ScQtNeuronVoltagePlot *VoltagePlot;
     uint32_t index, lastindex;
 
 //    QList<BaseFileFilter* > fileFilterList;
@@ -111,6 +111,7 @@ public:
      void ProcessLine(QString line);
      void GetData(QString fileName);
      VoltageWindow *VoltageWindow_Get(){return m_VoltageWindow;}
+     PhasePlotWindow *PhasePlotWindow_Get(){return m_PhasePlotWindow;}
 
 //protected:
      void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
@@ -136,6 +137,7 @@ private:
     void addTreeChild(QTreeWidgetItem *parent,
                       QString name, QString description);
     VoltageWindow *m_VoltageWindow;
+    PhasePlotWindow *m_PhasePlotWindow;
     NeuronPhysicalTEST *MyNeuron;
     // Tabs
     QStackedWidget *m_stackedTabs = nullptr;

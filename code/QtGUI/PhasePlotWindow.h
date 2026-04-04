@@ -74,7 +74,8 @@ private:
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;
   int currentDemoIndex;
-  QApplication* qapp; //?
+//  QApplication* qapp; //?
+  QCPItemEllipse *RunningPoint;
 };
 
 #endif // PhasePlotWindow_H

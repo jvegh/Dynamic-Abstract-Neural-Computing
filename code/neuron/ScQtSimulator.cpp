@@ -44,25 +44,6 @@ void ScQtSimulator::abort()
     condition.wakeOne();
 }
 
-#if 0
-void ScQtSimulator::doMethod1()
-{
-
-    mutex.lock();
-//**    sc_start( sc_core::SC_ZERO_TIME);
-    sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity();
-//    sc_start( sc_core::sc_time_to_pending_activity() );
-//        std::cerr << ThisTime.to_string() << "\n";
-    BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
-     sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
-    BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
-//    qDebug()<< ThisTime.to_string();
-    mutex.unlock();
-
-    qDebug()<<"Starting Method1 in Thread "<<thread()->currentThreadId();
-    emit eventHappened();
-}
-#endif
 
 void ScQtSimulator::doSimulationSteps()
 {

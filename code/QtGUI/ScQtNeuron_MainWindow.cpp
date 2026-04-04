@@ -70,13 +70,12 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_tabWidgets[EditTabID] = {editTab, editToolbar};
 */
     // Setup tab bar
-    setIconSize(QSize(24,24));
+    setIconSize(QSize(32,32));
     ui->tabbar->addFancyTab(QIcon(":/icons/neurer.png"), "Neuron");
 
 
     setWindowTitle( "NeuronScQt main window" );
-    setIconSize(QSize(24,24));
-    QSystemTrayIcon(this).setIcon( QIcon( ":/images/ESlogo.png" ) );
+//    QSystemTrayIcon(this).setIcon( QIcon( ":/images/ESlogo.png" ) );
     setMinimumSize( QSize( 600, 400 ) );
     setupMenus();
 //     SetFileMenu();

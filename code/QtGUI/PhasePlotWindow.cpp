@@ -44,8 +44,10 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   setGeometry(400, 250, 542, 390);
   setupRealtimeDataDemo(ui->customPlot);
  // setWindowTitle("QCustomPlot: "+demoName);
-  setWindowTitle(QString(m_neuron->name())+QString(" electrical parameters"));
+  setWindowTitle(QString(m_neuron->name())+QString(" phase plot"));
   statusBar()->clearMessage();
+  statusBar()->showMessage( QString("Ready to go"));
+
 //  ui->customPlot->replot();
   realtimeDataSlot();
    //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
@@ -60,8 +62,11 @@ void PhasePlotWindow::ProcessLine(QString line)
 //    while (!s1.atEnd()){
     first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
     second.append(line.split(",").at(1));
+    third.append(line.split(",").at(2));
+    fourth.append(line.split(",").at(3));
     Time.push_back(line.split(",").at(0).toDouble());
     Voltage.push_back(line.split(",").at(1).toDouble());
+    Gradient.push_back(line.split(",").at(3).toDouble());
  //    std::cout << line.toStdString() << '\n';
 }
 void PhasePlotWindow::GetData(QString fileName)
@@ -85,7 +90,7 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 
 void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
-//    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
+    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
   // include this section to fully disable antialiasing for higher performance:
     customPlot->legend->setVisible(true); // Ensure legend is visible
     customPlot->legend->setFont(QFont("Helvetica", 9));
@@ -113,7 +118,7 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
   customPlot->xAxis->setLabel("Voltage (mV)");
   customPlot->yAxis->setRange(-30, 110);
-  customPlot->yAxis->setLabel("Gradient (V/s)");
+  customPlot->yAxis->setLabel("Gradient (V/m)");
   // Create voltage gradient window
 
   // setup a timer that repeatedly calls PhasePlotWindow::realtimeDataSlot:
@@ -124,7 +129,8 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   dataTimer.start(10); // Interval 0 means to refresh as fast as possible
 */
 
-  demoName = "Parametric Curves Demo";
+#if 0
+//  demoName = "Parametric Curves Demo";
 
   // create empty curve objects:
   QCPCurve *fermatSpiral1 = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
@@ -156,6 +162,21 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   radialGrad.setColorAt(1,QColor(120, 20, 240, 10));
   deltoidRadial->setPen(QPen(QColor(170, 20, 240)));
   deltoidRadial->setBrush(QBrush(radialGrad));
+
+#endif
+
+  QCPCurve *PhasePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+  uint64_t NCP = Gradient.count();
+  QVector<QCPCurveData> dataPhasePlot(NCP);
+  for (int i=0; i<NCP; ++i)
+  {
+      dataPhasePlot[i]=  QCPCurveData(i,Voltage[i], Gradient[i]);
+  }
+  // pass the data to the curves; we know t (i in loop above) is ascending, so set alreadySorted=true (saves an extra internal sort):
+  PhasePlot->data()->set(dataPhasePlot, true);
+  PhasePlot->setPen(QPen(Qt::blue));
+  PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+
   // set some basic customPlot config:
   customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
   customPlot->axisRect()->setupFullAxesBox();

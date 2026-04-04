@@ -78,6 +78,7 @@ void scGenComp_PU_Bio::
 
     m_Membrane_V_last = m_Membrane_V;   // Preserve the 'new last' potential
 */
+
     // This works with dV/dt limitation
     float diff_V = abs(m_Membrane_dV);
      if(diff_V<VOLTAGE_CHANGE_ALLOWED*2)
@@ -96,6 +97,7 @@ void scGenComp_PU_Bio::
                 DEBUG_SC_EVENT(name(),"Heartbeat set to " << m_dt );
         }
     }
+
 }
 
 void scGenComp_PU_Bio::

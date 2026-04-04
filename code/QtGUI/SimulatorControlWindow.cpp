@@ -52,6 +52,11 @@ SimulatorControlWindow::~SimulatorControlWindow()
 
 void SimulatorControlWindow::on_resetButton_clicked()
 {
+    //    QString message = tr("Method3 requested");
+    parent_Get()->m_Simulator->TimesReset();  // Reset the three times
+    m_Neuron->Initialize_Do();  // Re-initialize the SystemC part
+    parent_Get()->VoltageWindow_Get()->ResetDisplay();
+    on_eventHappened();
     qDebug()<<"Reset simulator in Thread "<<this->QObject::thread()->currentThreadId();
 }
 
@@ -66,14 +71,16 @@ void SimulatorControlWindow::on_eventHappened()
 }
 void SimulatorControlWindow::on_startButton_clicked()
 {
-    qDebug()<<"Start simulator in Thread "<<this->QObject::thread()->currentThreadId();
-    //          usleep( 100000 * 4);//;simWdw->intervalSpin->value() );
-
-//    sc_process_handle T =  sc_get_current_process_handle();
-    QString message = tr("Start button clicked");
-    parent_Get()->statusBar()->showMessage(message, 1200);
-
-}
+    if(ui->timeMode->isChecked())
+    {
+        parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
+    }
+    if(ui->stepMode->isChecked())
+    {
+        parent_Get()->m_Simulator->TimeOfSteps_Set(sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US));
+    }
+    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+ }
 void SimulatorControlWindow::on_stopButton_clicked()
 {
     qDebug()<<"Stop simulator in Thread "<<this->QObject::thread()->currentThreadId();
@@ -92,7 +99,7 @@ void SimulatorControlWindow::on_stopButton_clicked()
 void SimulatorControlWindow::on_spikeButton_clicked()
 {
     qDebug()<<"Spike simulator in Thread "<<this->QObject::thread()->currentThreadId();
-}*/
+}
 void SimulatorControlWindow::on_method1Button_clicked()
 {
     if(ui->timeMode->isChecked())
@@ -110,10 +117,8 @@ void SimulatorControlWindow::on_method1Button_clicked()
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 //    QString message = tr("Method1 requested");
 //    parent_Get()->statusBar()->showMessage(message, 1200);
-/*    std::cerr << ui->continuousMode->isChecked()<< ui->eventMode->isChecked()<< ui->timeMode->isChecked()
-              << ui->stepMode->isChecked() << ui->spikeMode->isChecked()<< "\n";*/
 }
-
+*/
 void SimulatorControlWindow::on_method2Button_clicked()
 {
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SimulatedTime);
@@ -124,11 +129,6 @@ void SimulatorControlWindow::on_method2Button_clicked()
 void SimulatorControlWindow::on_method3Button_clicked()
 {
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method3);
-//    QString message = tr("Method3 requested");
-    parent_Get()->m_Simulator->TimesReset();  // Reset the three times
-    m_Neuron->Initialize_Do();  // Re-initialize the SystemC part
-    parent_Get()->VoltageWindow_Get()->ResetDisplay();
-    on_eventHappened();
 //    parent_Get()->statusBar()->showMessage(message, 1200);
 }
 

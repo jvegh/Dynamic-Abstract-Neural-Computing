@@ -23,10 +23,10 @@
 **          Version: 2.1.1                                                **
 ****************************************************************************/
 
-#include "VoltageWindow.h"
-#include "ui_VoltageWindow.h"
+#include "PhasePlotWindow.h"
+#include "ui_PhasePlotWindow.h"
 #include <QDebug>
-//#include <iostream>
+#include <iostream>
 #include <QScreen>
 #include <QMessageBox>
 #include <QMetaEnum>
@@ -34,9 +34,9 @@
 
 #include <QFile>
 
-VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
+PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
   QMainWindow(parent),
-  ui(new Ui::VoltageWindow),
+  ui(new Ui::PhasePlotWindow),
     m_Simulator(Simulator),
     m_neuron(Neuron)
 {
@@ -53,7 +53,7 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
 }
 
 
-void VoltageWindow::ProcessLine(QString line)
+void PhasePlotWindow::ProcessLine(QString line)
 {
     QStringList firstColumn;
      // Handle the first two items only
@@ -64,7 +64,7 @@ void VoltageWindow::ProcessLine(QString line)
     Voltage.push_back(line.split(",").at(1).toDouble());
  //    std::cout << line.toStdString() << '\n';
 }
-void VoltageWindow::GetData(QString fileName)
+void PhasePlotWindow::GetData(QString fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -83,17 +83,15 @@ void VoltageWindow::GetData(QString fileName)
 customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 */
 
-void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
+void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
-  demoName = "Single AP draw demo";
-
-    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
+//    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
   // include this section to fully disable antialiasing for higher performance:
     customPlot->legend->setVisible(true); // Ensure legend is visible
     customPlot->legend->setFont(QFont("Helvetica", 9));
     customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
     // Set position to upper left inside the axis rect
-    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft | Qt::AlignTop);
+    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
     // Optional: Add a slight margin so it doesn't touch the edge
 //??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
 
@@ -107,61 +105,67 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->legend->setFont(font);
   */
   customPlot->addGraph(); // blue line
-  customPlot->graph(0)->setName("ActionPotential");
+  customPlot->graph(0)->setName("AP phase plot");
   customPlot->graph(0)->setPen(QPen(QColor(255, 110, 40)));
   customPlot->graph(0)->setLineStyle((QCPGraph::LineStyle)1);
 
-  customPlot->addGraph(); // red line
-  customPlot->graph(1)->setPen(QPen(QColor(40, 110, 255)));
-  customPlot->graph(1)->setName("dV/dt gradient");
-  customPlot->graph(1)->setLineStyle((QCPGraph::LineStyle)1);
-
-  customPlot->addGraph(customPlot->xAxis,customPlot->yAxis2); // green line
-  customPlot->graph(2)->setPen(QPen(QColor(31, 127, 31)));
-  customPlot->graph(2)->setName("Another");
-  customPlot->graph(2)->setLineStyle((QCPGraph::LineStyle)1);
   index = 0;
 
-  QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
-  timeTicker->setTimeFormat("%s:%z"); //"%m:%s:%Z"
-  customPlot->xAxis->setTicker(timeTicker);
-  customPlot->xAxis->setLabel("Time (ms)");
+  customPlot->xAxis->setLabel("Voltage (mV)");
   customPlot->yAxis->setRange(-30, 110);
-  customPlot->yAxis->setLabel("Voltage (mV)");
+  customPlot->yAxis->setLabel("Gradient (V/s)");
   // Create voltage gradient window
 
-  // Setup the second y axis
-  customPlot->yAxis2->setVisible(true); // Ensure second axis is visible
-  customPlot->yAxis2->setLabel("dV/dt (V/m)");
-
-  QSharedPointer<QCPAxisTickerFixed> fixedTicker(new QCPAxisTickerFixed);
-  fixedTicker->setTickStep(10); //
-  fixedTicker->setScaleStrategy(QCPAxisTickerFixed::ssMultiples);
-  customPlot->yAxis2->setTicker(fixedTicker);
-  customPlot->yAxis2->setTickLabels(true);
-
-
-   customPlot->yAxis2->setRange(-100, 200);
-  customPlot->yAxis2->setLabelColor(Qt::blue);
-  customPlot->yAxis2->setTickLabelColor(Qt::blue);
-  //??customPlot->yAxis2->setRotation (180);
-
-  // make left and bottom axes transfer their ranges to right and top axes:
-  connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
-  connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
-  
-  // setup a timer that repeatedly calls VoltageWindow::realtimeDataSlot:
+  // setup a timer that repeatedly calls PhasePlotWindow::realtimeDataSlot:
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
   customPlot->axisRect()->setupFullAxesBox();
   customPlot->replot();
 /*  connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
   dataTimer.start(10); // Interval 0 means to refresh as fast as possible
 */
+
+  demoName = "Parametric Curves Demo";
+
+  // create empty curve objects:
+  QCPCurve *fermatSpiral1 = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+  QCPCurve *fermatSpiral2 = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+  QCPCurve *deltoidRadial = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+  // generate the curve data points:
+  const int pointCount = 500;
+  QVector<QCPCurveData> dataSpiral1(pointCount), dataSpiral2(pointCount), dataDeltoid(pointCount);
+  for (int i=0; i<pointCount; ++i)
+  {
+    double phi = i/(double)(pointCount-1)*8*M_PI;
+    double theta = i/(double)(pointCount-1)*2*M_PI;
+    dataSpiral1[i] = QCPCurveData(i, qSqrt(phi)*qCos(phi), qSqrt(phi)*qSin(phi));
+    dataSpiral2[i] = QCPCurveData(i, -dataSpiral1[i].key, -dataSpiral1[i].value);
+    dataDeltoid[i] = QCPCurveData(i, 2*qCos(2*theta)+qCos(1*theta)+2*qSin(theta), 2*qSin(2*theta)-qSin(1*theta));
+  }
+  // pass the data to the curves; we know t (i in loop above) is ascending, so set alreadySorted=true (saves an extra internal sort):
+  fermatSpiral1->data()->set(dataSpiral1, true);
+  fermatSpiral2->data()->set(dataSpiral2, true);
+  deltoidRadial->data()->set(dataDeltoid, true);
+  // color the curves:
+  fermatSpiral1->setPen(QPen(Qt::blue));
+  fermatSpiral1->setBrush(QBrush(QColor(0, 0, 255, 20)));
+  fermatSpiral2->setPen(QPen(QColor(255, 120, 0)));
+  fermatSpiral2->setBrush(QBrush(QColor(255, 120, 0, 30)));
+  QRadialGradient radialGrad(QPointF(310, 180), 200);
+  radialGrad.setColorAt(0, QColor(170, 20, 240, 100));
+  radialGrad.setColorAt(0.5, QColor(20, 10, 255, 40));
+  radialGrad.setColorAt(1,QColor(120, 20, 240, 10));
+  deltoidRadial->setPen(QPen(QColor(170, 20, 240)));
+  deltoidRadial->setBrush(QBrush(radialGrad));
+  // set some basic customPlot config:
+  customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+  customPlot->axisRect()->setupFullAxesBox();
+  customPlot->rescaleAxes();
 }
 
 
-void VoltageWindow::realtimeDataSlot()
+void PhasePlotWindow::realtimeDataSlot()
 {
+#if 0
 //  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
 double Volt;
@@ -196,10 +200,6 @@ double Volt;
   // make key axis range scroll with the data (at a constant range size of 10):
   ui->customPlot->xAxis->setRange(key, 1., Qt::AlignRight);
   ui->customPlot->replot();
-<<<<<<< HEAD
-
-=======
->>>>>>> devel
   // calculate frames per second:
   static double lastFpsKey;
   static int frameCount;
@@ -216,15 +216,16 @@ double Volt;
     lastFpsKey = key;
     frameCount = 0;
   }
+  #endif // 0
 }
 
 
-VoltageWindow::~VoltageWindow()
+PhasePlotWindow::~PhasePlotWindow()
 {
   delete ui;
 }
 
-void VoltageWindow::screenShot()
+void PhasePlotWindow::screenShot()
 {
   QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
     QString fileName = demoName.toLower()+".pdf";

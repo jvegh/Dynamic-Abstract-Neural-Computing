@@ -34,6 +34,9 @@ code/build/
 code/3rdParty/
 CMakeLists.txt.user
 ../.qtcreator/CMakeLists.txt.user
+code/.qtcreator/CMakeLists.txt.user
+../.qtcreator/
+code/.qtcreator/
 
 
 # Specific ignore for GitHub Pages

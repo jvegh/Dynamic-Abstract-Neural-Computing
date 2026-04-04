@@ -43,7 +43,8 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
   setupRealtimeDataDemo(ui->customPlot);
-  setWindowTitle("QCustomPlot: "+demoName);
+ // setWindowTitle("QCustomPlot: "+demoName);
+  setWindowTitle(QString(m_neuron->name())+QString(" electrical parameters"));
   statusBar()->clearMessage();
 //  ui->customPlot->replot();
   realtimeDataSlot();
@@ -102,6 +103,9 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->addGraph(); // green line
   customPlot->graph(2)->setPen(QPen(QColor(31, 127, 31)));
   customPlot->graph(2)->setName("Another");
+  customPlot->graph(0)->setLineStyle((QCPGraph::LineStyle)1);
+  customPlot->graph(1)->setLineStyle((QCPGraph::LineStyle)1);
+  customPlot->graph(2)->setLineStyle((QCPGraph::LineStyle)1);
   index = 0;
 
   QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
@@ -136,7 +140,7 @@ double Volt;
    Volt = Voltage[index];
   double key = Time[index++];
 //  double key2 = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
-  double key2 = m_neuron->LocalTimeInMillisec_Get();
+  double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
   double Volt2 = m_neuron->MembraneRelativePotential_Get();
   double DvDt = m_neuron->dVdtResulting_Get();
   if(index>=Voltage.count())
@@ -150,9 +154,9 @@ double Volt;
 
 
       ui->customPlot->graph(0)->addData(key, Volt);
-    ui->customPlot->graph(1)->addData(key2, 10*Volt2);
-      ui->customPlot->graph(2)->addData(key2, DvDt/3);
-    // rescale value (vertical) axis to fit the current data:
+    ui->customPlot->graph(1)->addData(key2, 17*Volt2);
+      ui->customPlot->graph(2)->addData(key2, DvDt/2);
+     // rescale value (vertical) axis to fit the current data:
     ui->customPlot->graph(0)->rescaleValueAxis();
     ui->customPlot->graph(1)->rescaleValueAxis(true);
     ui->customPlot->graph(2)->rescaleValueAxis(true);
@@ -161,7 +165,7 @@ double Volt;
 //        Voltage.clear();
   }
   // make key axis range scroll with the data (at a constant range size of 10):
-  ui->customPlot->xAxis->setRange(key, 2.5, Qt::AlignRight);
+  ui->customPlot->xAxis->setRange(key, 1., Qt::AlignRight);
   ui->customPlot->replot();
   // calculate frames per second:
   static double lastFpsKey;

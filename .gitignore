@@ -33,7 +33,7 @@ doc/manual/*.mt*
 code/build/
 code/3rdParty/
 CMakeLists.txt.user
-../.qtcreator/CMakeLists.txt.user
+code/.qtcreator/CMakeLists.txt.user
 
 
 # Specific ignore for GitHub Pages

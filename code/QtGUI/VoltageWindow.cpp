@@ -46,6 +46,7 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
  // setWindowTitle("QCustomPlot: "+demoName);
   setWindowTitle(QString(m_neuron->name())+QString(" electrical parameters"));
   statusBar()->clearMessage();
+  statusBar()->showMessage( QString("Ready to go"));
 //  ui->customPlot->replot();
   realtimeDataSlot();
    //QTimer::singleShot(1500, this, SLOT(allScreenShots()));

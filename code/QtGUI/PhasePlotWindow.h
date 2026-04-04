@@ -57,10 +57,10 @@ public:
   void ProcessLine(QString line);
   void GetData(QString fileName);
   void ResetDisplay(void){index = 0;}
-  QStringList first,second;
+  QStringList first,second, third, fourth;
   uint32_t index, lastindex;
 
-  QVector<double> Time, Voltage;
+  QVector<double> Time, Voltage, Gradient;
 
 private slots:
   void realtimeDataSlot();

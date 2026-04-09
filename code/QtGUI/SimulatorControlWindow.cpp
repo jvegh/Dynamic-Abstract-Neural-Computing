@@ -33,6 +33,9 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
     parent_Get()->m_Simulator->moveToThread(thread);
     connect(thread, SIGNAL(started()), parent_Get()->m_Simulator, SLOT(mainLoop()));
     connect(parent_Get()->m_Simulator, SIGNAL(finished()), thread, SLOT(quit()), Qt::DirectConnection);
+
+    // Receive SC event from the simulator
+//    connect(parent_Get()->m_Simulator,  SIGNAL(NeuralBreakpoint), this, SLOT(on_scEventHappened()));
     qDebug()<<"Starting thread in Thread "<<this->QObject::thread()->currentThreadId();
     thread->start();
     ui->SimulatedTime->setText("Help");
@@ -69,6 +72,14 @@ void SimulatorControlWindow::on_eventHappened()
 //        QString message = tr("An event happened");
 //        parent_Get()->statusBar()->showMessage(message, 1200);
 }
+
+/*
+void SimulatorControlWindow::on_scEventHappened()
+{
+        qDebug()<<"SystemC Event happened @ "<< 1000*sc_time_stamp().to_seconds();
+ }
+*/
+
 void SimulatorControlWindow::on_startButton_clicked()
 {
     if(ui->timeMode->isChecked())

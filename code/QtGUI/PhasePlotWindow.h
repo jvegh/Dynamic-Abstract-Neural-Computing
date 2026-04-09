@@ -34,6 +34,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QVector>
 #include "ScQtSimulator.h"
 #include "TestNeuronPhysical.h"
 #include "qcustomplot.h"
@@ -73,8 +74,13 @@ private:
   QString demoName;
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;
-  int currentDemoIndex;
-  QApplication* qapp; //?
+  QCPCurve *PhasePlot;
+
+  QVector<QCPCurveData> dataPhasePlot;
+
+      int currentDemoIndex;
+//  QApplication* qapp; //?
+  QCPItemEllipse *RunningPoint;
 };
 
 #endif // PhasePlotWindow_H

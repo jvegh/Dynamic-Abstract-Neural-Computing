@@ -13,7 +13,7 @@
 
 // Config parameters for the scGenComp_Bio units
 //How tightly the actual membrane potential must approach its resting value, in mV
-#define AllowedRestingPotentialDifference 2.
+#define AllowedRestingPotentialDifference 1.
 // The absolute value of the resting potential
 #define RestingMembranePotential -65
 // The difference of threshold potential to the resting potential

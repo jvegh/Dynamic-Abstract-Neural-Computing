@@ -44,25 +44,6 @@ void ScQtSimulator::abort()
     condition.wakeOne();
 }
 
-#if 0
-void ScQtSimulator::doMethod1()
-{
-
-    mutex.lock();
-//**    sc_start( sc_core::SC_ZERO_TIME);
-    sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity();
-//    sc_start( sc_core::sc_time_to_pending_activity() );
-//        std::cerr << ThisTime.to_string() << "\n";
-    BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
-     sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
-    BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
-//    qDebug()<< ThisTime.to_string();
-    mutex.unlock();
-
-    qDebug()<<"Starting Method1 in Thread "<<thread()->currentThreadId();
-    emit eventHappened();
-}
-#endif
 
 void ScQtSimulator::doSimulationSteps()
 {
@@ -96,31 +77,6 @@ void ScQtSimulator::doSimulatedTime()
 }
 
 
-#if 0
-void ScQtSimulator::doMethod2()
-{
-    qDebug()<<"Starting Method2 in Thread "<<thread()->currentThreadId();
-
-    for (int i = 0; i < 20; i ++) {
-
-        mutex.lock();
-        bool abort = _abort;
-        bool interrupt = _interrupt;
-        mutex.unlock();
-
-        if (abort || interrupt) {
-            qDebug()<<"Interrupting Method2 in Thread "<<thread()->currentThreadId();
-            break;
-        }
-
-        QEventLoop loop;
-        QTimer::singleShot(1000, &loop, SLOT(quit()));
-        loop.exec();
-
-        emit valueChanged(QString::number(i));
-    }
-}
-#endif
 
 void ScQtSimulator::doMethod3()
 {

@@ -74,6 +74,19 @@ from the same first principles.
  
 \subsection[Concepts]{Fundamental concepts\label{sec:PHYSICS_ELECTRICFundamental}}  
 
+The disciplinarily separated sience defines \href{http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elefie.html#c1}{electricity's concepts}
+through forces and infinitely small test charge. In living matter,
+neither is valid in unchanged form: constraints and physical/chemical additional forces are present, furthermore, the charges of the carriers are not
+negligible compared to the charges that generate the field acting on the charges. Furthermore, since the carriers have mass, 
+one cannot apply laws of disciplinary electricity since they are valid for "slow" currents in a different form. One may have fundamental problems with the mathematical descriptions: 
+the discrete nature of charge carriers question marks differentiability of the corresponding functions, furthermore, 
+the charge-mass dichotomy of ions the interpretation of 
+partial derivatives.
+\index{dichotomies in science}
+\index{differentiability}
+\index{partial derivative}
+ 
+
 \subsubsection[Charge]{Charge\label{sec:PHYSICS_ELECTRICCHARGE}}
 Charge is one of the fundamental properties of matter,
 one of the fundamental abstractions in science, and the primary abstraction in connection with electrical concepts.
@@ -254,6 +267,11 @@ The current can temporarily disappear (it can be stored, delayed, say on the mem
 segment in the system) or "created" (enter from a non-measured segment, say,  through ion channels) or
 be distributed within the "wire" such as on the surface of the dendritic tree.
 
+
+\subsubsection[Conduction]{Conduction mechanism\label{sec:PHYSICS_ConductionMechanism}}
+
+
+
 Ions differ from electrons we used to in physical electricity in many features. Their conduction mechanisms
 are entirely different, and they are not necessarily present 
 in the discussed medium (say, when the medium is surrounded by charged surface, the field moves free ions out of the volume). They may be produced by biological mechanisms, 
@@ -265,39 +283,6 @@ classical electronics and biology considers charges and their moving.
 Both disciplines provide an atomic level description, but unfortunately they use the same words for their concepts, although
 their meaning can be entirely different. 
 
-
-\subsubsection[Resistance/Conductance]{Resistance/Conductance\label{sec:PHYSICS_RESISTANCECONDUCTANCE}}
-
-
-Voltage and current, the secondary electric entities, derive directly from charge, the primary quantity, and (except time) no external quantity is used. In contrast, when deriving resistance or conductance, one measures how the tested object relates to electricity. At this point comes to the light the meaning of E.~Schrödinger's warning about how do we test in
-physics laboratories. Although physics knows (based on their 
-electric behavior) conductors, insulators and semiconductors,
-the \textit{characteristics of the material} under testing 
-is never mismatched into electrical terms. Paper~\cite{RejectingMemristor:2018} discusses why introducing
-a fundamental circuit element (the memristor) led to decades-long confusion, when attempting to introduce new laws of electicity.
-Introducing neuron (in the form of equivalent circuits where 
-\index{equivalent electrical circuit}
-the "living matter" changes its electrical characteristics
-without any causality), that changes the rules of the game in 
-electricity, has led to similar confusion. 
-Physics provides examples when the relation of voltage and current seems to change
-and deviate from the Ohmic case. However, the first principle
-of energy conservation
-provides a hint to the correct interpretation. % (recall that $W=I^2*R$
-In physics, the energy and the charge conserves (instead of current as~\cite{KochBiophysics:1999}, page 9, claimed), so we could introduce 
-capacitive and inductive current, capacitive and inductive energy.
-
-
-
-When those secondary entities
-interact with some macroscopic material, their relation to that material
-defines a feature, such as dielectricity or resistance. \textit{Those
-ternary entities manifest (i.e., are measurable) only when charge
-is present.} Experience shows that, \textit{in the presence of electric
-potential}, different media show different resistance against \textit{transferring
-charges}, so we define resistance/conductance \textit{as one of the
-media's macroscopic features} (which is connected to microscopic features
-by Stokes's Law). There is a crucial difference between the current propagation's mechanisms in solids and in biological materials. 
 
 \begin{figure}
 \centering
@@ -324,21 +309,73 @@ Current conveyed by ions in ion channel\\
 \caption{Electric resistance types\label{tab:Electric_ResistanceTypes}}
 \end{figure}
 
+
+In solids, as the Drude model describes, 
+electrons (shown in the figure in blue) constantly bounce among heavier, stationary crystal ions (shown in red), that make up the structure of the material. With each collision, though, the electron is deflected in a random direction \textit{with a velocity that is much larger than the velocity gained by the electric field}. The net result is that electrons take a zigzag path due to the collisions, but generally drift in a direction along the electric field. Important, that \textit{the collisions are inelastic}, so the electrons lose (most of) their energy. The energy is absorbed by the solid's gridpoints, which later is released in form of heat. The process is irreversible.
+\index{resistance}
+
+In biological matter, ions convey electricity. So called ion channels
+are used for the transfer. Here diffusion and electromigration takes place, by orders of magnitude different speeds. The ions traverse typically without collision, under the effect of an electric field. The process is mostly reversible.  See also section~\ref{sec:Physics-HeatAbsorption} and Equ.(\ref{eq:StokesEinsteinSpeeddV}). 
+Fig.~\ref{tab:Electric_ResistanceTypes} shows that resistance 
+is interpreted as the interaction of charge carriers with the particles in the material that are transported by a driving force.
+In solid state, the volume considered is "infinitely large" (that is, whe field is homogeneous
+and the propagation is isotropic), and the charge carriers are uniform that is only one type of interaction is present.
+In biological objects, the volume is more or less limited (is finite), there may be charged objects present that make the propagation non-isotropic and the charge carriers are non-uniform
+that introduces termodynamic interaction in addition to the electrical interaction.
+Ions, under the electrical/thermodynamic field (and maybe mechanixal constraints) accelerate to the Stokes-Einstein speed (see Eq.(\ref{eq:StokesSpeed}), move against a friction in the electrolyte.
+The ions suffer (essentially elastic) collision with neutral molecules and transfer their momentum (and so: energy) to them. 
+From the point of ions, the process is energy loss and momentum loss.
+From the point of neutral molecules, the process is energy gain and momentum gain. If the acceleration occurs in a narrow tube 
+such as an ion channel, the wall prevents gaining momentum in the 
+direction perpendicular to the direction of acceleration. 
+Given that the collisions are elastic, no energy dissipates;
+so, in principle, the process is reversible.
+Furthermore, the momentum loss results in momentum gain of the neutral molecules. Strangely enough, this way the electrical force
+accelerates also the neutral molecules; furthermore, their momentum (using an elastic membrane) can fully contribute to the operation
+of neuron (forms the \gls{AP}). 
+
+
+
+\subsubsection[Resistance/Conductance]{Resistance/Conductance\label{sec:PHYSICS_RESISTANCECONDUCTANCE}}
+
+
+Voltage and current, the secondary electric quantities, derive directly from charge, the primary quantity, and (except time) no external quantity is used. In contrast, when deriving resistance or conductance, one measures how the tested object relates to electricity. At this point comes to light the meaning of E.~Schrödinger's warning about how do we test in
+physics laboratories. Although physics knows (based on their 
+electric behavior) conductors, insulators and semiconductors,
+the \textit{characteristics of the material} under testing 
+is never mismatched into electrical terms. Paper~\cite{RejectingMemristor:2018} discusses why introducing
+a fundamental circuit element (the memristor) led to decades-long confusion, when attempting to introduce new laws of electicity.
+Introducing neuron (in the form of equivalent circuits where 
+\index{equivalent electrical circuit}
+the "living matter" changes its electrical characteristics
+without any causality), that changes the rules of the game in 
+electricity, has led to similar confusion. 
+Physics provides examples when the relation of voltage and current seems to change
+and deviate from the Ohmic case.
+However, energy and the charge conserves (instead of current as~\cite{KochBiophysics:1999}, page 9, claimed), so we could introduce 
+capacitive and inductive current, capacitive and inductive energy.
+
+
+
 As we derive in Eq.(\ref{eq:ConcentrationCurrent}), 
-we can define a current for electrons and ions  moving in an external force field,
+we can define a current for charges moving in an external force field,
 but the physical background in the two cases are entirely different.
 The technical current direction is opposite with the 
 flow of electrons (and negative ions) but agrees with the direction
 of positive ions. The ions are much heavier than electrons, and even
 they can combine in electrolytes with water molecules, so their mass
 ratio can reach the order of $50,000-100,000$.
-The charge propagation mechanism is entirely different (see also Fig.~\ref{tab:Electric_ResistanceTypes}).
-% The \indexit{charge conservation law}
-As the Drude model describes, in solids,
-electrons (shown in the figure in blue) constantly bounce among heavier, stationary crystal ions (shown in red), that make up the structure of the material. With each collision, though, the electron is deflected in a random direction \textit{with a velocity that is much larger than the velocity gained by the electric field}. The net result is that electrons take a zigzag path due to the collisions, but generally drift in a direction along the electric field. Important, that the collisions are inelastic, so the electrons lose (most of) their energy. The energy is absorbed by the solid's gridpoints, which later is released in form of heat. The process is irreversible.
+The charge propagation mechanisms for electron and ions are entirely different (see also Fig.~\ref{tab:Electric_ResistanceTypes}).
+When those secondary entities
+interact with some macroscopic material, their relation to that material
+defines a feature, such as dielectricity or resistance. \textit{Those
+ternary entities manifest (i.e., are measurable) only when charge
+is present.} Experience shows that, \textit{in the presence of electric
+potential}, different media show different resistance against \textit{transferring
+charges}, so we define resistance/conductance \textit{as one of the
+media's macroscopic features} (which is connected to microscopic features
+by Stokes's Law). There are crucial differences between the current propagation's mechanisms in solids and in biological materials. 
 
-In biological matter, ions convey electricity. So called ion channels
-are used for the transfer. Here diffusion and electromigration takes place, by orders of magnitude different speeds. The ions traverse typically without collision, under the effect of an electric field. The process is mostly reversible.  See also section~\ref{sec:Physics-HeatAbsorption} and Equ.(\ref{eq:StokesEinsteinSpeeddV}). 
 
 Resistance, as can be concluded from its name, means that in a medium some external (electrical, mechanical, thermodynamic, or any other) power exerts a force on an electric charge
 and the medium exerts a counterforce on the charge (resists moving the charge). In the case of solids (metals), the medium 
@@ -352,9 +389,12 @@ In living structures, in closed volume segments, local
 electrical fields (typically of biological/chemical/enzymatical origin)
 may be present,
 so no freely moving charge carriers can be present in the volume
-and the permanently present electric field may change the phenomena drastically.
+and the permanently present electric field may change the phenomena drastically: the current may appear with a delay with respect
+to what is expected having "fast" charge carriers in mind (and their behavior in the laws). 
 Furthermore, biologically active structures may "produce"
 charge carriers inside.
+As a consequence, when deriving ternary quantities from 
+those secondary quantities, we may use non-macthing quantity pairs (measured at different times), that produces wrong (unphysical) conclusions.
 The fundamental laws of electricity are the same, but describing electrical processes of living matter with 
 internal processes inside need more care
 than in the case of non-living matter without such processes.   
@@ -366,7 +406,7 @@ requires performing two independent measurements,
 using two independent measuring devices; furthermore, assuring that one uses
 matching values (measured simultaneously) for the calculation. This is why, for comfort, resistance/conductance
 measuring devices have been developed and are in use.
-Of course, even that instrument cannot measure directly the ratio of
+Of course, even that instrument (see Fig.~\ref{fig:Physics-Multimeter}) cannot measure directly the ratio of
 those two secondary quantities, it makes (a little and forgivable) cheating. It reduces the measurement to measuring current 
 by applying a little voltage (of known value) to the device under test,
 and displays the calculated result in units of resistance/conductance.
@@ -388,21 +428,21 @@ and can bias measured values.
 Two more kinds of issues come to the light when measuring in biological circuits. As we mentioned, although the measurement device
 works with electrons and in the half with 'instant interaction',
 the current keeps the timing of the slow current in the biological time; that is, one uses a 'delayed current' value in measuring
-the resistance. This is why good physiology textbooks (such as~\cite{JohnstonWuNeurophysiology:1995} emphasize that 
+the resistance. This is why good physiology textbooks (such as~\cite{JohnstonWuNeurophysiology:1995}) emphasize that 
 resistance/conductance is a 'steady-state' characteristics.
-Forgetting this fundamental feature results more or less
+Forgetting this fundamental feature results in more or less
 distorted values; an extreme example is 'demonstrating' that
 the neuron is a low-pass filter, see section~\ref{sec:Physiology-FallaciesLowPassFilter}.
 
 Another issue is that the device of course cannot distinguish what the
 experimenter wants to measure and cannot separate its own current that its required voltage produces
 from the current that the tested object autonomously generates.
-It works with 'instant' electricity: it works 
+It works with 'instant' electricity, 
 using Ohm's law, and divides the momentary value of the measured current with the known value of
 the generating voltage. In the case of technical electricity, the 
 current instantly follows its driving force.
 In biology, however, the charge carriers are slow (at least in the biological half of the circuit), so it needs time until the effect of
-the voltage change gets observable. In the case of changing gradients, the conductance meter uses non-matching pairs of voltage and current data: the device is designed for measuring in a 'steady-state'.
+the voltage change gets observable. In the case of changing gradients, \textit{the conductance meter uses non-matching pairs of voltage and current data}: the device is designed for measuring in a 'steady-state'.
 The gradient and its effect are shifted by the time period that the charge carrier needs to travel from the place of its "excitation"
 to the place of the measurement.
 It is in the order of nanoseconds in technical circuits and it can be in the order of fragments of milliseconds, depending on the speed of the ions (depends on the gradient) and the distance traveled, in biological matter.
@@ -420,7 +460,7 @@ or, in another form
 That is, when one measures using voltage clamp (see Fig.~\ref{fig:Physics-ClampingKandel}),
 the price paid for fixing the voltage is adding the feedback current
 to the measured current, and calculate the conductance from a wrong
-value pair. Apparently, the conductance increases as the 'foreign' current (that is compensated by the feedback) changes,
+value pair. Apparently, the conductance increases as the 'foreign' current (that is compensated by the feedback) increases,
 creating the illusion that "the conductance changes".
 The conductance does not change, it is the effect 
 of the used current feedback, needed to keep the voltage constant

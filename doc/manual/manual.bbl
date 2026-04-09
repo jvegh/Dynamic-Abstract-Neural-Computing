@@ -80,11 +80,6 @@ T.~J. Sejnowski, C.~Koch, C.~P. S, Computational neuroscience, Science 9 (1988)
 \newblock \href {https://doi.org/10.1126/science.3045969}
   {\path{doi:10.1126/science.3045969}}.
 
-\bibitem{GertstnerSpikingNeuronModels:2002}
-Gerstner, Kistler, \href{https://neuronaldynamics.epfl.ch/}{{Spiking Neuron
-  Models. Single Neurons, Populations, Plasticity}} (2002).
-\newline\urlprefix\url{https://neuronaldynamics.epfl.ch/}
-
 \bibitem{BuzsakiCellAssemblies:2010}
 G.~Buzs\'aki, {Neural syntax: cell assemblies, synapsembles, and readers},
   Neuron 68~(4) (2010) 362--85.
@@ -123,8 +118,8 @@ N.~Caporale, Y.~Dan,
 \newline\urlprefix\url{https://doi.org/10.1146/annurev.neuro.31.060407.125639}
 
 \bibitem{VeghNon-ordinaryLaws:2025}
-J.~V{\'e}gh, {The 'non-ordinary laws' of physics describing life}, {arXiv}, in
-  review in Foundations of Physics 1 (2025).
+J.~V{\'e}gh, {The 'non-ordinary laws' of physics describing life}, {arXiv}, 1
+  (2025).
 
 \bibitem{VeghNeuronAlgorithms:2025}
 J.~V{\'e}gh, {Algorithm for describing neuronal electric operation}, Algorithms
@@ -218,8 +213,8 @@ P.~W. Anderson, {More Is Different}, Science 177 (1972) 393--396.
   {\path{doi:10.1126/science. 177.4047.393}}.
 
 \bibitem{VeghNonOrdinaryLawsForLife:2025}
-J.~V{\'e}gh, Can 'non-ordinary laws of physics' describe living matter?,
-  Entropy (2025).
+J.~V{\'e}gh, Can 'non-ordinary laws of physics' describe living matter?, arXiv
+  (2025).
 \newblock \href {https://doi.org/http://dx.doi.org/10.2139/ssrn.5217729}
   {\path{doi:http://dx.doi.org/10.2139/ssrn.5217729}}.
 
@@ -240,6 +235,12 @@ E.~R. Kandel, J.~H. Schwartz, T.~M. Jessell, S.~A. Siegelbaum, A.~J. Hudspeth,
   Principles of Neural Science, 5th Edition, The McGraw-Hill Medical, New York
   Chicago etc., 2013.
 
+\bibitem{PerturbationSingleCell:2023}
+C.~Bunne, S.~Stark, G.~Gut, et~al., Learning single-cell perturbation responses
+  using neural optimal transport, Nature Methods 20 (2023) 1759--1768.
+\newblock \href {https://doi.org/https://doi.org/10.1038/s41592-023-01969-x}
+  {\path{doi:https://doi.org/10.1038/s41592-023-01969-x}}.
+
 \bibitem{COLE_CURTIS_IMPEDANCE:1939}
 K.~S. Cole, H.~J. Curtis, Electric impedance of the squid giant axon during
   activity, The Journal of General Physiology (1939).
@@ -255,6 +256,11 @@ C.~F. Craver, When mechanistic models explain, Synthese 153~(3) (2006)
 \bibitem{MathNeuroscience:2010}
 B.~Ermentrout, T.~H. David, Mathematical Foundations of Neuroscience, Springer,
   New York, 2010.
+
+\bibitem{GertstnerSpikingNeuronModels:2002}
+Gerstner, Kistler, \href{https://neuronaldynamics.epfl.ch/}{{Spiking Neuron
+  Models. Single Neurons, Populations, Plasticity}} (2002).
+\newline\urlprefix\url{https://neuronaldynamics.epfl.ch/}
 
 \bibitem{SingleNeuronComputation:2014}
 T.~McKenna, J.~Davis, S.~Zornetzer,
@@ -405,12 +411,6 @@ T.~Heimburg, A.~D. Jackson, On soliton propagation in biomembranes and nerves,
   Proceedings of the National Academy of Sciences (2005) 9790--9795\href
   {https://doi.org/10.1073/pnas.0503823102}
   {\path{doi:10.1073/pnas.0503823102}}.
-
-\bibitem{VeghMembranePotential:2026}
-J.~V{\'e}gh, \href{https://doi.org/10.48550/arXiv.2507.11448}{The unified
-  cross-disciplinary model of the operation of neurons} (2026).
-\newblock \href {http://arxiv.org/abs/2507.11448} {\path{arXiv:2507.11448}}.
-\newline\urlprefix\url{https://doi.org/10.48550/arXiv.2507.11448}
 
 \bibitem{BiologicalConservationLaw:2017}
 B.~Podobnik, M.~Jusup, Z.~Tiganj, W.-X. Wangi, J.~M. Buld, H.~E. Stanley,

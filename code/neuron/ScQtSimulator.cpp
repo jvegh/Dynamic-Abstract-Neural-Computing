@@ -77,31 +77,6 @@ void ScQtSimulator::doSimulatedTime()
 }
 
 
-#if 0
-void ScQtSimulator::doMethod2()
-{
-    qDebug()<<"Starting Method2 in Thread "<<thread()->currentThreadId();
-
-    for (int i = 0; i < 20; i ++) {
-
-        mutex.lock();
-        bool abort = _abort;
-        bool interrupt = _interrupt;
-        mutex.unlock();
-
-        if (abort || interrupt) {
-            qDebug()<<"Interrupting Method2 in Thread "<<thread()->currentThreadId();
-            break;
-        }
-
-        QEventLoop loop;
-        QTimer::singleShot(1000, &loop, SLOT(quit()));
-        loop.exec();
-
-        emit valueChanged(QString::number(i));
-    }
-}
-#endif
 
 void ScQtSimulator::doMethod3()
 {

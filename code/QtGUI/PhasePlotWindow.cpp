@@ -30,7 +30,7 @@
 #include <QScreen>
 #include <QMessageBox>
 #include <QMetaEnum>
-#include <QApplication>
+//#include <QApplication>
 
 #include <QFile>
 
@@ -130,7 +130,7 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 */
 
 
-  QCPCurve *PhasePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+  PhasePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
   uint64_t NCP = Gradient.count();
   QVector<QCPCurveData> dataPhasePlot(NCP);
   for (int i=0; i<NCP; ++i)
@@ -149,6 +149,11 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
   RunningPoint->setPen(QPen(Qt::red));
 
+
+  ui->customPlot->addGraph(); // blue line
+  ui->customPlot->graph(1)->setName("AP phase plot");
+  ui->customPlot->graph(1)->setPen(QPen(QColor(255, 110, 40)));
+
   // set some basic customPlot config:
   customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
   customPlot->axisRect()->setupFullAxesBox();
@@ -158,6 +163,20 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
 void PhasePlotWindow::realtimeDataSlot()
 {
+    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+    double DvDt = m_neuron->dVdtResulting_Get()/100.;
+    RunningPoint->topLeft->setCoords(-1+Volt2, DvDt-.05);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(1+Volt2, DvDt+0.05);
+    uint64_t NCP = Gradient.count();
+//    QVector<QCPCurveData> dataPhasePlot(NCP);
+    dataPhasePlot.push_back(QCPCurveData(index,Volt2, DvDt));
+    index++;
+    PhasePlot->data()->set(dataPhasePlot, true);
+    PhasePlot->setPen(QPen(Qt::blue));
+    PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+
+    ui->customPlot->replot();
+    cerr << NCP<< ','<<  Volt2<< ',' << DvDt << '\n';
 #if 0
 //  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:

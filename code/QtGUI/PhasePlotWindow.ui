@@ -13,8 +13,7 @@
     <height>753</height>
    </rect>
   </property>
-
- <property name="windowTitle">
+  <property name="windowTitle">
    <string>QCustomPlot parametric curve example</string>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -24,10 +23,7 @@
     </item>
    </layout>
   </widget>
-
-
-
-    <widget class="QMenuBar" name="menubar">
+  <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -40,6 +36,7 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionScreeshot"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -84,15 +81,13 @@
     <string>View</string>
    </property>
   </action>
+  <action name="actionScreeshot">
+   <property name="text">
+    <string>Screenshot</string>
+   </property>
+  </action>
  </widget>
-
  <customwidgets>
-  <customwidget>
-   <class>FancyTabBar</class>
-   <extends>QWidget</extends>
-   <header>fancytabbar.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>

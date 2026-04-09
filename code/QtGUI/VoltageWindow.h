@@ -65,11 +65,13 @@ public:
 private slots:
   void realtimeDataSlot();
   void screenShot();
+  void screenshotFilesTriggered();
 
 private:
   Ui::VoltageWindow *ui;
     ScQtSimulator * m_Simulator;
   NeuronPhysical *m_neuron;
+    void setupMenus();
   QString demoName;
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;

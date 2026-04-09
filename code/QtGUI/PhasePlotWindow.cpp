@@ -45,6 +45,7 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   setupRealtimeDataDemo(ui->customPlot);
  // setWindowTitle("QCustomPlot: "+demoName);
   setWindowTitle(QString(m_neuron->name())+QString(" phase plot"));
+  setupMenus();
   statusBar()->clearMessage();
   statusBar()->showMessage( QString("Ready to go"));
 
@@ -54,6 +55,49 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
+void PhasePlotWindow::setupMenus()
+{
+    const QIcon saveIcon = QIcon(":/icons/save.svg");
+    auto *screenshotAction = new QAction(saveIcon, "Screenshot to File", this);
+    ui->menuFile->addAction(screenshotAction);
+    screenshotAction->setShortcut(QKeySequence::Save);
+    connect(screenshotAction, &QAction::triggered, this,
+            &PhasePlotWindow::screenshotFilesTriggered);
+}
+    // Edit actions
+
+void PhasePlotWindow::screenshotFilesTriggered() {
+    QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+    QString fileName = QString(m_neuron->name())+QString(" phase plot")+".pdf";
+    fileName.replace(" ", "");
+    ui->customPlot->savePdf(fileName, 0, 0);
+
+ /*
+        static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)->getSourceType());
+    if (!RipesSettings::value(RIPES_SETTING_HAS_SAVEFILE).toBool()) {
+        saveFilesAsTriggered();
+        return;
+    }
+
+    emit prepareSave();
+    QStringList savedFiles;
+    if (!diag.sourcePath().isEmpty()) {
+        if (!ensurePath(diag.sourcePath()))
+            return;
+        QFile file(diag.sourcePath());
+        savedFiles << diag.sourcePath();
+        if (!writeTextFile(file,
+                           static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)
+                               ->getAssemblyText())) {
+            QMessageBox::information(this, "File error",
+                                     "Error when saving file: " + file.errorString());
+            return;
+        }
+    }
+     }
+*/
+    statusBar()->showMessage( QString("Screenshot saved to "+fileName));
+}
 
 void PhasePlotWindow::ProcessLine(QString line)
 {

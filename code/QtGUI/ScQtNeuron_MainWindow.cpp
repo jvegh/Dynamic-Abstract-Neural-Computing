@@ -281,6 +281,7 @@ void ScQtNeuron_MainWindow::setupMenus() {
 
 }
 
+
 void ScQtNeuron_MainWindow::setupExamplesMenu(QMenu *parent) {
 /*    const auto assemblyExamples =
         QDir(":/examples/assembly/").entryList(QDir::Files);

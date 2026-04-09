@@ -66,6 +66,7 @@ public:
 private slots:
   void realtimeDataSlot();
   void screenShot();
+  void screenshotFilesTriggered();
 
 private:
   Ui::PhasePlotWindow *ui;
@@ -75,7 +76,7 @@ private:
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;
   QCPCurve *PhasePlot;
-
+  void setupMenus();
   QVector<QCPCurveData> dataPhasePlot;
 
       int currentDemoIndex;

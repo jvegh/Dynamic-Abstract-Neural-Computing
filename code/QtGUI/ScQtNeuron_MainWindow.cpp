@@ -10,7 +10,6 @@
 */
 #include "ScQtNeuron_MainWindow.h"
 #include "ui_ScQtNeuron_MainWindow.h"
-//#include "ScQtNeuron_ParameterWindow.h"
 #include <QMdiSubWindow>
 #include <QtCore>
 #include <QFileSystemModel>

@@ -19,7 +19,7 @@
      <x>0</x>
      <y>0</y>
      <width>481</width>
-     <height>303</height>
+     <height>313</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -265,7 +265,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="StepNumeberLabel">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -278,7 +278,7 @@
         <string>No. steps</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="StepTimeLabel">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -349,32 +349,67 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="method1Button">
+       <widget class="QLabel" name="Slider2Label">
         <property name="text">
-         <string>Method1</string>
-        </property>
-        <property name="flat">
-         <bool>false</bool>
+         <string>Channel delay</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="method2Button">
-        <property name="text">
-         <string>Method2</string>
+       <widget class="QSlider" name="Slider2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="method3Button">
+       <widget class="QLabel" name="Slider2Value">
         <property name="text">
-         <string>Method3</string>
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="Slider1Label">
+        <property name="text">
+         <string>Channel density</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="Slider1">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="Slider1Value">
+        <property name="text">
+         <string>TextLabel</string>
         </property>
        </widget>
       </item>
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="method2Button_5">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>320</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Method2</string>
+   </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

@@ -16,8 +16,22 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
     ui(new Ui::SimulatorControlWindow),m_parent(parent)
 {
     ui->setupUi(this);
-    QString message = tr("A context menu is available by right-clicking");
-    parent_Get()->statusBar()->showMessage(message, 1200);
+    // Set up Slider 1
+    ui->Slider1->setMinimum(3);
+    ui->Slider1->setMaximum(17);
+    ui->Slider1->setValue(5);
+    ui->Slider1Value->setText(QString::number(ui->Slider1->value()));
+    QObject::connect(ui->Slider1, &QSlider::valueChanged, this, [=] () {
+        (ui->Slider1Value->setText(QString::number(ui->Slider1->value())));
+    });
+    // Set up Slider 2
+    ui->Slider2->setMinimum(15);
+    ui->Slider2->setMaximum(50);
+    ui->Slider2->setValue(23);
+    ui->Slider2Value->setText(QString::number(ui->Slider2->value()));
+    QObject::connect(ui->Slider2, &QSlider::valueChanged, this, [=] () {
+        (ui->Slider2Value->setText(QString::number(ui->Slider2->value(),'f',2)));
+    });
 
     setWindowTitle(tr("Neuron-ScQt simulator control dialog"));
     setMinimumSize(360, 300);
@@ -69,16 +83,8 @@ void SimulatorControlWindow::on_eventHappened()
     ui->SimulatedTime->setText(QString(sc_time_String_Get(parent_Get()->m_Simulator->scTime_Get()).c_str()));
     ui->timeUser->setText(QString(time_String_Get(parent_Get()->m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     ui->timeSystem->setText(QString(time_String_Get(parent_Get()->m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
-//        QString message = tr("An event happened");
-//        parent_Get()->statusBar()->showMessage(message, 1200);
 }
 
-/*
-void SimulatorControlWindow::on_scEventHappened()
-{
-        qDebug()<<"SystemC Event happened @ "<< 1000*sc_time_stamp().to_seconds();
- }
-*/
 
 void SimulatorControlWindow::on_startButton_clicked()
 {
@@ -103,44 +109,12 @@ void SimulatorControlWindow::on_stopButton_clicked()
     qDebug()<<"Step simulator in Thread "<<this->QObject::thread()->currentThreadId();
 }
 */
-/*void SimulatorControlWindow::on_eventButton_clicked()
-{
-    qDebug()<<"Event simulator in Thread "<<this->QObject::thread()->currentThreadId();
-}
-void SimulatorControlWindow::on_spikeButton_clicked()
-{
-    qDebug()<<"Spike simulator in Thread "<<this->QObject::thread()->currentThreadId();
-}
-void SimulatorControlWindow::on_method1Button_clicked()
-{
-    if(ui->timeMode->isChecked())
-    {
-        parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
-//        std::cerr << ui->StepNumberBox->value() << " us time";
-//        parent_Get()->statusBar()->showMessage(message, 1200);
-    }
-    if(ui->stepMode->isChecked())
-    {
 
-        parent_Get()->m_Simulator->TimeOfSteps_Set(sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US));
-//        std::cerr << ui->StepTimeBox->value() << " steps";
-    }
-    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
-//    QString message = tr("Method1 requested");
-//    parent_Get()->statusBar()->showMessage(message, 1200);
-}
-*/
 void SimulatorControlWindow::on_method2Button_clicked()
 {
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SimulatedTime);
     QString message = tr("Method2 requested");
     parent_Get()->statusBar()->showMessage(message, 1200);
-}
-
-void SimulatorControlWindow::on_method3Button_clicked()
-{
-    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method3);
-//    parent_Get()->statusBar()->showMessage(message, 1200);
 }
 
 //#if 0

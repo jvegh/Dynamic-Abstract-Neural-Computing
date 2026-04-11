@@ -34,6 +34,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QVector>
 #include "ScQtSimulator.h"
 #include "TestNeuronPhysical.h"
 #include "qcustomplot.h"
@@ -60,7 +61,7 @@ public:
   QStringList first,second;
   uint32_t index, lastindex;
 
-  QVector<double> Time, Voltage;
+  QVector<double> Time, Voltage, Gradient;
 
 private slots:
   void realtimeDataSlot();
@@ -74,7 +75,14 @@ private:
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;
   int currentDemoIndex;
-  QApplication* qapp; //?
+//  QApplication* qapp; //?
+  QVector<double> x, y0, y1;
+
+  QCPCurve *VoltagePlot;
+  QVector<QCPCurveData> dataVoltagePlot;
+  QCPItemEllipse *RunningPoint;
+
+
 };
 
 #endif // VoltageWindow_H

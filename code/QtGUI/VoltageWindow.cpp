@@ -43,13 +43,11 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
   setupRealtimeDataDemo(ui->customPlot);
- // setWindowTitle("QCustomPlot: "+demoName);
-  setWindowTitle(QString(m_neuron->name())+QString(" electrical parameters"));
+   setWindowTitle(QString(m_neuron->name())+QString(" electrical parameters"));
   statusBar()->clearMessage();
   statusBar()->showMessage( QString("Ready to go"));
 //  ui->customPlot->replot();
   realtimeDataSlot();
-   //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
@@ -86,6 +84,61 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 
 void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
+
+    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+    double DvDt = m_neuron->dVdtResulting_Get()/100.;
+    double Time = m_neuron->LocalTimeInMillisec_Get()*2.4;
+    // Add an ellipse
+    RunningPoint = new QCPItemEllipse(ui->customPlot);
+    RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
+    RunningPoint->setPen(QPen(Qt::red));
+    RunningPoint->topLeft->setCoords(-0.0001+Time, Volt2-5);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(0.0001+Time, Volt2+5);
+
+    VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    uint64_t NCP = Gradient.count();
+    //    QVector<QCPCurveData> dataPhasePlot(NCP);
+    dataVoltagePlot.push_back(QCPCurveData(index,Volt2, DvDt));
+    index++;
+    VoltagePlot->data()->set(dataVoltagePlot, true);
+    VoltagePlot->setPen(QPen(Qt::blue));
+    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+
+    ui->customPlot->replot();
+
+
+    // add two new graphs and set their look:
+    ui->customPlot->addGraph();
+    ui->customPlot->graph(0)->setPen(QPen(Qt::blue)); // line color blue for first graph
+    ui->customPlot->graph(0)->setBrush(QBrush(QColor(0, 0, 255, 20))); // first graph will be filled with translucent blue
+    ui->customPlot->addGraph();
+    ui->customPlot->graph(1)->setPen(QPen(Qt::red)); // line color red for second graph
+    // generate some points of data (y0 for first, y1 for second graph):
+#if 0
+    for (int i=0; i<251; ++i)
+    {
+        x.push_back( i);
+        y0.push_back(qExp(-i/150.0)*qCos(i/10.0)); // exponentially decaying cosine
+        y1.push_back(qExp(-i/150.0));              // exponential envelope
+    }
+#endif
+    index = 0;
+    ui->customPlot->graph(0)->setData(x, y0);
+    ui->customPlot->graph(1)->setData(x, y1);
+    // create graph and assign data to it:
+    customPlot->graph(0)->setData(x, y0);
+    // give the axes some labels:
+    customPlot->xAxis->setLabel("Time (ms)");
+    customPlot->yAxis->setLabel("Membrane voltage (mV)");
+    // set axes ranges, so we see all data:
+    customPlot->xAxis->setRange(0,2);
+    customPlot->yAxis->setRange(-30,100);
+    // set some basic customPlot config:
+    customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+    customPlot->axisRect()->setupFullAxesBox();
+    customPlot->rescaleAxes();
+
+#if 0
   demoName = "Single AP draw demo";
 
     GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
@@ -131,6 +184,7 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->yAxis->setLabel("Voltage (mV)");
   // Create voltage gradient window
 
+  /*
   // Setup the second y axis
   customPlot->yAxis2->setVisible(true); // Ensure second axis is visible
   customPlot->yAxis2->setLabel("dV/dt (V/m)");
@@ -150,8 +204,9 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   // make left and bottom axes transfer their ranges to right and top axes:
   connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
   connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
-  
+ */
   // setup a timer that repeatedly calls VoltageWindow::realtimeDataSlot:
+#endif
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
   customPlot->axisRect()->setupFullAxesBox();
   customPlot->replot();
@@ -163,6 +218,66 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
 void VoltageWindow::realtimeDataSlot()
 {
+
+    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+    double DvDt = m_neuron->dVdtResulting_Get()/100.;
+    double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
+    RunningPoint->topLeft->setCoords(-0.05+key2, Volt2-.5);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(0.05+key2, Volt2+5);
+    uint64_t NCP = Gradient.count();
+    //    QVector<QCPCurveData> dataPhasePlot(NCP);
+    dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));
+    index++;
+    VoltagePlot->data()->set(dataVoltagePlot, true);
+    VoltagePlot->setPen(QPen(Qt::blue));
+    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+
+    ui->customPlot->replot();
+
+#if 0
+    if (0==index)
+    {
+    x.clear(); y0.clear(); //y1.clear();
+    }
+//     for (int i=0; i <= index; ++i)
+    {
+        double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
+        double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+        dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));
+     }
+     index ++;
+    ui->customPlot->graph(0)->setData(x, y0);
+ //   ui->customPlot->graph(1)->setData(x, y1);
+ //   ui->customPlot->graph(0)->rescaleAxes();
+    // same thing for graph 1, but only enlarge ranges (in case graph 1 is smaller than graph 0):
+//    ui->customPlot->graph(1)->rescaleAxes(true);
+    ui->customPlot->replot();
+    ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+#endif
+
+#if 0
+    // configure right and top axis to show ticks but no labels:
+    // (see QCPAxisRect::setupFullAxesBox for a quicker method to do this)
+    ui->customPlot->xAxis2->setVisible(true);
+    ui->customPlot->xAxis2->setTickLabels(false);
+    ui->customPlot->yAxis2->setVisible(true);
+    ui->customPlot->yAxis2->setTickLabels(false);
+    // make left and bottom axes always transfer their ranges to right and top axes:
+    connect(ui->customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
+    connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
+#endif
+
+#if 0
+    // pass data points to graphs:
+     // let the ranges scale themselves so graph 0 fits perfectly in the visible area:
+    ui->customPlot->graph(0)->rescaleAxes();
+    // same thing for graph 1, but only enlarge ranges (in case graph 1 is smaller than graph 0):
+    ui->customPlot->graph(1)->rescaleAxes(true);
+    // Note: we could have also just called customPlot->rescaleAxes(); instead
+    // Allow user to drag axis ranges with mouse, zoom with mouse wheel and select graphs by clicking:
+    ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+#endif
+#if 0
 //  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
 double Volt;
@@ -213,6 +328,7 @@ double Volt;
     lastFpsKey = key;
     frameCount = 0;
   }
+#endif
 }
 
 
@@ -223,7 +339,7 @@ VoltageWindow::~VoltageWindow()
 
 void VoltageWindow::screenShot()
 {
-  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
     QString fileName = demoName.toLower()+".pdf";
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);

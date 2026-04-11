@@ -32,6 +32,14 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
     QObject::connect(ui->Slider2, &QSlider::valueChanged, this, [=] () {
         (ui->Slider2Value->setText(QString::number(ui->Slider2->value(),'f',2)));
     });
+    // Set up Slider 3
+    ui->Slider3->setMinimum(31);
+    ui->Slider3->setMaximum(63);
+    ui->Slider3->setValue(35);
+    ui->Slider3Value->setText(QString::number(ui->Slider3->value()));
+    QObject::connect(ui->Slider3, &QSlider::valueChanged, this, [=] () {
+        (ui->Slider3Value->setText(QString::number(ui->Slider3->value(),'f',2)));
+    });
 
     setWindowTitle(tr("Neuron-ScQt simulator control dialog"));
     setMinimumSize(360, 300);

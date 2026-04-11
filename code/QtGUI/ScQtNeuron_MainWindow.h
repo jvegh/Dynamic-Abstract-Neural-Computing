@@ -20,6 +20,7 @@
 #include "ScQtAbout.h"
 #include "ScQtSimulator.h"
 #include "VoltageWindow.h"
+#include "GradientWindow.h"
 #include "SimulatorControlWindow.h"
 //#include "ScQtNeuron_Plot_AP.h"
 #include "neurontab.h"
@@ -111,6 +112,7 @@ public:
      void ProcessLine(QString line);
      void GetData(QString fileName);
      VoltageWindow *VoltageWindow_Get(){return m_VoltageWindow;}
+     GradientWindow *GradientWindow_Get(){return m_GradientWindow;}
      PhasePlotWindow *PhasePlotWindow_Get(){return m_PhasePlotWindow;}
 
 //protected:
@@ -137,6 +139,7 @@ private:
     void addTreeChild(QTreeWidgetItem *parent,
                       QString name, QString description);
     VoltageWindow *m_VoltageWindow;
+    GradientWindow *m_GradientWindow;
     PhasePlotWindow *m_PhasePlotWindow;
     NeuronPhysicalTEST *MyNeuron;
     // Tabs

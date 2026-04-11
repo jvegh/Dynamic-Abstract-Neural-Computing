@@ -92,6 +92,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_Simulator_ControlWindow->move(QPoint(600,000));
     m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
+    m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
+    m_GradientWindow->show();
     m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
     m_PhasePlotWindow->show();
 // Not sure if needed

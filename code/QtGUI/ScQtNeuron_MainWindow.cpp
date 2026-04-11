@@ -122,33 +122,6 @@ void ScQtNeuron_MainWindow::fitToView() {
 
 void ScQtNeuron_MainWindow::setupStatusBar() {
     statusBar()->showMessage("");
-/*
-    // Setup selected processor & ISA info status widget (right-aligned =>
-    // permanent)
-    setupPermanentStatusWidget(ProcessorInfo);
-    auto updateProcessorInfo = [=] {
-        const auto &desc =
-            ProcessorRegistry::getDescription(ProcessorHandler::getID());
-        QString status = "Processor: " + desc.name + "    ISA: " +
-                         ProcessorHandler::getProcessor()->implementsISA()->name();
-        ProcessorInfoStatusManager::get().setStatusPermanent(status);
-    };
-    connect(ProcessorHandler::get(), &ProcessorHandler::processorChanged,
-            updateProcessorInfo);
-    updateProcessorInfo();
-
-    // Setup processorhandler status widget
-    setupStatusWidget(Processor);
-
-    // Setup syscall status widget
-    setupStatusWidget(Syscall);
-
-    // Setup systemIO status widget
-    setupStatusWidget(SystemIO);
-
-    // Setup general info status widget
-    setupStatusWidget(General);
-*/
 }
 
 void ScQtNeuron_MainWindow::closeEvent(QCloseEvent *event)

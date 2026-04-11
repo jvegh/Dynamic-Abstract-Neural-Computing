@@ -82,6 +82,13 @@ private:
   QVector<QCPCurveData> dataGradientPlot;
   QCPItemEllipse *RunningPoint;
 
+  QCPCurve *AISGradientPlot;
+  QVector<QCPCurveData> dataAISGradientPlot;
+  QCPItemEllipse *AISRunningPoint;
+
+  QCPCurve *RushinGradientPlot;
+  QVector<QCPCurveData> dataRushinGradientPlot;
+  QCPItemEllipse *RushinRunningPoint;
 
 };
 

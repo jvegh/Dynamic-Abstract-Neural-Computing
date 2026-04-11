@@ -94,16 +94,27 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RunningPoint->setPen(QPen(Qt::red));
     RunningPoint->topLeft->setCoords(-0.0001+Time, Volt2-5);    // Set coordinates
     RunningPoint->bottomRight->setCoords(0.0001+Time, Volt2+5);
+    AISRunningPoint  = new QCPItemEllipse(ui->customPlot);
+    RushinRunningPoint  = new QCPItemEllipse(ui->customPlot);
 
     GradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    AISGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    RushinGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+
+    customPlot->legend->setVisible(true); // Ensure legend is visible
+    customPlot->legend->setFont(QFont("Helvetica", 9));
+    customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
+    // Set position to upper left inside the axis rect
+    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
     uint64_t NCP = Gradient.count();
     //    QVector<QCPCurveData> dataPhasePlot(NCP);
+    /*
     dataGradientPlot.push_back(QCPCurveData(index,Volt2, DvDt));
     index++;
     GradientPlot->data()->set(dataGradientPlot, true);
     GradientPlot->setPen(QPen(Qt::blue));
     GradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-
+*/
     ui->customPlot->replot();
 
 
@@ -111,8 +122,17 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     ui->customPlot->addGraph();
     ui->customPlot->graph(0)->setPen(QPen(Qt::blue)); // line color blue for first graph
     ui->customPlot->graph(0)->setBrush(QBrush(QColor(0, 0, 255, 20))); // first graph will be filled with translucent blue
+    ui->customPlot->graph(0)->setName("Resulting gradient");
+
     ui->customPlot->addGraph();
     ui->customPlot->graph(1)->setPen(QPen(Qt::red)); // line color red for second graph
+    ui->customPlot->graph(1)->setBrush(QBrush(QColor(255, 0, 0, 20))); // first graph will be filled with translucent blue
+    ui->customPlot->graph(1)->setName("AIS gradient");
+
+    ui->customPlot->addGraph();
+    ui->customPlot->graph(2)->setPen(QPen(Qt::green)); // line color red for second graph
+    ui->customPlot->graph(2)->setBrush(QBrush(QColor(0, 255, 0, 20))); // first graph will be filled with translucent blue
+    ui->customPlot->graph(2)->setName("Rushin gradient");
     // generate some points of data (y0 for first, y1 for second graph):
 #if 0
     for (int i=0; i<251; ++i)
@@ -123,11 +143,11 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     }
 #endif
     index = 0;
-    ui->customPlot->graph(0)->setData(x, y0);
+/*    ui->customPlot->graph(0)->setData(x, y0);
     ui->customPlot->graph(1)->setData(x, y1);
     // create graph and assign data to it:
     customPlot->graph(0)->setData(x, y0);
-    // give the axes some labels:
+*/    // give the axes some labels:
     customPlot->xAxis->setLabel("Time (ms)");
     customPlot->yAxis->setLabel("Membrane gradient (V/m)");
     // set axes ranges, so we see all data:
@@ -160,28 +180,9 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->yAxis->setTickLabelFont(font);
   customPlot->legend->setFont(font);
   */
-  customPlot->addGraph(); // blue line
-  customPlot->graph(0)->setName("ActionPotential");
-  customPlot->graph(0)->setPen(QPen(QColor(255, 110, 40)));
-  customPlot->graph(0)->setLineStyle((QCPGraph::LineStyle)1);
 
-  customPlot->addGraph(); // red line
-  customPlot->graph(1)->setPen(QPen(QColor(40, 110, 255)));
-  customPlot->graph(1)->setName("dV/dt gradient");
-  customPlot->graph(1)->setLineStyle((QCPGraph::LineStyle)1);
-
-  customPlot->addGraph(customPlot->xAxis,customPlot->yAxis2); // green line
-  customPlot->graph(2)->setPen(QPen(QColor(31, 127, 31)));
-  customPlot->graph(2)->setName("Another");
-  customPlot->graph(2)->setLineStyle((QCPGraph::LineStyle)1);
   index = 0;
 
-  QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
-  timeTicker->setTimeFormat("%s:%z"); //"%m:%s:%Z"
-  customPlot->xAxis->setTicker(timeTicker);
-  customPlot->xAxis->setLabel("Time (ms)");
-  customPlot->yAxis->setRange(-30, 110);
-  customPlot->yAxis->setLabel("Voltage gradient (V/m)");
   // setup a timer that repeatedly calls VoltageWindow::realtimeDataSlot:
 #endif
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
@@ -198,17 +199,34 @@ void GradientWindow::realtimeDataSlot()
 
 //    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     double DvDt = m_neuron->dVdtResulting_Get();
+    double Membrane_dVdt_AIS = m_neuron->dVdtAIS_Get();
+    double Membrane_dVdt_Rushin = m_neuron-> dVdtRushin_Get();
+
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     RunningPoint->topLeft->setCoords(-0.05+key2, DvDt-.5);    // Set coordinates
     RunningPoint->bottomRight->setCoords(0.05+key2, DvDt+5);
+    AISRunningPoint->topLeft->setCoords(-0.05+key2, Membrane_dVdt_AIS-.5);    // Set coordinates
+    AISRunningPoint->bottomRight->setCoords(0.05+key2, Membrane_dVdt_AIS+5);
+    RushinRunningPoint->topLeft->setCoords(-0.05+key2, Membrane_dVdt_Rushin-.5);    // Set coordinates
+    RushinRunningPoint->bottomRight->setCoords(0.05+key2, Membrane_dVdt_Rushin+5);
     uint64_t NCP = Gradient.count();
     //    QVector<QCPCurveData> dataPhasePlot(NCP);
     dataGradientPlot.push_back(QCPCurveData(index,key2, DvDt));
-    index++;
     GradientPlot->data()->set(dataGradientPlot, true);
     GradientPlot->setPen(QPen(Qt::blue));
     GradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    //
+    dataAISGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_AIS));
+    AISGradientPlot->data()->set(dataAISGradientPlot, true);
+    AISGradientPlot->setPen(QPen(Qt::red));
+    AISGradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
+    dataRushinGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_Rushin));
+    RushinGradientPlot->data()->set(dataRushinGradientPlot, true);
+    RushinGradientPlot->setPen(QPen(Qt::green));
+    RushinGradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+
+    index++;
     ui->customPlot->replot();
 
 #if 0

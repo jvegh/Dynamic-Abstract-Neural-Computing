@@ -220,7 +220,7 @@ void PhasePlotWindow::realtimeDataSlot()
     PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
     ui->customPlot->replot();
-    cerr << NCP<< ','<<  Volt2<< ',' << DvDt << '\n';
+ //   cerr << NCP<< ','<<  Volt2<< ',' << DvDt << '\n';
 #if 0
 //  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:

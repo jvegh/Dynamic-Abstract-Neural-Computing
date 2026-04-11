@@ -23,10 +23,10 @@
 **          Version: 2.1.1                                                **
 ****************************************************************************/
 
-#include "VoltageWindow.h"
-#include "ui_VoltageWindow.h"
+#include "GradientWindow.h"
+#include "ui_GradientWindow.h"
 #include <QDebug>
-//#include <iostream>
+#include <iostream>
 #include <QScreen>
 #include <QMessageBox>
 #include <QMetaEnum>
@@ -34,17 +34,16 @@
 
 #include <QFile>
 
-VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
+GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
   QMainWindow(parent),
-  ui(new Ui::VoltageWindow),
+  ui(new Ui::GradientWindow),
     m_Simulator(Simulator),
     m_neuron(Neuron)
 {
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
   setupRealtimeDataDemo(ui->customPlot);
-   setWindowTitle(QString(m_neuron->name())+QString(" ActionPotential"));
-  setupMenus();
+   setWindowTitle(QString(m_neuron->name())+QString(" voltage gradient"));
   statusBar()->clearMessage();
   statusBar()->showMessage( QString("Ready to go"));
 //  ui->customPlot->replot();
@@ -52,50 +51,8 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
-void VoltageWindow::setupMenus()
-{
-    const QIcon saveIcon = QIcon(":/icons/save.svg");
-    auto *screenshotAction = new QAction(saveIcon, "Screenshot to File", this);
-    ui->menuFile->addAction(screenshotAction);
-    screenshotAction->setShortcut(QKeySequence::Save);
-    connect(screenshotAction, &QAction::triggered, this,
-            &VoltageWindow::screenshotFilesTriggered);
-}
 
-void VoltageWindow::screenshotFilesTriggered() {
- //   QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->Time()-7, this->Voltage()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QString fileName = QString(m_neuron->name())+QString(" Voltage Plot")+".pdf";
-    fileName.replace(" ", "");
-    ui->customPlot->savePdf(fileName, 0, 0);
-
-/*
-        static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)->getSourceType());
-    if (!RipesSettings::value(RIPES_SETTING_HAS_SAVEFILE).toBool()) {
-        saveFilesAsTriggered();
-        return;
-    }
-
-    emit prepareSave();
-    QStringList savedFiles;
-    if (!diag.sourcePath().isEmpty()) {
-        if (!ensurePath(diag.sourcePath()))
-            return;
-        QFile file(diag.sourcePath());
-        savedFiles << diag.sourcePath();
-        if (!writeTextFile(file,
-                           static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)
-                               ->getAssemblyText())) {
-            QMessageBox::information(this, "File error",
-                                     "Error when saving file: " + file.errorString());
-            return;
-        }
-    }
-     }
-*/
-    statusBar()->showMessage( QString("Screenshot saved to "+fileName));
-}
-
-void VoltageWindow::ProcessLine(QString line)
+void GradientWindow::ProcessLine(QString line)
 {
     QStringList firstColumn;
      // Handle the first two items only
@@ -103,10 +60,10 @@ void VoltageWindow::ProcessLine(QString line)
     first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
     second.append(line.split(",").at(1));
     Time.push_back(line.split(",").at(0).toDouble());
-    Voltage.push_back(line.split(",").at(1).toDouble());
+    Gradient.push_back(line.split(",").at(1).toDouble());
  //    std::cout << line.toStdString() << '\n';
 }
-void VoltageWindow::GetData(QString fileName)
+void GradientWindow::GetData(QString fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -125,7 +82,7 @@ void VoltageWindow::GetData(QString fileName)
 customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 */
 
-void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
+void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
 
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
@@ -138,14 +95,14 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RunningPoint->topLeft->setCoords(-0.0001+Time, Volt2-5);    // Set coordinates
     RunningPoint->bottomRight->setCoords(0.0001+Time, Volt2+5);
 
-    VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    GradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     uint64_t NCP = Gradient.count();
     //    QVector<QCPCurveData> dataPhasePlot(NCP);
-    dataVoltagePlot.push_back(QCPCurveData(index,Volt2, DvDt));
+    dataGradientPlot.push_back(QCPCurveData(index,Volt2, DvDt));
     index++;
-    VoltagePlot->data()->set(dataVoltagePlot, true);
-    VoltagePlot->setPen(QPen(Qt::blue));
-    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    GradientPlot->data()->set(dataGradientPlot, true);
+    GradientPlot->setPen(QPen(Qt::blue));
+    GradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
     ui->customPlot->replot();
 
@@ -172,7 +129,7 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     customPlot->graph(0)->setData(x, y0);
     // give the axes some labels:
     customPlot->xAxis->setLabel("Time (ms)");
-    customPlot->yAxis->setLabel("Membrane voltage (mV)");
+    customPlot->yAxis->setLabel("Membrane gradient (V/m)");
     // set axes ranges, so we see all data:
     customPlot->xAxis->setRange(0,2);
     customPlot->yAxis->setRange(-30,100);
@@ -224,30 +181,7 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->xAxis->setTicker(timeTicker);
   customPlot->xAxis->setLabel("Time (ms)");
   customPlot->yAxis->setRange(-30, 110);
-  customPlot->yAxis->setLabel("Voltage (mV)");
-  // Create voltage gradient window
-
-  /*
-  // Setup the second y axis
-  customPlot->yAxis2->setVisible(true); // Ensure second axis is visible
-  customPlot->yAxis2->setLabel("dV/dt (V/m)");
-
-  QSharedPointer<QCPAxisTickerFixed> fixedTicker(new QCPAxisTickerFixed);
-  fixedTicker->setTickStep(10); //
-  fixedTicker->setScaleStrategy(QCPAxisTickerFixed::ssMultiples);
-  customPlot->yAxis2->setTicker(fixedTicker);
-  customPlot->yAxis2->setTickLabels(true);
-
-
-   customPlot->yAxis2->setRange(-100, 200);
-  customPlot->yAxis2->setLabelColor(Qt::blue);
-  customPlot->yAxis2->setTickLabelColor(Qt::blue);
-  //??customPlot->yAxis2->setRotation (180);
-
-  // make left and bottom axes transfer their ranges to right and top axes:
-  connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
-  connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
- */
+  customPlot->yAxis->setLabel("Voltage gradient (V/m)");
   // setup a timer that repeatedly calls VoltageWindow::realtimeDataSlot:
 #endif
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
@@ -259,21 +193,21 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 }
 
 
-void VoltageWindow::realtimeDataSlot()
+void GradientWindow::realtimeDataSlot()
 {
 
-    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
-    double DvDt = m_neuron->dVdtResulting_Get()/100.;
+//    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+    double DvDt = m_neuron->dVdtResulting_Get();
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
-    RunningPoint->topLeft->setCoords(-0.05+key2, Volt2-.5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.05+key2, Volt2+5);
+    RunningPoint->topLeft->setCoords(-0.05+key2, DvDt-.5);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(0.05+key2, DvDt+5);
     uint64_t NCP = Gradient.count();
     //    QVector<QCPCurveData> dataPhasePlot(NCP);
-    dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));
+    dataGradientPlot.push_back(QCPCurveData(index,key2, DvDt));
     index++;
-    VoltagePlot->data()->set(dataVoltagePlot, true);
-    VoltagePlot->setPen(QPen(Qt::blue));
-    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    GradientPlot->data()->set(dataGradientPlot, true);
+    GradientPlot->setPen(QPen(Qt::blue));
+    GradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
     ui->customPlot->replot();
 
@@ -286,7 +220,7 @@ void VoltageWindow::realtimeDataSlot()
     {
         double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
         double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
-        dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));
+        dataGradientPlot.push_back(QCPCurveData(index,key2,Volt2));
      }
      index ++;
     ui->customPlot->graph(0)->setData(x, y0);
@@ -324,21 +258,21 @@ void VoltageWindow::realtimeDataSlot()
 //  static QTime timeStart = QTime::currentTime();
   // calculate two new data points:
 double Volt;
-    if(!Voltage.count()) return;
-   Volt = Voltage[index];
+    if(!Gradient.count()) return;
+   Volt = Gradient[index];
   double key = Time[index++];
 //  double key2 = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
   double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
   double Volt2 = m_neuron->MembraneRelativePotential_Get();
   double DvDt = m_neuron->dVdtResulting_Get();
-  if(index>=Voltage.count())
+  if(index>=Gradient.count())
       index = 0;
    static double lastPointKey = 0;
   if (key-lastPointKey > 0.005) // at most add point every 5 us
   {
     // add data to lines:
     //  Time.push_back(line.split(",").at(0).toDouble());
-    //  Voltage.push_back(line.split(",").at(1).toDouble());
+    //  Gradient.push_back(line.split(",").at(1).toDouble());
 
 
       ui->customPlot->graph(0)->addData(key, Volt);
@@ -349,8 +283,8 @@ double Volt;
     ui->customPlot->graph(1)->rescaleValueAxis(true);
     ui->customPlot->graph(2)->rescaleValueAxis(true);
     lastPointKey = key;
-//    if(index>sizeof(Voltage))
-//        Voltage.clear();
+//    if(index>sizeof(Gradient))
+//        Gradient.clear();
   }
   // make key axis range scroll with the data (at a constant range size of 10):
   ui->customPlot->xAxis->setRange(key, 1., Qt::AlignRight);
@@ -375,12 +309,12 @@ double Volt;
 }
 
 
-VoltageWindow::~VoltageWindow()
+GradientWindow::~GradientWindow()
 {
   delete ui;
 }
 
-void VoltageWindow::screenShot()
+void GradientWindow::screenShot()
 {
   QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
     QString fileName = demoName.toLower()+".pdf";
@@ -392,4 +326,5 @@ void VoltageWindow::screenShot()
 //  qApp->quit();
 }
 
-#include "moc_VoltageWindow.cpp"
+
+#include "moc_GradientWindow.cpp"

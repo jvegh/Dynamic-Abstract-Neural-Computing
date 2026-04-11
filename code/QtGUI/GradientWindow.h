@@ -29,8 +29,8 @@
 **                                                                                                         **
 *************************************************************************************************************/
 
-#ifndef VoltageWindow_H
-#define VoltageWindow_H
+#ifndef GradientWindow_H
+#define GradientWindow_H
 
 #include <QMainWindow>
 #include <QTimer>
@@ -41,16 +41,16 @@
 
 
 namespace Ui {
-class VoltageWindow;
+class GradientWindow;
 }
 
-class VoltageWindow : public QMainWindow
+class GradientWindow : public QMainWindow
 {
   Q_OBJECT
   
 public:
-  explicit VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
-  ~VoltageWindow();
+  explicit GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
+  ~GradientWindow();
   
   void setupRealtimeDataDemo(QCustomPlot *customPlot);
   void setupParametricCurveDemo(QCustomPlot *customPlot);
@@ -66,13 +66,11 @@ public:
 private slots:
   void realtimeDataSlot();
   void screenShot();
-  void screenshotFilesTriggered();
 
 private:
-  Ui::VoltageWindow *ui;
+  Ui::GradientWindow *ui;
     ScQtSimulator * m_Simulator;
   NeuronPhysical *m_neuron;
-    void setupMenus();
   QString demoName;
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;
@@ -80,11 +78,11 @@ private:
 //  QApplication* qapp; //?
   QVector<double> x, y0, y1;
 
-  QCPCurve *VoltagePlot;
-  QVector<QCPCurveData> dataVoltagePlot;
+  QCPCurve *GradientPlot;
+  QVector<QCPCurveData> dataGradientPlot;
   QCPItemEllipse *RunningPoint;
 
 
 };
 
-#endif // VoltageWindow_H
+#endif // GradientWindow_H

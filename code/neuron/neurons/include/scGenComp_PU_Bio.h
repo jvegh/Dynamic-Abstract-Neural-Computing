@@ -100,8 +100,7 @@ class scGenComp_PU_Bio : public scGenComp_PU_Abstract
     /** @brief The extra processing for beginning computing
      */
     virtual void ComputingBegin_Do()
-    {
-    }
+    {}
     void DeliveringBegin_Do();
     void DeliveringEnd_Do();
 

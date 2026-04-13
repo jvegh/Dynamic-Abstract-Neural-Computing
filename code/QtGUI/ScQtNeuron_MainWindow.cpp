@@ -250,6 +250,7 @@ void ScQtNeuron_MainWindow::setupMenus() {
     connect(wikiAction, &QAction::triggered, this,
             &ScQtNeuron_MainWindow::saveFilesTriggered);
 */
+
     connect(ui->actionOpen_wiki, &QAction::triggered, this, &ScQtNeuron_MainWindow::wiki);
     connect(ui->actionVersion, &QAction::triggered, this, &ScQtNeuron_MainWindow::version);
 

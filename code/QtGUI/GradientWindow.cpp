@@ -45,6 +45,10 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
   setupRealtimeDataDemo(ui->customPlot);
    setWindowTitle(QString(m_neuron->name())+QString(" voltage gradient"));
   statusBar()->clearMessage();
+   ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
+
+   connect(ui->actionScreenshot, &QAction::triggered, this, &GradientWindow::screenShot);
+
   statusBar()->showMessage( QString("Ready to go"));
 //  ui->customPlot->replot();
   realtimeDataSlot();
@@ -84,17 +88,17 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 
 void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
-
-    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+ /*   double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     double DvDt = m_neuron->dVdtResulting_Get()/100.;
     double Time = m_neuron->LocalTimeInMillisec_Get()*2.4;
+*/
     // Add an ellipse
     RunningPoint = new QCPItemEllipse(ui->customPlot);
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     RunningPoint->setPen(QPen(Qt::red));
-    RunningPoint->topLeft->setCoords(-0.0001+Time, Volt2-5);    // Set coordinates
+/*    RunningPoint->topLeft->setCoords(-0.0001+Time, Volt2-5);    // Set coordinates
     RunningPoint->bottomRight->setCoords(0.0001+Time, Volt2+5);
-    AISRunningPoint  = new QCPItemEllipse(ui->customPlot);
+*/    AISRunningPoint  = new QCPItemEllipse(ui->customPlot);
     RushinRunningPoint  = new QCPItemEllipse(ui->customPlot);
 
     GradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
@@ -106,15 +110,6 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
     // Set position to upper left inside the axis rect
     customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
-    uint64_t NCP = Gradient.count();
-    //    QVector<QCPCurveData> dataPhasePlot(NCP);
-    /*
-    dataGradientPlot.push_back(QCPCurveData(index,Volt2, DvDt));
-    index++;
-    GradientPlot->data()->set(dataGradientPlot, true);
-    GradientPlot->setPen(QPen(Qt::blue));
-    GradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-*/
     ui->customPlot->replot();
 
 
@@ -151,15 +146,15 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     customPlot->xAxis->setLabel("Time (ms)");
     customPlot->yAxis->setLabel("Membrane gradient (V/m)");
     // set axes ranges, so we see all data:
-    customPlot->xAxis->setRange(0,2);
-    customPlot->yAxis->setRange(-30,100);
+    customPlot->xAxis->setRange(0,1);
+    customPlot->yAxis->setRange(-100,200);
     // set some basic customPlot config:
     customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
     customPlot->axisRect()->setupFullAxesBox();
     customPlot->rescaleAxes();
 
-#if 0
   demoName = "Single AP draw demo";
+#if 0
 
     GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
   // include this section to fully disable antialiasing for higher performance:
@@ -196,35 +191,36 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
 void GradientWindow::realtimeDataSlot()
 {
-
-//    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+    double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     double DvDt = m_neuron->dVdtResulting_Get();
     double Membrane_dVdt_AIS = m_neuron->dVdtAIS_Get();
-    double Membrane_dVdt_Rushin = m_neuron-> dVdtRushin_Get();
-
-    double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
-    RunningPoint->topLeft->setCoords(-0.05+key2, DvDt-.5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.05+key2, DvDt+5);
-    AISRunningPoint->topLeft->setCoords(-0.05+key2, Membrane_dVdt_AIS-.5);    // Set coordinates
-    AISRunningPoint->bottomRight->setCoords(0.05+key2, Membrane_dVdt_AIS+5);
-    RushinRunningPoint->topLeft->setCoords(-0.05+key2, Membrane_dVdt_Rushin-.5);    // Set coordinates
-    RushinRunningPoint->bottomRight->setCoords(0.05+key2, Membrane_dVdt_Rushin+5);
-    uint64_t NCP = Gradient.count();
+    double Membrane_dVdt_Input = m_neuron->dVdtInput_Get();
+    std::cerr << key2 << "," <<  DvDt << "," << Membrane_dVdt_AIS << "," << Membrane_dVdt_Input << '\n';
+//    uint64_t NCP = Gradient.count();
     //    QVector<QCPCurveData> dataPhasePlot(NCP);
+    // Handle resultant gradient display
     dataGradientPlot.push_back(QCPCurveData(index,key2, DvDt));
     GradientPlot->data()->set(dataGradientPlot, true);
     GradientPlot->setPen(QPen(Qt::blue));
     GradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-    //
+    RunningPoint->topLeft->setCoords(-0.01+key2, DvDt-.5);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(0.01+key2, DvDt+5);
+
+    // Handle AIS gradient display
     dataAISGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_AIS));
     AISGradientPlot->data()->set(dataAISGradientPlot, true);
     AISGradientPlot->setPen(QPen(Qt::red));
     AISGradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    AISRunningPoint->topLeft->setCoords(-0.01+key2, Membrane_dVdt_AIS-.5);    // Set coordinates
+    AISRunningPoint->bottomRight->setCoords(0.01+key2, Membrane_dVdt_AIS+5);
 
-    dataRushinGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_Rushin));
+    // Handle Rush-in gradient display
+    dataRushinGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_Input));
     RushinGradientPlot->data()->set(dataRushinGradientPlot, true);
     RushinGradientPlot->setPen(QPen(Qt::green));
     RushinGradientPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    RushinRunningPoint->topLeft->setCoords(-0.01+key2, Membrane_dVdt_Input-.5);    // Set coordinates
+    RushinRunningPoint->bottomRight->setCoords(0.01+key2, Membrane_dVdt_Input+5);
 
     index++;
     ui->customPlot->replot();
@@ -250,80 +246,7 @@ void GradientWindow::realtimeDataSlot()
     ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
 #endif
 
-#if 0
-    // configure right and top axis to show ticks but no labels:
-    // (see QCPAxisRect::setupFullAxesBox for a quicker method to do this)
-    ui->customPlot->xAxis2->setVisible(true);
-    ui->customPlot->xAxis2->setTickLabels(false);
-    ui->customPlot->yAxis2->setVisible(true);
-    ui->customPlot->yAxis2->setTickLabels(false);
-    // make left and bottom axes always transfer their ranges to right and top axes:
-    connect(ui->customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
-    connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
-#endif
 
-#if 0
-    // pass data points to graphs:
-     // let the ranges scale themselves so graph 0 fits perfectly in the visible area:
-    ui->customPlot->graph(0)->rescaleAxes();
-    // same thing for graph 1, but only enlarge ranges (in case graph 1 is smaller than graph 0):
-    ui->customPlot->graph(1)->rescaleAxes(true);
-    // Note: we could have also just called customPlot->rescaleAxes(); instead
-    // Allow user to drag axis ranges with mouse, zoom with mouse wheel and select graphs by clicking:
-    ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
-#endif
-#if 0
-//  static QTime timeStart = QTime::currentTime();
-  // calculate two new data points:
-double Volt;
-    if(!Gradient.count()) return;
-   Volt = Gradient[index];
-  double key = Time[index++];
-//  double key2 = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
-  double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
-  double Volt2 = m_neuron->MembraneRelativePotential_Get();
-  double DvDt = m_neuron->dVdtResulting_Get();
-  if(index>=Gradient.count())
-      index = 0;
-   static double lastPointKey = 0;
-  if (key-lastPointKey > 0.005) // at most add point every 5 us
-  {
-    // add data to lines:
-    //  Time.push_back(line.split(",").at(0).toDouble());
-    //  Gradient.push_back(line.split(",").at(1).toDouble());
-
-
-      ui->customPlot->graph(0)->addData(key, Volt);
-    ui->customPlot->graph(1)->addData(key2, 17*Volt2);
-      ui->customPlot->graph(2)->addData(key2, DvDt/2);
-     // rescale value (vertical) axis to fit the current data:
-    ui->customPlot->graph(0)->rescaleValueAxis();
-    ui->customPlot->graph(1)->rescaleValueAxis(true);
-    ui->customPlot->graph(2)->rescaleValueAxis(true);
-    lastPointKey = key;
-//    if(index>sizeof(Gradient))
-//        Gradient.clear();
-  }
-  // make key axis range scroll with the data (at a constant range size of 10):
-  ui->customPlot->xAxis->setRange(key, 1., Qt::AlignRight);
-  ui->customPlot->replot();
-  // calculate frames per second:
-  static double lastFpsKey;
-  static int frameCount;
-  ++frameCount;
-  if (key-lastFpsKey > 1) // average fps over 2 seconds
-  {
-    statusBar()->showMessage(
-          QString("%1 FPS, Total Data points: %2")
-          .arg(frameCount/(key-lastFpsKey), 0, 'f', 0)
-          .arg(ui->customPlot->graph(0)->data()->size()
-//                   +ui->customPlot->graph(1)->data()->size()
-                   )
-          , 1000);
-    lastFpsKey = key;
-    frameCount = 0;
-  }
-#endif
 }
 
 
@@ -334,9 +257,14 @@ GradientWindow::~GradientWindow()
 
 void GradientWindow::screenShot()
 {
-  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QString fileName = demoName.toLower()+".pdf";
-  fileName.replace(" ", "");
+    QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+    QScreen *screen1 = qApp->primaryScreen();
+    QPixmap pixmap = screen1->grabWindow(0);
+/*    const QRect screenGeometry = screen()->geometry();
+    QPixmap pm = grabWindow(0, screenGeometry.x(), screenGeometry.y(), screenGeometry.width()+14, screenGeometry.height()+14);
+*/    QString fileName = demoName.toLower()+".pdf";
+
+    fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);
 
 //  pm.save("./screenshots/"+fileName);

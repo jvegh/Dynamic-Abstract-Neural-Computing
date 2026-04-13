@@ -75,8 +75,8 @@ private:
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;
   int currentDemoIndex;
-//  QApplication* qapp; //?
-  QVector<double> x, y0, y1;
+//  QApplication* qapp;
+//  QVector<double> x, y0, y1;
 
   QCPCurve *GradientPlot;
   QVector<QCPCurveData> dataGradientPlot;

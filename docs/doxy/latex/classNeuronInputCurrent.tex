@@ -1,0 +1,146 @@
+\doxysection{Neuron\+Input\+Current Class Reference}
+\label{classNeuronInputCurrent}\index{NeuronInputCurrent@{NeuronInputCurrent}}
+
+
+\doxysubsection{Detailed Description}
+Implements a general input current for physical-\/type neuron. 
+
+In rush-\/in and synaptic input types, currents are descibed by a current contribution in which a saturating charge-\/up function is multiplied by a discharge function
+
+The input currents produce a gradient on the condenser. The input current is $I=dQ/dt$, that produces a gradient $ dV/dt = d(Q/C)/dt = I/C $
+
+The $I_i$ current is provided in pA (i.\+e. in $10^-{12}\frac{Cb}{s}$, so it causes on a capacitor $C$ (given in [pF]) and on a resistor $R$ $I_i*R$ [mV] voltage.
+
+A current gradient $\frac{I_i}{dt} \quad [\frac{pA}{s}]$ causes on a capacitor $C$ (given in [pF]) a voltage gradient $\frac{1}{C]\frac{dI_i}{dt}$ increase $I_i/C$ [V/s],
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Neuron\+Constants}{p.}{classNeuronConstants}
+\end{DoxySeeAlso}
+The input currents are created by the Parent\+Neuron.
+\begin{DoxyItemize}
+\item The Rush-\/in current is created when the stage "{}\+Delivering"{} begins
+\item The synaptic currents are created when synaptic inputs received from the upstream neurons
+\item The artificial current begins when the experimenter switches it on 
+\end{DoxyItemize}\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \textbf{ Current\+Gradient\+\_\+\+Get} (double TT)
+\begin{DoxyCompactList}\small\item\em Current\+Gradient\+\_\+\+Get. \end{DoxyCompactList}\item 
+double \textbf{ Current\+Value\+\_\+\+Get} (double TT)
+\begin{DoxyCompactList}\small\item\em Current\+Value\+\_\+\+Get. \end{DoxyCompactList}\item 
+\textbf{ Neuron\+Input\+Current} (\textbf{ Neuron\+Physical} $\ast$Parent\+Neuron, \textbf{ Neuron\+Input\+Current\+\_\+t} t, double Begin\+Time, std\+::vector$<$ double $>$ \&Parameters)
+\begin{DoxyCompactList}\small\item\em Creates an input current for a physics-\/based neuron unit. \end{DoxyCompactList}\item 
+double \textbf{ Voltage\+Gradient\+\_\+\+Get} (double TT)
+\begin{DoxyCompactList}\small\item\em Voltage\+Gradient\+\_\+\+Get. \end{DoxyCompactList}\item 
+double \textbf{ Voltage\+Value\+\_\+\+Get} (double TT)
+\begin{DoxyCompactList}\small\item\em Voltage\+Value\+\_\+\+Get. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\label{classNeuronInputCurrent_a3e30bc25fc344e685064ba2b16ee0d30} 
+double {\bfseries m\+\_\+\+Begin\+Time}
+\begin{DoxyCompactList}\small\item\em The beginning of the current, local time, [ms]. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\label{classNeuronInputCurrent_af41bf336678c16b9b38e922e8bc43d16} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!NeuronInputCurrent@{NeuronInputCurrent}}
+\index{NeuronInputCurrent@{NeuronInputCurrent}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{NeuronInputCurrent()}
+{\footnotesize\ttfamily Neuron\+Input\+Current\+::\+Neuron\+Input\+Current (\begin{DoxyParamCaption}\item[{\textbf{ Neuron\+Physical} $\ast$}]{Parent\+Neuron,  }\item[{\textbf{ Neuron\+Input\+Current\+\_\+t}}]{t,  }\item[{double}]{Begin\+Time,  }\item[{std\+::vector$<$ double $>$ \&}]{Parameters }\end{DoxyParamCaption})}
+
+
+
+Creates an input current for a physics-\/based neuron unit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Parent\+Neuron} & the owner neuron \\
+\hline
+\mbox{\texttt{ in}}  & {\em t} & type of the input current \\
+\hline
+\mbox{\texttt{ in}}  & {\em Begin\+Time} & the beginning of the current\textquotesingle{}s time scale [msec] \\
+\hline
+\mbox{\texttt{ in}}  & {\em Parameters} & the parameters of the current \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\label{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!CurrentGradient\_Get@{CurrentGradient\_Get}}
+\index{CurrentGradient\_Get@{CurrentGradient\_Get}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{CurrentGradient\_Get()}
+{\footnotesize\ttfamily double Neuron\+Input\+Current\+::\+Current\+Gradient\+\_\+\+Get (\begin{DoxyParamCaption}\item[{double}]{TT }\end{DoxyParamCaption})}
+
+
+
+Current\+Gradient\+\_\+\+Get. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at [msec] \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of current gradient at the value TT, in [p\+A/s] 
+\end{DoxyReturn}
+\label{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!CurrentValue\_Get@{CurrentValue\_Get}}
+\index{CurrentValue\_Get@{CurrentValue\_Get}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{CurrentValue\_Get()}
+{\footnotesize\ttfamily double Neuron\+Input\+Current\+::\+Current\+Value\+\_\+\+Get (\begin{DoxyParamCaption}\item[{double}]{TT }\end{DoxyParamCaption})}
+
+
+
+Current\+Value\+\_\+\+Get. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at [msec] \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of current at the value TT, in [pA] 
+\end{DoxyReturn}
+\label{classNeuronInputCurrent_a20106e15037c3b5a409ee87793d0f2fb} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!VoltageGradient\_Get@{VoltageGradient\_Get}}
+\index{VoltageGradient\_Get@{VoltageGradient\_Get}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{VoltageGradient\_Get()}
+{\footnotesize\ttfamily double Neuron\+Input\+Current\+::\+Voltage\+Gradient\+\_\+\+Get (\begin{DoxyParamCaption}\item[{double}]{TT }\end{DoxyParamCaption})}
+
+
+
+Voltage\+Gradient\+\_\+\+Get. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TT} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the voltage gradient the current causes of the parent neuron\textquotesingle{}s membrane, in [V/s] 
+\end{DoxyReturn}
+\label{classNeuronInputCurrent_a8aa256d1c56c4e9f767e34798bbf92b4} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!VoltageValue\_Get@{VoltageValue\_Get}}
+\index{VoltageValue\_Get@{VoltageValue\_Get}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{VoltageValue\_Get()}
+{\footnotesize\ttfamily double Neuron\+Input\+Current\+::\+Voltage\+Value\+\_\+\+Get (\begin{DoxyParamCaption}\item[{double}]{TT }\end{DoxyParamCaption})}
+
+
+
+Voltage\+Value\+\_\+\+Get. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at [msec] \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of voltage at the value TT, the current causes of the parent neuron\textquotesingle{}s membrane, in [V] 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Neuron\+Input\+Current.\+h}\end{DoxyCompactItemize}

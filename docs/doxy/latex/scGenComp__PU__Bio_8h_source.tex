@@ -1,0 +1,70 @@
+\doxysection{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio.\+h}
+\label{scGenComp__PU__Bio_8h_source}\index{scGenComp\_PU\_Bio.h@{scGenComp\_PU\_Bio.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ SCBIOGENCOMP\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ SCBIOGENCOMP\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}scGenComp\_PU\_Abstract.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ NEURONDEMO\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NEURONDEMO\_H}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{class\ }scGenComp\_PU\_Bio\ :\ \textcolor{keyword}{public}\ scGenComp\_PU\_Abstract}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00096\ \ \ \ \ scGenComp\_PU\_Bio(sc\_core::sc\_module\_name\ nm\ \ \ \textcolor{comment}{//\ Module\ name}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~scGenComp\_PU\_Bio(\textcolor{keywordtype}{void})\{\}\ \textcolor{comment}{//\ Must\ be\ overridden}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ComputingBegin\_Do()}
+\DoxyCodeLine{00103\ \ \ \ \ \{\}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ DeliveringBegin\_Do();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ DeliveringEnd\_Do();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ InputReceived\_Do();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Adjust(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Relaxing\_Do();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Computing\_Do();}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Delivering\_Do();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{float}\ MembraneAbsolutePotential\_Get()\{\textcolor{keywordflow}{return}\ m\_Membrane\_V+RestingMembranePotential;\}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{float}\ MembraneRelativePotential\_Get()\{\textcolor{keywordflow}{return}\ m\_Membrane\_V;\}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{comment}{/*\ \ \ \ //\ Values\ taken\ from\ Koch's\ Biophysics,\ page\ 11}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ \ \ \ void\ Membrane\_R\_Set(double\ R\ =\ 0.1)\ \ \ \ //<\ in\ GOhm}}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{00148\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_NeuronData-\/>MembraneResistanceGOhm\_Set(R);}}
+\DoxyCodeLine{00149\ \textcolor{comment}{\ \ \ \ \ \ \}\ \ \ \ //\ Store\ the\ value\ in\ kOhm}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ \ \ \ void\ Membrane\_C\_Set(double\ C\ =\ 100.)\ \ \ \ //<\ in\ pF}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ \ \ \ \ \ \{\ \ \ m\_NeuronData-\/>MembraneCapacitancePF\_Set(C);\}\ \ \ \ //\ Store\ the\ value\ in\ fF}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ \ \ double\ Membrane\_TauMS\_Get(void)\ \ \ //<\ Return\ \$\(\backslash\)tau\$\ in\ ms}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ \ \ \ \ \{\ \ \ return\ m\_NeuronData-\/>MembraneTauMSec\_Get();\}}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ \ \ \ double\ MembraneResistanceGOhm\_Get()}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ \ \ \{return\ m\_NeuronData-\/>MembraneResistanceGOhm\_Get();\}}}
+\DoxyCodeLine{00156\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Initialize\_Do();}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ OutputItem();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Membrane\_V;\ \textcolor{comment}{//<\ The\ actual\ value\ of\ membrane\ potential,\ in\ mV}}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Membrane\_V\_last;\ \textcolor{comment}{//<\ The\ actual\ value\ of\ membrane\ potential,\ in\ mV}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_Membrane\_dV;\ \ \ \textcolor{comment}{//<\ The\ actual\ change\ in\ membrane\ potential,\ in\ mV}}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_MembraneGradientPositive;\ \textcolor{comment}{//<\ Negative\ from\ AP\ peak\ to\ HP\ peak}}
+\DoxyCodeLine{00165\ \ \textcolor{comment}{//\ \ \ bool\ m\_PeakReached;\ //<\ If\ the\ AP\ overpassed\ the\ depolarized\ state}}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_SynapsesEnabled;\ \textcolor{comment}{//<}}
+\DoxyCodeLine{00167\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00168\ \ \ \ \ NeuronConstants*\ m\_NeuronData;}
+\DoxyCodeLine{00169\ \ \ \};\textcolor{comment}{//\ of\ class\ scGenComp\_PU\_Bio}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCBIOGENCOMP\_H}}
+
+\end{DoxyCode}

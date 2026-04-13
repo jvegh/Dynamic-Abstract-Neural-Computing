@@ -1,0 +1,38 @@
+\doxysection{Gen\+Comp\+Stage\+Machine\+Type.\+h}
+\label{GenCompStageMachineType_8h_source}\index{GenCompStageMachineType.h@{GenCompStageMachineType.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ GENCOMPSTAGEMACHINETYPE\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GENCOMPSTAGEMACHINE\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\#include\ <bitset>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{enum\ class}\ \ GenCompStageMachine\_t\ :int8\_t\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ gcsm\_Sleeping=0,\ }
+\DoxyCodeLine{00129\ \ \ \ \ gcsm\_Relaxing,}
+\DoxyCodeLine{00130\ \ \ \ \ gcsm\_Computing,}
+\DoxyCodeLine{00131\ \ \ \ \ gcsm\_Delivering,}
+\DoxyCodeLine{00132\ \ \ \ \ gcsm\_Initializing,}
+\DoxyCodeLine{00133\ \ \ \ \ gcsm\_InputReceived,}
+\DoxyCodeLine{00134\ \ \ \ \ gcsm\_Synchronizing,}
+\DoxyCodeLine{00135\ \ \ \ \ gcsm\_Failed,}
+\DoxyCodeLine{00136\ \ \ \ \ gcsm\_SIZE}
+\DoxyCodeLine{00137\ \};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ GenCompStagesString[];}
+\DoxyCodeLine{00144\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GenCompStageMachineType2String(GenCompStageMachine\_t\ e);}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCGENCOMPSTAGEMACHINE\_H}}
+
+\end{DoxyCode}

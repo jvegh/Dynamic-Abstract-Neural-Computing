@@ -1,0 +1,102 @@
+\doxysection{Demos and tutorials}
+\label{group__GENCOMP__MODULE__DEMO}\index{Demos and tutorials@{Demos and tutorials}}
+
+
+\doxysubsection{Detailed Description}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t} \+: int8\+\_\+t \{ \newline
+\textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Sleeping}
+, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing}
+, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing}
+, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering}
+, \newline
+\textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Initializing}
+, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Input\+Received}
+, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Synchronizing}
+, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Failed}
+, \newline
+{\bfseries gcsm\+\_\+\+SIZE}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\label{group__GENCOMP__MODULE__DEMO_ga081db2c407b8542a0012596012f2423b} 
+\index{Demos and tutorials@{Demos and tutorials}!GenCompStageMachine\_t@{GenCompStageMachine\_t}}
+\index{GenCompStageMachine\_t@{GenCompStageMachine\_t}!Demos and tutorials@{Demos and tutorials}}
+\doxysubsubsection{GenCompStageMachine\_t}
+{\footnotesize\ttfamily enum class \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t} \+: int8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gcsm\_Sleeping@{gcsm\_Sleeping}!Demos and tutorials@{Demos and tutorials}}\index{Demos and tutorials@{Demos and tutorials}!gcsm\_Sleeping@{gcsm\_Sleeping}}}\label{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba3d4e3d8d0c94a9cfe5892f70d5499dd6} 
+gcsm\+\_\+\+Sleeping&same as gcsm\+\_\+\+Relaxing, but no Heartbeats
+
+Essentially, same as gcsm\+\_\+\+Relaxing, but no Heartbeats, and even the HW unit can go to sleep (not yet implemented)
+
+Begins in stage gcsm\+\_\+\+Relaxing, when sleeping condition met (not yet entirely implemented), and returns to gcsm\+\_\+\+Relaxing (temporarily, to gcsm\+\_\+\+Computing \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gcsm\_Relaxing@{gcsm\_Relaxing}!Demos and tutorials@{Demos and tutorials}}\index{Demos and tutorials@{Demos and tutorials}!gcsm\_Relaxing@{gcsm\_Relaxing}}}\label{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba6aef06c7b547ff8191fd2d179245e3cc} 
+gcsm\+\_\+\+Relaxing&Relaxing
+
+The abstract units are generated in this stage\+: everything is prepared, variables available. The unit is ready, waiting for EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Computing\+Begin; after receiving it, passes to Gen\+Comp\+Stage\+Machine\+Type\+\_\+t\+::gcsm\+\_\+\+Computing. Computing\+Begin can be provided by clock signal (if clock driven) or Input\+Received. Important\+: changing to stage gcsm\+\_\+\+Relaxing does not involve reseting!!
+
+Begins with EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Relaxing\+Begin
+
+Normally passes to gcsm\+\_\+\+Computing \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gcsm\_Computing@{gcsm\_Computing}!Demos and tutorials@{Demos and tutorials}}\index{Demos and tutorials@{Demos and tutorials}!gcsm\_Computing@{gcsm\_Computing}}}\label{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baa4c9774958a12ea2cb7076e7cf666c65} 
+gcsm\+\_\+\+Computing&Computes (may receive inputs), then passes to stage gcsm\+\_\+\+Delivering.
+
+Spans time between EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Computing\+Begin and EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Computing\+End \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gcsm\_Delivering@{gcsm\_Delivering}!Demos and tutorials@{Demos and tutorials}}\index{Demos and tutorials@{Demos and tutorials}!gcsm\_Delivering@{gcsm\_Delivering}}}\label{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423bac00feaed46a015f1cf21d6ce2bab1cd0} 
+gcsm\+\_\+\+Delivering&Makes internal result externally available (delivering its result to its output section). Normally goes to gcsm\+\_\+\+Relaxing. An external Synchronizing may force immediate Delivering
+\begin{DoxyItemize}
+\item Delivering\+: The unit is
+\begin{DoxyItemize}
+\item after some activity, passes to \textquotesingle{}Relaxing\textquotesingle{} (it sends the result to its chained unit(s)) it Sends \textquotesingle{}Begin Transmitting\textquotesingle{}, a parallel activity)
+\end{DoxyItemize}
+
+Spans time between EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Delivering\+Begin and EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Delivering\+End 
+\end{DoxyItemize}\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gcsm\_Initializing@{gcsm\_Initializing}!Demos and tutorials@{Demos and tutorials}}\index{Demos and tutorials@{Demos and tutorials}!gcsm\_Initializing@{gcsm\_Initializing}}}\label{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baf73f71fa2407aec1df06b67ce2a4fa51} 
+gcsm\+\_\+\+Initializing&Initilizes the unit instantly. Passes to Gen\+Comp\+Stage\+Machine\+Type\+\_\+t\+::gcsm\+\_\+\+Relaxing
+
+Begins at EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Initialize. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gcsm\_InputReceived@{gcsm\_InputReceived}!Demos and tutorials@{Demos and tutorials}}\index{Demos and tutorials@{Demos and tutorials}!gcsm\_InputReceived@{gcsm\_InputReceived}}}\label{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baeac662a419441c6037d7c813d920b07a} 
+gcsm\+\_\+\+Input\+Received&Receives input instantly. (input arguments are delivered to the input section) If not clocked, may pass to Gen\+Comp\+Stage\+Machine\+Type\+\_\+t\+::gcsm\+\_\+\+Computing
+
+A momentary stage
+
+Begins at EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Input\+Received \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gcsm\_Synchronizing@{gcsm\_Synchronizing}!Demos and tutorials@{Demos and tutorials}}\index{Demos and tutorials@{Demos and tutorials}!gcsm\_Synchronizing@{gcsm\_Synchronizing}}}\label{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba07d34ef7d1ba61756025517c1f728416} 
+gcsm\+\_\+\+Synchronizing&Synchronizes the operation to fellow PUs instantly (passes immediately to Gen\+Comp\+Stage\+Machine\+Type\+\_\+t\+::gcsm\+\_\+\+Delivering, except when in state Gen\+Comp\+Stage\+Machine\+Type\+\_\+t\+::gcsm\+\_\+\+Delivering).
+
+A momentary stage
+
+Begins at EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Synchronize \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gcsm\_Failed@{gcsm\_Failed}!Demos and tutorials@{Demos and tutorials}}\index{Demos and tutorials@{Demos and tutorials}!gcsm\_Failed@{gcsm\_Failed}}}\label{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba07e87526bf1e1b0e4b23fe2c0b5cff25} 
+gcsm\+\_\+\+Failed&Enables to simulate failed operations instantly. (Actually, re-\/initializes unit)
+
+Begins at EVENT\+\_\+\+Gen\+Comp\+\_\+type\+::\+Failed \\
+\hline
+
+\end{DoxyEnumFields}

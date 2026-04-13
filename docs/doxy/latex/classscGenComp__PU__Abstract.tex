@@ -1,0 +1,684 @@
+\doxysection{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract Class Reference}
+\label{classscGenComp__PU__Abstract}\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+
+
+\doxysubsection{Detailed Description}
+Class to deal with operations of an abstract processing unit (\doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2}), implementing a single-\/shot elementary computation in the sense of the General Computing Paradigm \cite{VeghRevisingClassicComputing:2021}. The stages of operation are marked by event pairs (or single events) in the sense as the SystemC \cite{SystemCBook:2010} programming engine uses that notion. Using those events and SystemC\textquotesingle{}s internal time scale, {\itshape the class isolates the simulated time and the clock time the \doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2} needs to simulate the processing}. The code of this base class is a bit complex, in order to enable simple derived \doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2}s\+: the complex event handling mechanism is confined in this class; the derived classes are free from any SystemC specific programming (for and example see \doxyref{Neuron\+Physical}{p.}{classNeuronPhysical}). The \doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2} has correspondingly the stages \textquotesingle{}Computing\textquotesingle{}, \textquotesingle{}Delivering\textquotesingle{} and \textquotesingle{}Relaxing\textquotesingle{} as the minimum necessary basic stages. The module implements a single-\/shot normal operating mode, that is, the operation is automatic between the corresponding xxx\+Begin and xxx\+End events, and at the end of the xxx\+End events the corresponding next xxx\+Begin event is issued. A distinguished (compared to other simulators) feature of the class is handling time faithfully. 
+
+Biology measures time with some activity (such as changing neural membrane\textquotesingle{}s potential). In that case \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Fixed\+Computing\+Time}{p.}{classscGenComp__PU__Abstract_a0fd72a2b7c76176e533f18edc4c522b2} and sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Fixed\+Delivering\+Time are set to zero, and the \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea} checks periodically if the recent operating stage finished using stage-\/specific methods XXX\+\_\+stop(). (This is the operating mode for biology, including neuronal simulation.) For details, see \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio}{p.}{classscGenComp__PU__Bio} and \doxyref{Neuron\+Physical}{p.}{classNeuronPhysical}.
+
+In technical systems, the usual method is to use central-\/clock driven synchronized PUs. If \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Central\+Clock\+Mode}{p.}{classscGenComp__PU__Abstract_ad186e82d86f339001ff9db119ab93296} is set to true, methods \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Clock\+Up\+\_\+method()}{p.}{classscGenComp__PU__Abstract_ac1251c6dcf0c0f9eaf2702265bedf1e0} and \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Clock\+Down\+\_\+method()}{p.}{classscGenComp__PU__Abstract_ad6ebefbf2ed4526a49c8dc0820487789} trigger the required events, i.\+e., the unit uses entirely external timing. (This is the central clock driven mode)
+
+If \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Central\+Clock\+Mode}{p.}{classscGenComp__PU__Abstract_ad186e82d86f339001ff9db119ab93296} is set to false, the PU sets \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Fixed\+Computing\+Time}{p.}{classscGenComp__PU__Abstract_a0fd72a2b7c76176e533f18edc4c522b2} and sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Fixed\+Delivering\+Time and the corresponding XXX\+\_\+\+Begin() routines schedule the corresponding XXX\+\_\+\+End() events compared to the input\textquotesingle{}s arrival. For details, see sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Tech. (This is an asynchron mode.)
+
+Advancing simulated time
+
+In timed mode, the derived classes can use timed computing and delivering, in which case XXXBegin methods issue an EVENT\+\_\+\+Gen\+Comp.\+XXXEnd.\+notify(\+Fixed\+Time) event. The simulated time \textquotesingle{}jumps\textquotesingle{}, no smaller steps. In untimed mode it issues EVENT\+\_\+\+Gen\+Comp.\+Heartbeat.\+notify(sc\+\_\+time(\+Heartbeat\+Time)) periodically. The simulated time \textquotesingle{}jumps\textquotesingle{} with the value of Heartbeat\+Time. Either issuing an event EVENT\+\_\+\+Gen\+Comp.\+XXXEnd (fixed time) or the result of a calculation (variable time) in Heartbeat decides if the corresponding stage transition reached. The modules issue per module \textquotesingle{}Heartbeat\textquotesingle{} signals; there is always only one signal scheduled.
+
+The heartbeating is not a central synchronization\+: it enables to consider module\textquotesingle{}s states (such as neuronal analog voltage levels) and handles changing module\textquotesingle{}s stages, instead of external synchronization signals). The simulated time (more precisely, the results of the simulated processes) control the simulated processing.
+
+In synchronized mode, central clock signals issue signals for \textquotesingle{}Computing\textquotesingle{} and \textquotesingle{}Delivering\textquotesingle{}. 
+
+Inheritance diagram for sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classscGenComp__PU__Abstract__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ Computing\+Begin\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em The extra processing for beginning computing. Called from. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_a8dbcf9d60a0005296f39182e5e24e8c9} 
+virtual void {\bfseries Computing\+End\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em The extra processing for finishing computing. Called from \doxyref{Computing\+End\+\_\+method()}{p.}{classscGenComp__PU__Abstract_ac24ef368f1b32a70355d746d04ffb840} \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_a93d28411e469803ab8e7f69750055eca} 
+virtual void {\bfseries Delivering\+Begin\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em The extra activity for starting internal delivering. Called from \doxyref{Delivering\+Begin\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a5f056dee48c62e4077d1227cc1df402c} \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_abfe1d3c9db30b5c838548011560db983} 
+virtual void {\bfseries Delivering\+End\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em The extra activity for finishing internal delivering. Called from \doxyref{Delivering\+End\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a59194dda1a7a912db21bd1d23ac17aa7} \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_aa9c63634db2b9237809d91f58878afd6} 
+virtual void {\bfseries Failed\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em The extra activity for handling event \textquotesingle{}Failed\textquotesingle{}. Called from \doxyref{Failed\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a690246e1d3d96627d9099a2424302326}. Includes initialization. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_ab2c49d8195b1e4310575eeac6b125ed6} 
+virtual void {\bfseries Initialize\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em Additional initialization activity. Called from \doxyref{Initialize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a17314ce63b2d227e8e74e3eb1262d62e}. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_a81d1c32b732fc5063d0b8acff9e83b92} 
+virtual void {\bfseries Input\+Received\+\_\+\+Do} (void)
+\begin{DoxyCompactList}\small\item\em The extra activity for input processing. Called from \doxyref{Input\+Received\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a1443b8dc13c9e4ae631be5a92ffd7666}. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_ab760a46319fc925af7d713db641a9cf3} 
+float {\bfseries Local\+Time\+In\+Microsec\+\_\+\+Get} ()
+\begin{DoxyCompactList}\small\item\em Return simulated local sc\+\_\+time converted to microseconds. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_a89b83283b637a35423dbb8b1162063a7} 
+float {\bfseries Local\+Time\+In\+Millisec\+\_\+\+Get} ()
+\begin{DoxyCompactList}\small\item\em Return simulated local sc\+\_\+time converted to milliseconds. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_aef11da365eb6cc78f67a83ea6210d6f9} 
+float {\bfseries Local\+Time\+In\+Nanosec\+\_\+\+Get} ()
+\begin{DoxyCompactList}\small\item\em Return simulated local sc\+\_\+time converted to nanoseconds. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ No\+Of\+Inputs\+Received\+\_\+\+Get} ()
+\item 
+void \textbf{ Observer\+Notify} (\textbf{ Gen\+Comp\+Observe\+\_\+t} Observed\+Bit)
+\begin{DoxyCompactList}\small\item\em Notify the observer about some important change. \end{DoxyCompactList}\item 
+bool \textbf{ Observing\+Bit\+\_\+\+Get} (\textbf{ Gen\+Comp\+Observe\+\_\+t} B)
+\begin{DoxyCompactList}\small\item\em Get value of an observing bit for this \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}. \end{DoxyCompactList}\item 
+void \textbf{ Observing\+Bit\+\_\+\+Set} (\textbf{ Gen\+Comp\+Observe\+\_\+t} B, bool V)
+\begin{DoxyCompactList}\small\item\em Set an observing bit for this \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}. \end{DoxyCompactList}\item 
+int32\+\_\+t \textbf{ Operation\+Counter\+\_\+\+Get} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of operations performed. \end{DoxyCompactList}\item 
+virtual void \textbf{ Relaxing\+Begin\+\_\+\+Do} ()
+\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ sc\+Delivering\+Time\+Begin\+\_\+\+Get} () const
+\item 
+\textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract} (sc\+\_\+core\+::sc\+\_\+module\+\_\+name nm, sc\+\_\+core\+::sc\+\_\+time Fixed\+Computing\+Time=SC\+\_\+\+ZERO\+\_\+\+TIME, sc\+\_\+core\+::sc\+\_\+time Fixed\+Delivering\+Time=SC\+\_\+\+ZERO\+\_\+\+TIME, bool Extern\+Synchron\+Mode=false)
+\begin{DoxyCompactList}\small\item\em Create an abstract processing unit for the general computing paradigm. \end{DoxyCompactList}\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ sc\+Idle\+Period\+\_\+\+Get} () const
+\begin{DoxyCompactList}\small\item\em sc\+Idle\+Period\+\_\+\+Get, can be called after the next operation started \end{DoxyCompactList}\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ sc\+Local\+Time\+Base\+\_\+\+Get} (void) const
+\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ sc\+Processing\+Period\+\_\+\+Get} () const
+\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ sc\+Relaxing\+Begin\+Time\+\_\+\+Get} () const
+\begin{DoxyCompactList}\small\item\em Return when the last relaxing period started. \end{DoxyCompactList}\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ sc\+Result\+Period\+\_\+\+Get} () const
+\begin{DoxyCompactList}\small\item\em Result\+Period\+\_\+\+Get, can be called after an operation finished. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_a8095d54f9badd96495332b43779b3b4f} 
+\textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t} {\bfseries Stage\+Flag\+\_\+\+Get} (void)
+\begin{DoxyCompactList}\small\item\em The flag describing the stage of the unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\label{classscGenComp__PU__Abstract_a7735d6170868443fd4cd6904f7f28c3e} 
+\textbf{ EVENT\+\_\+\+Gen\+Comp\+\_\+t} {\bfseries EVENT\+\_\+\+Gen\+Comp}
+\begin{DoxyCompactList}\small\item\em The event specific to this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\label{classscGenComp__PU__Abstract_a38f2debfaecadef6052ef85421ca68dd} 
+virtual void {\bfseries Cancel\+Events} (void)
+\begin{DoxyCompactList}\small\item\em Cancels all pending events. Called from \doxyref{Initialize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a17314ce63b2d227e8e74e3eb1262d62e},\doxyref{Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a4c1096b8b544c2e6b5724ff93b290770}, just to make sure not outstanding events remain. \end{DoxyCompactList}\item 
+bool \textbf{ Central\+Clock\+Mode\+\_\+\+Get} (void)
+\item 
+virtual bool \textbf{ Have\+Enough\+Inputs} (void)
+\begin{DoxyCompactList}\small\item\em Return if the unit received sufficient inputs. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_a044c2adcc1a4d327aef600ee2a3a70e5} 
+virtual void {\bfseries Heartbeat\+\_\+\+Adjust} (void)
+\begin{DoxyCompactList}\small\item\em Adjust neuron\textquotesingle{}s heartbeat (integration) time, to keep the precision good and the coputing time tolerable. When passing from one stage to another, changes the integration step back to default time; then increases following the steps, attempts to increase it. \end{DoxyCompactList}\item 
+virtual void \textbf{ Heartbeat\+\_\+\+Computing\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em Handle Heartbeat in \textquotesingle{}Computing\textquotesingle{} mode. \end{DoxyCompactList}\item 
+virtual bool \textbf{ Heartbeat\+\_\+\+Computing\+\_\+\+Stop} ()
+\item 
+virtual void \textbf{ Heartbeat\+\_\+\+Delivering\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em Handle Heartbeat in \textquotesingle{}Delivering\textquotesingle{} mode. \end{DoxyCompactList}\item 
+virtual bool \textbf{ Heartbeat\+\_\+\+Delivering\+\_\+\+Stop} ()
+\item 
+virtual void \textbf{ Heartbeat\+\_\+\+Relaxing\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em Handle Heartbeat in \textquotesingle{}Relaxing\textquotesingle{} mode. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_a5b5b64cf2b49a9f7246a2e92d550b42a} 
+virtual bool {\bfseries Heartbeat\+\_\+\+Relaxing\+\_\+\+Stop} ()
+\begin{DoxyCompactList}\small\item\em Handle \textquotesingle{}sleep\textquotesingle{} stage, i.\+e., if to continue heartbeats in \textquotesingle{}Relaxing\textquotesingle{} mode. \end{DoxyCompactList}\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ Heartbeat\+Time\+\_\+\+Get} (void)
+\item 
+\label{classscGenComp__PU__Abstract_a1597734717801f0f83ea29e030292b58} 
+sc\+\_\+core\+::sc\+\_\+time {\bfseries sc\+Local\+Time\+\_\+\+Get} () const
+\begin{DoxyCompactList}\small\item\em The simulated time since the beginning of the recent operation. \end{DoxyCompactList}\item 
+void \textbf{ sc\+Local\+Time\+Base\+\_\+\+Set} (sc\+\_\+core\+::sc\+\_\+time T)
+\begin{DoxyCompactList}\small\item\em sc\+Local\+Time\+Base\+\_\+\+Set \end{DoxyCompactList}\item 
+void \textbf{ Stage\+Flag\+\_\+\+Set} (\textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t} S)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ m\+Central\+Clock\+Mode}
+\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ m\+Local\+Time\+Base}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Computing\+Begin\+\_\+method} ()
+\item 
+void \textbf{ Computing\+End\+\_\+method} ()
+\item 
+void \textbf{ Delivering\+Begin\+\_\+method} ()
+\item 
+void \textbf{ Delivering\+End\+\_\+method} ()
+\item 
+void \textbf{ Failed\+\_\+method} ()
+\begin{DoxyCompactList}\small\item\em Module failed. \end{DoxyCompactList}\item 
+void \textbf{ Heartbeat\+\_\+method} ()
+\begin{DoxyCompactList}\small\item\em A periodic signal as a timebase to refresh state. Used internally, to avoid using clock signals. \end{DoxyCompactList}\item 
+void \textbf{ Initialize\+\_\+method} ()
+\begin{DoxyCompactList}\small\item\em Initialize\+\_\+method. \end{DoxyCompactList}\item 
+void \textbf{ Input\+Received\+\_\+method} ()
+\begin{DoxyCompactList}\small\item\em Input\+Received\+\_\+method. \end{DoxyCompactList}\item 
+void \textbf{ Relaxing\+Begin\+\_\+method} ()
+\begin{DoxyCompactList}\small\item\em Relaxing has started. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_ad6ebefbf2ed4526a49c8dc0820487789} 
+void {\bfseries sc\+Clock\+Down\+\_\+method} (void)
+\begin{DoxyCompactList}\small\item\em Receive falling edge of an external clock and issue \textquotesingle{}Computing\+End\textquotesingle{}. \end{DoxyCompactList}\item 
+\label{classscGenComp__PU__Abstract_ac1251c6dcf0c0f9eaf2702265bedf1e0} 
+void {\bfseries sc\+Clock\+Up\+\_\+method} (void)
+\begin{DoxyCompactList}\small\item\em Receive rising edge of an external clock and issue \textquotesingle{}Computing\+Begin\textquotesingle{}. \end{DoxyCompactList}\item 
+virtual void \textbf{ Synchronize\+\_\+method} ()
+\begin{DoxyCompactList}\small\item\em Synchronize the PU to some external condition. \end{DoxyCompactList}\item 
+void \textbf{ Transmission\+Begin\+\_\+method} ()
+\begin{DoxyCompactList}\small\item\em Transmission period has started. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sc\+\_\+core\+::sc\+\_\+time \textbf{ m\+Fixed\+Computing\+Time}
+\begin{DoxyCompactList}\small\item\em m\+Fixed\+Computing\+Time,m\+Fixed\+Delivering\+Time \end{DoxyCompactList}\item 
+bitset$<$(int8\+\_\+t) Gen\+Comp\+Observe\+\_\+t\+::gcob\+\_\+\+SIZE $>$ \textbf{ m\+Observed\+Bits}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\label{classscGenComp__PU__Abstract_abbe1b4953c403b8033d8842e12413941} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{scGenComp\_PU\_Abstract()}
+{\footnotesize\ttfamily sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract (\begin{DoxyParamCaption}\item[{sc\+\_\+core\+::sc\+\_\+module\+\_\+name}]{nm,  }\item[{sc\+\_\+core\+::sc\+\_\+time}]{Fixed\+Computing\+Time = {\ttfamily SC\+\_\+ZERO\+\_\+TIME},  }\item[{sc\+\_\+core\+::sc\+\_\+time}]{Fixed\+Delivering\+Time = {\ttfamily SC\+\_\+ZERO\+\_\+TIME},  }\item[{bool}]{Extern\+Synchron\+Mode = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Create an abstract processing unit for the general computing paradigm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em nm} & the SystemC name of the module \\
+\hline
+\mbox{\texttt{ in}}  & {\em Fixed\+Computing\+Time} & Time of computing \\
+\hline
+\mbox{\texttt{ in}}  & {\em Fixed\+Delivering\+Time} & Time of delivering \\
+\hline
+\mbox{\texttt{ in}}  & {\em Extern\+Synchron\+Mode} & If external synchronization used \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\label{classscGenComp__PU__Abstract_af41be214b51f9800604d9e5264c15d04} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!CentralClockMode\_Get@{CentralClockMode\_Get}}
+\index{CentralClockMode\_Get@{CentralClockMode\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{CentralClockMode\_Get()}
+{\footnotesize\ttfamily bool sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Central\+Clock\+Mode\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\begin{DoxyReturn}{Returns}
+true if running in synchronized mode 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_a0b20c8e983988e41e0219d1795e7f544} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!ComputingBegin\_Do@{ComputingBegin\_Do}}
+\index{ComputingBegin\_Do@{ComputingBegin\_Do}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{ComputingBegin\_Do()}
+{\footnotesize\ttfamily virtual void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Computing\+Begin\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+The extra processing for beginning computing. Called from. 
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Computing\+Begin\+\_\+method()}{p.}{classscGenComp__PU__Abstract_ad8fdd6d096dd7dc5632c1f1cbf95c332} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_a3e3d739688705d444a8c08af0c7ac80f}.
+
+\label{classscGenComp__PU__Abstract_ad8fdd6d096dd7dc5632c1f1cbf95c332} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!ComputingBegin\_method@{ComputingBegin\_method}}
+\index{ComputingBegin\_method@{ComputingBegin\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{ComputingBegin\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Computing\+Begin\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyItemize}
+\item Enters stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing
+\item Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Computing\+Begin}{p.}{group__GENCOMP__MODULE__PROCESS_ga00d333d4187fe9a0c845773e5c1f0d1d} but also implicitly called from \doxyref{Input\+Received\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a1443b8dc13c9e4ae631be5a92ffd7666}
+\item User access through \doxyref{Computing\+Begin\+\_\+\+Do()}{p.}{classscGenComp__PU__Abstract_a0b20c8e983988e41e0219d1795e7f544} 
+\end{DoxyItemize}\label{classscGenComp__PU__Abstract_ac24ef368f1b32a70355d746d04ffb840} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!ComputingEnd\_method@{ComputingEnd\_method}}
+\index{ComputingEnd\_method@{ComputingEnd\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{ComputingEnd\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Computing\+End\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyItemize}
+\item Exits stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing
+\item Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Computing\+End}{p.}{group__GENCOMP__MODULE__PROCESS_ga41c695eb2b328f1ef437085d687824c0}
+\item User access through \doxyref{Computing\+End\+\_\+\+Do()}{p.}{classscGenComp__PU__Abstract_a8dbcf9d60a0005296f39182e5e24e8c9}
+\item Issues \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Delivering\+Begin}{p.}{group__GENCOMP__MODULE__PROCESS_ga852d7460ca4f4b3631d8fb4331013f90} 
+\end{DoxyItemize}\label{classscGenComp__PU__Abstract_a5f056dee48c62e4077d1227cc1df402c} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!DeliveringBegin\_method@{DeliveringBegin\_method}}
+\index{DeliveringBegin\_method@{DeliveringBegin\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{DeliveringBegin\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Delivering\+Begin\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyItemize}
+\item Enters stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering; begins internal delivering
+\item Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Delivering\+Begin}{p.}{group__GENCOMP__MODULE__PROCESS_ga852d7460ca4f4b3631d8fb4331013f90}
+\item User access through \doxyref{Delivering\+End\+\_\+\+Do()}{p.}{classscGenComp__PU__Abstract_abfe1d3c9db30b5c838548011560db983}
+\item Start internal result delivering. Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Delivering\+Begin}{p.}{group__GENCOMP__MODULE__PROCESS_ga852d7460ca4f4b3631d8fb4331013f90} 
+\end{DoxyItemize}\label{classscGenComp__PU__Abstract_a59194dda1a7a912db21bd1d23ac17aa7} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!DeliveringEnd\_method@{DeliveringEnd\_method}}
+\index{DeliveringEnd\_method@{DeliveringEnd\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{DeliveringEnd\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Delivering\+End\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyItemize}
+\item Exits stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering; finishes internal delivering
+\item Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Delivering\+End}{p.}{group__GENCOMP__MODULE__PROCESS_ga70591e666ee279473d3631060290b0a3}
+\item User access through \doxyref{Delivering\+End\+\_\+\+Do()}{p.}{classscGenComp__PU__Abstract_abfe1d3c9db30b5c838548011560db983}
+\item Issues \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Delivering\+End}{p.}{group__GENCOMP__MODULE__PROCESS_ga70591e666ee279473d3631060290b0a3} 
+\end{DoxyItemize}\label{classscGenComp__PU__Abstract_a690246e1d3d96627d9099a2424302326} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Failed\_method@{Failed\_method}}
+\index{Failed\_method@{Failed\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Failed\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Failed\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Module failed. 
+
+Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Failed}{p.}{group__GENCOMP__MODULE__PROCESS_gacf5b5627ec3774836a2452a065046617}
+\begin{DoxyItemize}
+\item In biological computing, it means a failed charge-\/up; passes to Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing
+\item In technical computing, it results in a failed operation 
+\end{DoxyItemize}\label{classscGenComp__PU__Abstract_a390c9a8f987106b8a55b3a3c168389fb} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!HaveEnoughInputs@{HaveEnoughInputs}}
+\index{HaveEnoughInputs@{HaveEnoughInputs}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{HaveEnoughInputs()}
+{\footnotesize\ttfamily virtual bool sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Have\+Enough\+Inputs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return if the unit received sufficient inputs. 
+
+\begin{DoxyReturn}{Returns}
+true if the sufficient number of inputs arrived (say multi-\/input gates) 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_af93f673da1a0605463ebe7c472ee061f} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Heartbeat\_Computing\_Do@{Heartbeat\_Computing\_Do}}
+\index{Heartbeat\_Computing\_Do@{Heartbeat\_Computing\_Do}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Heartbeat\_Computing\_Do()}
+{\footnotesize\ttfamily virtual void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+\_\+\+Computing\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Handle Heartbeat in \textquotesingle{}Computing\textquotesingle{} mode. 
+
+It should be overloaded (by default makes nothing). Called by \doxyref{Heartbeat\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea}; 
+
+Reimplemented in \textbf{ Neuron\+Physical} \doxyref{}{p.}{classNeuronPhysical_a04fe9034e297048c272cd07cc9fa57d4}, and \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_a1aacf9b0909eacef11041a684e89bce0}.
+
+\label{classscGenComp__PU__Abstract_a75a0b61f9272fd7bf14413ecfdd9bbcb} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Heartbeat\_Computing\_Stop@{Heartbeat\_Computing\_Stop}}
+\index{Heartbeat\_Computing\_Stop@{Heartbeat\_Computing\_Stop}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Heartbeat\_Computing\_Stop()}
+{\footnotesize\ttfamily virtual bool sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+\_\+\+Computing\+\_\+\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if to stop heartbeating in \textquotesingle{}Computing\textquotesingle{} mode 
+\end{DoxyReturn}
+
+
+Reimplemented in \textbf{ Neuron\+Physical} \doxyref{}{p.}{classNeuronPhysical_a2275d5e03c547b06fe69fe2a529349d2}.
+
+\label{classscGenComp__PU__Abstract_ac6b3b05527c3559773621b905430542f} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Heartbeat\_Delivering\_Do@{Heartbeat\_Delivering\_Do}}
+\index{Heartbeat\_Delivering\_Do@{Heartbeat\_Delivering\_Do}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Heartbeat\_Delivering\_Do()}
+{\footnotesize\ttfamily virtual void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+\_\+\+Delivering\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Handle Heartbeat in \textquotesingle{}Delivering\textquotesingle{} mode. 
+
+It should be overloaded (by default makes nothing). Called by \doxyref{Heartbeat\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea} 
+
+Reimplemented in \textbf{ Neuron\+Physical} \doxyref{}{p.}{classNeuronPhysical_aa27870867ab7a0361692560ecc977e80}, and \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_addfd1439704d3c808f86dbe674f417a2}.
+
+\label{classscGenComp__PU__Abstract_abfae7ba4b9ea1f5aacab5ad7cb770bc7} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Heartbeat\_Delivering\_Stop@{Heartbeat\_Delivering\_Stop}}
+\index{Heartbeat\_Delivering\_Stop@{Heartbeat\_Delivering\_Stop}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Heartbeat\_Delivering\_Stop()}
+{\footnotesize\ttfamily virtual bool sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+\_\+\+Delivering\+\_\+\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if to stop heartbeating in \textquotesingle{}Delivering\textquotesingle{} mode 
+\end{DoxyReturn}
+
+
+Reimplemented in \textbf{ Neuron\+Physical} \doxyref{}{p.}{classNeuronPhysical_a03aafa632cd215a7052225ebfe0bd753}.
+
+\label{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Heartbeat\_method@{Heartbeat\_method}}
+\index{Heartbeat\_method@{Heartbeat\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Heartbeat\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A periodic signal as a timebase to refresh state. Used internally, to avoid using clock signals. 
+
+Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t\+::\+Heartbeat}{p.}{group__GENCOMP__MODULE__PROCESS_ga128690487cb0373cf520df6c2f0d8663}. A heartbeat can be useful in stages Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing, Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing, and Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering
+
+Branches according to PU\textquotesingle{}s recent stage and calls (see the corresponding state machine diagram)
+\begin{DoxyItemize}
+\item virtual void \doxyref{Heartbeat\+\_\+\+Computing\+\_\+\+Do()}{p.}{classscGenComp__PU__Abstract_af93f673da1a0605463ebe7c472ee061f}
+\item virtual void \doxyref{Heartbeat\+\_\+\+Delivering\+\_\+\+Do()}{p.}{classscGenComp__PU__Abstract_ac6b3b05527c3559773621b905430542f}
+\item virtual void \doxyref{Heartbeat\+\_\+\+Relaxing\+\_\+\+Do()}{p.}{classscGenComp__PU__Abstract_a0a827655bc1a3e0affd9f3e4c28d4d27}
+\end{DoxyItemize}
+
+These routines also calculate the new \doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2} parameters. Those parameters enable to return the status if to stop processing. Similarly, it branches according to PU\textquotesingle{}s stage and calls
+
+
+\begin{DoxyItemize}
+\item virtual bool \doxyref{Heartbeat\+\_\+\+Computing\+\_\+\+Stop()}{p.}{classscGenComp__PU__Abstract_a75a0b61f9272fd7bf14413ecfdd9bbcb}
+\item virtual bool \doxyref{Heartbeat\+\_\+\+Delivering\+\_\+\+Stop()}{p.}{classscGenComp__PU__Abstract_abfae7ba4b9ea1f5aacab5ad7cb770bc7}
+\item virtual bool \doxyref{Heartbeat\+\_\+\+Relaxing\+\_\+\+Stop()}{p.}{classscGenComp__PU__Abstract_a5b5b64cf2b49a9f7246a2e92d550b42a}
+\end{DoxyItemize}
+
+routines in the corresponding stage, which return true if the given phase is to terminate
+
+Usage
+\begin{DoxyItemize}
+\item For technical computing, it is used to display time delays
+\item For biological computing, it is used to solve PDEs. The same differential equation is solved, but the terms are depending on the stage 
+\end{DoxyItemize}\label{classscGenComp__PU__Abstract_a0a827655bc1a3e0affd9f3e4c28d4d27} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Heartbeat\_Relaxing\_Do@{Heartbeat\_Relaxing\_Do}}
+\index{Heartbeat\_Relaxing\_Do@{Heartbeat\_Relaxing\_Do}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Heartbeat\_Relaxing\_Do()}
+{\footnotesize\ttfamily virtual void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+\_\+\+Relaxing\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Handle Heartbeat in \textquotesingle{}Relaxing\textquotesingle{} mode. 
+
+Called by \doxyref{Heartbeat\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea};
+
+Handle Heartbeat in \textquotesingle{}Relaxing\textquotesingle{} mode
+
+It should be overloaded (by default makes nothing). Called by \doxyref{Heartbeat\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea}; 
+
+Reimplemented in \textbf{ Neuron\+Physical} \doxyref{}{p.}{classNeuronPhysical_ac48743aec7a1bf415eccf55e2b84cba5}, and \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_a64c6ee49fdeefd43550b27db1f596501}.
+
+\label{classscGenComp__PU__Abstract_a818b7dd591657cfee66966a196a20487} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!HeartbeatTime\_Get@{HeartbeatTime\_Get}}
+\index{HeartbeatTime\_Get@{HeartbeatTime\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{HeartbeatTime\_Get()}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+Time\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Access function to neuron\textquotesingle{}s heartbeat (integration) time, ~\newline
+ \label{classscGenComp__PU__Abstract_a17314ce63b2d227e8e74e3eb1262d62e} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Initialize\_method@{Initialize\_method}}
+\index{Initialize\_method@{Initialize\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Initialize\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Initialize\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialize\+\_\+method. 
+
+Usually activated by EVENT\+\_\+\+Gen\+Comp.\+Initialize \label{classscGenComp__PU__Abstract_a1443b8dc13c9e4ae631be5a92ffd7666} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!InputReceived\_method@{InputReceived\_method}}
+\index{InputReceived\_method@{InputReceived\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{InputReceived\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Input\+Received\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input\+Received\+\_\+method. 
+
+An external input received. Inputs can be received in Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing, and Gen\+Comp\+Stage\+Machine\+\_\+t\+::\+\_\+\+Computing ; in stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering\textquotesingle{} they are neglected. If sufficient number of inputs received and NOT using external synchnonization, calls \doxyref{Computing\+Begin\+\_\+method()}{p.}{classscGenComp__PU__Abstract_ad8fdd6d096dd7dc5632c1f1cbf95c332}
+
+Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t.\+Input\+Received}{p.}{group__GENCOMP__MODULE__PROCESS_gac3b2539141ff323aa7ddcac9f945f4bf} \label{classscGenComp__PU__Abstract_ae00a1e214d66761f99ddfef64839fbb0} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!NoOfInputsReceived\_Get@{NoOfInputsReceived\_Get}}
+\index{NoOfInputsReceived\_Get@{NoOfInputsReceived\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{NoOfInputsReceived\_Get()}
+{\footnotesize\ttfamily uint32\+\_\+t sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+No\+Of\+Inputs\+Received\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+the number of the received inputs 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_afb4e5d3dc957fab774e3228b05ba77a3} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!ObserverNotify@{ObserverNotify}}
+\index{ObserverNotify@{ObserverNotify}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{ObserverNotify()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Observer\+Notify (\begin{DoxyParamCaption}\item[{\textbf{ Gen\+Comp\+Observe\+\_\+t}}]{Observed\+Bit }\end{DoxyParamCaption})}
+
+
+
+Notify the observer about some important change. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Observed\+Bit} & The event that occured \\
+\hline
+\end{DoxyParams}
+\label{classscGenComp__PU__Abstract_abd6bf6ea589d80f5a7b4a130bf6d18d9} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!ObservingBit\_Get@{ObservingBit\_Get}}
+\index{ObservingBit\_Get@{ObservingBit\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{ObservingBit\_Get()}
+{\footnotesize\ttfamily bool sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Observing\+Bit\+\_\+\+Get (\begin{DoxyParamCaption}\item[{\textbf{ Gen\+Comp\+Observe\+\_\+t}}]{B }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get value of an observing bit for this \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B} & is the bit to get in m\+Observed\+Bits \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+is the requested value of the bit 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_ace7c3b81159733df6d705fc597d9cb32} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!ObservingBit\_Set@{ObservingBit\_Set}}
+\index{ObservingBit\_Set@{ObservingBit\_Set}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{ObservingBit\_Set()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Observing\+Bit\+\_\+\+Set (\begin{DoxyParamCaption}\item[{\textbf{ Gen\+Comp\+Observe\+\_\+t}}]{B,  }\item[{bool}]{V }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set an observing bit for this \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em B} & is the bit to set in m\+Observed\+Bit \\
+\hline
+{\em V} & is the requested value of the bit \\
+\hline
+\end{DoxyParams}
+\label{classscGenComp__PU__Abstract_a399d6568bedd90fcbf4f71f9a06b3418} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!OperationCounter\_Get@{OperationCounter\_Get}}
+\index{OperationCounter\_Get@{OperationCounter\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{OperationCounter\_Get()}
+{\footnotesize\ttfamily int32\+\_\+t sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Operation\+Counter\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of operations performed. 
+
+\begin{DoxyReturn}{Returns}
+how many operations the unit performed 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_a6bdceeb84580e09399748c015c862943} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!RelaxingBegin\_Do@{RelaxingBegin\_Do}}
+\index{RelaxingBegin\_Do@{RelaxingBegin\_Do}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{RelaxingBegin\_Do()}
+{\footnotesize\ttfamily virtual void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Relaxing\+Begin\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Save the address of the observer simulator in the PU \label{classscGenComp__PU__Abstract_abb584a266091960e1258324b364646dd} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!RelaxingBegin\_method@{RelaxingBegin\_method}}
+\index{RelaxingBegin\_method@{RelaxingBegin\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{RelaxingBegin\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Relaxing\+Begin\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Relaxing has started. 
+
+Usually activated by event EVENT\+\_\+\+Gen\+Comp.\+Relaxing\+Begin issued in Delivering\+\_\+\+End() After delivered the result internally to the \textquotesingle{}output section\textquotesingle{}, resetting begins \label{classscGenComp__PU__Abstract_a346ab5b285ad988c5bf06a9df6e09485} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scDeliveringTimeBegin\_Get@{scDeliveringTimeBegin\_Get}}
+\index{scDeliveringTimeBegin\_Get@{scDeliveringTimeBegin\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{scDeliveringTimeBegin\_Get()}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Delivering\+Time\+Begin\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the beginning of the last \textquotesingle{}Delivering\textquotesingle{} period \begin{DoxyReturn}{Returns}
+the time of the beginning of delivery (firing) 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_a64ac131c1b5de05a7bd666613aeacce5} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scIdlePeriod\_Get@{scIdlePeriod\_Get}}
+\index{scIdlePeriod\_Get@{scIdlePeriod\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{scIdlePeriod\_Get()}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Idle\+Period\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+sc\+Idle\+Period\+\_\+\+Get, can be called after the next operation started 
+
+\begin{DoxyReturn}{Returns}
+the idle time before the beginning of the last operation 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_aa36e3718fd1a193a9038873067a10b94} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scLocalTimeBase\_Get@{scLocalTimeBase\_Get}}
+\index{scLocalTimeBase\_Get@{scLocalTimeBase\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{scLocalTimeBase\_Get()}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Local\+Time\+Base\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return when the recent operation has started \begin{DoxyReturn}{Returns}
+The beginning of the simulated time of the recent operation 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_a9ded4eb17e053cfc1ba5be715d6b4e18} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scLocalTimeBase\_Set@{scLocalTimeBase\_Set}}
+\index{scLocalTimeBase\_Set@{scLocalTimeBase\_Set}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{scLocalTimeBase\_Set()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Local\+Time\+Base\+\_\+\+Set (\begin{DoxyParamCaption}\item[{sc\+\_\+core\+::sc\+\_\+time}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+sc\+Local\+Time\+Base\+\_\+\+Set 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & The beginning of the simulated time of the recent operation \\
+\hline
+\end{DoxyParams}
+\label{classscGenComp__PU__Abstract_a5cb58143dab293baacd596fb91d6165f} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scProcessingPeriod\_Get@{scProcessingPeriod\_Get}}
+\index{scProcessingPeriod\_Get@{scProcessingPeriod\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{scProcessingPeriod\_Get()}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Processing\+Period\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the total simulated time of the last processing \begin{DoxyReturn}{Returns}
+the computing plus delivery time 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_aef492ca3f9547b62d79c717f38db9705} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scRelaxingBeginTime\_Get@{scRelaxingBeginTime\_Get}}
+\index{scRelaxingBeginTime\_Get@{scRelaxingBeginTime\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{scRelaxingBeginTime\_Get()}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Relaxing\+Begin\+Time\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return when the last relaxing period started. 
+
+\begin{DoxyReturn}{Returns}
+The time the last operation ended 
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_a7b4f47d7ab49516c5734f87c15a20014} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!scResultPeriod\_Get@{scResultPeriod\_Get}}
+\index{scResultPeriod\_Get@{scResultPeriod\_Get}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{scResultPeriod\_Get()}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::sc\+Result\+Period\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Result\+Period\+\_\+\+Get, can be called after an operation finished. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\label{classscGenComp__PU__Abstract_a7a0323da4e4758936037bd3c18841e30} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!StageFlag\_Set@{StageFlag\_Set}}
+\index{StageFlag\_Set@{StageFlag\_Set}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{StageFlag\_Set()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Stage\+Flag\+\_\+\+Set (\begin{DoxyParamCaption}\item[{\textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t}}]{S }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em S} & Set stage machine to stage S \\
+\hline
+\end{DoxyParams}
+\label{classscGenComp__PU__Abstract_a4c1096b8b544c2e6b5724ff93b290770} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!Synchronize\_method@{Synchronize\_method}}
+\index{Synchronize\_method@{Synchronize\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{Synchronize\_method()}
+{\footnotesize\ttfamily virtual void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Synchronize\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Synchronize the PU to some external condition. 
+
+Usually activated by \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t.\+Synchronize}{p.}{group__GENCOMP__MODULE__PROCESS_gaf293d5176ccde11d26cae236c0f7377a}
+
+
+\begin{DoxyItemize}
+\item In biological computing, it results in issuing EVENT\+\_\+\+Gen\+Comp\+\_\+t.\+End\+Computing (immediate spiking; passing to \textquotesingle{}Delivering\textquotesingle{})
+\item In technical computing, it results in issuing \doxyref{EVENT\+\_\+\+Gen\+Comp\+\_\+t.\+Computing\+Begin}{p.}{group__GENCOMP__MODULE__PROCESS_ga00d333d4187fe9a0c845773e5c1f0d1d} (starting computing; passing to \textquotesingle{}Computing\textquotesingle{}) 
+\end{DoxyItemize}\label{classscGenComp__PU__Abstract_a3fec3c6d1ee1a2c0a6bc4eb2147cfe55} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!TransmissionBegin\_method@{TransmissionBegin\_method}}
+\index{TransmissionBegin\_method@{TransmissionBegin\_method}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{TransmissionBegin\_method()}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Transmission\+Begin\+\_\+method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transmission period has started. 
+
+Usually activated by Delivering\+Begin Happens in parallel with delivering 
+
+\doxysubsection{Member Data Documentation}
+\label{classscGenComp__PU__Abstract_ad186e82d86f339001ff9db119ab93296} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!mCentralClockMode@{mCentralClockMode}}
+\index{mCentralClockMode@{mCentralClockMode}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{mCentralClockMode}
+{\footnotesize\ttfamily bool sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Central\+Clock\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+If set, the class enters phases \textquotesingle{}Computing\textquotesingle{} and \textquotesingle{}Delivering ONLY if an external clock rising and falling edge arrives. Not to be confused with the inter-\/unit synchronization see \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a4c1096b8b544c2e6b5724ff93b290770} If set, external clock starts computing and delivering \label{classscGenComp__PU__Abstract_a0fd72a2b7c76176e533f18edc4c522b2} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!mFixedComputingTime@{mFixedComputingTime}}
+\index{mFixedComputingTime@{mFixedComputingTime}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{mFixedComputingTime}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Fixed\+Computing\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+m\+Fixed\+Computing\+Time,m\+Fixed\+Delivering\+Time 
+
+If this value is NOT SC\+\_\+\+ZERO\+\_\+\+TIME, the system uses this value for the time span of computing and delivering time, otherwise uses \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Heartbeat\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea} periodically to see if the operation finished. The derived units must override Heartbeat\+\_\+\+XXX\+\_\+\+Stop() to provide the appropriate stopping conditions \label{classscGenComp__PU__Abstract_ac6bd366a8a5948db90a51fe7ee010be3} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!mLocalTimeBase@{mLocalTimeBase}}
+\index{mLocalTimeBase@{mLocalTimeBase}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{mLocalTimeBase}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Local\+Time\+Base\hspace{0.3cm}{\ttfamily [protected]}}
+
+the PUs have a local time\+: the time spent since starting recent processing \label{classscGenComp__PU__Abstract_aa0bdf218749dec818733cc2a9f92b8ef} 
+\index{scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}!mObservedBits@{mObservedBits}}
+\index{mObservedBits@{mObservedBits}!scGenComp\_PU\_Abstract@{scGenComp\_PU\_Abstract}}
+\doxysubsubsection{mObservedBits}
+{\footnotesize\ttfamily bitset$<$(int8\+\_\+t) Gen\+Comp\+Observe\+\_\+t\+::gcob\+\_\+\+SIZE$>$ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Observed\+Bits\hspace{0.3cm}{\ttfamily [private]}}
+
+Store here which events the unit wants to be observed
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Gen\+Comp\+Observe\+\_\+t}{p.}{classGenCompObserve__t} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+h}\end{DoxyCompactItemize}

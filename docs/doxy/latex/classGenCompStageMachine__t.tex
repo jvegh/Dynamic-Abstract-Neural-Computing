@@ -1,0 +1,32 @@
+\doxysection{Gen\+Comp\+Stage\+Machine\+\_\+t Class Reference}
+\label{classGenCompStageMachine__t}\index{GenCompStageMachine\_t@{GenCompStageMachine\_t}}
+
+
+\doxysubsection{Detailed Description}
+The operation of an elementary computing unit of general computing is modelled as a multiple-\/state machine-\/like structure, with internal stage stored a variable sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::m\+Stage\+Flag. \begin{DoxyVerb}                   Sleeping<------> Relaxing     <---Initializing
+                                   ^   ^     ^  \   ^
+                                   |   HBeat |   \  |-InputReceived
+                                   |         |   v  v
+                                   |   Failed-   Computing
+                                   | Synchronizing /
+                                   | |            /
+                                   | v           v
+                                  Delivering    <-----Synchronizing\end{DoxyVerb}
+
+
+The stage changing are implemented in two steps. The non-\/virtual methods XXX\+\_\+method() (usually, hidden from the users of derived classes) process all needed activity for the correct sequencing of stages and handling event-\/related activity. (They are declared as \textquotesingle{}private\textquotesingle{} to prevent non-\/intended activity of users.) They call XXX\+\_\+\+Do() functions (may be overloaded by users) which may implement additional activity. If needed, the upstream object\textquotesingle{}s XXX\+\_\+\+Do() can be called within those functions.
+
+
+\begin{DoxyItemize}
+\item The stages below are momentary\+: need action and pass to one of the above stages
+\item Failing \+: Something went wrong, reset unit and pass to Relaxing
+\item Synchronizing\+: deliver result, anyhow ;
+\begin{DoxyItemize}
+\item in biological mode, deliver immediate spike
+\item in technical mode, deliver immediate result (such and in a \doxysectref{GPU}{p.}{GLOSSARY_GLOSSARY_GPU}{2}) Passes to Relaxing (after issuing \textquotesingle{}End Computing\textquotesingle{}) 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Gen\+Comp\+Stage\+Machine\+Type.\+h}\end{DoxyCompactItemize}

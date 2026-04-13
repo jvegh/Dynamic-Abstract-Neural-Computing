@@ -112,7 +112,7 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->addGraph(); // blue line
   customPlot->graph(0)->setName("AP phase plot");
   customPlot->graph(0)->setPen(QPen(QColor(255, 110, 40)));
-  customPlot->graph(0)->setLineStyle((QCPGraph::LineStyle)1);
+  customPlot->graph(0)->setLineStyle(QCPGraph::lsLine);
 
   index = 0;
 

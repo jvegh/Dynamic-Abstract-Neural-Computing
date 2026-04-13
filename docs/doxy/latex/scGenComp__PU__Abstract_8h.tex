@@ -1,0 +1,24 @@
+\doxysection{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+h File Reference}
+\label{scGenComp__PU__Abstract_8h}\index{scGenComp\_PU\_Abstract.h@{scGenComp\_PU\_Abstract.h}}
+
+
+Function prototypes for the general processing unit. Just event and stage handling, no real activity.  
+
+
+Include dependency graph for sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scGenComp__PU__Abstract_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}
+\begin{DoxyCompactList}\small\item\em Class to deal with operations of an abstract processing unit (\doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2}), implementing a single-\/shot elementary computation in the sense of the General Computing Paradigm \cite{VeghRevisingClassicComputing:2021}. The stages of operation are marked by event pairs (or single events) in the sense as the SystemC \cite{SystemCBook:2010} programming engine uses that notion. Using those events and SystemC\textquotesingle{}s internal time scale, {\itshape the class isolates the simulated time and the clock time the \doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2} needs to simulate the processing}. The code of this base class is a bit complex, in order to enable simple derived \doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2}s\+: the complex event handling mechanism is confined in this class; the derived classes are free from any SystemC specific programming (for and example see \doxyref{Neuron\+Physical}{p.}{classNeuronPhysical}). The \doxysectref{PU}{p.}{GLOSSARY_GLOSSARY_PU}{2} has correspondingly the stages \textquotesingle{}Computing\textquotesingle{}, \textquotesingle{}Delivering\textquotesingle{} and \textquotesingle{}Relaxing\textquotesingle{} as the minimum necessary basic stages. The module implements a single-\/shot normal operating mode, that is, the operation is automatic between the corresponding xxx\+Begin and xxx\+End events, and at the end of the xxx\+End events the corresponding next xxx\+Begin event is issued. A distinguished (compared to other simulators) feature of the class is handling time faithfully. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Function prototypes for the general processing unit. Just event and stage handling, no real activity. 
+

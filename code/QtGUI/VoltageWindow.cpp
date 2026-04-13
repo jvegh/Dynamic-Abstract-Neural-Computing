@@ -48,7 +48,7 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
   statusBar()->clearMessage();
   statusBar()->showMessage( QString("Ready to go"));
 //  ui->customPlot->replot();
-  realtimeDataSlot();
+// realtimeDataSlot();
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
@@ -139,15 +139,13 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RunningPoint->bottomRight->setCoords(0.0001+Time, Volt2+5);
 
     VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-    uint64_t NCP = Gradient.count();
+//    uint64_t NCP = Gradient.count();
     //    QVector<QCPCurveData> dataPhasePlot(NCP);
     dataVoltagePlot.push_back(QCPCurveData(index,Volt2, DvDt));
     index++;
     VoltagePlot->data()->set(dataVoltagePlot, true);
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-
-    ui->customPlot->replot();
 
 
     // add two new graphs and set their look:
@@ -157,14 +155,7 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     ui->customPlot->addGraph();
     ui->customPlot->graph(1)->setPen(QPen(Qt::red)); // line color red for second graph
     // generate some points of data (y0 for first, y1 for second graph):
-#if 0
-    for (int i=0; i<251; ++i)
-    {
-        x.push_back( i);
-        y0.push_back(qExp(-i/150.0)*qCos(i/10.0)); // exponentially decaying cosine
-        y1.push_back(qExp(-i/150.0));              // exponential envelope
-    }
-#endif
+
     index = 0;
     ui->customPlot->graph(0)->setData(x, y0);
     ui->customPlot->graph(1)->setData(x, y1);
@@ -174,7 +165,7 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     customPlot->xAxis->setLabel("Time (ms)");
     customPlot->yAxis->setLabel("Membrane voltage (mV)");
     // set axes ranges, so we see all data:
-    customPlot->xAxis->setRange(0,2);
+    customPlot->xAxis->setRange(0,1);
     customPlot->yAxis->setRange(-30,100);
     // set some basic customPlot config:
     customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);

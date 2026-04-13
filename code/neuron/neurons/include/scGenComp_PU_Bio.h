@@ -65,14 +65,14 @@
  *
  *
 
-\anchor fig_AP_ConceptualDemo
-@image html AP_ConceptualDemo.png "The conceptual time course of an action potential" width=500px
+\anchor fig_AP_Conceptual
+@image html AP_Conceptual.svg "The conceptual time course of an action potential" width=500px
 
 @latexonly
 \begin{figure}
-\includegraphics[width=.4\textwidth]{images/AP_ConceptualDemo.pdf}
+\includegraphics[width=.4\textwidth]{images/AP_Conceptual.pdf}
 \caption{The conceptual time course of an action potential}
-\label{fig_AP_ConceptualDemo}
+\label{fig_AP_Conceptual}
 \end{figure}
 @endlatexonly
 
@@ -100,8 +100,7 @@ class scGenComp_PU_Bio : public scGenComp_PU_Abstract
     /** @brief The extra processing for beginning computing
      */
     virtual void ComputingBegin_Do()
-    {
-    }
+    {}
     void DeliveringBegin_Do();
     void DeliveringEnd_Do();
 

@@ -45,7 +45,6 @@ class NeuronConstants
 public:
     /*!
      * \brief Creates a physics-based neuron unit
-     * @param nm the SystemC name of the module
      */
     NeuronConstants(void):
          m_CurrentResolutionExponent(-9)

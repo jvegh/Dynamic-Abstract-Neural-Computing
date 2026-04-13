@@ -1,0 +1,6 @@
+/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/CMakeFiles/edit_cache.dir
+/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/CMakeFiles/rebuild_cache.dir
+/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/CMakeFiles/doc-TAC-prerequisites.dir
+/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/CMakeFiles/doc.dir
+/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/CMakeFiles/edit_cache.dir
+/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/CMakeFiles/rebuild_cache.dir

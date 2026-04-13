@@ -211,7 +211,7 @@ void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
 }
 
 void NeuronTab::updateStatistics() {
-  static auto lastUpdateTime = std::chrono::system_clock::now();
+//  static auto lastUpdateTime = std::chrono::system_clock::now();
  /* static long long lastCycleCount =
       NeuronHandler::getNeuron()->getCycleCount();
 

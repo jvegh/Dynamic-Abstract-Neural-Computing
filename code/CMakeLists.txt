@@ -25,7 +25,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${S
 include(Colorize)
 
     set(MyVersion "0.0.6")
-    set(MyDate "2026.03.18")
+    set(MyDate "2026.04.13")
 
   project(NeuronScQt VERSION ${MyVersion}
         LANGUAGES C CXX
@@ -123,7 +123,7 @@ endif()
 
 if(BUILD_DOCS)
   find_package(Doxygen)
-#??  add_subdirectory(doc) # The doxygen documentation
+#  add_subdirectory(/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc) # The doxygen documentation
   set(doxyfile_in "${CMAKE_SOURCE_DIR}/doc/Doxyfile.in")
 endif(BUILD_DOCS)
 

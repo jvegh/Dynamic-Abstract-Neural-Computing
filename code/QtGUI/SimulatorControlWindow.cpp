@@ -118,12 +118,13 @@ void SimulatorControlWindow::on_stopButton_clicked()
 }
 */
 
+/*
 void SimulatorControlWindow::on_method2Button_clicked()
 {
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SimulatedTime);
     QString message = tr("Method2 requested");
     parent_Get()->statusBar()->showMessage(message, 1200);
-}
+}*/
 
 //#if 0
 // Pass responsibility of closing to the main window

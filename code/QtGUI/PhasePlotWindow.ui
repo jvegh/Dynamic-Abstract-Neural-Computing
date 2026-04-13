@@ -36,7 +36,7 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionScreeshot"/>
+    <addaction name="actionScreenshot"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -81,7 +81,7 @@
     <string>View</string>
    </property>
   </action>
-  <action name="actionScreeshot">
+  <action name="actionScreenshot">
    <property name="text">
     <string>Screenshot</string>
    </property>

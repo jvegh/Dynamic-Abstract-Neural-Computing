@@ -1,0 +1,92 @@
+\doxysection{Neuron\+Constants Class Reference}
+\label{classNeuronConstants}\index{NeuronConstants@{NeuronConstants}}
+
+
+\doxysubsection{Detailed Description}
+Sources\+: 
+
+Provide neuron-\/related constants in various relations for neural computing
+
+Define neuron\textquotesingle{}s constants Provides access functions to the parameters of the neuronal condenser and resistor
+
+The system uses numbers in units\+:
+\begin{DoxyItemize}
+\item resistivity GOhm so [R] ( $10^9$ Ohm)
+\item capacity pF so [C] ( $10^{-12}$ Farad
+\item time ms so [t] ( $10^{-3}$), so [R$\ast$C] is ( $10^9*10^{-12}=10^{-3}$
+\item voltage mV so [V] is ( $10^{-3}$)
+\item current pA ( $10^{-12}$)
+\item so current from V/R $ 10^{-3]/10^{9}=10^{-12} $ pA
+\item so [I/C] ( $10^{-12}/10^{-12}$ V/s)
+\item so $ \frac{1}{C}\frac{dI}{dt} = [A/s/(As)*V] = [Cb/s^2] $
+\item so [I$\ast$R] ( $ 10^{-12}*10^9$ = mV)
+\item so [V/C] ( $10^{-3}/10^{-12} = 10^9 V/m$) 
+\end{DoxyItemize}\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \textbf{ Membrane\+Capacity\+PF\+\_\+\+Get} (void)
+\item 
+\label{classNeuronConstants_ac9be591eec52ce7f58522ff1de58464f} 
+void {\bfseries Membrane\+From\+RC\+\_\+\+Tau\+MSec\+\_\+\+Set} (double R, double C)
+\begin{DoxyCompactList}\small\item\em Set the membrane\textquotesingle{}s time constant. \end{DoxyCompactList}\item 
+double \textbf{ Membrane\+Resistance\+GOhm\+\_\+\+Get} ()
+\item 
+void \textbf{ Membrane\+Resistance\+GOhm\+\_\+\+Set} (double R)
+\item 
+double \textbf{ Membrane\+Resistance\+Ohm\+\_\+\+Get} ()
+\item 
+\label{classNeuronConstants_a1c970c7d514554aebeef16015f59e9ec} 
+{\bfseries Neuron\+Constants} (void)
+\begin{DoxyCompactList}\small\item\em Creates a physics-\/based neuron unit. \end{DoxyCompactList}\item 
+\label{classNeuronConstants_a76590051e62bccca9243db8caa5b7045} 
+void {\bfseries Use\+\_\+\+Johnston\+Set} ()
+\begin{DoxyCompactList}\small\item\em Use data set from \cite{JohnstonWuNeurophysiology:1995}. \end{DoxyCompactList}\item 
+\label{classNeuronConstants_ade89b36f04b23f25d37ce414f5116cf1} 
+void {\bfseries Use\+\_\+\+Koch\+Set} ()
+\begin{DoxyCompactList}\small\item\em Use data set from \cite{KochBiophysics:1999}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\label{classNeuronConstants_a4e9fbceab7f6ae1a1d7351491c922154} 
+\index{NeuronConstants@{NeuronConstants}!MembraneCapacityPF\_Get@{MembraneCapacityPF\_Get}}
+\index{MembraneCapacityPF\_Get@{MembraneCapacityPF\_Get}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{MembraneCapacityPF\_Get()}
+{\footnotesize\ttfamily double Neuron\+Constants\+::\+Membrane\+Capacity\+PF\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+mebrane\textquotesingle{}s capacitance [pF] 
+\end{DoxyReturn}
+\label{classNeuronConstants_a4ca417130372cb0b5c78e1b03131cc84} 
+\index{NeuronConstants@{NeuronConstants}!MembraneResistanceGOhm\_Get@{MembraneResistanceGOhm\_Get}}
+\index{MembraneResistanceGOhm\_Get@{MembraneResistanceGOhm\_Get}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{MembraneResistanceGOhm\_Get()}
+{\footnotesize\ttfamily double Neuron\+Constants\+::\+Membrane\+Resistance\+GOhm\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+membrane\textquotesingle{}s resistance [GOhm] 
+\end{DoxyReturn}
+\label{classNeuronConstants_a6b479758b3f19d6293916922765e3683} 
+\index{NeuronConstants@{NeuronConstants}!MembraneResistanceGOhm\_Set@{MembraneResistanceGOhm\_Set}}
+\index{MembraneResistanceGOhm\_Set@{MembraneResistanceGOhm\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{MembraneResistanceGOhm\_Set()}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+Resistance\+GOhm\+\_\+\+Set (\begin{DoxyParamCaption}\item[{double}]{R }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set membrane\textquotesingle{}s resistance 
+\begin{DoxyParams}{Parameters}
+{\em R} & resistance [GOhm] \\
+\hline
+\end{DoxyParams}
+\label{classNeuronConstants_aff28872c0f260e8d6c5d7d7b64fbca53} 
+\index{NeuronConstants@{NeuronConstants}!MembraneResistanceOhm\_Get@{MembraneResistanceOhm\_Get}}
+\index{MembraneResistanceOhm\_Get@{MembraneResistanceOhm\_Get}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{MembraneResistanceOhm\_Get()}
+{\footnotesize\ttfamily double Neuron\+Constants\+::\+Membrane\+Resistance\+Ohm\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+membrane\textquotesingle{}s resistance [Ohm] 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Constants.\+h}\end{DoxyCompactItemize}

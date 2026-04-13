@@ -1,0 +1,252 @@
+\doxysection{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+h}
+\label{scGenComp__PU__Abstract_8h_source}\index{scGenComp\_PU\_Abstract.h@{scGenComp\_PU\_Abstract.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ SCABSTRACTGENCOMP\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ SCABSTRACTGENCOMP\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <bitset>}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\#include\ "{}../../3rdParty/Minuit/include/GaussRandomGen.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\#include\ "{}GaussRandomGen.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Utils.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}Constants.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}scGenComp\_Config.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}EventGencomp.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}GenCompStageMachineType.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}GenCompObserveType.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ namespace\ }sc\_core;\ \textcolor{keyword}{using\ namespace\ }sc\_dt;\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SC\_MAKE\_TIME\_BENCHMARKING\ \ }\textcolor{comment}{//\ uncomment\ to\ measure\ the\ SystemCtime\ with\ benchmarking\ macros}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ MAKE\_TIME\_BENCHMARKING\ \ }\textcolor{comment}{//\ uncomment\ to\ measure\ the\ clock\ time\ with\ benchmarking\ macros}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifdef\ SC\_MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}scMacroTimeBenchmarking.h"{}}\ \ \ \ \textcolor{comment}{//\ Must\ be\ after\ the\ \#define\ "{}SC\_MAKE\_TIME\_BENCHMARKING'\ to\ have\ its\ effect}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifdef\ MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}MacroTimeBenchmarking.h"{}}\ \ \ \ \textcolor{comment}{//\ Must\ be\ after\ the\ '\#define\ MAKE\_TIME\_BENCHMARKING'\ to\ have\ its\ effect}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/*static\ sc\_core::sc\_time}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ \ \ Heartbeat\_time\_default\ \ \ \ //<\ The\ reset\ value\ of\ heartbeat\ time}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ ,Heartbeat\_time\_resolution;\ \ \ \ //<\ The\ time\ tolerance}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\#ifndef\ SCBIOGENCOMP\_H}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\#ifndef\ SCTECHGENCOMP\_H\ //\ Just\ to\ exclude\ for\ Doxygen,\ to\ not\ repeat\ it}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{//\#endif\ //SCTECHGENCOMP\_H}}
+\DoxyCodeLine{00106\ \textcolor{comment}{//\#endif\ //SCBIOGENCOMP\_H}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{class\ }scGenComp\_PU\_Abstract:\ \textcolor{keyword}{public}\ sc\_core::sc\_module}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00118\ \ \ \ \ scGenComp\_PU\_Abstract(sc\_core::sc\_module\_name\ nm}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,sc\_core::sc\_time\ FixedComputingTime\ =\ SC\_ZERO\_TIME}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,sc\_core::sc\_time\ FixedDeliveringTime\ =\ SC\_ZERO\_TIME}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\textcolor{keywordtype}{bool}\ ExternSynchronMode\ =\textcolor{keyword}{false}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~scGenComp\_PU\_Abstract(\textcolor{keywordtype}{void});\ \textcolor{comment}{//\ Must\ be\ overridden}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ComputingBegin\_Do()\{\}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ComputingEnd\_Do();}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DeliveringBegin\_Do()\{\}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ DeliveringEnd\_Do()\{\}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Failed\_Do()\{\}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Initialize\_Do()\{\}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ InputReceived\_Do(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00156\ \ \ \ \ uint32\_t\ NoOfInputsReceived\_Get()\{\textcolor{keywordflow}{return}\ mInputsReceived;\}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ ObserverNotify(GenCompObserve\_t\ ObservedBit);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{bool}\ ObservingBit\_Get(GenCompObserve\_t\ B)}
+\DoxyCodeLine{00169\ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ assert(B\ <\ GenCompObserve\_t::gcob\_SIZE);\ \ \textcolor{comment}{//\ Check\ if\ wrong\ bit}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ mObservedBits[(uint8\_t)\ B];}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ ObservingBit\_Set(GenCompObserve\_t\ B,\ \textcolor{keywordtype}{bool}\ V)}
+\DoxyCodeLine{00180\ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ assert(B\ <\ GenCompObserve\_t::gcob\_SIZE);\ \ \textcolor{comment}{//\ Check\ if\ wrong\ bit}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ mObservedBits[(uint8\_t)B]\ =\ V;}
+\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ int32\_t\ OperationCounter\_Get(\textcolor{keywordtype}{void})\{\textcolor{keywordflow}{return}\ mOperationCounter;\}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{comment}{//void\ RegisterSimulator(scGenComp\_Simulator*);}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//\ Do\ extra\ activity\ needed\ in\ mode\ gcsm\_Relaxing}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ RelaxingBegin\_Do()\{\}}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{inline}\ sc\_core::sc\_time}
+\DoxyCodeLine{00203\ \ \ \ \ scIdlePeriod\_Get()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ mIdlePeriod;\}}
+\DoxyCodeLine{00208\ \ \ \ \ sc\_core::sc\_time\ scResultPeriod\_Get()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mResultPeriod;\}}
+\DoxyCodeLine{00212\ \ \ \ \ sc\_core::sc\_time\ scProcessingPeriod\_Get()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mRelaxingBeginTime\ -\/\ mLocalTimeBase;\}}
+\DoxyCodeLine{00216\ \ \ \ \ sc\_core::sc\_time\ scDeliveringTimeBegin\_Get()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mDeliveringBeginTime\ ;\}}
+\DoxyCodeLine{00220\ \ \ \ \ sc\_core::sc\_time\ scLocalTimeBase\_Get(\textcolor{keywordtype}{void})\textcolor{keyword}{const\ }\{\ \textcolor{keywordflow}{return}\ mLocalTimeBase;\}}
+\DoxyCodeLine{00225\ \ \ \ \ sc\_core::sc\_time\ scRelaxingBeginTime\_Get()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mRelaxingBeginTime;\}}
+\DoxyCodeLine{00227\ \ \ \ \ EVENT\_GenComp\_t\ EVENT\_GenComp;}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keyword}{inline}\ GenCompStageMachine\_t\ StageFlag\_Get(\textcolor{keywordtype}{void})\{\ \textcolor{keywordflow}{return}\ mStageFlag;\ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{float}\ LocalTimeInMillisec\_Get()\{\ \ \ \ \textcolor{keywordflow}{return}\ scLocalTime\_Get().to\_seconds()*THOUSAND;\}}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{float}\ LocalTimeInMicrosec\_Get()\{\ \ \ \ \textcolor{keywordflow}{return}\ scLocalTime\_Get().to\_seconds()*THOUSAND*THOUSAND;\}}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{float}\ LocalTimeInNanosec\_Get()\{\ \ \ \ \textcolor{keywordflow}{return}\ scLocalTime\_Get().to\_seconds()*THOUSAND*THOUSAND*THOUSAND;\}}
+\DoxyCodeLine{00236\ \textcolor{comment}{//\ \ To\ be\ implemented}}
+\DoxyCodeLine{00237\ \textcolor{comment}{//\ \ \ \ virtual\ void\ TransmissionBegin\_Do()\{\}}}
+\DoxyCodeLine{00238\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CancelEvents(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{comment}{//\ To\ sidestep\ private\ call;\ see\ Failed\_method()}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{void}\ ChargeupFailed(\textcolor{keywordtype}{void})\{Failed\_method();\};}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ HaveEnoughInputs(\textcolor{keywordtype}{void})\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\}}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Adjust(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Computing\_Do()\{\}}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Delivering\_Do()\{\};}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Computing\_Stop()\{\textcolor{keywordflow}{return}\ scLocalTime\_Get()>mFixedComputingTime;\}}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Delivering\_Stop()\{\textcolor{keywordflow}{return}\ scLocalTime\_Get()>mFixedComputingTime+mFixedDeliveringTime;\}}
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Relaxing\_Do()\{\}}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Relaxing\_Stop()\{\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00301\ \ \ \ \ sc\_core::sc\_time\ HeartbeatTime\_Get(\textcolor{keywordtype}{void})\{\textcolor{keywordflow}{return}\ m\_Heartbeat\_time;\}}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{void}\ HeartbeatTime\_Set(sc\_core::sc\_time\ HBT)}
+\DoxyCodeLine{00303\ \ \ \ \ \{\ \ \ m\_Heartbeat\_time\ =\ HBT;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ m\_dt\ =\ m\_Heartbeat\_time.to\_seconds()*1000*1000.;}
+\DoxyCodeLine{00305\ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordtype}{float}\ HeartbeatTimeInMicrosec\_Get()\{\ \ \ \ \textcolor{keywordflow}{return}\ m\_Heartbeat\_time.to\_seconds()*THOUSAND*THOUSAND;\}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00311\ \ \ \ \ sc\_core::sc\_time\ scLocalTime\_Get()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ sc\_core::sc\_time\_stamp()-\/mLocalTimeBase;\}}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{double}\ scLocalTimeMS\_Get(\textcolor{keywordtype}{void})\{\textcolor{keywordflow}{return}\ scLocalTime\_Get().to\_seconds()*1000.;\}}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{comment}{//\ Return\ local\ time\ for\ calculations\ in\ derived\ classes,\ to\ avoid\ using\ direct\ SystemC\ calls}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{void}\ scLocalTimeBase\_Set(sc\_core::sc\_time\ T)\ \{\ mLocalTimeBase\ =\ T;\}}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ StageFlag\_Set(GenCompStageMachine\_t\ S)\{\ \ \ \ mStageFlag\ =\ S;}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ mStateFlag\ =\ (int8\_t)\ mStageFlag;\}}
+\DoxyCodeLine{00323\ \ \ \ \ GenCompStageMachine\_t\ mStageFlag;\ \ \ \ \textcolor{comment}{//<\ Preserves\ recent\ stage}}
+\DoxyCodeLine{00324\ \textcolor{comment}{//\ \ \ \ bool\ m\_HasUnhandledInput;\ //\ Signal\ if\ to\ open\ a\ new\ input}}
+\DoxyCodeLine{00325\ \ \ \ \ int8\_t\ mStateFlag;}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{bool}\ CentralClockMode\_Get(\textcolor{keywordtype}{void})\{\textcolor{keywordflow}{return}\ mCentralClockMode;\}}
+\DoxyCodeLine{00334\ \ \ \ \ sc\_core::sc\_time}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ mLocalTimeBase\ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ The\ beginning\ of\ the\ local\ computing;\ simulated\ time\ of\ 'ComputingBegin'}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ aka,\ When\ !this!\ processing\ begun}}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ ,mDeliveringBeginTime\ \ \ \textcolor{comment}{//<\ When\ the\ result\ was\ ready;\ aka\ when\ fired}}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ ,mRelaxingBeginTime\ \ \ \ \ \textcolor{comment}{//<\ When\ this\ processing\ begun}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ ,mResultPeriod\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ Last\ processing\ time\ duration\ (the\ result)\ (T(ComputingBegin)-\/T(ComputingBegin))}}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ ,mIdlePeriod\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ Time\ duration\ (ComputingBeginTime\ -\/\ LastRelaxingBeginTime)}}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ uint32\_t\ mInputsReceived;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ of\ inputs\ received(arguments\ or\ of\ spikes)}}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_Relaxing\_Stopped;}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_dt;\ \textcolor{comment}{//\ The\ integration\ time\ step,\ for\ the\ non-\/sc\ computation}}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_t;\ \textcolor{comment}{//\ The\ local\ time,\ for\ the\ non-\/sc\ computation}}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordtype}{bool}\ mCentralClockMode;\ \ \ \ \ \ \ \textcolor{comment}{//<\ If\ module\ needs\ central\ clock\ synchrony\ signals\ for\ changing\ its\ states}}
+\DoxyCodeLine{00355\ \ \textcolor{comment}{//??\ \ \ bool\ m\_FirstHeartbeatInStage;\ \ \ \ //<\ If\ to\ correct\ for\ the\ 1st\ heartbeat\ time}}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{comment}{//**\ Output\ an\ item}}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OutputItem(\textcolor{keywordtype}{void})\{\}}
+\DoxyCodeLine{00358\ \ \ \ \ sc\_trace\_file*\ m\_tracefile;}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Tracing\_Initialize();\ \ \ \ \textcolor{comment}{//\ By\ default,\ makes\ nothing}}
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{comment}{//\ Benchmarking\ stores}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ BENCHMARK\_TIME\_ACTIVE}}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ chrono::steady\_clock::time\_point\ t\_Computing\ =chrono::steady\_clock::now();}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\ int64\_t,\ nano>\ x\_Computing,s\_Computing\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ chrono::steady\_clock::time\_point\ t\_Delivering\ =chrono::steady\_clock::now();}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\ int64\_t,\ nano>\ x\_Delivering,s\_Delivering\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ chrono::steady\_clock::time\_point\ t\_Relaxing\ =chrono::steady\_clock::now();}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::duration<\ int64\_t,\ nano>\ x\_Relaxing,s\_Relaxing\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ TimeDuration\_Computing\_Get()}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \textcolor{keywordflow}{return}\ \ x\_Computing.count()/1000/1000.;\}}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ TimeDuration\_Delivering\_Get()}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \textcolor{keywordflow}{return}\ x\_Delivering.count()/1000/1000.;\}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ TimeDuration\_Relaxing\_Get()}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \textcolor{keywordflow}{return}\ x\_Relaxing.count()/1000/1000.;\}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ TimeDuration\_Computing\_Print()}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ std::cerr\ \ <<\ \textcolor{stringliteral}{"{}Computing\ took\ "{}}\ <<\ std::fixed\ <<\ std::setprecision(3)\ <<\ std::setw(8)\ <<\ TimeDuration\_Computing\_Get()\ <<\ \textcolor{stringliteral}{"{}\ ms\ CLOCK\ time"{}}\ <<\ endl;\}}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ TimeDuration\_Delivering\_Print()}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ std::cerr\ \ <<\ \textcolor{stringliteral}{"{}Delivering\ took\ "{}}<<\ std::fixed\ <<\ std::setprecision(3)\ <<\ std::setw(8)\ <<\ TimeDuration\_Delivering\_Get()\ <<\ \textcolor{stringliteral}{"{}\ ms\ CLOCK\ time"{}}\ <<\ endl;\}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ TimeDuration\_Relaxing\_Print()}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ std::cerr\ \ <<\ \textcolor{stringliteral}{"{}Relaxing\ took\ "{}}<<\ std::fixed\ <<\ std::setprecision(3)\ <<\ std::setw(8)\ <<\ TimeDuration\_Relaxing\_Get()\ <<\ \textcolor{stringliteral}{"{}\ ms\ CLOCK\ time"{}}\ <<\ endl;\}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif\ }\textcolor{comment}{//\ BENCHMARK\_TIME\_ACTIVE}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ SC\_BENCHMARK\_TIME\_ACTIVE}}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ sc\_core::sc\_time\ SC\_t\_Computing\ =\ SC\_ZERO\_TIME,\ SC\_x\_Computing,\ SC\_s\_Computing;}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ sc\_core::sc\_time\ SC\_t\_Delivering\ =\ SC\_ZERO\_TIME,\ SC\_x\_Delivering,\ SC\_s\_Delivering;}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ sc\_core::sc\_time\ SC\_t\_Relaxing\ =\ SC\_ZERO\_TIME,\ SC\_x\_Relaxing,\ SC\_s\_Relaxing;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SC\_TimeDuration\_Computing\_Get()}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SC\_x\_Computing.to\_seconds()*THOUSAND;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SC\_TimeDuration\_Delivering\_Get()}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SC\_x\_Delivering.to\_seconds()*THOUSAND;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ SC\_TimeDuration\_Relaxing\_Get()}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SC\_x\_Relaxing.to\_seconds()*THOUSAND;}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SC\_TimeDuration\_Computing\_Print()}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Computing\ took\ "{}}\ <<\ sc\_time\_String\_Get(SC\_x\_Computing)\ <<\ \textcolor{stringliteral}{"{}\ ms\ SC\ time\ "{}}\ <<\ endl;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SC\_TimeDuration\_Delivering\_Print()}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Delivering\ took\ "{}}\ <<\ sc\_time\_String\_Get(SC\_x\_Delivering)\ <<\ \textcolor{stringliteral}{"{}\ ms\ SC\ time\ "{}}\ <<\ endl;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SC\_TimeDuration\_Relaxing\_Print()}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Relaxing\ took\ "{}}\ <<\ sc\_time\_String\_Get(SC\_x\_Relaxing)\ <<\ \textcolor{stringliteral}{"{}\ ms\ SC\ time\ "{}}\ <<\ endl;}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif\ }\textcolor{comment}{//\ BENCHMARK\_SCTIME\_ACTIVE}}
+\DoxyCodeLine{00413\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00414\ \textcolor{comment}{\ \ \ \ @endcode}}
+\DoxyCodeLine{00415\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ sc\_core::sc\_time}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_Heartbeat\_time;\ \textcolor{comment}{//<\ The\ size\ of\ the\ integration\ step\ size}}
+\DoxyCodeLine{00418\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BenchmarkTimeComputingBegin(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BenchmarkTimeComputingEnd(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BenchmarkTimeDeliveringBegin(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BenchmarkTimeDeliveringEnd(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ BenchmarkTimeRelaxingBegin(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00429\ \ \ \ \ bitset<(int8\_t)\ GenCompObserve\_t::gcob\_SIZE>\ mObservedBits;\ \ \ \textcolor{comment}{//<\ The\ bits\ of\ the\ GenComp\_PU\ stage}}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{comment}{//\ \ \ \ scGenComp\_Simulator*\ MySimulator;\ \ \ \ \ //<\ The\ simulator\ that\ observes\ us}}
+\DoxyCodeLine{00431\ \ \ \ \ int32\_t\ mOperationCounter;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//<\ Count\ the\ operations}}
+\DoxyCodeLine{00441\ \ \ \ \ sc\_core::sc\_time}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ mFixedComputingTime,\ \textcolor{comment}{//<\ If\ to\ use\ fixed-\/time\ computing}}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ mFixedDeliveringTime;\ \textcolor{comment}{//<\ If\ to\ use\ fixed-\/time\ delivering}}
+\DoxyCodeLine{00447\ \ \ \ \ \textcolor{keywordtype}{void}\ scClockUp\_method(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keywordtype}{void}\ scClockDown\_method(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordtype}{void}\ ComputingBegin\_method();}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordtype}{void}\ ComputingEnd\_method();}
+\DoxyCodeLine{00472\ \ \ \ \ \textcolor{keywordtype}{void}\ DeliveringBegin\_method();}
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordtype}{void}\ DeliveringEnd\_method();}
+\DoxyCodeLine{00487\ \ \ \ \ \textcolor{keywordtype}{void}\ Failed\_method();}
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{keywordtype}{void}\ Heartbeat\_method();}
+\DoxyCodeLine{00517\ }
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordtype}{void}\ Initialize\_method();}
+\DoxyCodeLine{00535\ \ \ \ \ \textcolor{keywordtype}{void}\ InputReceived\_method();}
+\DoxyCodeLine{00543\ \ \ \ \ \textcolor{keywordtype}{void}\ RelaxingBegin\_method();}
+\DoxyCodeLine{00554\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Synchronize\_method();}
+\DoxyCodeLine{00561\ \ \ \ \ \textcolor{keywordtype}{void}\ TransmissionBegin\_method();}
+\DoxyCodeLine{00562\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00563\ \ \ \ \ sc\_core::sc\_time}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ s\_Heartbeat\_time\_default\ \ \ \ \textcolor{comment}{//<\ The\ reset\ value\ of\ heartbeat\ time}}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ ,s\_Heartbeat\_time\_resolution;\ \ \ \ \textcolor{comment}{//<\ The\ time\ tolerance}}
+\DoxyCodeLine{00566\ }
+\DoxyCodeLine{00567\ \};\textcolor{comment}{//\ of\ class\ scGenComp\_PU\_Abstract}}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCABSTRACTGENCOMP\_H}}
+
+\end{DoxyCode}

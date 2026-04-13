@@ -43,12 +43,12 @@ enum class NeuronInputCurrent_t
  * The input current is \f$I=dQ/dt\f$, that produces a gradient \f$ dV/dt = d(Q/C)/dt = I/C \f$
  *
  * The \f$I_i\f$ current is provided in pA  (i.e. in \f$10^-{12}\frac{Cb}{s}\f$,
- * so it causes on a capacitor \f$C\f$ (given in [pF]) and on a resistor \f$R\f$ \f[I_i*R\f$ [mV]  voltage.
+ * so it causes on a capacitor \f$C\f$ (given in [pF]) and on a resistor \f$R\f$ \f$I_i*R\f$ [mV]  voltage.
  *
  * A current gradient \f$\frac{I_i}{dt} \quad [\frac{pA}{s}]\f$ causes
- * on a capacitor \f$C\f$ (given in [pF]) a voltage gradient \f$\frac{1}{C]\frac{dIi}{dt}\f$
+ * on a capacitor \f$C\f$ (given in [pF]) a voltage gradient \f$\frac{1}{C]\frac{dI_i}{dt}\f$
  * increase
- * \f[I_i/C\f$ [V/s],
+ * \f$I_i/C\f$ [V/s],
  *
  *
  *

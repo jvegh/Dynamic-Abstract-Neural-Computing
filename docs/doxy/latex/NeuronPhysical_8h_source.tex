@@ -1,0 +1,87 @@
+\doxysection{Neuron\+Physical.\+h}
+\label{NeuronPhysical_8h_source}\index{NeuronPhysical.h@{NeuronPhysical.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ NEURONPHYSICS\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ NEURONPHYSICS\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}scGenComp\_PU\_Bio.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}NeuronInputCurrent.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{static}\ \ NeuronConstants\ DefaultNeuron;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }NeuronPhysical\ :\ \textcolor{keyword}{public}\ scGenComp\_PU\_Bio}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{friend}\ NeuronInputCurrent;}
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ NeuronPhysical(sc\_core::sc\_module\_name\ nm,\ NeuronConstants*\ Neuron=\&DefaultNeuron);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~NeuronPhysical(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ \ \ \ m\_RushinCurrent\ =\ (NeuronInputCurrent*)NULL;}}
+\DoxyCodeLine{00068\ \ \ \ \ \}\textcolor{comment}{//\ Must\ be\ overridden}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Tracing\_Initialize();\ \textcolor{comment}{//\ Initialize\ tracing:\ voltage\ vs\ time}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Calculate\_Do();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Create\_Rushin();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Computing\_Do();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Delivering\_Do();}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Relaxing\_Do();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Initialize\_Do();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Computing\_Stop();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Delivering\_Stop();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Relaxing\_Stop();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ InputCurrentDelete(NeuronInputCurrent*\ IC);}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ InputReceived\_Do();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{/*\ *}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ AxonTimeDerivative\_Get}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ \ \ \ *\ param[in]\ Delay\ of\ axonal\ input\ with\ respect\ to\ local\ time,\ in\ ms}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ \ \ \ \ *\ @return\ the\ time\ derivative\ of\ axon\ voltage\ due\ to\ the\ arrived\ current}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ \ \ \ float\ AxonTimeDerivative\_Get(float\ Delay);}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \ OutputItem(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00158\ \ \ \ \ vector\ <NeuronInputCurrent*>\ m\_SynapticCurrents;\ \ \ \ \textcolor{comment}{//\ Stores\ pointers\ to\ the\ currents}}
+\DoxyCodeLine{00159\ \ \ \ \ NeuronInputCurrent\ *m\_RushinCurrent;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{double}\ MembraneCapacityPF\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00162\ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Neuron-\/>MembraneCapacityPF\_Get();\}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{double}\ MembraneResistanceGOhm\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00164\ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Neuron-\/>MembraneResistanceGOhm\_Get();\}}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{double}\ MembraneTauMSec\_Get()}
+\DoxyCodeLine{00166\ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Neuron-\/>MembraneTauMSec\_Get();\}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{double}\ dVdtResulting\_Get(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ m\_Membrane\_dVdt\_Resulting;\}}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{double}\ dVdtAIS\_Get(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ m\_Membrane\_dVdt\_AIS;\}}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{double}\ dVdtInput\_Get(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ m\_Input\_dVdt;\}}
+\DoxyCodeLine{00170\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ \ \ \ NeuronInputCurrent*\ m\_RushinCurrent;}}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ Just\ for\ tracing}}
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ \ \ \ double\ m\_dV\_dt\_membrane;\ \ \ \ //\ The\ actual\ time\ derivative}}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_V\_Rushin;\ \ \ \ \textcolor{comment}{//\ Only\ for\ tracing}}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Input\_dVdt;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ sum\ of\ the\ input\ gradients}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_dVdt\_AIS;}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_dVdt\_Resulting;}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_dVdt\_Rushin;\ \textcolor{comment}{//\ The\ rushin-\/only\ current}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_AIS\_I;\ \textcolor{comment}{//\ Current\ through\ the\ AIS}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ NeuronConstants\ *m\_Neuron;}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00185\ \textcolor{comment}{\ \ \ \ double\ m\_Membrane\_R;\ //\ Resistivity\ of\ the\ membrane,\ GOhm}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ \ \ \ double\ m\_Membrane\_C;\ //\ capacity,\ pF}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ \ \ \ double\ m\_Membrane\_Tau;\ //\ Time\ constant,\ usec}}
+\DoxyCodeLine{00188\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00189\ \};\textcolor{comment}{//\ of\ class\ NeuronPhysical}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NEURONPHYSICS\_H}}
+
+\end{DoxyCode}

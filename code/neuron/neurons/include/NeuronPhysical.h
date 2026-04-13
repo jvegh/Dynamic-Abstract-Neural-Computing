@@ -64,7 +64,7 @@ public:
     NeuronPhysical(sc_core::sc_module_name nm, NeuronConstants* Neuron=&DefaultNeuron);
     virtual ~NeuronPhysical(void)
     {
-        m_RushinCurrent = (NeuronInputCurrent*)NULL;
+    //    m_RushinCurrent = (NeuronInputCurrent*)NULL;
     }// Must be overridden
 
     virtual void Tracing_Initialize(); // Initialize tracing: voltage vs time
@@ -74,7 +74,7 @@ public:
      */
     virtual void Calculate_Do();
     /**
-     * @brief Pass the parameters for the funtions
+     * @brief Create a new rush-in current for the neuron
      */
     virtual void Create_Rushin();
     /*! Heartbeat processing in 'Computing':
@@ -156,6 +156,7 @@ public:
 //    float AxonTimeDerivative_Get(float Delay);
     void  OutputItem(void);
     vector <NeuronInputCurrent*> m_SynapticCurrents;    // Stores pointers to the currents
+    NeuronInputCurrent *m_RushinCurrent;
 
     double MembraneCapacityPF_Get(void)
     {   return m_Neuron->MembraneCapacityPF_Get();}
@@ -165,22 +166,22 @@ public:
     {   return m_Neuron->MembraneTauMSec_Get();}
     double dVdtResulting_Get(void) {return m_Membrane_dVdt_Resulting;}
     double dVdtAIS_Get(void) {return m_Membrane_dVdt_AIS;}
-    double dVdtRushin_Get(void) {return m_Membrane_dVdt_Rushin;}
+    double dVdtInput_Get(void) {return m_Input_dVdt;}
 protected:
 
-    NeuronInputCurrent* m_RushinCurrent;
+//    NeuronInputCurrent* m_RushinCurrent;
     // Just for tracing
 //    double m_dV_dt_membrane;    // The actual time derivative
     double m_Membrane_V_Rushin;    // Only for tracing
-    double m_Input_dVdt;    // The sum of the input gradients
-    double m_Membrane_dVdt_Rushin;
+    double m_Input_dVdt;            // The sum of the input gradients
     double m_Membrane_dVdt_AIS;
     double m_Membrane_dVdt_Resulting;
+    double m_Membrane_dVdt_Rushin; // The rushin-only current
     double m_AIS_I; // Current through the AIS
 
 
     NeuronConstants *m_Neuron;
-    /* Saved vaulue = 2
+    /*
     double m_Membrane_R; // Resistivity of the membrane, GOhm
     double m_Membrane_C; // capacity, pF
     double m_Membrane_Tau; // Time constant, usec

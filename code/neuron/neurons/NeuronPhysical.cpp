@@ -45,11 +45,13 @@ int OutputCounter= 0; // Just to help output, temporary
     NeuronPhysical::
 NeuronPhysical(sc_core::sc_module_name nm, NeuronConstants* Neuron):
     scGenComp_PU_Bio(nm),
+    m_RushinCurrent((NeuronInputCurrent *)NULL),
     m_Neuron(Neuron)
 {
-        m_RushinCurrent = (NeuronInputCurrent*)NULL;
+       // m_RushinCurrent = (NeuronInputCurrent*)NULL;
     m_Neuron->MembraneFromCPF_TauMSec_Set(700,2);
-        // Saved value = 2
+    Initialize_Do();
+    // Saved value = 2
 //        m_R_membrane = m_Neuron->MembraneResistanceGOhm_Get();
 //        m_Neuron->MembraneResistanceGOhm_Set(0.1);
 /*        m_Membrane_R = m_Neuron->MembraneResistanceGOhm_Get();
@@ -62,8 +64,10 @@ NeuronPhysical(sc_core::sc_module_name nm, NeuronConstants* Neuron):
 // Create rush-in  current source
 // Called when neuron passes to "Delivering"
     void NeuronPhysical::
-    Create_Rushin()
+Create_Rushin()
 {
+        if(m_RushinCurrent) // The old current must be too small; neglect it
+            delete m_RushinCurrent;
         vector<double> Par;
         Par.push_back(Rushin_Amplitude);
         Par.push_back(Rushin_A);
@@ -103,9 +107,15 @@ void NeuronPhysical::
     m_Relaxing_Stopped = true;
 //    m_HasUnhandledInput = false;
     m_SynapsesEnabled = true;
+    m_Membrane_dVdt_Resulting = 0;
+    m_Membrane_dVdt_AIS = 0;
+    m_Membrane_dVdt_Rushin = 0;
+    m_RushinCurrent = (NeuronInputCurrent*) NULL;
+    m_SynapticCurrents.clear();
 }
 
-void NeuronPhysical::InputCurrentDelete(NeuronInputCurrent* IC)
+void NeuronPhysical::
+    InputCurrentDelete(NeuronInputCurrent* IC)
 {
     std::vector<NeuronInputCurrent*>::iterator it;
     it = find(m_SynapticCurrents.begin(),m_SynapticCurrents.end(),IC);
@@ -115,6 +125,7 @@ void NeuronPhysical::InputCurrentDelete(NeuronInputCurrent* IC)
         delete *it;
         m_SynapticCurrents.erase(m_SynapticCurrents.begin());
     }
+    delete m_RushinCurrent;
 }
 
 // Imitate potential increase on the membrane, due to an input
@@ -147,82 +158,59 @@ void NeuronPhysical::
      * @see NeuronConstants
      */
 
-    void NeuronPhysical::
+void NeuronPhysical::
     Calculate_Do()
 {
-    m_Input_dVdt = 0; //
+    m_Input_dVdt = 0; // Maybe several input gradient contributions exist
     m_dt = m_Heartbeat_time.to_seconds()*1000; // We calculate in msec
  //   double Input_dIdt = 0; // Just for developing/debugging
 //    double Membrane_dIdt_Rushin = 0;
+    m_Membrane_V_Rushin = 0;
+    // From  the previous iteration
+    m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get(); // The AIS current, in pA
+    m_Membrane_dVdt_AIS = m_Membrane_V/MembraneTauMSec_Get()*1000;  // The AIS gradient, in [V/s]
+    // Independently from the stage, the rush-in current curtributes
+    if(m_RushinCurrent)
+        m_Membrane_dVdt_Rushin = m_RushinCurrent->VoltageGradient_Get(m_t);
+    else
+        m_Membrane_dVdt_Rushin = 0;
+    // The synaptic inputs are open only in the stage 'Computing'
+    // The rush-in input is open only in stage 'Relaxing'
+    // (the rush-in current is created at the end of 'Computing'
+    // Check if we do have rush-in current at all
+    // No synaptic current is assumed
     switch(StageFlag_Get())
     {
         case GenCompStageMachine_t::gcsm_Relaxing:
         {
-            // Check if we do have rush-in current at all
-            if(m_Relaxing_Stopped || !m_RushinCurrent)
-                m_Membrane_dVdt_Rushin = 0;
-            else
-            {
-                // Question: if the synaptic charge conserves
-               for(uint32_t i = 0; i< m_SynapticCurrents.size(); i++)
-                {
-                    m_Input_dVdt += m_SynapticCurrents[i]->VoltageGradient_Get(m_t);
-//                    Input_dIdt += m_SynapticCurrents[i]->CurrentGradient_Get(m_t);
-                }
-                m_Membrane_dVdt_Rushin = m_RushinCurrent->VoltageGradient_Get(m_t);
-                m_MembraneGradientPositive =
-                    (m_Membrane_dVdt_Rushin>0);
-            }
             break;
         }
         case GenCompStageMachine_t::gcsm_Computing:
         {
             // Previous membrane!
-            m_Membrane_dVdt_Rushin = 0;
-            m_Membrane_V_Rushin = 0;
-            // Question: if the synaptic charge conserves
+             // Question: if the synaptic charge conserves
             for(uint32_t i = 0; i< m_SynapticCurrents.size(); i++)
-            {
-                m_Input_dVdt += m_SynapticCurrents[i]->VoltageGradient_Get(m_t); // [V/s]
-//                Input_dIdt += m_SynapticCurrents[i]->CurrentGradient_Get(m_t);
-            }
+                 m_Input_dVdt += m_SynapticCurrents[i]->VoltageGradient_Get(m_t); // [V/s]
             break;
         }
         case GenCompStageMachine_t::gcsm_Delivering:
         {
-           // m_SynapsesEnabled = m_Membrane_V < ThresholdPotential;
-            if(!m_RushinCurrent) break;
-            m_Membrane_V_Rushin = m_RushinCurrent->VoltageValue_Get(m_t);
-            m_Membrane_dVdt_Rushin = m_RushinCurrent->VoltageGradient_Get(m_t);
- //           Membrane_dIdt_Rushin = m_RushinCurrent->CurrentGradient_Get(m_t);
-            m_MembraneGradientPositive
-          //  m_PeakReached
-                = m_Membrane_dVdt_Rushin < 0;
             break;
         }
         default: assert(0); break;
     }
-    m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get(); // The AIS current, in pA
- //   m_Membrane_dVdt_AIS = m_Membrane_V/MembraneResistanceGOhm_Get()   // The AIS dV/dt
- //                         /MembraneCapacityPF_Get(); // The AIS gradient, in [V/s]
-    // Equivalent
-    m_Membrane_dVdt_AIS = m_Membrane_V/MembraneTauMSec_Get()*1000;  // The AIS gradient, in [V/s]
 
-//    m_MembraneRushin_dVdt =  m_dV_dt_membrane;
-//    I_AIS = m_dV_dt_membrane-I_AIS;
     // The resulting gradient, in [mV/s]
     m_Membrane_dVdt_Resulting = m_Membrane_dVdt_Rushin
-                                + m_Input_dVdt - m_Membrane_dVdt_AIS; // in [V/s]
-//    m_MembraneResulting_dVdt = I_AIS *m_dt   // The charge difference
-//                               /m_C_membrane;
+                               + m_Input_dVdt
+                               - m_Membrane_dVdt_AIS; // in [V/s]
+
+    m_MembraneGradientPositive =
+            (m_Membrane_dVdt_Resulting>0);
+
     m_Membrane_dV = m_Membrane_dVdt_Resulting * m_dt;  // The voltage  change, in [mV], m_dt in [sec]
 
     m_Membrane_V +=  m_Membrane_dV; // in [mV]
-        /*//.2+
-                    m_MembraneResulting_dVdt *m_dt   // The charge difference
-//                /m_C_membrane
-        ;
-*/
     // Now we know all changed quatities; adjust the step size
     Heartbeat_Adjust();
 }
@@ -231,12 +219,6 @@ void NeuronPhysical::
 void NeuronPhysical::
     Heartbeat_Computing_Do()
 {
-/*    if(m_HasUnhandledInput)
-    {
-//??        OutputItem();
-//        m_Membrane_V += 8; // A temporary hack, just to imitate potential increase
-        m_HasUnhandledInput = false;
-    }*/
     Calculate_Do();
 }
 

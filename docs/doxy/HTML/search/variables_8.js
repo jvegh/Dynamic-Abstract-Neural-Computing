@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['synchronize_0',['Synchronize',['../group__GENCOMP__MODULE__PROCESS.html#gaf293d5176ccde11d26cae236c0f7377a',1,'EVENT_GenComp_t']]]
+  ['relaxingbegin_0',['RelaxingBegin',['../group__GENCOMP__MODULE__PROCESS.html#ga3c600c2fbcfb1b078bae56e081f95767',1,'EVENT_GenComp_t']]]
 ];

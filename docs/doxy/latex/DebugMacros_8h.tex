@@ -1,0 +1,167 @@
+\doxysection{Debug\+Macros.\+h File Reference}
+\label{DebugMacros_8h}\index{DebugMacros.h@{DebugMacros.h}}
+
+
+Macros for debugging both normal and SystemC (simulated) functionality.  
+
+
+Include dependency graph for Debug\+Macros.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{DebugMacros_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ DEBUG\+\_\+\+EVENT}(x)
+\item 
+\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+EVENT}(n,  X)
+\item 
+\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+EVENT\+\_\+\+LOCAL}(t,  n,  X)
+\item 
+\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+LOG}(X)
+\item 
+\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+LOG\+\_\+\+LOCAL}(t,  n,  X)
+\item 
+\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+PRINT}(n,  X)
+\item 
+\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+PRINT\+\_\+\+LOCAL}(t,  n,  X)
+\item 
+\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+WARNING}(t,  X)
+\item 
+\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+WARNING\+\_\+\+LOCAL}(t,  n,  X)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Macros for debugging both normal and SystemC (simulated) functionality. 
+
+Use the macros as \begin{DoxyVerb}* #define DEBUG_EVENTS    ///< Print event debug event for this module; per file
+* #define DEBUG_PRINTS    ///< Print general debug messages for this module; per file
+// Those defines must be located before 'DebugMacros.h", and are undefined in that file
+//#define DEBUG_DISABLED  ///< User, handled; global; must also be undefined by the user
+#include "DebugMacros.h"
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\label{DebugMacros_8h_a92f4b6487af27a216d97f6fe98e80ebd} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT@{DEBUG\_EVENT}}
+\index{DEBUG\_EVENT@{DEBUG\_EVENT}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_EVENT}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+Prints non-\/object event {\itshape x} to the standard err output \label{DebugMacros_8h_a180b5f1c340da4355428351536d5168a} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_EVENT@{DEBUG\_SC\_EVENT}}
+\index{DEBUG\_SC\_EVENT@{DEBUG\_SC\_EVENT}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_SC\_EVENT}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+EVENT(\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
+
+Prints a message type and time, message {\itshape X}, and the location (file, function and lineno) of the event 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & the name of the object \\
+\hline
+\end{DoxyParams}
+\label{DebugMacros_8h_ab4c5152964fb0fcb545c4a718740e5a9} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_EVENT\_LOCAL@{DEBUG\_SC\_EVENT\_LOCAL}}
+\index{DEBUG\_SC\_EVENT\_LOCAL@{DEBUG\_SC\_EVENT\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_SC\_EVENT\_LOCAL}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+EVENT\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
+
+Prints a message type and \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}\textquotesingle{}s LOCAL time {\itshape t}, message {\itshape X}, and the location of the event at object named {\itshape n}. The same as DEBUG\+\_\+\+SC\+\_\+\+EVENT, but uses local time 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & the local time of the event \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & the name of the object \\
+\hline
+\mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
+\hline
+\end{DoxyParams}
+\label{DebugMacros_8h_a89867447deb509c1aa2d3a75cfa504b9} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_LOG@{DEBUG\_SC\_LOG}}
+\index{DEBUG\_SC\_LOG@{DEBUG\_SC\_LOG}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_SC\_LOG}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+LOG(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})}
+
+Prints a log message X with name of unit and time 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
+\hline
+\end{DoxyParams}
+\label{DebugMacros_8h_af3bf8a6b559fdacc5fc5daed500e8baa} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_LOG\_LOCAL@{DEBUG\_SC\_LOG\_LOCAL}}
+\index{DEBUG\_SC\_LOG\_LOCAL@{DEBUG\_SC\_LOG\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_SC\_LOG\_LOCAL}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+LOG\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
+
+Prints a message type and \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}\textquotesingle{}s LOCAL time {\itshape t}, message {\itshape X}, and the location of the event at object named {\itshape n}. The same as DEBUG\+\_\+\+SC\+\_\+\+LOG, but uses local time 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & the local time of the event \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & the name of the object \\
+\hline
+\mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
+\hline
+\end{DoxyParams}
+\label{DebugMacros_8h_a482d39395419c71fa4dc02f5253f0266} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_PRINT@{DEBUG\_SC\_PRINT}}
+\index{DEBUG\_SC\_PRINT@{DEBUG\_SC\_PRINT}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_SC\_PRINT}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+PRINT(\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
+
+Prints a message type and time, message {\itshape X}, and the location (file name and lineno) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em n} & the name of the unit \\
+\hline
+\mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
+\hline
+\end{DoxyParams}
+\label{DebugMacros_8h_ab3cc6d2ebf39943c0813d51a4b9a9f2d} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_PRINT\_LOCAL@{DEBUG\_SC\_PRINT\_LOCAL}}
+\index{DEBUG\_SC\_PRINT\_LOCAL@{DEBUG\_SC\_PRINT\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_SC\_PRINT\_LOCAL}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+PRINT\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
+
+Prints a message type and time {\itshape t}, message {\itshape X} at object named {\itshape n}., and the location (file name and lineno)
+
+The same as DEBUG\+\_\+\+SC\+\_\+\+PRINT, but uses local time 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & the local time of the event \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & the name of the object \\
+\hline
+\mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
+\hline
+\end{DoxyParams}
+\label{DebugMacros_8h_ae8f1aef89c230038d125b1a1293916ed} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_WARNING@{DEBUG\_SC\_WARNING}}
+\index{DEBUG\_SC\_WARNING@{DEBUG\_SC\_WARNING}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_SC\_WARNING}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{X }\end{DoxyParamCaption})}
+
+Prints a warning message type and time, message {\itshape X}, and the location (file name and lineno) The same as DEBUG\+\_\+\+SC\+\_\+\+PRINT, but uses different prolog 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & Simulated time of the warning \\
+\hline
+\mbox{\texttt{ in}}  & {\em X} & the message describing the warning \\
+\hline
+\end{DoxyParams}
+\label{DebugMacros_8h_a66216e3529ab1782966f5243c3a3cc31} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_WARNING\_LOCAL@{DEBUG\_SC\_WARNING\_LOCAL}}
+\index{DEBUG\_SC\_WARNING\_LOCAL@{DEBUG\_SC\_WARNING\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{DEBUG\_SC\_WARNING\_LOCAL}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+WARNING\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
+
+Prints a message type and time {\itshape t}, message {\itshape X} at object named {\itshape n}, and the location (file name and lineno) The same as DEBUG\+\_\+\+SC\+\_\+\+WARNING, but uses local time 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em t} & Simulated time of the warning \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & the name of the object \\
+\hline
+\mbox{\texttt{ in}}  & {\em X} & the message describing the warning \\
+\hline
+\end{DoxyParams}

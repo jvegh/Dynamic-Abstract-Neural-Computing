@@ -681,18 +681,28 @@ WARN_LOGFILE           =
 # documented source files. You may enter file names like "myfile.cpp" or
 # directories like "/usr/src/myproject". Separate the files or directories
 # with spaces.
-#INPUT                  = "${TAC_SOURCE_DIR}/Overview.dox" \
-#                         "${TAC_SOURCE_DIR}/GettingStarted.dox" \
 INPUT                  =   "${TAC_SOURCE_DIR}/Overview.dox" \
                          "${CMAKE_SOURCE_DIR}/../code/neuron/include/Constants.h" \
+                         "${CMAKE_SOURCE_DIR}/../code/neuron/include/DebugMacros.h" \
                          "${CMAKE_SOURCE_DIR}/../code/neuron/include/EventGencomp.h" \
                          "${CMAKE_SOURCE_DIR}/../code/neuron/include/GenCompStageMachineType.h" \
-                         "${CMAKE_SOURCE_DIR}/../code/neuron/include/GenCompObserveType.h" \
-                         \
+                         "${CMAKE_SOURCE_DIR}/../code/neuron/include/MacroTimeBenchmarking.h" \
+                         "${CMAKE_SOURCE_DIR}/../code/neuron/include/scGenComp_Config.h" \
+                         "${CMAKE_SOURCE_DIR}/../code/neuron/include/scMacroTimeBenchmarking.h" \
+                         "${CMAKE_SOURCE_DIR}/../code/neuron/include/ScQtSimulator.h" \
+                          \
+                          "${CMAKE_SOURCE_DIR}/../code/neuron/ScQtSimulator.cpp" \
+                          \
+                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/include/NeuronInputCurrent.h" \
+                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/include/NeuronPhysical.h" \
                           "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/include/scGenComp_PU_Abstract.h" \
                           "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/include/scGenComp_PU_Bio.h" \
-                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/include/NeuronPhysical.h" \
-                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/include/NeuronInputCurrent.h" \
+                          \
+                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/GenCompStageMachineType.cpp" \
+                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/NeuronInputCurrent.cpp" \
+                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/NeuronPhysical.cpp" \
+                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/scGenComp_PU_Abstract.cpp" \
+                          "${CMAKE_SOURCE_DIR}/../code/neuron/neurons/scGenComp_PU_Bio.cpp" \
                           \
                           "${TAC_SOURCE_DIR}/Release-notes.dox" \
  "${TAC_SOURCE_DIR}/Glossary.dox"

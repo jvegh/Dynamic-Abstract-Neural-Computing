@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['neuroninputcurrent_5ft_0',['NeuronInputCurrent_t',['../group__GENCOMP__MODULE__BIOLOGY.html#ga22e6c711bd2718618f135dad9211ea5f',1,'NeuronInputCurrent.h']]]
+  ['method_0',['Method',['../classScQtSimulator.html#a89913da0ebb6b78a2b29299859c54bdb',1,'ScQtSimulator']]]
 ];

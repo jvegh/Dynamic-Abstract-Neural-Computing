@@ -681,18 +681,28 @@ WARN_LOGFILE           =
 # documented source files. You may enter file names like "myfile.cpp" or
 # directories like "/usr/src/myproject". Separate the files or directories
 # with spaces.
-#INPUT                  = "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/Overview.dox" \
-#                         "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/GettingStarted.dox" \
 INPUT                  =   "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/Overview.dox" \
                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/Constants.h" \
+                         "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/DebugMacros.h" \
                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/EventGencomp.h" \
                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/GenCompStageMachineType.h" \
-                         "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/GenCompObserveType.h" \
-                         \
+                         "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/MacroTimeBenchmarking.h" \
+                         "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/scGenComp_Config.h" \
+                         "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/scMacroTimeBenchmarking.h" \
+                         "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/include/ScQtSimulator.h" \
+                          \
+                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/ScQtSimulator.cpp" \
+                          \
+                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/include/NeuronInputCurrent.h" \
+                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/include/NeuronPhysical.h" \
                           "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/include/scGenComp_PU_Abstract.h" \
                           "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/include/scGenComp_PU_Bio.h" \
-                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/include/NeuronPhysical.h" \
-                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/include/NeuronInputCurrent.h" \
+                          \
+                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/GenCompStageMachineType.cpp" \
+                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/NeuronInputCurrent.cpp" \
+                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/NeuronPhysical.cpp" \
+                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/scGenComp_PU_Abstract.cpp" \
+                          "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/../code/neuron/neurons/scGenComp_PU_Bio.cpp" \
                           \
                           "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/Release-notes.dox" \
  "/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/doxy/Glossary.dox"

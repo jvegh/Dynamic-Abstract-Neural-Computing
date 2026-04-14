@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['relaxingbegin_5fdo_0',['RelaxingBegin_Do',['../classscGenComp__PU__Abstract.html#a6bdceeb84580e09399748c015c862943',1,'scGenComp_PU_Abstract']]],
-  ['relaxingbegin_5fmethod_1',['RelaxingBegin_method',['../classscGenComp__PU__Abstract.html#abb584a266091960e1258324b364646dd',1,'scGenComp_PU_Abstract']]]
+  ['neuronconstants_0',['NeuronConstants',['../classNeuronConstants.html#a1c970c7d514554aebeef16015f59e9ec',1,'NeuronConstants']]],
+  ['neuroninputcurrent_1',['NeuronInputCurrent',['../classNeuronInputCurrent.html#af41bf336678c16b9b38e922e8bc43d16',1,'NeuronInputCurrent']]],
+  ['neuronphysical_2',['NeuronPhysical',['../classNeuronPhysical.html#a374b38525036a085d975016a9f5e9b22',1,'NeuronPhysical']]],
+  ['noofinputsreceived_5fget_3',['NoOfInputsReceived_Get',['../classscGenComp__PU__Abstract.html#ae00a1e214d66761f99ddfef64839fbb0',1,'scGenComp_PU_Abstract']]]
 ];

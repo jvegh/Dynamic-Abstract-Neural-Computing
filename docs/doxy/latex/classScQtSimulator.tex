@@ -1,0 +1,123 @@
+\doxysection{Sc\+Qt\+Simulator Class Reference}
+\label{classScQtSimulator}\index{ScQtSimulator@{ScQtSimulator}}
+
+
+\doxysubsection{Detailed Description}
+Implements a semi-\/general SystemC simulator, based on Qt technology. 
+
+Inherits QObject.
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\label{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb} 
+enum \textbf{ Method} 
+\begin{DoxyCompactList}\small\item\em This enum describes the various available methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\label{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e} 
+void {\bfseries main\+Loop} ()
+\begin{DoxyCompactList}\small\item\em Waits for a method to be requested then executes it, then waits again. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\label{classScQtSimulator_ad627b2a89dba90051ab0bc8ac42a1590} 
+void {\bfseries event\+Happened} (void)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when simulator returns from SystemC. \end{DoxyCompactList}\item 
+\label{classScQtSimulator_ae2b46f78af8f0678d6012c0ef607a205} 
+void {\bfseries finished} ()
+\begin{DoxyCompactList}\small\item\em This signal is emitted when process is finished. \end{DoxyCompactList}\item 
+\label{classScQtSimulator_a9b753a39a1bbd38377d70b62ab2366ee} 
+void {\bfseries value\+Changed} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when counted value is changed (every sec) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ abort} ()
+\begin{DoxyCompactList}\small\item\em Requests the process to abort (an emergency stop) \end{DoxyCompactList}\item 
+void \textbf{ request\+Method} (\textbf{ Method} method)
+\begin{DoxyCompactList}\small\item\em Requests for the method {\itshape method} to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ do\+Method3} ()
+\begin{DoxyCompactList}\small\item\em 3rd method which could be called \end{DoxyCompactList}\item 
+void \textbf{ do\+Simulated\+Time} ()
+\begin{DoxyCompactList}\small\item\em Simulated-\/time-\/limited stepping mode. \end{DoxyCompactList}\item 
+void \textbf{ do\+Simulation\+Steps} ()
+\begin{DoxyCompactList}\small\item\em Single event stepping mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\label{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} 
+bool {\bfseries \+\_\+abort}
+\begin{DoxyCompactList}\small\item\em Process is aborted when {\itshape true}. \end{DoxyCompactList}\item 
+\label{classScQtSimulator_aeaf13a6dc2a53cd9dcf18f93a219082a} 
+bool {\bfseries \+\_\+interrupt}
+\begin{DoxyCompactList}\small\item\em Current method is interrupted when {\itshape true}. \end{DoxyCompactList}\item 
+\label{classScQtSimulator_a07d40dcc3267dadeb5304490a331fb07} 
+QWait\+Condition {\bfseries condition}
+\begin{DoxyCompactList}\small\item\em Condition used to wait for a new request to be called in the \doxyref{main\+Loop()}{p.}{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e} \end{DoxyCompactList}\item 
+\label{classScQtSimulator_ae743f9d3392e1467c66d96e723208a00} 
+QMutex {\bfseries mutex}
+\begin{DoxyCompactList}\small\item\em Protects access to \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\label{classScQtSimulator_a71216dee8b765d42936a4dd22937d9b1} 
+\index{ScQtSimulator@{ScQtSimulator}!abort@{abort}}
+\index{abort@{abort}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{abort()}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Requests the process to abort (an emergency stop) 
+
+It is thread safe as it uses \doxyref{mutex}{p.}{classScQtSimulator_ae743f9d3392e1467c66d96e723208a00} to protect access to \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} variable. \label{classScQtSimulator_a0714124e80ca0eb91d1f3cdde45b14fc} 
+\index{ScQtSimulator@{ScQtSimulator}!doMethod3@{doMethod3}}
+\index{doMethod3@{doMethod3}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{doMethod3()}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::do\+Method3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+3rd method which could be called 
+
+Counts 30 sec in this example. Counting is interrupted if \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} or \doxyref{\+\_\+interrupt}{p.}{classScQtSimulator_aeaf13a6dc2a53cd9dcf18f93a219082a} is set to true. \label{classScQtSimulator_ae73d2e2bc3af0a43af34f07698784cbc} 
+\index{ScQtSimulator@{ScQtSimulator}!doSimulatedTime@{doSimulatedTime}}
+\index{doSimulatedTime@{doSimulatedTime}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{doSimulatedTime()}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::do\+Simulated\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Simulated-\/time-\/limited stepping mode. 
+
+Simulating is interrupted if \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} or \doxyref{\+\_\+interrupt}{p.}{classScQtSimulator_aeaf13a6dc2a53cd9dcf18f93a219082a} is set to true. \label{classScQtSimulator_a751f096a1b0bd65668db49a79058dc3a} 
+\index{ScQtSimulator@{ScQtSimulator}!doSimulationSteps@{doSimulationSteps}}
+\index{doSimulationSteps@{doSimulationSteps}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{doSimulationSteps()}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::do\+Simulation\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Single event stepping mode. 
+
+Simulating is interrupted if \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} or \doxyref{\+\_\+interrupt}{p.}{classScQtSimulator_aeaf13a6dc2a53cd9dcf18f93a219082a} is set to true. \label{classScQtSimulator_a9df78766e1ac67f2f75e3079929c777f} 
+\index{ScQtSimulator@{ScQtSimulator}!requestMethod@{requestMethod}}
+\index{requestMethod@{requestMethod}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{requestMethod()}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::request\+Method (\begin{DoxyParamCaption}\item[{\textbf{ Sc\+Qt\+Simulator\+::\+Method}}]{method }\end{DoxyParamCaption})}
+
+
+
+Requests for the method {\itshape method} to be executed. 
+
+This method defines \+\_\+method and set \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} to interrupt current method. It is thread safe as it uses \doxyref{mutex}{p.}{classScQtSimulator_ae743f9d3392e1467c66d96e723208a00} to protect access to \+\_\+method and \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} variable. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\textbf{ Sc\+Qt\+Simulator.\+h}\item 
+Sc\+Qt\+Simulator.\+cpp\end{DoxyCompactItemize}

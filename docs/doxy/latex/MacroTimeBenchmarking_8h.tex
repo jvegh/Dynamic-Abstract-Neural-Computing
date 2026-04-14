@@ -1,0 +1,116 @@
+\doxysection{Macro\+Time\+Benchmarking.\+h File Reference}
+\label{MacroTimeBenchmarking_8h}\index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
+
+
+Macros for processor (CLOCK) time span passing between using the expanded codes.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ BENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN}(x,  t)
+\item 
+\#define \textbf{ BENCHMARK\+\_\+\+TIME\+\_\+\+END}(t,  x,  s)
+\item 
+\#define \textbf{ BENCHMARK\+\_\+\+TIME\+\_\+\+RESET}(t,  x,  s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Macros for processor (CLOCK) time span passing between using the expanded codes. 
+
+These defined macros are benchmarking macros for measuring computing (clock) time of executing certain instruction sequences between them. The "{}\+Macro\+Time\+Benchmarking.\+h"{} file shall be included in the header of the module in question. The results of the time measurements will be returned in user-\/defined variables. As the arguments are user-\/provided, with consistent use several independent measurement can be carried out within the source scope. The macros have source-\/module scope. All variables must be passed by reference.
+
+Notice\+: this is CLOCK time, returned by the processor; not SIMULATED time. When using in cooperation (and in an analog way with the corresponding without-\/\textquotesingle{}sc\textquotesingle{} macros, you may find out the CLOCK to SIMULATED time of the benchmarked activity
+
+The operating time offset due to benchmarking is approx 55-\/85 nanosecs, per macro pairs.
+
+{\bfseries{Usage\+:}} If the module includes this header, it must be preceded by defining 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ MAKE\_TIME\_BENCHMARKING\ \ }\textcolor{comment}{//\ uncomment\ to\ measure\ the\ time\ with\ benchmarking\ macros}}
+
+\end{DoxyCode}
+ If this name is not defined, no code is generated as code expansion for the module. The variables, however, must be defined (although they will be optimized out as unused ones). Alternatively, generating those variables may be protected with bracketing them by pairs 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifdef\ BENCHMARK\_TIME\_ACTIVE}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
+
+
+{\bfseries{Example\+:}} in your module, between the \textquotesingle{}\#include\textquotesingle{} files write
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ MAKE\_TIME\_BENCHMARKING\ \ }\textcolor{comment}{//\ comment\ out\ if\ you\ do\ not\ want\ to\ benchmark}}
+
+\end{DoxyCode}
+ It is a good idea to use these macro expansions at the end of heading block\+: the similar macro definitions in included other modules may overload them \begin{DoxyVerb} In your class (or member function) define
+@code{.cpp}
+chrono::steady_clock::time_point t =chrono::steady_clock::now();
+std::chrono::duration< int64_t, nano> x,s=(std::chrono::duration< int64_t, nano>)0;
+@endcode
+and use the macros as as
+@code{.cpp}
+BENCHMARK_TIME_RESET(&t,&x,&s); // Reset at the very beginning, say in the constructor
+@endcode
+Later put the benchmarked code between macros, used as brackets
+@code{.cpp}
+BENCHMARK_TIME_BEGIN(&t,&x);    // Begin the benchmarking here
+your code
+BENCHMARK_TIME_END(&t,&x,&s);   // End benchmarking here
+@endcode
+After using these macros, the benchmarked time values are returned:
+(since BEGIN) in x (nanoseconds)
+and the sum of all benchmarked time (since RESET) in s (nanoseconds).
+Access the result as
+@code{.cpp}
+std::cerr  << "Simulation took " << s.count()/1000/1000. << " msec CLOCK time" << endl;
+@endcode
+\end{DoxyVerb}
+ In an object, you can RESET in the constructor, in the member functions between BEGIN and END measure the one-\/time utilization, and in the destructor to read out the total benchmarked time. Or to benchmark (in multiple variables) execution CLOCK time about critical sections of your code. Take care\+: control printing takes a along time. 
+
+\doxysubsection{Macro Definition Documentation}
+\label{MacroTimeBenchmarking_8h_abe3e52aa6169ad16fa9bf59bbeb2e267} 
+\index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}!BENCHMARK\_TIME\_BEGIN@{BENCHMARK\_TIME\_BEGIN}}
+\index{BENCHMARK\_TIME\_BEGIN@{BENCHMARK\_TIME\_BEGIN}!MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
+\doxysubsubsection{BENCHMARK\_TIME\_BEGIN}
+{\footnotesize\ttfamily \#define BENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{t }\end{DoxyParamCaption})}
+
+Changes the user-\/provided {\itshape t} timepoint to the recent time. Sets the user-\/provided {\itshape x} to the last TIME\+\_\+\+BEGIN {\itshape t} value 
+\begin{DoxyParams}{Parameters}
+{\em t} & for internal use, the absolute beginning of time (do not touch) \\
+\hline
+{\em x} & deliver clock time of the beginning \\
+\hline
+\end{DoxyParams}
+\label{MacroTimeBenchmarking_8h_abd7dae08760afc678f2119375ad5be47} 
+\index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}!BENCHMARK\_TIME\_END@{BENCHMARK\_TIME\_END}}
+\index{BENCHMARK\_TIME\_END@{BENCHMARK\_TIME\_END}!MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
+\doxysubsubsection{BENCHMARK\_TIME\_END}
+{\footnotesize\ttfamily \#define BENCHMARK\+\_\+\+TIME\+\_\+\+END(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+Changes the user-\/provided {\itshape t} timepoint. Sets the user-\/provided {\itshape x} to the duration since the last TIME\+\_\+\+BEGIN {\itshape t} value. Sets the user-\/provided time of the beginning {\itshape s} to the duration since the last TIME\+\_\+\+RESET {\itshape t} value. Multiple uses can deliver multiple results since the same ENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN 
+\begin{DoxyParams}{Parameters}
+{\em t} & for internal use, the absolute beginning of time (do not touch) \\
+\hline
+{\em x} & deliver clock duration since \+\_\+\+BEGIN (only read) \\
+\hline
+{\em s} & deliver clock duration since \+\_\+\+RESET (only read) \\
+\hline
+\end{DoxyParams}
+\label{MacroTimeBenchmarking_8h_ac7d4ee4fbe53b2c3f74d3c7fe5e37976} 
+\index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}!BENCHMARK\_TIME\_RESET@{BENCHMARK\_TIME\_RESET}}
+\index{BENCHMARK\_TIME\_RESET@{BENCHMARK\_TIME\_RESET}!MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
+\doxysubsubsection{BENCHMARK\_TIME\_RESET}
+{\footnotesize\ttfamily \#define BENCHMARK\+\_\+\+TIME\+\_\+\+RESET(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{s }\end{DoxyParamCaption})}
+
+Clears the user-\/provided {\itshape x} and {\itshape s} duration values. Sets the user-\/provided {\itshape x} to the duration since the last TIME\+\_\+\+BEGIN {\itshape t} value. Sets the user-\/provided {\itshape s} to the duration since the last TIME\+\_\+\+RESET {\itshape t} value. 
+\begin{DoxyParams}{Parameters}
+{\em t} & for internal use, the absolute beginning of time (do not touch) \\
+\hline
+{\em x} & deliver clock duration since \+\_\+\+BEGIN (only read) \\
+\hline
+{\em s} & deliver clock duration since \+\_\+\+RESET (only read) \\
+\hline
+\end{DoxyParams}

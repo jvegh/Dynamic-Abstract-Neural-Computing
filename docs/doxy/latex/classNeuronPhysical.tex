@@ -16,7 +16,7 @@ In the corresponding states, the neuron is in one of its \doxyref{Gen\+Comp\+Sta
 
 The \doxyref{Heartbeat\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea} handles an internal \textquotesingle{}state update\textquotesingle{} signal. In the corresponding stages, the neuron is
 \begin{DoxyItemize}
-\item Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing\+: Until it reaches its resting potential, calls \doxyref{Calculate\+\_\+\+Do()}{p.}{classNeuronPhysical_a4de3701160dfcbc4cd2a60e8c8d01eef}. Upon receiving an input, changes to stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing. Inputs enabled\+: the relative refractory period.
+\item Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing\+: Until it reaches its resting potential, calls \doxyref{Calculate\+\_\+\+Do()}{p.}{classNeuronPhysical_a3e6514fed4b7c3bee8d54e64ecfbb736}. Upon receiving an input, changes to stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing. Inputs enabled\+: the relative refractory period.
 \item Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing\+: Until it reaches its threshold potential, calls Calculate\+\_\+method(). At that point, mebrane passes to stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering. Inputs enabled.
 \item Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering\+: Until it reaches the threshold membrane potential again calls Calculate\+\_\+method(). (The neuron delivers its result to its output section.) After terminating, it passes to stage Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing, without restoring membrane\textquotesingle{}s potential. At the beginning \textquotesingle{}Transmitting\+Begin\textquotesingle{} is also issued. (Sends \textquotesingle{}Begin Transmitting\+Begin\textquotesingle{}) \begin{DoxySeeAlso}{See also}
 \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}.
@@ -26,8 +26,8 @@ Signal transmission happens in parallel with the further processing. Inputs disa
 
 --These stages below are momentary states\+: need some action and passes to one of the above stages
 \begin{DoxyItemize}
-\item \doxyref{Neuron\+Physical\+::\+Input\+Received\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a1443b8dc13c9e4ae631be5a92ffd7666}\+: the unit received new input. Only administrative action; the received input is handled in Heartbeat\+\_\+\+XXX\+\_\+\+Do(), as described in \doxyref{Calculate\+\_\+\+Do()}{p.}{classNeuronPhysical_a4de3701160dfcbc4cd2a60e8c8d01eef}. Disabled in mode Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering.
-\item \doxyref{Neuron\+Physical\+::\+Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a4c1096b8b544c2e6b5724ff93b290770}\+: deliver immediate spike, anyhow ; (a momentary state) Passes to Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing (after issuing \textquotesingle{}Delivering\+End\textquotesingle{}) 
+\item \doxyref{Neuron\+Physical\+::\+Input\+Received\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a1443b8dc13c9e4ae631be5a92ffd7666}\+: the unit received new input. Only administrative action; the received input is handled in Heartbeat\+\_\+\+XXX\+\_\+\+Do(), as described in \doxyref{Calculate\+\_\+\+Do()}{p.}{classNeuronPhysical_a3e6514fed4b7c3bee8d54e64ecfbb736}. Disabled in mode Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering.
+\item \doxyref{Neuron\+Physical\+::\+Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a8c1ba93270a636b65fe22a8a1c75f5f2}\+: deliver immediate spike, anyhow ; (a momentary state) Passes to Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing (after issuing \textquotesingle{}Delivering\+End\textquotesingle{}) 
 \end{DoxyItemize}
 
 Inheritance diagram for Neuron\+Physical\+:\nopagebreak
@@ -40,10 +40,9 @@ Inheritance diagram for Neuron\+Physical\+:\nopagebreak
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\label{classNeuronPhysical_a4de3701160dfcbc4cd2a60e8c8d01eef} 
-virtual void {\bfseries Calculate\+\_\+\+Do} ()
+virtual void \textbf{ Calculate\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em Calculate the membrane\textquotesingle{}s new potential by solving a PDE at the new time after advancing time by the Heartbeat value. \end{DoxyCompactList}\item 
-\label{classNeuronPhysical_a8203036b354491ad049e3f3b420f658e} 
+\label{classNeuronPhysical_a7d5f3d382d2e8ffd1887005bc4950490} 
 virtual void {\bfseries Create\+\_\+\+Rushin} ()
 \begin{DoxyCompactList}\small\item\em Create a new rush-\/in current for the neuron. \end{DoxyCompactList}\item 
 virtual void \textbf{ Heartbeat\+\_\+\+Computing\+\_\+\+Do} ()
@@ -58,7 +57,7 @@ virtual void \textbf{ Heartbeat\+\_\+\+Relaxing\+\_\+\+Do} ()
 \item 
 virtual bool \textbf{ Heartbeat\+\_\+\+Relaxing\+\_\+\+Stop} ()
 \item 
-\label{classNeuronPhysical_a1ff47ab959c01f24b977de58887dfa19} 
+\label{classNeuronPhysical_af37da71258b9c0b3812373d3cd16daf0} 
 virtual void {\bfseries Initialize\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em Activity for intializing the unit. \end{DoxyCompactList}\item 
 void \textbf{ Input\+Current\+Delete} (\textbf{ Neuron\+Input\+Current} $\ast$IC)
@@ -95,11 +94,11 @@ float {\bfseries Local\+Time\+In\+Nanosec\+\_\+\+Get} ()
 \begin{DoxyCompactList}\small\item\em Return simulated local sc\+\_\+time converted to nanoseconds. \end{DoxyCompactList}\item 
 uint32\+\_\+t \textbf{ No\+Of\+Inputs\+Received\+\_\+\+Get} ()
 \item 
-void \textbf{ Observer\+Notify} (\textbf{ Gen\+Comp\+Observe\+\_\+t} Observed\+Bit)
+void \textbf{ Observer\+Notify} (Gen\+Comp\+Observe\+\_\+t Observed\+Bit)
 \begin{DoxyCompactList}\small\item\em Notify the observer about some important change. \end{DoxyCompactList}\item 
-bool \textbf{ Observing\+Bit\+\_\+\+Get} (\textbf{ Gen\+Comp\+Observe\+\_\+t} B)
+bool \textbf{ Observing\+Bit\+\_\+\+Get} (Gen\+Comp\+Observe\+\_\+t B)
 \begin{DoxyCompactList}\small\item\em Get value of an observing bit for this \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}. \end{DoxyCompactList}\item 
-void \textbf{ Observing\+Bit\+\_\+\+Set} (\textbf{ Gen\+Comp\+Observe\+\_\+t} B, bool V)
+void \textbf{ Observing\+Bit\+\_\+\+Set} (Gen\+Comp\+Observe\+\_\+t B, bool V)
 \begin{DoxyCompactList}\small\item\em Set an observing bit for this \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}. \end{DoxyCompactList}\item 
 int32\+\_\+t \textbf{ Operation\+Counter\+\_\+\+Get} (void)
 \begin{DoxyCompactList}\small\item\em Get the number of operations performed. \end{DoxyCompactList}\item 
@@ -131,7 +130,7 @@ sc\+\_\+core\+::sc\+\_\+time \textbf{ sc\+Result\+Period\+\_\+\+Get} () const
 \begin{DoxyCompactItemize}
 \item 
 virtual void {\bfseries Cancel\+Events} (void)
-\begin{DoxyCompactList}\small\item\em Cancels all pending events. Called from \doxyref{Initialize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a17314ce63b2d227e8e74e3eb1262d62e},\doxyref{Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a4c1096b8b544c2e6b5724ff93b290770}, just to make sure not outstanding events remain. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Cancels all pending events. Called from \doxyref{Initialize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a17314ce63b2d227e8e74e3eb1262d62e},\doxyref{Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a8c1ba93270a636b65fe22a8a1c75f5f2}, just to make sure not outstanding events remain. \end{DoxyCompactList}\item 
 bool \textbf{ Central\+Clock\+Mode\+\_\+\+Get} (void)
 \item 
 virtual bool \textbf{ Have\+Enough\+Inputs} (void)
@@ -174,21 +173,36 @@ Creates a physics-\/based neuron unit.
 
 
 \doxysubsection{Member Function Documentation}
-\label{classNeuronPhysical_a04fe9034e297048c272cd07cc9fa57d4} 
+\label{classNeuronPhysical_a3e6514fed4b7c3bee8d54e64ecfbb736} 
+\index{NeuronPhysical@{NeuronPhysical}!Calculate\_Do@{Calculate\_Do}}
+\index{Calculate\_Do@{Calculate\_Do}!NeuronPhysical@{NeuronPhysical}}
+\doxysubsubsection{Calculate\_Do()}
+{\footnotesize\ttfamily void Neuron\+Physical\+::\+Calculate\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculate the membrane\textquotesingle{}s new potential by solving a PDE at the new time after advancing time by the Heartbeat value. 
+
+Calculate the membrane\textquotesingle{}s new potential by solving a DE at the simulated time.
+
+The input currents are provided in units of [pA], the gradients in [p\+A/s] The voltage is provided in units of [V], the gradients at [V/s] \begin{DoxySeeAlso}{See also}
+\doxyref{Neuron\+Constants}{p.}{classNeuronConstants} 
+\end{DoxySeeAlso}
+\label{classNeuronPhysical_a546c874d86adeecd7168ea2949c5151e} 
 \index{NeuronPhysical@{NeuronPhysical}!Heartbeat\_Computing\_Do@{Heartbeat\_Computing\_Do}}
 \index{Heartbeat\_Computing\_Do@{Heartbeat\_Computing\_Do}!NeuronPhysical@{NeuronPhysical}}
 \doxysubsubsection{Heartbeat\_Computing\_Do()}
-{\footnotesize\ttfamily virtual void Neuron\+Physical\+::\+Heartbeat\+\_\+\+Computing\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Neuron\+Physical\+::\+Heartbeat\+\_\+\+Computing\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Heartbeat processing in \textquotesingle{}Computing\textquotesingle{}\+: all inputs effective 
 
-Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_a1aacf9b0909eacef11041a684e89bce0}.
+Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_ac8c250cd7656b266b3782410d8a12c12}.
 
-\label{classNeuronPhysical_a2275d5e03c547b06fe69fe2a529349d2} 
+\label{classNeuronPhysical_a4b91867e55ccc2a44acb7e25feda7ce5} 
 \index{NeuronPhysical@{NeuronPhysical}!Heartbeat\_Computing\_Stop@{Heartbeat\_Computing\_Stop}}
 \index{Heartbeat\_Computing\_Stop@{Heartbeat\_Computing\_Stop}!NeuronPhysical@{NeuronPhysical}}
 \doxysubsubsection{Heartbeat\_Computing\_Stop()}
-{\footnotesize\ttfamily virtual bool Neuron\+Physical\+::\+Heartbeat\+\_\+\+Computing\+\_\+\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool Neuron\+Physical\+::\+Heartbeat\+\_\+\+Computing\+\_\+\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Stage \textquotesingle{}Computing\textquotesingle{} normally passes to stage \textquotesingle{}Delivering\textquotesingle{}, but it can fall-\/back to \textquotesingle{}Relaxing\textquotesingle{} mode. If membrane\textquotesingle{}s potential is above threshold, a rush-\/in current is created and the \textquotesingle{}Delivering\textquotesingle{} stage follows. If membrane\textquotesingle{}s potential is near to the resting value (the excitation failed), the \textquotesingle{}Relaxing\textquotesingle{} stage follows. In these cases the function returns \textquotesingle{}true\textquotesingle{} that finishes the stage. Otherwise, the neuron remains in \textquotesingle{}Computing\textquotesingle{} stage (the function returns \textquotesingle{}false\textquotesingle{})
 
@@ -199,21 +213,21 @@ true if to stop heartbeating in \textquotesingle{}Computing\textquotesingle{} mo
 
 Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract} \doxyref{}{p.}{classscGenComp__PU__Abstract_a75a0b61f9272fd7bf14413ecfdd9bbcb}.
 
-\label{classNeuronPhysical_aa27870867ab7a0361692560ecc977e80} 
+\label{classNeuronPhysical_a6b75d51f0ae9f7504dbfde9cd506f5bf} 
 \index{NeuronPhysical@{NeuronPhysical}!Heartbeat\_Delivering\_Do@{Heartbeat\_Delivering\_Do}}
 \index{Heartbeat\_Delivering\_Do@{Heartbeat\_Delivering\_Do}!NeuronPhysical@{NeuronPhysical}}
 \doxysubsubsection{Heartbeat\_Delivering\_Do()}
-{\footnotesize\ttfamily virtual void Neuron\+Physical\+::\+Heartbeat\+\_\+\+Delivering\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Neuron\+Physical\+::\+Heartbeat\+\_\+\+Delivering\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Heartbeat processing in \textquotesingle{}Delivering\textquotesingle{}\+: synaptic inputs disabled 
 
-Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_addfd1439704d3c808f86dbe674f417a2}.
+Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_a57c784b5bc8f20f1e849b432d45566c0}.
 
-\label{classNeuronPhysical_a03aafa632cd215a7052225ebfe0bd753} 
+\label{classNeuronPhysical_acb5ff8fd98f3fa440f0f96361c988950} 
 \index{NeuronPhysical@{NeuronPhysical}!Heartbeat\_Delivering\_Stop@{Heartbeat\_Delivering\_Stop}}
 \index{Heartbeat\_Delivering\_Stop@{Heartbeat\_Delivering\_Stop}!NeuronPhysical@{NeuronPhysical}}
 \doxysubsubsection{Heartbeat\_Delivering\_Stop()}
-{\footnotesize\ttfamily virtual bool Neuron\+Physical\+::\+Heartbeat\+\_\+\+Delivering\+\_\+\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool Neuron\+Physical\+::\+Heartbeat\+\_\+\+Delivering\+\_\+\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Stage \textquotesingle{}Delivering\textquotesingle{} normally passes to stage \textquotesingle{}Relaxing\textquotesingle{}, \begin{DoxyReturn}{Returns}
 true if to stop heartbeating in \textquotesingle{}Delivering\textquotesingle{} mode 
@@ -222,21 +236,21 @@ true if to stop heartbeating in \textquotesingle{}Delivering\textquotesingle{} m
 
 Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract} \doxyref{}{p.}{classscGenComp__PU__Abstract_abfae7ba4b9ea1f5aacab5ad7cb770bc7}.
 
-\label{classNeuronPhysical_ac48743aec7a1bf415eccf55e2b84cba5} 
+\label{classNeuronPhysical_add2a625c928b7503299669aaae09d3b5} 
 \index{NeuronPhysical@{NeuronPhysical}!Heartbeat\_Relaxing\_Do@{Heartbeat\_Relaxing\_Do}}
 \index{Heartbeat\_Relaxing\_Do@{Heartbeat\_Relaxing\_Do}!NeuronPhysical@{NeuronPhysical}}
 \doxysubsubsection{Heartbeat\_Relaxing\_Do()}
-{\footnotesize\ttfamily virtual void Neuron\+Physical\+::\+Heartbeat\+\_\+\+Relaxing\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Neuron\+Physical\+::\+Heartbeat\+\_\+\+Relaxing\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Heartbeat processing in \textquotesingle{}Relaxing\textquotesingle{}\+: all inputs effective 
 
-Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_a64c6ee49fdeefd43550b27db1f596501}.
+Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_af018b6c96d882c6173f0966d104b3898}.
 
-\label{classNeuronPhysical_a535cedb66c2d5f7da379f007ee0774de} 
+\label{classNeuronPhysical_aa6d1dcabef0773544cbce238082f097f} 
 \index{NeuronPhysical@{NeuronPhysical}!Heartbeat\_Relaxing\_Stop@{Heartbeat\_Relaxing\_Stop}}
 \index{Heartbeat\_Relaxing\_Stop@{Heartbeat\_Relaxing\_Stop}!NeuronPhysical@{NeuronPhysical}}
 \doxysubsubsection{Heartbeat\_Relaxing\_Stop()}
-{\footnotesize\ttfamily virtual bool Neuron\+Physical\+::\+Heartbeat\+\_\+\+Relaxing\+\_\+\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool Neuron\+Physical\+::\+Heartbeat\+\_\+\+Relaxing\+\_\+\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 Stage \textquotesingle{}Delivering\textquotesingle{} normally passes to stage \textquotesingle{}Relaxing\textquotesingle{}, \begin{DoxyReturn}{Returns}
 true if to stop heartbeats in \textquotesingle{}Relaxing\textquotesingle{} mode 
@@ -255,18 +269,18 @@ Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract} \doxyref{}{
 
 Input\+Current\+Delete. 
 
-When a new input current received (see \doxyref{Input\+Received\+\_\+\+Do()}{p.}{classNeuronPhysical_ad806dc719dded5aad7e2890cc533c7e3}), a new \doxyref{Neuron\+Input\+Current}{p.}{classNeuronInputCurrent} is added to the internally maintained list. This routine deletes a \doxyref{Neuron\+Input\+Current}{p.}{classNeuronInputCurrent} from the list.
+When a new input current received (see \doxyref{Input\+Received\+\_\+\+Do()}{p.}{classNeuronPhysical_af9836d8a9c965e55ba7becf545d6fc1a}), a new \doxyref{Neuron\+Input\+Current}{p.}{classNeuronInputCurrent} is added to the internally maintained list. This routine deletes a \doxyref{Neuron\+Input\+Current}{p.}{classNeuronInputCurrent} from the list.
 
 
 \begin{DoxyParams}{Parameters}
 {\em IC} & The input current to delete \\
 \hline
 \end{DoxyParams}
-\label{classNeuronPhysical_ad806dc719dded5aad7e2890cc533c7e3} 
+\label{classNeuronPhysical_af9836d8a9c965e55ba7becf545d6fc1a} 
 \index{NeuronPhysical@{NeuronPhysical}!InputReceived\_Do@{InputReceived\_Do}}
 \index{InputReceived\_Do@{InputReceived\_Do}!NeuronPhysical@{NeuronPhysical}}
 \doxysubsubsection{InputReceived\_Do()}
-{\footnotesize\ttfamily virtual void Neuron\+Physical\+::\+Input\+Received\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Neuron\+Physical\+::\+Input\+Received\+\_\+\+Do (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -282,10 +296,11 @@ Changing operating stage resets integration time step.
 
 We prepare for several simultanous synaptic inputs\+: the currents are stored in a vector and contribute independently. 
 
-Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_a70cb7062ebb915a554588ac9e12d8436}.
+Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio} \doxyref{}{p.}{classscGenComp__PU__Bio_a2785b5f064ffbcf7c16d657394120111}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\textbf{ Neuron\+Physical.\+h}\end{DoxyCompactItemize}
+\textbf{ Neuron\+Physical.\+h}\item 
+\textbf{ Neuron\+Physical.\+cpp}\end{DoxyCompactItemize}

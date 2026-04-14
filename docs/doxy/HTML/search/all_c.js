@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['o_0',['I/O',['../GLOSSARY.html#GLOSSARY_IO',1,'']]],
-  ['oaptd_1',['oAPTD',['../GLOSSARY.html#GLOSSARY_oAPTD',1,'']]],
-  ['observernotify_2',['ObserverNotify',['../classscGenComp__PU__Abstract.html#afb4e5d3dc957fab774e3228b05ba77a3',1,'scGenComp_PU_Abstract']]],
-  ['observingbit_5fget_3',['ObservingBit_Get',['../classscGenComp__PU__Abstract.html#abd6bf6ea589d80f5a7b4a130bf6d18d9',1,'scGenComp_PU_Abstract']]],
-  ['observingbit_5fset_4',['ObservingBit_Set',['../classscGenComp__PU__Abstract.html#ace7c3b81159733df6d705fc597d9cb32',1,'scGenComp_PU_Abstract']]],
-  ['operationcounter_5fget_5',['OperationCounter_Get',['../classscGenComp__PU__Abstract.html#a399d6568bedd90fcbf4f71f9a06b3418',1,'scGenComp_PU_Abstract']]],
-  ['os_6',['OS',['../GLOSSARY.html#GLOSSARY_OS',1,'']]]
+  ['neuronconstants_0',['neuronconstants',['../classNeuronConstants.html',1,'NeuronConstants'],['../classNeuronConstants.html#a1c970c7d514554aebeef16015f59e9ec',1,'NeuronConstants::NeuronConstants()']]],
+  ['neuroninputcurrent_1',['neuroninputcurrent',['../classNeuronInputCurrent.html',1,'NeuronInputCurrent'],['../classNeuronInputCurrent.html#af41bf336678c16b9b38e922e8bc43d16',1,'NeuronInputCurrent::NeuronInputCurrent()']]],
+  ['neuroninputcurrent_2ecpp_2',['NeuronInputCurrent.cpp',['../NeuronInputCurrent_8cpp.html',1,'']]],
+  ['neuroninputcurrent_2eh_3',['NeuronInputCurrent.h',['../NeuronInputCurrent_8h.html',1,'']]],
+  ['neuroninputcurrent_5ft_4',['NeuronInputCurrent_t',['../group__GENCOMP__MODULE__BIOLOGY.html#ga22e6c711bd2718618f135dad9211ea5f',1,'NeuronInputCurrent.h']]],
+  ['neuronphysical_5',['neuronphysical',['../classNeuronPhysical.html',1,'NeuronPhysical'],['../classNeuronPhysical.html#a374b38525036a085d975016a9f5e9b22',1,'NeuronPhysical::NeuronPhysical()']]],
+  ['neuronphysical_2ecpp_6',['NeuronPhysical.cpp',['../NeuronPhysical_8cpp.html',1,'']]],
+  ['neuronphysical_2eh_7',['NeuronPhysical.h',['../NeuronPhysical_8h.html',1,'']]],
+  ['noc_8',['NoC',['../GLOSSARY.html#GLOSSARY_NoC',1,'']]],
+  ['noofinputsreceived_5fget_9',['NoOfInputsReceived_Get',['../classscGenComp__PU__Abstract.html#ae00a1e214d66761f99ddfef64839fbb0',1,'scGenComp_PU_Abstract']]],
+  ['notes_10',['General release notes',['../group__RELEASE__NOTES.html#Release_Notes',1,'']]],
+  ['notes_20and_20porting_11',['Release notes and porting',['../ReleaseNotes.html',1,'']]],
+  ['notitle_12',['notitle',['../index.html',1,'']]]
 ];

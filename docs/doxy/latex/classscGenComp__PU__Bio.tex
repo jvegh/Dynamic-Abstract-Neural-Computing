@@ -20,7 +20,7 @@ During processing, it calls a Heartbeat\+\_\+\+XXX\+\_\+\+Stop() method to see i
 \begin{DoxyItemize}
 \item Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing\+: Until it reaches its resting potential, calls Calculate\+\_\+\+Do(). Upon receiving an input, changes to state Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing. Inputs enabled\+: the relative refractory period.
 \item Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing\+: Until it reaches its threshold potential, calls Calculate\+\_\+\+Do(). At that point, changes to state to state Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering. Inputs enabled.
-\item Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering\+: Until it reaches its lowest membrane potential (its increase turns from negative to positive), calls \doxyref{Heartbeat\+\_\+\+Relaxing\+\_\+\+Do()}{p.}{classscGenComp__PU__Bio_a64c6ee49fdeefd43550b27db1f596501}. At that point, changes to state to state Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing, without restoring membrane\textquotesingle{}s potential. At the beginning issues signal \textquotesingle{}Transmitting\+Begin\textquotesingle{}. Signal transmission happens in parallel with the further processing. Inputs disabled; the absolute refractory period.
+\item Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering\+: Until it reaches its lowest membrane potential (its increase turns from negative to positive), calls \doxyref{Heartbeat\+\_\+\+Relaxing\+\_\+\+Do()}{p.}{classscGenComp__PU__Bio_af018b6c96d882c6173f0966d104b3898}. At that point, changes to state to state Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing, without restoring membrane\textquotesingle{}s potential. At the beginning issues signal \textquotesingle{}Transmitting\+Begin\textquotesingle{}. Signal transmission happens in parallel with the further processing. Inputs disabled; the absolute refractory period.
 \end{DoxyItemize}
 
 The \doxyref{Input\+Received\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a1443b8dc13c9e4ae631be5a92ffd7666}\+: the unit received new input (a momentary state). Only administrative action; the received input is handled in \doxyref{Heartbeat\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a7634e1d3d78fc27b80480e54b77422ea}, as described in Calculate\+\_\+\+Do(). Disabled in mode Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering.
@@ -72,13 +72,13 @@ void {\bfseries Delivering\+End\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em The extra activity for finishing internal delivering. Called from \doxyref{Delivering\+End\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a59194dda1a7a912db21bd1d23ac17aa7} \end{DoxyCompactList}\item 
 virtual void \textbf{ Heartbeat\+\_\+\+Adjust} (void)
 \begin{DoxyCompactList}\small\item\em Heartbeat\+\_\+method. \end{DoxyCompactList}\item 
-\label{classscGenComp__PU__Bio_a1aacf9b0909eacef11041a684e89bce0} 
+\label{classscGenComp__PU__Bio_ac8c250cd7656b266b3782410d8a12c12} 
 virtual void {\bfseries Heartbeat\+\_\+\+Computing\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em Heartbeat activity for computing. \end{DoxyCompactList}\item 
-\label{classscGenComp__PU__Bio_addfd1439704d3c808f86dbe674f417a2} 
+\label{classscGenComp__PU__Bio_a57c784b5bc8f20f1e849b432d45566c0} 
 virtual void {\bfseries Heartbeat\+\_\+\+Delivering\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em Heartbeat activity for delivering. \end{DoxyCompactList}\item 
-\label{classscGenComp__PU__Bio_a64c6ee49fdeefd43550b27db1f596501} 
+\label{classscGenComp__PU__Bio_af018b6c96d882c6173f0966d104b3898} 
 virtual void {\bfseries Heartbeat\+\_\+\+Relaxing\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em Heartbeat activity for relaxing. \end{DoxyCompactList}\item 
 virtual void \textbf{ Input\+Received\+\_\+\+Do} ()
@@ -100,11 +100,11 @@ float {\bfseries Local\+Time\+In\+Nanosec\+\_\+\+Get} ()
 \begin{DoxyCompactList}\small\item\em Return simulated local sc\+\_\+time converted to nanoseconds. \end{DoxyCompactList}\item 
 uint32\+\_\+t \textbf{ No\+Of\+Inputs\+Received\+\_\+\+Get} ()
 \item 
-void \textbf{ Observer\+Notify} (\textbf{ Gen\+Comp\+Observe\+\_\+t} Observed\+Bit)
+void \textbf{ Observer\+Notify} (Gen\+Comp\+Observe\+\_\+t Observed\+Bit)
 \begin{DoxyCompactList}\small\item\em Notify the observer about some important change. \end{DoxyCompactList}\item 
-bool \textbf{ Observing\+Bit\+\_\+\+Get} (\textbf{ Gen\+Comp\+Observe\+\_\+t} B)
+bool \textbf{ Observing\+Bit\+\_\+\+Get} (Gen\+Comp\+Observe\+\_\+t B)
 \begin{DoxyCompactList}\small\item\em Get value of an observing bit for this \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}. \end{DoxyCompactList}\item 
-void \textbf{ Observing\+Bit\+\_\+\+Set} (\textbf{ Gen\+Comp\+Observe\+\_\+t} B, bool V)
+void \textbf{ Observing\+Bit\+\_\+\+Set} (Gen\+Comp\+Observe\+\_\+t B, bool V)
 \begin{DoxyCompactList}\small\item\em Set an observing bit for this \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}. \end{DoxyCompactList}\item 
 int32\+\_\+t \textbf{ Operation\+Counter\+\_\+\+Get} (void)
 \begin{DoxyCompactList}\small\item\em Get the number of operations performed. \end{DoxyCompactList}\item 
@@ -129,14 +129,14 @@ sc\+\_\+core\+::sc\+\_\+time \textbf{ sc\+Result\+Period\+\_\+\+Get} () const
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\label{classscGenComp__PU__Bio_ae8acab11afcb1db4025b4627708135ef} 
+\label{classscGenComp__PU__Bio_a3eca6a3c95df8c10b2948dc8b849fee8} 
 virtual void {\bfseries Initialize\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em Puts the PU to its default state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}}
 \begin{DoxyCompactItemize}
 \item 
 virtual void {\bfseries Cancel\+Events} (void)
-\begin{DoxyCompactList}\small\item\em Cancels all pending events. Called from \doxyref{Initialize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a17314ce63b2d227e8e74e3eb1262d62e},\doxyref{Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a4c1096b8b544c2e6b5724ff93b290770}, just to make sure not outstanding events remain. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Cancels all pending events. Called from \doxyref{Initialize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a17314ce63b2d227e8e74e3eb1262d62e},\doxyref{Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a8c1ba93270a636b65fe22a8a1c75f5f2}, just to make sure not outstanding events remain. \end{DoxyCompactList}\item 
 bool \textbf{ Central\+Clock\+Mode\+\_\+\+Get} (void)
 \item 
 virtual bool \textbf{ Have\+Enough\+Inputs} (void)
@@ -189,11 +189,11 @@ Creates a biological general computing unit.
 Creates an abstract biological computing unit 
 
 \doxysubsection{Member Function Documentation}
-\label{classscGenComp__PU__Bio_a6537f84ecc56386cfc364ddc6f5597d1} 
+\label{classscGenComp__PU__Bio_ab27eaed4e0d664daa25e37d09f348dc3} 
 \index{scGenComp\_PU\_Bio@{scGenComp\_PU\_Bio}!Heartbeat\_Adjust@{Heartbeat\_Adjust}}
 \index{Heartbeat\_Adjust@{Heartbeat\_Adjust}!scGenComp\_PU\_Bio@{scGenComp\_PU\_Bio}}
 \doxysubsubsection{Heartbeat\_Adjust()}
-{\footnotesize\ttfamily virtual void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio\+::\+Heartbeat\+\_\+\+Adjust (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio\+::\+Heartbeat\+\_\+\+Adjust (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -211,13 +211,13 @@ A periodic signal as a timebase for solving differential equations.
 
 Adjust integration step size, to keep accuracy and computing time tolerable 
 
-Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract} \doxyref{}{p.}{classscGenComp__PU__Abstract_a044c2adcc1a4d327aef600ee2a3a70e5}.
+Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract} \doxyref{}{p.}{classscGenComp__PU__Abstract_a460e76ace0e4bbccb4b398ebc049c252}.
 
-\label{classscGenComp__PU__Bio_a70cb7062ebb915a554588ac9e12d8436} 
+\label{classscGenComp__PU__Bio_a2785b5f064ffbcf7c16d657394120111} 
 \index{scGenComp\_PU\_Bio@{scGenComp\_PU\_Bio}!InputReceived\_Do@{InputReceived\_Do}}
 \index{InputReceived\_Do@{InputReceived\_Do}!scGenComp\_PU\_Bio@{scGenComp\_PU\_Bio}}
 \doxysubsubsection{InputReceived\_Do()}
-{\footnotesize\ttfamily virtual void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio\+::\+Input\+Received\+\_\+\+Do (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio\+::\+Input\+Received\+\_\+\+Do (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -227,14 +227,15 @@ A spike arrived, store spike parameters. Receving an input is a momentary action
 
 Called by \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract\+::\+Input\+Received\+\_\+method}{p.}{classscGenComp__PU__Abstract_a1443b8dc13c9e4ae631be5a92ffd7666} Reimplemented given that in biology the first input also starts computing 
 
-Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract} \doxyref{}{p.}{classscGenComp__PU__Abstract_a81d1c32b732fc5063d0b8acff9e83b92}.
+Reimplemented from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract} \doxyref{}{p.}{classscGenComp__PU__Abstract_aa07e11068b0fcafd28d6ffae522a3bf8}.
 
 
 
-Reimplemented in \textbf{ Neuron\+Physical} \doxyref{}{p.}{classNeuronPhysical_ad806dc719dded5aad7e2890cc533c7e3}.
+Reimplemented in \textbf{ Neuron\+Physical} \doxyref{}{p.}{classNeuronPhysical_af9836d8a9c965e55ba7becf545d6fc1a}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio.\+h}\end{DoxyCompactItemize}
+\textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio.\+h}\item 
+\textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio.\+cpp}\end{DoxyCompactItemize}

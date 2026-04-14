@@ -46,7 +46,7 @@ enum class NeuronInputCurrent_t
  * so it causes on a capacitor \f$C\f$ (given in [pF]) and on a resistor \f$R\f$ \f$I_i*R\f$ [mV]  voltage.
  *
  * A current gradient \f$\frac{I_i}{dt} \quad [\frac{pA}{s}]\f$ causes
- * on a capacitor \f$C\f$ (given in [pF]) a voltage gradient \f$\frac{1}{C]\frac{dI_i}{dt}\f$
+ * on a capacitor \f$C\f$ (given in [pF]) a voltage gradient \f$\frac{1}{C}\frac{dI_i}{dt}\f$
  * increase
  * \f$I_i/C\f$ [V/s],
  *

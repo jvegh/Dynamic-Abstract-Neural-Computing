@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('classscGenComp__PU__Bio.html',''); ini
 <p>(It is <em>NOT</em> a central clock signal; it refreshes only the SIMULATED time.) In the corresponding states, the neuron is</p><ul>
 <li>GenCompStageMachine_t::gcsm_Relaxing: Until it reaches its resting potential, calls Calculate_Do(). Upon receiving an input, changes to state GenCompStageMachine_t::gcsm_Computing. Inputs enabled: the relative refractory period.</li>
 <li>GenCompStageMachine_t::gcsm_Computing: Until it reaches its threshold potential, calls Calculate_Do(). At that point, changes to state to state GenCompStageMachine_t::gcsm_Delivering. Inputs enabled.</li>
-<li>GenCompStageMachine_t::gcsm_Delivering: Until it reaches its lowest membrane potential (its increase turns from negative to positive), calls <a class="el" href="classscGenComp__PU__Bio.html#a64c6ee49fdeefd43550b27db1f596501" title="Heartbeat activity for relaxing.">Heartbeat_Relaxing_Do()</a>. At that point, changes to state to state GenCompStageMachine_t::gcsm_Relaxing, without restoring membrane's potential. At the beginning issues signal 'TransmittingBegin'. Signal transmission happens in parallel with the further processing. Inputs disabled; the absolute refractory period.</li>
+<li>GenCompStageMachine_t::gcsm_Delivering: Until it reaches its lowest membrane potential (its increase turns from negative to positive), calls <a class="el" href="classscGenComp__PU__Bio.html#af018b6c96d882c6173f0966d104b3898" title="Heartbeat activity for relaxing.">Heartbeat_Relaxing_Do()</a>. At that point, changes to state to state GenCompStageMachine_t::gcsm_Relaxing, without restoring membrane's potential. At the beginning issues signal 'TransmittingBegin'. Signal transmission happens in parallel with the further processing. Inputs disabled; the absolute refractory period.</li>
 </ul>
 <p>The <a class="el" href="classscGenComp__PU__Abstract.html#a1443b8dc13c9e4ae631be5a92ffd7666" title="InputReceived_method.">InputReceived_method()</a>: the unit received new input (a momentary state). Only administrative action; the received input is handled in <a class="el" href="classscGenComp__PU__Abstract.html#a7634e1d3d78fc27b80480e54b77422ea" title="A periodic signal as a timebase to refresh state. Used internally, to avoid using clock signals.">Heartbeat_method()</a>, as described in Calculate_Do(). Disabled in mode GenCompStageMachine_t::gcsm_Delivering.</p>
 <p>&ndash;The states below are momentary states: need action and passes to one of the above states</p><ul>
@@ -176,32 +176,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DeliveringBegin_Do</b
 void&#160;</td><td class="memItemRight" valign="bottom"><b>DeliveringEnd_Do</b> ()</td></tr>
 <tr class="memdesc:aca6ec8124f2e6af9414d9205444fa12b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extra activity for finishing internal delivering. Called from <a class="el" href="classscGenComp__PU__Abstract.html#a59194dda1a7a912db21bd1d23ac17aa7">DeliveringEnd_method()</a> <br /></td></tr>
 <tr class="separator:aca6ec8124f2e6af9414d9205444fa12b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6537f84ecc56386cfc364ddc6f5597d1" id="r_a6537f84ecc56386cfc364ddc6f5597d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Bio.html#a6537f84ecc56386cfc364ddc6f5597d1">Heartbeat_Adjust</a> (void)</td></tr>
-<tr class="memdesc:a6537f84ecc56386cfc364ddc6f5597d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat_method.  <br /></td></tr>
-<tr class="separator:a6537f84ecc56386cfc364ddc6f5597d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1aacf9b0909eacef11041a684e89bce0" id="r_a1aacf9b0909eacef11041a684e89bce0"><td class="memItemLeft" align="right" valign="top"><a id="a1aacf9b0909eacef11041a684e89bce0" name="a1aacf9b0909eacef11041a684e89bce0"></a>
+<tr class="memitem:ab27eaed4e0d664daa25e37d09f348dc3" id="r_ab27eaed4e0d664daa25e37d09f348dc3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Bio.html#ab27eaed4e0d664daa25e37d09f348dc3">Heartbeat_Adjust</a> (void)</td></tr>
+<tr class="memdesc:ab27eaed4e0d664daa25e37d09f348dc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat_method.  <br /></td></tr>
+<tr class="separator:ab27eaed4e0d664daa25e37d09f348dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c250cd7656b266b3782410d8a12c12" id="r_ac8c250cd7656b266b3782410d8a12c12"><td class="memItemLeft" align="right" valign="top"><a id="ac8c250cd7656b266b3782410d8a12c12" name="ac8c250cd7656b266b3782410d8a12c12"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Heartbeat_Computing_Do</b> ()</td></tr>
-<tr class="memdesc:a1aacf9b0909eacef11041a684e89bce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat activity for computing. <br /></td></tr>
-<tr class="separator:a1aacf9b0909eacef11041a684e89bce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addfd1439704d3c808f86dbe674f417a2" id="r_addfd1439704d3c808f86dbe674f417a2"><td class="memItemLeft" align="right" valign="top"><a id="addfd1439704d3c808f86dbe674f417a2" name="addfd1439704d3c808f86dbe674f417a2"></a>
+<tr class="memdesc:ac8c250cd7656b266b3782410d8a12c12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat activity for computing. <br /></td></tr>
+<tr class="separator:ac8c250cd7656b266b3782410d8a12c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57c784b5bc8f20f1e849b432d45566c0" id="r_a57c784b5bc8f20f1e849b432d45566c0"><td class="memItemLeft" align="right" valign="top"><a id="a57c784b5bc8f20f1e849b432d45566c0" name="a57c784b5bc8f20f1e849b432d45566c0"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Heartbeat_Delivering_Do</b> ()</td></tr>
-<tr class="memdesc:addfd1439704d3c808f86dbe674f417a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat activity for delivering. <br /></td></tr>
-<tr class="separator:addfd1439704d3c808f86dbe674f417a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64c6ee49fdeefd43550b27db1f596501" id="r_a64c6ee49fdeefd43550b27db1f596501"><td class="memItemLeft" align="right" valign="top"><a id="a64c6ee49fdeefd43550b27db1f596501" name="a64c6ee49fdeefd43550b27db1f596501"></a>
+<tr class="memdesc:a57c784b5bc8f20f1e849b432d45566c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat activity for delivering. <br /></td></tr>
+<tr class="separator:a57c784b5bc8f20f1e849b432d45566c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af018b6c96d882c6173f0966d104b3898" id="r_af018b6c96d882c6173f0966d104b3898"><td class="memItemLeft" align="right" valign="top"><a id="af018b6c96d882c6173f0966d104b3898" name="af018b6c96d882c6173f0966d104b3898"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Heartbeat_Relaxing_Do</b> ()</td></tr>
-<tr class="memdesc:a64c6ee49fdeefd43550b27db1f596501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat activity for relaxing. <br /></td></tr>
-<tr class="separator:a64c6ee49fdeefd43550b27db1f596501"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70cb7062ebb915a554588ac9e12d8436" id="r_a70cb7062ebb915a554588ac9e12d8436"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Bio.html#a70cb7062ebb915a554588ac9e12d8436">InputReceived_Do</a> ()</td></tr>
-<tr class="memdesc:a70cb7062ebb915a554588ac9e12d8436"><td class="mdescLeft">&#160;</td><td class="mdescRight">A new spike (or clamping) received; only in 'Relaxing' and 'Computing' states, furthermore in "XXXRelaxing" state during the "relative refractory" period.  <br /></td></tr>
-<tr class="separator:a70cb7062ebb915a554588ac9e12d8436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:af018b6c96d882c6173f0966d104b3898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Heartbeat activity for relaxing. <br /></td></tr>
+<tr class="separator:af018b6c96d882c6173f0966d104b3898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2785b5f064ffbcf7c16d657394120111" id="r_a2785b5f064ffbcf7c16d657394120111"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Bio.html#a2785b5f064ffbcf7c16d657394120111">InputReceived_Do</a> ()</td></tr>
+<tr class="memdesc:a2785b5f064ffbcf7c16d657394120111"><td class="mdescLeft">&#160;</td><td class="mdescRight">A new spike (or clamping) received; only in 'Relaxing' and 'Computing' states, furthermore in "XXXRelaxing" state during the "relative refractory" period.  <br /></td></tr>
+<tr class="separator:a2785b5f064ffbcf7c16d657394120111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfc554b0e22d4fec1a3dd64e3349d2ec" id="r_adfc554b0e22d4fec1a3dd64e3349d2ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Bio.html#adfc554b0e22d4fec1a3dd64e3349d2ec">scGenComp_PU_Bio</a> (sc_core::sc_module_name nm)</td></tr>
 <tr class="memdesc:adfc554b0e22d4fec1a3dd64e3349d2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a biological general computing unit.  <br /></td></tr>
 <tr class="separator:adfc554b0e22d4fec1a3dd64e3349d2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classscGenComp__PU__Abstract"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classscGenComp__PU__Abstract')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classscGenComp__PU__Abstract.html">scGenComp_PU_Abstract</a></td></tr>
-<tr class="memitem:a8dbcf9d60a0005296f39182e5e24e8c9 inherit pub_methods_classscGenComp__PU__Abstract" id="r_a8dbcf9d60a0005296f39182e5e24e8c9"><td class="memItemLeft" align="right" valign="top">
+<tr class="memitem:a1bd632a9e6a3bf7ae006ac5f7c509e66 inherit pub_methods_classscGenComp__PU__Abstract" id="r_a1bd632a9e6a3bf7ae006ac5f7c509e66"><td class="memItemLeft" align="right" valign="top">
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ComputingEnd_Do</b> ()</td></tr>
-<tr class="memdesc:a8dbcf9d60a0005296f39182e5e24e8c9 inherit pub_methods_classscGenComp__PU__Abstract"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extra processing for finishing computing. Called from <a class="el" href="classscGenComp__PU__Abstract.html#ac24ef368f1b32a70355d746d04ffb840">ComputingEnd_method()</a> <br /></td></tr>
-<tr class="separator:a8dbcf9d60a0005296f39182e5e24e8c9 inherit pub_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a1bd632a9e6a3bf7ae006ac5f7c509e66 inherit pub_methods_classscGenComp__PU__Abstract"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extra processing for finishing computing. Called from <a class="el" href="classscGenComp__PU__Abstract.html#ac24ef368f1b32a70355d746d04ffb840">ComputingEnd_method()</a> <br /></td></tr>
+<tr class="separator:a1bd632a9e6a3bf7ae006ac5f7c509e66 inherit pub_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9c63634db2b9237809d91f58878afd6 inherit pub_methods_classscGenComp__PU__Abstract" id="r_aa9c63634db2b9237809d91f58878afd6"><td class="memItemLeft" align="right" valign="top">
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Failed_Do</b> ()</td></tr>
 <tr class="memdesc:aa9c63634db2b9237809d91f58878afd6 inherit pub_methods_classscGenComp__PU__Abstract"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extra activity for handling event 'Failed'. Called from <a class="el" href="classscGenComp__PU__Abstract.html#a690246e1d3d96627d9099a2424302326" title="Module failed.">Failed_method()</a>. Includes initialization. <br /></td></tr>
@@ -220,13 +220,13 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>LocalTimeInNanosec_G
 <tr class="separator:aef11da365eb6cc78f67a83ea6210d6f9 inherit pub_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae00a1e214d66761f99ddfef64839fbb0 inherit pub_methods_classscGenComp__PU__Abstract" id="r_ae00a1e214d66761f99ddfef64839fbb0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#ae00a1e214d66761f99ddfef64839fbb0">NoOfInputsReceived_Get</a> ()</td></tr>
 <tr class="separator:ae00a1e214d66761f99ddfef64839fbb0 inherit pub_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb4e5d3dc957fab774e3228b05ba77a3 inherit pub_methods_classscGenComp__PU__Abstract" id="r_afb4e5d3dc957fab774e3228b05ba77a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#afb4e5d3dc957fab774e3228b05ba77a3">ObserverNotify</a> (<a class="el" href="classGenCompObserve__t.html">GenCompObserve_t</a> ObservedBit)</td></tr>
+<tr class="memitem:afb4e5d3dc957fab774e3228b05ba77a3 inherit pub_methods_classscGenComp__PU__Abstract" id="r_afb4e5d3dc957fab774e3228b05ba77a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#afb4e5d3dc957fab774e3228b05ba77a3">ObserverNotify</a> (GenCompObserve_t ObservedBit)</td></tr>
 <tr class="memdesc:afb4e5d3dc957fab774e3228b05ba77a3 inherit pub_methods_classscGenComp__PU__Abstract"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the observer about some important change.  <br /></td></tr>
 <tr class="separator:afb4e5d3dc957fab774e3228b05ba77a3 inherit pub_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd6bf6ea589d80f5a7b4a130bf6d18d9 inherit pub_methods_classscGenComp__PU__Abstract" id="r_abd6bf6ea589d80f5a7b4a130bf6d18d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#abd6bf6ea589d80f5a7b4a130bf6d18d9">ObservingBit_Get</a> (<a class="el" href="classGenCompObserve__t.html">GenCompObserve_t</a> B)</td></tr>
+<tr class="memitem:abd6bf6ea589d80f5a7b4a130bf6d18d9 inherit pub_methods_classscGenComp__PU__Abstract" id="r_abd6bf6ea589d80f5a7b4a130bf6d18d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#abd6bf6ea589d80f5a7b4a130bf6d18d9">ObservingBit_Get</a> (GenCompObserve_t B)</td></tr>
 <tr class="memdesc:abd6bf6ea589d80f5a7b4a130bf6d18d9 inherit pub_methods_classscGenComp__PU__Abstract"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value of an observing bit for this <a class="el" href="classscGenComp__PU__Abstract.html" title="Class to deal with operations of an abstract processing unit (PU), implementing a single-shot element...">scGenComp_PU_Abstract</a>.  <br /></td></tr>
 <tr class="separator:abd6bf6ea589d80f5a7b4a130bf6d18d9 inherit pub_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace7c3b81159733df6d705fc597d9cb32 inherit pub_methods_classscGenComp__PU__Abstract" id="r_ace7c3b81159733df6d705fc597d9cb32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#ace7c3b81159733df6d705fc597d9cb32">ObservingBit_Set</a> (<a class="el" href="classGenCompObserve__t.html">GenCompObserve_t</a> B, bool V)</td></tr>
+<tr class="memitem:ace7c3b81159733df6d705fc597d9cb32 inherit pub_methods_classscGenComp__PU__Abstract" id="r_ace7c3b81159733df6d705fc597d9cb32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#ace7c3b81159733df6d705fc597d9cb32">ObservingBit_Set</a> (GenCompObserve_t B, bool V)</td></tr>
 <tr class="memdesc:ace7c3b81159733df6d705fc597d9cb32 inherit pub_methods_classscGenComp__PU__Abstract"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an observing bit for this <a class="el" href="classscGenComp__PU__Abstract.html" title="Class to deal with operations of an abstract processing unit (PU), implementing a single-shot element...">scGenComp_PU_Abstract</a>.  <br /></td></tr>
 <tr class="separator:ace7c3b81159733df6d705fc597d9cb32 inherit pub_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a399d6568bedd90fcbf4f71f9a06b3418 inherit pub_methods_classscGenComp__PU__Abstract" id="r_a399d6568bedd90fcbf4f71f9a06b3418"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#a399d6568bedd90fcbf4f71f9a06b3418">OperationCounter_Get</a> (void)</td></tr>
@@ -259,15 +259,15 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>LocalTimeInNanosec_G
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae8acab11afcb1db4025b4627708135ef" id="r_ae8acab11afcb1db4025b4627708135ef"><td class="memItemLeft" align="right" valign="top"><a id="ae8acab11afcb1db4025b4627708135ef" name="ae8acab11afcb1db4025b4627708135ef"></a>
+<tr class="memitem:a3eca6a3c95df8c10b2948dc8b849fee8" id="r_a3eca6a3c95df8c10b2948dc8b849fee8"><td class="memItemLeft" align="right" valign="top"><a id="a3eca6a3c95df8c10b2948dc8b849fee8" name="a3eca6a3c95df8c10b2948dc8b849fee8"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize_Do</b> ()</td></tr>
-<tr class="memdesc:ae8acab11afcb1db4025b4627708135ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts the PU to its default state. <br /></td></tr>
-<tr class="separator:ae8acab11afcb1db4025b4627708135ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a3eca6a3c95df8c10b2948dc8b849fee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts the PU to its default state. <br /></td></tr>
+<tr class="separator:a3eca6a3c95df8c10b2948dc8b849fee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classscGenComp__PU__Abstract"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classscGenComp__PU__Abstract')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classscGenComp__PU__Abstract.html">scGenComp_PU_Abstract</a></td></tr>
-<tr class="memitem:a38f2debfaecadef6052ef85421ca68dd inherit pro_methods_classscGenComp__PU__Abstract" id="r_a38f2debfaecadef6052ef85421ca68dd"><td class="memItemLeft" align="right" valign="top">
+<tr class="memitem:a4f7411cdb012cb30acfda4001c29e158 inherit pro_methods_classscGenComp__PU__Abstract" id="r_a4f7411cdb012cb30acfda4001c29e158"><td class="memItemLeft" align="right" valign="top">
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>CancelEvents</b> (void)</td></tr>
-<tr class="memdesc:a38f2debfaecadef6052ef85421ca68dd inherit pro_methods_classscGenComp__PU__Abstract"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels all pending events. Called from <a class="el" href="classscGenComp__PU__Abstract.html#a17314ce63b2d227e8e74e3eb1262d62e" title="Initialize_method.">Initialize_method()</a>,<a class="el" href="classscGenComp__PU__Abstract.html#a4c1096b8b544c2e6b5724ff93b290770" title="Synchronize the PU to some external condition.">Synchronize_method()</a>, just to make sure not outstanding events remain. <br /></td></tr>
-<tr class="separator:a38f2debfaecadef6052ef85421ca68dd inherit pro_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a4f7411cdb012cb30acfda4001c29e158 inherit pro_methods_classscGenComp__PU__Abstract"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels all pending events. Called from <a class="el" href="classscGenComp__PU__Abstract.html#a17314ce63b2d227e8e74e3eb1262d62e" title="Initialize_method.">Initialize_method()</a>,<a class="el" href="classscGenComp__PU__Abstract.html#a8c1ba93270a636b65fe22a8a1c75f5f2" title="Synchronize the PU to some external condition.">Synchronize_method()</a>, just to make sure not outstanding events remain. <br /></td></tr>
+<tr class="separator:a4f7411cdb012cb30acfda4001c29e158 inherit pro_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af41be214b51f9800604d9e5264c15d04 inherit pro_methods_classscGenComp__PU__Abstract" id="r_af41be214b51f9800604d9e5264c15d04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#af41be214b51f9800604d9e5264c15d04">CentralClockMode_Get</a> (void)</td></tr>
 <tr class="separator:af41be214b51f9800604d9e5264c15d04 inherit pro_methods_classscGenComp__PU__Abstract"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a390c9a8f987106b8a55b3a3c168389fb inherit pro_methods_classscGenComp__PU__Abstract" id="r_a390c9a8f987106b8a55b3a3c168389fb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html#a390c9a8f987106b8a55b3a3c168389fb">HaveEnoughInputs</a> (void)</td></tr>
@@ -335,8 +335,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6537f84ecc56386cfc364ddc6f5597d1" name="a6537f84ecc56386cfc364ddc6f5597d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6537f84ecc56386cfc364ddc6f5597d1">&#9670;&#160;</a></span>Heartbeat_Adjust()</h2>
+<a id="ab27eaed4e0d664daa25e37d09f348dc3" name="ab27eaed4e0d664daa25e37d09f348dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab27eaed4e0d664daa25e37d09f348dc3">&#9670;&#160;</a></span>Heartbeat_Adjust()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,7 +345,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void scGenComp_PU_Bio::Heartbeat_Adjust </td>
+          <td class="memname">void scGenComp_PU_Bio::Heartbeat_Adjust </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -369,12 +369,12 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 <p>Adjust integration step size, to keep accuracy and computing time tolerable </p>
 
-<p>Reimplemented from <a class="el" href="classscGenComp__PU__Abstract.html#a044c2adcc1a4d327aef600ee2a3a70e5">scGenComp_PU_Abstract</a>.</p>
+<p>Reimplemented from <a class="el" href="classscGenComp__PU__Abstract.html#a460e76ace0e4bbccb4b398ebc049c252">scGenComp_PU_Abstract</a>.</p>
 
 </div>
 </div>
-<a id="a70cb7062ebb915a554588ac9e12d8436" name="a70cb7062ebb915a554588ac9e12d8436"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70cb7062ebb915a554588ac9e12d8436">&#9670;&#160;</a></span>InputReceived_Do()</h2>
+<a id="a2785b5f064ffbcf7c16d657394120111" name="a2785b5f064ffbcf7c16d657394120111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2785b5f064ffbcf7c16d657394120111">&#9670;&#160;</a></span>InputReceived_Do()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,8 +383,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void scGenComp_PU_Bio::InputReceived_Do </td>
+          <td class="memname">void scGenComp_PU_Bio::InputReceived_Do </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -400,14 +401,15 @@ Additional Inherited Members</h2></td></tr>
 <p>A spike arrived, store spike parameters. Receving an input is a momentary action, just administer its processing. Most of the job is done in methods Heartbeat_Relaxing() and Heartbeat_Computing(). If it was the first spike, issue 'Begin_Computing'</p>
 <p>Called by <a class="el" href="classscGenComp__PU__Abstract.html#a1443b8dc13c9e4ae631be5a92ffd7666" title="InputReceived_method.">scGenComp_PU_Abstract::InputReceived_method</a> Reimplemented given that in biology the first input also starts computing </p>
 
-<p>Reimplemented from <a class="el" href="classscGenComp__PU__Abstract.html#a81d1c32b732fc5063d0b8acff9e83b92">scGenComp_PU_Abstract</a>.</p>
+<p>Reimplemented from <a class="el" href="classscGenComp__PU__Abstract.html#aa07e11068b0fcafd28d6ffae522a3bf8">scGenComp_PU_Abstract</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classNeuronPhysical.html#ad806dc719dded5aad7e2890cc533c7e3">NeuronPhysical</a>.</p>
+<p>Reimplemented in <a class="el" href="classNeuronPhysical.html#af9836d8a9c965e55ba7becf545d6fc1a">NeuronPhysical</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="scGenComp__PU__Bio_8h_source.html">scGenComp_PU_Bio.h</a></li>
+<li><a class="el" href="scGenComp__PU__Bio_8cpp.html">scGenComp_PU_Bio.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

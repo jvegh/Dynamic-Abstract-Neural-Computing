@@ -55,7 +55,7 @@ public:
      */
     void requestMethod(Method method);
     /**
-     * @brief Requests the process to abort
+     * @brief Requests the process to abort (an emergency stop)
      *
      * It is thread safe as it uses #mutex to protect access to #_abort variable.
      */
@@ -153,12 +153,11 @@ signals:
     void valueChanged(const QString &value);
     /**
      * @brief This signal is emitted when  simulator returns from SystemC
-     * @param T the simulated time of the event
-     */
+      */
     void eventHappened(void);
 
     /**
-     * @brief This signal is emitted when process is finished (either by counting 60 sec or being aborted)
+     * @brief This signal is emitted when process is finished
      */
     void finished();
 

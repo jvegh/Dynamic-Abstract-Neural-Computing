@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['transmissionbegin_5fmethod_0',['TransmissionBegin_method',['../classscGenComp__PU__Abstract.html#a3fec3c6d1ee1a2c0a6bc4eb2147cfe55',1,'scGenComp_PU_Abstract']]]
+  ['relaxingbegin_5fdo_0',['RelaxingBegin_Do',['../classscGenComp__PU__Abstract.html#a6bdceeb84580e09399748c015c862943',1,'scGenComp_PU_Abstract']]],
+  ['relaxingbegin_5fmethod_1',['RelaxingBegin_method',['../classscGenComp__PU__Abstract.html#abb584a266091960e1258324b364646dd',1,'scGenComp_PU_Abstract']]],
+  ['requestmethod_2',['requestMethod',['../classScQtSimulator.html#a9df78766e1ac67f2f75e3079929c777f',1,'ScQtSimulator']]]
 ];

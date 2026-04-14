@@ -7,30 +7,71 @@
     <class kind="class">NeuronConstants</class>
   </compound>
   <compound kind="file">
-    <name>GenCompObserveType.h</name>
+    <name>DebugMacros.h</name>
     <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/include/</path>
-    <filename>GenCompObserveType_8h.html</filename>
-    <member kind="enumeration">
-      <type></type>
-      <name>GenCompObserve_t</name>
-      <anchorfile>group__GENCOMP__MODULE__PROCESS.html</anchorfile>
-      <anchor>ga8f758fb4091fb729e41280520a5daedf</anchor>
-      <arglist></arglist>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa7148812b0b011a51197ad0d161060c93">gcob_ObserveGroup</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa682aff27524fe3ad2f1b8233249362c7">gcob_ObserveModule</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfafb74a79d935ea79ed6557050f6dda372">gcob_ObserveComputingBegin</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa3da5b5cc881c9fc816f849653bb477aa">gcob_ObserveComputingEnd</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfad68bac1d7f73d44ee8ffbec15ba59252">gcob_ObserveDeliveringBegin</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfab14564fcfc75c3ef69f37a8d0bd7d8cb">gcob_ObserveDeliveringEnd</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa08f66dd7fe935b44b337c6f0d1502a63">gcob_ObserveFailed</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa5e28f729b9a81933ca129e79977dd7ee">gcob_ObserveHeartbeat</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa3fe1d4f38eefcd5f54e41586e2ed9913">gcob_ObserveInputReceived</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfad738df03f4af8b2dd739aa11b57e83c6">gcob_ObserveInitialize</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa42910b70b20ece68598391f7d198b2ed">gcob_ObserveRelaxingBegin</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa63b4b6b2344b14b46a38ef31b1479ea1">gcob_ObserveRelaxingEnd</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfaeb15ec56230400a483c6122e3c18be48">gcob_ObserveSynchronize</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfaadbc771b3248ca315ef8a5f8c44216cd">gcob_ObserveValueChanged</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa14446aaf9a747e09b4b1d302e5905b2f">gcob_SIZE</enumvalue>
+    <filename>DebugMacros_8h.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_EVENT</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>a92f4b6487af27a216d97f6fe98e80ebd</anchor>
+      <arglist>(x)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_SC_EVENT</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>a180b5f1c340da4355428351536d5168a</anchor>
+      <arglist>(n, X)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_SC_EVENT_LOCAL</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>ab4c5152964fb0fcb545c4a718740e5a9</anchor>
+      <arglist>(t, n, X)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_SC_LOG</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>a89867447deb509c1aa2d3a75cfa504b9</anchor>
+      <arglist>(X)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_SC_LOG_LOCAL</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>af3bf8a6b559fdacc5fc5daed500e8baa</anchor>
+      <arglist>(t, n, X)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_SC_PRINT</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>a482d39395419c71fa4dc02f5253f0266</anchor>
+      <arglist>(n, X)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_SC_PRINT_LOCAL</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>ab3cc6d2ebf39943c0813d51a4b9a9f2d</anchor>
+      <arglist>(t, n, X)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_SC_WARNING</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>ae8f1aef89c230038d125b1a1293916ed</anchor>
+      <arglist>(t, X)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_SC_WARNING_LOCAL</name>
+      <anchorfile>DebugMacros_8h.html</anchorfile>
+      <anchor>a66216e3529ab1782966f5243c3a3cc31</anchor>
+      <arglist>(t, n, X)</arglist>
     </member>
   </compound>
   <compound kind="file">
@@ -53,6 +94,71 @@
       <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba07e87526bf1e1b0e4b23fe2c0b5cff25">gcsm_Failed</enumvalue>
       <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423badc1446e1203cf27706ab0b8a0ae83cb8">gcsm_SIZE</enumvalue>
     </member>
+  </compound>
+  <compound kind="file">
+    <name>MacroTimeBenchmarking.h</name>
+    <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/include/</path>
+    <filename>MacroTimeBenchmarking_8h.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>BENCHMARK_TIME_BEGIN</name>
+      <anchorfile>MacroTimeBenchmarking_8h.html</anchorfile>
+      <anchor>abe3e52aa6169ad16fa9bf59bbeb2e267</anchor>
+      <arglist>(x, t)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>BENCHMARK_TIME_END</name>
+      <anchorfile>MacroTimeBenchmarking_8h.html</anchorfile>
+      <anchor>abd7dae08760afc678f2119375ad5be47</anchor>
+      <arglist>(t, x, s)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>BENCHMARK_TIME_RESET</name>
+      <anchorfile>MacroTimeBenchmarking_8h.html</anchorfile>
+      <anchor>ac7d4ee4fbe53b2c3f74d3c7fe5e37976</anchor>
+      <arglist>(t, x, s)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>scMacroTimeBenchmarking.h</name>
+    <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/include/</path>
+    <filename>scMacroTimeBenchmarking_8h.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>SC_BENCHMARK_TIME_BEGIN</name>
+      <anchorfile>scMacroTimeBenchmarking_8h.html</anchorfile>
+      <anchor>a9505c415d787a771a7296b5e52651ebd</anchor>
+      <arglist>(x, t)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SC_BENCHMARK_TIME_END</name>
+      <anchorfile>scMacroTimeBenchmarking_8h.html</anchorfile>
+      <anchor>ab63514bbc63b1f2134799fd35f8f846d</anchor>
+      <arglist>(t, x, s)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SC_BENCHMARK_TIME_RESET</name>
+      <anchorfile>scMacroTimeBenchmarking_8h.html</anchorfile>
+      <anchor>a348733f3aae1e7c59596cbc968bab795</anchor>
+      <arglist>(t, x, s)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>ScQtSimulator.h</name>
+    <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/include/</path>
+    <filename>ScQtSimulator_8h.html</filename>
+    <includes id="MacroTimeBenchmarking_8h" name="MacroTimeBenchmarking.h" local="yes" import="no" module="no" objc="no">MacroTimeBenchmarking.h</includes>
+    <class kind="class">ScQtSimulator</class>
+  </compound>
+  <compound kind="file">
+    <name>GenCompStageMachineType.cpp</name>
+    <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/</path>
+    <filename>GenCompStageMachineType_8cpp.html</filename>
+    <includes id="GenCompStageMachineType_8h" name="GenCompStageMachineType.h" local="yes" import="no" module="no" objc="no">GenCompStageMachineType.h</includes>
   </compound>
   <compound kind="file">
     <name>NeuronInputCurrent.h</name>
@@ -84,7 +190,8 @@
     <filename>scGenComp__PU__Abstract_8h.html</filename>
     <includes id="Constants_8h" name="Constants.h" local="yes" import="no" module="no" objc="no">Constants.h</includes>
     <includes id="GenCompStageMachineType_8h" name="GenCompStageMachineType.h" local="yes" import="no" module="no" objc="no">GenCompStageMachineType.h</includes>
-    <includes id="GenCompObserveType_8h" name="GenCompObserveType.h" local="yes" import="no" module="no" objc="no">GenCompObserveType.h</includes>
+    <includes id="scMacroTimeBenchmarking_8h" name="scMacroTimeBenchmarking.h" local="yes" import="no" module="no" objc="no">scMacroTimeBenchmarking.h</includes>
+    <includes id="MacroTimeBenchmarking_8h" name="MacroTimeBenchmarking.h" local="yes" import="no" module="no" objc="no">MacroTimeBenchmarking.h</includes>
     <class kind="class">scGenComp_PU_Abstract</class>
   </compound>
   <compound kind="file">
@@ -93,6 +200,49 @@
     <filename>scGenComp__PU__Bio_8h.html</filename>
     <includes id="scGenComp__PU__Abstract_8h" name="scGenComp_PU_Abstract.h" local="yes" import="no" module="no" objc="no">scGenComp_PU_Abstract.h</includes>
     <class kind="class">scGenComp_PU_Bio</class>
+  </compound>
+  <compound kind="file">
+    <name>NeuronInputCurrent.cpp</name>
+    <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/</path>
+    <filename>NeuronInputCurrent_8cpp.html</filename>
+    <includes id="NeuronInputCurrent_8h" name="NeuronInputCurrent.h" local="yes" import="no" module="no" objc="no">NeuronInputCurrent.h</includes>
+    <includes id="DebugMacros_8h" name="DebugMacros.h" local="yes" import="no" module="no" objc="no">DebugMacros.h</includes>
+    <includes id="NeuronPhysical_8h" name="NeuronPhysical.h" local="yes" import="no" module="no" objc="no">NeuronPhysical.h</includes>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_EVENTS</name>
+      <anchorfile>NeuronInputCurrent_8cpp.html</anchorfile>
+      <anchor>a133d8993848d3fa2c41270511f133eb7</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>NeuronPhysical.cpp</name>
+    <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/</path>
+    <filename>NeuronPhysical_8cpp.html</filename>
+    <includes id="NeuronPhysical_8h" name="NeuronPhysical.h" local="yes" import="no" module="no" objc="no">NeuronPhysical.h</includes>
+    <includes id="DebugMacros_8h" name="DebugMacros.h" local="yes" import="no" module="no" objc="no">DebugMacros.h</includes>
+    <member kind="define">
+      <type>#define</type>
+      <name>DEBUG_EVENTS</name>
+      <anchorfile>NeuronPhysical_8cpp.html</anchorfile>
+      <anchor>a133d8993848d3fa2c41270511f133eb7</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>scGenComp_PU_Abstract.cpp</name>
+    <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/</path>
+    <filename>scGenComp__PU__Abstract_8cpp.html</filename>
+    <includes id="scGenComp__PU__Abstract_8h" name="scGenComp_PU_Abstract.h" local="yes" import="no" module="no" objc="no">scGenComp_PU_Abstract.h</includes>
+    <includes id="DebugMacros_8h" name="DebugMacros.h" local="yes" import="no" module="no" objc="no">DebugMacros.h</includes>
+  </compound>
+  <compound kind="file">
+    <name>scGenComp_PU_Bio.cpp</name>
+    <path>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/</path>
+    <filename>scGenComp__PU__Bio_8cpp.html</filename>
+    <includes id="scGenComp__PU__Bio_8h" name="scGenComp_PU_Bio.h" local="yes" import="no" module="no" objc="no">scGenComp_PU_Bio.h</includes>
+    <includes id="DebugMacros_8h" name="DebugMacros.h" local="yes" import="no" module="no" objc="no">DebugMacros.h</includes>
   </compound>
   <compound kind="class">
     <name>EVENT_GenComp_t</name>
@@ -188,10 +338,6 @@
       <anchor>ga02984ecc38789e0359e5c133dd24c3fd</anchor>
       <arglist></arglist>
     </member>
-  </compound>
-  <compound kind="class">
-    <name>GenCompObserve_t</name>
-    <filename>classGenCompObserve__t.html</filename>
   </compound>
   <compound kind="class">
     <name>GenCompStageMachine_t</name>
@@ -311,63 +457,63 @@
       <type>virtual void</type>
       <name>Calculate_Do</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>a4de3701160dfcbc4cd2a60e8c8d01eef</anchor>
+      <anchor>a3e6514fed4b7c3bee8d54e64ecfbb736</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Create_Rushin</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>a8203036b354491ad049e3f3b420f658e</anchor>
+      <anchor>a7d5f3d382d2e8ffd1887005bc4950490</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Heartbeat_Computing_Do</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>a04fe9034e297048c272cd07cc9fa57d4</anchor>
+      <anchor>a546c874d86adeecd7168ea2949c5151e</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>Heartbeat_Computing_Stop</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>a2275d5e03c547b06fe69fe2a529349d2</anchor>
+      <anchor>a4b91867e55ccc2a44acb7e25feda7ce5</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Heartbeat_Delivering_Do</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>aa27870867ab7a0361692560ecc977e80</anchor>
+      <anchor>a6b75d51f0ae9f7504dbfde9cd506f5bf</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>Heartbeat_Delivering_Stop</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>a03aafa632cd215a7052225ebfe0bd753</anchor>
+      <anchor>acb5ff8fd98f3fa440f0f96361c988950</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Heartbeat_Relaxing_Do</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>ac48743aec7a1bf415eccf55e2b84cba5</anchor>
+      <anchor>add2a625c928b7503299669aaae09d3b5</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual bool</type>
       <name>Heartbeat_Relaxing_Stop</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>a535cedb66c2d5f7da379f007ee0774de</anchor>
+      <anchor>aa6d1dcabef0773544cbce238082f097f</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Initialize_Do</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>a1ff47ab959c01f24b977de58887dfa19</anchor>
+      <anchor>af37da71258b9c0b3812373d3cd16daf0</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -381,7 +527,7 @@
       <type>virtual void</type>
       <name>InputReceived_Do</name>
       <anchorfile>classNeuronPhysical.html</anchorfile>
-      <anchor>ad806dc719dded5aad7e2890cc533c7e3</anchor>
+      <anchor>af9836d8a9c965e55ba7becf545d6fc1a</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -406,7 +552,7 @@
       <type>virtual void</type>
       <name>ComputingEnd_Do</name>
       <anchorfile>classscGenComp__PU__Abstract.html</anchorfile>
-      <anchor>a8dbcf9d60a0005296f39182e5e24e8c9</anchor>
+      <anchor>a1bd632a9e6a3bf7ae006ac5f7c509e66</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -441,7 +587,7 @@
       <type>virtual void</type>
       <name>InputReceived_Do</name>
       <anchorfile>classscGenComp__PU__Abstract.html</anchorfile>
-      <anchor>a81d1c32b732fc5063d0b8acff9e83b92</anchor>
+      <anchor>aa07e11068b0fcafd28d6ffae522a3bf8</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
@@ -574,7 +720,7 @@
       <type>virtual void</type>
       <name>CancelEvents</name>
       <anchorfile>classscGenComp__PU__Abstract.html</anchorfile>
-      <anchor>a38f2debfaecadef6052ef85421ca68dd</anchor>
+      <anchor>a4f7411cdb012cb30acfda4001c29e158</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function" protection="protected">
@@ -595,7 +741,7 @@
       <type>virtual void</type>
       <name>Heartbeat_Adjust</name>
       <anchorfile>classscGenComp__PU__Abstract.html</anchorfile>
-      <anchor>a044c2adcc1a4d327aef600ee2a3a70e5</anchor>
+      <anchor>a460e76ace0e4bbccb4b398ebc049c252</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function" protection="protected" virtualness="virtual">
@@ -763,7 +909,7 @@
       <type>virtual void</type>
       <name>Synchronize_method</name>
       <anchorfile>classscGenComp__PU__Abstract.html</anchorfile>
-      <anchor>a4c1096b8b544c2e6b5724ff93b290770</anchor>
+      <anchor>a8c1ba93270a636b65fe22a8a1c75f5f2</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" protection="private">
@@ -817,35 +963,35 @@
       <type>virtual void</type>
       <name>Heartbeat_Adjust</name>
       <anchorfile>classscGenComp__PU__Bio.html</anchorfile>
-      <anchor>a6537f84ecc56386cfc364ddc6f5597d1</anchor>
+      <anchor>ab27eaed4e0d664daa25e37d09f348dc3</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Heartbeat_Computing_Do</name>
       <anchorfile>classscGenComp__PU__Bio.html</anchorfile>
-      <anchor>a1aacf9b0909eacef11041a684e89bce0</anchor>
+      <anchor>ac8c250cd7656b266b3782410d8a12c12</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Heartbeat_Delivering_Do</name>
       <anchorfile>classscGenComp__PU__Bio.html</anchorfile>
-      <anchor>addfd1439704d3c808f86dbe674f417a2</anchor>
+      <anchor>a57c784b5bc8f20f1e849b432d45566c0</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>Heartbeat_Relaxing_Do</name>
       <anchorfile>classscGenComp__PU__Bio.html</anchorfile>
-      <anchor>a64c6ee49fdeefd43550b27db1f596501</anchor>
+      <anchor>af018b6c96d882c6173f0966d104b3898</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual void</type>
       <name>InputReceived_Do</name>
       <anchorfile>classscGenComp__PU__Bio.html</anchorfile>
-      <anchor>a70cb7062ebb915a554588ac9e12d8436</anchor>
+      <anchor>a2785b5f064ffbcf7c16d657394120111</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -859,10 +1005,112 @@
       <type>virtual void</type>
       <name>Initialize_Do</name>
       <anchorfile>classscGenComp__PU__Bio.html</anchorfile>
-      <anchor>ae8acab11afcb1db4025b4627708135ef</anchor>
+      <anchor>a3eca6a3c95df8c10b2948dc8b849fee8</anchor>
       <arglist>()</arglist>
     </member>
     <docanchor file="classscGenComp__PU__Bio.html">fig_AP_Conceptual</docanchor>
+  </compound>
+  <compound kind="class">
+    <name>ScQtSimulator</name>
+    <filename>classScQtSimulator.html</filename>
+    <member kind="enumeration">
+      <type></type>
+      <name>Method</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>a89913da0ebb6b78a2b29299859c54bdb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="slot">
+      <type>void</type>
+      <name>mainLoop</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>ab535fc17c35002ad931132c768ac1e9e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>eventHappened</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>ad627b2a89dba90051ab0bc8ac42a1590</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>finished</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>ae2b46f78af8f0678d6012c0ef607a205</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="signal">
+      <type>void</type>
+      <name>valueChanged</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>a9b753a39a1bbd38377d70b62ab2366ee</anchor>
+      <arglist>(const QString &amp;value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>abort</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>a71216dee8b765d42936a4dd22937d9b1</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>requestMethod</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>a9df78766e1ac67f2f75e3079929c777f</anchor>
+      <arglist>(Method method)</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>doMethod3</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>a0714124e80ca0eb91d1f3cdde45b14fc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>doSimulatedTime</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>ae73d2e2bc3af0a43af34f07698784cbc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="private">
+      <type>void</type>
+      <name>doSimulationSteps</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>a751f096a1b0bd65668db49a79058dc3a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>bool</type>
+      <name>_abort</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>aa44f214811ea57d3dd26bd1f78062356</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>bool</type>
+      <name>_interrupt</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>aeaf13a6dc2a53cd9dcf18f93a219082a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>QWaitCondition</type>
+      <name>condition</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>a07d40dcc3267dadeb5304490a331fb07</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="private">
+      <type>QMutex</type>
+      <name>mutex</name>
+      <anchorfile>classScQtSimulator.html</anchorfile>
+      <anchor>ae743f9d3392e1467c66d96e723208a00</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>GENCOMP_MODULE_BIOLOGY</name>
@@ -889,34 +1137,15 @@
     <title>Background modules</title>
     <filename>group__GENCOMP__MODULE__PROCESS.html</filename>
     <subgroup>RELEASE_NOTES</subgroup>
-    <file>GenCompObserveType.h</file>
+    <file>GenCompStageMachineType.cpp</file>
     <file>GenCompStageMachineType.h</file>
+    <file>NeuronInputCurrent.cpp</file>
+    <file>NeuronPhysical.cpp</file>
+    <file>scGenComp_PU_Abstract.cpp</file>
     <file>scGenComp_PU_Abstract.h</file>
+    <file>scGenComp_PU_Bio.cpp</file>
     <class kind="class">EVENT_GenComp_t</class>
-    <class kind="class">GenCompObserve_t</class>
     <class kind="class">scGenComp_PU_Abstract</class>
-    <member kind="enumeration">
-      <type></type>
-      <name>GenCompObserve_t</name>
-      <anchorfile>group__GENCOMP__MODULE__PROCESS.html</anchorfile>
-      <anchor>ga8f758fb4091fb729e41280520a5daedf</anchor>
-      <arglist></arglist>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa7148812b0b011a51197ad0d161060c93">gcob_ObserveGroup</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa682aff27524fe3ad2f1b8233249362c7">gcob_ObserveModule</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfafb74a79d935ea79ed6557050f6dda372">gcob_ObserveComputingBegin</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa3da5b5cc881c9fc816f849653bb477aa">gcob_ObserveComputingEnd</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfad68bac1d7f73d44ee8ffbec15ba59252">gcob_ObserveDeliveringBegin</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfab14564fcfc75c3ef69f37a8d0bd7d8cb">gcob_ObserveDeliveringEnd</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa08f66dd7fe935b44b337c6f0d1502a63">gcob_ObserveFailed</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa5e28f729b9a81933ca129e79977dd7ee">gcob_ObserveHeartbeat</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa3fe1d4f38eefcd5f54e41586e2ed9913">gcob_ObserveInputReceived</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfad738df03f4af8b2dd739aa11b57e83c6">gcob_ObserveInitialize</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa42910b70b20ece68598391f7d198b2ed">gcob_ObserveRelaxingBegin</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa63b4b6b2344b14b46a38ef31b1479ea1">gcob_ObserveRelaxingEnd</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfaeb15ec56230400a483c6122e3c18be48">gcob_ObserveSynchronize</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfaadbc771b3248ca315ef8a5f8c44216cd">gcob_ObserveValueChanged</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__PROCESS.html" anchor="gga8f758fb4091fb729e41280520a5daedfa14446aaf9a747e09b4b1d302e5905b2f">gcob_SIZE</enumvalue>
-    </member>
     <member kind="variable">
       <type>sc_core::sc_event</type>
       <name>EVENT_GenComp_t::ClockDown</name>

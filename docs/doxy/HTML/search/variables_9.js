@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['transmissionbegin_0',['TransmissionBegin',['../group__GENCOMP__MODULE__PROCESS.html#ga02984ecc38789e0359e5c133dd24c3fd',1,'EVENT_GenComp_t']]]
+  ['synchronize_0',['Synchronize',['../group__GENCOMP__MODULE__PROCESS.html#gaf293d5176ccde11d26cae236c0f7377a',1,'EVENT_GenComp_t']]]
 ];

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['observernotify_0',['ObserverNotify',['../classscGenComp__PU__Abstract.html#afb4e5d3dc957fab774e3228b05ba77a3',1,'scGenComp_PU_Abstract']]],
-  ['observingbit_5fget_1',['ObservingBit_Get',['../classscGenComp__PU__Abstract.html#abd6bf6ea589d80f5a7b4a130bf6d18d9',1,'scGenComp_PU_Abstract']]],
-  ['observingbit_5fset_2',['ObservingBit_Set',['../classscGenComp__PU__Abstract.html#ace7c3b81159733df6d705fc597d9cb32',1,'scGenComp_PU_Abstract']]],
-  ['operationcounter_5fget_3',['OperationCounter_Get',['../classscGenComp__PU__Abstract.html#a399d6568bedd90fcbf4f71f9a06b3418',1,'scGenComp_PU_Abstract']]]
+  ['mainloop_0',['mainLoop',['../classScQtSimulator.html#ab535fc17c35002ad931132c768ac1e9e',1,'ScQtSimulator']]],
+  ['membranecapacitypf_5fget_1',['MembraneCapacityPF_Get',['../classNeuronConstants.html#a4e9fbceab7f6ae1a1d7351491c922154',1,'NeuronConstants']]],
+  ['membranefromrc_5ftaumsec_5fset_2',['MembraneFromRC_TauMSec_Set',['../classNeuronConstants.html#ac9be591eec52ce7f58522ff1de58464f',1,'NeuronConstants']]],
+  ['membraneresistancegohm_5fget_3',['MembraneResistanceGOhm_Get',['../classNeuronConstants.html#a4ca417130372cb0b5c78e1b03131cc84',1,'NeuronConstants']]],
+  ['membraneresistancegohm_5fset_4',['MembraneResistanceGOhm_Set',['../classNeuronConstants.html#a6b479758b3f19d6293916922765e3683',1,'NeuronConstants']]],
+  ['membraneresistanceohm_5fget_5',['MembraneResistanceOhm_Get',['../classNeuronConstants.html#aff28872c0f260e8d6c5d7d7b64fbca53',1,'NeuronConstants']]]
 ];

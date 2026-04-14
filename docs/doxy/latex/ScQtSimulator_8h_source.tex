@@ -1,0 +1,113 @@
+\doxysection{Sc\+Qt\+Simulator.\+h}
+\label{ScQtSimulator_8h_source}\index{ScQtSimulator.h@{ScQtSimulator.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ SCQTSIMULATOR\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ SCQTSIMULATOR\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\#include\ <sysc>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}sysc/kernel/sc\_simcontext.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}sysc/kernel/sc\_time.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QTime>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QWaitCondition>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ Benchmarking\ is\ abused\ here;\ to\ not\ repeat\ the\ code,\ is\ used\ unconditionally}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MAKE\_TIME\_BENCHMARKING\ \ }\textcolor{comment}{//\ Do\ not\ remove;\ used\ to\ measure\ processor\ time}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}MacroTimeBenchmarking.h"{}}\ \ \ \ \textcolor{comment}{//\ Must\ be\ after\ the\ '\#define\ MAKE\_TIME\_BENCHMARKING'\ to\ have\ its\ effect}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }ScQtSimulator\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{explicit}\ ScQtSimulator(QObject\ *parent\ =\ 0);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{enum}\ Method\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Method\_SingleSteps\ =\ 1,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Method\_SimulatedTime\ =\ 2,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Method3\ =\ 3}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ requestMethod(Method\ method);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ abort();}
+\DoxyCodeLine{00063\ \ \ \ \ QTime\ m\_clock\_time\_begin;\ \ \ \textcolor{comment}{//\ The\ beginning\ of\ this\ simulation,\ [ms]}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ Return\ user\ time\ of\ simulation,\ in\ seconds}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{double}\ userTime\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ int64\_t\ TimeDiff\ =\ m\_clock\_time\_begin.secsTo(QTime::currentTime());}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ \ \ \ if(clock\_time\ <0)\ \ //\ we\ are\ overnight}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ clock\_time\ +=\ 24*60*60*1000;}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TimeDiff;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ userTime\_Reset(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ m\_clock\_time\_begin\ =\ QTime::currentTime();}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ scTime\_Reset(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ m\_sc\_time\_begin\ =\ sc\_core::sc\_time\_stamp();}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ sc\_core::sc\_time\ scTime\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sc\_core::sc\_time\_stamp()\ -\/\ m\_sc\_time\_begin;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ TimesReset()}
+\DoxyCodeLine{00085\ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ scTime\_Reset();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ userTime\_Reset();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ systemTime\_Reset();}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Return\ processor\ time\ from\ the\ benchmark,\ [us]}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ systemTime\_Get()}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration\_cast<std::chrono::microseconds>(m\_system\_s).count();}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ systemTime\_Reset()}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ m\_system\_t\ =chrono::steady\_clock::now();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ m\_system\_x\ =\ m\_system\_s\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ BENCHMARK\_TIME\_RESET(\&m\_system\_t,\&m\_system\_x,\&m\_system\_s);\ \textcolor{comment}{//\ Reset\ at\ the\ very\ beginning,\ say\ in\ the\ constructor}}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ NoOfSteps\_Set(uint64\_t\ N\ =\ 1)\{\ m\_NoOfSteps\ =\ N;\}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ TimeOfSteps\_Set(sc\_core::sc\_time\ T\ =\ sc\_core::sc\_time(100,sc\_core::SC\_US))\{\ m\_TimeOfAStep\ =\ T;\}}
+\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ Define\ time\ benchmarking\ variables\ and\ utility\ functions}}
+\DoxyCodeLine{00105\ \ \ \ \ chrono::steady\_clock::time\_point\ m\_system\_t\ =chrono::steady\_clock::now();}
+\DoxyCodeLine{00106\ \ \ \ \ std::chrono::duration<\ int64\_t,\ nano>\ m\_system\_x,m\_system\_s\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
+\DoxyCodeLine{00107\ \ \ \ \ uint64\_t\ m\_NoOfSteps\ =\ 1;}
+\DoxyCodeLine{00108\ \ \ \ \ sc\_core::sc\_time\ m\_TimeOfAStep\ =\ sc\_core::sc\_time(100,sc\_core::SC\_US);}
+\DoxyCodeLine{00109\ \ \ \ \ sc\_core::sc\_time\ m\_sc\_time\_begin;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Currently\ requested\ method}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00113\ \ \ \ \ Method\ \_method;}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_abort;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_interrupt;}
+\DoxyCodeLine{00125\ \ \ \ \ QMutex\ mutex;}
+\DoxyCodeLine{00129\ \ \ \ \ QWaitCondition\ condition;}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ doSimulationSteps();}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ doSimulatedTime();}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ doMethod3();}
+\DoxyCodeLine{00149\ signals:}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ valueChanged(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ eventHappened(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ finished();}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ mainLoop();}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCQTSIMULATOR\_H}}
+
+\end{DoxyCode}

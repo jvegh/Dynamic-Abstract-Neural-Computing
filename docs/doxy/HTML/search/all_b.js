@@ -1,14 +1,19 @@
 var searchData=
 [
-  ['neuronconstants_0',['neuronconstants',['../classNeuronConstants.html',1,'NeuronConstants'],['../classNeuronConstants.html#a1c970c7d514554aebeef16015f59e9ec',1,'NeuronConstants::NeuronConstants()']]],
-  ['neuroninputcurrent_1',['neuroninputcurrent',['../classNeuronInputCurrent.html',1,'NeuronInputCurrent'],['../classNeuronInputCurrent.html#af41bf336678c16b9b38e922e8bc43d16',1,'NeuronInputCurrent::NeuronInputCurrent()']]],
-  ['neuroninputcurrent_2eh_2',['NeuronInputCurrent.h',['../NeuronInputCurrent_8h.html',1,'']]],
-  ['neuroninputcurrent_5ft_3',['NeuronInputCurrent_t',['../group__GENCOMP__MODULE__BIOLOGY.html#ga22e6c711bd2718618f135dad9211ea5f',1,'NeuronInputCurrent.h']]],
-  ['neuronphysical_4',['neuronphysical',['../classNeuronPhysical.html',1,'NeuronPhysical'],['../classNeuronPhysical.html#a374b38525036a085d975016a9f5e9b22',1,'NeuronPhysical::NeuronPhysical()']]],
-  ['neuronphysical_2eh_5',['NeuronPhysical.h',['../NeuronPhysical_8h.html',1,'']]],
-  ['noc_6',['NoC',['../GLOSSARY.html#GLOSSARY_NoC',1,'']]],
-  ['noofinputsreceived_5fget_7',['NoOfInputsReceived_Get',['../classscGenComp__PU__Abstract.html#ae00a1e214d66761f99ddfef64839fbb0',1,'scGenComp_PU_Abstract']]],
-  ['notes_8',['General release notes',['../group__RELEASE__NOTES.html#Release_Notes',1,'']]],
-  ['notes_20and_20porting_9',['Release notes and porting',['../ReleaseNotes.html',1,'']]],
-  ['notitle_10',['notitle',['../index.html',1,'']]]
+  ['m_5fbegintime_0',['m_BeginTime',['../classNeuronInputCurrent.html#a3e30bc25fc344e685064ba2b16ee0d30',1,'NeuronInputCurrent']]],
+  ['macrotimebenchmarking_2eh_1',['MacroTimeBenchmarking.h',['../MacroTimeBenchmarking_8h.html',1,'']]],
+  ['mainloop_2',['mainLoop',['../classScQtSimulator.html#ab535fc17c35002ad931132c768ac1e9e',1,'ScQtSimulator']]],
+  ['mcentralclockmode_3',['mCentralClockMode',['../classscGenComp__PU__Abstract.html#ad186e82d86f339001ff9db119ab93296',1,'scGenComp_PU_Abstract']]],
+  ['mcp_4',['MCP',['../GLOSSARY.html#GLOSSARY_MCP',1,'']]],
+  ['membranecapacitypf_5fget_5',['MembraneCapacityPF_Get',['../classNeuronConstants.html#a4e9fbceab7f6ae1a1d7351491c922154',1,'NeuronConstants']]],
+  ['membranefromrc_5ftaumsec_5fset_6',['MembraneFromRC_TauMSec_Set',['../classNeuronConstants.html#ac9be591eec52ce7f58522ff1de58464f',1,'NeuronConstants']]],
+  ['membraneresistancegohm_5fget_7',['MembraneResistanceGOhm_Get',['../classNeuronConstants.html#a4ca417130372cb0b5c78e1b03131cc84',1,'NeuronConstants']]],
+  ['membraneresistancegohm_5fset_8',['MembraneResistanceGOhm_Set',['../classNeuronConstants.html#a6b479758b3f19d6293916922765e3683',1,'NeuronConstants']]],
+  ['membraneresistanceohm_5fget_9',['MembraneResistanceOhm_Get',['../classNeuronConstants.html#aff28872c0f260e8d6c5d7d7b64fbca53',1,'NeuronConstants']]],
+  ['method_10',['Method',['../classScQtSimulator.html#a89913da0ebb6b78a2b29299859c54bdb',1,'ScQtSimulator']]],
+  ['mfixedcomputingtime_11',['mFixedComputingTime',['../classscGenComp__PU__Abstract.html#a0fd72a2b7c76176e533f18edc4c522b2',1,'scGenComp_PU_Abstract']]],
+  ['mlocaltimebase_12',['mLocalTimeBase',['../classscGenComp__PU__Abstract.html#ac6bd366a8a5948db90a51fe7ee010be3',1,'scGenComp_PU_Abstract']]],
+  ['mobservedbits_13',['mObservedBits',['../classscGenComp__PU__Abstract.html#aa0bdf218749dec818733cc2a9f92b8ef',1,'scGenComp_PU_Abstract']]],
+  ['modules_14',['Background modules',['../group__GENCOMP__MODULE__PROCESS.html',1,'']]],
+  ['mutex_15',['mutex',['../classScQtSimulator.html#ae743f9d3392e1467c66d96e723208a00',1,'ScQtSimulator::mutex'],['../GLOSSARY.html#GLOSSARY_mutex',1,'mutex']]]
 ];

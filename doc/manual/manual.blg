@@ -12,45 +12,45 @@ Warning--empty chapter and pages in CardiacAPS:1980
 Warning--empty publisher in TheBoookOfGENESIS:2003
 Warning--empty pages in PhysicsForHodgkinHuxley:2024
 Warning--empty chapter and pages in InformationTheoryIntersection:2008
-You've used 175 entries,
+You've used 176 entries,
             2952 wiz_defined-function locations,
-            1927 strings with 44474 characters,
-and the built_in function-call counts, 51051 in all, are:
-= -- 5097
-> -- 1326
-< -- 17
-+ -- 555
-- -- 380
-* -- 3678
-:= -- 6861
-add.period$ -- 274
-call.type$ -- 175
-change.case$ -- 171
+            1940 strings with 44850 characters,
+and the built_in function-call counts, 51609 in all, are:
+= -- 5150
+> -- 1340
+< -- 19
++ -- 560
+- -- 384
+* -- 3728
+:= -- 6927
+add.period$ -- 276
+call.type$ -- 176
+change.case$ -- 172
 chr.to.int$ -- 27
-cite$ -- 180
-duplicate$ -- 1498
-empty$ -- 6023
-format.name$ -- 478
-if$ -- 13582
+cite$ -- 181
+duplicate$ -- 1521
+empty$ -- 6087
+format.name$ -- 483
+if$ -- 13730
 int.to.chr$ -- 0
-int.to.str$ -- 175
-missing$ -- 183
-newline$ -- 676
-num.names$ -- 176
-pop$ -- 1051
+int.to.str$ -- 176
+missing$ -- 184
+newline$ -- 681
+num.names$ -- 179
+pop$ -- 1063
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 3391
+skip$ -- 3426
 stack$ -- 0
-substring$ -- 2440
-swap$ -- 468
-text.length$ -- 8
+substring$ -- 2468
+swap$ -- 482
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 314
-width$ -- 178
-write$ -- 1663
+while$ -- 318
+width$ -- 179
+write$ -- 1676
 (There were 6 warnings)

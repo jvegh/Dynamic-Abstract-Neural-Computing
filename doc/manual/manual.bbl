@@ -21,6 +21,16 @@ J.~von Neumann, {First draft of a report on the EDVAC}, IEEE Annals of the
 \newblock \href {https://doi.org/10.1109/85.238389}
   {\path{doi:10.1109/85.238389}}.
 
+\bibitem{VollmerLimitsOfBiology:1995}
+G.~Vollmer,
+  \href{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}{The
+  limits of biology}, in: D.~Prawitz, B.~Skyrms, D.~Westerståhl (Eds.), Logic,
+  Methodology and Philosophy of Science IX, Vol. 134 of Studies in Logic and
+  the Foundations of Mathematics, Elsevier, Amsterdam, 1995, pp. 659--676.
+\newblock \href {https://doi.org/https://doi.org/10.1016/S0049-237X(06)80068-6}
+  {\path{doi:https://doi.org/10.1016/S0049-237X(06)80068-6}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}
+
 \bibitem{BrainInitiative10:2024}
 J.~Ngai, Brain @ 10: A decade of innovation, Neuron 112 (2024).
 \newblock \href {https://doi.org/10.1016/j.neuron.2024.09.007}

@@ -105,16 +105,19 @@ void SimulatorControlWindow::on_eventHappened()
 
 void SimulatorControlWindow::on_startButton_clicked()
 {
-    if(ui->timeMode->isChecked())
+/*
+   if(ui->timeMode->isChecked())
     {
-        parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
-    }
+     }
     if(ui->stepMode->isChecked())
     {
-        parent_Get()->m_Simulator->TimeOfSteps_Set(sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US));
-    }
+    }*/
+    parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
+    parent_Get()->m_Simulator->TimeOfSteps_Set(sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US));
+    parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
- }
+}
+
 void SimulatorControlWindow::on_stopButton_clicked()
 {
     qDebug()<<"Stop simulator in Thread "<<this->QObject::thread()->currentThreadId();

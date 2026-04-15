@@ -193,7 +193,6 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
   RunningPoint->setPen(QPen(Qt::red));
 
-
   ui->customPlot->addGraph(); // blue line
   ui->customPlot->graph(1)->setName("AP phase plot");
   ui->customPlot->graph(1)->setPen(QPen(QColor(255, 110, 40)));

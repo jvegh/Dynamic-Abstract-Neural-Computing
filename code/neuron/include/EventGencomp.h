@@ -19,11 +19,11 @@
  *  That is, the derived objects do not need
  *  to consider SystemC programming, except the format prescriptions.
  *  Actually, the above main duties govern processing of the abstract computing units.
- *  The operating principle of event processing:
+ *  The operating principle of event processing is as fopllows.
  *
- * If the old and the new states are not compatible, that routine asserts. (wrong event)
+ * If the old and the new states are not compatible, that routine asserts (wrong event).
  * Following a normal return, the HW specific operation of the \gls{PU} is executed.
- * The next state is invoked by issuing a EVENT_GenComp.XXX.notify() notification.
+ * The next state is invoked by issuing a EVENT_GenComp_PU_Abstract::notify() notification.
  * The length of operations is simulated by issuing a wait() call to SystemC kernel.
  * (technically, 'next_trigger()' is used, to mitigate system's non-payload activity.
  * In this way, only one event per active \gls{PU} loads the SystemC's scheduler.)
@@ -31,7 +31,7 @@
  * There are continuous actions; they begin their activity in a XXXBegin_method
  * and terminate it in a XXXEnd_method. The event XXXBegin is issued by either another state's XXXEnd_method
  * or by the simulator scGenComp_Simulator. The XXXEnd events are generated during processing of the state.
- * The corresponding events are issued in form of a EVENT_GenComp.XXX.notify(SC_ZERO_TIME).
+ * The corresponding events are issued in form of a EVENT_GenComp_PU_Abstract::notify(SC_ZERO_TIME).
  * (the argument SC_ZERO_TIME means: immediately after activities at this time slot terminated).
  * The non-virtual methods XXXBegin_method and  XXXEnd_method should not be overridden
  * (because of the event handling method of SystemC); they use the virtual methods XXXBegin_Do and XXXEnd_Do.

@@ -84,15 +84,54 @@
       <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
       <anchor>ga081db2c407b8542a0012596012f2423b</anchor>
       <arglist></arglist>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba3d4e3d8d0c94a9cfe5892f70d5499dd6">gcsm_Sleeping</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba6aef06c7b547ff8191fd2d179245e3cc">gcsm_Relaxing</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423baa4c9774958a12ea2cb7076e7cf666c65">gcsm_Computing</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423bac00feaed46a015f1cf21d6ce2bab1cd0">gcsm_Delivering</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423baf73f71fa2407aec1df06b67ce2a4fa51">gcsm_Initializing</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423baeac662a419441c6037d7c813d920b07a">gcsm_InputReceived</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba07d34ef7d1ba61756025517c1f728416">gcsm_Synchronizing</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba07e87526bf1e1b0e4b23fe2c0b5cff25">gcsm_Failed</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423badc1446e1203cf27706ab0b8a0ae83cb8">gcsm_SIZE</enumvalue>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Sleeping</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423baa95dea4136312081bba4a5d34678db80</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Relaxing</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423ba7ecb019c0394f41c93a163cd415bf050</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Computing</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423baf8cf941ebb7337b842cc57e5080ea8bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Delivering</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423bab367670134dddf94cfca59dd0b2b9b43</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Initializing</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423ba0d67d794efaafb98a5b2b925b56416c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_InputReceived</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423baab98640299280f02be0a7efd2ebc5e9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Synchronizing</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423ba47fcda006e92f6df1aa5c2d6f2b153ce</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Failed</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423ba99bd5a9a3b6a522328d7c47c385b67e3</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="file">
@@ -1249,15 +1288,54 @@
       <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
       <anchor>ga081db2c407b8542a0012596012f2423b</anchor>
       <arglist></arglist>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba3d4e3d8d0c94a9cfe5892f70d5499dd6">gcsm_Sleeping</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba6aef06c7b547ff8191fd2d179245e3cc">gcsm_Relaxing</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423baa4c9774958a12ea2cb7076e7cf666c65">gcsm_Computing</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423bac00feaed46a015f1cf21d6ce2bab1cd0">gcsm_Delivering</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423baf73f71fa2407aec1df06b67ce2a4fa51">gcsm_Initializing</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423baeac662a419441c6037d7c813d920b07a">gcsm_InputReceived</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba07d34ef7d1ba61756025517c1f728416">gcsm_Synchronizing</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423ba07e87526bf1e1b0e4b23fe2c0b5cff25">gcsm_Failed</enumvalue>
-      <enumvalue file="group__GENCOMP__MODULE__DEMO.html" anchor="gga081db2c407b8542a0012596012f2423badc1446e1203cf27706ab0b8a0ae83cb8">gcsm_SIZE</enumvalue>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Sleeping</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423baa95dea4136312081bba4a5d34678db80</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Relaxing</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423ba7ecb019c0394f41c93a163cd415bf050</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Computing</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423baf8cf941ebb7337b842cc57e5080ea8bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Delivering</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423bab367670134dddf94cfca59dd0b2b9b43</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Initializing</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423ba0d67d794efaafb98a5b2b925b56416c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_InputReceived</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423baab98640299280f02be0a7efd2ebc5e9a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Synchronizing</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423ba47fcda006e92f6df1aa5c2d6f2b153ce</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>gcsm_Failed</name>
+      <anchorfile>group__GENCOMP__MODULE__DEMO.html</anchorfile>
+      <anchor>gga081db2c407b8542a0012596012f2423ba99bd5a9a3b6a522328d7c47c385b67e3</anchor>
+      <arglist></arglist>
     </member>
   </compound>
   <compound kind="group">

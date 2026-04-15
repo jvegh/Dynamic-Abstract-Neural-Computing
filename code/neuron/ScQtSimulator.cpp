@@ -1,5 +1,5 @@
 /** @file ScQtSimulator.h
- *  @brief A semi general purpose simulator for SystemC task, using Qt's stuff
+ *  @brief A semi-general purpose simulator for SystemC task, using Qt's stuff
  *  Ideas taken from  http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
  *  https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC
  *  and https://github.com/mortbopet/Ripes
@@ -7,16 +7,17 @@
 /*
  *  @author János Végh (jvegh)
  *  @bug No known bugs.
+ *  Last edited 2026.04.14
 */
 
-#include <systemc>
+//#include <systemc>
+// Maybe a timer is not needed
 #include <QTimer>
 #include <QEventLoop>
 #include <QThread>
 #include <QDebug>
 
 #include "ScQtSimulator.h"
-
 
 ScQtSimulator::ScQtSimulator(QObject *parent) :
     QObject(parent)
@@ -26,6 +27,7 @@ ScQtSimulator::ScQtSimulator(QObject *parent) :
     sc_start( sc_core::SC_ZERO_TIME);
     TimesReset();
 }
+
 
 void ScQtSimulator::requestMethod(ScQtSimulator::Method method)
 {
@@ -75,7 +77,6 @@ void ScQtSimulator::doSimulatedTime()
     }
     emit eventHappened();
 }
-
 
 
 void ScQtSimulator::doMethod3()

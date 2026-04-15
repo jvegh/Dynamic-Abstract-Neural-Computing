@@ -123,7 +123,7 @@ class scGenComp_PU_Abstract: public sc_core::sc_module
 
     virtual ~scGenComp_PU_Abstract(void); // Must be overridden
 
-    /** @brief The extra processing for beginning computing. Called from @see ComputingBegin_method()
+    /** @brief The extra processing for beginning computing. Called from ComputingBegin_method()
      */
     virtual void ComputingBegin_Do(){}
 

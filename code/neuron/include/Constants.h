@@ -30,10 +30,10 @@ using namespace std;
  *The system uses numbers in units:
  * - resistivity GOhm so [R] (\f$10^9\f$ Ohm)
  * - capacity pF  so [C] (\f$10^{-12}\f$ Farad
- * - time ms so [t] (\f$10^{-3}\f$), so [R*C] is (\f$10^9*10^{-12}=10^{-3}\f$
+ * - time ms so [t] (\f$10^{-3}\f$), so [R*C] is (\f$10^9*10^{-12}=10^{-3}\f$)
  * - voltage mV so [V] is (\f$10^{-3}\f$)
  * - current pA (\f$10^{-12}\f$)
- * -  so current from V/R \f$ 10^{-3]/10^{9}=10^{-12} \f$ pA
+ * -  so current from V/R \f$ 10^{-3}/10^{9}=10^{-12} \f$ pA
  * -  so [I/C] (\f$10^{-12}/10^{-12}\f$ V/s)
  * -  so \f$ \frac{1}{C}\frac{dI}{dt} = [A/s/(As)*V] = [Cb/s^2] \f$
  * -  so [I*R] (\f$ 10^{-12}*10^9\f$ = mV)

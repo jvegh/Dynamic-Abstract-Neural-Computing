@@ -41,6 +41,15 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
         (ui->Slider3Value->setText(QString::number(ui->Slider3->value(),'f',2)));
     });
 
+    // Set up display slowdown Slider
+    ui->DisplaySlider->setMinimum(100);
+    ui->DisplaySlider->setMaximum(10000);
+    ui->DisplaySlider->setValue(1000);
+    ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value()));
+    QObject::connect(ui->DisplaySlider, &QSlider::valueChanged, this, [=] () {
+        (ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value())));
+    });
+
     setWindowTitle(tr("Neuron-ScQt simulator control dialog"));
     setMinimumSize(360, 300);
 //    resize(500, 300);
@@ -61,7 +70,7 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
     qDebug()<<"Starting thread in Thread "<<this->QObject::thread()->currentThreadId();
     thread->start();
     ui->SimulatedTime->setText("Help");
-    connect(parent_Get()->m_Simulator, SIGNAL(valueChanged(QString)), ui->label, SLOT(setText(QString)));
+//    connect(parent_Get()->m_Simulator, SIGNAL(valueChanged(QString)), ui->label, SLOT(setText(QString)));
     connect(parent_Get()->m_Simulator,SIGNAL(eventHappened()), this, SLOT(on_eventHappened()));
 }
 
@@ -112,19 +121,6 @@ void SimulatorControlWindow::on_stopButton_clicked()
     QString message = tr("Stop button clicked");
     parent_Get()->statusBar()->showMessage(message, 1200);
 }
-/*void SimulatorControlWindow::on_stepButton_clicked()
-{
-    qDebug()<<"Step simulator in Thread "<<this->QObject::thread()->currentThreadId();
-}
-*/
-
-/*
-void SimulatorControlWindow::on_method2Button_clicked()
-{
-    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SimulatedTime);
-    QString message = tr("Method2 requested");
-    parent_Get()->statusBar()->showMessage(message, 1200);
-}*/
 
 //#if 0
 // Pass responsibility of closing to the main window

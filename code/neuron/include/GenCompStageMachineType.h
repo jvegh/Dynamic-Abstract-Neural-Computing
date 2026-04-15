@@ -20,6 +20,11 @@
 using namespace std;
 //#include <bitset>
 
+
+/*! \var GenCompStageMachine_t::GenCompStageMachine_t::gcsm_Sleeping
+ * The description of the first enum value.
+ */
+
 /*! \class GenCompStageMachine_t
  * The operation of an elementary computing unit of general computing is modelled as a multiple-state machine-like structure,
  * with internal stage stored a variable scGenComp_PU_Abstract::mStageFlag.
@@ -50,6 +55,10 @@ can be called within those functions.
  *   - in biological mode, deliver immediate spike
  *   - in technical mode, deliver immediate result (such and in a \gls{GPU})
  *   Passes to Relaxing (after issuing 'End Computing')
+ *
+ *
+ *
+ *
 */
 
 /*! \var GenCompStageMachine_t::gcsm_Sleeping
@@ -116,6 +125,7 @@ can be called within those functions.
  * Begins at EVENT_GenComp_type::Synchronize
  */
 
+
 /*! \var GenCompStageMachine_t::gcsm_Failed
  *  Enables to simulate failed operations instantly.
  *  (Actually, re-initializes unit)
@@ -125,8 +135,8 @@ can be called within those functions.
 
 
 enum class  GenCompStageMachine_t :int8_t {
-    gcsm_Sleeping=0, /*!< same as gcsm_Relaxing, but no Heartbeats */
-    gcsm_Relaxing,/*!< Relaxing */
+    gcsm_Sleeping=0, // *!< same as gcsm_Relaxing, but no Heartbeats * /
+    gcsm_Relaxing,// *!< Relaxing * /
     gcsm_Computing,
     gcsm_Delivering,
     gcsm_Initializing,
@@ -135,6 +145,7 @@ enum class  GenCompStageMachine_t :int8_t {
     gcsm_Failed,
     gcsm_SIZE
 };
+
 
 #include <string>
 

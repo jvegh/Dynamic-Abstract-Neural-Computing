@@ -15,24 +15,40 @@
 \DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{00021\ \textcolor{comment}{//\#include\ <bitset>}}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00127\ \textcolor{keyword}{enum\ class}\ \ GenCompStageMachine\_t\ :int8\_t\ \{}
-\DoxyCodeLine{00128\ \ \ \ \ gcsm\_Sleeping=0,\ }
-\DoxyCodeLine{00129\ \ \ \ \ gcsm\_Relaxing,}
-\DoxyCodeLine{00130\ \ \ \ \ gcsm\_Computing,}
-\DoxyCodeLine{00131\ \ \ \ \ gcsm\_Delivering,}
-\DoxyCodeLine{00132\ \ \ \ \ gcsm\_Initializing,}
-\DoxyCodeLine{00133\ \ \ \ \ gcsm\_InputReceived,}
-\DoxyCodeLine{00134\ \ \ \ \ gcsm\_Synchronizing,}
-\DoxyCodeLine{00135\ \ \ \ \ gcsm\_Failed,}
-\DoxyCodeLine{00136\ \ \ \ \ gcsm\_SIZE}
-\DoxyCodeLine{00137\ \};}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00143\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ GenCompStagesString[];}
-\DoxyCodeLine{00144\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GenCompStageMachineType2String(GenCompStageMachine\_t\ e);}
-\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCGENCOMPSTAGEMACHINE\_H}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//class}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{enum}\ \ \ \ GenCompStageMachine\_t\ :int8\_t\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ gcsm\_Sleeping=0,\ \textcolor{comment}{//\ *!<\ same\ as\ gcsm\_Relaxing,\ but\ no\ Heartbeats\ *\ /}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ gcsm\_Relaxing,\textcolor{comment}{//\ *!<\ Relaxing\ *\ /}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ gcsm\_Computing,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ gcsm\_Delivering,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ gcsm\_Initializing,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ gcsm\_InputReceived,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ gcsm\_Synchronizing,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ gcsm\_Failed,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ gcsm\_SIZE}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00148\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00149\ \textcolor{comment}{enum\ class\ \ GenCompStageMachine\_t\ :int8\_t\ \{}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ \ \ \ gcsm\_Sleeping=0,\ //\ *!<\ same\ as\ gcsm\_Relaxing,\ but\ no\ Heartbeats\ *\ /}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ \ \ \ gcsm\_Relaxing,//\ *!<\ Relaxing\ *\ /}}
+\DoxyCodeLine{00152\ \textcolor{comment}{\ \ \ \ gcsm\_Computing,}}
+\DoxyCodeLine{00153\ \textcolor{comment}{\ \ \ \ gcsm\_Delivering,}}
+\DoxyCodeLine{00154\ \textcolor{comment}{\ \ \ \ gcsm\_Initializing,}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ \ \ gcsm\_InputReceived,}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ gcsm\_Synchronizing,}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ \ \ \ gcsm\_Failed,}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ \ \ gcsm\_SIZE}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\};}}
+\DoxyCodeLine{00160\ \textcolor{comment}{}}
+\DoxyCodeLine{00161\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ GenCompStagesString[];}
+\DoxyCodeLine{00168\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GenCompStageMachineType2String(GenCompStageMachine\_t\ e);}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCGENCOMPSTAGEMACHINE\_H}}
 
 \end{DoxyCode}

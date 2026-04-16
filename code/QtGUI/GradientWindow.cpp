@@ -46,6 +46,12 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
    setWindowTitle(QString(m_neuron->name())+QString(" voltage gradient"));
   statusBar()->clearMessage();
    ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
+  this->setStyleSheet("color: Navy;"
+                      "title-color:  LightGray;"
+                       "border-color:  LightGray;"
+                      //                        "background-color: rgb(50,50, 150);"
+                      //                        "border: 1px blue;"
+                      "background-color:  LightGray;");
 
    connect(ui->actionScreenshot, &QAction::triggered, this, &GradientWindow::screenShot);
 

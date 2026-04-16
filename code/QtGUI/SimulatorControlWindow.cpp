@@ -5,6 +5,7 @@
 #include <QStatusBar>
 #include <QDebug>
 #include <QCloseEvent>
+#include <unistd.h>
 #include "SimulatorControlWindow.h"
 #include "ui_SimulatorControlWindow.h"
 #include "ScQtNeuron_MainWindow.h"
@@ -16,6 +17,11 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
     ui(new Ui::SimulatorControlWindow),m_parent(parent)
 {
     ui->setupUi(this);
+    this->setStyleSheet("color: Navy;"
+                        "border-color:  LightGray;"
+                        //                        "background-color: rgb(50,50, 150);"
+                        //                        "border: 1px blue;"
+                        "background-color:  LightGray;");
     // Set up Slider 1
     ui->Slider1->setMinimum(3);
     ui->Slider1->setMaximum(17);
@@ -94,29 +100,42 @@ void SimulatorControlWindow::on_resetButton_clicked()
     qDebug()<<"Reset simulator in Thread "<<this->QObject::thread()->currentThreadId();
 }
 
+/*
+ * Simulator returned control
+ */
 void SimulatorControlWindow::on_eventHappened()
 {
+    m_T = (sc_core::sc_time_stamp()-m_T);
 //    qDebug()<<"Event happened @ "<< 1000*sc_time_stamp().to_seconds() << ":" << m_Neuron->MembraneAbsolutePotential_Get();
+    uint64_t DiffTime = (m_T).to_seconds()*1000.*1000.1000*ui->DisplaySlider->value();
+    usleep(DiffTime);
+    // Display the time values
     ui->SimulatedTime->setText(QString(sc_time_String_Get(parent_Get()->m_Simulator->scTime_Get()).c_str()));
     ui->timeUser->setText(QString(time_String_Get(parent_Get()->m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     ui->timeSystem->setText(QString(time_String_Get(parent_Get()->m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
+
+    parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value()-1);
+
+    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
+    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 }
 
 
 void SimulatorControlWindow::on_startButton_clicked()
 {
-/*
-   if(ui->timeMode->isChecked())
-    {
-     }
-    if(ui->stepMode->isChecked())
-    {
-    }*/
     parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
     parent_Get()->m_Simulator->TimeOfSteps_Set(sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US));
     parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
-    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
-}
+    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
+
+   if(ui->timeMode->isChecked())
+    {
+    }
+    if(ui->stepMode->isChecked())
+    {
+         parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+    }
+ }
 
 void SimulatorControlWindow::on_stopButton_clicked()
 {

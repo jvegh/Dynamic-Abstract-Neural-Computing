@@ -70,9 +70,9 @@ private slots:
 
 private:
   Ui::VoltageWindow *ui;
-    ScQtSimulator * m_Simulator;
+  ScQtSimulator * m_Simulator;
   NeuronPhysical *m_neuron;
-    void setupMenus();
+  void setupMenus();
   QString demoName;
   QTimer dataTimer;
   QCPItemTracer *itemDemoPhaseTracer;

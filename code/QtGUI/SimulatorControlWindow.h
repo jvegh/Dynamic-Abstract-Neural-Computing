@@ -45,6 +45,7 @@ private:
      */
     void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
     ScQtNeuron_MainWindow *m_parent;
+    sc_core::sc_time m_T;
 private slots:
     void on_resetButton_clicked();
     void on_startButton_clicked();

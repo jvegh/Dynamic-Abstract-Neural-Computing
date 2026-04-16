@@ -50,7 +50,24 @@ void ScQtSimulator::abort()
 
 void ScQtSimulator::doSimulationSteps()
 {
-    sc_core::sc_time OldTime = sc_core::sc_time_stamp();
+/*    sc_core::sc_time OldTime = sc_core::sc_time_stamp();
+    uint64_t i = 0;*/
+//    while( !_abort && !_interrupt )
+    {
+        sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity(); // Make a single simulation step
+            BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
+        sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
+            BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
+//        sc_core::sc_time NewTime = sc_core::sc_time_stamp();
+    }
+    if (_abort || _interrupt) {
+        qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();
+    }
+    if( m_NoOfSteps)    emit eventHappened();
+}
+
+/*
+ *     sc_core::sc_time OldTime = sc_core::sc_time_stamp();
     uint64_t i = 0;
     while( (i++ < m_NoOfSteps)  && !_abort && !_interrupt ) {
         sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity(); // Make a single simulation step
@@ -65,12 +82,7 @@ void ScQtSimulator::doSimulationSteps()
             usleep(DiffTime);
         }
     }
-    if (_abort || _interrupt) {
-        qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();
-    }
-    emit eventHappened();
-}
-
+*/
 void ScQtSimulator::doSimulatedTime()
 {
     sc_core::sc_time OldTime = sc_core::sc_time_stamp();

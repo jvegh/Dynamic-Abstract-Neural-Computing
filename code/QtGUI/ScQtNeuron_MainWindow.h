@@ -147,7 +147,7 @@ private:
     std::map<TabIndex, TabWidgets> m_tabWidgets;
     TabIndex m_currentTabID = NeuronTabID;
  //   uint32_t index, lastindex;
-    QStringList first,second;
+//    QStringList first,second;
 protected:
     Ui::ScQtNeuron_MainWindow *ui;
 };

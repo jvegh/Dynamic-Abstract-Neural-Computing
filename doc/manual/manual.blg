@@ -6,51 +6,51 @@ Database file #1: ../../../LaTeX/CommonBibliography.bib
 Database file #2: ../../..//LaTeX/CommonPrivateBibliography.bib
 Database file #3: ../../../LaTeX/CommonNeuronalBibliography.bib
 Database file #4: ../../../LaTeX/CommonAIBibliography.bib
-Warning--I didn't find a database entry for "VeghMembranePotential:2026"
 Warning--empty chapter and pages in Schrodinger:1992
 Warning--empty chapter and pages in CardiacAPS:1980
 Warning--empty publisher in TheBoookOfGENESIS:2003
+Warning--empty title in AnimalElecticity:2024
 Warning--empty pages in PhysicsForHodgkinHuxley:2024
 Warning--empty chapter and pages in InformationTheoryIntersection:2008
-You've used 176 entries,
+You've used 178 entries,
             2952 wiz_defined-function locations,
-            1940 strings with 44850 characters,
-and the built_in function-call counts, 51609 in all, are:
-= -- 5150
-> -- 1340
+            1951 strings with 45188 characters,
+and the built_in function-call counts, 52130 in all, are:
+= -- 5204
+> -- 1354
 < -- 19
-+ -- 560
-- -- 384
-* -- 3728
-:= -- 6927
-add.period$ -- 276
-call.type$ -- 176
-change.case$ -- 172
++ -- 566
+- -- 388
+* -- 3761
+:= -- 7002
+add.period$ -- 280
+call.type$ -- 178
+change.case$ -- 173
 chr.to.int$ -- 27
-cite$ -- 181
-duplicate$ -- 1521
-empty$ -- 6087
-format.name$ -- 483
-if$ -- 13730
+cite$ -- 184
+duplicate$ -- 1539
+empty$ -- 6150
+format.name$ -- 488
+if$ -- 13872
 int.to.chr$ -- 0
-int.to.str$ -- 176
-missing$ -- 184
-newline$ -- 681
-num.names$ -- 179
-pop$ -- 1063
+int.to.str$ -- 178
+missing$ -- 185
+newline$ -- 691
+num.names$ -- 181
+pop$ -- 1079
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 3426
+skip$ -- 3460
 stack$ -- 0
 substring$ -- 2468
-swap$ -- 482
+swap$ -- 488
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 5
-while$ -- 318
-width$ -- 179
-write$ -- 1676
+warning$ -- 6
+while$ -- 320
+width$ -- 181
+write$ -- 1697
 (There were 6 warnings)

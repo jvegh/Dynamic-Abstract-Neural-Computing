@@ -36,14 +36,31 @@ J.~Ngai, Brain @ 10: A decade of innovation, Neuron 112 (2024).
 \newblock \href {https://doi.org/10.1016/j.neuron.2024.09.007}
   {\path{doi:10.1016/j.neuron.2024.09.007}}.
 
+\bibitem{HBP_1st_Review:2015}
+{Human Brain Project: The HBP flagship 1st technical project review} (2015).
+
+\bibitem{MolecularBiophysics:2003}
+J.~Tuszynski, M.~Kurzynski, Introduction to molecular biophysics, CRC Press,
+  Boca Raton, London, New York, Washington D.C., 2003.
+
 \bibitem{FeynmanThinking:1980}
 R.~P. Feynman, Principles of scientific thinking,
   \url{https://blog.hptbydts.com/richard-feynmans-principles-of-scientific-thinking}
   (1980).
 
-\bibitem{MolecularBiophysics:2003}
-J.~Tuszynski, M.~Kurzynski, Introduction to molecular biophysics, CRC Press,
-  Boca Raton, London, New York, Washington D.C., 2003.
+\bibitem{VeghNeuronAlgorithms:2025}
+J.~V{\'e}gh, {Algorithm for describing neuronal electric operation}, Algorithms
+  1 (2025).
+\newblock \href {https://doi.org/10.3390/a19010006}
+  {\path{doi:10.3390/a19010006}}.
+
+\bibitem{VeghNon-ordinaryLaws:2025}
+J.~V{\'e}gh, {The 'non-ordinary laws' of physics describing life}, {arXiv}, 1
+  (2025).
+
+\bibitem{Schrodinger:1992}
+E.~Schr\"odinger, Is life based on the laws of physics?, Cambridge University
+  Press, Canto, 1992, pp. 76--85.
 
 \bibitem{ThermodynamicAPDrukarch:2022}
 B.~Drukarch, M.~M.~M. Wilhelmus, S.~Shrivastava,
@@ -72,10 +89,6 @@ J.~V{\'e}gh, \href{https://www.mdpi.com/2076-3417/15/11/5805}{On implementing
 \newblock \href {https://doi.org/10.3390/app15115805}
   {\path{doi:10.3390/app15115805}}.
 \newline\urlprefix\url{https://www.mdpi.com/2076-3417/15/11/5805}
-
-\bibitem{Schrodinger:1992}
-E.~Schr\"odinger, Is life based on the laws of physics?, Cambridge University
-  Press, Canto, 1992, pp. 76--85.
 
 \bibitem{ConservationOfInformation:2021}
 Y.~A. Cengel, \href{https://www.mdpi.com/1099-4300/23/6/779}{On entropy,
@@ -127,16 +140,6 @@ N.~Caporale, Y.~Dan,
   {\path{doi:10.1146/annurev.neuro.31.060407.125639}}.
 \newline\urlprefix\url{https://doi.org/10.1146/annurev.neuro.31.060407.125639}
 
-\bibitem{VeghNon-ordinaryLaws:2025}
-J.~V{\'e}gh, {The 'non-ordinary laws' of physics describing life}, {arXiv}, 1
-  (2025).
-
-\bibitem{VeghNeuronAlgorithms:2025}
-J.~V{\'e}gh, {Algorithm for describing neuronal electric operation}, Algorithms
-  1 (2025).
-\newblock \href {https://doi.org/10.3390/a19010006}
-  {\path{doi:10.3390/a19010006}}.
-
 \bibitem{KochBiophysics:1999}
 C.~Koch, Biophysics of Computation, Oxford University Press, New York, Oxford,
   1999.
@@ -181,12 +184,6 @@ P.~Mitra, Fitting elephants in modern machine learning by statistically
 \newblock \href {https://doi.org/10.1038/s42256-021-00345-8}
   {\path{doi:10.1038/s42256-021-00345-8}}.
 
-\bibitem{HBP_ScientificAdvances:2023}
-{Human Brain Project},
-  \href{https://sos-ch-dk-2.exo.io/public-website-production-2022/filer_public/6f/70/6f706305-a2e3-45b8-a42b-dfb476222a6a/230413_hpb22_digital.pdf}{{A
-  closer look at scientific advances}} (2023).
-\newline\urlprefix\url{https://sos-ch-dk-2.exo.io/public-website-production-2022/filer_public/6f/70/6f706305-a2e3-45b8-a42b-dfb476222a6a/230413_hpb22_digital.pdf}
-
 \bibitem{ShannonOriginal:1948}
 C.~E. Shannon, A mathematical theory of communication, The Bell System
   Technical Journal 27~(3) (1948) 379--423.
@@ -214,9 +211,6 @@ B.~Drukarch, M.~Wilhelmus, {Thinking about the action potential: the nerve
 \newblock \href {https://doi.org/10.3389/fncel.2023.1232020}
   {\path{doi:10.3389/fncel.2023.1232020}}.
 
-\bibitem{HBP_1st_Review:2015}
-{Human Brain Project: The HBP flagship 1st technical project review} (2015).
-
 \bibitem{MoreIsDifferent1972}
 P.~W. Anderson, {More Is Different}, Science 177 (1972) 393--396.
 \newblock \href {https://doi.org/10.1126/science. 177.4047.393}
@@ -239,6 +233,12 @@ A.~Kahana, L.~Segev, D.~Lancet, Attractor dynamics drives self-reproduction in
   protobiological catalytic networks, Cell Reports Physical Science 4 (2023).
 \newblock \href {https://doi.org/https://doi.org/10.1016/j.xcrp.2023.101384}
   {\path{doi:https://doi.org/10.1016/j.xcrp.2023.101384}}.
+
+\bibitem{HBP_ScientificAdvances:2023}
+{Human Brain Project},
+  \href{https://sos-ch-dk-2.exo.io/public-website-production-2022/filer_public/6f/70/6f706305-a2e3-45b8-a42b-dfb476222a6a/230413_hpb22_digital.pdf}{{A
+  closer look at scientific advances}} (2023).
+\newline\urlprefix\url{https://sos-ch-dk-2.exo.io/public-website-production-2022/filer_public/6f/70/6f706305-a2e3-45b8-a42b-dfb476222a6a/230413_hpb22_digital.pdf}
 
 \bibitem{PrinciplesNeuralScience:2013}
 E.~R. Kandel, J.~H. Schwartz, T.~M. Jessell, S.~A. Siegelbaum, A.~J. Hudspeth,
@@ -422,6 +422,31 @@ T.~Heimburg, A.~D. Jackson, On soliton propagation in biomembranes and nerves,
   {https://doi.org/10.1073/pnas.0503823102}
   {\path{doi:10.1073/pnas.0503823102}}.
 
+\bibitem{VeghUnifiedCrossdisciplinaryModel:2026}
+J.~V{\'e}gh, \href{https://doi.org/10.48550/arXiv.2507.11448}{The unified
+  cross-disciplinary model of the operation of neurons} (2026).
+\newblock \href {http://arxiv.org/abs/2507.11448} {\path{arXiv:2507.11448}}.
+\newline\urlprefix\url{https://doi.org/10.48550/arXiv.2507.11448}
+
+\bibitem{PerturbationNeuralComputation:2002}
+W.~Maass, T.~Natschl\"ager, H.~Markram, Real-time computing without stable
+  states: A new framework for neural computation based on perturbations, Neural
+  Computation 14~(11) (2002) 2531--2560.
+\newblock \href {https://doi.org/10.1162/089976602760407955}
+  {\path{doi:10.1162/089976602760407955}}.
+
+\bibitem{LivingSystemPhysics:2021}
+M.~F. Schneider,
+  \href{https://www.sciencedirect.com/science/article/pii/S0079610720301000}{Living
+  systems approached from physical principles}, Progress in Biophysics and
+  Molecular Biology 162 (2021) 2--25, on the Physics of Excitable Media. Waves
+  in Soft and Living Matter, their Transmission at the Synapse and their
+  Cooperation in the Brain.
+\newblock \href
+  {https://doi.org/https://doi.org/10.1016/j.pbiomolbio.2020.10.001}
+  {\path{doi:https://doi.org/10.1016/j.pbiomolbio.2020.10.001}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0079610720301000}
+
 \bibitem{BiologicalConservationLaw:2017}
 B.~Podobnik, M.~Jusup, Z.~Tiganj, W.-X. Wangi, J.~M. Buld, H.~E. Stanley,
   Biological conservation law as an emerging functionality in dynamical
@@ -546,36 +571,6 @@ A.~Das, {The special theory of relativity: a mathematical exposition}, 1st
   Vorg\"ange in bewegten K\"orpern}, Nachrichten von der K\"oniglichen
   Gesellschaft der Wissenschaften zu G\"ottingen (in German) (1908) 53--111.
 
-\bibitem{PerturbationNeuralComputation:2002}
-W.~Maass, T.~Natschl\"ager, H.~Markram, Real-time computing without stable
-  states: A new framework for neural computation based on perturbations, Neural
-  Computation 14~(11) (2002) 2531--2560.
-\newblock \href {https://doi.org/10.1162/089976602760407955}
-  {\path{doi:10.1162/089976602760407955}}.
-
-\bibitem{SpatiotemporalPrut:1998}
-Y.~Prut, E.~Vaadia, H.~Bergman, I.~Haalman, H.~Slovin, M.~Abeles,
-  {Spatiotemporal Structure of Cortical Activity: Properties and Behavioral
-  Relevance}, {J. Neurophysiol} 79 (1998).
-
-\bibitem{SpatiotemporalPlenz:1996}
-D.~Plenz, A.~Aertsen, {Neural dynamics in cortex-striatum ci-cultures -- II.
-  Spatiotemporal Characteristics of Neural Activity}, {Neuroscience} 70/4
-  (1996) 893--924.
-
-\bibitem{VeghIntroducingTemporalBehaviorScience:2020}
-J.~V{\'{e}}gh, \href{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}{{Why do we
-  need to Introduce Temporal Behavior in both Modern Science and Modern
-  Computing}}, Global Journal of Computer Science and Technology: Hardware \&
-  Computation 20/1 (2020) 13--29.
-\newline\urlprefix\url{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}
-
-\bibitem{BuzsakiVeghSpaceTime:2023}
-G.~Buzs\'aki, J.~V\'egh,
-  \href{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}{Space,
-  time and memory}, 1st Edition, Oxford University Press, 2025.
-\newline\urlprefix\url{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}
-
 \bibitem{MechanicalWaves:2015}
 A.~El~Hady, B.~B. Machta, {Mechanical surface waves accompany action potential
   propagation}, Nature Communications 6 (2019) 6697.
@@ -665,6 +660,29 @@ J.~Isakovic, I.~Dobbs-Dixon, D.~Chaudhury, et~al., Modeling of inhomogeneous
   (2018).
 \newblock \href {https://doi.org/10.1038/s41598-018-31054-9}
   {\path{doi:10.1038/s41598-018-31054-9}}.
+
+\bibitem{SpatiotemporalPrut:1998}
+Y.~Prut, E.~Vaadia, H.~Bergman, I.~Haalman, H.~Slovin, M.~Abeles,
+  {Spatiotemporal Structure of Cortical Activity: Properties and Behavioral
+  Relevance}, {J. Neurophysiol} 79 (1998).
+
+\bibitem{SpatiotemporalPlenz:1996}
+D.~Plenz, A.~Aertsen, {Neural dynamics in cortex-striatum ci-cultures -- II.
+  Spatiotemporal Characteristics of Neural Activity}, {Neuroscience} 70/4
+  (1996) 893--924.
+
+\bibitem{VeghIntroducingTemporalBehaviorScience:2020}
+J.~V{\'{e}}gh, \href{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}{{Why do we
+  need to Introduce Temporal Behavior in both Modern Science and Modern
+  Computing}}, Global Journal of Computer Science and Technology: Hardware \&
+  Computation 20/1 (2020) 13--29.
+\newline\urlprefix\url{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}
+
+\bibitem{BuzsakiVeghSpaceTime:2023}
+G.~Buzs\'aki, J.~V\'egh,
+  \href{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}{Space,
+  time and memory}, 1st Edition, Oxford University Press, 2025.
+\newline\urlprefix\url{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}
 
 \bibitem{EinsteinMinkowskiRelativity:1977}
 L.~Pyenson, {Hermann Minkowski and Einstein's special theory of relativity},
@@ -795,18 +813,6 @@ G.~Baranauskas, M.~Martina, {Sodium Currents Activate without a Hodgkin and
   Huxley Type Delay in Central Mammalian Neurons}, The Journal of Neuroscience
   26 (2006) 671--684.
 
-\bibitem{LivingSystemPhysics:2021}
-M.~F. Schneider,
-  \href{https://www.sciencedirect.com/science/article/pii/S0079610720301000}{Living
-  systems approached from physical principles}, Progress in Biophysics and
-  Molecular Biology 162 (2021) 2--25, on the Physics of Excitable Media. Waves
-  in Soft and Living Matter, their Transmission at the Synapse and their
-  Cooperation in the Brain.
-\newblock \href
-  {https://doi.org/https://doi.org/10.1016/j.pbiomolbio.2020.10.001}
-  {\path{doi:https://doi.org/10.1016/j.pbiomolbio.2020.10.001}}.
-\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0079610720301000}
-
 \bibitem{VoltageSensingIonChannel:2019}
 I.~Karbat, et~al., Voltage sensing comes to rest, Cell 178 (2019).
 
@@ -890,6 +896,11 @@ I.~Nemenman, G.~D. Lewen, W.~Bialek, R.~R. de~Ruyter~van Steveninck, {Neural
 \bibitem{SterlingPrinciples:2017}
 P.~Sterling, S.~Laughlin, Principles of Neural Design, 1st Edition, The MIT
   Press, Cambridge, Massachusetts and London, England, 2017.
+
+\bibitem{AnimalElecticity:2024}
+L.~Catacuzzeno, A.~Michelucci, F.~Franciolini, Biomolecules 14 (2024).
+\newblock \href{10.3390/biom14060684}{[link]}.
+\newline\urlprefix\url{10.3390/biom14060684}
 
 \bibitem{NeuroscienceBook:2001}
 D.~Purves, G.~J. Augustine, D.~Fitzpatrick, L.~C. Katz, A.-S. LaMantia, J.~O.

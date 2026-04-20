@@ -109,6 +109,7 @@ public:
      void writeSettings();
      void setupToolBoxes(void);
      void fitToView();
+     void replot();
      void ProcessLine(QString line);
      void GetData(QString fileName);
      VoltageWindow *VoltageWindow_Get(){return m_VoltageWindow;}

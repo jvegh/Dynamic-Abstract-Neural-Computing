@@ -42,6 +42,12 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
 {
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
+  this->setStyleSheet("color: Navy;"
+                      //                     "title-color:  LightGray;"
+                      "border-color:  LightGray;"
+                      //                        "background-color: rgb(50,50, 150);"
+                      //                        "border: 1px blue;"
+                      "background-color:  LightGray;");
   setupRealtimeDataDemo(ui->customPlot);
    setWindowTitle(QString(m_neuron->name())+QString(" ActionPotential"));
   setupMenus();
@@ -120,6 +126,9 @@ void VoltageWindow::GetData(QString fileName)
     }
 }
 
+void VoltageWindow::replot(void)
+{ui->customPlot->replot();}
+
 // Fill area between graph 0 and graph 1
 /* customPlot->graph(0)->setChannelFillGraph(customPlot->graph(1));
 customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
@@ -127,6 +136,7 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 
 void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
+    double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
 
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     double DvDt = m_neuron->dVdtResulting_Get()/100.;
@@ -135,8 +145,8 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RunningPoint = new QCPItemEllipse(ui->customPlot);
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     RunningPoint->setPen(QPen(Qt::red));
-    RunningPoint->topLeft->setCoords(-0.0001+Time, Volt2-5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.0001+Time, Volt2+5);
+    RunningPoint->topLeft->setCoords(-0.05+key2, Volt2-.5);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(0.05+key2, Volt2+1);
 
     VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
 //    uint64_t NCP = Gradient.count();
@@ -172,81 +182,9 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     customPlot->axisRect()->setupFullAxesBox();
     customPlot->rescaleAxes();
 
-#if 0
-  demoName = "Single AP draw demo";
-
-    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
-  // include this section to fully disable antialiasing for higher performance:
-    customPlot->legend->setVisible(true); // Ensure legend is visible
-    customPlot->legend->setFont(QFont("Helvetica", 9));
-    customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
-    // Set position to upper left inside the axis rect
-    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft | Qt::AlignTop);
-    // Optional: Add a slight margin so it doesn't touch the edge
-//??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
-
-
-  /*
-  customPlot->setNotAntialiasedElements(QCP::aeAll);
-  QFont font;
-  font.setStyleStrategy(QFont::NoAntialias);
-  customPlot->xAxis->setTickLabelFont(font);
-  customPlot->yAxis->setTickLabelFont(font);
-  customPlot->legend->setFont(font);
-  */
-  customPlot->addGraph(); // blue line
-  customPlot->graph(0)->setName("ActionPotential");
-  customPlot->graph(0)->setPen(QPen(QColor(255, 110, 40)));
-  customPlot->graph(0)->setLineStyle((QCPGraph::LineStyle)1);
-
-  customPlot->addGraph(); // red line
-  customPlot->graph(1)->setPen(QPen(QColor(40, 110, 255)));
-  customPlot->graph(1)->setName("dV/dt gradient");
-  customPlot->graph(1)->setLineStyle((QCPGraph::LineStyle)1);
-
-  customPlot->addGraph(customPlot->xAxis,customPlot->yAxis2); // green line
-  customPlot->graph(2)->setPen(QPen(QColor(31, 127, 31)));
-  customPlot->graph(2)->setName("Another");
-  customPlot->graph(2)->setLineStyle((QCPGraph::LineStyle)1);
-  index = 0;
-
-  QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
-  timeTicker->setTimeFormat("%s:%z"); //"%m:%s:%Z"
-  customPlot->xAxis->setTicker(timeTicker);
-  customPlot->xAxis->setLabel("Time (ms)");
-  customPlot->yAxis->setRange(-30, 110);
-  customPlot->yAxis->setLabel("Voltage (mV)");
-  // Create voltage gradient window
-
-  /*
-  // Setup the second y axis
-  customPlot->yAxis2->setVisible(true); // Ensure second axis is visible
-  customPlot->yAxis2->setLabel("dV/dt (V/m)");
-
-  QSharedPointer<QCPAxisTickerFixed> fixedTicker(new QCPAxisTickerFixed);
-  fixedTicker->setTickStep(10); //
-  fixedTicker->setScaleStrategy(QCPAxisTickerFixed::ssMultiples);
-  customPlot->yAxis2->setTicker(fixedTicker);
-  customPlot->yAxis2->setTickLabels(true);
-
-
-   customPlot->yAxis2->setRange(-100, 200);
-  customPlot->yAxis2->setLabelColor(Qt::blue);
-  customPlot->yAxis2->setTickLabelColor(Qt::blue);
-  //??customPlot->yAxis2->setRotation (180);
-
-  // make left and bottom axes transfer their ranges to right and top axes:
-  connect(customPlot->xAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->xAxis2, SLOT(setRange(QCPRange)));
-  connect(customPlot->yAxis, SIGNAL(rangeChanged(QCPRange)), customPlot->yAxis2, SLOT(setRange(QCPRange)));
- */
-  // setup a timer that repeatedly calls VoltageWindow::realtimeDataSlot:
-#endif
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
   customPlot->axisRect()->setupFullAxesBox();
   customPlot->replot();
-/*  connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
-  dataTimer.start(10); // Interval 0 means to refresh as fast as possible
-*/
 }
 
 
@@ -257,7 +195,7 @@ void VoltageWindow::realtimeDataSlot()
     double DvDt = m_neuron->dVdtResulting_Get()/100.;
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     RunningPoint->topLeft->setCoords(-0.05+key2, Volt2-.5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.05+key2, Volt2+5);
+    RunningPoint->bottomRight->setCoords(0.05+key2, Volt2+1);
     uint64_t NCP = Gradient.count();
     //    QVector<QCPCurveData> dataPhasePlot(NCP);
     dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));

@@ -7,7 +7,7 @@
 /*
  *  @author János Végh (jvegh)
  *  @bug No known bugs.
- *  Last edited 2026.04.14
+ *  Last edited 2026.04.19
 */
 
 //#include <systemc>
@@ -50,20 +50,17 @@ void ScQtSimulator::abort()
 
 void ScQtSimulator::doSimulationSteps()
 {
-/*    sc_core::sc_time OldTime = sc_core::sc_time_stamp();
-    uint64_t i = 0;*/
-//    while( !_abort && !_interrupt )
-    {
+    sc_core::sc_time BeginTime = sc_core::sc_time_stamp();
         sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity(); // Make a single simulation step
             BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
         sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
             BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
-//        sc_core::sc_time NewTime = sc_core::sc_time_stamp();
-    }
-    if (_abort || _interrupt) {
+        emit eventHappened();
+         uint64_t DiffTime = (sc_core::sc_time_stamp()-BeginTime).to_seconds()*1000.*1000.*m_SlowFactor;
+        usleep(DiffTime);  // Now display refresh can start in the other thread
+/*    if (_abort || _interrupt) {
         qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();
-    }
-    if( m_NoOfSteps)    emit eventHappened();
+    }*/
 }
 
 /*
@@ -83,6 +80,8 @@ void ScQtSimulator::doSimulationSteps()
         }
     }
 */
+
+/*
 void ScQtSimulator::doSimulatedTime()
 {
     sc_core::sc_time OldTime = sc_core::sc_time_stamp();
@@ -103,7 +102,7 @@ void ScQtSimulator::doSimulatedTime()
     }
     emit eventHappened();
 }
-
+*/
 
 void ScQtSimulator::doMethod3()
 {
@@ -154,9 +153,11 @@ void ScQtSimulator::mainLoop()
         case Method_SingleSteps:
             doSimulationSteps();
             break;
+#if 0
         case Method_SimulatedTime:
             doSimulatedTime();
             break;
+#endif
         case Method3:
             doMethod3();
             break;

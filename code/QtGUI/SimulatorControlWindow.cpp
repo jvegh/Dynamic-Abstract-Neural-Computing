@@ -75,7 +75,7 @@ SimulatorControlWindow::SimulatorControlWindow( NeuronPhysical *Neuron, ScQtNeur
 //    connect(parent_Get()->m_Simulator,  SIGNAL(NeuralBreakpoint), this, SLOT(on_scEventHappened()));
     qDebug()<<"Starting thread in Thread "<<this->QObject::thread()->currentThreadId();
     thread->start();
-    ui->SimulatedTime->setText("Help");
+//    ui->SimulatedTime->setText("Help");
 //    connect(parent_Get()->m_Simulator, SIGNAL(valueChanged(QString)), ui->label, SLOT(setText(QString)));
     connect(parent_Get()->m_Simulator,SIGNAL(eventHappened()), this, SLOT(on_eventHappened()));
 }
@@ -105,36 +105,35 @@ void SimulatorControlWindow::on_resetButton_clicked()
  */
 void SimulatorControlWindow::on_eventHappened()
 {
-    m_T = (sc_core::sc_time_stamp()-m_T);
-//    qDebug()<<"Event happened @ "<< 1000*sc_time_stamp().to_seconds() << ":" << m_Neuron->MembraneAbsolutePotential_Get();
-    uint64_t DiffTime = (m_T).to_seconds()*1000.*1000.1000*ui->DisplaySlider->value();
-    usleep(DiffTime);
-    // Display the time values
+     // Display the time values
     ui->SimulatedTime->setText(QString(sc_time_String_Get(parent_Get()->m_Simulator->scTime_Get()).c_str()));
     ui->timeUser->setText(QString(time_String_Get(parent_Get()->m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     ui->timeSystem->setText(QString(time_String_Get(parent_Get()->m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
+    parent_Get()->replot();
 
-    parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value()-1);
-
-    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
-    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+    if((ui->timeMode->isChecked() && (m_FinalTime <= sc_core::sc_time_stamp()))
+           || (ui->stepMode->isChecked() && (m_StepNumber-->0))
+           || ui->continuousMode->isChecked()
+          )
+    {   // Continue execution by issuing one more request
+//        m_T = sc_core::sc_time_stamp(); // The beginning of the operation
+        parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
+        parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+    }
 }
 
 
 void SimulatorControlWindow::on_startButton_clicked()
 {
-    parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
+ /*   parent_Get()->m_Simulator->NoOfSteps_Set(ui->StepNumberBox->value());
     parent_Get()->m_Simulator->TimeOfSteps_Set(sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US));
     parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
-    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
-
-   if(ui->timeMode->isChecked())
-    {
-    }
-    if(ui->stepMode->isChecked())
-    {
-         parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
-    }
+*/
+//    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
+    m_StepNumber = ui->StepNumberBox->value();
+    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US);
+    parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
+    parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
  }
 
 void SimulatorControlWindow::on_stopButton_clicked()

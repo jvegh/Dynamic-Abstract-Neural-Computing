@@ -57,6 +57,7 @@ public:
 
   void ProcessLine(QString line);
   void GetData(QString fileName);
+  void replot(void);
   void ResetDisplay(void){index = 0;}
   QStringList first,second;
   uint32_t index, lastindex;

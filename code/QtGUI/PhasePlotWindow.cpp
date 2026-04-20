@@ -42,6 +42,12 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
 {
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
+  this->setStyleSheet("color: Navy;"
+                      //                     "title-color:  LightGray;"
+                      "border-color:  LightGray;"
+                      //                        "background-color: rgb(50,50, 150);"
+                      //                        "border: 1px blue;"
+                      "background-color:  LightGray;");
   setupRealtimeDataDemo(ui->customPlot);
  // setWindowTitle("QCustomPlot: "+demoName);
   setWindowTitle(QString(m_neuron->name())+QString(" phase plot"));
@@ -49,7 +55,6 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   statusBar()->clearMessage();
   statusBar()->showMessage( QString("Ready to go"));
 
-//  ui->customPlot->replot();
   realtimeDataSlot();
    //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
@@ -153,11 +158,12 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->yAxis->setTickLabelFont(font);
   customPlot->legend->setFont(font);
   */
-  customPlot->addGraph(); // blue line
-  customPlot->graph(0)->setName("AP phase plot");
+ /* customPlot->addGraph(); // blue line
   customPlot->graph(0)->setPen(QPen(QColor(255, 110, 40)));
   customPlot->graph(0)->setLineStyle(QCPGraph::lsLine);
-
+  customPlot->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
+  customPlot->graph(0)->setName("AP phase plot");
+*/
   index = 0;
 
   customPlot->xAxis->setLabel("Voltage (mV)");
@@ -185,7 +191,7 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   PhasePlot->data()->set(dataPhasePlot, true);
   PhasePlot->setPen(QPen(Qt::blue));
   PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-
+  PhasePlot->setName("AP phase plot");
   // Add an ellipse
   RunningPoint = new QCPItemEllipse(customPlot);
   RunningPoint->topLeft->setCoords(-1, -.05);    // Set coordinates
@@ -193,16 +199,18 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
   RunningPoint->setPen(QPen(Qt::red));
 
-  ui->customPlot->addGraph(); // blue line
+/*  ui->customPlot->addGraph(); // blue line
   ui->customPlot->graph(1)->setName("AP phase plot");
   ui->customPlot->graph(1)->setPen(QPen(QColor(255, 110, 40)));
-
+*/
   // set some basic customPlot config:
   customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
   customPlot->axisRect()->setupFullAxesBox();
   customPlot->rescaleAxes();
 }
 
+void PhasePlotWindow::replot(void)
+{ui->customPlot->replot();}
 
 void PhasePlotWindow::realtimeDataSlot()
 {

@@ -112,6 +112,20 @@ ScQtNeuron_MainWindow::~ScQtNeuron_MainWindow()
     delete ui;
 }
 
+void ScQtNeuron_MainWindow::replot()
+{
+    m_PhasePlotWindow->replot();
+    m_VoltageWindow->replot();
+    m_GradientWindow->replot();
+/*        m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
+    m_VoltageWindow->show();
+    m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
+    m_GradientWindow->show();
+    m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
+    m_PhasePlotWindow->show();
+*/
+}
+
 void ScQtNeuron_MainWindow::fitToView() {
 //    statusBar()->showMessage("Timer", 800);
 //    QTimer::singleShot(1000, this, &fitToView(); });

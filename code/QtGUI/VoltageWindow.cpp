@@ -101,38 +101,9 @@ void VoltageWindow::screenshotFilesTriggered() {
     statusBar()->showMessage( QString("Screenshot saved to "+fileName));
 }
 
-void VoltageWindow::ProcessLine(QString line)
-{
-    QStringList firstColumn;
-     // Handle the first two items only
-//    while (!s1.atEnd()){
-    first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
-    second.append(line.split(",").at(1));
-    Time.push_back(line.split(",").at(0).toDouble());
-    Voltage.push_back(line.split(",").at(1).toDouble());
- //    std::cout << line.toStdString() << '\n';
-}
-void VoltageWindow::GetData(QString fileName)
-{
-    QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
-
-    QTextStream in(&file);
-    QString line = in.readLine();   // Skip the heading line
-    while (!in.atEnd()) {
-        line = in.readLine();
-        ProcessLine(line);
-    }
-}
-
 void VoltageWindow::replot(void)
 {ui->customPlot->replot();}
 
-// Fill area between graph 0 and graph 1
-/* customPlot->graph(0)->setChannelFillGraph(customPlot->graph(1));
-customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
-*/
 
 void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
@@ -149,28 +120,14 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RunningPoint->bottomRight->setCoords(0.05+key2, Volt2+1);
 
     VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-//    uint64_t NCP = Gradient.count();
-    //    QVector<QCPCurveData> dataPhasePlot(NCP);
     dataVoltagePlot.push_back(QCPCurveData(index,Volt2, DvDt));
     index++;
     VoltagePlot->data()->set(dataVoltagePlot, true);
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    VoltagePlot->setLineStyle(QCPCurve::lsLine);
+    VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
 
-
-    // add two new graphs and set their look:
-    ui->customPlot->addGraph();
-    ui->customPlot->graph(0)->setPen(QPen(Qt::blue)); // line color blue for first graph
-    ui->customPlot->graph(0)->setBrush(QBrush(QColor(0, 0, 255, 20))); // first graph will be filled with translucent blue
-    ui->customPlot->addGraph();
-    ui->customPlot->graph(1)->setPen(QPen(Qt::red)); // line color red for second graph
-    // generate some points of data (y0 for first, y1 for second graph):
-
-    index = 0;
-    ui->customPlot->graph(0)->setData(x, y0);
-    ui->customPlot->graph(1)->setData(x, y1);
-    // create graph and assign data to it:
-    customPlot->graph(0)->setData(x, y0);
     // give the axes some labels:
     customPlot->xAxis->setLabel("Time (ms)");
     customPlot->yAxis->setLabel("Membrane voltage (mV)");
@@ -194,10 +151,8 @@ void VoltageWindow::realtimeDataSlot()
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     double DvDt = m_neuron->dVdtResulting_Get()/100.;
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
-    RunningPoint->topLeft->setCoords(-0.05+key2, Volt2-.5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.05+key2, Volt2+1);
-    uint64_t NCP = Gradient.count();
-    //    QVector<QCPCurveData> dataPhasePlot(NCP);
+    RunningPoint->topLeft->setCoords(-0.005+key2, Volt2-.5);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(0.005+key2, Volt2+1);
     dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));
     index++;
     VoltagePlot->data()->set(dataVoltagePlot, true);

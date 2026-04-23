@@ -36,7 +36,7 @@
 #include <QTimer>
 #include <QVector>
 #include "ScQtSimulator.h"
-#include "TestNeuronPhysical.h"
+#include "NeuronPhysical.h"
 #include "qcustomplot.h"
 
 

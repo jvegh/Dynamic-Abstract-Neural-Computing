@@ -109,12 +109,13 @@ void PhasePlotWindow::ProcessLine(QString line)
     QStringList firstColumn;
      // Handle the first two items only
 //    while (!s1.atEnd()){
-    first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
+/*    first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
     second.append(line.split(",").at(1));
     third.append(line.split(",").at(2));
     fourth.append(line.split(",").at(3));
-    Time.push_back(line.split(",").at(0).toDouble());
+*/    Time.push_back(line.split(",").at(0).toDouble());
     Voltage.push_back(line.split(",").at(1).toDouble());
+
     Gradient.push_back(line.split(",").at(3).toDouble());
  //    std::cout << line.toStdString() << '\n';
 }
@@ -192,6 +193,8 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   PhasePlot->setPen(QPen(Qt::blue));
   PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
   PhasePlot->setName("AP phase plot");
+  PhasePlot->setLineStyle(QCPCurve::lsLine);
+  PhasePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
   // Add an ellipse
   RunningPoint = new QCPItemEllipse(customPlot);
   RunningPoint->topLeft->setCoords(-1, -.05);    // Set coordinates

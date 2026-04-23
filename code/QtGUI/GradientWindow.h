@@ -55,8 +55,6 @@ public:
   void setupRealtimeDataDemo(QCustomPlot *customPlot);
   void setupParametricCurveDemo(QCustomPlot *customPlot);
 
-  void ProcessLine(QString line);
-  void GetData(QString fileName);
   void replot(void);
   void ResetDisplay(void){index = 0;}
   QStringList first,second;

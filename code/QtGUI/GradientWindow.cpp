@@ -61,32 +61,6 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
-
-void GradientWindow::ProcessLine(QString line)
-{
-    QStringList firstColumn;
-     // Handle the first two items only
-//    while (!s1.atEnd()){
-    first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
-    second.append(line.split(",").at(1));
-    Time.push_back(line.split(",").at(0).toDouble());
-    Gradient.push_back(line.split(",").at(1).toDouble());
- //    std::cout << line.toStdString() << '\n';
-}
-void GradientWindow::GetData(QString fileName)
-{
-    QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
-
-    QTextStream in(&file);
-    QString line = in.readLine();   // Skip the heading line
-    while (!in.atEnd()) {
-        line = in.readLine();
-        ProcessLine(line);
-    }
-}
-
 void GradientWindow::replot(void)
 {ui->customPlot->replot();}
 
@@ -97,11 +71,7 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 
 void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
- /*   double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
-    double DvDt = m_neuron->dVdtResulting_Get()/100.;
-    double Time = m_neuron->LocalTimeInMillisec_Get()*2.4;
-*/
-    // Add an ellipse
+     // Add ellipses
     RunningPoint = new QCPItemEllipse(ui->customPlot);
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     RunningPoint->setPen(QPen(Qt::red));
@@ -110,10 +80,22 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
     RushinGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     RushinGradientPlot->setName("Rushin gradient");
+    RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
+    RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
     AISGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     AISGradientPlot->setName("AIS gradient");
+    AISGradientPlot->setLineStyle(QCPCurve::lsLine);
+    AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
     GradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     GradientPlot->setName("Resulting");
+    GradientPlot->setLineStyle(QCPCurve::lsLine);
+    GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+
+    // Fill area between graph 0 and graph 1
+/*     GradientPlot->setChannelFillGraph(customPlot->graph(1));
+customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
+*/
+
 
     customPlot->legend->setVisible(true); // Ensure legend is visible
     customPlot->legend->setFont(QFont("Helvetica", 9));
@@ -121,38 +103,8 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     // Set position to upper left inside the axis rect
     customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
 
-#if 0
-    // add two new graphs and set their look:
-    ui->customPlot->addGraph();
-    ui->customPlot->graph(0)->setPen(QPen(Qt::blue)); // line color blue for first graph
-    ui->customPlot->graph(0)->setBrush(QBrush(QColor(0, 0, 255, 20))); // first graph will be filled with translucent blue
-    ui->customPlot->graph(0)->setName("Resulting gradient");
-
-    ui->customPlot->addGraph();
-    ui->customPlot->graph(1)->setPen(QPen(Qt::red)); // line color red for second graph
-    ui->customPlot->graph(1)->setBrush(QBrush(QColor(255, 0, 0, 20))); // first graph will be filled with translucent blue
-    ui->customPlot->graph(1)->setName("AIS gradient");
-
-    ui->customPlot->addGraph();
-    ui->customPlot->graph(2)->setPen(QPen(Qt::green)); // line color red for second graph
-    ui->customPlot->graph(2)->setBrush(QBrush(QColor(0, 255, 0, 20))); // first graph will be filled with translucent blue
-    ui->customPlot->graph(2)->setName("Rushin gradient");
-#endif
-    // generate some points of data (y0 for first, y1 for second graph):
-#if 0
-    for (int i=0; i<251; ++i)
-    {
-        x.push_back( i);
-        y0.push_back(qExp(-i/150.0)*qCos(i/10.0)); // exponentially decaying cosine
-        y1.push_back(qExp(-i/150.0));              // exponential envelope
-    }
-#endif
     index = 0;
-/*    ui->customPlot->graph(0)->setData(x, y0);
-    ui->customPlot->graph(1)->setData(x, y1);
-    // create graph and assign data to it:
-    customPlot->graph(0)->setData(x, y0);
-*/    // give the axes some labels:
+    // give the axes some labels:
     customPlot->xAxis->setLabel("Time (ms)");
     customPlot->yAxis->setLabel("Membrane gradient (V/m)");
     // set axes ranges, so we see all data:
@@ -166,17 +118,6 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   demoName = "Single AP draw demo";
 #if 0
 
-    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
-  // include this section to fully disable antialiasing for higher performance:
-    customPlot->legend->setVisible(true); // Ensure legend is visible
-    customPlot->legend->setFont(QFont("Helvetica", 9));
-    customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
-    // Set position to upper left inside the axis rect
-    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft | Qt::AlignTop);
-    // Optional: Add a slight margin so it doesn't touch the edge
-//??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
-
-
   /*
   customPlot->setNotAntialiasedElements(QCP::aeAll);
   QFont font;
@@ -185,17 +126,10 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->yAxis->setTickLabelFont(font);
   customPlot->legend->setFont(font);
   */
-
-  index = 0;
-
-  // setup a timer that repeatedly calls VoltageWindow::realtimeDataSlot:
 #endif
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
   customPlot->axisRect()->setupFullAxesBox();
   customPlot->replot();
-/*  connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
-  dataTimer.start(10); // Interval 0 means to refresh as fast as possible
-*/
 }
 
 
@@ -205,9 +139,6 @@ void GradientWindow::realtimeDataSlot()
     double DvDt = m_neuron->dVdtResulting_Get();
     double Membrane_dVdt_AIS = m_neuron->dVdtAIS_Get();
     double Membrane_dVdt_Input = m_neuron->dVdtInput_Get();
-//    std::cerr << key2 << "," <<  DvDt << "," << Membrane_dVdt_AIS << "," << Membrane_dVdt_Input << '\n';
-//    uint64_t NCP = Gradient.count();
-    //    QVector<QCPCurveData> dataPhasePlot(NCP);
     // Handle resultant gradient display
     dataGradientPlot.push_back(QCPCurveData(index,key2, DvDt));
     GradientPlot->data()->set(dataGradientPlot, true);
@@ -246,7 +177,7 @@ void GradientWindow::screenShot()
 {
     QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
     QScreen *screen1 = qApp->primaryScreen();
-    QPixmap pixmap = screen1->grabWindow(0);
+    QPixmap pixmap = screen1->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
 /*    const QRect screenGeometry = screen()->geometry();
     QPixmap pm = grabWindow(0, screenGeometry.x(), screenGeometry.y(), screenGeometry.width()+14, screenGeometry.height()+14);
 */    QString fileName = demoName.toLower()+".pdf";
@@ -258,6 +189,24 @@ void GradientWindow::screenShot()
 //  pm.save(fileName);
 //  qApp->quit();
 }
+#if 0
+void GradientWindow::screenShot()
+{
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+  QPixmap pm = QPixmap::grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
+#elif QT_VERSION < QT_VERSION_CHECK(5, 5, 0)
+  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
+#elif QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+#else
+  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+#endif
+  QString fileName = demoName.toLower()+".png";
+  fileName.replace(" ", "");
+  pm.save("./screenshots/"+fileName);
+  qApp->quit();
+}
+#endif
 
 
 #include "moc_GradientWindow.cpp"

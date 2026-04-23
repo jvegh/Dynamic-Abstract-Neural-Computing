@@ -44,7 +44,7 @@ private:
   void enableSimulatorControls();
   void loadNeuronToWidget(const Layout *);
 
-  Ui::NeuronTab *m_ui = nullptr;
+  Ui::NeuronTab *ui = nullptr;
 
   QTimer *m_statUpdateTimer;
 

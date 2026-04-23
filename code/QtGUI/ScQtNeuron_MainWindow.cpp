@@ -66,14 +66,15 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_stackedTabs->insertWidget(NeuronTabID, m_neuronTab);
 
 
-    connect(m_neuronTab->m_ui->startButton, &QPushButton::clicked, this,
+    connect(m_neuronTab->ui->startButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_startButton_clicked);
 
-    connect(m_neuronTab->m_ui->stopButton, &QPushButton::clicked, this,
+    connect(m_neuronTab->ui->stopButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_stopButton_clicked);
 
-    connect(m_neuronTab->m_ui->resetButton, &QPushButton::clicked, this,
+    connect(m_neuronTab->ui->resetButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_resetButton_clicked);
+
 
 /*
      auto *editToolbar = addToolBar("Edit");

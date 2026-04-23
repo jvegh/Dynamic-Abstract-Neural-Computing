@@ -19,15 +19,50 @@ class ScQtNeuron_MainWindow;
 NeuronTab::NeuronTab(QToolBar *controlToolbar,
                            QToolBar *additionalToolbar, QMainWindow *parent)
     : RipesTab(additionalToolbar, parent) {
-    m_ui = new Ui::NeuronTab;
-  m_ui->setupUi(this);
+    ui = new Ui::NeuronTab;
+    ui->setupUi(this);
 
-/*  connect(NeuronHandler::get(), &ProcessorHandler::procStateChangedNonRun,
-          this, &ProcessorTab::updateStatistics);
-  connect(ProcessorHandler::get(), &ProcessorHandler::procStateChangedNonRun,
-          this, &ProcessorTab::updateInstructionLabels);
+    // Set up Slider 1
+    ui->Slider1->setMinimum(3);
+    ui->Slider1->setMaximum(17);
+    ui->Slider1->setValue(5);
+    ui->Slider1Value->setText(QString::number(ui->Slider1->value()));
+    QObject::connect(ui->Slider1, &QSlider::valueChanged, this, [=] () {
+        (ui->Slider1Value->setText(QString::number(ui->Slider1->value())));
+    });
+    // Set up Slider 2
+    ui->Slider2->setMinimum(15);
+    ui->Slider2->setMaximum(50);
+    ui->Slider2->setValue(23);
+    ui->Slider2Value->setText(QString::number(ui->Slider2->value()));
+    QObject::connect(ui->Slider2, &QSlider::valueChanged, this, [=] () {
+        (ui->Slider2Value->setText(QString::number(ui->Slider2->value(),'f',2)));
+    });
+    // Set up Slider 3
+    ui->Slider3->setMinimum(31);
+    ui->Slider3->setMaximum(63);
+    ui->Slider3->setValue(35);
+    ui->Slider3Value->setText(QString::number(ui->Slider3->value()));
+    QObject::connect(ui->Slider3, &QSlider::valueChanged, this, [=] () {
+        (ui->Slider3Value->setText(QString::number(ui->Slider3->value(),'f',2)));
+    });
+    // Set up display slowdown Slider
+    ui->DisplaySlider->setMinimum(100);
+    ui->DisplaySlider->setMaximum(10000);
+    ui->DisplaySlider->setValue(1000);
+    ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value()));
+    QObject::connect(ui->DisplaySlider, &QSlider::valueChanged, this, [=] () {
+        (ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value())));
+    });
+    // Set up display slowdown Slider
+    ui->DisplaySlider->setMinimum(100);
+    ui->DisplaySlider->setMaximum(100000);
+    ui->DisplaySlider->setValue(5000);
+    ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value()));
+    QObject::connect(ui->DisplaySlider, &QSlider::valueChanged, this, [=] () {
+        (ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value())));
+    });
 
-*/
   setupSimulatorActions(controlToolbar);
 
   // Setup statistics update timer - this timer is distinct from the
@@ -317,7 +352,7 @@ void NeuronTab::restart() {
   enableSimulatorControls();
 }
 
-NeuronTab::~NeuronTab() { delete m_ui; }
+NeuronTab::~NeuronTab() { delete ui; }
 
 void NeuronTab::neuronFinished() {
   // Disallow further clocking of the circuit

@@ -171,17 +171,7 @@ void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
       RipesSettings::value(RIPES_SETTING_AUTOCLOCK_INTERVAL).toInt());
   controlToolbar->addWidget(m_autoClockInterval);
 #endif
-  const QIcon runIcon = QIcon(":/icons/run.svg");
-  m_runAction = new QAction(runIcon, "Run (F8)", this);
-  m_runAction->setShortcut(QKeySequence("F8"));
-  m_runAction->setCheckable(true);
-  m_runAction->setChecked(false);
-  m_runAction->setToolTip(
-      "Execute simulator without updating UI (fast execution) (F8).\n Running "
-      "will stop once the program exits or a "
-      "breakpoint is hit.");
-  connect(m_runAction, &QAction::toggled, this, &NeuronTab::run);
-  controlToolbar->addAction(m_runAction);
+
 #if 0
   // Setup neuron-tab only actions
   m_displayValuesAction = new QAction("Show neuron signal values", this);
@@ -321,46 +311,6 @@ void NeuronTab::neuronSelection() {
   }
   */
 }
- /*
-void NeuronTab::updateInstructionModel() {
-  auto *oldModel = m_instrModel;
-  m_instrModel = new InstructionModel(this);
-
-  // Update the instruction view according to the newly created model
-  m_ui->instructionView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-  m_ui->instructionView->setModel(m_instrModel);
-
-  // Only the instruction column should stretch
-  m_ui->instructionView->horizontalHeader()->setMinimumSectionSize(1);
-  m_ui->instructionView->horizontalHeader()->setSectionResizeMode(
-      InstructionModel::Breakpoint, QHeaderView::ResizeToContents);
-  m_ui->instructionView->horizontalHeader()->setSectionResizeMode(
-      InstructionModel::PC, QHeaderView::ResizeToContents);
-  // The "stage" section is _NOT_ resized to contents. Resize to contents is
-  // very slow if # of items in the model is large and the contents of the rows
-  // change frequently.
-  m_ui->instructionView->horizontalHeader()->setSectionResizeMode(
-      InstructionModel::Stage, QHeaderView::Interactive);
-  auto ivfm = QFontMetrics(m_ui->instructionView->font());
-  m_ui->instructionView->horizontalHeader()->resizeSection(
-      InstructionModel::Stage,
-      ivfm.horizontalAdvance(m_instrModel
-                                 ->headerData(InstructionModel::Stage,
-                                              Qt::Horizontal, Qt::DisplayRole)
-                                 .toString()) *
-          1.25);
-  m_ui->instructionView->horizontalHeader()->setSectionResizeMode(
-      InstructionModel::Instruction, QHeaderView::Stretch);
-  // Make the instruction view follow the instruction which is currently present
-  // in the first stage of the
-  connect(m_instrModel, &InstructionModel::firstStageInstrChanged, this,
-          &ProcessorTab::setInstructionViewCenterRow);
-
-  if (oldModel) {
-    delete oldModel;
-  }
-}
- */
 
 void NeuronTab::restart() {
   // Invoked when changes to binary simulation file has been made
@@ -389,58 +339,12 @@ void NeuronTab::enableSimulatorControls() {
 */
 }
 
-#if 0
-void NeuronTab::updateInstructionLabels() {
-  const auto &proc = ProcessorHandler::getProcessor();
-  for (auto sid : ProcessorHandler::getProcessor()->structure().stageIt()) {
-    if (!m_stageInstructionLabels.count(sid))
-      continue;
-    const auto stageInfo = proc->stageInfo(sid);
-    auto &instrLabel = m_stageInstructionLabels.at(sid);
-    QString instrString;
-    if (stageInfo.state != StageInfo::State::None) {
-      /* clang-format off */
-            switch (stageInfo.state) {
-                case StageInfo::State::Flushed: instrString = "nop (flush)"; break;
-                case StageInfo::State::Stalled: instrString = "nop (stall)"; break;
-                case StageInfo::State::WayHazard: if(stageInfo.stage_valid) {instrString = "nop (way hazard)";} break;
-                case StageInfo::State::Unused: instrString = "nop (unused)"; break;
-                case StageInfo::State::None: Q_UNREACHABLE();
-            }
-      /* clang-format on */
-      instrLabel->forceDefaultTextColor(Qt::red);
-    } else if (stageInfo.stage_valid) {
-      instrString = ProcessorHandler::disassembleInstr(stageInfo.pc);
-      instrLabel->clearForcedDefaultTextColor();
-    }
-    instrLabel->setText(instrString);
-  }
-}
-#endif
-
 void NeuronTab::reset() {
 //  m_autoClockAction->setChecked(false);
   enableSimulatorControls();
 //  SystemIO::printString("\n");
 }
 
-#if 0
-void ProcessorTab::setInstructionViewCenterRow(int row) {
-  const auto view = m_ui->instructionView;
-  const auto rect = view->rect();
-  int rowTop = view->indexAt(rect.topLeft()).row();
-  int rowBot = view->indexAt(rect.bottomLeft()).row();
-  rowBot = rowBot < 0 ? m_instrModel->rowCount() : rowBot;
-
-  const int nItemsVisible = rowBot - rowTop;
-
-  // move scrollbar if if is not visible
-  if (row <= rowTop || row >= rowBot) {
-    auto scrollbar = view->verticalScrollBar();
-    scrollbar->setValue(row - nItemsVisible / 2);
-  }
-}
-#endif
 
 void NeuronTab::runFinished() {
   pause();
@@ -449,82 +353,9 @@ void NeuronTab::runFinished() {
   m_statUpdateTimer->stop();
 }
 
-#if 0
-void NeuronTab::autoClockTimeout() {
-  if (NeuronHandler::checkBreakpoint())
-    return;
-  NeuronHandler::clock();
-
-}
-#endif
-
-#if 0
-void NeuronTab::autoClock(bool state) {
-  const QIcon startAutoClockIcon = QIcon(":/icons/step-clock.svg");
-  const QIcon stopAutoTimerIcon = QIcon(":/icons/stop-clock.svg");
-  if (!state) {
-    m_autoClockTimer->stop();
-    m_autoClockAction->setIcon(startAutoClockIcon);
-  } else {
-    // Always clock the processor to start with. Afterwards, run
-    // autoClockTimeout() which will check if the processor is at a breakpoint.
-    // This is to circumvent some annoying cross-thread, eventloop,
-    // race-condition-y state setting wrt. when exactly a breakpoint is hit.
-    ProcessorHandler::clock();
-    m_autoClockTimer->start();
-    m_autoClockAction->setIcon(stopAutoTimerIcon);
-  }
-
-  // Enable/disable all other actions
-  m_selectProcessorAction->setEnabled(!state);
-  m_clockAction->setEnabled(!state);
-  m_reverseAction->setEnabled(!state);
-  m_resetAction->setEnabled(!state);
-  m_displayValuesAction->setEnabled(!state);
-  m_pipelineDiagramAction->setEnabled(!state);
-  m_runAction->setEnabled(!state);
-}
-#endif
-
-void NeuronTab::run(bool state) {
-  // Stop any currently exeuting auto-clocking
-#if 0
-  if (m_autoClockAction->isChecked()) {
-    m_autoClockAction->setChecked(false);
-  }
-  if (state) {
-    NeuronHandler::run();
-    m_statUpdateTimer->start();
-  } else {
-    NeuronHandler::stopRun();
-    m_statUpdateTimer->stop();
-#endif
-  }
-
-#if 0
-  // Enable/Disable all actions based on whether the processor is running.
-  m_selectNeuronAction->setEnabled(!state);
-  m_clockAction->setEnabled(!state);
-//  m_autoClockAction->setEnabled(!state);
-//  m_reverseAction->setEnabled(!state);
-  m_resetAction->setEnabled(!state);
-  m_displayValuesAction->setEnabled(!state);
-//  m_pipelineDiagramAction->setEnabled(!state);
-
-  // Disable widgets which are not updated when running the processor
-//  m_vsrtlWidget->setEnabled(!state);
-//  m_ui->registerContainerWidget->setEnabled(!state);
-//  m_ui->instructionView->setEnabled(!state);
-}
 
 
-/*
-void NeuronTab::showPipelineDiagram() {
-  auto w = PipelineDiagramWidget(m_stageModel);
-  w.exec();
-}
-*/
-#endif
+
   void NeuronTab::reverse() {
       //  m_vsrtlWidget->reverse();
       enableSimulatorControls();

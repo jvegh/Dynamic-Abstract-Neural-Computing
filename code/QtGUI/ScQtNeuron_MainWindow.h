@@ -123,6 +123,8 @@ private slots:
      void wiki() ;
      void version();
      void on_startButton_clicked();
+     void on_stopButton_clicked();
+     void on_resetButton_clicked();
 //     void event_happened(); // Not sure if needed
 /*    void fileNewWindow();
     void fileOpenDialog();

@@ -69,6 +69,12 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     connect(m_neuronTab->m_ui->startButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_startButton_clicked);
 
+    connect(m_neuronTab->m_ui->stopButton, &QPushButton::clicked, this,
+            &ScQtNeuron_MainWindow::on_stopButton_clicked);
+
+    connect(m_neuronTab->m_ui->resetButton, &QPushButton::clicked, this,
+            &ScQtNeuron_MainWindow::on_resetButton_clicked);
+
 /*
      auto *editToolbar = addToolBar("Edit");
     editToolbar->setVisible(false);
@@ -168,6 +174,25 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
 //    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->m_ui->StepTimeBox_2->value(),sc_core::SC_US);
 //    m_Simulator->SlowFactor_Set(m_neuronTab->m_ui->DisplaySlider->value());
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+
+}
+
+void ScQtNeuron_MainWindow::on_stopButton_clicked()
+{
+    //    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
+    //    m_StepNumber = m_neuronTab->m_ui->StepNumberBox->value();
+    //    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->m_ui->StepTimeBox_2->value(),sc_core::SC_US);
+    //    m_Simulator->SlowFactor_Set(m_neuronTab->m_ui->DisplaySlider->value());
+//??    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+}
+
+void ScQtNeuron_MainWindow::on_resetButton_clicked()
+{
+    //    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
+    //    m_StepNumber = m_neuronTab->m_ui->StepNumberBox->value();
+    //    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->m_ui->StepTimeBox_2->value(),sc_core::SC_US);
+    //    m_Simulator->SlowFactor_Set(m_neuronTab->m_ui->DisplaySlider->value());
+//    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 
 }
 

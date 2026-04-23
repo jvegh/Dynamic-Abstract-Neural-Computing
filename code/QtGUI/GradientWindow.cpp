@@ -57,7 +57,7 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
 
   statusBar()->showMessage( QString("Ready to go"));
 //  ui->customPlot->replot();
-  realtimeDataSlot();
+//  realtimeDataSlot();
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 

@@ -17,8 +17,7 @@ class NeuronTab;
 struct Layout;
 
 class NeuronTab : public RipesTab {
-  friend class RunDialog;
-  friend class MainWindow;
+  friend class ScQtNeuron_MainWindow;
   Q_OBJECT
 
 public:
@@ -39,8 +38,6 @@ public slots:
 
   void neuronSelection();
 
-private slots:
-  void run(bool state);
 
 private:
   void setupSimulatorActions(QToolBar *controlToolbar);

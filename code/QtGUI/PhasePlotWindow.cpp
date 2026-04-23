@@ -108,12 +108,7 @@ void PhasePlotWindow::ProcessLine(QString line)
 {
     QStringList firstColumn;
      // Handle the first two items only
-//    while (!s1.atEnd()){
-/*    first.append(line.split(",").at(0)); // appends first column to list, ',' is separator
-    second.append(line.split(",").at(1));
-    third.append(line.split(",").at(2));
-    fourth.append(line.split(",").at(3));
-*/    Time.push_back(line.split(",").at(0).toDouble());
+    Time.push_back(line.split(",").at(0).toDouble());
     Voltage.push_back(line.split(",").at(1).toDouble());
 
     Gradient.push_back(line.split(",").at(3).toDouble());
@@ -146,7 +141,7 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     customPlot->legend->setFont(QFont("Helvetica", 9));
     customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
     // Set position to upper left inside the axis rect
-    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignLeft | Qt::AlignTop);
+    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
     // Optional: Add a slight margin so it doesn't touch the edge
 //??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
 
@@ -159,13 +154,7 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->yAxis->setTickLabelFont(font);
   customPlot->legend->setFont(font);
   */
- /* customPlot->addGraph(); // blue line
-  customPlot->graph(0)->setPen(QPen(QColor(255, 110, 40)));
-  customPlot->graph(0)->setLineStyle(QCPGraph::lsLine);
-  customPlot->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
-  customPlot->graph(0)->setName("AP phase plot");
-*/
-  index = 0;
+   index = 0;
 
   customPlot->xAxis->setLabel("Voltage (mV)");
   customPlot->yAxis->setRange(-30, 110);
@@ -202,10 +191,6 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
   RunningPoint->setPen(QPen(Qt::red));
 
-/*  ui->customPlot->addGraph(); // blue line
-  ui->customPlot->graph(1)->setName("AP phase plot");
-  ui->customPlot->graph(1)->setPen(QPen(QColor(255, 110, 40)));
-*/
   // set some basic customPlot config:
   customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
   customPlot->axisRect()->setupFullAxesBox();
@@ -221,7 +206,7 @@ void PhasePlotWindow::realtimeDataSlot()
     double DvDt = m_neuron->dVdtResulting_Get()/100.;
     RunningPoint->topLeft->setCoords(-1+Volt2, DvDt-.05);    // Set coordinates
     RunningPoint->bottomRight->setCoords(1+Volt2, DvDt+0.05);
-    uint64_t NCP = Gradient.count();
+//    uint64_t NCP = Gradient.count();
 //    QVector<QCPCurveData> dataPhasePlot(NCP);
     dataPhasePlot.push_back(QCPCurveData(index,Volt2, DvDt));
     index++;

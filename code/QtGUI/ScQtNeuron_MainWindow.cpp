@@ -19,7 +19,9 @@
 //#include "QStuff.h"
 //#include "Stuff.h"
 //#include "edittab.h"
+#include "neurontab.h"
 #include "gitversion.h"
+#include "ui_neurontab.h"
 
 extern struct SystemDirectories Directories;
 
@@ -58,8 +60,14 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 
     auto *neuronToolbar = addToolBar("Neuron");
     neuronToolbar->setVisible(false);
-    auto *neuronTab = new NeuronTab(controlToolbar, neuronToolbar, this);
-    m_stackedTabs->insertWidget(NeuronTabID, neuronTab);
+//    auto *neuronTab = new NeuronTab(controlToolbar, neuronToolbar, this);
+//    m_stackedTabs->insertWidget(NeuronTabID, neuronTab);
+    m_neuronTab = new NeuronTab(controlToolbar, neuronToolbar, this);
+    m_stackedTabs->insertWidget(NeuronTabID, m_neuronTab);
+
+
+    connect(m_neuronTab->m_ui->startButton, &QPushButton::clicked, this,
+            &ScQtNeuron_MainWindow::on_startButton_clicked);
 
 /*
      auto *editToolbar = addToolBar("Edit");
@@ -153,6 +161,15 @@ void ScQtNeuron_MainWindow::closeEvent(QCloseEvent *event)
     }
 }
 
+void ScQtNeuron_MainWindow::on_startButton_clicked()
+{
+    //    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
+//    m_StepNumber = m_neuronTab->m_ui->StepNumberBox->value();
+//    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->m_ui->StepTimeBox_2->value(),sc_core::SC_US);
+//    m_Simulator->SlowFactor_Set(m_neuronTab->m_ui->DisplaySlider->value());
+    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+
+}
 
 bool ScQtNeuron_MainWindow::maybeClose()
 {

@@ -122,6 +122,7 @@ public:
 private slots:
      void wiki() ;
      void version();
+     void on_startButton_clicked();
 //     void event_happened(); // Not sure if needed
 /*    void fileNewWindow();
     void fileOpenDialog();
@@ -147,9 +148,8 @@ private:
     QStackedWidget *m_stackedTabs = nullptr;
     std::map<TabIndex, TabWidgets> m_tabWidgets;
     TabIndex m_currentTabID = NeuronTabID;
- //   uint32_t index, lastindex;
-//    QStringList first,second;
-protected:
+    NeuronTab *m_neuronTab;
+    protected:
     Ui::ScQtNeuron_MainWindow *ui;
 };
 

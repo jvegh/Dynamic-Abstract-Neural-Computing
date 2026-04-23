@@ -60,7 +60,7 @@ public:
     enum Method {
         Method_SingleSteps = 1,
     //    Method_SimulatedTime = 2,
-        Method3 = 3
+//        Method3 = 3
     };
     /**
      * @brief Requests for the method @em method to be executed
@@ -159,13 +159,13 @@ private:
      */
     void doSimulatedTime();
 #endif
-    /**
+    /* *
      * @brief 3rd method which could be called
      *
      * Counts 30 sec in this example.
      * Counting is interrupted if #_abort or #_interrupt is set to true.
      */
-    void doMethod3();
+//   void doMethod3();
 signals:
     /**
      * @brief This signal is emitted when counted value is changed (every sec)

@@ -108,19 +108,16 @@ void VoltageWindow::replot(void)
 void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
-
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
-    double DvDt = m_neuron->dVdtResulting_Get()/100.;
-    double Time = m_neuron->LocalTimeInMillisec_Get()*2.4;
     // Add an ellipse
     RunningPoint = new QCPItemEllipse(ui->customPlot);
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     RunningPoint->setPen(QPen(Qt::red));
-    RunningPoint->topLeft->setCoords(-0.05+key2, Volt2-.5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.05+key2, Volt2+1);
+    RunningPoint->topLeft->setCoords(-0.005+key2, Volt2-.5);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(0.005+key2, Volt2+1);
 
     VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-    dataVoltagePlot.push_back(QCPCurveData(index,Volt2, DvDt));
+    dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));
     index++;
     VoltagePlot->data()->set(dataVoltagePlot, true);
     VoltagePlot->setPen(QPen(Qt::blue));
@@ -149,7 +146,6 @@ void VoltageWindow::realtimeDataSlot()
 {
 
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
-    double DvDt = m_neuron->dVdtResulting_Get()/100.;
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     RunningPoint->topLeft->setCoords(-0.005+key2, Volt2-.5);    // Set coordinates
     RunningPoint->bottomRight->setCoords(0.005+key2, Volt2+1);

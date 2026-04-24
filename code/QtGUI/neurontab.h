@@ -28,13 +28,10 @@ public:
 //  void initRegWidget();
 
 public slots:
-  void pause();
   void restart();
   void reset();
   void reverse();
   void neuronFinished();
-  void runFinished();
-  void updateStatistics();
 
   void neuronSelection();
 
@@ -50,14 +47,9 @@ private:
 
   // Actions
   QAction *m_selectNeuronAction = nullptr;
-  QAction *m_clockAction = nullptr;
-//  QAction *m_autoClockAction = nullptr;
   QAction *m_runAction = nullptr;
   QAction *m_displayValuesAction = nullptr;
   QAction *m_resetAction = nullptr;
 //  QAction *m_darkmodeAction = nullptr;
-//  QTimer *m_autoClockTimer = nullptr;
-
-  QSpinBox *m_autoClockInterval = nullptr;
   private:
 };

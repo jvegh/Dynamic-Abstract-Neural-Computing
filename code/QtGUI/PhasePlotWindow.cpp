@@ -104,38 +104,10 @@ void PhasePlotWindow::screenshotFilesTriggered() {
     statusBar()->showMessage( QString("Screenshot saved to "+fileName));
 }
 
-void PhasePlotWindow::ProcessLine(QString line)
-{
-    QStringList firstColumn;
-     // Handle the first two items only
-    Time.push_back(line.split(",").at(0).toDouble());
-    Voltage.push_back(line.split(",").at(1).toDouble());
-
-    Gradient.push_back(line.split(",").at(3).toDouble());
- //    std::cout << line.toStdString() << '\n';
-}
-void PhasePlotWindow::GetData(QString fileName)
-{
-    QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
-
-    QTextStream in(&file);
-    QString line = in.readLine();   // Skip the heading line
-    while (!in.atEnd()) {
-        line = in.readLine();
-        ProcessLine(line);
-    }
-}
-
-// Fill area between graph 0 and graph 1
-/* customPlot->graph(0)->setChannelFillGraph(customPlot->graph(1));
-customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
-*/
 
 void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
-    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
+//    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
   // include this section to fully disable antialiasing for higher performance:
     customPlot->legend->setVisible(true); // Ensure legend is visible
     customPlot->legend->setFont(QFont("Helvetica", 9));
@@ -157,26 +129,16 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
    index = 0;
 
   customPlot->xAxis->setLabel("Voltage (mV)");
-  customPlot->yAxis->setRange(-30, 110);
-  customPlot->yAxis->setLabel("Gradient (V/m)");
-  // Create voltage gradient window
-
+   customPlot->yAxis->setLabel("Gradient (V/m)");
+   customPlot->xAxis->setRange(-30, 110);
+  customPlot->yAxis->setRange(-1, 3);
   // setup a timer that repeatedly calls PhasePlotWindow::realtimeDataSlot:
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
   customPlot->axisRect()->setupFullAxesBox();
   customPlot->replot();
-/*  connect(&dataTimer, SIGNAL(timeout()), this, SLOT(realtimeDataSlot()));
-  dataTimer.start(10); // Interval 0 means to refresh as fast as possible
-*/
-
 
   PhasePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-  uint64_t NCP = Gradient.count();
-  QVector<QCPCurveData> dataPhasePlot(NCP);
-  for (int i=0; i<NCP; ++i)
-  {
-      dataPhasePlot[i]=  QCPCurveData(i,Voltage[i], Gradient[i]);
-  }
+//  itemPhaseTracer = new QCPItemTracer ( PhasePlot);
   // pass the data to the curves; we know t (i in loop above) is ascending, so set alreadySorted=true (saves an extra internal sort):
   PhasePlot->data()->set(dataPhasePlot, true);
   PhasePlot->setPen(QPen(Qt::blue));
@@ -190,6 +152,9 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   RunningPoint->bottomRight->setCoords(1, +0.05);
   RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
   RunningPoint->setPen(QPen(Qt::red));
+  PhasePlot->data()->set(dataPhasePlot, true);
+  PhasePlot->setPen(QPen(Qt::blue));
+  PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
   // set some basic customPlot config:
   customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
@@ -209,65 +174,11 @@ void PhasePlotWindow::realtimeDataSlot()
 //    uint64_t NCP = Gradient.count();
 //    QVector<QCPCurveData> dataPhasePlot(NCP);
     dataPhasePlot.push_back(QCPCurveData(index,Volt2, DvDt));
-    index++;
     PhasePlot->data()->set(dataPhasePlot, true);
-    PhasePlot->setPen(QPen(Qt::blue));
-    PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    index++;
 
     ui->customPlot->replot();
- //   cerr << NCP<< ','<<  Volt2<< ',' << DvDt << '\n';
-#if 0
-//  static QTime timeStart = QTime::currentTime();
-  // calculate two new data points:
-double Volt;
-    if(!Voltage.count()) return;
-   Volt = Voltage[index];
-  double key = Time[index++];
-//  double key2 = timeStart.msecsTo(QTime::currentTime())/1000.0; // time elapsed since start of demo, in seconds
-  double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
-  double Volt2 = m_neuron->MembraneRelativePotential_Get();
-  double DvDt = m_neuron->dVdtResulting_Get();
-  if(index>=Voltage.count())
-      index = 0;
-   static double lastPointKey = 0;
-  if (key-lastPointKey > 0.005) // at most add point every 5 us
-  {
-    // add data to lines:
-    //  Time.push_back(line.split(",").at(0).toDouble());
-    //  Voltage.push_back(line.split(",").at(1).toDouble());
-
-
-      ui->customPlot->graph(0)->addData(key, Volt);
-    ui->customPlot->graph(1)->addData(key2, 17*Volt2);
-      ui->customPlot->graph(2)->addData(key2, DvDt/2);
-     // rescale value (vertical) axis to fit the current data:
-    ui->customPlot->graph(0)->rescaleValueAxis();
-    ui->customPlot->graph(1)->rescaleValueAxis(true);
-    ui->customPlot->graph(2)->rescaleValueAxis(true);
-    lastPointKey = key;
-//    if(index>sizeof(Voltage))
-//        Voltage.clear();
-  }
-  // make key axis range scroll with the data (at a constant range size of 10):
-  ui->customPlot->xAxis->setRange(key, 1., Qt::AlignRight);
-  ui->customPlot->replot();
-  // calculate frames per second:
-  static double lastFpsKey;
-  static int frameCount;
-  ++frameCount;
-  if (key-lastFpsKey > 1) // average fps over 2 seconds
-  {
-    statusBar()->showMessage(
-          QString("%1 FPS, Total Data points: %2")
-          .arg(frameCount/(key-lastFpsKey), 0, 'f', 0)
-          .arg(ui->customPlot->graph(0)->data()->size()
-//                   +ui->customPlot->graph(1)->data()->size()
-                   )
-          , 1000);
-    lastFpsKey = key;
-    frameCount = 0;
-  }
-  #endif // 0
+    cerr << "Phase" << index<< ','<<  Volt2<< ',' << DvDt << '\n';
 }
 
 

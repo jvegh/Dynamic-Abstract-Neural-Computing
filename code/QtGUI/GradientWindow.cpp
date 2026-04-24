@@ -26,7 +26,6 @@
 #include "GradientWindow.h"
 #include "ui_GradientWindow.h"
 #include <QDebug>
-#include <iostream>
 #include <QScreen>
 #include <QMessageBox>
 #include <QMetaEnum>
@@ -82,10 +81,12 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RushinGradientPlot->setName("Rushin gradient");
     RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
     RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+
     AISGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     AISGradientPlot->setName("AIS gradient");
     AISGradientPlot->setLineStyle(QCPCurve::lsLine);
     AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+
     GradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     GradientPlot->setName("Resulting gradient");
     GradientPlot->setLineStyle(QCPCurve::lsLine);
@@ -95,7 +96,6 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 /*     GradientPlot->setChannelFillGraph(customPlot->graph(1));
 customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 */
-
 
     customPlot->legend->setVisible(true); // Ensure legend is visible
     customPlot->legend->setFont(QFont("Helvetica", 9));
@@ -144,8 +144,8 @@ void GradientWindow::realtimeDataSlot()
     GradientPlot->data()->set(dataGradientPlot, true);
     GradientPlot->setPen(QPen(Qt::blue));
     GradientPlot->setBrush(QBrush(QColor(2, 2, 20, 20)));
-    RunningPoint->topLeft->setCoords(-0.01+key2, DvDt-.5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.01+key2, DvDt+5);
+    RunningPoint->topLeft->setCoords(-0.01+key2, DvDt-2);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(0.01+key2, DvDt+2);
 
     // Handle AIS gradient display
     dataAISGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_AIS));

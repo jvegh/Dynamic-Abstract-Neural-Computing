@@ -28,6 +28,7 @@ doc/manual/*.ind
 doc/manual/*.lof
 doc/manual/*.lot
 doc/manual/*.toc
+doc/manual/*.gz
 doc/manual/*.xml
 doc/manual/*.mt*
 code/build/

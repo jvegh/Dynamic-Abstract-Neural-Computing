@@ -45,8 +45,6 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   this->setStyleSheet("color: Navy;"
                       //                     "title-color:  LightGray;"
                       "border-color:  LightGray;"
-                      //                        "background-color: rgb(50,50, 150);"
-                      //                        "border: 1px blue;"
                       "background-color:  LightGray;");
   setupRealtimeDataDemo(ui->customPlot);
  // setWindowTitle("QCustomPlot: "+demoName);
@@ -56,8 +54,11 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   statusBar()->showMessage( QString("Ready to go"));
 
   realtimeDataSlot();
-   //QTimer::singleShot(1500, this, SLOT(allScreenShots()));
-//  QTimer::singleShot(4000, this, SLOT(screenShot()));
+}
+
+PhasePlotWindow::~PhasePlotWindow()
+{
+    delete ui;
 }
 
 void PhasePlotWindow::setupMenus()
@@ -67,7 +68,7 @@ void PhasePlotWindow::setupMenus()
     ui->menuFile->addAction(screenshotAction);
     screenshotAction->setShortcut(QKeySequence::Save);
     connect(screenshotAction, &QAction::triggered, this,
-            &PhasePlotWindow::screenshotFilesTriggered);
+            &PhasePlotWindow::screenShot);
 }
     // Edit actions
 
@@ -107,8 +108,6 @@ void PhasePlotWindow::screenshotFilesTriggered() {
 
 void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
-//    GetData("/home/jvegh/REPO/LaTeX/figures/AP_Simulation/AP_0_offset.csv");
-  // include this section to fully disable antialiasing for higher performance:
     customPlot->legend->setVisible(true); // Ensure legend is visible
     customPlot->legend->setFont(QFont("Helvetica", 9));
     customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
@@ -138,8 +137,6 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->replot();
 
   PhasePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-//  itemPhaseTracer = new QCPItemTracer ( PhasePlot);
-  // pass the data to the curves; we know t (i in loop above) is ascending, so set alreadySorted=true (saves an extra internal sort):
   PhasePlot->data()->set(dataPhasePlot, true);
   PhasePlot->setPen(QPen(Qt::blue));
   PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
@@ -171,21 +168,13 @@ void PhasePlotWindow::realtimeDataSlot()
     double DvDt = m_neuron->dVdtResulting_Get()/100.;
     RunningPoint->topLeft->setCoords(-1+Volt2, DvDt-.05);    // Set coordinates
     RunningPoint->bottomRight->setCoords(1+Volt2, DvDt+0.05);
-//    uint64_t NCP = Gradient.count();
-//    QVector<QCPCurveData> dataPhasePlot(NCP);
-    dataPhasePlot.push_back(QCPCurveData(index,Volt2, DvDt));
+    dataPhasePlot.push_back(QCPCurveData(index++,Volt2, DvDt));
     PhasePlot->data()->set(dataPhasePlot, true);
-    index++;
 
     ui->customPlot->replot();
-    cerr << "Phase" << index<< ','<<  Volt2<< ',' << DvDt << '\n';
+//    cerr << "Phase" << index<< ','<<  Volt2<< ',' << DvDt << '\n';
 }
 
-
-PhasePlotWindow::~PhasePlotWindow()
-{
-  delete ui;
-}
 
 void PhasePlotWindow::screenShot()
 {

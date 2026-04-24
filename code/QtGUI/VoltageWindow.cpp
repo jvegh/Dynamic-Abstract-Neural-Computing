@@ -53,9 +53,6 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
   setupMenus();
   statusBar()->clearMessage();
   statusBar()->showMessage( QString("Ready to go"));
-//  ui->customPlot->replot();
-// realtimeDataSlot();
-//  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
 void VoltageWindow::setupMenus()

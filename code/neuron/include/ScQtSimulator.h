@@ -112,18 +112,14 @@ public:
         m_system_x = m_system_s = (std::chrono::duration< int64_t, nano>)0;
         BENCHMARK_TIME_RESET(&m_system_t,&m_system_x,&m_system_s); // Reset at the very beginning, say in the constructor
     }
-/*    void NoOfSteps_Set(uint64_t N = 1){ m_NoOfSteps = N;}
-    void TimeOfSteps_Set(sc_core::sc_time T = sc_core::sc_time(100,sc_core::SC_US)){ m_TimeOfAStep = T;}
-*/    void SlowFactor_Set(uint64_t S){    m_SlowFactor = S;}
+   void SlowFactor_Set(uint64_t S){    m_SlowFactor = S;}
 
 private:
     // Define time benchmarking variables and utility functions
     chrono::steady_clock::time_point m_system_t =chrono::steady_clock::now();
     std::chrono::duration< int64_t, nano> m_system_x,m_system_s = (std::chrono::duration< int64_t, nano>)0;
     uint64_t m_SlowFactor = 1000;
- /*   uint64_t m_NoOfSteps = 1;
-    sc_core::sc_time m_TimeOfAStep = sc_core::sc_time(100,sc_core::SC_US);
-*/    sc_core::sc_time m_sc_time_begin;
+    sc_core::sc_time m_sc_time_begin;
     QTime m_clock_time_begin;   // The beginning of this simulation, [ms]
     /*
      * @brief Currently requested method

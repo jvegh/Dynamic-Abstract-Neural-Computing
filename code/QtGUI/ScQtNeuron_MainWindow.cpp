@@ -76,6 +76,32 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
             &ScQtNeuron_MainWindow::on_resetButton_clicked);
 
 
+    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
+    //
+    // The thread and the simulator are created in the constructor so it is always safe to delete them.
+    //
+    m_thread = new QThread();
+    m_Simulator = new ScQtSimulator();
+    m_Simulator->moveToThread(m_thread);
+    connect(m_thread, SIGNAL(started()), m_Simulator, SLOT(mainLoop()));
+    connect(m_Simulator, SIGNAL(finished()), m_thread, SLOT(quit()), Qt::DirectConnection);
+
+    // Receive SC event from the simulator
+    //    connect(parent_Get()->m_Simulator,  SIGNAL(NeuralBreakpoint), this, SLOT(on_scEventHappened()));
+    qDebug()<<"Starting thread in Thread "<<this->QObject::thread()->currentThreadId();
+    m_thread->start();
+    //    ui->SimulatedTime->setText("Help");
+    //    connect(parent_Get()->m_Simulator, SIGNAL(valueChanged(QString)), ui->label, SLOT(setText(QString)));
+    connect(m_Simulator,SIGNAL(eventHappened()), this, SLOT(on_eventHappened()));
+/*
+    m_Simulator_ControlWindow = new SimulatorControlWindow(MyNeuron,this);
+    m_Simulator_ControlWindow->show();
+    m_Simulator_ControlWindow->move(QPoint(600,000));
+*/
+//    connect(m_Simulator, &ScQtSimulator::eventHappened, m_neuronTab,  &NeuronTab::on_eventHappened);
+    connect(m_Simulator, &ScQtSimulator::eventHappened, this,  &ScQtNeuron_MainWindow::on_eventHappened);
+
+
 /*
      auto *editToolbar = addToolBar("Edit");
     editToolbar->setVisible(false);
@@ -100,25 +126,12 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     readSettings(); // Read window-related settings
 */    setupToolBoxes();   // Set up the tool box contents
 //    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
-    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
-
-    m_Simulator_ControlWindow = new SimulatorControlWindow(MyNeuron,this);
-    m_Simulator_ControlWindow->show();
-    m_Simulator_ControlWindow->move(QPoint(600,000));
     m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
     m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
     m_GradientWindow->show();
     m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
     m_PhasePlotWindow->show();
-// Not sure if needed
-//    connect(m_simulator, &ScQtSimulator::eventHappened, this, &ScQtNeuron_MainWindow::event_happened);
-#if 0
-//     m_AP_Window->move(QPoint(800,600)),
-     m_dVdt_Window = new ScQtNeuron_ParameterWindow(this);
-     m_dVdt_Window->show();
-#endif
-//     m_dVdt_Window->move(QPoint(1000,800)),
     statusBar()->showMessage("Simulator is ready to work",2000);
 }
 
@@ -170,12 +183,10 @@ void ScQtNeuron_MainWindow::closeEvent(QCloseEvent *event)
 
 void ScQtNeuron_MainWindow::on_startButton_clicked()
 {
-    //    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
-//    m_StepNumber = m_neuronTab->m_ui->StepNumberBox->value();
-//    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->m_ui->StepTimeBox_2->value(),sc_core::SC_US);
-//    m_Simulator->SlowFactor_Set(m_neuronTab->m_ui->DisplaySlider->value());
+    m_StepNumber = m_neuronTab->ui->StepNumberBox->value();
+    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->ui->StepTimeBox->value(),sc_core::SC_US);
+    m_Simulator->SlowFactor_Set(m_neuronTab->ui->DisplaySlider->value());
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
-
 }
 
 void ScQtNeuron_MainWindow::on_stopButton_clicked()
@@ -195,6 +206,24 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
     //    m_Simulator->SlowFactor_Set(m_neuronTab->m_ui->DisplaySlider->value());
 //    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 
+}
+
+void ScQtNeuron_MainWindow::on_eventHappened()
+{
+    // Display the time values
+    m_neuronTab->ui->SimulatedTimeValue->setText(QString(sc_time_String_Get(m_Simulator->scTime_Get()).c_str()));
+    m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
+    m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
+    replot();
+
+    if((m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime <= sc_core::sc_time_stamp()))
+        || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
+        || m_neuronTab->ui->continuousMode->isChecked()
+        )
+    {   // Continue execution by issuing one more request
+        m_Simulator->SlowFactor_Set(m_neuronTab->ui->DisplaySlider->value());
+        m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+    }
 }
 
 bool ScQtNeuron_MainWindow::maybeClose()

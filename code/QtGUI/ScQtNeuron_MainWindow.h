@@ -125,7 +125,7 @@ private slots:
      void on_startButton_clicked();
      void on_stopButton_clicked();
      void on_resetButton_clicked();
-//     void event_happened(); // Not sure if needed
+     void on_eventHappened();
 /*    void fileNewWindow();
     void fileOpenDialog();
     virtual void fileExit();
@@ -142,9 +142,15 @@ private:
     void addTreeRoot(QString name, QString description);
     void addTreeChild(QTreeWidgetItem *parent,
                       QString name, QString description);
+    /**
+     * @brief Thread object which will let us manipulate the running thread
+     */
+    QThread *m_thread;
     VoltageWindow *m_VoltageWindow;
     GradientWindow *m_GradientWindow;
     PhasePlotWindow *m_PhasePlotWindow;
+    int32_t m_StepNumber;
+    sc_core::sc_time m_FinalTime;
     NeuronPhysicalTEST *MyNeuron;
     // Tabs
     QStackedWidget *m_stackedTabs = nullptr;

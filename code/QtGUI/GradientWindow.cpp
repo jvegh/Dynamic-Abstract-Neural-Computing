@@ -87,7 +87,7 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     AISGradientPlot->setLineStyle(QCPCurve::lsLine);
     AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
     GradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-    GradientPlot->setName("Resulting");
+    GradientPlot->setName("Resulting gradient");
     GradientPlot->setLineStyle(QCPCurve::lsLine);
     GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
 

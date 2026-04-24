@@ -47,22 +47,6 @@ void ScQtSimulator::abort()
     condition.wakeOne();
 }
 
-#if 0
-void ScQtSimulator::doSimulationSteps()
-{
-    sc_core::sc_time BeginTime = sc_core::sc_time_stamp();
-        sc_core::sc_time ThisTime = sc_core::sc_time_to_pending_activity(); // Make a single simulation step
-            BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
-        sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
-            BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
-        emit eventHappened();
-         uint64_t DiffTime = (sc_core::sc_time_stamp()-BeginTime).to_seconds()*1000.*1000.*m_SlowFactor;
-        usleep(DiffTime);  // Now display refresh can start in the other thread
-/*    if (_abort || _interrupt) {
-        qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();
-    }*/
-}
-#endif
 void ScQtSimulator::doSimulationSteps()
 {    uint64_t DiffTime;
     do
@@ -77,38 +61,12 @@ void ScQtSimulator::doSimulationSteps()
         emit eventHappened();
 
         usleep(DiffTime);  // Now display refresh can start in the other thread
-/*    if (_abort || _interrupt) {
+    if (_abort || _interrupt) {
         qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();
-    }*/
-}
-
-
-
-#if 0
-void ScQtSimulator::doMethod3()
-{
-    qDebug()<<"Starting Method3 in Thread "<<thread()->currentThreadId();
-
-    for (int i = 0; i < 30; i ++) {
-
-        mutex.lock();
-        bool abort = _abort;
-        bool interrupt = _interrupt;
-        sc_start(sc_core::SC_ZERO_TIME);
-        mutex.unlock();
-
-        if (abort || interrupt) {
-            qDebug()<<"Interrupting Method3 in Thread "<<thread()->currentThreadId();
-            break;
-        }
-
-        QEventLoop loop;
-        QTimer::singleShot(1000, &loop, SLOT(quit()));
-        loop.exec();
-         emit valueChanged(QString::number(i));
     }
 }
-#endif
+
+
 
 void ScQtSimulator::mainLoop()
 {
@@ -140,9 +98,6 @@ void ScQtSimulator::mainLoop()
             doSimulatedTime();
             break;
 
-        case Method3:
-            doMethod3();
-            break;
 #endif
         }
     }

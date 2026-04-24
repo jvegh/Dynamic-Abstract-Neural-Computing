@@ -168,6 +168,23 @@ and 'Delivering' (codename '2') as described above.
 %
 %
 
+\section{\label{sec:ScQtSimulator} ScQtNeuron simulator}
 
+The neuron simulator runs a SystemC simulator in the background,
+and displays the produced time courses of neuronal parameters
+in scalable graphical windows based on a Qt6-based Graphical User Interface. The three graphs take their displayed data from the same simulation and show synchronized data.
+
+\begin{figure}
+	\includegraphics[width=0.8\textwidth]{fig/SimulatorScreenshot.png}
+	\caption{The ScQtNeuron simulator produces coordinated time 
+diagrams about the neuron's electrical activity. The diagrams 
+can be directly compared to experimentally measured ones.
+The control window enables to change the neuron's parameters.
+	\label{fig:SimulatorScreenshot}}
+\end{figure}
+
+The data points are the result of numerical integration, computed
+at the 'knots'. The graphs can be scaled and moved by the mouse.
+Screenshot of the individual graphs can be taken throughh the menu.
 
 %	\input{src/Simulation-AP_Timing}

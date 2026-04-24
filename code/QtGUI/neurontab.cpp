@@ -62,6 +62,8 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
     QObject::connect(ui->DisplaySlider, &QSlider::valueChanged, this, [=] () {
         (ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value())));
     });
+        ui->StepNumberBox->setRange(1,100);
+    ui->StepTimeBox->setRange(10,1000);
 
   setupSimulatorActions(controlToolbar);
 

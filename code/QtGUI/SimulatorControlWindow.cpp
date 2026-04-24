@@ -111,7 +111,7 @@ void SimulatorControlWindow::on_eventHappened()
     ui->timeSystem->setText(QString(time_String_Get(parent_Get()->m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
     parent_Get()->replot();
 
-    if((ui->timeMode->isChecked() && (m_FinalTime <= sc_core::sc_time_stamp()))
+/*    if((ui->timeMode->isChecked() && (m_FinalTime <= sc_core::sc_time_stamp()))
            || (ui->stepMode->isChecked() && (m_StepNumber-->0))
            || ui->continuousMode->isChecked()
           )
@@ -120,6 +120,7 @@ void SimulatorControlWindow::on_eventHappened()
         parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
         parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     }
+*/
 }
 
 
@@ -130,9 +131,9 @@ void SimulatorControlWindow::on_startButton_clicked()
     parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
 */
 //    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
-    m_StepNumber = ui->StepNumberBox->value();
+ /*   m_StepNumber = ui->StepNumberBox->value();
     m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(ui->StepTimeBox->value(),sc_core::SC_US);
-    parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
+*/    parent_Get()->m_Simulator->SlowFactor_Set(ui->DisplaySlider->value());
     parent_Get()->m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
  }
 

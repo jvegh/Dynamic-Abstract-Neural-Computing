@@ -47,111 +47,22 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
         (ui->Slider3Value->setText(QString::number(ui->Slider3->value(),'f',2)));
     });
     // Set up display slowdown Slider
-    ui->DisplaySlider->setMinimum(100);
-    ui->DisplaySlider->setMaximum(10000);
-    ui->DisplaySlider->setValue(1000);
+    ui->DisplaySlider->setMinimum(0);
+    ui->DisplaySlider->setMaximum(100);
+    ui->DisplaySlider->setValue(5);
     ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value()));
     QObject::connect(ui->DisplaySlider, &QSlider::valueChanged, this, [=] () {
         (ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value())));
     });
-    // Set up display slowdown Slider
-    ui->DisplaySlider->setMinimum(100);
-    ui->DisplaySlider->setMaximum(100000);
-    ui->DisplaySlider->setValue(5000);
-    ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value()));
-    QObject::connect(ui->DisplaySlider, &QSlider::valueChanged, this, [=] () {
-        (ui->DisplayValue->setText(QString::number(ui->DisplaySlider->value())));
-    });
-        ui->StepNumberBox->setRange(1,100);
+    ui->StepNumberBox->setRange(1,100);
     ui->StepTimeBox->setRange(10,1000);
 
   setupSimulatorActions(controlToolbar);
-
-  // Setup statistics update timer - this timer is distinct from the
-  // ProcessorHandler's update timer, given that it needs to run during
-  // 'running' the processor.
-
-  m_statUpdateTimer = new QTimer(this);
-#if 0
-  m_statUpdateTimer->setInterval(
-      1000.0 / RipesSettings::value(RIPES_SETTING_UIUPDATEPS).toInt());
-  connect(m_statUpdateTimer, &QTimer::timeout, this,
-          &NeuronTab::updateStatistics);
-  connect(RipesSettings::getObserver(RIPES_SETTING_UIUPDATEPS),
-          &SettingObserver::modified, m_statUpdateTimer, [=] {
-            m_statUpdateTimer->setInterval(
-                1000.0 /
-                RipesSettings::value(RIPES_SETTING_UIUPDATEPS).toInt());
-          });
-
-  // Connect changes in VSRTL reversible stack size to checking whether the
-  // simulator is reversible
-  connect(RipesSettings::getObserver(RIPES_SETTING_REWINDSTACKSIZE),
-          &SettingObserver::modified, m_reverseAction, [=](const auto &) {
-            m_reverseAction->setEnabled(m_vsrtlWidget->isReversible());
-          });
-
-  // Connect the global reset request signal to reset()
-  connect(NeuronHandler::get(), &NeuronHandler::neuronReset, this,
-          &NeuronTab::reset);
-  connect(NeuronHandler::get(), &NeuronHandler::exit, this,
-          &NeuronTab::neuronFinished);
-  connect(NeuronHandler::get(), &NeuronHandler::runFinished, this,
-          &NeuronTab::runFinished);
-  connect(NeuronHandler::get(), &NeuronHandler::stopping, this,
-          &NeuronTab::pause);
-#endif
-   /*
-  // Make processor view stretch wrt. right side tabs
-  m_ui->viewSplitter->setStretchFactor(0, 1);
-  m_ui->viewSplitter->setStretchFactor(1, 0);
-*/
-//  m_ui->VoltagePlot = new ScQtNeuronVoltagePlot(parent);
 
   // Initially, no file is loaded, disable toolbuttons
   enableSimulatorControls();
 }
 
-/*
-void NeuronTab::loadLayout(const Layout &layout) {
-  if (layout.name.isEmpty() || layout.file.isEmpty())
-    return; // Not a valid layout
-
-  if (layout.stageLabelPositions.size() !=
-      ProcessorHandler::getProcessor()->structure().numStages()) {
-    Q_ASSERT(false &&
-             "A stage label position must be specified for each stage");
-  }
-
-  // cereal expects the archive file to be present standalone on disk, and
-  // available through an ifstream. Copy the resource layout file (bundled
-  // within the binary as a Qt resource) to a temporary file, for loading the
-  // layout.
-  const auto &layoutResourceFilename = layout.file;
-  QFile layoutResourceFile(layoutResourceFilename);
-  QTemporaryFile *tmpLayoutFile =
-      QTemporaryFile::createNativeFile(layoutResourceFile);
-  if (!tmpLayoutFile->open()) {
-    QMessageBox::warning(this, "Error",
-                         "Could not create temporary layout file");
-    return;
-  }
-
-  m_vsrtlWidget->getTopLevelComponent()->loadLayoutFile(
-      tmpLayoutFile->fileName());
-  tmpLayoutFile->remove();
-
-  // Adjust stage label positions
-  const auto &parent = m_stageInstructionLabels.at({0, 0})->parentItem();
-  for (auto sid : ProcessorHandler::getProcessor()->structure().stageIt()) {
-    auto &label = m_stageInstructionLabels.at(sid);
-    QFontMetrics metrics(label->font());
-    label->setPos(parent->boundingRect().width() *
-                      layout.stageLabelPositions.at(sid).x(),
-                  metrics.height() * layout.stageLabelPositions.at(sid).y());
-  }
-}
-*/
 
 void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
   const QIcon neuronIcon = QIcon(":/icons/cpu.svg");
@@ -161,67 +72,8 @@ void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
           &NeuronTab::neuronSelection);
   controlToolbar->addAction(m_selectNeuronAction);
   controlToolbar->addSeparator();
-#if 0
-  const QIcon resetIcon = QIcon(":/icons/reset.svg");
-  m_resetAction = new QAction(resetIcon, "Reset (F3)", this);
-  connect(m_resetAction, &QAction::triggered, this, [=] {
-    RipesSettings::getObserver(RIPES_GLOBALSIGNAL_REQRESET)->trigger();
-  });
-  m_resetAction->setShortcut(QKeySequence("F3"));
-  m_resetAction->setToolTip("Reset the simulator (F3)");
-  controlToolbar->addAction(m_resetAction);
-#endif
+//  const QIcon clockIcon = QIcon(":/icons/step.svg");
 
-  const QIcon clockIcon = QIcon(":/icons/step.svg");
-  m_clockAction = new QAction(clockIcon, "Clock (F5)", this);
-/*  connect(m_clockAction, &QAction::triggered, this,
-          [=] { NeuronHandler::clock(); });
-*/
-  m_clockAction->setShortcut(QKeySequence("F5"));
-  m_clockAction->setToolTip("Clock the circuit (F5)");
-  controlToolbar->addAction(m_clockAction);
-#if 0
-  m_autoClockTimer = new QTimer(this);
-  connect(m_autoClockTimer, &QTimer::timeout, this,
-          [=] { autoClockTimeout(); });
-
-  const QIcon startAutoClockIcon = QIcon(":/icons/step-clock.svg");
-  m_autoClockAction = new QAction(startAutoClockIcon, "Auto clock (F6)", this);
-  m_autoClockAction->setShortcut(QKeySequence("F6"));
-  m_autoClockAction->setToolTip(
-      "Clock the circuit with the selected frequency (F6)");
-  m_autoClockAction->setCheckable(true);
-  m_autoClockAction->setChecked(false);
-  connect(m_autoClockAction, &QAction::toggled, this, &NeuronTab::autoClock);
-  controlToolbar->addAction(m_autoClockAction);
-
-  m_autoClockInterval = new QSpinBox(this);
-  m_autoClockInterval->setRange(1, 10000);
-  m_autoClockInterval->setSuffix(" ms");
-  m_autoClockInterval->setToolTip("Auto clock interval");
-  connect(m_autoClockInterval, qOverload<int>(&QSpinBox::valueChanged), this,
-          [this](int msec) {
-            RipesSettings::setValue(RIPES_SETTING_AUTOCLOCK_INTERVAL, msec);
-            m_autoClockTimer->setInterval(msec);
-          });
-  m_autoClockInterval->setValue(
-      RipesSettings::value(RIPES_SETTING_AUTOCLOCK_INTERVAL).toInt());
-  controlToolbar->addWidget(m_autoClockInterval);
-#endif
-
-#if 0
-  // Setup neuron-tab only actions
-  m_displayValuesAction = new QAction("Show neuron signal values", this);
-  m_displayValuesAction->setCheckable(true);
-  connect(m_displayValuesAction, &QAction::toggled, m_vsrtlWidget,
-          [=](bool checked) {
-            RipesSettings::setValue(RIPES_SETTING_SHOWSIGNALS,
-                                    QVariant::fromValue(checked));
-            m_vsrtlWidget->setOutputPortValuesVisible(checked);
-          });
-  m_displayValuesAction->setChecked(
-      RipesSettings::value(RIPES_SETTING_SHOWSIGNALS).toBool());
-#endif
 
 /*
   m_darkmodeAction = new QAction("Processor darkmode", this);
@@ -237,56 +89,6 @@ void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
 */
 }
 
-void NeuronTab::updateStatistics() {
-//  static auto lastUpdateTime = std::chrono::system_clock::now();
- /* static long long lastCycleCount =
-      NeuronHandler::getNeuron()->getCycleCount();
-
-  const auto timeNow = std::chrono::system_clock::now();
-  const auto cycleCount = NeuronHandler::getNeuron()->getCycleCount();
-  const auto instrsRetired =
-      NeuronHandler::getProcessor()->getInstructionsRetired();
-  const auto timeDiff = std::chrono::duration_cast<std::chrono::milliseconds>(
-                            timeNow - lastUpdateTime)
-                            .count() /
-                        1000.0; // in seconds
-  const auto cycleDiff = cycleCount - lastCycleCount;
-
-  // Cycle count
-  m_ui->cycleCount->setText(QString::number(cycleCount));
-  // Instructions retired
-  m_ui->instructionsRetired->setText(QString::number(instrsRetired));
-  QString cpiText, ipcText;
-  if (cycleCount != 0 && instrsRetired != 0) {
-    const double cpi =
-        static_cast<double>(cycleCount) / static_cast<double>(instrsRetired);
-    const double ipc = 1 / cpi;
-    cpiText = QString::number(cpi, 'g', 3);
-    ipcText = QString::number(ipc, 'g', 3);
-  }
-  // CPI & IPC
-  m_ui->cpi->setText(cpiText);
-  m_ui->ipc->setText(ipcText);
-
-  // Clock rate
-  const double clockRate = static_cast<double>(cycleDiff) / timeDiff;
-  m_ui->clockRate->setText(convertToSIUnits(clockRate) + "Hz");
-
-  // Record timestamp values
-  lastUpdateTime = timeNow;
-  lastCycleCount = cycleCount;
-  */
-}
-
-void NeuronTab::pause() {
-#if 0
-  m_autoClockAction->setChecked(false);
-  m_runAction->setChecked(false);
-  m_reverseAction->setEnabled(m_vsrtlWidget->isReversible());
-#endif
-}
-
-//void NeuronTab::fitToScreen() { m_vsrtlWidget->zoomToFit(); }
 
 void NeuronTab::loadNeuronToWidget(const Layout *layout) {
 /*
@@ -358,7 +160,6 @@ NeuronTab::~NeuronTab() { delete ui; }
 
 void NeuronTab::neuronFinished() {
   // Disallow further clocking of the circuit
-  m_clockAction->setEnabled(false);
 /*  m_autoClockAction->setChecked(false);
   m_autoClockAction->setEnabled(false);
 */
@@ -367,7 +168,6 @@ void NeuronTab::neuronFinished() {
 }
 
 void NeuronTab::enableSimulatorControls() {
-  m_clockAction->setEnabled(true);
 /*  m_autoClockAction->setEnabled(true);
   m_runAction->setEnabled(true);
   m_reverseAction->setEnabled(m_vsrtlWidget->isReversible());
@@ -383,12 +183,6 @@ void NeuronTab::reset() {
 }
 
 
-void NeuronTab::runFinished() {
-  pause();
-//  NeuronHandler::checkNeuronFinished();
-//  m_vsrtlWidget->sync();
-  m_statUpdateTimer->stop();
-}
 
 
 

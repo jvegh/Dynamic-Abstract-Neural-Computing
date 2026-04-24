@@ -34,7 +34,7 @@ void ScQtSimulator::requestMethod(ScQtSimulator::Method method)
 {
 //    qDebug()<<"Request ScQtSimulator Method"<<method<<" in Thread "<<thread()->currentThreadId();
     QMutexLocker locker(&mutex);
-    _interrupt = true;
+//    _interrupt = true;
     _method = method;
     condition.wakeOne();
 }
@@ -56,7 +56,7 @@ void ScQtSimulator::doSimulationSteps()
             BENCHMARK_TIME_BEGIN(&m_system_t,&m_system_x);    // Begin benchmarking here
         sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
             BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
-        DiffTime = (sc_core::sc_time_stamp()-BeginTime).to_seconds()*1000.*1000.*m_SlowFactor;
+        DiffTime = (sc_core::sc_time_stamp()-BeginTime).to_seconds()*1000.*1000.*1000.10*m_SlowFactor;
     }   while(!DiffTime); // Do not send event at zero time difference
         emit eventHappened();
 

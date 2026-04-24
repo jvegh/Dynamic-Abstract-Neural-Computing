@@ -43,8 +43,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
         ":/fonts/Inconsolata/Inconsolata-Regular.ttf");
     QFontDatabase::addApplicationFont(":/fonts/Inconsolata/Inconsolata-Bold.ttf");
 
-    setMinimumSize(300, 420);
-    resize(500, 600);
+    setMinimumSize(250, 300);
+    resize(300, 200);
     move(200,300);
 
     // Create tabs
@@ -145,13 +145,6 @@ void ScQtNeuron_MainWindow::replot()
     m_PhasePlotWindow->replot();
     m_VoltageWindow->replot();
     m_GradientWindow->replot();
-/*        m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
-    m_VoltageWindow->show();
-    m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
-    m_GradientWindow->show();
-    m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
-    m_PhasePlotWindow->show();
-*/
 }
 
 void ScQtNeuron_MainWindow::fitToView() {
@@ -214,7 +207,7 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     m_neuronTab->ui->SimulatedTimeValue->setText(QString(sc_time_String_Get(m_Simulator->scTime_Get()).c_str()));
     m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
-    replot();
+//    replot();
 
     if((m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime <= sc_core::sc_time_stamp()))
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))

@@ -51,8 +51,7 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
   setupRealtimeDataDemo(ui->customPlot);
    setWindowTitle(QString(m_neuron->name())+QString(" ActionPotential"));
   setupMenus();
-  statusBar()->clearMessage();
-  statusBar()->showMessage( QString("Ready to go"));
+   connect(ui->actionScreenshot, &QAction::triggered, this, &VoltageWindow::screenShot);
 }
 
 void VoltageWindow::setupMenus()
@@ -259,7 +258,7 @@ VoltageWindow::~VoltageWindow()
 
 void VoltageWindow::screenShot()
 {
-  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+  QPixmap pm = qGuiApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
     QString fileName = demoName.toLower()+".pdf";
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);

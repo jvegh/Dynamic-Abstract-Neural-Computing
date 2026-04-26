@@ -6,11 +6,8 @@
 #include <QScrollBar>
 #include <QSpinBox>
 #include <QTemporaryFile>
-//#include "ScQtNeuron_Plot_AP.h"
-//#include "ScQtNeuron_MainWindow.h"
 //#include "consolewidget.h"
 
-//#include "syscall/systemio.h"
 //#include "neuronhandler.h"
 #include "neurontab.h"
 #include "ui_neurontab.h"
@@ -66,13 +63,14 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
 
 void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
   const QIcon neuronIcon = QIcon(":/icons/cpu.svg");
-  m_selectNeuronAction =
+/*  m_selectNeuronAction =
       new QAction(neuronIcon, "Select neuron", this);
   connect(m_selectNeuronAction, &QAction::triggered, this,
           &NeuronTab::neuronSelection);
   controlToolbar->addAction(m_selectNeuronAction);
   controlToolbar->addSeparator();
 //  const QIcon clockIcon = QIcon(":/icons/step.svg");
+*/
 
 
 /*
@@ -90,66 +88,6 @@ void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
 }
 
 
-void NeuronTab::loadNeuronToWidget(const Layout *layout) {
-/*
-  const bool doPlaceAndRoute = layout != nullptr;
-  ProcessorHandler::loadProcessorToWidget(m_vsrtlWidget, doPlaceAndRoute);
-
-  // Construct stage instruction labels
-  auto *topLevelComponent = m_vsrtlWidget->getTopLevelComponent();
-
-  m_stageInstructionLabels.clear();
-  for (auto laneIt : ProcessorHandler::getProcessor()->structure()) {
-    for (unsigned stageIdx = 0; stageIdx < laneIt.second; stageIdx++) {
-      StageIndex sid = {laneIt.first, stageIdx};
-      auto *stagelabel = new vsrtl::Label(topLevelComponent, "-");
-      stagelabel->setPointSize(14);
-      m_stageInstructionLabels[sid] = stagelabel;
-    }
-  }
-  if (layout != nullptr) {
-    loadLayout(*layout);
-  }
-  updateInstructionLabels();
-  fitToScreen();
-  */
-}
-
-void NeuronTab::neuronSelection() {
- /*  m_autoClockAction->setChecked(false);
-
-  ProcessorSelectionDialog diag;
-  if (diag.exec()) {
-    // New processor model was selected
-    m_vsrtlWidget->clearDesign();
-    m_stageInstructionLabels.clear();
-    ProcessorHandler::selectProcessor(diag.getSelectedId(),
-                                      diag.getEnabledExtensions(),
-                                      diag.getRegisterInitialization());
-
-    // Store selected layout index
-    const auto &layouts =
-        ProcessorRegistry::getDescription(diag.getSelectedId()).layouts;
-    if (auto *layout = diag.getSelectedLayout()) {
-      auto layoutIter = std::find(layouts.begin(), layouts.end(), *layout);
-      Q_ASSERT(layoutIter != layouts.end());
-      const long layoutIndex = std::distance(layouts.begin(), layoutIter);
-      RipesSettings::setValue(RIPES_SETTING_PROCESSOR_LAYOUT_ID,
-                              static_cast<int>(layoutIndex));
-    }
-
-    if (ProcessorHandler::isVSRTLProcessor()) {
-      loadProcessorToWidget(diag.getSelectedLayout());
-    }
-    updateInstructionModel();
-
-    // Retrigger value display action if enabled
-    if (m_displayValuesAction->isChecked()) {
-      m_vsrtlWidget->setOutputPortValuesVisible(true);
-    }
-  }
-  */
-}
 
 void NeuronTab::restart() {
   // Invoked when changes to binary simulation file has been made
@@ -158,14 +96,6 @@ void NeuronTab::restart() {
 
 NeuronTab::~NeuronTab() { delete ui; }
 
-void NeuronTab::neuronFinished() {
-  // Disallow further clocking of the circuit
-/*  m_autoClockAction->setChecked(false);
-  m_autoClockAction->setEnabled(false);
-*/
-  m_runAction->setEnabled(false);
-  m_runAction->setChecked(false);
-}
 
 void NeuronTab::enableSimulatorControls() {
 /*  m_autoClockAction->setEnabled(true);
@@ -176,19 +106,3 @@ void NeuronTab::enableSimulatorControls() {
 */
 }
 
-void NeuronTab::reset() {
-//  m_autoClockAction->setChecked(false);
-  enableSimulatorControls();
-//  SystemIO::printString("\n");
-}
-
-
-
-
-
-
-  void NeuronTab::reverse() {
-      //  m_vsrtlWidget->reverse();
-      enableSimulatorControls();
-  }
-//} // namespace Ripes

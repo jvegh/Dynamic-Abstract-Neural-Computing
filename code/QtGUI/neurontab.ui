@@ -79,7 +79,7 @@
                    <widget class="QLabel" name="DisplayLabel">
                     <property name="geometry">
                      <rect>
-                      <x>0</x>
+                      <x>100</x>
                       <y>20</y>
                       <width>111</width>
                       <height>18</height>
@@ -92,9 +92,9 @@
                    <widget class="QSlider" name="DisplaySlider">
                     <property name="geometry">
                      <rect>
-                      <x>110</x>
+                      <x>210</x>
                       <y>20</y>
-                      <width>321</width>
+                      <width>221</width>
                       <height>20</height>
                      </rect>
                     </property>
@@ -113,6 +113,19 @@
                     </property>
                     <property name="text">
                      <string>TextLabel</string>
+                    </property>
+                   </widget>
+                   <widget class="QCheckBox" name="DisplayReversedBox">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>20</y>
+                      <width>91</width>
+                      <height>23</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Reversed</string>
                     </property>
                    </widget>
                   </widget>

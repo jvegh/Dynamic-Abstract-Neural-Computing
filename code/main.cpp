@@ -99,7 +99,7 @@ int sc_main(int argc, char **argv) {
 //  Q_INIT_RESOURCE(layouts);
   Q_INIT_RESOURCE(fonts);
 
-  QApplication app(argc, argv);
+  QApplication qApp(argc, argv);
   QCoreApplication::setApplicationName("NeuronScQt");
 /*
   QCommandLineParser parser;
@@ -115,7 +115,7 @@ int sc_main(int argc, char **argv) {
     parser.showHelp();
     return 0;
   case CommandLineGUI:
-*/    return guiMode(app);
+*/    return guiMode(qApp);
 /*  case CommandLineCLI:
     return CLIMode(parser, options);
   }

@@ -1,6 +1,6 @@
 
 #ifndef PhasePlotWindow_H
-#define PhasePlotWindowWindow_H
+#define PhasePlotWindow_H
 
 #include <QMainWindow>
 #include <QTimer>
@@ -16,6 +16,7 @@ class PhasePlotWindow;
 
 class PhasePlotWindow : public QMainWindow
 {
+    friend class ScQtNeuron_MainWindow;
   Q_OBJECT
   
 public:
@@ -29,6 +30,7 @@ public:
   void GetData(QString fileName);
   void replot(void);
   void ResetDisplay(void){index = 0;}
+  void DisplayMode_Set(bool M);
  // QStringList first,second, third, fourth;
   uint32_t index, lastindex;
 
@@ -44,13 +46,13 @@ private:
     ScQtSimulator * m_Simulator;
   NeuronPhysical *m_neuron;
   QString demoName;
-  QTimer dataTimer;
-  QCPItemTracer *itemPhaseTracer;
+//  QTimer dataTimer;
+//  QCPItemTracer *itemPhaseTracer;
   QCPCurve *PhasePlot;
   void setupMenus();
   QVector<QCPCurveData> dataPhasePlot;
-
-      int currentDemoIndex;
+  bool m_DisplayMode;
+//      int currentDemoIndex;
   QCPItemEllipse *RunningPoint;
 };
 

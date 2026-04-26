@@ -176,6 +176,7 @@ GradientWindow::~GradientWindow()
 void GradientWindow::screenShot()
 {
     QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+    QScreen *QS = qApp->primaryScreen();
     QScreen *screen1 = qApp->primaryScreen();
     QPixmap pixmap = screen1->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
 /*    const QRect screenGeometry = screen()->geometry();

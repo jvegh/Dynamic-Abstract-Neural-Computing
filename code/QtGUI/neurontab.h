@@ -29,27 +29,22 @@ public:
 
 public slots:
   void restart();
-  void reset();
-  void reverse();
-  void neuronFinished();
-
-  void neuronSelection();
 
 
 private:
   void setupSimulatorActions(QToolBar *controlToolbar);
   void enableSimulatorControls();
-  void loadNeuronToWidget(const Layout *);
 
   Ui::NeuronTab *ui = nullptr;
-
-  QTimer *m_statUpdateTimer;
-
+/*
+ *   QTimer *m_statUpdateTimer;
+*/
   // Actions
   QAction *m_selectNeuronAction = nullptr;
   QAction *m_runAction = nullptr;
-  QAction *m_displayValuesAction = nullptr;
+/*  QAction *m_displayValuesAction = nullptr;
   QAction *m_resetAction = nullptr;
 //  QAction *m_darkmodeAction = nullptr;
   private:
+*/
 };

@@ -10,6 +10,7 @@
 */
 #include "ScQtNeuron_MainWindow.h"
 #include "ui_ScQtNeuron_MainWindow.h"
+#include "ui_PhasePlotWindow.h"
 #include <QMdiSubWindow>
 #include <QtCore>
 #include <QFileSystemModel>
@@ -75,7 +76,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     connect(m_neuronTab->ui->resetButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_resetButton_clicked);
 
-
+    connect(m_neuronTab->ui->DisplayReversedBox, &QCheckBox::clicked, this,
+            &ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked);
     MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
     //
     // The thread and the simulator are created in the constructor so it is always safe to delete them.
@@ -201,6 +203,14 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
 
 }
 
+
+void ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked()
+{
+    m_PhasePlotWindow->DisplayMode_Set(m_StepNumber = m_neuronTab->ui->DisplayReversedBox->isChecked());
+    m_PhasePlotWindow->setupRealtimeDataDemo(m_PhasePlotWindow->ui->customPlot);
+    m_PhasePlotWindow->replot();
+
+}
 void ScQtNeuron_MainWindow::on_eventHappened()
 {
     // Display the time values

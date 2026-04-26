@@ -125,6 +125,7 @@ private slots:
      void on_startButton_clicked();
      void on_stopButton_clicked();
      void on_resetButton_clicked();
+     void on_ReversedDisplayModeClicked();
      void on_eventHappened();
 /*    void fileNewWindow();
     void fileOpenDialog();

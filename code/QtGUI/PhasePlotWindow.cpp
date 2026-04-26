@@ -34,11 +34,14 @@
 
 #include <QFile>
 
+#define REVERSEDGRADIENT 0
+
 PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
   QMainWindow(parent),
   ui(new Ui::PhasePlotWindow),
-    m_Simulator(Simulator),
-    m_neuron(Neuron)
+    m_Simulator(Simulator)
+    ,m_neuron(Neuron)
+    ,m_DisplayMode(false)
 {
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
@@ -46,14 +49,40 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
                       //                     "title-color:  LightGray;"
                       "border-color:  LightGray;"
                       "background-color:  LightGray;");
-  setupRealtimeDataDemo(ui->customPlot);
- // setWindowTitle("QCustomPlot: "+demoName);
   setWindowTitle(QString(m_neuron->name())+QString(" phase plot"));
   setupMenus();
-  statusBar()->clearMessage();
-  statusBar()->showMessage( QString("Ready to go"));
+  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
+  ui->customPlot->axisRect()->setupFullAxesBox();
 
-  realtimeDataSlot();
+  PhasePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
+  PhasePlot->data()->set(dataPhasePlot, true);
+  PhasePlot->setPen(QPen(Qt::blue));
+  PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+  PhasePlot->setName("AP phase plot");
+  PhasePlot->setLineStyle(QCPCurve::lsLine);
+  PhasePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+  // Add an ellipse
+  RunningPoint = new QCPItemEllipse(ui->customPlot);
+  RunningPoint->topLeft->setCoords(-1, -.05);    // Set coordinates
+  RunningPoint->bottomRight->setCoords(1, +0.05);
+  RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
+  RunningPoint->setPen(QPen(Qt::red));
+  PhasePlot->data()->set(dataPhasePlot, true);
+  PhasePlot->setPen(QPen(Qt::blue));
+  PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+
+  // set some basic customPlot config:
+  ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+  ui->customPlot->legend->setVisible(true); // Ensure legend is visible
+  ui->customPlot->legend->setFont(QFont("Helvetica", 9));
+  ui->customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
+  // Set position to upper left inside the axis rect
+  ui->customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
+  setupRealtimeDataDemo(ui->customPlot);
+  index = 0;
+
+  connect(ui->actionScreenshot, &QAction::triggered, this, &PhasePlotWindow::screenShot);
+//  realtimeDataSlot();
 }
 
 PhasePlotWindow::~PhasePlotWindow()
@@ -108,11 +137,6 @@ void PhasePlotWindow::screenshotFilesTriggered() {
 
 void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
-    customPlot->legend->setVisible(true); // Ensure legend is visible
-    customPlot->legend->setFont(QFont("Helvetica", 9));
-    customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
-    // Set position to upper left inside the axis rect
-    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
     // Optional: Add a slight margin so it doesn't touch the edge
 //??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
 
@@ -125,38 +149,23 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   customPlot->yAxis->setTickLabelFont(font);
   customPlot->legend->setFont(font);
   */
-   index = 0;
 
-  customPlot->xAxis->setLabel("Voltage (mV)");
-   customPlot->yAxis->setLabel("Gradient (V/m)");
-   customPlot->xAxis->setRange(-30, 110);
-  customPlot->yAxis->setRange(-1, 3);
-  // setup a timer that repeatedly calls PhasePlotWindow::realtimeDataSlot:
-  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
-  customPlot->axisRect()->setupFullAxesBox();
-  customPlot->replot();
-
-  PhasePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-  PhasePlot->data()->set(dataPhasePlot, true);
-  PhasePlot->setPen(QPen(Qt::blue));
-  PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-  PhasePlot->setName("AP phase plot");
-  PhasePlot->setLineStyle(QCPCurve::lsLine);
-  PhasePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
-  // Add an ellipse
-  RunningPoint = new QCPItemEllipse(customPlot);
-  RunningPoint->topLeft->setCoords(-1, -.05);    // Set coordinates
-  RunningPoint->bottomRight->setCoords(1, +0.05);
-  RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
-  RunningPoint->setPen(QPen(Qt::red));
-  PhasePlot->data()->set(dataPhasePlot, true);
-  PhasePlot->setPen(QPen(Qt::blue));
-  PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-
-  // set some basic customPlot config:
-  customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
-  customPlot->axisRect()->setupFullAxesBox();
-  customPlot->rescaleAxes();
+    if(m_DisplayMode)
+   {
+       customPlot->xAxis->setLabel("Voltage (mV)");
+       customPlot->yAxis->setLabel("Gradient (V/m)");
+       customPlot->xAxis->setRange(-30, 110);
+       customPlot->yAxis->setRange(-1, 3);
+    }
+    else
+    {
+       customPlot->yAxis->setLabel("Voltage (mV)");
+       customPlot->xAxis->setLabel("Gradient (V/m)");
+       customPlot->yAxis->setRange(-30, 110);
+       customPlot->xAxis->setRange(-1, 3);
+    }; //REVERSEDGRADIENT
+    ui->customPlot->axisRect()->setupFullAxesBox();
+    ui->customPlot->rescaleAxes();
 }
 
 void PhasePlotWindow::replot(void)
@@ -166,15 +175,41 @@ void PhasePlotWindow::realtimeDataSlot()
 {
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     double DvDt = m_neuron->dVdtResulting_Get()/100.;
-    RunningPoint->topLeft->setCoords(-1+Volt2, DvDt-.05);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(1+Volt2, DvDt+0.05);
-    dataPhasePlot.push_back(QCPCurveData(index++,Volt2, DvDt));
+    if(m_DisplayMode)
+    {
+        RunningPoint->topLeft->setCoords(-1+Volt2, DvDt-.05);    // Set coordinates
+        RunningPoint->bottomRight->setCoords(1+Volt2, DvDt+0.05);
+        dataPhasePlot.push_back(QCPCurveData(index++,Volt2, DvDt));
+    }
+    else
+    {
+        RunningPoint->topLeft->setCoords(DvDt-.05,-1+Volt2);    // Set coordinates
+        RunningPoint->bottomRight->setCoords( DvDt+0.05, 1+Volt2);
+        dataPhasePlot.push_back(QCPCurveData(index++, DvDt,Volt2));
+    };  // REVERSEDGRADIENT
+
     PhasePlot->data()->set(dataPhasePlot, true);
 
     ui->customPlot->replot();
 //    cerr << "Phase" << index<< ','<<  Volt2<< ',' << DvDt << '\n';
 }
 
+
+void PhasePlotWindow::DisplayMode_Set(bool M)
+{   m_DisplayMode = M;  // Change the mode
+    if(dataPhasePlot.size())
+    {   // We have already data, swap them
+        for(int32_t index = 0; index<dataPhasePlot.size(); index++)
+        {
+            QCPCurveData D = dataPhasePlot[index];
+            double tmp = D.t;
+            D.t = D.value;
+            D.value = tmp;
+            dataPhasePlot[index] = D;
+        }
+    }
+    setupRealtimeDataDemo(ui->customPlot);
+}
 
 void PhasePlotWindow::screenShot()
 {

@@ -54,6 +54,7 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
 
    connect(ui->actionScreenshot, &QAction::triggered, this, &GradientWindow::screenShot);
 
+  Reset();
  //  ui->customPlot->replot();
 //  realtimeDataSlot();
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));

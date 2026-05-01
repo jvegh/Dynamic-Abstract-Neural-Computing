@@ -61,8 +61,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 
     auto *neuronToolbar = addToolBar("Neuron");
     neuronToolbar->setVisible(false);
-//    auto *neuronTab = new NeuronTab(controlToolbar, neuronToolbar, this);
-//    m_stackedTabs->insertWidget(NeuronTabID, neuronTab);
     m_neuronTab = new NeuronTab(controlToolbar, neuronToolbar, this);
     m_stackedTabs->insertWidget(NeuronTabID, m_neuronTab);
 
@@ -95,14 +93,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     //    ui->SimulatedTime->setText("Help");
     //    connect(parent_Get()->m_Simulator, SIGNAL(valueChanged(QString)), ui->label, SLOT(setText(QString)));
     connect(m_Simulator,SIGNAL(eventHappened()), this, SLOT(on_eventHappened()));
-/*
-    m_Simulator_ControlWindow = new SimulatorControlWindow(MyNeuron,this);
-    m_Simulator_ControlWindow->show();
-    m_Simulator_ControlWindow->move(QPoint(600,000));
-*/
-//    connect(m_Simulator, &ScQtSimulator::eventHappened, m_neuronTab,  &NeuronTab::on_eventHappened);
     connect(m_Simulator, &ScQtSimulator::eventHappened, this,  &ScQtNeuron_MainWindow::on_eventHappened);
-
 
 /*
      auto *editToolbar = addToolBar("Edit");
@@ -149,23 +140,16 @@ void ScQtNeuron_MainWindow::replot()
     m_GradientWindow->replot();
 }
 
-void ScQtNeuron_MainWindow::fitToView() {
-//    statusBar()->showMessage("Timer", 800);
-//    QTimer::singleShot(1000, this, &fitToView(); });
-/*    static_cast<ProcessorTab *>(m_tabWidgets.at(ProcessorTabID).tab)
-    ->fitToScreen();
-*/
-}
 
-void ScQtNeuron_MainWindow::setupStatusBar() {
+void ScQtNeuron_MainWindow::setupStatusBar()
+{
     statusBar()->showMessage("");
 }
 
 void ScQtNeuron_MainWindow::closeEvent(QCloseEvent *event)
 {
     if (maybeClose()) {
-//        writeSettings();
-//        writeSettings();    // Qrite out window-related settings
+//        writeSettings();    // Write out window-related settings
 
         qInfo() << qAppName() << " normally terminated by user";
         event->accept();
@@ -178,6 +162,7 @@ void ScQtNeuron_MainWindow::closeEvent(QCloseEvent *event)
 
 void ScQtNeuron_MainWindow::on_startButton_clicked()
 {
+    m_neuronTab->ui->DisplayReversedBox->setEnabled(false);
     m_StepNumber = m_neuronTab->ui->StepNumberBox->value();
     m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->ui->StepTimeBox->value(),sc_core::SC_US);
     m_Simulator->SlowFactor_Set(m_neuronTab->ui->DisplaySlider->value());
@@ -186,29 +171,29 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
 
 void ScQtNeuron_MainWindow::on_stopButton_clicked()
 {
-    //    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
-    //    m_StepNumber = m_neuronTab->m_ui->StepNumberBox->value();
-    //    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->m_ui->StepTimeBox_2->value(),sc_core::SC_US);
-    //    m_Simulator->SlowFactor_Set(m_neuronTab->m_ui->DisplaySlider->value());
-//??    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+    m_Simulator->abort();
 }
 
 void ScQtNeuron_MainWindow::on_resetButton_clicked()
 {
-    //    m_T = sc_core::sc_time_stamp(); // The beginning of the operation
-    //    m_StepNumber = m_neuronTab->m_ui->StepNumberBox->value();
-    //    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->m_ui->StepTimeBox_2->value(),sc_core::SC_US);
-    //    m_Simulator->SlowFactor_Set(m_neuronTab->m_ui->DisplaySlider->value());
 //    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+//    m_Simulator->abort();
+    m_Simulator->TimesReset();
+    MyNeuron->Initialize_Do();
 
+    m_neuronTab->ui->DisplayReversedBox->setEnabled(true);
+    m_PhasePlotWindow->Reset();
+    m_VoltageWindow->Reset();
+    m_GradientWindow->Reset();
+    on_eventHappened();
 }
 
 
 void ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked()
 {
     m_PhasePlotWindow->DisplayMode_Set(m_StepNumber = m_neuronTab->ui->DisplayReversedBox->isChecked());
-    m_PhasePlotWindow->setupRealtimeDataDemo(m_PhasePlotWindow->ui->customPlot);
-    m_PhasePlotWindow->replot();
+//   m_PhasePlotWindow->setupRealtimeDataDemo(m_PhasePlotWindow->ui->customPlot);
+//    m_PhasePlotWindow->replot();
 
 }
 void ScQtNeuron_MainWindow::on_eventHappened()
@@ -219,10 +204,14 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
 //    replot();
 
-    if((m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime <= sc_core::sc_time_stamp()))
+    if((
+        (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime <= sc_core::sc_time_stamp()))
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
-        || m_neuronTab->ui->continuousMode->isChecked()
+        || (m_neuronTab->ui->continuousMode->isChecked())
         )
+//        && (!m_Simulator->_abort) && (m_Simulator->_interrupt)
+        )
+
     {   // Continue execution by issuing one more request
         m_Simulator->SlowFactor_Set(m_neuronTab->ui->DisplaySlider->value());
         m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
@@ -345,7 +334,7 @@ void ScQtNeuron_MainWindow::setupMenus() {
 
 }
 
-
+#if 0
 void ScQtNeuron_MainWindow::setupExamplesMenu(QMenu *parent) {
 /*    const auto assemblyExamples =
         QDir(":/examples/assembly/").entryList(QDir::Files);
@@ -405,6 +394,7 @@ void ScQtNeuron_MainWindow::setupExamplesMenu(QMenu *parent) {
     }
 */
 }
+#endif //0
 
 void ScQtNeuron_MainWindow::wiki() {
     QDesktopServices::openUrl(QUrl(QString(

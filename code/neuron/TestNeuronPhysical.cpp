@@ -37,6 +37,7 @@ public:
  */
  void NeuronPhysicalTEST::Initialize_Do(void)
  {
+     NeuronPhysical::Initialize_Do();   // Do also inherited initialization
      std::cerr << "Test Init called\n";
 //    EVENT_GenComp.Initialize.notify(PU_InitialDelayTime);
 //    wait(EVENT_GenComp.Initialize);

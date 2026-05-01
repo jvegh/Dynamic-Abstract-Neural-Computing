@@ -34,6 +34,7 @@ void ScQtSimulator::requestMethod(ScQtSimulator::Method method)
 {
 //    qDebug()<<"Request ScQtSimulator Method"<<method<<" in Thread "<<thread()->currentThreadId();
     QMutexLocker locker(&mutex);
+    _abort = false;
 //    _interrupt = true;
     _method = method;
     condition.wakeOne();

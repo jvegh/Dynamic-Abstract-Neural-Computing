@@ -54,14 +54,28 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
 
    connect(ui->actionScreenshot, &QAction::triggered, this, &GradientWindow::screenShot);
 
-  statusBar()->showMessage( QString("Ready to go"));
-//  ui->customPlot->replot();
+ //  ui->customPlot->replot();
 //  realtimeDataSlot();
 //  QTimer::singleShot(4000, this, SLOT(screenShot()));
 }
 
 void GradientWindow::replot(void)
 {ui->customPlot->replot();}
+
+
+void GradientWindow::Reset()
+{
+    dataRushinGradientPlot.clear(); RushinRunningPointPositionGradient_Set(0,0);
+    dataAISGradientPlot.clear(); AISRunningPointPositionGradient_Set(0,0);
+    dataGradientPlot.clear();  RunningPointPositionGradient_Set(0,0);
+    RushinGradientPlot->data()->set(dataRushinGradientPlot, true);
+    AISGradientPlot->data()->set(dataAISGradientPlot, true);
+    GradientPlot->data()->set(dataGradientPlot, true);
+    index = 0; replot();
+}
+
+
+
 
 // Fill area between graph 0 and graph 1
 /* customPlot->graph(0)->setChannelFillGraph(customPlot->graph(1));
@@ -91,6 +105,13 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     GradientPlot->setName("Resulting gradient");
     GradientPlot->setLineStyle(QCPCurve::lsLine);
     GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+
+    GradientPlot->setPen(QPen(Qt::blue));
+    GradientPlot->setBrush(QBrush(QColor(2, 2, 20, 20)));
+    AISGradientPlot->setPen(QPen(Qt::red));
+    AISGradientPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
+    RushinGradientPlot->setPen(QPen(Qt::green));
+    RushinGradientPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
 
     // Fill area between graph 0 and graph 1
 /*     GradientPlot->setChannelFillGraph(customPlot->graph(1));
@@ -133,6 +154,24 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 }
 
 
+void GradientWindow::RunningPointPositionGradient_Set(double xpos, double ypos)
+{
+    RunningPoint->topLeft->setCoords(xpos-0.01, ypos-2);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(xpos+0.01, ypos+2);
+}
+
+void GradientWindow::AISRunningPointPositionGradient_Set(double xpos, double ypos)
+{
+    AISRunningPoint->topLeft->setCoords(xpos-0.01, ypos-2);    // Set coordinates
+    AISRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+2);
+}
+
+void GradientWindow::RushinRunningPointPositionGradient_Set(double xpos, double ypos)
+{
+    RushinRunningPoint->topLeft->setCoords(xpos-0.01, ypos-2);    // Set coordinates
+    RushinRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+2);
+}
+
 void GradientWindow::realtimeDataSlot()
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
@@ -142,26 +181,17 @@ void GradientWindow::realtimeDataSlot()
     // Handle resultant gradient display
     dataGradientPlot.push_back(QCPCurveData(index,key2, DvDt));
     GradientPlot->data()->set(dataGradientPlot, true);
-    GradientPlot->setPen(QPen(Qt::blue));
-    GradientPlot->setBrush(QBrush(QColor(2, 2, 20, 20)));
-    RunningPoint->topLeft->setCoords(-0.01+key2, DvDt-2);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.01+key2, DvDt+2);
+    RunningPointPositionGradient_Set(key2,DvDt);
 
     // Handle AIS gradient display
     dataAISGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_AIS));
     AISGradientPlot->data()->set(dataAISGradientPlot, true);
-    AISGradientPlot->setPen(QPen(Qt::red));
-    AISGradientPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
-    AISRunningPoint->topLeft->setCoords(-0.01+key2, Membrane_dVdt_AIS-.5);    // Set coordinates
-    AISRunningPoint->bottomRight->setCoords(0.01+key2, Membrane_dVdt_AIS+5);
+    AISRunningPointPositionGradient_Set(key2,Membrane_dVdt_AIS);
 
     // Handle Rush-in gradient display
     dataRushinGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_Input));
     RushinGradientPlot->data()->set(dataRushinGradientPlot, true);
-    RushinGradientPlot->setPen(QPen(Qt::green));
-    RushinGradientPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
-    RushinRunningPoint->topLeft->setCoords(-0.01+key2, Membrane_dVdt_Input-.5);    // Set coordinates
-    RushinRunningPoint->bottomRight->setCoords(0.01+key2, Membrane_dVdt_Input+5);
+    RushinRunningPointPositionGradient_Set(key2,Membrane_dVdt_Input);
 
     index++;
     ui->customPlot->replot();
@@ -173,23 +203,31 @@ GradientWindow::~GradientWindow()
   delete ui;
 }
 
-void GradientWindow::screenShot()
+ void GradientWindow::screenShot()
 {
+
+    QTime now = QTime::currentTime();
+    qDebug() << "Current time:" << now.toString("hh:mm:ss");
+    QString fileName = QString("~/screenshots/")+ QString(m_neuron->name())+QString(" graddieents plot"+now.toString("hh:mm:ss")+QString(".pdf"));
+    fileName.replace(" ", "");
+    if(ui->customPlot->savePdf(fileName))
+      statusBar()->showMessage(fileName+QString(" prepared"));
+    else
+        statusBar()->showMessage("Saving to .pdf file failed");
+}
+
+/*
     QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
     QScreen *QS = qApp->primaryScreen();
     QScreen *screen1 = qApp->primaryScreen();
     QPixmap pixmap = screen1->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-/*    const QRect screenGeometry = screen()->geometry();
+    const QRect screenGeometry = screen()->geometry();
     QPixmap pm = grabWindow(0, screenGeometry.x(), screenGeometry.y(), screenGeometry.width()+14, screenGeometry.height()+14);
-*/    QString fileName = demoName.toLower()+".pdf";
-
-    fileName.replace(" ", "");
-  ui->customPlot->savePdf(fileName, 0, 0);
-
+*/
 //  pm.save("./screenshots/"+fileName);
 //  pm.save(fileName);
 //  qApp->quit();
-}
+
 #if 0
 void GradientWindow::screenShot()
 {

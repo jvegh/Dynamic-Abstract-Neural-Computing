@@ -23,14 +23,17 @@ public:
   explicit PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
   ~PhasePlotWindow();
   
-  void setupRealtimeDataDemo(QCustomPlot *customPlot);
-  void setupParametricCurveDemo(QCustomPlot *customPlot);
+  void setupRealtimeDataDemo(//QCustomPlot *customPlot
+      );
+//  void setupParametricCurveDemo(QCustomPlot *customPlot);
 
   void ProcessLine(QString line);
   void GetData(QString fileName);
   void replot(void);
+  void Reset();
   void ResetDisplay(void){index = 0;}
   void DisplayMode_Set(bool M);
+  void RunningPointPosition_Set(double xpos, double ypos);
  // QStringList first,second, third, fourth;
   uint32_t index, lastindex;
 

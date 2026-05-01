@@ -56,6 +56,7 @@ public:
   void setupParametricCurveDemo(QCustomPlot *customPlot);
 
   void replot(void);
+  void Reset();
   void ResetDisplay(void){index = 0;}
   QStringList first,second;
   uint32_t index, lastindex;
@@ -88,7 +89,9 @@ private:
   QCPCurve *RushinGradientPlot;
   QVector<QCPCurveData> dataRushinGradientPlot;
   QCPItemEllipse *RushinRunningPoint;
-
+  void RunningPointPositionGradient_Set(double xpos, double ypos);
+  void AISRunningPointPositionGradient_Set(double xpos, double ypos);
+  void RushinRunningPointPositionGradient_Set(double xpos, double ypos);
 };
 
 #endif // GradientWindow_H

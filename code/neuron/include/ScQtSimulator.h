@@ -100,7 +100,7 @@ public:
         scTime_Reset();
         userTime_Reset();
         systemTime_Reset();
-    }
+        }
     // Return processor time from the benchmark, [us]
     double systemTime_Get()
     {

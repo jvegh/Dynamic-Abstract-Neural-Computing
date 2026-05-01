@@ -100,6 +100,12 @@ void VoltageWindow::screenshotFilesTriggered() {
 void VoltageWindow::replot(void)
 {ui->customPlot->replot();}
 
+void VoltageWindow::Reset()
+{
+    dataVoltagePlot.clear(); RunningPointPosition_Set(0,0); index = 0;
+    VoltagePlot->data()->set(dataVoltagePlot, true);
+    replot();
+}
 
 void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
@@ -109,12 +115,9 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RunningPoint = new QCPItemEllipse(ui->customPlot);
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     RunningPoint->setPen(QPen(Qt::red));
-    RunningPoint->topLeft->setCoords(-0.005+key2, Volt2-.5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.005+key2, Volt2+1);
+    RunningPointPosition_Set(key2,Volt2);
 
     VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-    dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));
-    index++;
     VoltagePlot->data()->set(dataVoltagePlot, true);
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
@@ -134,17 +137,21 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
   customPlot->axisRect()->setupFullAxesBox();
-  customPlot->replot();
+  Reset();
 }
 
+void VoltageWindow::RunningPointPosition_Set(double xpos, double ypos)
+{
+    RunningPoint->topLeft->setCoords(xpos-0.01, ypos-1);    // Set coordinates
+    RunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
+}
 
 void VoltageWindow::realtimeDataSlot()
 {
 
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
-    RunningPoint->topLeft->setCoords(-0.005+key2, Volt2-.5);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(0.005+key2, Volt2+1);
+    RunningPointPosition_Set(key2,Volt2);
     dataVoltagePlot.push_back(QCPCurveData(index,key2,Volt2));
     index++;
     VoltagePlot->data()->set(dataVoltagePlot, true);

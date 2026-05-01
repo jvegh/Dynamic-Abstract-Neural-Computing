@@ -55,7 +55,6 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   ui->customPlot->axisRect()->setupFullAxesBox();
 
   PhasePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
-  PhasePlot->data()->set(dataPhasePlot, true);
   PhasePlot->setPen(QPen(Qt::blue));
   PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
   PhasePlot->setName("AP phase plot");
@@ -63,12 +62,10 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   PhasePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
   // Add an ellipse
   RunningPoint = new QCPItemEllipse(ui->customPlot);
-  RunningPoint->topLeft->setCoords(-1, -.05);    // Set coordinates
-  RunningPoint->bottomRight->setCoords(1, +0.05);
+  RunningPointPosition_Set(0,0);
   RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
   RunningPoint->setPen(QPen(Qt::red));
-  PhasePlot->data()->set(dataPhasePlot, true);
-  PhasePlot->setPen(QPen(Qt::blue));
+   PhasePlot->setPen(QPen(Qt::blue));
   PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
   // set some basic customPlot config:
@@ -78,8 +75,8 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   ui->customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
   // Set position to upper left inside the axis rect
   ui->customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
-  setupRealtimeDataDemo(ui->customPlot);
-  index = 0;
+  setupRealtimeDataDemo();
+  Reset();
 
   connect(ui->actionScreenshot, &QAction::triggered, this, &PhasePlotWindow::screenShot);
 //  realtimeDataSlot();
@@ -135,7 +132,8 @@ void PhasePlotWindow::screenshotFilesTriggered() {
 }
 
 
-void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
+void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
+    )
 {
     // Optional: Add a slight margin so it doesn't touch the edge
 //??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
@@ -152,17 +150,17 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
     if(m_DisplayMode)
    {
-       customPlot->xAxis->setLabel("Voltage (mV)");
-       customPlot->yAxis->setLabel("Gradient (V/m)");
-       customPlot->xAxis->setRange(-30, 110);
-       customPlot->yAxis->setRange(-1, 3);
+       ui->customPlot->xAxis->setLabel("Voltage (mV)");
+       ui->customPlot->yAxis->setLabel("Gradient (V/m)");
+       ui->customPlot->xAxis->setRange(-30, 110);
+       ui->customPlot->yAxis->setRange(-1, 3);
     }
     else
     {
-       customPlot->yAxis->setLabel("Voltage (mV)");
-       customPlot->xAxis->setLabel("Gradient (V/m)");
-       customPlot->yAxis->setRange(-30, 110);
-       customPlot->xAxis->setRange(-1, 3);
+       ui->customPlot->yAxis->setLabel("Voltage (mV)");
+       ui->customPlot->xAxis->setLabel("Gradient (V/m)");
+       ui->customPlot->yAxis->setRange(-30, 110);
+       ui->customPlot->xAxis->setRange(-1, 3);
     }; //REVERSEDGRADIENT
     ui->customPlot->axisRect()->setupFullAxesBox();
     ui->customPlot->rescaleAxes();
@@ -171,20 +169,40 @@ void PhasePlotWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 void PhasePlotWindow::replot(void)
 {ui->customPlot->replot();}
 
+void PhasePlotWindow::Reset()
+{
+    dataPhasePlot.clear();  RunningPointPosition_Set(0,0);  index = 0;
+    PhasePlot->data()->set(dataPhasePlot, true);
+    replot();
+}
+
+void PhasePlotWindow::RunningPointPosition_Set(double xpos, double ypos)
+{
+    if(m_DisplayMode)
+    {
+        RunningPoint->topLeft->setCoords(-0.5+xpos, ypos-.05);    // Set coordinates
+        RunningPoint->bottomRight->setCoords(0.5+xpos, ypos+.05);
+    }
+    else
+    {
+        RunningPoint->topLeft->setCoords(-0.05+xpos, ypos-.5);    // Set coordinates
+        RunningPoint->bottomRight->setCoords(0.05+xpos, ypos+.5);
+    }
+}
+
 void PhasePlotWindow::realtimeDataSlot()
 {
+    if(!index) setupRealtimeDataDemo();
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     double DvDt = m_neuron->dVdtResulting_Get()/100.;
     if(m_DisplayMode)
     {
-        RunningPoint->topLeft->setCoords(-1+Volt2, DvDt-.05);    // Set coordinates
-        RunningPoint->bottomRight->setCoords(1+Volt2, DvDt+0.05);
+        RunningPointPosition_Set(Volt2,DvDt);
         dataPhasePlot.push_back(QCPCurveData(index++,Volt2, DvDt));
     }
     else
     {
-        RunningPoint->topLeft->setCoords(DvDt-.05,-1+Volt2);    // Set coordinates
-        RunningPoint->bottomRight->setCoords( DvDt+0.05, 1+Volt2);
+        RunningPointPosition_Set(DvDt,Volt2);
         dataPhasePlot.push_back(QCPCurveData(index++, DvDt,Volt2));
     };  // REVERSEDGRADIENT
 
@@ -196,8 +214,9 @@ void PhasePlotWindow::realtimeDataSlot()
 
 
 void PhasePlotWindow::DisplayMode_Set(bool M)
-{   m_DisplayMode = M;  // Change the mode
-    if(dataPhasePlot.size())
+{
+    m_DisplayMode = M;  // Change the mode
+/*    if(dataPhasePlot.size())
     {   // We have already data, swap them
         for(int32_t index = 0; index<dataPhasePlot.size(); index++)
         {
@@ -209,15 +228,26 @@ void PhasePlotWindow::DisplayMode_Set(bool M)
         }
     }
     setupRealtimeDataDemo(ui->customPlot);
+    PhasePlot->data()->set(dataPhasePlot, true);
+    ui->customPlot->replot();
+*/
+    Reset();
 }
 
 void PhasePlotWindow::screenShot()
 {
+    QTime now = QTime::currentTime();
+    qDebug() << "Current time:" << now.toString("hh:mm:ss");
+    QString fileName = QString("~/screenshots/")+ QString(m_neuron->name())+QString(" phase plot"+now.toString("hh:mm:ss"));
+    fileName.replace(" ", "");
+    ui->customPlot->savePdf(fileName, 0, 0);
+/*
+
   QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
     QString fileName = demoName.toLower()+".pdf";
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);
-
+*/
 //  pm.save("./screenshots/"+fileName);
 //  pm.save(fileName);
 //  qApp->quit();

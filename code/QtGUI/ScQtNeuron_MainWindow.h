@@ -90,11 +90,6 @@ public:
     QAction *processFitAction;
     ScQtSimulator * m_Simulator;
     SimulatorControlWindow *m_Simulator_ControlWindow;
- //   ScQtNeuron_AP_Window *m_AP_Window;//, *m_dVdt_Window;
-
-     //    gsysHierarchyTree * hierTree;
-    //    gsysPortViewer * portViewer;
-    //    gsysBuffer* bufferWdw;
     ScQtAbout* aboutWdw;
     void openAboutWdw();
 //    QAction* fileSaveAction;
@@ -102,13 +97,10 @@ public:
     QMenu *fileMenu, *processMenu;
     uint32_t index, lastindex;
 
-//    QList<BaseFileFilter* > fileFilterList;
-//    void initFileFilterList();
      void readSettings();
      void readSettings(QSettings* settings);
      void writeSettings();
      void setupToolBoxes(void);
-     void fitToView();
      void replot();
      void ProcessLine(QString line);
      void GetData(QString fileName);
@@ -139,7 +131,7 @@ private:
     bool maybeClose();
     void setupStatusBar();
     void setupMenus();
-    void setupExamplesMenu(QMenu *parent);
+//    void setupExamplesMenu(QMenu *parent);
     void addTreeRoot(QString name, QString description);
     void addTreeChild(QTreeWidgetItem *parent,
                       QString name, QString description);

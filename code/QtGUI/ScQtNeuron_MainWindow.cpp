@@ -121,6 +121,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 //    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
     m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
+    m_CurrentWindow = new CurrentWindow(m_Simulator, MyNeuron);
+    m_CurrentWindow->show();
     m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
     m_GradientWindow->show();
     m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
@@ -137,6 +139,7 @@ void ScQtNeuron_MainWindow::replot()
 {
     m_PhasePlotWindow->replot();
     m_VoltageWindow->replot();
+    m_CurrentWindow->replot();
     m_GradientWindow->replot();
 }
 
@@ -184,6 +187,7 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
     m_neuronTab->ui->DisplayReversedBox->setEnabled(true);
     m_PhasePlotWindow->Reset();
     m_VoltageWindow->Reset();
+    m_CurrentWindow->Reset();
     m_GradientWindow->Reset();
     on_eventHappened();
 }

@@ -23,8 +23,8 @@
 **          Version: 2.1.1                                                **
 ****************************************************************************/
 
-#include "VoltageWindow.h"
-#include "ui_VoltageWindow.h"
+#include "CurrentWindow.h"
+#include "ui_CurrentWindow.h"
 #include <QDebug>
 //#include <iostream>
 #include <QScreen>
@@ -34,9 +34,9 @@
 
 #include <QFile>
 
-VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
+CurrentWindow::CurrentWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
   QMainWindow(parent),
-  ui(new Ui::VoltageWindow),
+  ui(new Ui::CurrentWindow),
     m_Simulator(Simulator),
     m_neuron(Neuron)
 {
@@ -51,22 +51,22 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
   setupRealtimeDataDemo(ui->customPlot);
    setWindowTitle(QString(m_neuron->name())+QString(" ActionPotential"));
   setupMenus();
-   connect(ui->actionScreenshot, &QAction::triggered, this, &VoltageWindow::screenShot);
+   connect(ui->actionScreenshot, &QAction::triggered, this, &CurrentWindow::screenShot);
 }
 
-void VoltageWindow::setupMenus()
+void CurrentWindow::setupMenus()
 {
     const QIcon saveIcon = QIcon(":/icons/save.svg");
     auto *screenshotAction = new QAction(saveIcon, "Screenshot to File", this);
     ui->menuFile->addAction(screenshotAction);
     screenshotAction->setShortcut(QKeySequence::Save);
     connect(screenshotAction, &QAction::triggered, this,
-            &VoltageWindow::screenshotFilesTriggered);
+            &CurrentWindow::screenshotFilesTriggered);
 }
 
-void VoltageWindow::screenshotFilesTriggered() {
+void CurrentWindow::screenshotFilesTriggered() {
  //   QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->Time()-7, this->Voltage()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QString fileName = QString(m_neuron->name())+QString(" Voltage Plot")+".pdf";
+    QString fileName = QString(m_neuron->name())+QString(" Currents Plot")+".pdf";
     fileName.replace(" ", "");
     ui->customPlot->savePdf(fileName, 0, 0);
 
@@ -97,17 +97,17 @@ void VoltageWindow::screenshotFilesTriggered() {
     statusBar()->showMessage( QString("Screenshot saved to "+fileName));
 }
 
-void VoltageWindow::replot(void)
+void CurrentWindow::replot(void)
 {ui->customPlot->replot();}
 
-void VoltageWindow::Reset()
+void CurrentWindow::Reset()
 {
-    dataVoltagePlot.clear(); RunningPointPosition_Set(0,0); index = 0;
-    VoltagePlot->data()->set(dataVoltagePlot, true);
+    dataCurrentPlot.clear(); RunningPointPosition_Set(0,0); index = 0;
+    CurrentPlot->data()->set(dataCurrentPlot, true);
     replot();
 }
 
-void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
+void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
@@ -117,16 +117,16 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RunningPoint->setPen(QPen(Qt::red));
     RunningPointPosition_Set(key2,Volt2);
 
-    VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-    VoltagePlot->data()->set(dataVoltagePlot, true);
-    VoltagePlot->setPen(QPen(Qt::blue));
-    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-    VoltagePlot->setLineStyle(QCPCurve::lsLine);
-    VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    CurrentPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    CurrentPlot->data()->set(dataCurrentPlot, true);
+    CurrentPlot->setPen(QPen(Qt::blue));
+    CurrentPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    CurrentPlot->setLineStyle(QCPCurve::lsLine);
+    CurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
 
     // give the axes some labels:
     customPlot->xAxis->setLabel("Time (ms)");
-    customPlot->yAxis->setLabel("Membrane voltage (mV)");
+    customPlot->yAxis->setLabel("Membrane currents (pA)");
     // set axes ranges, so we see all data:
     customPlot->xAxis->setRange(0,1);
     customPlot->yAxis->setRange(-30,100);
@@ -140,30 +140,30 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   Reset();
 }
 
-void VoltageWindow::RunningPointPosition_Set(double xpos, double ypos)
+void CurrentWindow::RunningPointPosition_Set(double xpos, double ypos)
 {
     RunningPoint->topLeft->setCoords(xpos-0.01, ypos-1);    // Set coordinates
     RunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
 }
 
-void VoltageWindow::realtimeDataSlot()
+void CurrentWindow::realtimeDataSlot()
 {
 
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     if(index>0)
     {
-        double OldTime = dataVoltagePlot[index-1].key;
+        double OldTime = dataCurrentPlot[index-1].key;
         if(OldTime>key2)
         {// We step back on the time scale; reset plot
             Reset(); index = 0;
         }
     }
     RunningPointPosition_Set(key2,Volt2);
-    dataVoltagePlot.push_back(QCPCurveData(index++,key2,Volt2));
-    VoltagePlot->data()->set(dataVoltagePlot, true);
-    VoltagePlot->setPen(QPen(Qt::blue));
-    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    dataCurrentPlot.push_back(QCPCurveData(index++,key2,Volt2));
+    CurrentPlot->data()->set(dataCurrentPlot, true);
+    CurrentPlot->setPen(QPen(Qt::blue));
+    CurrentPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
     ui->customPlot->replot();
 
@@ -265,12 +265,12 @@ double Volt;
 }
 
 
-VoltageWindow::~VoltageWindow()
+CurrentWindow::~CurrentWindow()
 {
   delete ui;
 }
 
-void VoltageWindow::screenShot()
+void CurrentWindow::screenShot()
 {
   QPixmap pm = qGuiApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
     QString fileName = demoName.toLower()+".pdf";
@@ -282,4 +282,4 @@ void VoltageWindow::screenShot()
 //  qApp->quit();
 }
 
-#include "moc_VoltageWindow.cpp"
+#include "moc_CurrentWindow.cpp"

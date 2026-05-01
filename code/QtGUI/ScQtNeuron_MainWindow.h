@@ -19,15 +19,13 @@
 #include "PhasePlotWindow.h"
 #include "ScQtAbout.h"
 #include "ScQtSimulator.h"
+#include "CurrentWindow.h"
 #include "VoltageWindow.h"
 #include "GradientWindow.h"
 #include "SimulatorControlWindow.h"
 //#include "ScQtNeuron_Plot_AP.h"
 #include "neurontab.h"
-//#include "ScQtNeuron_AP_Window.h"
 /*
-//#include "filefilters.h"
-
 extern struct SystemDirectories Directories;
 */
 
@@ -140,6 +138,7 @@ private:
      */
     QThread *m_thread;
     VoltageWindow *m_VoltageWindow;
+    CurrentWindow *m_CurrentWindow;
     GradientWindow *m_GradientWindow;
     PhasePlotWindow *m_PhasePlotWindow;
     int32_t m_StepNumber;

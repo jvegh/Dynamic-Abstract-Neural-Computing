@@ -149,8 +149,8 @@ void VoltageWindow::RunningPointPosition_Set(double xpos, double ypos)
 void VoltageWindow::realtimeDataSlot()
 {
 
-    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
-    double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
+    double Volt2 = m_neuron->MembraneRelativePotential_Get();
+    double key2 = m_neuron->LocalTimeInMillisec_Get();
     if(index>0)
     {
         double OldTime = dataVoltagePlot[index-1].key;

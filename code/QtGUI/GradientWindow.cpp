@@ -93,7 +93,7 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RushinRunningPoint  = new QCPItemEllipse(ui->customPlot);
 
     RushinGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-    RushinGradientPlot->setName("Rushin gradient");
+    RushinGradientPlot->setName("Input gradient");
     RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
     RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
 
@@ -131,7 +131,7 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
     customPlot->yAxis->setLabel("Membrane gradient (V/m)");
     // set axes ranges, so we see all data:
     customPlot->xAxis->setRange(0,1);
-    customPlot->yAxis->setRange(-100,200);
+    customPlot->yAxis->setRange(-2000,4000);
     // set some basic customPlot config:
     customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
     customPlot->axisRect()->setupFullAxesBox();
@@ -175,9 +175,9 @@ void GradientWindow::RushinRunningPointPositionGradient_Set(double xpos, double 
 
 void GradientWindow::realtimeDataSlot()
 {
-    double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
+    double key2 = m_neuron->LocalTimeInMillisec_Get();
     double DvDt = m_neuron->dVdtResulting_Get();
-    double Membrane_dVdt_AIS = m_neuron->dVdtAIS_Get();
+    double Membrane_dVdt_AIS = -m_neuron->dVdtAIS_Get();
     double Membrane_dVdt_Input = m_neuron->dVdtInput_Get();
     // Handle resultant gradient display
     dataGradientPlot.push_back(QCPCurveData(index,key2, DvDt));

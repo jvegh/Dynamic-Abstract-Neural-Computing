@@ -15,11 +15,16 @@ NeuronPhysicalTEST::
 { /// Just an empty constructor
     std::cerr << "constructor called\n";
 //        Initialize_Do();
+    SC_THREAD(GenerateTestSequence);
+    sensitive << EVENT_GenComp.Initialize;
+//    dont_initialize();
+
 };
 
 NeuronPhysicalTEST::
      ~NeuronPhysicalTEST(void){}
 
+#if 0
 //NeuronPhysicalTEST NPPU("NeuronPhysical");
 
 // A new test class  of these is created for each test
@@ -30,7 +35,7 @@ public:
     ~TEST_NeuronPhysicalPU(void);
  };
 
-
+#endif
 /*
  * Generate a single Action Potential-like membrane voltage, with simulated threshold exceeding
  * Imitates chargeup and discharge
@@ -38,23 +43,28 @@ public:
  void NeuronPhysicalTEST::Initialize_Do(void)
  {
      NeuronPhysical::Initialize_Do();   // Do also inherited initialization
-     std::cerr << "Test Init called\n";
-//    EVENT_GenComp.Initialize.notify(PU_InitialDelayTime);
-//    wait(EVENT_GenComp.Initialize);
-    BaseTime = sc_core::sc_time_stamp();
-    EVENT_GenComp.InputReceived.notify(PU_InputTime1-PU_InitialDelayTime);
+}
 
-//    wait(EVENT_GenComp.InputReceived);
- /*       // Received the first input, send the next one
+ void NeuronPhysicalTEST::GenerateTestSequence()
+{
+     std::cerr << "Test Generate called\n";
+     EVENT_GenComp.Initialize.notify(PU_InitialDelayTime);
+     wait(EVENT_GenComp.Initialize);
+     std::cerr << "Test Initialized\n";
+     BaseTime = sc_core::sc_time_stamp();
+     EVENT_GenComp.InputReceived.notify(PU_InputTime1-PU_InitialDelayTime);
+
+     wait(EVENT_GenComp.InputReceived);
+     // Received the first input, send the next one
      EVENT_GenComp.InputReceived.notify(PU_InputTime2-PU_InputTime1);
 
-    wait(EVENT_GenComp.InputReceived);
-    EVENT_GenComp.InputReceived.notify(PU_InputTime3-PU_InputTime2);
-    wait(EVENT_GenComp.InputReceived);
-    EVENT_GenComp.InputReceived.notify(PU_InputTime4-PU_InputTime3);
-*/
-/*
-            // After 3 inputs plus one discharge
+     wait(EVENT_GenComp.InputReceived);
+     EVENT_GenComp.InputReceived.notify(PU_InputTime3-PU_InputTime2);
+     wait(EVENT_GenComp.InputReceived);
+     EVENT_GenComp.InputReceived.notify(PU_InputTime4-PU_InputTime3);
+
+#if 0
+     // After 3 inputs plus one discharge
     //        EXPECT_EQ(0+3*MembraneInputIncrease-MembraneRelaxDischarge,NPPU.RelativeMembranePotential_Get());
     //        EXPECT_EQ(0+4*MembraneInputIncrease-2*MembraneRelaxDischarge,NPPU.RelativeMembranePotential_Get());
     wait(NPPU.EVENT_GenComp.ComputingBegin);
@@ -71,5 +81,6 @@ public:
  //   NPPU.EVENT_GenComp.InputReceived.notify(3*NPPU.m_Heartbeat_time_default);
      // 3 heartbeats later there appears a new input in the
     wait(NPPU.EVENT_GenComp.RelaxingBegin);
-*/
+#endif
+
 }

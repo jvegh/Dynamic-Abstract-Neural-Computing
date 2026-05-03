@@ -49,7 +49,7 @@ CurrentWindow::CurrentWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
                       //                        "border: 1px blue;"
                       "background-color:  LightGray;");
   setupRealtimeDataDemo(ui->customPlot);
-   setWindowTitle(QString(m_neuron->name())+QString(" ActionPotential"));
+   setWindowTitle(QString(m_neuron->name())+QString(" membrane currents"));
   setupMenus();
    connect(ui->actionScreenshot, &QAction::triggered, this, &CurrentWindow::screenShot);
 }
@@ -102,34 +102,50 @@ void CurrentWindow::replot(void)
 
 void CurrentWindow::Reset()
 {
-    dataCurrentPlot.clear(); RunningPointPosition_Set(0,0); index = 0;
-    CurrentPlot->data()->set(dataCurrentPlot, true);
-    replot();
+    dataNaCurrentPlot.clear(); NaRunningPointPosition_Set(0,0);
+    NaCurrentPlot->data()->set(dataNaCurrentPlot, true);
+    dataAISCurrentPlot.clear(); AISRunningPointPosition_Set(0,0);
+    AISCurrentPlot->data()->set(dataAISCurrentPlot, true);
+    index = 0; replot();
 }
 
 void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
-    double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
-    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+    double key2 = m_neuron->LocalTimeInMillisec_Get();
+    double Volt2 = m_neuron->MembraneRelativePotential_Get();
+    double I_AIS = m_neuron->I_AIS_Get()/1000;
     // Add an ellipse
-    RunningPoint = new QCPItemEllipse(ui->customPlot);
-    RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
-    RunningPoint->setPen(QPen(Qt::red));
-    RunningPointPosition_Set(key2,Volt2);
+    AISRunningPoint = new QCPItemEllipse(ui->customPlot);
+    AISRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
+    AISRunningPoint->setPen(QPen(Qt::red));
+    AISRunningPointPosition_Set(key2,Volt2);
+    // Add an ellipse
+    NaRunningPoint = new QCPItemEllipse(ui->customPlot);
+    NaRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
+    NaRunningPoint->setPen(QPen(Qt::green));
+    NaRunningPointPosition_Set(key2,Volt2);
 
-    CurrentPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-    CurrentPlot->data()->set(dataCurrentPlot, true);
-    CurrentPlot->setPen(QPen(Qt::blue));
-    CurrentPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-    CurrentPlot->setLineStyle(QCPCurve::lsLine);
-    CurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
-
+    AISCurrentPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    AISCurrentPlot->data()->set(dataAISCurrentPlot, true);
+    AISCurrentPlot->setPen(QPen(Qt::red));
+    AISCurrentPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
+    AISCurrentPlot->setLineStyle(QCPCurve::lsLine);
+    AISCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    AISCurrentPlot->setName("AIS (K+)");
+    NaCurrentPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    NaCurrentPlot->data()->set(dataNaCurrentPlot, true);
+    NaCurrentPlot->setPen(QPen(Qt::green));
+    NaCurrentPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
+    NaCurrentPlot->setLineStyle(QCPCurve::lsLine);
+    NaCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    NaCurrentPlot->setName("Na+");
+    customPlot->legend->setVisible(true); // Ensure legend is visible
     // give the axes some labels:
     customPlot->xAxis->setLabel("Time (ms)");
     customPlot->yAxis->setLabel("Membrane currents (pA)");
     // set axes ranges, so we see all data:
     customPlot->xAxis->setRange(0,1);
-    customPlot->yAxis->setRange(-30,100);
+    customPlot->yAxis->setRange(-100,2200);
     // set some basic customPlot config:
     customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
     customPlot->axisRect()->setupFullAxesBox();
@@ -140,31 +156,45 @@ void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
   Reset();
 }
 
-void CurrentWindow::RunningPointPosition_Set(double xpos, double ypos)
+void CurrentWindow::AISRunningPointPosition_Set(double xpos, double ypos)
 {
-    RunningPoint->topLeft->setCoords(xpos-0.01, ypos-1);    // Set coordinates
-    RunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
+    AISRunningPoint->topLeft->setCoords(xpos-0.01, ypos-50);    // Set coordinates
+    AISRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+50);
 }
+
+void CurrentWindow::NaRunningPointPosition_Set(double xpos, double ypos)
+{
+    NaRunningPoint->topLeft->setCoords(xpos-0.01, ypos-50);    // Set coordinates
+    NaRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+50);
+}
+
 
 void CurrentWindow::realtimeDataSlot()
 {
 
-    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
-    double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
+    double Volt2 = m_neuron->MembraneRelativePotential_Get();
+    double key2 = m_neuron->LocalTimeInMillisec_Get();
+    double I_AIS = m_neuron->I_AIS_Get();
+    double I_Na = m_neuron->I_Na_Get();
     if(index>0)
     {
-        double OldTime = dataCurrentPlot[index-1].key;
+        double OldTime = dataAISCurrentPlot[index-1].key;
         if(OldTime>key2)
         {// We step back on the time scale; reset plot
             Reset(); index = 0;
         }
     }
-    RunningPointPosition_Set(key2,Volt2);
-    dataCurrentPlot.push_back(QCPCurveData(index++,key2,Volt2));
-    CurrentPlot->data()->set(dataCurrentPlot, true);
-    CurrentPlot->setPen(QPen(Qt::blue));
-    CurrentPlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    AISRunningPointPosition_Set(key2,I_AIS);
+    dataAISCurrentPlot.push_back(QCPCurveData(index,key2,I_AIS));
+    AISCurrentPlot->data()->set(dataAISCurrentPlot, true);
+    AISCurrentPlot->setPen(QPen(Qt::red));
+    AISCurrentPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
 
+    dataNaCurrentPlot.push_back(QCPCurveData(index,key2,I_Na));
+    NaCurrentPlot->data()->set(dataNaCurrentPlot, true);
+    NaCurrentPlot->setPen(QPen(Qt::green));
+    NaCurrentPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
+    index++;
     ui->customPlot->replot();
 
 #if 0

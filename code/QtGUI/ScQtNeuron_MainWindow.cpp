@@ -127,7 +127,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_GradientWindow->show();
     m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
     m_PhasePlotWindow->show();
-    statusBar()->showMessage("Simulator is ready to work",2000);
+ //   statusBar()->showMessage("Simulator is ready to work",2000);
 }
 
 ScQtNeuron_MainWindow::~ScQtNeuron_MainWindow()
@@ -196,6 +196,7 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
 void ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked()
 {
     m_PhasePlotWindow->DisplayMode_Set(m_StepNumber = m_neuronTab->ui->DisplayReversedBox->isChecked());
+    m_PhasePlotWindow->setupRealtimeDataDemo();
 //   m_PhasePlotWindow->setupRealtimeDataDemo(m_PhasePlotWindow->ui->customPlot);
 //    m_PhasePlotWindow->replot();
 

@@ -152,15 +152,15 @@ void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
    {
        ui->customPlot->xAxis->setLabel("Voltage (mV)");
        ui->customPlot->yAxis->setLabel("Gradient (V/m)");
-       ui->customPlot->xAxis->setRange(-30, 110);
-       ui->customPlot->yAxis->setRange(-1, 3);
+       ui->customPlot->yAxis->setRange(-400, 4000);
+       ui->customPlot->xAxis->setRange(-30, 130);
     }
     else
     {
        ui->customPlot->yAxis->setLabel("Voltage (mV)");
        ui->customPlot->xAxis->setLabel("Gradient (V/m)");
-       ui->customPlot->yAxis->setRange(-30, 110);
-       ui->customPlot->xAxis->setRange(-1, 3);
+       ui->customPlot->xAxis->setRange(-400, 4000);
+       ui->customPlot->yAxis->setRange(-30, 150);
     }; //REVERSEDGRADIENT
     ui->customPlot->axisRect()->setupFullAxesBox();
     ui->customPlot->rescaleAxes();
@@ -180,21 +180,21 @@ void PhasePlotWindow::RunningPointPosition_Set(double xpos, double ypos)
 {
     if(m_DisplayMode)
     {
-        RunningPoint->topLeft->setCoords(-0.5+xpos, ypos-.05);    // Set coordinates
-        RunningPoint->bottomRight->setCoords(0.5+xpos, ypos+.05);
+        RunningPoint->topLeft->setCoords(-0.5+xpos, ypos-.50);    // Set coordinates
+        RunningPoint->bottomRight->setCoords(0.5+xpos, ypos+.50);
     }
     else
     {
-        RunningPoint->topLeft->setCoords(-0.05+xpos, ypos-.5);    // Set coordinates
-        RunningPoint->bottomRight->setCoords(0.05+xpos, ypos+.5);
+        RunningPoint->topLeft->setCoords(-50+xpos, ypos-.5);    // Set coordinates
+        RunningPoint->bottomRight->setCoords(50+xpos, ypos+.5);
     }
 }
 
 void PhasePlotWindow::realtimeDataSlot()
 {
     if(!index) setupRealtimeDataDemo();
-    double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
-    double DvDt = m_neuron->dVdtResulting_Get()/100.;
+    double Volt2 = m_neuron->MembraneRelativePotential_Get();
+    double DvDt = m_neuron->dVdtResulting_Get();
     if(m_DisplayMode)
     {
         RunningPointPosition_Set(Volt2,DvDt);

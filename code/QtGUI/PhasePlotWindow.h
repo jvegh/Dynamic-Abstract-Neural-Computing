@@ -54,7 +54,7 @@ private:
   QCPCurve *PhasePlot;
   void setupMenus();
   QVector<QCPCurveData> dataPhasePlot;
-  bool m_DisplayMode;
+  bool m_DisplayMode = true;
 //      int currentDemoIndex;
   QCPItemEllipse *RunningPoint;
 };

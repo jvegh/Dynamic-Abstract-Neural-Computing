@@ -113,8 +113,8 @@ void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get();
     double Volt2 = m_neuron->MembraneRelativePotential_Get();
-    double I_AIS = m_neuron->I_AIS_Get()/1000;
-    // Add an ellipse
+/*    double I_AIS = m_neuron->I_AIS_Get();
+*/    // Add an ellipse
     AISRunningPoint = new QCPItemEllipse(ui->customPlot);
     AISRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     AISRunningPoint->setPen(QPen(Qt::red));
@@ -130,14 +130,14 @@ void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     AISCurrentPlot->setPen(QPen(Qt::red));
     AISCurrentPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
     AISCurrentPlot->setLineStyle(QCPCurve::lsLine);
-    AISCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    AISCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
     AISCurrentPlot->setName("AIS (K+)");
     NaCurrentPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     NaCurrentPlot->data()->set(dataNaCurrentPlot, true);
     NaCurrentPlot->setPen(QPen(Qt::green));
     NaCurrentPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
     NaCurrentPlot->setLineStyle(QCPCurve::lsLine);
-    NaCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    NaCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
     NaCurrentPlot->setName("Na+");
     customPlot->legend->setVisible(true); // Ensure legend is visible
     // give the axes some labels:
@@ -145,7 +145,7 @@ void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     customPlot->yAxis->setLabel("Membrane currents (pA)");
     // set axes ranges, so we see all data:
     customPlot->xAxis->setRange(0,1);
-    customPlot->yAxis->setRange(-100,2200);
+    customPlot->yAxis->setRange(-50,100);
     // set some basic customPlot config:
     customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
     customPlot->axisRect()->setupFullAxesBox();
@@ -158,14 +158,14 @@ void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 
 void CurrentWindow::AISRunningPointPosition_Set(double xpos, double ypos)
 {
-    AISRunningPoint->topLeft->setCoords(xpos-0.01, ypos-50);    // Set coordinates
-    AISRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+50);
+    AISRunningPoint->topLeft->setCoords(xpos-0.01, ypos-1);    // Set coordinates
+    AISRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
 }
 
 void CurrentWindow::NaRunningPointPosition_Set(double xpos, double ypos)
 {
-    NaRunningPoint->topLeft->setCoords(xpos-0.01, ypos-50);    // Set coordinates
-    NaRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+50);
+    NaRunningPoint->topLeft->setCoords(xpos-0.01, ypos-1);    // Set coordinates
+    NaRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
 }
 
 
@@ -174,7 +174,7 @@ void CurrentWindow::realtimeDataSlot()
 
     double Volt2 = m_neuron->MembraneRelativePotential_Get();
     double key2 = m_neuron->LocalTimeInMillisec_Get();
-    double I_AIS = m_neuron->I_AIS_Get();
+    double I_AIS = -m_neuron->I_AIS_Get();
     double I_Na = m_neuron->I_Na_Get();
     if(index>0)
     {

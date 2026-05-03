@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>2.8.3 Neuronal membrane ‣ 2.8 Neuronal operation ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6</title>
-<!--Generated on Sat Apr 25 12:28:59 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on April 25, 2026.-->
+<!--Generated on Sun May  3 10:36:06 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on May 3, 2026.-->
 
 <link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
 <link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
@@ -51,6 +51,7 @@
 <link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6">
 <link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6">
 <link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6">
+<meta name="keywords" lang="en" content="law of motion">
 </head>
 <body>
 <nav class="ltx_page_navbar">
@@ -61,7 +62,7 @@
 <br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics, physiology, computing, and information science
 <br class="ltx_break">behind neuronal operation
 <br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.6</em>
-<br class="ltx_break">@April 25, 2026</span></p>
+<br class="ltx_break">@May 3, 2026</span></p>
 </div>
 <nav class="ltx_TOC">
 <ol class="ltx_toclist">
@@ -103,8 +104,8 @@
 </ol>
 </li>
 <li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physiology/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing with neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information in neurons</span></a></li>
 <li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
 <li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
 <li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
@@ -120,7 +121,7 @@
 <a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
 <a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
 <a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
-<a href="../../../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="../../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
 <a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
 <img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
 </span></p>
@@ -198,7 +199,9 @@ we must mix microscopic and macroscopic parameters.</p>
 <div id="SSSx1.p3" class="ltx_para">
 <p class="ltx_p">It is a long-standing enigmatic phenomenon
 that ”the emergence of life cannot be predicted by the laws of physics” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib16" title="" class="ltx_ref">16</a>]</cite>
-(unlike the creation of technical systems). Still, we can provide
+(unlike the creation of technical systems).
+
+Still, we can provide
 a complete description of the biological phenomena from first principles
 if we consider the finite interaction speed instead of using the idea
 of “prompt interaction” taken from classic physics, which is a
@@ -242,7 +245,7 @@ the membrane against the actual membrane potential, the potential stops the ion 
 all axons. This behavior naturally explains the absolute refractory
 period. After the membrane’s voltage drops below the threshold value,
 the ions can enter the membrane again (see Figures <a href="../../ch_Physiology/sec_Physiology-Experimental/sec_Axonal-charge-delivery.html#fig:MasonFig4" title="Figure 3.22 ‣ 3.9.2 Axon ‣ 3.9 Experimental evidence ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.22</span></a> and <a href="../../ch_Physiology/sec_Physiology-DerivingActionPotential/sec_Physiology-SynapticControl.html#fig:ArtificialCurrent_AP" title="Figure 3.15 ‣ 3.7.7 Synaptic control ‣ 3.7 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.15</span></a>),
-but they need time to reach the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> later (see Figure <a href="../../ch_Single/sec_Single-ActionPotential/sec_Single-OperationConceptual.html#fig:AP_Conceptual" title="Figure 1.6 ‣ 1.7.1 The conceptual operation ‣ 1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6</span></a>) when in the meantime
+but they need time to reach the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> later (see Figure <a href="../../ch_Single/sec_Single-ActionPotential/sec_Single-OperationConceptual.html#fig:AP_Conceptual" title="Figure 1.6 ‣ 1.9.1 The conceptual operation ‣ 1.9 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6</span></a>) when in the meantime
 the membrane’ voltage proceeded toward its hyperpolarized state;
 so they seem to appear dozens of microseconds later at the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>,
 explaining the relative refractory period (measuren in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib64" title="" class="ltx_ref">64</a>]</cite>.</p>
@@ -365,7 +368,7 @@ its operands</em> (which synaptic inputs provided the current it integrates).
 Furthermore, <em class="ltx_emph ltx_font_italic">not all operands must be present at the beginning of the computation process</em>.
 <em class="ltx_emph ltx_font_italic">The membrane potential slowly returns to its resting value;
 furthermore, the current arriving during the ’relative refractory period’, represent a (time-dependent)
-memory</em>, see section <a href="../../ch_Single/sec_Single-ActionPotential/sec_Single-OperationConceptual.html" title="1.7.1 The conceptual operation ‣ 1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.7.1</span></a>.
+memory</em>, see section <a href="../../ch_Single/sec_Single-ActionPotential/sec_Single-OperationConceptual.html" title="1.9.1 The conceptual operation ‣ 1.9 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.9.1</span></a>.
 Notice that the content of that memory may depend on the
 neuronal environment.</p>
 </div>
@@ -376,7 +379,7 @@ neuronal environment.</p>
 <div class="ltx_align_center">
 <a href="sec_Physics-IonChannels.html" title="In 2.8 Neuronal operation ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.8.2 </span>Ion channels and pumps</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physics-Membranes.html" title="In 2.8 Neuronal operation ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.8.4 </span>Membranes &amp; layers</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Sat Apr 25 12:28:59 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Sun May  3 10:36:06 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>

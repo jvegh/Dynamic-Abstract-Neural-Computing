@@ -5,6 +5,7 @@
 
 \quotationbox{ "The construction [of living matter] is different from anything we have yet tested in the physical laboratory \dots it is working in a manner that cannot be reduced to the \textit{ordinary} laws of physics".~\cite{Schrodinger:1992} E.~Schrödinger@1944
 }
+\index{ordinary laws}
 
 Nature uses an infinite variety of implementing neurons.
 However, they can cooperate.
@@ -15,27 +16,42 @@ skipping the 'implementation details' nature uses.
 Our procedure is essentially the same that John von Neumann followed
 when described the operating principles of computers~\cite{EDVACreport1945}:
 "we will base our considerations on a hypothetical element, which functions
-essentially like a vacuum tube, without going into details":
-our abstract neuron works essentially like a biological neuron.
-Notice that at that time,
+essentially like a vacuum tube, without going into details". 
+We will base our considerations on a hypothetical element, which functions
+essentially like a biological neuron, without going into details, an 'abstract neuron'.
+We emphasize that the theoretical analyzis must include
+that the signal processing elements must be chained/networked,
+so the total processing time comprises a signal delivery time
+and a signal elaborating time.
+At the Von Neumann's time, in the age of electron tubes, the elaboration time by electron tubes was much longer than their delivery time,
+so von Neumann used the correct approximation (see section~\ref{sec:Physics_ScienceConcepts}) that the data transmission time could be omitted.
+He warned, however, that it would be 'unsound' to apply 
+his \textit{simplified} theory to neuronal computing.
+Notice also that at that time,
 it was not yet recognized that the electric signals propagate
 with a finite speed also in the dendrites (or, more precisely,
 its handling in mathematics and physics was not solved), not only on the axons; furthermore, that \gls{AIS}
 is a separated (and, for forming an \gls{AP}:
 vital) component of the neuron.
-We develop the needed 'non-ordinary' laws in chapter~\ref{ch:Physics}.
+We develop the needed 'non-ordinary' ('cross-disciplinary) laws in chapter~\ref{ch:Physics}.
+\index{non-ordinary laws}
+\index{cross-disciplinary laws}
+\index{von Neumann, John}
 
 
 
 We agree that "The basic structural units of the nervous system are individual neurons"~\cite{JohnstonWuNeurophysiology:1995}. However,
 we also know that \hyperlink{Multiple_neurons}{multiple neurons} "are linked together
 by \textit{\textbf{dynamically}} changing constellations of synaptic weights" and
-"cell assemblies are best understood in light of their output product" \cite{BuzsakiCellAssemblies:2010}. However, the classic understanding replaces the dynamic description with 
-a perturbation-level correction to a mostly wrong (and century-old) \textbf{\textit{static}} description. Furthermore, it lacks the laws of motion, and the modern understanding of the operation of the \textbf{\textit{dynamic}} components the detailed operation requires.
+"cell assemblies are best understood in light of their output product" \cite{BuzsakiCellAssemblies:2010}. However, the classic understanding replaces the \textbf{\textit{dynamic}} description with 
+a perturbation-level correction to a mostly wrong (and century-old) \textbf{\textit{static}} description. Furthermore, it lacks the \textit{laws of motion}, and the modern understanding of the operation of the \textit{dynamic components} the detailed operation requires.
+\index{laws of motion}
 The final reason is
-the wrong understanding of living matter's non-disciplinary scientific operation, so we must go back to the first principles
+the wrong understanding of living matter's cross-disciplinary scientific operation, so we must go back to the first principles
 of science. Here, we give
 a holistic picture of neuronal operation and provide details in the subsequent chapters. 
+\index{laws of motion}
+\index{dynamic components}
 
 We agree that '\textit{the fundamental task of the nervous system is to \textbf{communicate and process information}}';
 furthermore, that '\textit{\textbf{neurons convey
@@ -50,27 +66,30 @@ It was also confirmed two decades later: "Information is carried within neurons 
 neurons to their target cells by electrical and chemical
 signals. \textbf{Transient electrical signals} are particularly
 important for carrying \textbf{time-sensitive information} rapidly and over long distances"~\cite{PrinciplesNeuralScience:2013}, page 126.
-Our goal is to describe the role of neuroscience signals in an abstract level, provide their mathematical description based on established physical processes, to understand their interdependence, to explain the physics they use, to find out in the later chapter how at physical level the information is represented and processed.
+As we show, this statement is incomplete:
+the signal generation and delivery is a complex cross-disciplinary process, and the delivery is mainly a 
+mechanical process, accompanied by electrical changes.
+Our goal is to describe the role, the production and delivery of neuroscience signals in an abstract level, provide their mathematical description based on established physical processes, to understand their interdependence, to explain the physics behind the processes, to find out in the later chapters how at physical level the information is represented and processed.
 
 
 In the present chapter, we consider only
 the holistic picture, without details (in an abstract way) 
 in the sense that we attempt to explain what are the principles that 
-neurons' functionality implement. Our point might be felt as a technical one,
+neurons' functionality implements. Our point might be felt as a technical one,
 although it is not so. We only attempt to stay at an abstraction level, similar to the one cited in connection 
 with %\hyperlink{NeuronInformationBroadcast}
 {communication and information}, when formulating neuron's 
 functionality and features. 
 We keep an eye on the discussion in other chapters and 
-we present \textit{a purely physical model with purely physical interactions, in the spirit of the limited interaction speed}.
+we present \textit{a purely physical model with purely physical interactions, in the spirit of the limited interaction speed and cross-disciplinary operation}.
 We borrow the names of components and their operations from biology. 
 We use physical principles and laws  behind them (the details are discussed in separate chapters). 
-We build an artificial (abstract) neuron, using
-the 'ordinary' and 'non-ordinary' laws of physics. We use 
+We build our artificial (abstract) neuron using
+the 'ordinary' and 'non-ordinary' laws of physics in a cross-discipliary approach. We use 
 explicitly the finite speed of ions in electrolytes and derive
-the 'extraordinary' laws from the mixing of the interaction speeds.
+the 'non-ordinary' laws from the mixing of the interaction speeds.
 We demonstrate that our abstract model passes the \href{https://en.wikipedia.org/wiki/Duck_test}{duck test}
 "If it looks like a duck, swims like a duck, and quacks like a duck,
-then it probably \textit{is} a duck".
+then it probably \textbf{\textit{is}} a duck".
 
 \index{duck model}

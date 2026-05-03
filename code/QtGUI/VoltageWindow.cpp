@@ -122,7 +122,7 @@ void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
     VoltagePlot->setLineStyle(QCPCurve::lsLine);
-    VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
     // give the axes some labels:
     customPlot->xAxis->setLabel("Time (ms)");

@@ -95,17 +95,17 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     RushinGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     RushinGradientPlot->setName("Input gradient");
     RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
-    RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
     AISGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     AISGradientPlot->setName("AIS gradient");
     AISGradientPlot->setLineStyle(QCPCurve::lsLine);
-    AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
     GradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     GradientPlot->setName("Resulting gradient");
     GradientPlot->setLineStyle(QCPCurve::lsLine);
-    GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+    GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
     GradientPlot->setPen(QPen(Qt::blue));
     GradientPlot->setBrush(QBrush(QColor(2, 2, 20, 20)));

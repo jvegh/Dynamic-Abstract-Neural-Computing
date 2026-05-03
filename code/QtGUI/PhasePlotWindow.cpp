@@ -59,7 +59,7 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
   PhasePlot->setName("AP phase plot");
   PhasePlot->setLineStyle(QCPCurve::lsLine);
-  PhasePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 3));
+  PhasePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
   // Add an ellipse
   RunningPoint = new QCPItemEllipse(ui->customPlot);
   RunningPointPosition_Set(0,0);
@@ -152,15 +152,15 @@ void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
    {
        ui->customPlot->xAxis->setLabel("Voltage (mV)");
        ui->customPlot->yAxis->setLabel("Gradient (V/m)");
-       ui->customPlot->yAxis->setRange(-400, 4000);
+       ui->customPlot->yAxis->setRange(-800, 3500);
        ui->customPlot->xAxis->setRange(-30, 130);
     }
     else
     {
        ui->customPlot->yAxis->setLabel("Voltage (mV)");
        ui->customPlot->xAxis->setLabel("Gradient (V/m)");
-       ui->customPlot->xAxis->setRange(-400, 4000);
-       ui->customPlot->yAxis->setRange(-30, 150);
+       ui->customPlot->xAxis->setRange(-800, 3500);
+       ui->customPlot->yAxis->setRange(-30, 130);
     }; //REVERSEDGRADIENT
     ui->customPlot->axisRect()->setupFullAxesBox();
     ui->customPlot->rescaleAxes();

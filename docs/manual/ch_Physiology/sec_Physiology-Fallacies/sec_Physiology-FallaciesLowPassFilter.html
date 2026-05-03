@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>3.10.8 Membrane as low-pass filter ‣ 3.10 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6</title>
-<!--Generated on Sat Apr 25 12:28:59 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on April 25, 2026.-->
+<!--Generated on Sun May  3 10:36:06 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on May 3, 2026.-->
 
 <link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
 <link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
@@ -63,7 +63,7 @@
 <br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics, physiology, computing, and information science
 <br class="ltx_break">behind neuronal operation
 <br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.6</em>
-<br class="ltx_break">@April 25, 2026</span></p>
+<br class="ltx_break">@May 3, 2026</span></p>
 </div>
 <nav class="ltx_TOC">
 <ol class="ltx_toclist">
@@ -105,8 +105,8 @@
 </li>
 </ol>
 </li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing with neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information in neurons</span></a></li>
 <li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
 <li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
 <li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
@@ -122,7 +122,7 @@
 <a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
 <a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
 <a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
-<a href="../../../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="../../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
 <a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
 <img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
 </span></p>
@@ -190,7 +190,7 @@ receiving the triggering signal).
 </p>
 </div>
 <div id="p4" class="ltx_para">
-<p class="ltx_p">From our conceptual model of generating <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a> (see Fig. <a href="../../ch_Single/sec_Single-ActionPotential/sec_Single-OperationConceptual.html#fig:AP_Conceptual" title="Figure 1.6 ‣ 1.7.1 The conceptual operation ‣ 1.7 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6</span></a>),
+<p class="ltx_p">From our conceptual model of generating <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a> (see Fig. <a href="../../ch_Single/sec_Single-ActionPotential/sec_Single-OperationConceptual.html#fig:AP_Conceptual" title="Figure 1.6 ‣ 1.9.1 The conceptual operation ‣ 1.9 Generating action potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6</span></a>),
 it is immediately clear that although in the ’native mode’ of operation,
 the falling edge of the <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a> would result in the membrane’s voltage falling below the threshold,
 in this way re-enabling synaptic inputs.
@@ -239,7 +239,7 @@ the membrane.
 According to the classic model, the blocked potassium current is expected to flow through the membrane’s ion channels.
 In other words, the drug blocks the ion channels in the wall
 and that invasion stops the current through the <a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a>.
-Furthermore, as detailed in section <a href="../../ch_Physics/sec_Physics-Electricity/sec_Physics-ElectrodiffusionDynamics.html#sec:Physics-IonSelectivity" title="Ion selectivity ‣ 2.5.7 Ions’ dynamics ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5.7</span></a>, the ion channels’
+Furthermore, as detailed in section <a href="../../ch_Physics/sec_Physics-MembraneElectricity/sec_Physics-MovingPotential.html#sec:Physics-IonSelectivity" title="Ion selectivity ‣ 2.6.7 Moving in the membrane’s potential ‣ 2.6 Electrolyte’s electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.6.7</span></a>, the ion channels’
 selectivity works ”primarily” for specific ions,
 the rest of ions should continue flowing in, and due to the
 blocked potassium charge, their intensity should increase.
@@ -252,7 +252,7 @@ There is, however, similarly, no such evidence.</p>
 <div class="ltx_align_center">
 <a href="sec_Physiology-FallaciesRefractoriness.html" title="In 3.10 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.10.7 </span>Membrane refractoriness</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physiology-FallaciesAPThresholds.html" title="In 3.10 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.6" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.10.9 </span>Thresholds of initiating AP</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Sat Apr 25 12:28:59 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Sun May  3 10:36:06 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>

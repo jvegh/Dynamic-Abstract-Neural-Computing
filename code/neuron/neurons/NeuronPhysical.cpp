@@ -165,15 +165,20 @@ void NeuronPhysical::
     m_dt = m_Heartbeat_time.to_seconds()*1000; // We calculate in msec
     m_Membrane_V_Rushin = 0;
     // From  the previous iteration
-    m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get(); // The AIS current, in pA
+    m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get()/1000; // The AIS current, in pA
     m_Membrane_dVdt_AIS = m_Membrane_V/MembraneTauMSec_Get()*1000;  // The AIS gradient, in [V/s]
     // Independently from the stage, the rush-in current curtributes
     if(m_RushinCurrent)
+    {
         m_Membrane_dVdt_Rushin = m_RushinCurrent->VoltageGradient_Get(m_t);
+        m_Na_I = m_RushinCurrent->CurrentValue_Get(m_t)/1000;
+    }
     else
+    {
         m_Membrane_dVdt_Rushin = 0;
+        m_Na_I = 0;
+    }
 
-    m_Na_I += m_Membrane_dVdt_Rushin * m_dt / MembraneResistanceGOhm_Get() *1000;
     // The synaptic inputs are open only in the stage 'Computing'
     // The rush-in input is open only in stage 'Relaxing'
     // (the rush-in current is created at the end of 'Computing'
@@ -211,6 +216,7 @@ void NeuronPhysical::
     m_Membrane_dV = m_Membrane_dVdt_Resulting * m_dt;  // The voltage  change, in [mV], m_dt in [sec]
 
     m_Membrane_V +=  m_Membrane_dV; // in [mV]
+
     // Now we know all changed quantities; adjust the step size
     Heartbeat_Adjust();
 }

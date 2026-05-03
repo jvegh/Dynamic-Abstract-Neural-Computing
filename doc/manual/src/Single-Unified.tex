@@ -1,6 +1,64 @@
 
+\section[Electrical model
+]{Electrical neuron model in a nutshell\label{sec:Single-ElectricalNutshell}}
+
+\quotationbox{"Transient electrical signals are particularly
+important for carrying \textit{time-sensitive information} rapidly and over long distances. These transient electrical
+signals—receptor potentials, synaptic potentials, and
+action potentials—are all produced by \textit{temporary
+changes} in the electric current into and out of the
+cell, changes that drive the electrical potential across
+the cell membrane away from its resting value." 
+~\cite{JohnstonWuNeurophysiology:1995}
+}
+
+Our motto is similar to the frequently cited saying \href{https://en.wikipedia.org/wiki/Cherchez_la_femme"}{'Cherchez la femme'}:
+\textit{Look for the charge},
+\index{Cherchez la femme}
+meaning "\textit{no matter what the problem, some charge is often the root cause}" (however, we consider also effects of the thermodynamics 
+on charge, given that the charges are ions instead of electrons. Furthermore, we shortly consider the mechanical, optical, etc. consequences.).
+The expression comes from the novel \textit{The Mohicans of Paris} by Alexandre Dumas and is frequently used
+in detective novels in the sense that there are always complications and unusual
+situations, but "no matter what the problem, a woman is often the root cause". 
+Although, in most cases, the cause is seemingly different.
+
+Similarly, the charge is always the primary quantity when speaking about neural operations. 
+We follow this line and explain how processes, that traditionally
+belong to different classical science disciplines, redistribute charges and create
+electrical currents and voltages, then discuss how the cell handles the electrical charge. We note, however, that the different charge carrier (ions instead of electrons) needs care: the "slow current"
+shows unusual behavior and the needs using known laws in 
+more or less different form.
+Also, we make hints that in most cases, the classical disciplines, alone, are not qualified to describe phenomena of living matter.
+The details are described in Chapter~\ref{ch:Physics}, where
+the fundamental differences caused by the charge carrier are discussed. 
+
+We show that, alhough the thermodynamic effects
+are inseparable from the electrical ones, an appropriate combination of the disciplines satisfactorily describe the observations.
+We consider that \href{https://neuronaldynamics.epfl.ch/online/Ch1.S1.html}{neurotransmitters, receptors and specialized membrane proteins}
+\textit{only implement a kind of (time and energy-consuming)
+	chemical/enzymatic decoupling
+	of the signal transmission mechanism.} The idea resembles opto-coupling in electronics:
+makes \textit{the signal transmission independent from the local potential value}.
+Suppose neurons use galvanic coupling
+when the resting potential of one of the neurons equals the extracellular space. In that case,
+all connected neurons' resting potentials are
+equal to that of the extracellular space. Without this decoupling, the death
+of one neuron would immediately lead to the death of the entire neural network.
+Furthermore, the neurons could not make independent signal processing.
+
+
+
+\section[Thermodynamic model
+]{Thermodynamic neuron model in a nutshell\label{sec:Single-ThermodynamicNutshell}}
+
+
 \section[Unified model
 ]{Our unified model in a nutshell\label{sec:Single-Nutshell}}
+
+\quotationbox{
+"Understanding and predicting molecular responses
+in single cells upon chemical, genetic or mechanical perturbations is a core question in biology."~\cite{PerturbationSingleCell:2023}
+}
 
 
 In our non-disciplinary science-based model (the 'abstract physical neuron', as we call it), a neuron (highly simplified) is a sphere with two lipid layers (membrane), a similarly insulating output tube (axon), and an incompressible, partially ionized electrolyte fluid with different compositions and concentrations inside and outside.
@@ -153,7 +211,7 @@ or "the flux of ions through ion channels is passive,
 requiring \textit{no expenditure of metabolic energy} by the
 channels."~\cite{PrinciplesNeuralScience:2013}, page 107, are as scientific as in the pre-Newtonian age,
 there was a notion related to Aristotelian philosophy. This concept gave credence to the “theory” that the celestial spheres and, later on, the planets were pushed or moved by celestial movers, celestial intelligences, or angels against physical forces. Life science does not have its laws of motion, in the sense as Newton's Laws in physics, at least at cellular level. 
-
+\index{law of motion}
 
 The book~\cite{PrinciplesNeuralScience:2013} asks the central questions, "How do ionic [i.e., electrical and chemical] gradients contribute to the resting membrane potential? What prevents
 the ionic gradients from dissipating by diffusion of

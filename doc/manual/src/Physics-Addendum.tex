@@ -3,7 +3,9 @@
 \section{Addendum\label{sec:Physics-Addendum}}
 
 In this section, we add some comments, pinpointing and fixes to the chapters of book~\cite{JohnstonWuNeurophysiology:1995}, needed mainly to make 
-enhanced abstractions for biology, with the goal to derive the needed 'non-ordinary' laws of physics. The quotations are from \href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{that book},
+enhanced abstractions for biology, with the goal to derive the needed 'non-ordinary' laws of physics.
+\index{ordinary laws}
+The quotations are from \href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{that book},
 without citing the book per quotation, providing only page number. Our fixes and notations are
 typeset in blue, and confine themselves to the most needed text,
 so the best way or reading is to read the two texts simultaneously.
@@ -29,14 +31,15 @@ by concentration differences and drift of ions caused by potential differences. 
 coefficients of the first two processes, the diffusion coefficient $D$ and the
 drift mobility $\mu$. "\textcolor{blue}{Unfortunately, here the reciprocal relations, which we discuss in section~\ref{sec:Physics-Thermodynamics}, between the processes is missing, as well as the role of the finite resources, which we
 discuss in section~\ref{sec:Physics-Resources}. This is a fundamentally wrong abstraction. The worst context of this abstraction is that it hides that the speeds of diffusion coefficients and speeds differ by several orders of magnitude, as it refers to the Nernst-Planck equation at zero flux, where, really, both speeds are zero. The equation, in addition, does not consider that by moving ions, we change the potential and concentration simultanously and
-inseparably; that is, handling the case with partial derivatives is not allowed.
+inseparably; that is, handling the case with \hyperlink{PartialDerivative}{partial derivatives} is not allowed.
 }
 
 \href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{Page 15}"The
 negative sign indicates that $I$ flows in the opposite direction as $\frac{\partial V}{\partial x}$ and in
 the opposite (same) direction as $\frac{\partial [C]}{\partial x}$
 if $z$ is positive (negative).
-This equation describes the passive behavior of ions in biological systems." \textcolor{blue}{Unfortunately, there are doubts here if partial derivation can be applied at all: when changing one of the abstract entities the other changes simultanously, given that the ion represents mass and charge simultanously.}
+This equation describes the passive behavior of ions in biological systems."
+\textcolor{blue}{Unfortunately, there are doubts here if \hyperlink{PartialDerivative}{partial derivation} can be applied at all: when changing one of the abstract entities the other changes simultanously, given that the ion represents mass and charge simultanously.}
 
 \subsection{The Nernst equation\label{sec:Physics-NernstEquation}}
 \href{https://rcweb.dartmouth.edu/~mvdm/wiki/lib/exe/fetch.php?media=analysis:johnstonwu.pdf}{Page 15}"The NPE gives the explicit expression of ionic current in terms of concentration and electric potential gradients." \textcolor{blue}{As we discuss in section~\ref{sec:Nernst-time-derivatives}, NPE is valid only in the 'mean-field' approximation, i.e., when we assume that the diffusion and electrical interactions have the same speed. Furthermore, although it was derived for equilibrium state, it implies that for the short time of forming an

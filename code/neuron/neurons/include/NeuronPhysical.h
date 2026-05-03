@@ -166,7 +166,10 @@ public:
     {   return m_Neuron->MembraneTauMSec_Get();}
     double dVdtResulting_Get(void) {return m_Membrane_dVdt_Resulting;}
     double dVdtAIS_Get(void) {return m_Membrane_dVdt_AIS;}
-    double dVdtInput_Get(void) {return m_Input_dVdt;}
+    double dVdtInput_Get(void) {return m_Input_dVdt + m_Membrane_dVdt_Rushin;}
+    double I_AIS_Get(void){return m_AIS_I;}
+    double I_Na_Get(void){return m_Na_I;}
+
 protected:
 
 //    NeuronInputCurrent* m_RushinCurrent;
@@ -178,6 +181,7 @@ protected:
     double m_Membrane_dVdt_Resulting;
     double m_Membrane_dVdt_Rushin; // The rushin-only current
     double m_AIS_I; // Current through the AIS
+    double m_Na_I;
 
 
     NeuronConstants *m_Neuron;

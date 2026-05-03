@@ -41,6 +41,7 @@ public:
                          );
     ~NeuronPhysicalTEST(void);
     void Initialize_Do();
+    void GenerateTestSequence();
     sc_core::sc_time PU_InitialDelayTime = sc_core::sc_time(100,SC_US);
     sc_core::sc_time PU_InputTime1       = sc_core::sc_time(190,SC_US); // Normal input
     sc_core::sc_time PU_InputTime2       = sc_core::sc_time(211,SC_US); // Normal input

@@ -103,9 +103,9 @@ void NeuronPhysical::
     scGenComp_PU_Bio::Initialize_Do();   // Do also inherited initialization
             DEBUG_SC_EVENT(name(),"Initialized for NeuronPhysical");
     m_Membrane_V = 0;
+    m_Na_I = 0;
     m_Membrane_dV = 0;
     m_Relaxing_Stopped = true;
-//    m_HasUnhandledInput = false;
     m_SynapsesEnabled = true;
     m_Membrane_dVdt_Resulting = 0;
     m_Membrane_dVdt_AIS = 0;
@@ -163,8 +163,6 @@ void NeuronPhysical::
 {
     m_Input_dVdt = 0; // Maybe several input gradient contributions exist
     m_dt = m_Heartbeat_time.to_seconds()*1000; // We calculate in msec
- //   double Input_dIdt = 0; // Just for developing/debugging
-//    double Membrane_dIdt_Rushin = 0;
     m_Membrane_V_Rushin = 0;
     // From  the previous iteration
     m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get(); // The AIS current, in pA
@@ -174,6 +172,8 @@ void NeuronPhysical::
         m_Membrane_dVdt_Rushin = m_RushinCurrent->VoltageGradient_Get(m_t);
     else
         m_Membrane_dVdt_Rushin = 0;
+
+    m_Na_I += m_Membrane_dVdt_Rushin * m_dt / MembraneResistanceGOhm_Get() *1000;
     // The synaptic inputs are open only in the stage 'Computing'
     // The rush-in input is open only in stage 'Relaxing'
     // (the rush-in current is created at the end of 'Computing'
@@ -211,7 +211,7 @@ void NeuronPhysical::
     m_Membrane_dV = m_Membrane_dVdt_Resulting * m_dt;  // The voltage  change, in [mV], m_dt in [sec]
 
     m_Membrane_V +=  m_Membrane_dV; // in [mV]
-    // Now we know all changed quatities; adjust the step size
+    // Now we know all changed quantities; adjust the step size
     Heartbeat_Adjust();
 }
 

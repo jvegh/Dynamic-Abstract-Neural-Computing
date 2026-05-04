@@ -252,3 +252,5 @@ void PhasePlotWindow::screenShot()
 //  pm.save(fileName);
 //  qApp->quit();
 }
+
+#include "moc_PhasePlotWindow.cpp"

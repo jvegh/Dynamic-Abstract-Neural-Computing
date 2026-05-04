@@ -106,3 +106,4 @@ void NeuronTab::enableSimulatorControls() {
 */
 }
 
+#include "moc_neurontab.cpp"

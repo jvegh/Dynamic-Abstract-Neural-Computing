@@ -171,12 +171,10 @@ void NeuronPhysical::
     if(m_RushinCurrent)
     {
         m_Membrane_dVdt_Rushin = m_RushinCurrent->VoltageGradient_Get(m_t);
-        m_Na_I = m_RushinCurrent->CurrentValue_Get(m_t)/1000;
     }
     else
     {
         m_Membrane_dVdt_Rushin = 0;
-        m_Na_I = 0;
     }
 
     // The synaptic inputs are open only in the stage 'Computing'
@@ -209,6 +207,8 @@ void NeuronPhysical::
     m_Membrane_dVdt_Resulting = m_Membrane_dVdt_Rushin
                                + m_Input_dVdt
                                - m_Membrane_dVdt_AIS; // in [V/s]
+    // Tha Na+ current
+    m_Na_I += m_Membrane_dVdt_Rushin/MembraneResistanceGOhm_Get()/1000/1000;
 
     m_MembraneGradientPositive =
             (m_Membrane_dVdt_Resulting>0);
@@ -216,9 +216,16 @@ void NeuronPhysical::
     m_Membrane_dV = m_Membrane_dVdt_Resulting * m_dt;  // The voltage  change, in [mV], m_dt in [sec]
 
     m_Membrane_V +=  m_Membrane_dV; // in [mV]
-
+    m_Resulting_I = - m_AIS_I + m_Na_I;
     // Now we know all changed quantities; adjust the step size
     Heartbeat_Adjust();
+}
+
+void NeuronPhysical::
+    ComputingBegin_Do()
+{
+    scGenComp_PU_Bio::ComputingBegin_Do();
+    m_Na_I = 0;  // Compute Na+ current separately
 }
 
 // Handle neuronal membrane's potential in 'Computing' mode
@@ -292,7 +299,7 @@ bool NeuronPhysical::
     return true;
 }
 
-
+#if MakeDebugPrint
  void  NeuronPhysical::
     OutputItem(void)
 {
@@ -308,4 +315,4 @@ bool NeuronPhysical::
          << m_AIS_I/m_Neuron->MembraneResistanceGOhm_Get()/150000 << ","
          <<  "\n"; //<
  }
-
+#endif

@@ -13,6 +13,8 @@
 #include "scGenComp_PU_Bio.h"
 #include "NeuronInputCurrent.h"
 
+#define MakeDebugPrint 0
+
 /** @addtogroup GENCOMP_MODULE_BIOLOGY Biological processing
  *  @{
  */
@@ -93,6 +95,9 @@ public:
     //! Activity for intializing the unit
     virtual void Initialize_Do();
 
+    //! Activity for initializing computing stage
+    virtual void ComputingBegin_Do();
+
     /**
      *   Stage 'Computing' normally passes to stage 'Delivering',
      *   but it can fall-back to 'Relaxing' mode.
@@ -105,6 +110,7 @@ public:
      *
      *   @return true if to stop heartbeating in 'Computing' mode
      */
+
     virtual bool Heartbeat_Computing_Stop();
     /** Stage 'Delivering' normally passes to stage 'Relaxing',
      *  @return true if to stop heartbeating in 'Delivering' mode
@@ -124,6 +130,7 @@ public:
      *
      * @param IC The input current to delete
      */
+
     void InputCurrentDelete(NeuronInputCurrent* IC);
     /**
      * @brief A new synaptic input (spike or clamping) received; only in 'Relaxing' and 'Computing' states,
@@ -154,7 +161,9 @@ public:
      * @return the time derivative of axon voltage due to the arrived current
      */
 //    float AxonTimeDerivative_Get(float Delay);
-    void  OutputItem(void);
+#if MakeDebugPrint
+    virtual void  OutputItem(void);
+#endif
     vector <NeuronInputCurrent*> m_SynapticCurrents;    // Stores pointers to the currents
     NeuronInputCurrent *m_RushinCurrent;
 
@@ -169,6 +178,7 @@ public:
     double dVdtInput_Get(void) {return m_Input_dVdt + m_Membrane_dVdt_Rushin;}
     double I_AIS_Get(void){return m_AIS_I;}
     double I_Na_Get(void){return m_Na_I;}
+    double I_Resulting_Get(void){return m_Resulting_I;}
 
 protected:
 
@@ -182,6 +192,7 @@ protected:
     double m_Membrane_dVdt_Rushin; // The rushin-only current
     double m_AIS_I; // Current through the AIS
     double m_Na_I;
+    double m_Resulting_I;
 
 
     NeuronConstants *m_Neuron;

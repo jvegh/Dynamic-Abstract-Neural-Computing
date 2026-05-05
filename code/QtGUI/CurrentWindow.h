@@ -62,6 +62,7 @@ public:
   void ResetDisplay(void){index = 0;}
   void AISRunningPointPosition_Set(double xpos, double ypos);
   void NaRunningPointPosition_Set(double xpos, double ypos);
+  void ResultingRunningPointPosition_Set(double xpos, double ypos);
   QStringList first,second;
   uint32_t index, lastindex;
 
@@ -84,9 +85,9 @@ private:
 //  QApplication* qapp; //?
   QVector<double> x, y0, y1;
 
-  QCPCurve *AISCurrentPlot, *NaCurrentPlot;
-  QVector<QCPCurveData> dataAISCurrentPlot, dataNaCurrentPlot;
-  QCPItemEllipse *AISRunningPoint, *NaRunningPoint;
+  QCPCurve *AISCurrentPlot, *NaCurrentPlot, *ResultingCurrentPlot;
+  QVector<QCPCurveData> dataAISCurrentPlot, dataNaCurrentPlot, dataResultingCurrentPlot;
+  QCPItemEllipse *AISRunningPoint, *NaRunningPoint, *ResultingRunningPoint;
 
 };
 

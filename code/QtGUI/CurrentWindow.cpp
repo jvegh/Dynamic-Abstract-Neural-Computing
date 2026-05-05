@@ -106,6 +106,10 @@ void CurrentWindow::Reset()
     NaCurrentPlot->data()->set(dataNaCurrentPlot, true);
     dataAISCurrentPlot.clear(); AISRunningPointPosition_Set(0,0);
     AISCurrentPlot->data()->set(dataAISCurrentPlot, true);
+
+    dataResultingCurrentPlot.clear(); ResultingRunningPointPosition_Set(0,0);
+    ResultingCurrentPlot->data()->set(dataResultingCurrentPlot, true);
+
     index = 0; replot();
 }
 
@@ -132,6 +136,7 @@ void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     AISCurrentPlot->setLineStyle(QCPCurve::lsLine);
     AISCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
     AISCurrentPlot->setName("AIS (K+)");
+
     NaCurrentPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
     NaCurrentPlot->data()->set(dataNaCurrentPlot, true);
     NaCurrentPlot->setPen(QPen(Qt::green));
@@ -139,6 +144,15 @@ void CurrentWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     NaCurrentPlot->setLineStyle(QCPCurve::lsLine);
     NaCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
     NaCurrentPlot->setName("Na+");
+
+    ResultingCurrentPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    ResultingCurrentPlot->data()->set(dataResultingCurrentPlot, true);
+    ResultingCurrentPlot->setPen(QPen(Qt::blue));
+    ResultingCurrentPlot->setBrush(QBrush(QColor(2, 2, 20, 20)));
+    ResultingCurrentPlot->setLineStyle(QCPCurve::lsLine);
+    ResultingCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    ResultingCurrentPlot->setName("Resulting");
+
     customPlot->legend->setVisible(true); // Ensure legend is visible
     // give the axes some labels:
     customPlot->xAxis->setLabel("Time (ms)");
@@ -168,6 +182,14 @@ void CurrentWindow::NaRunningPointPosition_Set(double xpos, double ypos)
     NaRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
 }
 
+void CurrentWindow::ResultingRunningPointPosition_Set(double xpos, double ypos)
+{
+    /*
+    ResultingRunningPoint->topLeft->setCoords(xpos-0.01, ypos-1);    // Set coordinates
+    ResultingRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
+*/
+}
+
 
 void CurrentWindow::realtimeDataSlot()
 {
@@ -176,6 +198,7 @@ void CurrentWindow::realtimeDataSlot()
     double key2 = m_neuron->LocalTimeInMillisec_Get();
     double I_AIS = -m_neuron->I_AIS_Get();
     double I_Na = m_neuron->I_Na_Get();
+    double I_Resulting = m_neuron->I_Resulting_Get();
     if(index>0)
     {
         double OldTime = dataAISCurrentPlot[index-1].key;
@@ -190,12 +213,42 @@ void CurrentWindow::realtimeDataSlot()
     AISCurrentPlot->setPen(QPen(Qt::red));
     AISCurrentPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
 
+    NaRunningPointPosition_Set(key2,I_Na);
     dataNaCurrentPlot.push_back(QCPCurveData(index,key2,I_Na));
     NaCurrentPlot->data()->set(dataNaCurrentPlot, true);
     NaCurrentPlot->setPen(QPen(Qt::green));
     NaCurrentPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
+/*
+    ResultingRunningPointPosition_Set(key2,I_Resulting);
+*/
+    dataResultingCurrentPlot.push_back(QCPCurveData(index,key2,I_Resulting));
+
+    ResultingCurrentPlot->data()->set(dataResultingCurrentPlot, true);
+    ResultingCurrentPlot->setPen(QPen(Qt::blue));
+    ResultingCurrentPlot->setBrush(QBrush(QColor(2, 2, 20, 20)));
+
     index++;
     ui->customPlot->replot();
+}
+
+
+CurrentWindow::~CurrentWindow()
+{
+  delete ui;
+}
+
+void CurrentWindow::screenShot()
+{
+  QPixmap pm = qGuiApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+    QString fileName = demoName.toLower()+".pdf";
+  fileName.replace(" ", "");
+  ui->customPlot->savePdf(fileName, 0, 0);
+
+//  pm.save("./screenshots/"+fileName);
+//  pm.save(fileName);
+//  qApp->quit();
+}
+
 
 #if 0
     if (0==index)
@@ -292,24 +345,5 @@ double Volt;
     frameCount = 0;
   }
 #endif
-}
-
-
-CurrentWindow::~CurrentWindow()
-{
-  delete ui;
-}
-
-void CurrentWindow::screenShot()
-{
-  QPixmap pm = qGuiApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QString fileName = demoName.toLower()+".pdf";
-  fileName.replace(" ", "");
-  ui->customPlot->savePdf(fileName, 0, 0);
-
-//  pm.save("./screenshots/"+fileName);
-//  pm.save(fileName);
-//  qApp->quit();
-}
 
 #include "moc_CurrentWindow.cpp"

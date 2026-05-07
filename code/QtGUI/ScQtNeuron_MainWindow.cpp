@@ -207,10 +207,13 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     m_neuronTab->ui->SimulatedTimeValue->setText(QString(sc_time_String_Get(m_Simulator->scTime_Get()).c_str()));
     m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
-//    replot();
+    bool cond1 = (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()));
+    bool cond2 = (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0));
+    bool cond3 = (m_neuronTab->ui->continuousMode->isChecked());
+
 
     if((
-        (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime <= sc_core::sc_time_stamp()))
+        (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()))
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
         || (m_neuronTab->ui->continuousMode->isChecked())
         )
@@ -219,6 +222,7 @@ void ScQtNeuron_MainWindow::on_eventHappened()
 
     {   // Continue execution by issuing one more request
         m_Simulator->SlowFactor_Set(m_neuronTab->ui->DisplaySlider->value());
+        replot();
         m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     }
 }

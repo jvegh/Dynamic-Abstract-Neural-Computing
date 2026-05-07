@@ -15,8 +15,7 @@
 #define SCABSTRACTGENCOMP_H
 
 #include <bitset>
-//#include "../../3rdParty/Minuit/include/GaussRandomGen.h"
-//#include "GaussRandomGen.h"
+#include <qobject.h>
 #include "Utils.h"
 #include "Constants.h"
 #include "scGenComp_Config.h"
@@ -48,7 +47,7 @@ using namespace sc_core; using namespace sc_dt; using namespace std;
 
 /*!
  * \class scGenComp_PU_Abstract
- * \brief  Class to deal with operations of an abstract processing unit (\gls{PU}),
+ * \brief  A lass to deal with operations of an abstract processing unit (\gls{PU}),
  * implementing a single-shot elementary computation in the sense of the General Computing Paradigm
  * @cite VeghRevisingClassicComputing:2021. The stages of operation
  * are marked by event pairs (or single events) in the sense as the SystemC @cite SystemCBook:2010
@@ -57,7 +56,7 @@ using namespace sc_core; using namespace sc_dt; using namespace std;
  * the \gls{PU} needs to simulate the processing</i>. The code of this base class is a bit complex, in order to enable simple derived \gls{PU}s:
  * the complex event handling mechanism is confined in this class; the derived classes
  * are free from any SystemC specific programming
- * (for and example see NeuronPhysical).
+ * (for an example see NeuronPhysical).
  * The \gls{PU} has correspondingly the stages 'Computing', 'Delivering' and 'Relaxing'
  * as the minimum necessary basic stages. The module implements a single-shot normal operating mode,
  * that is, the operation is automatic between the corresponding xxxBegin and xxxEnd events,
@@ -105,8 +104,7 @@ using namespace sc_core; using namespace sc_dt; using namespace std;
 //#endif //SCTECHGENCOMP_H
 //#endif //SCBIOGENCOMP_H
 
-class scGenComp_PU_Abstract: public sc_core::sc_module
-{
+class scGenComp_PU_Abstract: public sc_core::sc_module {
    public:
     /*!
      * \brief Create an abstract processing unit for the general computing paradigm
@@ -235,6 +233,8 @@ class scGenComp_PU_Abstract: public sc_core::sc_module
     float LocalTimeInNanosec_Get(){    return scLocalTime_Get().to_seconds()*THOUSAND*THOUSAND*THOUSAND;}
 //  To be implemented
 //    virtual void TransmissionBegin_Do(){}
+signals:
+    void inputReceivedSignal();
 protected:
     /**
      * @brief Cancels all pending events. Called from Initialize_method(),Synchronize_method(),

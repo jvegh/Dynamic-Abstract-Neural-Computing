@@ -112,6 +112,7 @@ void NeuronPhysical::
     m_Membrane_dVdt_Rushin = 0;
     m_RushinCurrent = (NeuronInputCurrent*) NULL;
     m_SynapticCurrents.clear();
+    m_MembraneGradientPositive = true;
 }
 
 void NeuronPhysical::
@@ -165,6 +166,7 @@ void NeuronPhysical::
     m_dt = m_Heartbeat_time.to_seconds()*1000; // We calculate in msec
     m_Membrane_V_Rushin = 0;
     // From  the previous iteration
+    m_Membrane_Last_dVdt = m_Membrane_dVdt_Resulting;
     m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get()/1000; // The AIS current, in pA
     m_Membrane_dVdt_AIS = m_Membrane_V/MembraneTauMSec_Get()*1000;  // The AIS gradient, in [V/s]
     // Independently from the stage, the rush-in current curtributes
@@ -304,7 +306,7 @@ bool NeuronPhysical::
     OutputItem(void)
 {
  //    if(0==OutputCounter++%5)
-    cerr << m_t  << ","
+//    cerr << m_t  << ","
 //     sc_time_String_Get(scLocalTime_Get()) << ","
          << m_Membrane_V << ","
          << m_Membrane_V_Rushin << ","

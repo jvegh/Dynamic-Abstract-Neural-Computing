@@ -60,7 +60,6 @@ void ScQtSimulator::doSimulationSteps()
         DiffTime = (sc_core::sc_time_stamp()-BeginTime).to_seconds()*1000.*1000.*1000.10*m_SlowFactor;
     }   while(!DiffTime); // Do not send event at zero time difference
         emit eventHappened();
-
         usleep(DiffTime);  // Now display refresh can start in the other thread
     if (_abort || _interrupt) {
         qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();

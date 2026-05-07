@@ -157,7 +157,7 @@ class scGenComp_PU_Bio : public scGenComp_PU_Abstract
 protected:
     //! Puts the PU to its default state
     virtual void Initialize_Do();
-    void OutputItem();
+//    void OutputItem();
     float m_Membrane_V; //< The actual value of membrane potential, in mV
     float m_Membrane_V_last; //< The actual value of membrane potential, in mV
     float m_Membrane_dV;   //< The actual change in membrane potential, in mV

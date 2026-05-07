@@ -40,7 +40,7 @@ scGenComp_PU_Abstract(sc_core::sc_module_name nm
                           ,sc_core::sc_time(FixedComputingTime)
                           ,sc_core::sc_time(FixedDeliveringTime)
                           ,bool CentralClockMode
-                          ): sc_core::sc_module( nm)
+                          ):sc_core::sc_module( nm)
     ,mStageFlag(GenCompStageMachine_t::gcsm_Relaxing)
     ,mLocalTimeBase(sc_core::sc_time_stamp())   /// Remember the beginning of the operation
     ,mRelaxingBeginTime(sc_core::sc_time_stamp())  /// End of the previous operation
@@ -478,6 +478,10 @@ void scGenComp_PU_Abstract::
 }
 
 void scGenComp_PU_Abstract::
+    inputReceivedSignal()
+{}
+
+void scGenComp_PU_Abstract::
     InputReceived_method(void)
 {
     if(GenCompStageMachine_t::gcsm_Delivering == mStageFlag)
@@ -490,6 +494,7 @@ void scGenComp_PU_Abstract::
     // Set the smallest heartbeat for the new input
     HeartbeatTime_Set(s_Heartbeat_time_resolution);
     InputReceived_Do();
+    emit inputReceivedSignal();
 }
 
 void scGenComp_PU_Abstract::BenchmarkTimeRelaxingBegin(void)

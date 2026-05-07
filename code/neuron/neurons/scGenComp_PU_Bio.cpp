@@ -145,13 +145,14 @@ void scGenComp_PU_Bio::
     scGenComp_PU_Abstract::InputReceived_Do();
  }
 
+#if 0
 void scGenComp_PU_Bio::
      OutputItem()
 {
     cerr << "(" << sc_time_String_Get(sc_time_stamp()) << "," << MembraneRelativePotential_Get() << ")\n";
 }
 
-
+#endif
 
 
 

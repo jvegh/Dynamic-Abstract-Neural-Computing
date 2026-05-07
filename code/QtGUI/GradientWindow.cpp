@@ -209,7 +209,7 @@ void GradientWindow::realtimeDataSlot()
         DrawArrow(key2, DvDt, "X",-0.03,-500);
     }
     if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-        DrawArrow(key2, DvDt, "R<",0.04,700);
+        DrawArrow(key2, DvDt, "R<",0.03,700);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
         DrawArrow(key2, DvDt, ">R",-0.05,1300);

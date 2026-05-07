@@ -50,6 +50,8 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
                       "background-color:  LightGray;");
   setupRealtimeDataDemo(ui->customPlot);
    setWindowTitle(QString(m_neuron->name())+QString(" ActionPotential"));
+  statusBar()->clearMessage();
+  ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
   setupMenus();
    connect(ui->actionScreenshot, &QAction::triggered, this, &VoltageWindow::screenShot);
 }

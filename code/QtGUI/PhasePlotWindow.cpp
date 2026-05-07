@@ -50,6 +50,8 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
                       "border-color:  LightGray;"
                       "background-color:  LightGray;");
   setWindowTitle(QString(m_neuron->name())+QString(" phase plot"));
+  statusBar()->clearMessage();
+  ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
   setupMenus();
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
   ui->customPlot->axisRect()->setupFullAxesBox();
@@ -152,13 +154,13 @@ void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
    {
        ui->customPlot->xAxis->setLabel("Voltage (mV)");
        ui->customPlot->yAxis->setLabel("Gradient (V/m)");
+        ui->customPlot->xAxis->setRange(-30, 130);
        ui->customPlot->yAxis->setRange(-800, 3500);
-       ui->customPlot->xAxis->setRange(-30, 130);
     }
     else
     {
+        ui->customPlot->xAxis->setLabel("Gradient (V/m)");
        ui->customPlot->yAxis->setLabel("Voltage (mV)");
-       ui->customPlot->xAxis->setLabel("Gradient (V/m)");
        ui->customPlot->xAxis->setRange(-800, 3500);
        ui->customPlot->yAxis->setRange(-30, 130);
     }; //REVERSEDGRADIENT
@@ -231,6 +233,7 @@ void PhasePlotWindow::DisplayMode_Set(bool M)
     PhasePlot->data()->set(dataPhasePlot, true);
     ui->customPlot->replot();
 */
+    setupRealtimeDataDemo();
     Reset();
 }
 

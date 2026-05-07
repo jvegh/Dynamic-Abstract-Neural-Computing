@@ -34,6 +34,7 @@ public:
   void ResetDisplay(void){index = 0;}
   void DisplayMode_Set(bool M);
   void RunningPointPosition_Set(double xpos, double ypos);
+  void DrawArrow(double xpos, double ypos, QString S, double xoffset=1000, double yoffset=100);
  // QStringList first,second, third, fourth;
   uint32_t index, lastindex;
 

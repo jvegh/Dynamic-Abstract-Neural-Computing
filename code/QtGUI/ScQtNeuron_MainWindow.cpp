@@ -87,13 +87,9 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     connect(m_Simulator, SIGNAL(finished()), m_thread, SLOT(quit()), Qt::DirectConnection);
 
     // Receive SC event from the simulator
-    //    connect(parent_Get()->m_Simulator,  SIGNAL(NeuralBreakpoint), this, SLOT(on_scEventHappened()));
     qDebug()<<"Starting thread in Thread "<<this->QObject::thread()->currentThreadId();
     m_thread->start();
-    //    ui->SimulatedTime->setText("Help");
-    //    connect(parent_Get()->m_Simulator, SIGNAL(valueChanged(QString)), ui->label, SLOT(setText(QString)));
     connect(m_Simulator,SIGNAL(eventHappened()), this, SLOT(on_eventHappened()));
-    connect(m_Simulator, &ScQtSimulator::eventHappened, this,  &ScQtNeuron_MainWindow::on_eventHappened);
 
 /*
      auto *editToolbar = addToolBar("Edit");
@@ -118,7 +114,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     SetupSystemDirectories(this); // Establish system and user directories
     readSettings(); // Read window-related settings
 */    setupToolBoxes();   // Set up the tool box contents
-//    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
     m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
     m_CurrentWindow = new CurrentWindow(m_Simulator, MyNeuron);

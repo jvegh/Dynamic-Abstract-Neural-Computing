@@ -36,7 +36,7 @@
 #include <QTimer>
 #include <QVector>
 #include "ScQtSimulator.h"
-#include "TestNeuronPhysical.h"
+#include "NeuronPhysical.h"
 #include "qcustomplot.h"
 
 
@@ -68,6 +68,7 @@ public:
 private slots:
   void realtimeDataSlot();
   void screenShot();
+//  void inputReceived();
 
 private:
   Ui::GradientWindow *ui;

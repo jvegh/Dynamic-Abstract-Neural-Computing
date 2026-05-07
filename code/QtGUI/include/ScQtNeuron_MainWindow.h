@@ -22,7 +22,7 @@
 #include "CurrentWindow.h"
 #include "VoltageWindow.h"
 #include "GradientWindow.h"
-#include "SimulatorControlWindow.h"
+//#include "SimulatorControlWindow.h"
 //#include "ScQtNeuron_Plot_AP.h"
 #include "neurontab.h"
 /*
@@ -87,7 +87,7 @@ public:
     QAction *fileNewWindowAction, *fileOpenAction, *fileExitAction;
     QAction *processFitAction;
     ScQtSimulator * m_Simulator;
-    SimulatorControlWindow *m_Simulator_ControlWindow;
+//    SimulatorControlWindow *m_Simulator_ControlWindow;
     ScQtAbout* aboutWdw;
     void openAboutWdw();
 //    QAction* fileSaveAction;

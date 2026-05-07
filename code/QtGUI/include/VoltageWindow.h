@@ -53,7 +53,8 @@ public:
   ~VoltageWindow();
   
   void setupRealtimeDataDemo(QCustomPlot *customPlot);
-  void setupParametricCurveDemo(QCustomPlot *customPlot);
+//  void setupParametricCurveDemo(QCustomPlot *customPlot);
+  void DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50);
 
   void ProcessLine(QString line);
   void GetData(QString fileName);

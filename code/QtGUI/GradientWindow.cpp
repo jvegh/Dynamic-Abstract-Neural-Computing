@@ -139,9 +139,8 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
     ui->customPlot->axisRect()->setupFullAxesBox();
     ui->customPlot->rescaleAxes();
 
-  demoName = "Single AP draw demo";
+ // demoName = "Single AP draw demo";
  //   DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50)
-  DrawArrow(.1, 1500, "X",0,500);
 #if 0
 
   /*
@@ -154,6 +153,8 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
   */
 #endif
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
+//  connect(m_Simulator, SIGNAL(inputReceivedSignal()),this, SLOT(inputReceivedSlot()));
+
   ui->customPlot->axisRect()->setupFullAxesBox();
   ui->customPlot->replot();
 }
@@ -197,11 +198,50 @@ void GradientWindow::realtimeDataSlot()
     dataRushinGradientPlot.push_back(QCPCurveData(index,key2, Membrane_dVdt_Input));
     RushinGradientPlot->data()->set(dataRushinGradientPlot, true);
     RushinRunningPointPositionGradient_Set(key2,Membrane_dVdt_Input);
+    if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
+        DrawArrow(key2, DvDt, "X",-0.00,500);
+    }
 
     index++;
+
+    // The rest is only for displaying demo legend
+    if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
+        DrawArrow(key2, DvDt, "X",-0.03,-500);
+    }
+    if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
+        DrawArrow(key2, DvDt, "R<",0.04,700);
+    }
+    if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
+        DrawArrow(key2, DvDt, ">R",-0.05,1300);
+    }
+
+    if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
+    {
+        if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
+        {   // We are at the point of maximum polarization
+            DrawArrow(key2, DvDt, "P",+0.04,700);
+        }
+    }
+    if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
+    {
+        cerr << m_neuron->dVdtResultingLast_Get() << "," << m_neuron->dVdtResulting_Get() << "\n";
+        if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
+        {   // We are at the point of maximum hyperpolarization
+            DrawArrow(key2, DvDt, "H",0,1000);
+        }
+    }
+
     ui->customPlot->replot();
 }
 
+/*
+void GradientWindow::inputReceived()
+{
+    double T = m_neuron->LocalTimeInMillisec_Get();
+    double DvDt = m_neuron->dVdtResulting_Get();
+    DrawArrow(T, DvDt, "X",0,500);
+}
+*/
 
 GradientWindow::~GradientWindow()
 {

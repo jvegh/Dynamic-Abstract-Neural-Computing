@@ -210,10 +210,54 @@ void PhasePlotWindow::realtimeDataSlot()
 
     PhasePlot->data()->set(dataPhasePlot, true);
 
+    // The rest is only for displaying demo legend
+    if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
+        DrawArrow(DvDt,Volt2,  "X",300,-15);
+    }
+    if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
+        DrawArrow( DvDt, Volt2, "R<",-300.,45);
+    }
+    if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
+        DrawArrow( DvDt, Volt2, ">R",1100,45);
+    }
+
+    if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
+    {
+        if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
+        {   // We are at the point of maximum polarization
+            DrawArrow( DvDt, Volt2,"P",300,-40);
+        }
+    }
+    if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
+    {
+        cerr << m_neuron->dVdtResultingLast_Get() << "," << m_neuron->dVdtResulting_Get() << "\n";
+        if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
+        {   // We are at the point of maximum hyperpolarization
+            DrawArrow(Volt2, DvDt, "H",-100,25);
+        }
+    }
+
     ui->customPlot->replot();
 //    cerr << "Phase" << index<< ','<<  Volt2<< ',' << DvDt << '\n';
 }
 
+void PhasePlotWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
+{
+    // add the text label at the top:
+    QCPItemText *textLabel = new QCPItemText(ui->customPlot);
+    textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);
+    //textLabel->position->setType(QCPItemPosition::ptAxisRectRatio);
+    textLabel->position->setCoords(xpos+xoffset, ypos+yoffset); // place position at center/top of axis rect
+    textLabel->setText(S);
+    textLabel->setFont(QFont(font().family(), 8)); // make font a bit smaller
+    textLabel->setPen(QPen(Qt::red)); // show red border around text
+
+    // add the arrow:
+    QCPItemLine *arrow = new QCPItemLine(ui->customPlot);
+    arrow->start->setParentAnchor(textLabel->bottom);
+    arrow->end->setCoords(xpos, ypos); // point to (4, 1.6) in x-y-plot coordinates
+    arrow->setHead(QCPLineEnding::esSpikeArrow);
+}
 
 void PhasePlotWindow::DisplayMode_Set(bool M)
 {

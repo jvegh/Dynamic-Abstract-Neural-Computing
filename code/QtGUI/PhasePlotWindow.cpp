@@ -230,10 +230,9 @@ void PhasePlotWindow::realtimeDataSlot()
     }
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
     {
-        cerr << m_neuron->dVdtResultingLast_Get() << "," << m_neuron->dVdtResulting_Get() << "\n";
         if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
         {   // We are at the point of maximum hyperpolarization
-            DrawArrow(Volt2, DvDt, "H",-100,25);
+            DrawArrow( DvDt, Volt2, "H",-100,25);
         }
     }
 

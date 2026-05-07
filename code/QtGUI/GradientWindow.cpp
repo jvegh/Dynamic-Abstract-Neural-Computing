@@ -41,7 +41,8 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
 {
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
-  setupRealtimeDataDemo(ui->customPlot);
+  setupRealtimeDataDemo(//ui->customPlot
+      );
    setWindowTitle(QString(m_neuron->name())+QString(" voltage gradient"));
   statusBar()->clearMessage();
    ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
@@ -83,7 +84,8 @@ void GradientWindow::Reset()
 customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 */
 
-void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
+void GradientWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
+    )
 {
      // Add ellipses
     RunningPoint = new QCPItemEllipse(ui->customPlot);
@@ -92,17 +94,17 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
     AISRunningPoint  = new QCPItemEllipse(ui->customPlot);
     RushinRunningPoint  = new QCPItemEllipse(ui->customPlot);
 
-    RushinGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    RushinGradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     RushinGradientPlot->setName("Input gradient");
     RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
     RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
-    AISGradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    AISGradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     AISGradientPlot->setName("AIS gradient");
     AISGradientPlot->setLineStyle(QCPCurve::lsLine);
     AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
-    GradientPlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
+    GradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     GradientPlot->setName("Resulting gradient");
     GradientPlot->setLineStyle(QCPCurve::lsLine);
     GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
@@ -119,25 +121,27 @@ void GradientWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
 customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 */
 
-    customPlot->legend->setVisible(true); // Ensure legend is visible
-    customPlot->legend->setFont(QFont("Helvetica", 9));
-    customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
+    ui->customPlot->legend->setVisible(true); // Ensure legend is visible
+    ui->customPlot->legend->setFont(QFont("Helvetica", 9));
+    ui->customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
     // Set position to upper left inside the axis rect
-    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
+    ui->customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
 
     index = 0;
     // give the axes some labels:
-    customPlot->xAxis->setLabel("Time (ms)");
-    customPlot->yAxis->setLabel("Membrane gradient (V/m)");
+    ui->customPlot->xAxis->setLabel("Time (ms)");
+    ui->customPlot->yAxis->setLabel("Membrane gradient (V/m)");
     // set axes ranges, so we see all data:
-    customPlot->xAxis->setRange(0,1);
-    customPlot->yAxis->setRange(-2000,4000);
+    ui->customPlot->xAxis->setRange(0,1);
+    ui->customPlot->yAxis->setRange(-2000,4000);
     // set some basic customPlot config:
-    customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
-    customPlot->axisRect()->setupFullAxesBox();
-    customPlot->rescaleAxes();
+    ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+    ui->customPlot->axisRect()->setupFullAxesBox();
+    ui->customPlot->rescaleAxes();
 
   demoName = "Single AP draw demo";
+ //   DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50)
+  DrawArrow(.1, 1500, "X",0,500);
 #if 0
 
   /*
@@ -150,8 +154,8 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
   */
 #endif
   connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
-  customPlot->axisRect()->setupFullAxesBox();
-  customPlot->replot();
+  ui->customPlot->axisRect()->setupFullAxesBox();
+  ui->customPlot->replot();
 }
 
 
@@ -215,6 +219,24 @@ GradientWindow::~GradientWindow()
       statusBar()->showMessage(fileName+QString(" prepared"));
     else
         statusBar()->showMessage("Saving to .pdf file failed");
+}
+
+void GradientWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
+{
+// add the text label at the top:
+QCPItemText *textLabel = new QCPItemText(ui->customPlot);
+textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);
+//textLabel->position->setType(QCPItemPosition::ptAxisRectRatio);
+textLabel->position->setCoords(xpos+xoffset, ypos+yoffset); // place position at center/top of axis rect
+textLabel->setText(S);
+textLabel->setFont(QFont(font().family(), 8)); // make font a bit smaller
+textLabel->setPen(QPen(Qt::red)); // show red border around text
+
+// add the arrow:
+QCPItemLine *arrow = new QCPItemLine(ui->customPlot);
+arrow->start->setParentAnchor(textLabel->bottom);
+arrow->end->setCoords(xpos, ypos); // point to (4, 1.6) in x-y-plot coordinates
+arrow->setHead(QCPLineEnding::esSpikeArrow);
 }
 
 /*

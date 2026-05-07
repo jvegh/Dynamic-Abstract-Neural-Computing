@@ -52,8 +52,10 @@ public:
   explicit GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
   ~GradientWindow();
   
-  void setupRealtimeDataDemo(QCustomPlot *customPlot);
-  void setupParametricCurveDemo(QCustomPlot *customPlot);
+  void setupRealtimeDataDemo(//QCustomPlot *customPlot
+      );
+ // void setupParametricCurveDemo(QCustomPlot *customPlot);
+  void DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50);
 
   void replot(void);
   void Reset();

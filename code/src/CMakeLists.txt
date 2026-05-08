@@ -12,7 +12,7 @@ include_directories(
     /opt/systemc/include
     ${SystemC_INCLUDE_DIRS}
     include
-#    version
+    version
     )
 
 

@@ -33,6 +33,7 @@ public:
   void Reset();
   void ResetDisplay(void){index = 0;}
   void DisplayMode_Set(bool M);
+  bool DisplayMode_Get(void){return m_DisplayMode;}
   void RunningPointPosition_Set(double xpos, double ypos);
   void DrawArrow(double xpos, double ypos, QString S, double xoffset=1000, double yoffset=100);
  // QStringList first,second, third, fourth;

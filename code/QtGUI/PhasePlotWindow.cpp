@@ -201,40 +201,66 @@ void PhasePlotWindow::realtimeDataSlot()
     {
         RunningPointPosition_Set(Volt2,DvDt);
         dataPhasePlot.push_back(QCPCurveData(index++,Volt2, DvDt));
+        // The rest is only for displaying demo legend
+        if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
+            DrawArrow(Volt2,DvDt,  "X",-10,800);
+        }
+        if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
+            DrawArrow(Volt2, DvDt, "R<",15,250);
+        }
+        if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
+            DrawArrow( Volt2, DvDt, ">R",35,800);
+        }
+
+        if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
+        {
+            if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
+            {   // We are at the point of maximum polarization
+                DrawArrow( Volt2, DvDt,"P",-65,900);
+            }
+        }
+        if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
+        {
+            if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
+            {   // We are at the point of maximum hyperpolarization
+                DrawArrow(Volt2,  DvDt, "H",5,500);
+            }
+        }
     }
     else
     {
         RunningPointPosition_Set(DvDt,Volt2);
         dataPhasePlot.push_back(QCPCurveData(index++, DvDt,Volt2));
-    };  // REVERSEDGRADIENT
+
+        // The rest is only for displaying demo legend
+        if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
+            DrawArrow(DvDt,Volt2,  "X",300,-15);
+        }
+        if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
+            DrawArrow( DvDt, Volt2, "R<",-300.,45);
+        }
+        if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
+            DrawArrow( DvDt, Volt2, ">R",1100,45);
+        }
+
+        if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
+        {
+            if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
+            {   // We are at the point of maximum polarization
+                DrawArrow( DvDt, Volt2,"P",300,-40);
+            }
+        }
+        if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
+        {
+            if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
+            {   // We are at the point of maximum hyperpolarization
+                DrawArrow( DvDt, Volt2, "H",-100,25);
+            }
+        }
+    };
 
     PhasePlot->data()->set(dataPhasePlot, true);
 
-    // The rest is only for displaying demo legend
-    if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
-        DrawArrow(DvDt,Volt2,  "X",300,-15);
-    }
-    if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-        DrawArrow( DvDt, Volt2, "R<",-300.,45);
-    }
-    if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
-        DrawArrow( DvDt, Volt2, ">R",1100,45);
-    }
-
-    if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
-    {
-        if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
-        {   // We are at the point of maximum polarization
-            DrawArrow( DvDt, Volt2,"P",300,-40);
-        }
-    }
-    if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
-    {
-        if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
-        {   // We are at the point of maximum hyperpolarization
-            DrawArrow( DvDt, Volt2, "H",-100,25);
-        }
-    }
 
     ui->customPlot->replot();
 //    cerr << "Phase" << index<< ','<<  Volt2<< ',' << DvDt << '\n';

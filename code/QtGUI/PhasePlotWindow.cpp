@@ -153,13 +153,13 @@ void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
     if(m_DisplayMode)
    {
        ui->customPlot->xAxis->setLabel("Voltage (mV)");
-       ui->customPlot->yAxis->setLabel("Gradient (V/m)");
+       ui->customPlot->yAxis->setLabel("Gradient (V/s)");
         ui->customPlot->xAxis->setRange(-30, 130);
        ui->customPlot->yAxis->setRange(-800, 3500);
     }
     else
     {
-        ui->customPlot->xAxis->setLabel("Gradient (V/m)");
+        ui->customPlot->xAxis->setLabel("Gradient (V/s)");
        ui->customPlot->yAxis->setLabel("Voltage (mV)");
        ui->customPlot->xAxis->setRange(-800, 3500);
        ui->customPlot->yAxis->setRange(-30, 130);
@@ -308,18 +308,13 @@ void PhasePlotWindow::DisplayMode_Set(bool M)
 
 void PhasePlotWindow::screenShot()
 {
-    QTime now = QTime::currentTime();
-    qDebug() << "Current time:" << now.toString("hh:mm:ss");
-    QString fileName = QString("~/screenshots/")+ QString(m_neuron->name())+QString(" phase plot"+now.toString("hh:mm:ss"));
-    fileName.replace(" ", "");
-    ui->customPlot->savePdf(fileName, 0, 0);
-/*
-
+      QTime now = QTime::currentTime();
   QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QString fileName = demoName.toLower()+".pdf";
+    QString fileName =//QString("screenshots/")+
+      QString(m_neuron->name())+QString(" Phase Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);
-*/
+
 //  pm.save("./screenshots/"+fileName);
 //  pm.save(fileName);
 //  qApp->quit();

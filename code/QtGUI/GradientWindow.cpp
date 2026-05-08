@@ -130,7 +130,7 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
     index = 0;
     // give the axes some labels:
     ui->customPlot->xAxis->setLabel("Time (ms)");
-    ui->customPlot->yAxis->setLabel("Membrane gradient (V/m)");
+    ui->customPlot->yAxis->setLabel("Membrane gradient (V/s)");
     // set axes ranges, so we see all data:
     ui->customPlot->xAxis->setRange(0,1);
     ui->customPlot->yAxis->setRange(-2000,4000);
@@ -234,15 +234,24 @@ GradientWindow::~GradientWindow()
 
  void GradientWindow::screenShot()
 {
-
+     QTime now = QTime::currentTime();
+     QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+     QString fileName =//QString("screenshots/")+
+         QString(m_neuron->name())+QString(" Gradient Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
+     fileName.replace(" ", "");
+     ui->customPlot->savePdf(fileName, 0, 0);
+    /*
     QTime now = QTime::currentTime();
     qDebug() << "Current time:" << now.toString("hh:mm:ss");
-    QString fileName = QString("~/screenshots/")+ QString(m_neuron->name())+QString(" graddieents plot"+now.toString("hh:mm:ss")+QString(".pdf"));
+    QString fileName = QString("~/screenshots/")+ QString(m_neuron->name())+QString(" gradieents plot"+now.toString("hh:mm:ss")+QString(".pdf"));
     fileName.replace(" ", "");
+
+    QString fileName = QString("./screenshots/A.pdf");
     if(ui->customPlot->savePdf(fileName))
       statusBar()->showMessage(fileName+QString(" prepared"));
     else
         statusBar()->showMessage("Saving to .pdf file failed");
+*/
 }
 
 void GradientWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)

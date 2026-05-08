@@ -324,14 +324,20 @@ VoltageWindow::~VoltageWindow()
 
 void VoltageWindow::screenShot()
 {
-  QPixmap pm = qGuiApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QString fileName = demoName.toLower()+".pdf";
+// QPixmap pm = qGuiApp->primaryScreen()->grabWindow(0, this->x[0]-7, this->y0[0]-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
+/*    QString fileName = demoName.toLower()+".pdf";
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);
-
+*/
 //  pm.save("./screenshots/"+fileName);
 //  pm.save(fileName);
 //  qApp->quit();
+  QTime now = QTime::currentTime();
+  qDebug() << "Current time:" << now.toString("hh:mm:ss");
+  QString fileName = //QString("./screenshots/")+
+                     QString(m_neuron->name())+QString(" Voltage Plot"+now.toString("hh:mm:ss"));
+  fileName.replace(" ", "");
+  ui->customPlot->savePdf(fileName, 0, 0);
 }
 
 #include "moc_VoltageWindow.cpp"

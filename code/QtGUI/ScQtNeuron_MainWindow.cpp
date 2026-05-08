@@ -122,6 +122,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_GradientWindow->show();
     m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
     m_PhasePlotWindow->show();
+    m_PhasePlotWindow->DisplayMode_Set(false);
+    m_neuronTab->ui->DisplayReversedBox->setCheckState( Qt::CheckState(m_PhasePlotWindow->DisplayMode_Get()));
  //   statusBar()->showMessage("Simulator is ready to work",2000);
 }
 
@@ -190,7 +192,8 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
 
 void ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked()
 {
-    m_PhasePlotWindow->DisplayMode_Set(m_StepNumber = m_neuronTab->ui->DisplayReversedBox->isChecked());
+    m_PhasePlotWindow->DisplayMode_Set(m_neuronTab->ui->DisplayReversedBox->isChecked());
+    m_StepNumber = m_neuronTab->ui->DisplayReversedBox->isChecked();
     m_PhasePlotWindow->setupRealtimeDataDemo();
 //   m_PhasePlotWindow->setupRealtimeDataDemo(m_PhasePlotWindow->ui->customPlot);
 //    m_PhasePlotWindow->replot();
@@ -402,15 +405,16 @@ void ScQtNeuron_MainWindow::setupExamplesMenu(QMenu *parent) {
 
 void ScQtNeuron_MainWindow::wiki() {
     QDesktopServices::openUrl(QUrl(QString(
-//        "https://jvegh.github.io/Dynamic-Abstract-Neural-Computing")));
-        "https://jvegh.github.io/DANCES")));
+        "https://jvegh.github.io/Dynamic-Abstract-Neural-Computing")));
+//        "https://jvegh.github.io/DANCES")));
 }
 
 void ScQtNeuron_MainWindow::version() {
     QMessageBox aboutDialog(this);
 //    aboutDialog.setWindowIcon(QIcon(":/icons/neurer.png"));
 
- //   aboutDialog.setText("NeuronScQt :"+ getGitVersion());
+    aboutDialog.setText("NeuronScQt V0.2.6"//+ getGitVersion()
+                        );
     aboutDialog.exec();
 }
 

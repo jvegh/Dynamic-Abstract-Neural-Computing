@@ -186,7 +186,7 @@ void VoltageWindow::realtimeDataSlot()
     {
         if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
         {   // We are at the point of maximum polarization
-            DrawArrow(key2, Volt2, "P",0.1,-15);
+            DrawArrow(key2, Volt2, "P",0.05,-65);
         }
     }
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())

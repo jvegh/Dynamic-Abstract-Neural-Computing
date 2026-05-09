@@ -81,7 +81,6 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   Reset();
 
   connect(ui->actionScreenshot, &QAction::triggered, this, &PhasePlotWindow::screenShot);
-//  realtimeDataSlot();
 }
 
 PhasePlotWindow::~PhasePlotWindow()
@@ -100,38 +99,6 @@ void PhasePlotWindow::setupMenus()
 }
     // Edit actions
 
-void PhasePlotWindow::screenshotFilesTriggered() {
-    QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QString fileName = QString(m_neuron->name())+QString(" phase plot")+".pdf";
-    fileName.replace(" ", "");
-    ui->customPlot->savePdf(fileName, 0, 0);
-
- /*
-        static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)->getSourceType());
-    if (!RipesSettings::value(RIPES_SETTING_HAS_SAVEFILE).toBool()) {
-        saveFilesAsTriggered();
-        return;
-    }
-
-    emit prepareSave();
-    QStringList savedFiles;
-    if (!diag.sourcePath().isEmpty()) {
-        if (!ensurePath(diag.sourcePath()))
-            return;
-        QFile file(diag.sourcePath());
-        savedFiles << diag.sourcePath();
-        if (!writeTextFile(file,
-                           static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)
-                               ->getAssemblyText())) {
-            QMessageBox::information(this, "File error",
-                                     "Error when saving file: " + file.errorString());
-            return;
-        }
-    }
-     }
-*/
-    statusBar()->showMessage( QString("Screenshot saved to "+fileName));
-}
 
 
 void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
@@ -140,15 +107,6 @@ void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
     // Optional: Add a slight margin so it doesn't touch the edge
 //??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
 
-
-  /*
-  customPlot->setNotAntialiasedElements(QCP::aeAll);
-  QFont font;
-  font.setStyleStrategy(QFont::NoAntialias);
-  customPlot->xAxis->setTickLabelFont(font);
-  customPlot->yAxis->setTickLabelFont(font);
-  customPlot->legend->setFont(font);
-  */
 
     if(m_DisplayMode)
    {
@@ -167,6 +125,16 @@ void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
     ui->customPlot->axisRect()->setupFullAxesBox();
     ui->customPlot->rescaleAxes();
 }
+
+
+/* For speed-up
+  customPlot->setNotAntialiasedElements(QCP::aeAll);
+  QFont font;
+  font.setStyleStrategy(QFont::NoAntialias);
+  customPlot->xAxis->setTickLabelFont(font);
+  customPlot->yAxis->setTickLabelFont(font);
+  customPlot->legend->setFont(font);
+  */
 
 void PhasePlotWindow::replot(void)
 {ui->customPlot->replot();}
@@ -309,8 +277,7 @@ void PhasePlotWindow::DisplayMode_Set(bool M)
 void PhasePlotWindow::screenShot()
 {
       QTime now = QTime::currentTime();
-  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QString fileName =//QString("screenshots/")+
+    QString fileName = //QString("screenshots/")+
       QString(m_neuron->name())+QString(" Phase Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);

@@ -44,7 +44,6 @@ public:
 private slots:
   void realtimeDataSlot();
   void screenShot();
-  void screenshotFilesTriggered();
 
 private:
   Ui::PhasePlotWindow *ui;

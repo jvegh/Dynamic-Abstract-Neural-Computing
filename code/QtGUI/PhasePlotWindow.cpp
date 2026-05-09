@@ -1,37 +1,15 @@
-/***************************************************************************
-**                                                                        **
-**  QCustomPlot, an easy to use, modern plotting widget for Qt            **
-**  Copyright (C) 2011-2022 Emanuel Eichhammer                            **
-**                                                                        **
-**  This program is free software: you can redistribute it and/or modify  **
-**  it under the terms of the GNU General Public License as published by  **
-**  the Free Software Foundation, either version 3 of the License, or     **
-**  (at your option) any later version.                                   **
-**                                                                        **
-**  This program is distributed in the hope that it will be useful,       **
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of        **
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         **
-**  GNU General Public License for more details.                          **
-**                                                                        **
-**  You should have received a copy of the GNU General Public License     **
-**  along with this program.  If not, see http://www.gnu.org/licenses/.   **
-**                                                                        **
-****************************************************************************
-**           Author: Emanuel Eichhammer                                   **
-**  Website/Contact: https://www.qcustomplot.com/                         **
-**             Date: 06.11.22                                             **
-**          Version: 2.1.1                                                **
-****************************************************************************/
+/** @file PhasePloteWindow.cpp
+ *  @brief The main window for the SystemC-based neuron simulator, using Qt's stuff
+ */
+/*
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
 
 #include "PhasePlotWindow.h"
 #include "ui_PhasePlotWindow.h"
 #include <QDebug>
 #include <iostream>
-#include <QScreen>
-#include <QMessageBox>
-#include <QMetaEnum>
-//#include <QApplication>
-
 #include <QFile>
 
 #define REVERSEDGRADIENT 0
@@ -126,6 +104,10 @@ void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
     ui->customPlot->rescaleAxes();
 }
 
+//BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here
+//BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
+
+
 
 /* For speed-up
   customPlot->setNotAntialiasedElements(QCP::aeAll);
@@ -162,7 +144,8 @@ void PhasePlotWindow::RunningPointPosition_Set(double xpos, double ypos)
 
 void PhasePlotWindow::realtimeDataSlot()
 {
-    if(!index) setupRealtimeDataDemo();
+//            BENCHMARK_TIME_BEGIN(&m_Simulator->m_display_t,&m_Simulator->m_display_x);    // Begin benchmarking here
+     if(!index) setupRealtimeDataDemo();
     double Volt2 = m_neuron->MembraneRelativePotential_Get();
     double DvDt = m_neuron->dVdtResulting_Get();
     if(m_DisplayMode)
@@ -174,10 +157,10 @@ void PhasePlotWindow::realtimeDataSlot()
             DrawArrow(Volt2,DvDt,  "X",-10,800);
         }
         if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-            DrawArrow(Volt2, DvDt, "R<",15,250);
+            DrawArrow(Volt2, DvDt, "<R",15,250);
         }
         if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
-            DrawArrow( Volt2, DvDt, ">R",35,800);
+            DrawArrow( Volt2, DvDt, "R>",35,800);
         }
 
         if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
@@ -205,17 +188,17 @@ void PhasePlotWindow::realtimeDataSlot()
             DrawArrow(DvDt,Volt2,  "X",300,-15);
         }
         if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-            DrawArrow( DvDt, Volt2, "R<",-300.,45);
+            DrawArrow( DvDt, Volt2, "<R",-300.,45);
         }
         if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
-            DrawArrow( DvDt, Volt2, ">R",1100,45);
+            DrawArrow( DvDt, Volt2, "R>",1100,45);
         }
 
         if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
         {
             if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
             {   // We are at the point of maximum polarization
-                DrawArrow( DvDt, Volt2,"P",300,-40);
+                DrawArrow( DvDt, Volt2,"P",300,-20);
             }
         }
         if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
@@ -231,7 +214,7 @@ void PhasePlotWindow::realtimeDataSlot()
 
 
     ui->customPlot->replot();
-//    cerr << "Phase" << index<< ','<<  Volt2<< ',' << DvDt << '\n';
+ //           BENCHMARK_TIME_END(&m_Simulator->m_display_t,m_Simulator->&m_display_x,&m_Simulator->m_display_s);   // End benchmarking here
 }
 
 void PhasePlotWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)

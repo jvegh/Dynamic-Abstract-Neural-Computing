@@ -1,4 +1,12 @@
 
+/** @file PhasePlotWindow.h
+ *  @brief The main window for the SystemC-based neuron simulator, using Qt's stuff
+  */
+/*
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
+
 #ifndef PhasePlotWindow_H
 #define PhasePlotWindow_H
 
@@ -23,9 +31,7 @@ public:
   explicit PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
   ~PhasePlotWindow();
   
-  void setupRealtimeDataDemo(//QCustomPlot *customPlot
-      );
-//  void setupParametricCurveDemo(QCustomPlot *customPlot);
+  void setupRealtimeDataDemo( );
 
   void ProcessLine(QString line);
   void GetData(QString fileName);
@@ -36,8 +42,7 @@ public:
   bool DisplayMode_Get(void){return m_DisplayMode;}
   void RunningPointPosition_Set(double xpos, double ypos);
   void DrawArrow(double xpos, double ypos, QString S, double xoffset=1000, double yoffset=100);
- // QStringList first,second, third, fourth;
-  uint32_t index, lastindex;
+  uint32_t index;
 
 //  QVector<double> Time, Voltage, Gradient;
 

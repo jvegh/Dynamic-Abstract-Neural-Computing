@@ -12,8 +12,6 @@
 #include "GradientWindow.h"
 #include "ui_GradientWindow.h"
 #include <QDebug>
-//#include <QScreen>
-//#include <QFile>
 
 GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
   QMainWindow(parent),
@@ -179,17 +177,17 @@ void GradientWindow::DataSlot()
         DrawArrow(key2, DvDt, "X",-0.04,-500);
     }
     if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-        DrawArrow(key2, DvDt, "R<",0.03,700);
+        DrawArrow(key2, DvDt, "<R",0.03,700);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
-        DrawArrow(key2, DvDt, ">R",-0.05,1300);
+        DrawArrow(key2, DvDt, "R>",-0.05,1300);
     }
 
     if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
     {
         if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
         {   // We are at the point of maximum polarization
-            DrawArrow(key2, DvDt, "P",+0.04,700);
+            DrawArrow(key2, DvDt, "P",+0.04,1400);
         }
     }
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())

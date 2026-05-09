@@ -1,32 +1,16 @@
-/***************************************************************************
-**                                                                        **
-**  QCustomPlot, an easy to use, modern plotting widget for Qt            **
-**  Copyright (C) 2011-2022 Emanuel Eichhammer                            **
-**                                                                        **
-**  This program is free software: you can redistribute it and/or modify  **
-**  it under the terms of the GNU General Public License as published by  **
-**  the Free Software Foundation, either version 3 of the License, or     **
-**  (at your option) any later version.                                   **
-**                                                                        **
-**  This program is distributed in the hope that it will be useful,       **
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of        **
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         **
-**  GNU General Public License for more details.                          **
-**                                                                        **
-**  You should have received a copy of the GNU General Public License     **
-**  along with this program.  If not, see http://www.gnu.org/licenses/.   **
-**                                                                        **
-****************************************************************************
-**           Author: Emanuel Eichhammer                                   **
-**  Website/Contact: https://www.qcustomplot.com/                         **
-**             Date: 06.11.22                                             **
-**          Version: 2.1.1                                                **
-****************************************************************************/
-
+/** @file VoltageWindow.cpp
+ *  @brief The main window for the SystemC-based neuron simulator, using Qt's stuff
+ *  Ideas taken from  http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
+ *  https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC
+ *  and https://github.com/mortbopet/Ripes
+ */
+/*
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
 #include "VoltageWindow.h"
 #include "ui_VoltageWindow.h"
 #include <QDebug>
-//#include <iostream>
 #include <QScreen>
 #include <QMessageBox>
 #include <QMetaEnum>
@@ -82,7 +66,7 @@ void VoltageWindow::setupPlot()
     VoltagePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     VoltagePlot->data()->set(dataVoltagePlot, true);
     VoltagePlot->setPen(QPen(Qt::blue));
-    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    VoltagePlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
     VoltagePlot->setName("Action Potential");
     VoltagePlot->setLineStyle(QCPCurve::lsLine);
     VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
@@ -137,20 +121,20 @@ void VoltageWindow::DataSlot()
 
     // The rest is only for displaying demo legend
     if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
-        DrawArrow(key2, Volt2, "X",0.05,-10);
+        DrawArrow(key2, Volt2, "X",.02,-15);
     }
     if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-        DrawArrow(key2, Volt2, "R<",+0.072,10);
+        DrawArrow(key2, Volt2, "<R",+0.068,18);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
-        DrawArrow(key2, Volt2, ">R",-0.071,8);
+        DrawArrow(key2, Volt2, "R>",-0.05,18);
     }
 
     if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
     {
         if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
         {   // We are at the point of maximum polarization
-            DrawArrow(key2, Volt2, "P",0.05,-65);
+            DrawArrow(key2, Volt2, "P",0.03,-30);
         }
     }
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())

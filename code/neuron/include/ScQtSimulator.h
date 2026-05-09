@@ -97,27 +97,29 @@ public:
     void TimesReset()
     {
         scTime_Reset();
-        userTime_Reset();
         systemTime_Reset();
+        userTime_Reset();
     }
     // Return processor time from the benchmark, [us]
     double systemTime_Get()
     {
         return std::chrono::duration_cast<std::chrono::microseconds>(m_system_s).count();
     }
-    void systemTime_Reset()
+    // Return processor time from the benchmark, [us]
+       void systemTime_Reset()
     {
         m_system_t =chrono::steady_clock::now();
         m_system_x = m_system_s = (std::chrono::duration< int64_t, nano>)0;
         BENCHMARK_TIME_RESET(&m_system_t,&m_system_x,&m_system_s); // Reset at the very beginning, say in the constructor
     }
+
    void SlowFactor_Set(uint64_t S){    m_SlowFactor = S;}
 
 private:
     // Define time benchmarking variables and utility functions
     chrono::steady_clock::time_point m_system_t =chrono::steady_clock::now();
     std::chrono::duration< int64_t, nano> m_system_x,m_system_s = (std::chrono::duration< int64_t, nano>)0;
-    uint64_t m_SlowFactor = 1000;
+     uint64_t m_SlowFactor = 1000;
     sc_core::sc_time m_sc_time_begin;
     QTime m_clock_time_begin;   // The beginning of this simulation, [ms]
     /*

@@ -177,7 +177,8 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
 //    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 //    m_Simulator->abort();
     m_Simulator->TimesReset();
-    MyNeuron->Initialize_Do();
+    displayTime_Reset();
+        MyNeuron->Initialize_Do();
 
     m_neuronTab->ui->DisplayReversedBox->setEnabled(true);
     m_PhasePlotWindow->Reset();
@@ -193,21 +194,16 @@ void ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked()
     m_PhasePlotWindow->DisplayMode_Set(m_neuronTab->ui->DisplayReversedBox->isChecked());
     m_StepNumber = m_neuronTab->ui->DisplayReversedBox->isChecked();
     m_PhasePlotWindow->setupRealtimeDataDemo();
-//   m_PhasePlotWindow->setupRealtimeDataDemo(m_PhasePlotWindow->ui->customPlot);
-//    m_PhasePlotWindow->replot();
-
 }
+
 void ScQtNeuron_MainWindow::on_eventHappened()
 {
     // Display the time values
+            BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here
     m_neuronTab->ui->SimulatedTimeValue->setText(QString(sc_time_String_Get(m_Simulator->scTime_Get()).c_str()));
     m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
-    m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
-    bool cond1 = (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()));
-    bool cond2 = (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0));
-    bool cond3 = (m_neuronTab->ui->continuousMode->isChecked());
-
-
+    m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,4,7).c_str()));
+    m_neuronTab->ui->DisplayTimeValue->setText(QString(time_String_Get(displayTime_Get()/1000.,CLOCK_TIME_UNIT_S,1,7).c_str()));
     if((
         (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()))
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
@@ -221,7 +217,11 @@ void ScQtNeuron_MainWindow::on_eventHappened()
         replot();
         m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     }
+            BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
 }
+
+//BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here
+//BBENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
 
 bool ScQtNeuron_MainWindow::maybeClose()
 {

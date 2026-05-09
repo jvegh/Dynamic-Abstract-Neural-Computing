@@ -12,7 +12,7 @@ include_directories(
     /opt/systemc/include
     ${SystemC_INCLUDE_DIRS}
     include
-    version
+#    version
     )
 
 
@@ -77,7 +77,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt6Widgets_EXECUTABLE_COMPILE_FLAGS}  
 # All of the following subdirectories will create separate libraries and link them into
 # ripes_lib
 #add_subdirectory(version)
-#add_subdirectory(cli)
+add_subdirectory(cli)
 
 
 # Also link Qt and VSRTL libraries.

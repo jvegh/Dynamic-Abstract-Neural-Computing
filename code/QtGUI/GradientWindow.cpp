@@ -1,35 +1,21 @@
-/***************************************************************************
-**                                                                        **
-**  QCustomPlot, an easy to use, modern plotting widget for Qt            **
-**  Copyright (C) 2011-2022 Emanuel Eichhammer                            **
-**                                                                        **
-**  This program is free software: you can redistribute it and/or modify  **
-**  it under the terms of the GNU General Public License as published by  **
-**  the Free Software Foundation, either version 3 of the License, or     **
-**  (at your option) any later version.                                   **
-**                                                                        **
-**  This program is distributed in the hope that it will be useful,       **
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of        **
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         **
-**  GNU General Public License for more details.                          **
-**                                                                        **
-**  You should have received a copy of the GNU General Public License     **
-**  along with this program.  If not, see http://www.gnu.org/licenses/.   **
-**                                                                        **
-****************************************************************************
-**           Author: Emanuel Eichhammer                                   **
-**  Website/Contact: https://www.qcustomplot.com/                         **
-**             Date: 06.11.22                                             **
-**          Version: 2.1.1                                                **
-****************************************************************************/
+/** @file GradientWindow.cpp
+ *  @brief The main window for the SystemC-based neuron simulator, using Qt's stuff
+ *  Ideas taken from  http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
+ *  https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC
+ *  and https://github.com/mortbopet/Ripes
+ */
+/*
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
 
 #include "GradientWindow.h"
 #include "ui_GradientWindow.h"
 #include <QDebug>
 #include <QScreen>
-#include <QMessageBox>
-#include <QMetaEnum>
-#include <QApplication>
+//#include <QMessageBox>
+//#include <QMetaEnum>
+//#include <QApplication>
 
 #include <QFile>
 
@@ -39,30 +25,22 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
     m_Simulator(Simulator),
     m_neuron(Neuron)
 {
-  ui->setupUi(this);
-  setGeometry(400, 250, 542, 390);
-  setupRealtimeDataDemo(//ui->customPlot
-      );
-   setWindowTitle(QString(m_neuron->name())+QString(" voltage gradient"));
-  statusBar()->clearMessage();
-   ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
-  this->setStyleSheet("color: Navy;"
- //                     "title-color:  LightGray;"
-                       "border-color:  LightGray;"
-                      //                        "background-color: rgb(50,50, 150);"
-                      //                        "border: 1px blue;"
-                      "background-color:  LightGray;");
-
-   connect(ui->actionScreenshot, &QAction::triggered, this, &GradientWindow::screenShot);
-
-  Reset();
- //  ui->customPlot->replot();
-//  realtimeDataSlot();
-//  QTimer::singleShot(4000, this, SLOT(screenShot()));
+    ui->setupUi(this);
+    setGeometry(400, 250, 542, 390);
+    setWindowTitle(QString(m_neuron->name())+QString(" voltage gradient"));
+    statusBar()->clearMessage();
+    ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
+    this->setStyleSheet("color: Navy;"
+                        "border-color:  LightGray;"
+                        "background-color:  LightGray;"
+                        );
+    setupPlot();
+    connect(ui->actionScreenshot, &QAction::triggered, this, &GradientWindow::screenShot);
+    Reset();
 }
 
 void GradientWindow::replot(void)
-{ui->customPlot->replot();}
+{   ui->customPlot->replot();}
 
 
 void GradientWindow::Reset()
@@ -70,13 +48,11 @@ void GradientWindow::Reset()
     dataRushinGradientPlot.clear(); RushinRunningPointPositionGradient_Set(0,0);
     dataAISGradientPlot.clear(); AISRunningPointPositionGradient_Set(0,0);
     dataGradientPlot.clear();  RunningPointPositionGradient_Set(0,0);
-    RushinGradientPlot->data()->set(dataRushinGradientPlot, true);
+/*    RushinGradientPlot->data()->set(dataRushinGradientPlot, true);
     AISGradientPlot->data()->set(dataAISGradientPlot, true);
-    GradientPlot->data()->set(dataGradientPlot, true);
+    GradientPlot->data()->set(dataGradientPlot, true);*/
     index = 0; replot();
 }
-
-
 
 
 // Fill area between graph 0 and graph 1
@@ -84,8 +60,7 @@ void GradientWindow::Reset()
 customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
 */
 
-void GradientWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
-    )
+void GradientWindow::setupPlot( )
 {
      // Add ellipses
     RunningPoint = new QCPItemEllipse(ui->customPlot);
@@ -116,11 +91,6 @@ void GradientWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
     RushinGradientPlot->setPen(QPen(Qt::green));
     RushinGradientPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
 
-    // Fill area between graph 0 and graph 1
-/*     GradientPlot->setChannelFillGraph(customPlot->graph(1));
-customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
-*/
-
     ui->customPlot->legend->setVisible(true); // Ensure legend is visible
     ui->customPlot->legend->setFont(QFont("Helvetica", 9));
     ui->customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
@@ -139,16 +109,20 @@ customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
     ui->customPlot->axisRect()->setupFullAxesBox();
     ui->customPlot->rescaleAxes();
 
-  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
-//  connect(m_Simulator, SIGNAL(inputReceivedSignal()),this, SLOT(inputReceivedSlot()));
+  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(DataSlot()));
 
   ui->customPlot->axisRect()->setupFullAxesBox();
   ui->customPlot->replot();
 }
 
-#if 0
 
-  /*
+// Fill area between graph 0 and graph 1
+/*     GradientPlot->setChannelFillGraph(customPlot->graph(1));
+customPlot->graph(0)->setBrush(QBrush(QColor(20, 20, 20, 20)));
+*/
+
+#if 0
+  /* For speed
   customPlot->setNotAntialiasedElements(QCP::aeAll);
   QFont font;
   font.setStyleStrategy(QFont::NoAntialias);
@@ -176,12 +150,18 @@ void GradientWindow::RushinRunningPointPositionGradient_Set(double xpos, double 
     RushinRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+2);
 }
 
-void GradientWindow::realtimeDataSlot()
+void GradientWindow::DataSlot()
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get();
     double DvDt = m_neuron->dVdtResulting_Get();
     double Membrane_dVdt_AIS = -m_neuron->dVdtAIS_Get();
     double Membrane_dVdt_Input = m_neuron->dVdtInput_Get();
+    if(index>0)
+    {
+        double OldTime = dataGradientPlot[index-1].key;
+        if(OldTime>key2)
+            Reset(); // We step back on the time scale; reset plot
+    }
     // Handle resultant gradient display
     dataGradientPlot.push_back(QCPCurveData(index,key2, DvDt));
     GradientPlot->data()->set(dataGradientPlot, true);
@@ -236,72 +216,28 @@ GradientWindow::~GradientWindow()
 {
      QTime now = QTime::currentTime();
      QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-     QString fileName =//QString("screenshots/")+
-         QString(m_neuron->name())+QString(" Gradient Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
+     QString fileName =//QString("./screenshots/")+
+         QString(m_neuron->name())+QString("_Gradient Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
      fileName.replace(" ", "");
      ui->customPlot->savePdf(fileName, 0, 0);
-    /*
-    QTime now = QTime::currentTime();
-    qDebug() << "Current time:" << now.toString("hh:mm:ss");
-    QString fileName = QString("~/screenshots/")+ QString(m_neuron->name())+QString(" gradieents plot"+now.toString("hh:mm:ss")+QString(".pdf"));
-    fileName.replace(" ", "");
-
-    QString fileName = QString("./screenshots/A.pdf");
-    if(ui->customPlot->savePdf(fileName))
-      statusBar()->showMessage(fileName+QString(" prepared"));
-    else
-        statusBar()->showMessage("Saving to .pdf file failed");
-*/
 }
 
 void GradientWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
 {
-// add the text label at the top:
-QCPItemText *textLabel = new QCPItemText(ui->customPlot);
-textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);
-//textLabel->position->setType(QCPItemPosition::ptAxisRectRatio);
-textLabel->position->setCoords(xpos+xoffset, ypos+yoffset); // place position at center/top of axis rect
-textLabel->setText(S);
-textLabel->setFont(QFont(font().family(), 8)); // make font a bit smaller
-textLabel->setPen(QPen(Qt::red)); // show red border around text
+    // add the text label at the top:
+    QCPItemText *textLabel = new QCPItemText(ui->customPlot);
+    textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);
+    //textLabel->position->setType(QCPItemPosition::ptAxisRectRatio);
+    textLabel->position->setCoords(xpos+xoffset, ypos+yoffset); // place position at center/top of axis rect
+    textLabel->setText(S);
+    textLabel->setFont(QFont(font().family(), 8)); // make font a bit smaller
+    textLabel->setPen(QPen(Qt::red)); // show red border around text
 
-// add the arrow:
-QCPItemLine *arrow = new QCPItemLine(ui->customPlot);
-arrow->start->setParentAnchor(textLabel->bottom);
-arrow->end->setCoords(xpos, ypos); // point to (4, 1.6) in x-y-plot coordinates
-arrow->setHead(QCPLineEnding::esSpikeArrow);
+    // add the arrow:
+    QCPItemLine *arrow = new QCPItemLine(ui->customPlot);
+    arrow->start->setParentAnchor(textLabel->bottom);
+    arrow->end->setCoords(xpos, ypos);
+    arrow->setHead(QCPLineEnding::esSpikeArrow);
 }
-
-/*
-    QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    QScreen *QS = qApp->primaryScreen();
-    QScreen *screen1 = qApp->primaryScreen();
-    QPixmap pixmap = screen1->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-    const QRect screenGeometry = screen()->geometry();
-    QPixmap pm = grabWindow(0, screenGeometry.x(), screenGeometry.y(), screenGeometry.width()+14, screenGeometry.height()+14);
-*/
-//  pm.save("./screenshots/"+fileName);
-//  pm.save(fileName);
-//  qApp->quit();
-
-#if 0
-void GradientWindow::screenShot()
-{
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-  QPixmap pm = QPixmap::grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
-#elif QT_VERSION < QT_VERSION_CHECK(5, 5, 0)
-  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()+2, this->y()+2, this->frameGeometry().width()-4, this->frameGeometry().height()-4);
-#elif QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  QPixmap pm = qApp->primaryScreen()->grabWindow(qApp->desktop()->winId(), this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-#else
-  QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-#endif
-  QString fileName = demoName.toLower()+".png";
-  fileName.replace(" ", "");
-  pm.save("./screenshots/"+fileName);
-  qApp->quit();
-}
-#endif
-
 
 #include "moc_GradientWindow.cpp"

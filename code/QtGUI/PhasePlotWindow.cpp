@@ -281,10 +281,6 @@ void PhasePlotWindow::screenShot()
       QString(m_neuron->name())+QString(" Phase Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);
-
-//  pm.save("./screenshots/"+fileName);
-//  pm.save(fileName);
-//  qApp->quit();
 }
 
 #include "moc_PhasePlotWindow.cpp"

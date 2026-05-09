@@ -33,8 +33,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     ui->setupUi(this);
      this->setStyleSheet("color: Navy;"
                             "border-color:  LightGray;"
-//                        "background-color: rgb(50,50, 150);"
-//                        "border: 1px blue;"
                             "background-color:  LightGray;");
     //??Neuron::NeuronHandler::get();
     QMainWindow::setWindowIcon(QIcon(":/icons/neurer.png"));

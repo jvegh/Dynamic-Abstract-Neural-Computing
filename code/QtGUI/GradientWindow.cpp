@@ -215,8 +215,7 @@ GradientWindow::~GradientWindow()
  void GradientWindow::screenShot()
 {
      QTime now = QTime::currentTime();
-     QPixmap pm = qApp->primaryScreen()->grabWindow(0, this->x()-7, this->y()-7, this->frameGeometry().width()+14, this->frameGeometry().height()+14);
-     QString fileName =//QString("./screenshots/")+
+     QString fileName = //QString("./screenshots/")+
          QString(m_neuron->name())+QString("_Gradient Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
      fileName.replace(" ", "");
      ui->customPlot->savePdf(fileName, 0, 0);

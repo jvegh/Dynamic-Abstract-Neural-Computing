@@ -12,12 +12,8 @@
 #include "GradientWindow.h"
 #include "ui_GradientWindow.h"
 #include <QDebug>
-#include <QScreen>
-//#include <QMessageBox>
-//#include <QMetaEnum>
-//#include <QApplication>
-
-#include <QFile>
+//#include <QScreen>
+//#include <QFile>
 
 GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent ):
   QMainWindow(parent),
@@ -27,7 +23,7 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
 {
     ui->setupUi(this);
     setGeometry(400, 250, 542, 390);
-    setWindowTitle(QString(m_neuron->name())+QString(" voltage gradient"));
+    setWindowTitle(QString(m_neuron->name())+QString(" voltage gradients"));
     statusBar()->clearMessage();
     ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
     this->setStyleSheet("color: Navy;"
@@ -216,7 +212,7 @@ GradientWindow::~GradientWindow()
 {
      QTime now = QTime::currentTime();
      QString fileName = //QString("./screenshots/")+
-         QString(m_neuron->name())+QString("_Gradient Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
+         QString(m_neuron->name())+QString("_Gradients Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
      fileName.replace(" ", "");
      ui->customPlot->savePdf(fileName, 0, 0);
 }

@@ -52,8 +52,7 @@ public:
   explicit VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
   ~VoltageWindow();
   
-  void setupRealtimeDataDemo(QCustomPlot *customPlot);
-//  void setupParametricCurveDemo(QCustomPlot *customPlot);
+  void setupPlot(void);
   void DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50);
 
   void ProcessLine(QString line);
@@ -62,13 +61,12 @@ public:
   void Reset();
   void ResetDisplay(void){index = 0;}
   void RunningPointPosition_Set(double xpos, double ypos);
-  QStringList first,second;
-  uint32_t index, lastindex;
+  uint32_t index;
 
   QVector<double> Time, Voltage, Gradient;
 
 private slots:
-  void realtimeDataSlot();
+  void DataSlot();
   void screenShot();
 
 private:
@@ -77,17 +75,11 @@ private:
   NeuronPhysical *m_neuron;
   void setupMenus();
   QString demoName;
-  QTimer dataTimer;
-  QCPItemTracer *itemDemoPhaseTracer;
-  int currentDemoIndex;
-//  QApplication* qapp; //?
   QVector<double> x, y0, y1;
 
   QCPCurve *VoltagePlot;
   QVector<QCPCurveData> dataVoltagePlot;
   QCPItemEllipse *RunningPoint;
-
-
 };
 
 #endif // VoltageWindow_H

@@ -49,14 +49,10 @@ private:
   Ui::PhasePlotWindow *ui;
     ScQtSimulator * m_Simulator;
   NeuronPhysical *m_neuron;
-  QString demoName;
-//  QTimer dataTimer;
-//  QCPItemTracer *itemPhaseTracer;
   QCPCurve *PhasePlot;
   void setupMenus();
   QVector<QCPCurveData> dataPhasePlot;
   bool m_DisplayMode = true;
-//      int currentDemoIndex;
   QCPItemEllipse *RunningPoint;
 };
 

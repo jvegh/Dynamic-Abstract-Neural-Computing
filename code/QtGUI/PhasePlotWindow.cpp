@@ -90,12 +90,12 @@ PhasePlotWindow::~PhasePlotWindow()
 
 void PhasePlotWindow::setupMenus()
 {
-    const QIcon saveIcon = QIcon(":/icons/save.svg");
+ /*   const QIcon saveIcon = QIcon(":/icons/save.svg");
     auto *screenshotAction = new QAction(saveIcon, "Screenshot to File", this);
     ui->menuFile->addAction(screenshotAction);
     screenshotAction->setShortcut(QKeySequence::Save);
     connect(screenshotAction, &QAction::triggered, this,
-            &PhasePlotWindow::screenShot);
+            &PhasePlotWindow::screenShot);*/
 }
     // Edit actions
 
@@ -278,7 +278,7 @@ void PhasePlotWindow::screenShot()
 {
       QTime now = QTime::currentTime();
     QString fileName = //QString("screenshots/")+
-      QString(m_neuron->name())+QString(" Phase Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
+      QString(m_neuron->name())+QString("_Phase Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);
 }

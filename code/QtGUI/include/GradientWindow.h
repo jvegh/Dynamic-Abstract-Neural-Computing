@@ -46,8 +46,6 @@ private:
     Ui::GradientWindow *ui;
     ScQtSimulator * m_Simulator;
     NeuronPhysical *m_neuron;
-    QString demoName;
-
     QCPCurve *GradientPlot;
     QVector<QCPCurveData> dataGradientPlot;
     QCPItemEllipse *RunningPoint;

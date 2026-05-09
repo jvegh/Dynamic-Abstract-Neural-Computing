@@ -40,30 +40,27 @@ VoltageWindow::VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, 
     m_Simulator(Simulator),
     m_neuron(Neuron)
 {
-  ui->setupUi(this);
-  setGeometry(400, 250, 542, 390);
-  this->setStyleSheet("color: Navy;"
-                      //                     "title-color:  LightGray;"
-                      "border-color:  LightGray;"
-                      //                        "background-color: rgb(50,50, 150);"
-                      //                        "border: 1px blue;"
-                      "background-color:  LightGray;");
-  setupRealtimeDataDemo(ui->customPlot);
-   setWindowTitle(QString(m_neuron->name())+QString(" ActionPotential"));
-  statusBar()->clearMessage();
-  ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
-  setupMenus();
-   connect(ui->actionScreenshot, &QAction::triggered, this, &VoltageWindow::screenShot);
+    ui->setupUi(this);
+    setGeometry(400, 250, 542, 390);
+    this->setStyleSheet("color: Navy;"
+                        "border-color:  LightGray;"
+                        "background-color:  LightGray;");
+    setWindowTitle(QString(m_neuron->name())+QString(" ActionPotential"));
+    statusBar()->clearMessage();
+    ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
+    setupMenus();
+    setupPlot();
+    connect(ui->actionScreenshot, &QAction::triggered, this, &VoltageWindow::screenShot);
 }
 
 void VoltageWindow::setupMenus()
 {
-    const QIcon saveIcon = QIcon(":/icons/save.svg");
+/*    const QIcon saveIcon = QIcon(":/icons/save.svg");
     auto *screenshotAction = new QAction(saveIcon, "Screenshot to File", this);
     ui->menuFile->addAction(screenshotAction);
     screenshotAction->setShortcut(QKeySequence::Save);
     connect(screenshotAction, &QAction::triggered, this,
-            &VoltageWindow::screenShot);
+            &VoltageWindow::screenShot);*/
 }
 
 
@@ -78,40 +75,38 @@ void VoltageWindow::Reset()
     replot();
 }
 
-void VoltageWindow::setupRealtimeDataDemo(QCustomPlot *customPlot)
+void VoltageWindow::setupPlot()
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
+    VoltagePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
+    VoltagePlot->data()->set(dataVoltagePlot, true);
+    VoltagePlot->setPen(QPen(Qt::blue));
+    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    VoltagePlot->setName("Action Potential");
+    VoltagePlot->setLineStyle(QCPCurve::lsLine);
+    VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    VoltagePlot->setLineStyle(QCPCurve::lsLine);
+
+    // give the axes some labels:
+    ui->customPlot->xAxis->setLabel("Time (ms)");
+    ui->customPlot->yAxis->setLabel("Membrane voltage (mV)");
+    // set axes ranges, so we see all data:
+    ui->customPlot->xAxis->setRange(0,1);
+    ui->customPlot->yAxis->setRange(-30,130);
+    // set some basic customPlot config:
+    ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+    ui->customPlot->axisRect()->setupFullAxesBox();
+    ui->customPlot->rescaleAxes();
     // Add an ellipse
     RunningPoint = new QCPItemEllipse(ui->customPlot);
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     RunningPoint->setPen(QPen(Qt::red));
     RunningPointPosition_Set(key2,Volt2);
 
-    VoltagePlot = new QCPCurve(customPlot->xAxis, customPlot->yAxis);
-    VoltagePlot->setName("ActionPotential");
-    VoltagePlot->data()->set(dataVoltagePlot, true);
-    VoltagePlot->setPen(QPen(Qt::blue));
-    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-    VoltagePlot->setLineStyle(QCPCurve::lsLine);
-    VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
-    VoltagePlot->setLineStyle(QCPCurve::lsLine);
-    VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
-
-    // give the axes some labels:
-    customPlot->xAxis->setLabel("Time (ms)");
-    customPlot->yAxis->setLabel("Membrane voltage (mV)");
-    // set axes ranges, so we see all data:
-    customPlot->xAxis->setRange(0,1);
-    customPlot->yAxis->setRange(-30,130);
-    // set some basic customPlot config:
-    customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
-    customPlot->axisRect()->setupFullAxesBox();
-    customPlot->rescaleAxes();
-
-  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
-  customPlot->axisRect()->setupFullAxesBox();
-  Reset();
+    connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(DataSlot()));
+    ui->customPlot->axisRect()->setupFullAxesBox();
+    Reset();
 }
 
 void VoltageWindow::RunningPointPosition_Set(double xpos, double ypos)
@@ -120,7 +115,7 @@ void VoltageWindow::RunningPointPosition_Set(double xpos, double ypos)
     RunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
 }
 
-void VoltageWindow::realtimeDataSlot()
+void VoltageWindow::DataSlot()
 {
 
     double Volt2 = m_neuron->MembraneRelativePotential_Get();
@@ -160,14 +155,12 @@ void VoltageWindow::realtimeDataSlot()
     }
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
     {
-    //    cerr << m_neuron->dVdtResultingLast_Get() << "," << m_neuron->dVdtResulting_Get() << "\n";
         if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
         {   // We are at the point of maximum polarization
             DrawArrow(key2, Volt2, "H",-0,50);
         }
 
     }
-
     ui->customPlot->replot();
 }
 

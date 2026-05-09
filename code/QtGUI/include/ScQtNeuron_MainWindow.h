@@ -1,4 +1,4 @@
-/** @file ScQtNeuron_MainWindow.cpp
+/** @file ScQtNeuron_MainWindow.h
  *  @brief The main window for the SystemC-based neuron simulator, using Qt's stuff
  *  Ideas taken from  http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/
  *  https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC
@@ -22,8 +22,6 @@
 #include "CurrentWindow.h"
 #include "VoltageWindow.h"
 #include "GradientWindow.h"
-//#include "SimulatorControlWindow.h"
-//#include "ScQtNeuron_Plot_AP.h"
 #include "neurontab.h"
 /*
 extern struct SystemDirectories Directories;

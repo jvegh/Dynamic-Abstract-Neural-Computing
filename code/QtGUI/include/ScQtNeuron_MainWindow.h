@@ -131,6 +131,14 @@ private:
     void addTreeRoot(QString name, QString description);
     void addTreeChild(QTreeWidgetItem *parent,
                       QString name, QString description);
+     void displayTime_Reset()
+    {
+        m_display_time_begin = QTime::currentTime();
+        m_display_t =chrono::steady_clock::now();
+        m_display_x = m_display_s = (std::chrono::duration< int64_t, nano>)0;
+        BENCHMARK_TIME_RESET(&m_display_t,&m_display_x,&m_display_s); // Reset at the very beginning, say in the constructor
+    }
+
     /**
      * @brief Thread object which will let us manipulate the running thread
      */
@@ -147,8 +155,15 @@ private:
     std::map<TabIndex, TabWidgets> m_tabWidgets;
     TabIndex m_currentTabID = NeuronTabID;
     NeuronTab *m_neuronTab;
-    protected:
-    Ui::ScQtNeuron_MainWindow *ui;
+protected:
+     Ui::ScQtNeuron_MainWindow *ui;
+    chrono::steady_clock::time_point m_display_t =chrono::steady_clock::now();
+        double displayTime_Get()
+        {
+            return std::chrono::duration_cast<std::chrono::microseconds>(m_display_s).count();
+        }
+        QTime m_display_time_begin;
+    std::chrono::duration< int64_t, nano> m_display_x,m_display_s = (std::chrono::duration< int64_t, nano>)0;
 };
 
 

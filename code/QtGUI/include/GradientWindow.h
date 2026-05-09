@@ -1,33 +1,11 @@
-/***************************************************************************
-**                                                                        **
-**  QCustomPlot, an easy to use, modern plotting widget for Qt            **
-**  Copyright (C) 2011-2022 Emanuel Eichhammer                            **
-**                                                                        **
-**  This program is free software: you can redistribute it and/or modify  **
-**  it under the terms of the GNU General Public License as published by  **
-**  the Free Software Foundation, either version 3 of the License, or     **
-**  (at your option) any later version.                                   **
-**                                                                        **
-**  This program is distributed in the hope that it will be useful,       **
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of        **
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         **
-**  GNU General Public License for more details.                          **
-**                                                                        **
-**  You should have received a copy of the GNU General Public License     **
-**  along with this program.  If not, see http://www.gnu.org/licenses/.   **
-**                                                                        **
-****************************************************************************
-**           Author: Emanuel Eichhammer                                   **
-**  Website/Contact: https://www.qcustomplot.com/                         **
-**             Date: 06.11.22                                             **
-**          Version: 2.1.1                                                **
-****************************************************************************/
-
-/************************************************************************************************************
-**                                                                                                         **
-**  This started from the example code RealTimePlot for QCustomPlot.                                                              **
-**                                                                                                         **
-*************************************************************************************************************/
+/** @file GradientWindow.h
+ *  @brief The gradient display window dfor the SystemC-based neuron simulator, using Qt's stuff
+ *  Ideas taken from  https://www.qcustomplot.com/
+ */
+/*
+ *  @author János Végh (jvegh)
+ *  @bug No known bugs.
+*/
 
 #ifndef GradientWindow_H
 #define GradientWindow_H
@@ -49,52 +27,41 @@ class GradientWindow : public QMainWindow
   Q_OBJECT
   
 public:
-  explicit GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
-  ~GradientWindow();
+    explicit GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
+    ~GradientWindow();
   
-  void setupRealtimeDataDemo(//QCustomPlot *customPlot
-      );
- // void setupParametricCurveDemo(QCustomPlot *customPlot);
-  void DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50);
+    void setupPlot(  );
+    void DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50);
 
-  void replot(void);
-  void Reset();
-  void ResetDisplay(void){index = 0;}
-  QStringList first,second;
-  uint32_t index, lastindex;
+    void replot(void);
+    void Reset();
+    uint32_t index;
 
-  QVector<double> Time, Voltage, Gradient;
+    QVector<double> Time, Voltage, Gradient;
 
 private slots:
-  void realtimeDataSlot();
-  void screenShot();
-//  void inputReceived();
-
+    void DataSlot();
+    void screenShot();
 private:
-  Ui::GradientWindow *ui;
+    Ui::GradientWindow *ui;
     ScQtSimulator * m_Simulator;
-  NeuronPhysical *m_neuron;
-  QString demoName;
-  QTimer dataTimer;
-  QCPItemTracer *itemDemoPhaseTracer;
-  int currentDemoIndex;
-//  QApplication* qapp;
-//  QVector<double> x, y0, y1;
+    NeuronPhysical *m_neuron;
+    QString demoName;
 
-  QCPCurve *GradientPlot;
-  QVector<QCPCurveData> dataGradientPlot;
-  QCPItemEllipse *RunningPoint;
+    QCPCurve *GradientPlot;
+    QVector<QCPCurveData> dataGradientPlot;
+    QCPItemEllipse *RunningPoint;
 
-  QCPCurve *AISGradientPlot;
-  QVector<QCPCurveData> dataAISGradientPlot;
-  QCPItemEllipse *AISRunningPoint;
+    QCPCurve *AISGradientPlot;
+    QVector<QCPCurveData> dataAISGradientPlot;
+    QCPItemEllipse *AISRunningPoint;
 
-  QCPCurve *RushinGradientPlot;
-  QVector<QCPCurveData> dataRushinGradientPlot;
-  QCPItemEllipse *RushinRunningPoint;
-  void RunningPointPositionGradient_Set(double xpos, double ypos);
-  void AISRunningPointPositionGradient_Set(double xpos, double ypos);
-  void RushinRunningPointPositionGradient_Set(double xpos, double ypos);
+    QCPCurve *RushinGradientPlot;
+    QVector<QCPCurveData> dataRushinGradientPlot;
+    QCPItemEllipse *RushinRunningPoint;
+    void RunningPointPositionGradient_Set(double xpos, double ypos);
+    void AISRunningPointPositionGradient_Set(double xpos, double ypos);
+    void RushinRunningPointPositionGradient_Set(double xpos, double ypos);
 };
 
 #endif // GradientWindow_H

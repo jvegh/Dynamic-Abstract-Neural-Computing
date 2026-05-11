@@ -1,22 +1,22 @@
 #include "clioptions.h"
-#include "processorregistry.h"
-#include "radix.h"
-#include "telemetry.h"
+//#include "processorregistry.h"
+//#include "radix.h"
+//#include "telemetry.h"
 #include <QFile>
 #include <QMetaEnum>
 
 #include <sstream>
 #include <string>
 
-#include "STLExtras.h"
+//#include "STLExtras.h"
 
 //namespace Ripes {
 
-void addCLIOptions(QCommandLineParser &parser, Ripes::CLIModeOptions &options) {
+void addCLIOptions(QCommandLineParser &parser, CLIModeOptions &options) {
   parser.addOption(QCommandLineOption("src", "Path to source file.", "path"));
   parser.addOption(QCommandLineOption(
       "t", "Source file type. Options: [c, asm, bin]", "type", "asm"));
-
+#if 0
   // Processor models. Generate information from processor registry.
   QStringList processorOptions;
   for (int i = 0; i < ProcessorID::NUM_PROCESSORS; i++)
@@ -63,6 +63,7 @@ void addCLIOptions(QCommandLineParser &parser, Ripes::CLIModeOptions &options) {
     QCommandLineOption telemetryOption(telemetry->key(), desc);
     parser.addOption(telemetryOption);
   }
+#endif
 }
 
 bool parseCLIOptions(QCommandLineParser &parser, QString &errorMessage,
@@ -79,7 +80,7 @@ bool parseCLIOptions(QCommandLineParser &parser, QString &errorMessage,
     errorMessage = "No source type specified (--t)";
     return false;
   }
-
+#if 0
   if (parser.value("t") == "c") {
     options.srcType = SourceType::C;
   } else if (parser.value("t") == "asm") {
@@ -220,7 +221,7 @@ bool parseCLIOptions(QCommandLineParser &parser, QString &errorMessage,
   for (auto &telemetry : options.telemetry)
     if (parser.isSet("all") || parser.isSet(telemetry->key()))
       telemetry->enable();
-
+#endif
   return true;
 }
 

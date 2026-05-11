@@ -58,6 +58,7 @@ private:
     QCPCurve *RushinGradientPlot;
     QVector<QCPCurveData> dataRushinGradientPlot;
     QCPItemEllipse *RushinRunningPoint;
+    bool m_HaveAlreadyH, m_HaveAlreadyP;
     void RunningPointPositionGradient_Set(double xpos, double ypos);
     void AISRunningPointPositionGradient_Set(double xpos, double ypos);
     void RushinRunningPointPositionGradient_Set(double xpos, double ypos);

@@ -52,9 +52,10 @@ private:
   ScQtSimulator * m_Simulator;
   NeuronPhysical *m_neuron;
   void setupMenus();
-  QString demoName;
-  QVector<double> x, y0, y1;
+//  QString demoName;
+//  QVector<double> x, y0, y1;
 
+  bool m_HaveAlreadyH, m_HaveAlreadyP;
   QCPCurve *VoltagePlot;
   QVector<QCPCurveData> dataVoltagePlot;
   QCPItemEllipse *RunningPoint;

@@ -118,7 +118,7 @@ scGenComp_PU_Abstract::
 }
 
 // Just end the benchmarking macros if they are in use
-    void scGenComp_PU_Abstract::
+void scGenComp_PU_Abstract::
     BenchmarkTimeComputingBegin(void)
 {
             #ifdef BENCHMARK_TIME_ACTIVE
@@ -396,7 +396,7 @@ void scGenComp_PU_Abstract::
                 // Set the smallest heartbeat for the relaxing
 //                HeartbeatTime_Set(m_Heartbeat_time_resolution);
                 EVENT_GenComp.DeliveringEnd.notify(SC_ZERO_TIME);
-                    DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"SENT 'DeliveringEnd' in 302 " << GenCompStagesString[mStageFlag] << "'");
+                    DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"SENT 'DeliveringEnd' in stage '" << GenCompStagesString[mStageFlag] << "'");
             }
             break;
         }
@@ -408,8 +408,8 @@ void scGenComp_PU_Abstract::
                 // Set the default heartbeat for the new input
                 HeartbeatTime_Set(s_Heartbeat_time_default);
                 m_Relaxing_Stopped = true;
-                    DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"Relaxing finished in '" << GenCompStagesString[mStageFlag]
-                                                                                   << "' @" << sc_time_String_Get(sc_time_stamp()));
+                EVENT_GenComp.RelaxingEnd.notify(SC_ZERO_TIME);
+                DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"SENT 'RelaxingEnd' in stage '" << GenCompStagesString[mStageFlag] << "'");
             }
             break;
         }

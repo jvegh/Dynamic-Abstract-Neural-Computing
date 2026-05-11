@@ -48,7 +48,6 @@ NeuronPhysical(sc_core::sc_module_name nm, NeuronConstants* Neuron):
     m_RushinCurrent((NeuronInputCurrent *)NULL),
     m_Neuron(Neuron)
 {
-       // m_RushinCurrent = (NeuronInputCurrent*)NULL;
     m_Neuron->MembraneFromCPF_TauMSec_Set(700,2);
     Initialize_Do();
     // Saved value = 2
@@ -126,7 +125,6 @@ void NeuronPhysical::
         delete *it;
         m_SynapticCurrents.erase(m_SynapticCurrents.begin());
     }
-    delete m_RushinCurrent;
 }
 
 // Imitate potential increase on the membrane, due to an input

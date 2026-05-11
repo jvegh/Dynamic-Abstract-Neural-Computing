@@ -53,11 +53,7 @@ int sc_main(int argc, char *argv[])
 /*    return app.exec();
     QApplication app(argc, argv);*/
     QCoreApplication::setApplicationName("ScQtNeuron");
-//    MyWindow m;
     return guiMode(app);
-/*    m.resize(800, 600);
-    m.show();
-*/
     /*
   QCommandLineParser parser;
   Ripes::CLIModeOptions options;

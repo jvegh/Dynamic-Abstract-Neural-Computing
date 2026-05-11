@@ -79,7 +79,7 @@ void CurrentWindow::Reset()
     dataResultingCurrentPlot.clear(); ResultingRunningPointPosition_Set(0,0);
     ResultingCurrentPlot->data()->set(dataResultingCurrentPlot, true);
 
-    index = 0; replot();
+    index = 0;// replot();
 }
 
 void CurrentWindow::setupDataPlot()

@@ -16,6 +16,7 @@
 #include <QSettings>
 #include <QMessageBox>
 #include <QVector>
+#include <QTimer>
 #include "PhasePlotWindow.h"
 #include "ScQtAbout.h"
 #include "ScQtSimulator.h"
@@ -110,6 +111,7 @@ public:
 private slots:
      void wiki() ;
      void version();
+     void on_MakeSimulationStep();
      void on_startButton_clicked();
      void on_stopButton_clicked();
      void on_resetButton_clicked();
@@ -148,6 +150,7 @@ private:
     GradientWindow *m_GradientWindow;
     PhasePlotWindow *m_PhasePlotWindow;
     int32_t m_StepNumber;
+    bool m_terminated;
     sc_core::sc_time m_FinalTime;
     NeuronPhysicalTEST *MyNeuron;
     // Tabs
@@ -156,7 +159,8 @@ private:
     TabIndex m_currentTabID = NeuronTabID;
     NeuronTab *m_neuronTab;
 protected:
-     Ui::ScQtNeuron_MainWindow *ui;
+    Ui::ScQtNeuron_MainWindow *ui;
+//    QTimer m_Display_Timer;
     chrono::steady_clock::time_point m_display_t =chrono::steady_clock::now();
         double displayTime_Get()
         {

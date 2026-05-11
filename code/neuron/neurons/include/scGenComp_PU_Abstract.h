@@ -280,11 +280,6 @@ protected:
      * @return true if to stop heartbeating in 'Delivering' mode
      */
     virtual bool Heartbeat_Delivering_Stop(){return scLocalTime_Get()>mFixedComputingTime+mFixedDeliveringTime;}
-    /**
-     * @brief Handle Heartbeat in 'Relaxing' mode
-     *
-     * Called by Heartbeat_method();
-     */
     /** @brief Handle Heartbeat in 'Relaxing' mode
      *
      * It should be overloaded (by default makes nothing).

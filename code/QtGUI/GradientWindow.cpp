@@ -42,6 +42,7 @@ void GradientWindow::Reset()
     dataRushinGradientPlot.clear(); RushinRunningPointPositionGradient_Set(0,0);
     dataAISGradientPlot.clear(); AISRunningPointPositionGradient_Set(0,0);
     dataGradientPlot.clear();  RunningPointPositionGradient_Set(0,0);
+    m_HaveAlreadyP =  m_HaveAlreadyH = false;
 /*    RushinGradientPlot->data()->set(dataRushinGradientPlot, true);
     AISGradientPlot->data()->set(dataAISGradientPlot, true);
     GradientPlot->data()->set(dataGradientPlot, true);*/
@@ -61,6 +62,8 @@ void GradientWindow::setupPlot( )
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     RunningPoint->setPen(QPen(Qt::red));
     AISRunningPoint  = new QCPItemEllipse(ui->customPlot);
+    AISRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
+    AISRunningPoint->setPen(QPen(Qt::red));
     RushinRunningPoint  = new QCPItemEllipse(ui->customPlot);
 
     RushinGradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
@@ -106,7 +109,7 @@ void GradientWindow::setupPlot( )
 //  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(displayDataSlot()));
 
   ui->customPlot->axisRect()->setupFullAxesBox();
-  ui->customPlot->replot();
+//  ui->customPlot->replot();
 }
 
 
@@ -187,17 +190,17 @@ void GradientWindow::displayDataSlot()
     {
         if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
         {   // We are at the point of maximum polarization
-            DrawArrow(key2, DvDt, "P",+0.04,1400);
+
+            if(!m_HaveAlreadyP){DrawArrow(key2, DvDt, "P",+0.04,1400); m_HaveAlreadyP = true;}
         }
     }
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
     {
         if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
-        {   // We are at the point of maximum hyperpolarization
-            DrawArrow(key2, DvDt, "H",0,1000);
+        {   // We are at the point of maximum hyperpolarization; avoid duplums
+            if(!m_HaveAlreadyH){DrawArrow(key2, DvDt, "H",0,1000); m_HaveAlreadyH = true;}
         }
     }
-
     ui->customPlot->replot();
 }
 

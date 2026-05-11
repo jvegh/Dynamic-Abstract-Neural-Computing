@@ -126,7 +126,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_PhasePlotWindow->show();
     m_PhasePlotWindow->DisplayMode_Set(false);
     m_neuronTab->ui->DisplayReversedBox->setCheckState( Qt::CheckState(m_PhasePlotWindow->DisplayMode_Get()));
- //   statusBar()->showMessage("Simulator is ready to work",2000);
 }
 
 ScQtNeuron_MainWindow::~ScQtNeuron_MainWindow()
@@ -167,13 +166,18 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
     m_neuronTab->ui->DisplayReversedBox->setEnabled(false);
     m_StepNumber = m_neuronTab->ui->StepNumberBox->value();
     m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->ui->StepTimeBox->value(),sc_core::SC_US);
-    m_Simulator->SlowFactor_Set(m_neuronTab->ui->DisplaySlider->value());
+    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+    m_terminated = false;
+}
+
+void ScQtNeuron_MainWindow::on_MakeSimulationStep()
+{
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 }
 
 void ScQtNeuron_MainWindow::on_stopButton_clicked()
 {
-    m_Simulator->abort();
+    m_Simulator->abort(); m_terminated = true;
 }
 
 void ScQtNeuron_MainWindow::on_resetButton_clicked()
@@ -213,20 +217,29 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,4,7).c_str()));
     m_neuronTab->ui->DisplayTimeValue->setText(QString(time_String_Get(displayTime_Get()/1000.,CLOCK_TIME_UNIT_S,1,7).c_str()));
+            BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
+    if ( MyNeuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
+        QMessageBox::StandardButton ret;
+        ret = QMessageBox::warning(this, tr("ScQtSimulator"),
+                                   tr("Simulation of a single AP successfully terminated\n"
+                                      "Maybe you want to make screenshots"),
+                                   QMessageBox::Yes );
+        m_Simulator->abort();
+        m_terminated = true;
+    }
     if((
         (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()))
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
         || (m_neuronTab->ui->continuousMode->isChecked())
         )
-//        && (!m_Simulator->_abort) && (m_Simulator->_interrupt)
+        && !m_terminated //&& (!m_Simulator->_abort) //&& (m_Simulator->_interrupt)
         )
-
     {   // Continue execution by issuing one more request
-        m_Simulator->SlowFactor_Set(m_neuronTab->ui->DisplaySlider->value());
-        replot();
-        m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
+        // Imitate pressing 'Start'
+        m_neuronTab->ui->DisplaySlider->value();
+        QTimer::singleShot(0    // Zero means continuation with no delay
+                           +m_neuronTab->ui->DisplaySlider->value(), this, SLOT(on_MakeSimulationStep()));
     }
-            BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
 }
 
 //BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here

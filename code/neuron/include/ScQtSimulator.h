@@ -59,7 +59,6 @@ public:
     enum Method {
         Method_SingleSteps = 1,
     //    Method_SimulatedTime = 2,
-//        Method3 = 3
     };
     /**
      * @brief Requests for the method @em method to be executed
@@ -113,15 +112,13 @@ public:
         BENCHMARK_TIME_RESET(&m_system_t,&m_system_x,&m_system_s); // Reset at the very beginning, say in the constructor
     }
 
-   void SlowFactor_Set(uint64_t S){    m_SlowFactor = S;}
-
 private:
     // Define time benchmarking variables and utility functions
     chrono::steady_clock::time_point m_system_t =chrono::steady_clock::now();
     std::chrono::duration< int64_t, nano> m_system_x,m_system_s = (std::chrono::duration< int64_t, nano>)0;
-     uint64_t m_SlowFactor = 1000;
     sc_core::sc_time m_sc_time_begin;
     QTime m_clock_time_begin;   // The beginning of this simulation, [ms]
+    sc_core::sc_time m_CurrentTime;   // The actual simulated time
     /*
      * @brief Currently requested method
      */
@@ -156,13 +153,6 @@ private:
      */
     void doSimulatedTime();
 #endif
-    /* *
-     * @brief 3rd method which could be called
-     *
-     * Counts 30 sec in this example.
-     * Counting is interrupted if #_abort or #_interrupt is set to true.
-     */
-//   void doMethod3();
 signals:
     /**
      * @brief This signal is emitted when counted value is changed (every sec)

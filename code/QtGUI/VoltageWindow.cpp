@@ -56,6 +56,7 @@ void VoltageWindow::Reset()
 {
     dataVoltagePlot.clear(); RunningPointPosition_Set(0,0); index = 0;
     VoltagePlot->data()->set(dataVoltagePlot, true);
+    m_HaveAlreadyP =  m_HaveAlreadyH = false;
     replot();
 }
 
@@ -134,18 +135,19 @@ void VoltageWindow::displayDataSlot()
     {
         if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
         {   // We are at the point of maximum polarization
-            DrawArrow(key2, Volt2, "P",0.03,-30);
+
+            if(!m_HaveAlreadyP){DrawArrow(key2, Volt2, "P",0.03,-30); m_HaveAlreadyP = true;}
         }
     }
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
     {
         if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
         {   // We are at the point of maximum polarization
-            DrawArrow(key2, Volt2, "H",-0,50);
-        }
 
+            if(!m_HaveAlreadyH){ DrawArrow(key2, Volt2, "H",-0,50); m_HaveAlreadyH = true;}
+        }
     }
-    ui->customPlot->replot();
+     ui->customPlot->replot();
 }
 
 void VoltageWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)

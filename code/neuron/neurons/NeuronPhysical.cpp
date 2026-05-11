@@ -8,7 +8,7 @@
  */
 
 #define MAKE_TIME_BENCHMARKING  // uncomment to measure the time with benchmarking macros
-#define SC_MAKE_TIME_BENCHMARKING  // uncomment to measure the time with benchmarking macros
+#define SC_MAKE_TIME_BENCHMARKING  // uncomment to measure the SystemC time with benchmarking macros
 
 #include "NeuronPhysical.h"
 
@@ -209,7 +209,7 @@ void NeuronPhysical::
     m_Membrane_dVdt_Resulting = m_Membrane_dVdt_Rushin
                                + m_Input_dVdt
                                - m_Membrane_dVdt_AIS; // in [V/s]
-    // Tha Na+ current
+    // The Na+ current
     m_Na_I += m_Membrane_dVdt_Rushin/MembraneResistanceGOhm_Get()/1000/1000;
 
     m_MembraneGradientPositive =
@@ -283,10 +283,8 @@ bool NeuronPhysical::
     Heartbeat_Relaxing_Stop()
 {
     // Maybe we were relaxing and received our first input
-//    if(m_HasUnhandledInput)return true;
     // We are after delivering, check if before the hyperrelaxation turning point
     if(!m_MembraneGradientPositive) return false;
-//    if(!m_PeakReached) return false;
     // We are over the hyperpolarization turning point, check if resting
     if ((abs(m_Membrane_V )>= AllowedRestingPotentialDifference))
         return false; // Continue relaxing

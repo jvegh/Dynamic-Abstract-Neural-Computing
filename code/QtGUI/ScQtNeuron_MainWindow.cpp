@@ -33,8 +33,12 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     ui->setupUi(this);
      this->setStyleSheet("color: Navy;"
                             "border-color:  LightGray;"
-                            "background-color:  LightGray;");
-    //??Neuron::NeuronHandler::get();
+                            "background-color:  LightGray;"
+       "border: 1px solid white;"
+    "border-width: 1px;"
+    "border-style: solid;"
+    "border-radius: 4px;");
+   //??Neuron::NeuronHandler::get();
     QMainWindow::setWindowIcon(QIcon(":/icons/neurer.png"));
 
     // Initialize fonts
@@ -193,13 +197,18 @@ void ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked()
 {
     m_PhasePlotWindow->DisplayMode_Set(m_neuronTab->ui->DisplayReversedBox->isChecked());
     m_StepNumber = m_neuronTab->ui->DisplayReversedBox->isChecked();
-    m_PhasePlotWindow->setupRealtimeDataDemo();
+    m_PhasePlotWindow->setupDataPlot();
 }
 
 void ScQtNeuron_MainWindow::on_eventHappened()
 {
     // Display the time values
             BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here
+    // The functionality moved to here to benchmark the display time
+    m_CurrentWindow->displayDataSlot();
+    m_PhasePlotWindow->displayDataSlot();
+    m_VoltageWindow->displayDataSlot();
+    m_GradientWindow->displayDataSlot();
     m_neuronTab->ui->SimulatedTimeValue->setText(QString(sc_time_String_Get(m_Simulator->scTime_Get()).c_str()));
     m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,4,7).c_str()));

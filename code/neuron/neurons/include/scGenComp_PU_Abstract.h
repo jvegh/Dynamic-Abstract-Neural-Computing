@@ -47,7 +47,7 @@ using namespace sc_core; using namespace sc_dt; using namespace std;
 
 /*!
  * \class scGenComp_PU_Abstract
- * \brief  A lass to deal with operations of an abstract processing unit (\gls{PU}),
+ * \brief  A class to deal with operations of an abstract processing unit (\gls{PU}),
  * implementing a single-shot elementary computation in the sense of the General Computing Paradigm
  * @cite VeghRevisingClassicComputing:2021. The stages of operation
  * are marked by event pairs (or single events) in the sense as the SystemC @cite SystemCBook:2010

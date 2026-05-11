@@ -103,7 +103,7 @@ void GradientWindow::setupPlot( )
     ui->customPlot->axisRect()->setupFullAxesBox();
     ui->customPlot->rescaleAxes();
 
-  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(DataSlot()));
+//  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(displayDataSlot()));
 
   ui->customPlot->axisRect()->setupFullAxesBox();
   ui->customPlot->replot();
@@ -144,7 +144,7 @@ void GradientWindow::RushinRunningPointPositionGradient_Set(double xpos, double 
     RushinRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+2);
 }
 
-void GradientWindow::DataSlot()
+void GradientWindow::displayDataSlot()
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get();
     double DvDt = m_neuron->dVdtResulting_Get();

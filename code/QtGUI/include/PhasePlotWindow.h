@@ -31,7 +31,7 @@ public:
   explicit PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
   ~PhasePlotWindow();
   
-  void setupRealtimeDataDemo( );
+  void setupDataPlot( );
 
   void ProcessLine(QString line);
   void GetData(QString fileName);
@@ -47,7 +47,7 @@ public:
 //  QVector<double> Time, Voltage, Gradient;
 
 private slots:
-  void realtimeDataSlot();
+  void displayDataSlot();
   void screenShot();
 
 private:

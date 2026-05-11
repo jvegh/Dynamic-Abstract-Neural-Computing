@@ -88,7 +88,7 @@ void VoltageWindow::setupPlot()
     RunningPoint->setPen(QPen(Qt::red));
     RunningPointPosition_Set(key2,Volt2);
 
-    connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(DataSlot()));
+//    connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(displayDataSlot()));
     ui->customPlot->axisRect()->setupFullAxesBox();
     Reset();
 }
@@ -99,7 +99,7 @@ void VoltageWindow::RunningPointPosition_Set(double xpos, double ypos)
     RunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
 }
 
-void VoltageWindow::DataSlot()
+void VoltageWindow::displayDataSlot()
 {
 
     double Volt2 = m_neuron->MembraneRelativePotential_Get();

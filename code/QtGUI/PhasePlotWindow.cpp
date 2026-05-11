@@ -31,7 +31,7 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   statusBar()->clearMessage();
   ui->actionScreenshot->setIcon(QIcon(":/icons/analytics.svg"));
   setupMenus();
-  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot()));
+//  connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(realtimeDataSlot())); // Moved to MainWindow
   ui->customPlot->axisRect()->setupFullAxesBox();
 
   PhasePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
@@ -55,7 +55,7 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   ui->customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
   // Set position to upper left inside the axis rect
   ui->customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
-  setupRealtimeDataDemo();
+  setupDataPlot();
   Reset();
 
   connect(ui->actionScreenshot, &QAction::triggered, this, &PhasePlotWindow::screenShot);
@@ -79,11 +79,10 @@ void PhasePlotWindow::setupMenus()
 
 
 
-void PhasePlotWindow::setupRealtimeDataDemo(//QCustomPlot *customPlot
-    )
+void PhasePlotWindow::setupDataPlot(    )
 {
     // Optional: Add a slight margin so it doesn't touch the edge
-//??    customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
+//??    ui->customPlot->axisRect()->insetLayout()->setInsetMargins(0, QMargins(10, 10, 10, 10));
 
 
     if(m_DisplayMode)
@@ -142,10 +141,10 @@ void PhasePlotWindow::RunningPointPosition_Set(double xpos, double ypos)
     }
 }
 
-void PhasePlotWindow::realtimeDataSlot()
+void PhasePlotWindow::displayDataSlot()
 {
 //            BENCHMARK_TIME_BEGIN(&m_Simulator->m_display_t,&m_Simulator->m_display_x);    // Begin benchmarking here
-     if(!index) setupRealtimeDataDemo();
+     if(!index) setupDataPlot();
     double Volt2 = m_neuron->MembraneRelativePotential_Get();
     double DvDt = m_neuron->dVdtResulting_Get();
     if(m_DisplayMode)
@@ -253,7 +252,7 @@ void PhasePlotWindow::DisplayMode_Set(bool M)
     PhasePlot->data()->set(dataPhasePlot, true);
     ui->customPlot->replot();
 */
-    setupRealtimeDataDemo();
+    setupDataPlot();
     Reset();
 }
 

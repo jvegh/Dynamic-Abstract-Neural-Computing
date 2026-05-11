@@ -24,7 +24,8 @@ class VoltageWindow;
 class VoltageWindow : public QMainWindow
 {
   Q_OBJECT
-  
+    friend class ScQtNeuron_MainWindow;
+
 public:
   explicit VoltageWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
   ~VoltageWindow();
@@ -43,7 +44,7 @@ public:
   QVector<double> Time, Voltage, Gradient;
 
 private slots:
-  void DataSlot();
+  void displayDataSlot();
   void screenShot();
 
 private:

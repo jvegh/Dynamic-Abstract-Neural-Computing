@@ -25,6 +25,7 @@ class GradientWindow;
 class GradientWindow : public QMainWindow
 {
   Q_OBJECT
+  friend class ScQtNeuron_MainWindow;
   
 public:
     explicit GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
@@ -40,7 +41,7 @@ public:
     QVector<double> Time, Voltage, Gradient;
 
 private slots:
-    void DataSlot();
+    void displayDataSlot();
     void screenShot();
 private:
     Ui::GradientWindow *ui;

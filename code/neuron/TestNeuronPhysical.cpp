@@ -24,18 +24,6 @@ NeuronPhysicalTEST::
 NeuronPhysicalTEST::
      ~NeuronPhysicalTEST(void){}
 
-#if 0
-//NeuronPhysicalTEST NPPU("NeuronPhysical");
-
-// A new test class  of these is created for each test
-class TEST_NeuronPhysicalPU
-{
-public:
-    TEST_NeuronPhysicalPU(void);
-    ~TEST_NeuronPhysicalPU(void);
- };
-
-#endif
 /*
  * Generate a single Action Potential-like membrane voltage, with simulated threshold exceeding
  * Imitates chargeup and discharge
@@ -60,6 +48,7 @@ public:
 
      wait(EVENT_GenComp.InputReceived);
      EVENT_GenComp.InputReceived.notify(PU_InputTime3-PU_InputTime2);
+
      wait(EVENT_GenComp.InputReceived);
      EVENT_GenComp.InputReceived.notify(PU_InputTime4-PU_InputTime3);
 

@@ -2,6 +2,7 @@ var classNeuronPhysical =
 [
     [ "NeuronPhysical", "classNeuronPhysical.html#a374b38525036a085d975016a9f5e9b22", null ],
     [ "Calculate_Do", "classNeuronPhysical.html#a3e6514fed4b7c3bee8d54e64ecfbb736", null ],
+    [ "ComputingBegin_Do", "classNeuronPhysical.html#a495940008fb8aeb29f8db55d40aa111f", null ],
     [ "Create_Rushin", "classNeuronPhysical.html#a7d5f3d382d2e8ffd1887005bc4950490", null ],
     [ "Heartbeat_Computing_Do", "classNeuronPhysical.html#a546c874d86adeecd7168ea2949c5151e", null ],
     [ "Heartbeat_Computing_Stop", "classNeuronPhysical.html#a4b91867e55ccc2a44acb7e25feda7ce5", null ],

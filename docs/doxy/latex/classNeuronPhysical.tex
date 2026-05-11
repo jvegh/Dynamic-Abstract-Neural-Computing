@@ -30,7 +30,8 @@ Signal transmission happens in parallel with the further processing. Inputs disa
 \item \doxyref{Neuron\+Physical\+::\+Synchronize\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a8c1ba93270a636b65fe22a8a1c75f5f2}\+: deliver immediate spike, anyhow ; (a momentary state) Passes to Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing (after issuing \textquotesingle{}Delivering\+End\textquotesingle{}) 
 \end{DoxyItemize}
 
-Inheritance diagram for Neuron\+Physical\+:\nopagebreak
+Inheritance diagram for Neuron\+Physical\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -42,6 +43,9 @@ Inheritance diagram for Neuron\+Physical\+:\nopagebreak
 \item 
 virtual void \textbf{ Calculate\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em Calculate the membrane\textquotesingle{}s new potential by solving a PDE at the new time after advancing time by the Heartbeat value. \end{DoxyCompactList}\item 
+\label{classNeuronPhysical_a495940008fb8aeb29f8db55d40aa111f} 
+virtual void {\bfseries Computing\+Begin\+\_\+\+Do} ()
+\begin{DoxyCompactList}\small\item\em Activity for initializing computing stage. \end{DoxyCompactList}\item 
 \label{classNeuronPhysical_a7d5f3d382d2e8ffd1887005bc4950490} 
 virtual void {\bfseries Create\+\_\+\+Rushin} ()
 \begin{DoxyCompactList}\small\item\em Create a new rush-\/in current for the neuron. \end{DoxyCompactList}\item 
@@ -69,8 +73,6 @@ virtual void \textbf{ Input\+Received\+\_\+\+Do} ()
 \doxysubsection*{Public Member Functions inherited from \textbf{ sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void {\bfseries Computing\+Begin\+\_\+\+Do} ()
-\begin{DoxyCompactList}\small\item\em The extra processing for beginning computing. \end{DoxyCompactList}\item 
 void {\bfseries Delivering\+Begin\+\_\+\+Do} ()
 \begin{DoxyCompactList}\small\item\em The extra activity for starting internal delivering. Called from \doxyref{Delivering\+Begin\+\_\+method()}{p.}{classscGenComp__PU__Abstract_a5f056dee48c62e4077d1227cc1df402c} \end{DoxyCompactList}\item 
 void {\bfseries Delivering\+End\+\_\+\+Do} ()

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['debug_5fevent_0',['DEBUG_EVENT',['../DebugMacros_8h.html#a92f4b6487af27a216d97f6fe98e80ebd',1,'DebugMacros.h']]],
-  ['debug_5fevents_1',['debug_events',['../NeuronPhysical_8cpp.html#a133d8993848d3fa2c41270511f133eb7',1,'DEBUG_EVENTS:&#160;NeuronPhysical.cpp'],['../NeuronInputCurrent_8cpp.html#a133d8993848d3fa2c41270511f133eb7',1,'DEBUG_EVENTS:&#160;NeuronInputCurrent.cpp']]],
+  ['debug_5fevents_1',['debug_events',['../NeuronInputCurrent_8cpp.html#a133d8993848d3fa2c41270511f133eb7',1,'DEBUG_EVENTS:&#160;NeuronInputCurrent.cpp'],['../NeuronPhysical_8cpp.html#a133d8993848d3fa2c41270511f133eb7',1,'DEBUG_EVENTS:&#160;NeuronPhysical.cpp']]],
   ['debug_5fsc_5fevent_2',['DEBUG_SC_EVENT',['../DebugMacros_8h.html#a180b5f1c340da4355428351536d5168a',1,'DebugMacros.h']]],
   ['debug_5fsc_5fevent_5flocal_3',['DEBUG_SC_EVENT_LOCAL',['../DebugMacros_8h.html#ab4c5152964fb0fcb545c4a718740e5a9',1,'DebugMacros.h']]],
   ['debug_5fsc_5flog_4',['DEBUG_SC_LOG',['../DebugMacros_8h.html#a89867447deb509c1aa2d3a75cfa504b9',1,'DebugMacros.h']]],
@@ -19,7 +19,5 @@ var searchData=
   ['deliveringend_5fmethod_16',['DeliveringEnd_method',['../classscGenComp__PU__Abstract.html#a59194dda1a7a912db21bd1d23ac17aa7',1,'scGenComp_PU_Abstract']]],
   ['demos_20and_20tutorials_17',['Demos and tutorials',['../group__GENCOMP__MODULE__DEMO.html',1,'']]],
   ['dma_18',['DMA',['../GLOSSARY.html#GLOSSARY_DMA',1,'']]],
-  ['domethod3_19',['doMethod3',['../classScQtSimulator.html#a0714124e80ca0eb91d1f3cdde45b14fc',1,'ScQtSimulator']]],
-  ['dosimulatedtime_20',['doSimulatedTime',['../classScQtSimulator.html#ae73d2e2bc3af0a43af34f07698784cbc',1,'ScQtSimulator']]],
-  ['dosimulationsteps_21',['doSimulationSteps',['../classScQtSimulator.html#a751f096a1b0bd65668db49a79058dc3a',1,'ScQtSimulator']]]
+  ['dosimulationsteps_19',['doSimulationSteps',['../classScQtSimulator.html#a751f096a1b0bd65668db49a79058dc3a',1,'ScQtSimulator']]]
 ];

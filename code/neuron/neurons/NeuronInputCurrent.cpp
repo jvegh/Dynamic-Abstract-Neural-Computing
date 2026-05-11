@@ -17,7 +17,7 @@ using namespace std;
 #define Membrane_Amplitude 350.
 #define Rushin_A 4
 //#define Rushin_B 0.2
-#define Rushin_B 0.18
+#define Rushin_B .01
 // Define parameters for calculating axon's voltage's time derivative
 #define Axon_Amplitude 40.
 #define Axon_A 6.3

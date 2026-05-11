@@ -303,7 +303,7 @@
                   <widget class="QGroupBox" name="Control_2">
                    <property name="geometry">
                     <rect>
-                     <x>220</x>
+                     <x>240</x>
                      <y>60</y>
                      <width>271</width>
                      <height>51</height>
@@ -320,7 +320,7 @@
                      <rect>
                       <x>0</x>
                       <y>20</y>
-                      <width>260</width>
+                      <width>266</width>
                       <height>28</height>
                      </rect>
                     </property>
@@ -338,6 +338,19 @@
                         <string>Reset</string>
                        </property>
                       </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_2">
+                       <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
                      </item>
                      <item>
                       <spacer name="horizontalSpacer">
@@ -380,7 +393,7 @@
                    <widget class="QLabel" name="UserTimeLabel">
                     <property name="geometry">
                      <rect>
-                      <x>370</x>
+                      <x>360</x>
                       <y>30</y>
                       <width>51</width>
                       <height>20</height>
@@ -408,7 +421,7 @@
                      <rect>
                       <x>100</x>
                       <y>30</y>
-                      <width>91</width>
+                      <width>81</width>
                       <height>21</height>
                      </rect>
                     </property>
@@ -425,7 +438,7 @@
                    <widget class="QLineEdit" name="DisplayTimeValue">
                     <property name="geometry">
                      <rect>
-                      <x>280</x>
+                      <x>260</x>
                       <y>30</y>
                       <width>91</width>
                       <height>20</height>
@@ -444,7 +457,7 @@
                    <widget class="QLabel" name="DisplayTimeLabel">
                     <property name="geometry">
                      <rect>
-                      <x>200</x>
+                      <x>180</x>
                       <y>30</y>
                       <width>81</width>
                       <height>20</height>
@@ -457,7 +470,7 @@
                    <widget class="QLineEdit" name="UserTimeValue">
                     <property name="geometry">
                      <rect>
-                      <x>420</x>
+                      <x>410</x>
                       <y>30</y>
                       <width>91</width>
                       <height>21</height>
@@ -489,9 +502,9 @@
                    <widget class="QSplitter" name="splitter">
                     <property name="geometry">
                      <rect>
-                      <x>20</x>
+                      <x>10</x>
                       <y>20</y>
-                      <width>337</width>
+                      <width>351</width>
                       <height>23</height>
                      </rect>
                     </property>
@@ -535,7 +548,7 @@
                    <property name="geometry">
                     <rect>
                      <x>100</x>
-                     <y>70</y>
+                     <y>90</y>
                      <width>81</width>
                      <height>21</height>
                     </rect>
@@ -550,14 +563,27 @@
                   <widget class="QLabel" name="SimulatedTimeLabel">
                    <property name="geometry">
                     <rect>
-                     <x>20</x>
-                     <y>70</y>
+                     <x>10</x>
+                     <y>90</y>
                      <width>81</width>
                      <height>20</height>
                     </rect>
                    </property>
                    <property name="text">
                     <string>Neuron(ms)</string>
+                   </property>
+                  </widget>
+                  <widget class="QLabel" name="label">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>70</y>
+                     <width>111</width>
+                     <height>18</height>
+                    </rect>
+                   </property>
+                   <property name="text">
+                    <string>Simulated time</string>
                    </property>
                   </widget>
                  </widget>

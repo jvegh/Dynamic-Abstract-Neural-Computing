@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>2.5.2 Fundamental concepts ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7</title>
-<!--Generated on Sun May 10 11:01:24 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on May 10, 2026.-->
+<!--Generated on Tue May 12 18:11:56 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on May 12, 2026.-->
 
 <link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
 <link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
@@ -50,7 +50,7 @@
 <link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
 <link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
 <link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
-<meta name="keywords" lang="en" content="Kirchoff’s Laws, capacity, conduction speed, delayed current, dichotomies in science, differentiability, electric dipole, equivalent electrical circuit, law of motion, limiting speed, partial derivative, resistance">
+<meta name="keywords" lang="en" content="Kirchoff’s Laws, capacity, charge, charge transmission, conduction mechanism, conduction speed, delayed, delayed current, dichotomies in science, differentiability, electric dipole, equivalent electrical circuit, impact force, ion current, law of motion, limiting speed, partial derivative, resistance, simultaneity">
 </head>
 <body>
 <nav class="ltx_page_navbar">
@@ -61,7 +61,7 @@
 <br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics, physiology, computing, and information science
 <br class="ltx_break">behind neuronal operation
 <br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.7</em>
-<br class="ltx_break">@May 10, 2026</span></p>
+<br class="ltx_break">@May 12, 2026</span></p>
 </div>
 <nav class="ltx_TOC">
 <ol class="ltx_toclist">
@@ -142,12 +142,13 @@
 <div id="p1" class="ltx_para">
 <p class="ltx_p">The disciplinarily separated sience defines <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elefie.html#c1" title="" class="ltx_ref ltx_href">electricity’s concepts</a>
 through forces and infinitely small test charge. In living matter,
-neither is valid in unchanged form: constraints and physical/chemical additional forces are present, furthermore, the charges of the carriers are not
-negligible compared to the charges that generate the field acting on the charges. Furthermore, since the carriers have mass,
-one cannot apply laws of disciplinary electricity since they are valid for ”slow” currents in a different form. One may have fundamental problems with the mathematical descriptions:
-the discrete nature of charge carriers question marks differentiability of the corresponding functions, furthermore,
+neither is valid in an unchanged form: constraints and physical/chemical additional forces are present, furthermore, the charges of the carriers are not
+negligible compared to the charges that generate the field acting on the charges. Furthermore, <span class="ltx_text ltx_font_italic">since the carriers have mass,
+one cannot apply laws of disciplinary electricity since they are valid for ”slow” currents in a different form</span>. One may have fundamental problems with the mathematical descriptions:
+the discrete nature of charge carriers question marks the differentiability of the corresponding functions,
 the charge-mass dichotomy of ions the interpretation of
-<a href="../sec_Physics-Abstraction/sec_Physics-Mathematics.html#PartialDerivative" title="The interdependent behavior of charge and mass has an interesting, entirely mathematical consequence as well. The definition of a partial derivative ‣ 2.2.8 Mathematics ‣ 2.2 Science concepts ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref">partial derivatives</a>.
+<a href="../sec_Physics-Abstraction/sec_Physics-Mathematics.html#PartialDerivative" title="The interdependent behavior of charge and mass has an interesting, entirely mathematical consequence as well. The definition of a partial derivative ‣ 2.2.7 Mathematics ‣ 2.2 Science concepts ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref">partial derivatives</a>, furthermore, the simultaneity of different phenomena.
+
 
 
 </p>
@@ -159,16 +160,16 @@ the charge-mass dichotomy of ions the interpretation of
 <p class="ltx_p">Charge is one of the fundamental properties of matter,
 one of the fundamental abstractions in science, and the primary abstraction in connection with electrical concepts.
 Although charge is an abstract property, it must always have a carrier. Without a carrier, no current and voltage can happen;
-although the transition between the discrete and continuous view
+although the transition between the discrete and continuous views
 is implicite and tacit.
 In contrast with classical electricity,
 significance should be attached to the circles representing the ion and electron, in the sense of implying a relative size and mass.
 In a useful first construct, they are hard-sphere objects.
-The most important opening idea, electrically, is that they have a property called ”charge” which is the same size, but opposite in polarity for the ion and electron and the ions can have multiple charge.
+The most important opening idea, electrically, is that they have a property called ”charge” which is the same size, but opposite in polarity for the ion and the electron and the ions can have multiple charge.
 The ions are about <math id="SSSx1.p1.m1" class="ltx_Math" alttext="50,000-100,000" display="inline"><mrow><mn>50</mn><mo>,</mo><mrow><mn>000</mn><mo>−</mo><mn>100</mn></mrow><mo>,</mo><mn>000</mn></mrow></math> times heavier and about the same factor larger than electrons, and this difference leads to crucial other differences, for example in their speed and conduction mechanism.
 For the sake of simplicity, we always think about positive ions,
 although we know also there are negative ions.
-An essential implication is that the ion and electron will strongly attract each other, while two positive ions or two electrons would strongly repel each other.
+An essential implication is that an ion and an electron will strongly attract each other, while two positive ions or two electrons would strongly repel each other.
 All charges observed in nature are multiples of these elementary charges. The
 <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">charge</a> generates an <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">electric field</a>, its spatial integral results
 in potential difference or <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">voltage</a>, and its movement (its time derivative) generates a <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">current</a>
@@ -178,21 +179,23 @@ in potential difference or <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/h
 <p class="ltx_p">One of the fundamental symmetries of nature is the <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html" title="" class="ltx_ref ltx_href">conservation of electric charge</a>; it is valid, of course, for living matter as well. No known physical process produces a net change in electric charge.
 Claims such as ”the current cannot disappear, it has to go somewhere” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib25" title="" class="ltx_ref">25</a>]</cite>, page 9, are wrong. On the one side <span class="ltx_text ltx_font_italic">only charge conserves, its time derivative, the current, does not</span>. On the other,
 <span class="ltx_text ltx_font_italic">charge conserves only globally, but not locally</span>:
-the charge moves from one place to another. The case is similar to the case of general relativity, and also its reason is the same: the finite speed of interaction. In the general theory of relativity, local and global energies had to be introduced; for its mathematical handling, see, also <a href="https://en.wikipedia.org/wiki/Noether's_theorem" title="" class="ltx_ref ltx_href">Noether’s theorem</a>.
+the charge moves from one place to another with a finite speed. The case is similar to the case of general relativity, and also its reason is the same: the finite speed of interaction. In the general theory of relativity, local and global energies had to be introduced; for its mathematical handling, see, also <a href="https://en.wikipedia.org/wiki/Noether's_theorem" title="" class="ltx_ref ltx_href">Noether’s theorem</a>.
 In the case of biology, the
 speed of interaction is the conduction velocity.
 It is a limiting speed in the sense as the concept is used in
 the theories of relativity: in biology, no effect can be faster
 than the (actual) conduction speed.
-Further complication arise from thermoelectricity and neurotransmitters. They, apparently, ”produce” new charges in a biological matter.
+Further complication arise from bioelectricity and neurotransmitters. They, apparently, ”produce” new charges in a biological matter.
 </p>
 </div>
 <div id="SSSx1.p3" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text ltx_font_italic">In no case can one think that ions in living matter
-behave as electrons in metallic conductors. Although biology does not say that explicitly, implicitly it says so by using the equations
+behave as electrons in metallic conductors. Although biology does not say so explicitly, implicitly it says so by using the equations
 describing electrons in solids.</span> Using the fundamental laws of electricity without changes means assuming that the ions
-travel at the same speed in electrolytes as electrons in metal conductors, surely misleading researchers.
-One must be especially careful that the electric testing circuits are hybrid:
+travel at the same speed in electrolytes as electrons in metal conductors, surely misleading researchers (by introducing ’delayed current’, ’delayed ion channels’, and similar obscure notions).
+
+
+One must be especially careful that the <a href="../sec_PHYSICS_MEASURING/sec_Physics-MeasurementElectrical.html#Biologicalcircuits" title=", especially using their ready-made equations (used outside their range of validity) assuming a voltage generator. Biological electrical circuits ‣ 2.3.1 Electrical measurement ‣ 2.3 Measuring issues ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref">electric testing circuits</a> are hybrid:
 in half of the circuit, the charge carriers are electrons, while in the
 other half, they are ions. There are two points where the charge carriers
 must be converted there and back, with all potential, speed and timing issues.
@@ -312,17 +315,31 @@ The continuous change is required for life.</p>
 
 <div id="SSSx4.p1" class="ltx_para">
 <p class="ltx_p">Charge and current are the same thing in discrete and continuous views, respectively.
+Physics interprets current that charge carriers traverse
+between to distant spatial points, this way naturally
+implying a charge transmission (conduction) mechanism.
+
+
 In the macroscopic world, we describe the current as the statistical
 time course of charge carriers carrying charge <math id="SSSx4.p1.m1" class="ltx_Math" alttext="q" display="inline"><mi>q</mi></math> through
-a cross section <math id="SSSx4.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. At any point and at any time, the incoming charge equals the outgoing charge.
+a cross section <math id="SSSx4.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.
+Technical electricity handles current as an infinitely thin
+electrical fuild.
+At any point and at any time, the incoming charge equals the outgoing charge.
 
 Kirchoff’s law expresses <span class="ltx_text ltx_font_italic">charge conservation at any point, in a differential form</span><a name="electric_current" id="electric_current" class="ltx_anchor">.
-The correct definition of current</a> is a differential one: <math id="SSSx4.p1.m3" class="ltx_Math" alttext="i=dq/dt" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>q</mi></mrow><mo>/</mo><mi>d</mi></mrow><mo>⁢</mo><mi>t</mi></mrow></mrow></math>, as given for physiology by Appendix A.3.4 of <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib2" title="" class="ltx_ref">2</a>]</cite>.
+The correct definition of current</a> is a differential one: <math id="SSSx4.p1.m3" class="ltx_Math" alttext="i=dq/dt" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>q</mi></mrow><mo>/</mo><mi>d</mi></mrow><mo>⁢</mo><mi>t</mi></mrow></mrow></math>, as given for physiology by Appendix A.3.4 in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib2" title="" class="ltx_ref">2</a>]</cite>.
 By using this definition, A.3.5 correctly defines that ”Ohm’s law states that the ratio of voltage to current is a constant:
 <math id="SSSx4.p1.m4" class="ltx_Math" alttext="R=V/i" display="inline"><mrow><mi>R</mi><mo>=</mo><mrow><mi>V</mi><mo>/</mo><mi>i</mi></mrow></mrow></math>”. So is its reciprocal, the conductance. By <span class="ltx_text ltx_font_italic">measuring simultaneously</span>
 the two charge-related secondary entities, one can derive the ternary quantity <span class="ltx_text ltx_font_italic">”resistance”, the opposition of material to current; an attribute of
 the medium</span> where the measurement is caried out,
-instead of being a charge-related feature.</p>
+instead of being a charge-related feature.
+Recall that the definition of the current is given
+at a cross section (i.e., an infinitely thin volume element),
+and it is valid along the current’s path only if the current
+is the same across the volume. If the speed of the
+charge <math id="SSSx4.p1.m5" class="ltx_Math" alttext="dq" display="inline"><mrow><mi>d</mi><mo>⁢</mo><mi>q</mi></mrow></math> is finite, a temporal difference belongs
+to the entrance and exit points of the charge.</p>
 </div>
 <div id="SSSx4.p2" class="ltx_para">
 <p class="ltx_p">The other way round, as given by Eq. (1.4) in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib25" title="" class="ltx_ref">25</a>]</cite>, is wrong.
@@ -333,20 +350,22 @@ node must be zero (<span class="ltx_text ltx_font_italic">the current cannot dis
 The sentence is true only in the picture of ’instant interaction’,
 which is not the case for ions in electrolytes.
 Kirchoff’s law expresses charge conservation in a simplified form,
-and only in the case of ’instant interaction’.
+and only in the case of ’instant interaction’ (the corresponding speeds differ by six orders of magnitude).
 
-<span class="ltx_text ltx_font_italic">The charge, instead of current, cannot disappear, it has to go somewhere</span>. <span class="ltx_text ltx_font_bold ltx_font_italic">There is no conservation law for the time derivative of the charge, only for the charge itself.
+<span class="ltx_text ltx_font_italic">The charge, instead of current, cannot disappear (and cannot newly appear either), it has to go somewhere</span>. <span class="ltx_text ltx_font_bold ltx_font_italic">There is no conservation law for the time derivative of the charge, only for the charge itself.
 Mismatching charge and its derivative misguides understanding neurophysical phenomena.</span>
 The non-differential definition contradicts charge conservation and also, contradicts itself: the charge carriers are ions rather than electrons.
-The current can be interpreted in its integral form as current conservation only if the electric interaction is instant,
+<span class="ltx_text ltx_font_italic">The current can be interpreted in an integral form as current conservation only if the electric interaction is instant,
 the discrete components are point-like,
-and the measured system is closed (or complete).
-However, it is not necessarily valid in its integral form.
-The latter form is an approximation, (more or less) valid for classical physics,
+and the measured system is closed</span> (or complete).
+The integral form is an approximation, (more or less) valid for classical physics,
 but surely not valid for biology.
-The current can temporarily disappear (it can be stored, delayed, say on the membrane of axon or exit to a non-measured
+The charges can temporarily disappear (they can be stored, delayed, say on the membrane of axon or exit to a non-measured
 segment in the system) or ”created” (enter from a non-measured segment, say, through ion channels) or
-be distributed within the ”wire” such as on the surface of the dendritic tree.</p>
+be distributed within the ”wire” such as on the surface of the dendritic tree.
+The situation is apparently similar to the cases of charges in inductive, capacitive, etc. currents in technical electricity. The significant difference is that in the technical electricity the sum of the charges in the different currents
+is constant, in biology it is not known where are the charges
+in a delayed current.</p>
 </div>
 </section>
 <section id="sec:PHYSICS_ConductionMechanism" class="ltx_subsubsection">
@@ -403,7 +422,7 @@ In solid state, the volume considered is ”infinitely large” (that is, whe fi
 and the propagation is isotropic), and the charge carriers are uniform that is only one type of interaction is present.
 In biological objects, the volume is more or less limited (is finite), there may be charged objects present that make the propagation non-isotropic and the charge carriers are non-uniform
 that introduces termodynamic interaction in addition to the electrical interaction.
-Ions, under the electrical/thermodynamic field (and maybe mechanixal constraints) accelerate to the Stokes-Einstein speed (see Eq.(<a href="sec_Physics-IonicPeculiarities.html#eq:StokesSpeed" title="In Current’s speed ‣ 2.5.3 Peculiarities of ion current ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.30</span></a>), move against a friction in the electrolyte.
+Ions, under the electrical/thermodynamic field (and maybe mechanical constraints) accelerate to the Stokes-Einstein speed (see Eq.(<a href="sec_Physics-IonicPeculiarities.html#eq:StokesSpeed" title="In Current’s speed ‣ 2.5.3 Peculiarities of ion current ‣ 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.30</span></a>), move against a friction in the electrolyte.
 The ions suffer (essentially elastic) collision with neutral molecules and transfer their momentum (and so: energy) to them.
 From the point of ions, the process is energy loss and momentum loss.
 From the point of neutral molecules, the process is energy gain and momentum gain. If the acceleration occurs in a narrow tube
@@ -414,6 +433,26 @@ so, in principle, the process is reversible.
 Furthermore, the momentum loss results in momentum gain of the neutral molecules. Strangely enough, this way the electrical force
 accelerates also the neutral molecules; furthermore, their momentum (using an elastic membrane) can fully contribute to the operation
 of neuron (forms the <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a>).</p>
+</div>
+<div id="SSSx5.p4" class="ltx_para">
+<p class="ltx_p">In a narrow tube (such as an ion channel) the momentum exchange
+is limited to one direction, both the ”lost” momentum of the ions and the ”gained” momentum of the neutral particles.
+If the ions are accelerated through the channel, due to the
+frequent collisions, they can entirely transfer their
+energy to a large number of neutral molecules.
+Those accelerated molecules having the same velocity
+may represent a significant ”impact force”, sufficient
+to cause significant mechanical changes throughout
+biological systems.
+
+Notice that the momemntum transfer by collisions
+is a two-way process. If a small amount of ionized
+particles is present in the tube, under an external electrical
+field, the charged particles can accelerate the neutral ones.
+Vice versa, if the bulk of the particles are moved mechanically (say, when an ultrasound wave
+presses the neuron), the one-directionally moving
+neutral molecules transfer momentum to the charged particles,
+this way producing measurable electrical waves (such as <a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">AP</span></a>).</p>
 </div>
 </section>
 <section id="sec:PHYSICS_RESISTANCECONDUCTANCE" class="ltx_subsubsection">
@@ -591,7 +630,7 @@ the capacity of the condenser changes when a current flows.</p>
 <div class="ltx_align_center">
 <a href="sec_PHYSICS_ElectricWhyDifferent.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.1 </span>Why different</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physics-IonicPeculiarities.html" title="In 2.5 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5.3 </span>Peculiarities</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Sun May 10 11:01:24 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Tue May 12 18:11:56 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>

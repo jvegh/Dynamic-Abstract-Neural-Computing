@@ -129,7 +129,7 @@ endif(BUILD_DOCS)
 
 # We need to add .h files (at least those that define a custom Qt class), see https://stackoverflow.com/a/14011060
 qt_add_executable(${PROJECT_NAME}  ${SYSTEM_FLAGS} ${ICONS_SRC} ${FONTS_SRC} #${EXAMPLES_SRC} ${LAYOUTS_SRC}
-  src/main.cpp src/MyWindow.cpp include/MyWindow.h
+  src/main.cpp #src/MyWindow.cpp include/MyWindow.h
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)

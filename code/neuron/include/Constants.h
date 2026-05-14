@@ -42,6 +42,7 @@ using namespace std;
 
 class NeuronConstants
 {
+//    friend class NeuronPhysical;
 public:
     /*!
      * \brief Creates a physics-based neuron unit
@@ -56,7 +57,8 @@ public:
         ,m_Membrane_Tau(10.*1E-3) // The membrane's time constant, stored in msec (10 ms)
 */
     {
-        Use_KochSet();
+        Use_JohnstonSet();
+//        Use_KochSet();
     }
 
     virtual ~NeuronConstants(void){}// Must be overridden
@@ -92,13 +94,17 @@ public:
         {
             MembraneResistanceGOhm_Set(0.1);
             MembraneCapacityPF_Set(100.);
+            // Tau = 10 ms
         }
         /**
-         * @brief Use data set from @cite JohnstonWuNeurophysiology:1995
+         * @brief Use data set from @cite JohnstonWuNeurophysiology:1995, page 12
          */
         void Use_JohnstonSet()
         {
-
+            // 1 uF/cm^2, 7.85*10^{-5} cm^2
+            MembraneResistanceGOhm_Set(0.385);
+            MembraneCapacityPF_Set(78.);
+            // Tau = 30 ms
         }
         /**
          *
@@ -113,8 +119,7 @@ public:
         double MembraneResistanceGOhm_Get()
         {   return m_Membrane_R; }
         void MembraneResistanceOhm_Set(double R)
-        {   MembraneResistanceGOhm_Set(R*1E9);
-        }
+        {   MembraneResistanceGOhm_Set(R*1E9); }
         /**
          * Set membrane's resistance
          * @param R resistance [GOhm]
@@ -133,7 +138,7 @@ public:
         {   m_Membrane_C = C;
             MembraneTauMSec_Set();
         }
-        void MembraneCapaciyF_Set(double C)
+        void MembraneCapacityF_Set(double C)
         {   m_Membrane_C = C*1E-12;
             MembraneTauMSec_Set();
         }

@@ -52,18 +52,20 @@
  *  - NeuronPhysical::Synchronize_method(): deliver immediate spike, anyhow ;  (a momentary state)
  *   Passes to GenCompStageMachine_t::gcsm_Relaxing (after issuing 'DeliveringEnd')
  */
-static  NeuronConstants DefaultNeuron;
+//static  NeuronConstants DefaultNeuron;
+class ScQtNeuron_MainWindow;
 
-class NeuronPhysical : public scGenComp_PU_Bio
+class NeuronPhysical : public scGenComp_PU_Bio,NeuronConstants
 {
-    friend NeuronInputCurrent;
+    friend class NeuronInputCurrent; friend class ScQtNeuron_MainWindow;
 public:
     /*!
      * \brief Creates a physics-based neuron unit
      * @param nm the SystemC name of the module
      * @param Neuron The parameter block of the physical neuron
      */
-    NeuronPhysical(sc_core::sc_module_name nm, NeuronConstants* Neuron=&DefaultNeuron);
+    NeuronPhysical(sc_core::sc_module_name nm//, NeuronConstants* Neuron=&DefaultNeuron
+                   );
     virtual ~NeuronPhysical(void)
     {
     //    m_RushinCurrent = (NeuronInputCurrent*)NULL;
@@ -166,13 +168,40 @@ public:
 #endif
     vector <NeuronInputCurrent*> m_SynapticCurrents;    // Stores pointers to the currents
     NeuronInputCurrent *m_RushinCurrent;
-
+/*
     double MembraneCapacityPF_Get(void)
     {   return m_Neuron->MembraneCapacityPF_Get();}
     double MembraneResistanceGOhm_Get(void)
     {   return m_Neuron->MembraneResistanceGOhm_Get();}
-    double MembraneTauMSec_Get()
+*/
+    /**
+     * @brief MembraneResistanceGOhm_Set
+     * Assumes unchanged capacitance
+     * @param R resistance of AIS, in [GOhm]
+     */
+/*    void MembraneResistanceGOhm_Set(double R)
+    {    m_Neuron->m_Membrane_R = R;
+        m_Neuron->MembraneTauMSec_Set();
+    }
+*/
+    /**
+     * @brief MembraneTauMSec_Get
+     * @return membrane's time constant, in [ms}
+     */
+/*    double MembraneTauMSec_Get()
     {   return m_Neuron->MembraneTauMSec_Get();}
+*/
+    /**
+     * @brief MembraneFromRGOhm_TauMSec_Set
+     * @param [in] R Neuronal parallel RC circuit's resistance, in [GOhm]
+     * @param [in] T Neuronal parallel RC circuit's  time constant, in [ms]
+     */
+/*    void MembraneFromRGOhm_TauMSec_Set(double R, double T)
+    {
+        MembraneResistanceGOhm_Set(R);
+        m_Neuron->m_Membrane_C = T/R;
+    }
+*/
     double dVdtResulting_Get(void) {return m_Membrane_dVdt_Resulting;}
     double dVdtResultingLast_Get(void) {return m_Membrane_Last_dVdt;}
     double dVdtAIS_Get(void) {return m_Membrane_dVdt_AIS;}
@@ -196,8 +225,13 @@ protected:
     double m_Na_I;
     double m_Resulting_I;
 
-
-    NeuronConstants *m_Neuron;
+    vector<double> m_RushinParameters;    // Parameters for the rushin current
+    vector<double> m_SynapticParameters;            // Parameters for the axonal input current
+    vector<double> m_MembraneParameters;  // Parameters for the membrane
+    /**
+     * @brief Stores per-neuron neuronal data
+     */
+//    NeuronConstants *m_Neuron;
     /*
     double m_Membrane_R; // Resistivity of the membrane, GOhm
     double m_Membrane_C; // capacity, pF

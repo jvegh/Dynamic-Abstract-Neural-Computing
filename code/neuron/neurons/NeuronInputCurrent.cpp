@@ -12,7 +12,7 @@
 
 #include "NeuronInputCurrent.h"
 using namespace std;
-
+/*
 // Define parameters for calculating membrane voltage's time derivative
 #define Membrane_Amplitude 350.
 #define Rushin_A 4
@@ -27,7 +27,7 @@ using namespace std;
 // Saved value = 2
 #define Membrane_R  .20
 #define Membrane_C tau/ m_R_membrane
-
+*/
 
 // This section configures debug and log printing; must be located AFTER the other includes
 //#define SUPPRESS_LOGGING // Suppress all log messages
@@ -63,13 +63,13 @@ NeuronInputCurrent::
     }
 
             DEBUG_SC_EVENT(m_ParentNeuron->name(),"Current# " << m_ParentNeuron->m_SynapticCurrents.size()
-                                                       << " in stage '" << GenCompStageMachineType2String(m_ParentNeuron->mStageFlag)
-                                               << "' opened");
+                                                    << " in stage '" << GenCompStageMachineType2String(m_ParentNeuron->mStageFlag)
+                                                    << "' opened");
 }
 NeuronInputCurrent::~NeuronInputCurrent(void)
 {            DEBUG_SC_EVENT(m_ParentNeuron->name(),"Current# " << m_ParentNeuron->m_SynapticCurrents.size()
                                                     << " in stage '" << GenCompStageMachineType2String(m_ParentNeuron->mStageFlag)
-                                               << "' closed");
+                                                    << "' closed");
     m_Parameters.clear();
 }
 

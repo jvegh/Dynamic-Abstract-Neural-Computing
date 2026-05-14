@@ -13,20 +13,26 @@
 #include "NeuronPhysical.h"
 
 // Define parameters for calculating membrane voltage's time derivative
-#define Rushin_Amplitude 280000.
+#define Rushin_Amplitude 28000.
+// ** #define Rushin_Amplitude 140000.
 #define Rushin_A 0.1
 //#define Rushin_B 0.2
 #define Rushin_B 2
 
 // Define parameters for calculating axon's voltage's time derivative
-#define Axon_Amplitude 20000.
+/*
+ * #define Axon_Amplitude 20000.
 #define Axon_A 0.15
 #define Axon_B 3
+*/
+#define Synaptic_Amplitude 20000.
+#define Synaptic_A 0.15
+#define Synaptic_B 3
 // RC parameters of the membrane
-#define Membrane_tau .22
+#define Membrane_Tau .22
 // Saved value = 2
 #define Membrane_R  .20
-#define Membrane_C Membrane_tau/ m_R_membrane
+#define Membrane_C Membrane_Tau/ Membrane_R
 
 // This section configures debug and log printing; must be located AFTER the other includes
 //#define SUPPRESS_LOGGING // Suppress all log messages
@@ -35,31 +41,50 @@
 // Those defines must be located before 'DebugMacros.h", and are undefined in that file
 #include "DebugMacros.h"
 
+vector<double> Default_RushinParameters = {Rushin_Amplitude, Rushin_A, Rushin_B};    // Parameters for the rushin current
+vector<double> Default_SynapticParameters = {Synaptic_Amplitude, Synaptic_A, Synaptic_B};            // Parameters for the axonal input
+vector<double> Default_MembraneParameters = {Membrane_R, Membrane_C, Membrane_Tau};  // Parameters for the membrane
+
+
 extern sc_core::sc_time
     Heartbeat_time_default    //< The reset value of heartbeat time
     ,Heartbeat_time_resolution;    //< The time tolerance
 
-int OutputCounter= 0; // Just to help output, temporary
+
+//extern double APParameters[3]; // Amplitude, TimeConst, Resistance
+//int OutputCounter= 0; // Just to help output, temporary
 // The units of general computing work in the same way, using general events
 // \brief Implement handling the states of computing
     NeuronPhysical::
-NeuronPhysical(sc_core::sc_module_name nm, NeuronConstants* Neuron):
-    scGenComp_PU_Bio(nm),
+NeuronPhysical(sc_core::sc_module_name nm//, NeuronConstants* Neuron
+                   ):
+    scGenComp_PU_Bio(nm), NeuronConstants(),
     m_RushinCurrent((NeuronInputCurrent *)NULL),
-    m_Neuron(Neuron)
+    m_RushinParameters(Default_RushinParameters),    // Parameters for the rushin
+    m_SynapticParameters(Default_SynapticParameters),            // Parameters for the axonal input
+    m_MembraneParameters(Default_MembraneParameters)  // Parameters for the membrane
+//    m_Neuron(Neuron)
 {
-    m_Neuron->MembraneFromCPF_TauMSec_Set(700,2);
+
+//    MembraneFromCPF_TauMSec_Set(5,1);
+//    Use_JohnstonSet();
+//   MembraneFromRGOhm_TauMSec_Set(Membrane_R, Membrane_Tau/Membrane_R);
+
     Initialize_Do();
-    // Saved value = 2
+       Tracing_Initialize();
+}
+
+
+//    m_Neuron->MembraneFromRGOhm_TauMSec_Set(0.0028,28);
+//    m_Neuron->MembraneFromRGOhm_TauMSec_Set(APParameters[3],APParameters[2]);
+// Saved value = 2
 //        m_R_membrane = m_Neuron->MembraneResistanceGOhm_Get();
 //        m_Neuron->MembraneResistanceGOhm_Set(0.1);
 /*        m_Membrane_R = m_Neuron->MembraneResistanceGOhm_Get();
         m_Membrane_C = m_Neuron->MembraneCapacityPF_Get();
         m_Neuron->MembraneCapacityPF_Set(100);
         m_Membrane_Tau = m_Neuron->MembraneTauMSec_Get();
- */       Tracing_Initialize();
-}
-
+ */
 // Create rush-in  current source
 // Called when neuron passes to "Delivering"
     void NeuronPhysical::
@@ -67,14 +92,19 @@ Create_Rushin()
 {
         if(m_RushinCurrent) // The old current must be too small; neglect it
             delete m_RushinCurrent;
+/*        m_RushinParameters.push_back(Rushin_Amplitude);
+        m_RushinParameters.push_back(Rushin_A);
+        m_RushinParameters.push_back(Rushin_B);*/
+#if 0
         vector<double> Par;
         Par.push_back(Rushin_Amplitude);
         Par.push_back(Rushin_A);
         Par.push_back(Rushin_B);
+#endif // 0
         // From this point on, we do have a rush-in current
         m_RushinCurrent = new NeuronInputCurrent(this,NeuronInputCurrent_t::nict_RushIn,
                                                  scLocalTimeMS_Get(),
-                                                 Par
+                                                 m_RushinParameters
                                                  );
                 DEBUG_SC_EVENT(name(),"Rush-in Current "
                                                            << " in stage '" << GenCompStageMachineType2String(mStageFlag)
@@ -134,19 +164,25 @@ void NeuronPhysical::
     scGenComp_PU_Bio::InputReceived_Do();    // Do also inherited processing
              DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"RCVD 'InputReceived' in '" << GenCompStageMachineType2String(mStageFlag) << "'");
     // Add a new synaptic current to the existing ones
-    // Create a parameter array, will be destroyed by the current
-    std::vector<double> *Par = new vector<double>;
+    // From this point on, we do have a new synaptic input current
+    m_SynapticCurrents.push_back(
+     new NeuronInputCurrent(this,NeuronInputCurrent_t::nict_RushIn,
+                                             scLocalTimeMS_Get(),
+                                             m_SynapticParameters
+                                        ));
+}
+
+// Create a parameter array, will be destroyed by the current
+/*    std::vector<double> *Par = new vector<double>;
     Par->push_back(Axon_Amplitude);
     Par->push_back(Axon_A);
     Par->push_back(Axon_B);
-    // From this point on, we do have a new synaptic input current
-    m_SynapticCurrents.push_back(
-            new NeuronInputCurrent(this, NeuronInputCurrent_t::nict_RushIn,
+*/
+/*           new NeuronInputCurrent(this, NeuronInputCurrent_t::nict_RushIn,
                                          scLocalTimeMS_Get(),
                                          *Par
                                ));
-}
-
+    m_RushinCurrent = */
 
 /**
      * @brief Calculate the membrane's new potential by solving a DE at
@@ -164,10 +200,10 @@ void NeuronPhysical::
     m_dt = m_Heartbeat_time.to_seconds()*1000; // We calculate in msec
     m_Membrane_V_Rushin = 0;
     // From  the previous iteration
-    m_Membrane_Last_dVdt = m_Membrane_dVdt_Resulting;
+//    m_Membrane_Last_dVdt = m_Membrane_dVdt_Resulting;
     m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get()/1000; // The AIS current, in pA
     m_Membrane_dVdt_AIS = m_Membrane_V/MembraneTauMSec_Get()*1000;  // The AIS gradient, in [V/s]
-    // Independently from the stage, the rush-in current curtributes
+    // Independently from the stage, the rush-in current contributes
     if(m_RushinCurrent)
     {
         m_Membrane_dVdt_Rushin = m_RushinCurrent->VoltageGradient_Get(m_t);

@@ -24,7 +24,6 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   ui->setupUi(this);
   setGeometry(400, 250, 542, 390);
   this->setStyleSheet("color: Navy;"
-                      //                     "title-color:  LightGray;"
                       "border-color:  LightGray;"
                       "background-color:  LightGray;");
   setWindowTitle(QString(m_neuron->name())+QString(" phase plot"));
@@ -90,13 +89,13 @@ void PhasePlotWindow::setupDataPlot(    )
        ui->customPlot->xAxis->setLabel("Voltage (mV)");
        ui->customPlot->yAxis->setLabel("Gradient (V/s)");
         ui->customPlot->xAxis->setRange(-30, 130);
-       ui->customPlot->yAxis->setRange(-800, 3500);
+       ui->customPlot->yAxis->setRange(-8000, 3500);
     }
     else
     {
         ui->customPlot->xAxis->setLabel("Gradient (V/s)");
        ui->customPlot->yAxis->setLabel("Voltage (mV)");
-       ui->customPlot->xAxis->setRange(-800, 3500);
+       ui->customPlot->xAxis->setRange(-8000, 3500);
        ui->customPlot->yAxis->setRange(-30, 130);
     }; //REVERSEDGRADIENT
     ui->customPlot->axisRect()->setupFullAxesBox();

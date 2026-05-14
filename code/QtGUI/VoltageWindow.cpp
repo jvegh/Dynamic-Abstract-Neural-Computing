@@ -69,7 +69,6 @@ void VoltageWindow::setupPlot()
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
     VoltagePlot->setName("Action Potential");
-    VoltagePlot->setLineStyle(QCPCurve::lsLine);
     VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
     VoltagePlot->setLineStyle(QCPCurve::lsLine);
 

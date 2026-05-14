@@ -25,6 +25,7 @@
 #include "ui_neurontab.h"
 
 extern struct SystemDirectories Directories;
+//extern double APParameters[3];
 
 ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -47,7 +48,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     QFontDatabase::addApplicationFont(":/fonts/Inconsolata/Inconsolata-Bold.ttf");
 
     setMinimumSize(250, 300);
-    resize(300, 200);
+    resize(450, 300);
     move(200,300);
 
     // Create tabs
@@ -79,7 +80,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     connect(m_neuronTab->ui->DisplayReversedBox, &QCheckBox::clicked, this,
             &ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked);
     MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
-    //
+   //
     // The thread and the simulator are created in the constructor so it is always safe to delete them.
     //
     m_thread = new QThread();
@@ -165,6 +166,10 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
 {
     m_neuronTab->ui->DisplayReversedBox->setEnabled(false);
     m_StepNumber = m_neuronTab->ui->StepNumberBox->value();
+ /*   MyNeuron->MembraneFromRGOhm_TauMSec_Set(m_neuronTab->ui->Slider1->value()/1000., // Resistance, [GOhm]
+                                            m_neuronTab->ui->Slider2->value()/1000.  // TimeConst, [ms]
+        );*/
+//    APParameters[0] = m_neuronTab->ui->Slider3->value()*1000.; // Amplitude, pA
     m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->ui->StepTimeBox->value(),sc_core::SC_US);
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     m_terminated = false;
@@ -186,7 +191,7 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
 //    m_Simulator->abort();
     m_Simulator->TimesReset();
     displayTime_Reset();
-        MyNeuron->Initialize_Do();
+    MyNeuron->Initialize_Do();
 
     m_neuronTab->ui->DisplayReversedBox->setEnabled(true);
     m_PhasePlotWindow->Reset();
@@ -215,18 +220,8 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     m_GradientWindow->displayDataSlot();
     m_neuronTab->ui->SimulatedTimeValue->setText(QString(sc_time_String_Get(m_Simulator->scTime_Get()).c_str()));
     m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
-    m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,4,7).c_str()));
-    m_neuronTab->ui->DisplayTimeValue->setText(QString(time_String_Get(displayTime_Get()/1000.,CLOCK_TIME_UNIT_S,1,7).c_str()));
-            BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
-    if ( MyNeuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
-        QMessageBox::StandardButton ret;
-        ret = QMessageBox::warning(this, tr("ScQtSimulator"),
-                                   tr("Simulation of a single AP successfully terminated\n"
-                                      "Maybe you want to make screenshots"),
-                                   QMessageBox::Yes );
-        m_Simulator->abort();
-        m_terminated = true;
-    }
+    m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,3,7).c_str()));
+    m_neuronTab->ui->DisplayTimeValue->setText(QString(time_String_Get(displayTime_Get()/1000/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
     if((
         (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()))
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
@@ -239,6 +234,16 @@ void ScQtNeuron_MainWindow::on_eventHappened()
         m_neuronTab->ui->DisplaySlider->value();
         QTimer::singleShot(0    // Zero means continuation with no delay
                            +m_neuronTab->ui->DisplaySlider->value(), this, SLOT(on_MakeSimulationStep()));
+    }
+    BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
+    if ( MyNeuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
+        QMessageBox::StandardButton ret;
+        ret = QMessageBox::warning(this, tr("ScQtSimulator"),
+                                   tr("Simulation of a single AP successfully terminated\n"
+                                      "Maybe you want to make screenshots"),
+                                   QMessageBox::Yes );
+        m_Simulator->abort();
+        m_terminated = true;
     }
 }
 

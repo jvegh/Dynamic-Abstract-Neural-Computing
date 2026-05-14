@@ -19,29 +19,32 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
     ui = new Ui::NeuronTab;
     ui->setupUi(this);
 
-    // Set up Slider 1
-    ui->Slider1->setMinimum(3);
-    ui->Slider1->setMaximum(17);
-    ui->Slider1->setValue(5);
-    ui->Slider1Value->setText(QString::number(ui->Slider1->value()));
-    QObject::connect(ui->Slider1, &QSlider::valueChanged, this, [=] () {
-        (ui->Slider1Value->setText(QString::number(ui->Slider1->value())));
+    // Set up Slider 3: Amplitude
+    ui->Slider3->setMinimum(10);
+    ui->Slider3->setMaximum(3000);
+    ui->Slider3->setValue(120);
+    ui->Slider3->setPageStep(20);
+    ui->Slider3Value->setText(QString::number(ui->Slider3->value()));
+    QObject::connect(ui->Slider3, &QSlider::valueChanged, this, [=] () {
+        (ui->Slider3Value->setText(QString::number(ui->Slider3->value(),'f',2)));
     });
-    // Set up Slider 2
-    ui->Slider2->setMinimum(15);
-    ui->Slider2->setMaximum(50);
-    ui->Slider2->setValue(23);
+    // Set up Slider 2 : tau, us
+    ui->Slider2->setMinimum(500);
+    ui->Slider2->setMaximum(20000);
+    ui->Slider2->setValue(1560);
+    ui->Slider2->setPageStep(500);
     ui->Slider2Value->setText(QString::number(ui->Slider2->value()));
     QObject::connect(ui->Slider2, &QSlider::valueChanged, this, [=] () {
         (ui->Slider2Value->setText(QString::number(ui->Slider2->value(),'f',2)));
     });
-    // Set up Slider 3
-    ui->Slider3->setMinimum(31);
-    ui->Slider3->setMaximum(63);
-    ui->Slider3->setValue(35);
-    ui->Slider3Value->setText(QString::number(ui->Slider3->value()));
-    QObject::connect(ui->Slider3, &QSlider::valueChanged, this, [=] () {
-        (ui->Slider3Value->setText(QString::number(ui->Slider3->value(),'f',2)));
+    // Set up Slider 1 : Resistance, MOhm
+    ui->Slider1->setMinimum(100);
+    ui->Slider1->setMaximum(9000);
+    ui->Slider1->setValue(2500);
+    ui->Slider1->setPageStep(100);
+    ui->Slider1Value->setText(QString::number(ui->Slider1->value()));
+    QObject::connect(ui->Slider1, &QSlider::valueChanged, this, [=] () {
+        (ui->Slider1Value->setText(QString::number(ui->Slider1->value())));
     });
     // Set up display slowdown Slider
     ui->DisplaySlider->setMinimum(0);

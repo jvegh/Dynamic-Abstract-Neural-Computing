@@ -20,31 +20,31 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
     ui->setupUi(this);
 
     // Set up Slider 3: Amplitude
-    ui->Slider3->setMinimum(10);
-    ui->Slider3->setMaximum(3000);
-    ui->Slider3->setValue(120);
-    ui->Slider3->setPageStep(20);
-    ui->Slider3Value->setText(QString::number(ui->Slider3->value()));
-    QObject::connect(ui->Slider3, &QSlider::valueChanged, this, [=] () {
-        (ui->Slider3Value->setText(QString::number(ui->Slider3->value(),'f',2)));
+    ui->RushinAmplitudeSlider->setMinimum(10);
+    ui->RushinAmplitudeSlider->setMaximum(3000);
+    ui->RushinAmplitudeSlider->setValue(120);
+    ui->RushinAmplitudeSlider->setPageStep(20);
+    ui->RushinAmplitudeSliderValue->setText(QString::number(ui->RushinAmplitudeSlider->value()));
+    QObject::connect(ui->RushinAmplitudeSlider, &QSlider::valueChanged, this, [=] () {
+        (ui->RushinAmplitudeSliderValue->setText(QString::number(ui->RushinAmplitudeSlider->value(),'f',2)));
     });
     // Set up Slider 2 : tau, us
-    ui->Slider2->setMinimum(500);
-    ui->Slider2->setMaximum(20000);
-    ui->Slider2->setValue(1560);
-    ui->Slider2->setPageStep(500);
-    ui->Slider2Value->setText(QString::number(ui->Slider2->value()));
-    QObject::connect(ui->Slider2, &QSlider::valueChanged, this, [=] () {
-        (ui->Slider2Value->setText(QString::number(ui->Slider2->value(),'f',2)));
+    ui->MembraneTauSlider->setMinimum(500);
+    ui->MembraneTauSlider->setMaximum(20000);
+    ui->MembraneTauSlider->setValue(1560);
+    ui->MembraneTauSlider->setPageStep(500);
+    ui->MembraneTauSliderValue->setText(QString::number(ui->MembraneTauSlider->value()));
+    QObject::connect(ui->MembraneTauSlider, &QSlider::valueChanged, this, [=] () {
+        (ui->MembraneTauSliderValue->setText(QString::number(ui->MembraneTauSlider->value(),'f',2)));
     });
     // Set up Slider 1 : Resistance, MOhm
-    ui->Slider1->setMinimum(100);
-    ui->Slider1->setMaximum(9000);
-    ui->Slider1->setValue(2500);
-    ui->Slider1->setPageStep(100);
-    ui->Slider1Value->setText(QString::number(ui->Slider1->value()));
-    QObject::connect(ui->Slider1, &QSlider::valueChanged, this, [=] () {
-        (ui->Slider1Value->setText(QString::number(ui->Slider1->value())));
+    ui->MembraneRSlider->setMinimum(100);
+    ui->MembraneRSlider->setMaximum(9000);
+    ui->MembraneRSlider->setValue(2500);
+    ui->MembraneRSlider->setPageStep(100);
+    ui->MembraneRSliderValue->setText(QString::number(ui->MembraneRSlider->value()));
+    QObject::connect(ui->MembraneRSlider, &QSlider::valueChanged, this, [=] () {
+        (ui->MembraneRSliderValue->setText(QString::number(ui->MembraneRSlider->value())));
     });
     // Set up display slowdown Slider
     ui->DisplaySlider->setMinimum(0);

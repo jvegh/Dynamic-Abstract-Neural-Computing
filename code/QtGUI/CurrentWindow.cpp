@@ -163,7 +163,7 @@ void CurrentWindow::ResultingRunningPointPosition_Set(double xpos, double ypos)
 void CurrentWindow::displayDataSlot()
 {
 
-    double Volt2 = m_neuron->MembraneRelativePotential_Get();
+ //   double Volt2 = m_neuron->MembraneRelativePotential_Get();
     double key2 = m_neuron->LocalTimeInMillisec_Get();
     double I_AIS = -m_neuron->I_AIS_Get();
     double I_Na = m_neuron->I_Na_Get();

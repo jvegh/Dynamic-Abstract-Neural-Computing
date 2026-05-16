@@ -10,7 +10,7 @@
 */
 #include "ScQtNeuron_MainWindow.h"
 #include "ui_ScQtNeuron_MainWindow.h"
-#include "ui_PhasePlotWindow.h"
+//#include "ui_PhasePlotWindow.h"
 #include <QMdiSubWindow>
 #include <QtCore>
 #include <QFileSystemModel>
@@ -64,7 +64,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 
     auto *neuronToolbar = addToolBar("Neuron");
     neuronToolbar->setVisible(false);
-    m_neuronTab = new NeuronTab(controlToolbar, neuronToolbar, this);
+    m_neuronTab = new NeuronTab(//controlToolbar, neuronToolbar,
+                                this);
     m_stackedTabs->insertWidget(NeuronTabID, m_neuronTab);
 
 
@@ -116,7 +117,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 //    initFileFilterList();
     SetupSystemDirectories(this); // Establish system and user directories
     readSettings(); // Read window-related settings
-*/    setupToolBoxes();   // Set up the tool box contents
+    setupToolBoxes();   // Set up the tool box contents
+*/
     m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
     m_CurrentWindow = new CurrentWindow(m_Simulator, MyNeuron);
@@ -266,6 +268,7 @@ bool ScQtNeuron_MainWindow::maybeClose()
     return false;
 }
 
+#if 0
 void ScQtNeuron_MainWindow::addTreeRoot(QString name, QString description)
 {
 /*    // QTreeWidgetItem(QTreeWidget * parent, int type = Type)
@@ -310,7 +313,7 @@ void ScQtNeuron_MainWindow::setupToolBoxes(void)
 //    ui->dirTreeView->setRootIndex(dirModel->setRootPath(Directories.UserData.c_str()+'/'));
 //    ui->dirTreeView->setRootIndex(dirModel->setRootPath("~/REPO/"));
 }
-
+#endif
 void ScQtNeuron_MainWindow::setupMenus() {
     // Edit actions
 /*

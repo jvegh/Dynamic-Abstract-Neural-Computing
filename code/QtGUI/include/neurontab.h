@@ -16,13 +16,13 @@ class NeuronTab;
 
 struct Layout;
 
-class NeuronTab : public RipesTab {
+class NeuronTab : public QWidget{ //Ripes::RipesTab {
   friend class ScQtNeuron_MainWindow;
   Q_OBJECT
 
 public:
-  NeuronTab(QToolBar *controlToolbar, QToolBar *additionalToolbar,
-               QMainWindow *parent = nullptr);
+  NeuronTab(//QToolBar *controlToolbar, QToolBar *additionalToolbar,
+               ScQtNeuron_MainWindow *parent = nullptr);
   ~NeuronTab() override;
 
 //  void initRegWidget();

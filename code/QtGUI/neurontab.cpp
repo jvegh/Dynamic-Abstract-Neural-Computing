@@ -13,9 +13,12 @@
 #include "ui_neurontab.h"
 
 class ScQtNeuron_MainWindow;
-NeuronTab::NeuronTab(QToolBar *controlToolbar,
-                           QToolBar *additionalToolbar, QMainWindow *parent)
-    : RipesTab(additionalToolbar, parent) {
+NeuronTab::NeuronTab(//QToolBar *controlToolbar,
+                           //QToolBar *additionalToolbar,
+                     ScQtNeuron_MainWindow *parent)
+    : //Ripes::RipesTab
+    QWidget(//additionalToolbar,
+            parent) {
     ui = new Ui::NeuronTab;
     ui->setupUi(this);
 
@@ -57,7 +60,7 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
     ui->StepNumberBox->setRange(1,100);
     ui->StepTimeBox->setRange(10,1000);
 
-  setupSimulatorActions(controlToolbar);
+//  setupSimulatorActions(controlToolbar);
 
   // Initially, no file is loaded, disable toolbuttons
   enableSimulatorControls();

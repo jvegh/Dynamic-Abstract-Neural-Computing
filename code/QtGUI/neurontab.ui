@@ -857,13 +857,13 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="Console_2">
+          <widget class="QWidget" name="Ripes::Console">
            <attribute name="title">
             <string>Console</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_5">
             <item row="0" column="0">
-             <widget class="QWidget" name="Console" native="true">
+             <widget class="QWidget" name="Ripes::Console" native="true">
               <widget class="QWidget" name="layoutWidget_8">
                <property name="geometry">
                 <rect>
@@ -906,7 +906,7 @@
                  </layout>
                 </item>
                 <item>
-                 <widget class="Console" name="console">
+                 <widget class="Ripes::Console" name="console">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
                     <horstretch>0</horstretch>
@@ -938,7 +938,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>Console</class>
+   <class>Ripes::Console</class>
    <extends>QPlainTextEdit</extends>
    <header>console.h</header>
   </customwidget>

@@ -39,11 +39,11 @@ namespace Ui {
 class ScQtNeuron_MainWindow;
 }
 
-/*!
+/* !
  * \brief The Overall plot sytyle structure, as used by QCustomPlot
  *
  * All subwindows have their own plot styles, only the structure is the same
- */
+
 struct PlotStyle
 {
     bool ConfidenceBands_Present;   // If to draw component in question
@@ -62,6 +62,7 @@ struct PlotStyle
 
     Qt::PenStyle Theory_LineStyle; // The style of line drawing
 };
+*/
 class RipesTab;
 
 struct TabWidgets {
@@ -80,11 +81,11 @@ class ScQtNeuron_MainWindow : public QMainWindow
 public:
     explicit ScQtNeuron_MainWindow(QWidget *parent = 0);
     ~ScQtNeuron_MainWindow();
-    QToolBar *toolBar;
-    QToolBar * plotToolBar;
-    QToolBar * procToolBar;
+//    QToolBar *toolBar;
+//    QToolBar * plotToolBar;
+//    QToolBar * procToolBar;
     QAction *fileNewWindowAction, *fileOpenAction, *fileExitAction;
-    QAction *processFitAction;
+//    QAction *processFitAction;
     ScQtSimulator * m_Simulator;
 //    SimulatorControlWindow *m_Simulator_ControlWindow;
     ScQtAbout* aboutWdw;
@@ -97,10 +98,10 @@ public:
      void readSettings();
      void readSettings(QSettings* settings);
      void writeSettings();
-     void setupToolBoxes(void);
+//     void setupToolBoxes(void);
      void replot();
-     void ProcessLine(QString line);
-     void GetData(QString fileName);
+//     void ProcessLine(QString line);
+//     void GetData(QString fileName);
      VoltageWindow *VoltageWindow_Get(){return m_VoltageWindow;}
      GradientWindow *GradientWindow_Get(){return m_GradientWindow;}
      PhasePlotWindow *PhasePlotWindow_Get(){return m_PhasePlotWindow;}
@@ -130,9 +131,9 @@ private:
     void setupStatusBar();
     void setupMenus();
 //    void setupExamplesMenu(QMenu *parent);
-    void addTreeRoot(QString name, QString description);
-    void addTreeChild(QTreeWidgetItem *parent,
-                      QString name, QString description);
+//    void addTreeRoot(QString name, QString description);
+//    void addTreeChild(QTreeWidgetItem *parent,
+//                      QString name, QString description);
      void displayTime_Reset()
     {
         m_display_time_begin = QTime::currentTime();

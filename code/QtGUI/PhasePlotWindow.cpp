@@ -44,8 +44,6 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   RunningPointPosition_Set(0,0);
   RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
   RunningPoint->setPen(QPen(Qt::red));
-   PhasePlot->setPen(QPen(Qt::blue));
-  PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
   // set some basic customPlot config:
   ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
@@ -165,14 +163,15 @@ void PhasePlotWindow::displayDataSlot()
         {
             if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
             {   // We are at the point of maximum polarization
-                DrawArrow( Volt2, DvDt,"P",-65,900);
+                if(!m_HaveAlreadyP){DrawArrow( Volt2, DvDt,"P",-65,900); m_HaveAlreadyP = true;}
             }
         }
         if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
         {
             if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
             {   // We are at the point of maximum hyperpolarization
-                DrawArrow(Volt2,  DvDt, "H",5,500);
+                if(!m_HaveAlreadyH){DrawArrow(Volt2,  DvDt, "H",5,500);; m_HaveAlreadyH = true;}
+
             }
         }
     }

@@ -53,6 +53,7 @@ private slots:
 private:
   Ui::PhasePlotWindow *ui;
     ScQtSimulator * m_Simulator;
+  bool m_HaveAlreadyH, m_HaveAlreadyP;
   NeuronPhysical *m_neuron;
   QCPCurve *PhasePlot;
   void setupMenus();

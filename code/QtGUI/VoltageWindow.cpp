@@ -65,12 +65,13 @@ void VoltageWindow::setupPlot()
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     VoltagePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
-    VoltagePlot->data()->set(dataVoltagePlot, true);
+//    VoltagePlot->data()->set(dataVoltagePlot, true);
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
     VoltagePlot->setName("Action Potential");
     VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
     VoltagePlot->setLineStyle(QCPCurve::lsLine);
+
 
     // give the axes some labels:
     ui->customPlot->xAxis->setLabel("Time (ms)");
@@ -151,6 +152,8 @@ void VoltageWindow::displayDataSlot()
 
 void VoltageWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
 {
+    if ("P"==S)
+        int test = 1;
     // add the text label at the top:
     QCPItemText *textLabel = new QCPItemText(ui->customPlot);
     textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);

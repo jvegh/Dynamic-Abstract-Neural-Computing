@@ -64,7 +64,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 
     auto *neuronToolbar = addToolBar("Neuron");
     neuronToolbar->setVisible(false);
-    m_neuronTab = new NeuronTab(//controlToolbar, neuronToolbar,
+    m_neuronTab = new NeuronTab(controlToolbar,
+        neuronToolbar,
                                 this);
     m_stackedTabs->insertWidget(NeuronTabID, m_neuronTab);
 

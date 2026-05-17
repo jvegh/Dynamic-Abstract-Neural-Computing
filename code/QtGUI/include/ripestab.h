@@ -1,6 +1,5 @@
 #pragma once
 
-#if 0
 #include <QToolBar>
 #include <QWidget>
 
@@ -8,7 +7,7 @@ namespace Ripes {
 
 class RipesTab : public QWidget {
 public:
-  RipesTab(QToolBar *toolbar, QWindow *parent = nullptr)
+  RipesTab(QToolBar *toolbar, QWidget *parent = nullptr)
       : QWidget(parent)
         ,m_toolbar(toolbar)
     {}
@@ -19,4 +18,3 @@ protected:
   QToolBar *m_toolbar = nullptr;
 };
 } // namespace Ripes
-#endif

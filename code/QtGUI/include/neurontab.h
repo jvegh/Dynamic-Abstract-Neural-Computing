@@ -6,7 +6,7 @@
 #include <QToolBar>
 #include <QWidget>
 
-#include "ripestab.h"
+//#include "ripestab.h"
 class ScQtNeuron_MainWindow;
 class ScQtNeuronVoltagePlot;
 
@@ -16,12 +16,14 @@ class NeuronTab;
 
 struct Layout;
 
-class NeuronTab : public QWidget{ //Ripes::RipesTab {
+class NeuronTab : public QWidget{ //
+//    Ripes::RipesTab{
+
   friend class ScQtNeuron_MainWindow;
   Q_OBJECT
 
 public:
-  NeuronTab(//QToolBar *controlToolbar, QToolBar *additionalToolbar,
+  NeuronTab(QToolBar *controlToolbar, QToolBar *additionalToolbar,
                ScQtNeuron_MainWindow *parent = nullptr);
   ~NeuronTab() override;
 

@@ -13,12 +13,13 @@
 #include "ui_neurontab.h"
 
 class ScQtNeuron_MainWindow;
-NeuronTab::NeuronTab(//QToolBar *controlToolbar,
-                           //QToolBar *additionalToolbar,
+
+NeuronTab::NeuronTab(QToolBar *controlToolbar,
+                           QToolBar *additionalToolbar,
                      ScQtNeuron_MainWindow *parent)
-    : //Ripes::RipesTab
-    QWidget(//additionalToolbar,
-            parent) {
+//    : Ripes::RipesTab(additionalToolbar,
+    :QWidget( //parent
+              ) {
     ui = new Ui::NeuronTab;
     ui->setupUi(this);
 

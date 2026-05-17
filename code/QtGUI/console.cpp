@@ -26,7 +26,7 @@ Console::Console(QWidget *parent) : QPlainTextEdit(parent) {
         RipesSettings::value(RIPES_SETTING_CONSOLEFONTCOLOR).value<QColor>());
     setPalette(p);
   };
-
+#if 0
   connect(RipesSettings::getObserver(RIPES_SETTING_CONSOLEBG),
           &SettingObserver::modified, paletteChangeFunctor);
   connect(RipesSettings::getObserver(RIPES_SETTING_CONSOLEFONTCOLOR),
@@ -41,7 +41,7 @@ Console::Console(QWidget *parent) : QPlainTextEdit(parent) {
             m_font = value.value<QFont>();
             setFont(m_font);
           });
-
+#endif
   m_localEchoEnabled = RipesSettings::value(RIPES_SETTING_CONSOLEECHO).toBool();
 }
 
@@ -113,3 +113,5 @@ void Console::keyPressEvent(QKeyEvent *e) {
 }
 
 } // namespace Ripes
+
+#include "moc_console.cpp"

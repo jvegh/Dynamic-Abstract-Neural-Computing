@@ -108,3 +108,4 @@ void RipesSettings::setValue(const QString &key, const QVariant &value) {
 
 } // namespace Ripes
 //??Q_DECLARE_METATYPE(QList<Ripes::CachePreset>);
+#include "moc_ripessettings.cpp"

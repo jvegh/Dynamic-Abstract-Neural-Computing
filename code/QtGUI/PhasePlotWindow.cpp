@@ -195,14 +195,16 @@ void PhasePlotWindow::displayDataSlot()
         {
             if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
             {   // We are at the point of maximum polarization
-                DrawArrow( DvDt, Volt2,"P",300,-20);
+
+                if(!m_HaveAlreadyP){DrawArrow( DvDt, Volt2,"P",300,-20); m_HaveAlreadyP = true;}
             }
         }
         if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
         {
             if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
             {   // We are at the point of maximum hyperpolarization
-                DrawArrow( DvDt, Volt2, "H",-100,25);
+
+                if(!m_HaveAlreadyH){ DrawArrow(DvDt, Volt2, "H",-0,50); m_HaveAlreadyH = true;}
             }
         }
     };

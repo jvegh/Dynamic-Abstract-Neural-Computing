@@ -432,7 +432,7 @@ void ScQtNeuron_MainWindow::setupExamplesMenu(QMenu *parent) {
 
 void ScQtNeuron_MainWindow::wiki() {
     QDesktopServices::openUrl(QUrl(QString(
-        "https://jvegh.github.io/Dynamic-Abstract-Neural-Computing")));
+        "https://jvegh.github.io/Dynamic-Abstract-Neural-Computing/manual/ch_Simulation/index.html")));
 //        "https://jvegh.github.io/DANCES")));
 }
 

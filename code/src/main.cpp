@@ -17,7 +17,7 @@ int guiMode(QApplication &app) {
     // The following sequence of events manages to successfully start the
     // application as maximized, with the processor at a reasonable size. This has
     // been found to be specially a problem on windows.
-    m.resize(800, 600);
+//    m.resize(800, 600);
     m.move(800, 600);
     m.show();
     //  m.showMaximized();

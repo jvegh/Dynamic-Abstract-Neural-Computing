@@ -47,9 +47,10 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
         ":/fonts/Inconsolata/Inconsolata-Regular.ttf");
     QFontDatabase::addApplicationFont(":/fonts/Inconsolata/Inconsolata-Bold.ttf");
 
-    setMinimumSize(250, 300);
-    resize(450, 300);
-    move(200,300);
+    setMinimumSize(350, 300);
+    setMaximumSize(800, 600);
+    resize(640, 480);
+//    move(200,300);
 
     // Create tabs
     m_stackedTabs = new QStackedWidget(this);

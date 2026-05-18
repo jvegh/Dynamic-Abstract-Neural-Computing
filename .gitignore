@@ -14,6 +14,8 @@ _site/
 *.lot
 *Cache*
 *.cache
+*.autosave
+*.user
 CMakeCache.txt
 CMakeFiles/*
 doc/*.log

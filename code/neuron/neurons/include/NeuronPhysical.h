@@ -112,16 +112,16 @@ public:
      *
      *   @return true if to stop heartbeating in 'Computing' mode
      */
-
     virtual bool Heartbeat_Computing_Stop();
     /** Stage 'Delivering' normally passes to stage 'Relaxing',
      *  @return true if to stop heartbeating in 'Delivering' mode
      */
         virtual bool Heartbeat_Delivering_Stop();
+
     /** Stage 'Delivering' normally passes to stage 'Relaxing',
      *  @return true if to stop heartbeats in 'Relaxing' mode
      */
-         virtual bool Heartbeat_Relaxing_Stop();
+    virtual bool Heartbeat_Relaxing_Stop();
 
     /**
      * @brief InputCurrentDelete
@@ -157,51 +157,21 @@ public:
 
     virtual void InputReceived_Do();
 
-    /* *
-     * @brief AxonTimeDerivative_Get
-     * param[in] Delay of axonal input with respect to local time, in ms
-     * @return the time derivative of axon voltage due to the arrived current
+    /**
+     * @brief Check the legacy of receiving input
+     * @return true if it is received NOT in 'Delivering' state
      */
-//    float AxonTimeDerivative_Get(float Delay);
+    virtual bool InputIsLegal(void)
+    {
+        bool Legal =  GenCompStageMachine_t::gcsm_Delivering != StageFlag_Get();
+        if(!Legal) EVENT_GenComp.InputIllegal.notify(SC_ZERO_TIME); // Inform the possible observers
+        return Legal;
+    }
 #if MakeDebugPrint
     virtual void  OutputItem(void);
 #endif
     vector <NeuronInputCurrent*> m_SynapticCurrents;    // Stores pointers to the currents
     NeuronInputCurrent *m_RushinCurrent;
-/*
-    double MembraneCapacityPF_Get(void)
-    {   return m_Neuron->MembraneCapacityPF_Get();}
-    double MembraneResistanceGOhm_Get(void)
-    {   return m_Neuron->MembraneResistanceGOhm_Get();}
-*/
-    /**
-     * @brief MembraneResistanceGOhm_Set
-     * Assumes unchanged capacitance
-     * @param R resistance of AIS, in [GOhm]
-     */
-/*    void MembraneResistanceGOhm_Set(double R)
-    {    m_Neuron->m_Membrane_R = R;
-        m_Neuron->MembraneTauMSec_Set();
-    }
-*/
-    /**
-     * @brief MembraneTauMSec_Get
-     * @return membrane's time constant, in [ms}
-     */
-/*    double MembraneTauMSec_Get()
-    {   return m_Neuron->MembraneTauMSec_Get();}
-*/
-    /**
-     * @brief MembraneFromRGOhm_TauMSec_Set
-     * @param [in] R Neuronal parallel RC circuit's resistance, in [GOhm]
-     * @param [in] T Neuronal parallel RC circuit's  time constant, in [ms]
-     */
-/*    void MembraneFromRGOhm_TauMSec_Set(double R, double T)
-    {
-        MembraneResistanceGOhm_Set(R);
-        m_Neuron->m_Membrane_C = T/R;
-    }
-*/
     double dVdtResulting_Get(void) {return m_Membrane_dVdt_Resulting;}
     double dVdtResultingLast_Get(void) {return m_Membrane_Last_dVdt;}
     double dVdtAIS_Get(void) {return m_Membrane_dVdt_AIS;}
@@ -228,15 +198,6 @@ protected:
     vector<double> m_RushinParameters;    // Parameters for the rushin current
     vector<double> m_SynapticParameters;            // Parameters for the axonal input current
     vector<double> m_MembraneParameters;  // Parameters for the membrane
-    /**
-     * @brief Stores per-neuron neuronal data
-     */
-//    NeuronConstants *m_Neuron;
-    /*
-    double m_Membrane_R; // Resistivity of the membrane, GOhm
-    double m_Membrane_C; // capacity, pF
-    double m_Membrane_Tau; // Time constant, usec
-*/
 };// of class NeuronPhysical
 /** @}*/
 #endif // NEURONPHYSICS_H

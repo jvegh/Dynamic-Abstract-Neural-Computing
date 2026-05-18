@@ -1,0 +1,38 @@
+\doxysection{Macro\+Time\+Benchmarking.\+h}
+\label{MacroTimeBenchmarking_8h_source}\index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{/*\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#undef\ BENCHMARK\_TIME\_ACTIVE}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#ifdef\ MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_ACTIVE\ \ \ }\textcolor{comment}{//\ Time\ benchmarking\ required}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#include\ <ratio>}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ Return\ the\ time\ since\ the\ last\ call\ TIME\_BEGIN\ in\ x,\ and\ sums\ the\ elapsed\ time\ in\ s}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_END(t,x,s)\(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ *x\ =\ std::chrono::duration<\ int64\_t,\ nano>(std::chrono::steady\_clock::now()\ -\/\ *t);\ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ std::chrono::steady\_clock::now();\ *s\ +=\ *x;}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ Initializes\ measurement\ summary}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_RESET(t,x,s)\(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ BENCHMARK\_TIME\_BEGIN(t,x);\ *s=*x;}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ Remembers\ beginning\ of\ time}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_BEGIN(t,x)\(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ std::chrono::steady\_clock::now();\ *x=*t-\/*t;}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ Time\ benchmarking\ not\ needed,\ do\ nothing}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\ The\ macros\ with\ empty\ functionality}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_RESET(t,x,s)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_BEGIN(x,t)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_END(t,x,s)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#undef\ MAKE\_TIME\_BENCHMARKING\ }\textcolor{comment}{//\ Make\ macro\ definition\ file-\/scope\ wide}}
+\DoxyCodeLine{00132\ }
+
+\end{DoxyCode}

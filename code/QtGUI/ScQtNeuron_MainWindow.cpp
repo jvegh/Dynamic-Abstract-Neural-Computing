@@ -47,11 +47,9 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
         ":/fonts/Inconsolata/Inconsolata-Regular.ttf");
     QFontDatabase::addApplicationFont(":/fonts/Inconsolata/Inconsolata-Bold.ttf");
 
-    setMinimumSize(350, 300);
+    setMinimumSize(550, 450);
     setMaximumSize(800, 600);
-    resize(640, 480);
-//    move(200,300);
-
+    resize(641, 481);
     // Create tabs
     m_stackedTabs = new QStackedWidget(this);
     ui->centrallayout->addWidget(m_stackedTabs);
@@ -111,7 +109,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 
     setWindowTitle( "NeuronScQt main window" );
 //    QSystemTrayIcon(this).setIcon( QIcon( ":/images/ESlogo.png" ) );
-    setMinimumSize( QSize( 600, 400 ) );
     setupMenus();
 //     SetFileMenu();
     /*

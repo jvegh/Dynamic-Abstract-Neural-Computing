@@ -62,9 +62,8 @@ public:
     /*!
      * \brief Creates a physics-based neuron unit
      * @param nm the SystemC name of the module
-     * @param Neuron The parameter block of the physical neuron
      */
-    NeuronPhysical(sc_core::sc_module_name nm//, NeuronConstants* Neuron=&DefaultNeuron
+    NeuronPhysical(sc_core::sc_module_name nm
                    );
     virtual ~NeuronPhysical(void)
     {

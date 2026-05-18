@@ -1,0 +1,5 @@
+<map id="NeuronConstants" name="NeuronConstants">
+<area shape="rect" id="Node000001" title="Sources:" alt="" coords="5,5,219,284"/>
+<area shape="rect" id="Node000002" href="$classNeuronPhysical.html" title="Implements a general physical&#45;type neuron." alt="" coords="9,332,215,701"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,298,115,332,109,332,109,298"/>
+</map>

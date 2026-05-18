@@ -1,0 +1,284 @@
+\doxysection{Debug\+Macros.\+h}
+\label{DebugMacros_8h_source}\index{DebugMacros.h@{DebugMacros.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Basically,\ the\ debug\ and\ log\ messages\ have\ two\ operating\ modes}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ DEBUG\_MACROS\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ DEBUG\_MACROS\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ During\ unit\ testing,\ all\ log\ messages\ are\ suppressed}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Utils.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \ \ \ \textcolor{keywordtype}{string}\ SC\_TIME\_UNIT[];}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ define\ prompts\ for\ SC\ debugging}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ DEBUG\_EVENT\_STRING\ "{}EVT-\/>"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ DEBUG\_LOG\_STRING\ "{}LOG\#>"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ DEBUG\_PRINT\_STRING\ "{}DBG-\/>"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ DEBUG\_WARNING\_STRING\ "{}**WNG"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ DEBUG\_EVENT\_STRING\_LOCAL\ "{}EVT-\/>"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ DEBUG\_LOG\_STRING\_LOCAL\ "{}LOG:."{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ DEBUG\_PRINT\_STRING\_LOCAL\ "{}DBG*>"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ DEBUG\_WARNING\_STRING\_LOCAL\ "{}**WNG"{}}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//}}
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ Utility\ functions\ for\ degugging}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ DEBUG\_SC\_TIME\ sc\_time\_String\_Get(sc\_time\_stamp(),SC\_TIME\_UNIT\_DEFAULT)}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//<<\ SC\_TIME\_UNIT[SC\_TIME\_UNIT\_DEFAULT]}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ DEBUG\_SC\_TIME\_LOCAL(t)\ sc\_time\_String\_Get(t,SC\_TIME\_UNIT\_DEFAULT)}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//<<\ '\ '\ <<\ SC\_TIME\_UNIT[SC\_TIME\_UNIT\_DEFAULT]}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\#define\ DEBUG\_LOCATION\ string(\_\_FILE\_\_).substr(string(\_\_FILE\_\_).find\_last\_of("{}/"{})\ +\ 1)\ <<\ <<\ dec\ <<\ "{},\ line\ "{}\ <<\ \_\_LINE\_\_}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ DEBUG\_LOCATION\ "{}\(\backslash\)"{}\ //"{}\ <<\ string(\_\_FILE\_\_).substr(string(\_\_FILE\_\_).find\_last\_of("{}/"{})\ +\ 1)\ <<\ "{}::"{}\ <<\ \_\_func\_\_\ <<\ dec\ <<\ "{},\ line\ "{}\ <<\ \_\_LINE\_\_}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ DEBUG\_LOCATION\_SHORT\ "{}\(\backslash\)"{}\ //"{}\ <<\ string(\_\_FILE\_\_).substr(string(\_\_FILE\_\_).find\_last\_of("{}/"{})\ +\ 1)\ \ <<\ dec\ <<\ "{},\ line\ "{}\ <<\ \_\_LINE\_\_}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\#define\ DEBUG\_SC\_RELATIVE\_PROLOG(P)\ P\ <<\ name()\ <<\ "{}@"{}\ <<\ DEBUG\_SC\_TIME\_LOCAL\ <<\ "{}\ :\ \(\backslash\)"{}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ DEBUG\_SC\_PROLOG\_LOCAL(t,n)\ "{}."{}\ <<\ DEBUG\_SC\_TIME\_LOCAL(t)\ <<\ "{},"{}\ <<\ n\ <<\ "{}::"{}\ <<\ \_\_func\_\_\ <<\ "{}:\ \(\backslash\)"{}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ DEBUG\_SC\_PROLOG(n)\ "{}@"{}\ <<\ DEBUG\_SC\_TIME\ <<\ "{},"{}\ <<\ n\ <<\ "{}::"{}\ <<\ \_\_func\_\_\ <<\ "{}:\ \(\backslash\)"{}"{}}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ scGenComp\_PU\_Abstract-\/based\ debug\ routines}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#if\ defined(DEBUG\_EVENTS)\ \&\&\ !defined(DEBUG\_DISABLED)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_EVENT(n,X)\ std::cerr\ <<\ DEBUG\_EVENT\_STRING\ <<\ DEBUG\_SC\_PROLOG(n)\ \ <<\ X\ <<\ DEBUG\_LOCATION\_SHORT\ \ <<\ std::endl}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_EVENT\_LOCAL(t,n,X)\ std::cerr\ <<\ DEBUG\_EVENT\_STRING\_LOCAL\ <<\ DEBUG\_SC\_PROLOG\_LOCAL(t,n)\ <<\ X\ <<\ DEBUG\_LOCATION\_SHORT\ \ <<\ std::endl}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_LOG(X)\ std::cerr\ \ <<\ DEBUG\_LOG\_STRING\ <<\ DEBUG\_SC\_TIME\ <<\ "{}:"{}\ \ \ <<\ name()\ <<\ "{}-\/\ "{}\ <<\ \ X\ <<\ std::endl}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_LOG\_LOCAL(t,X)\ std::cerr\ <<\ DEBUG\_LOG\_STRING\_LOCAL\ <<\ \ DEBUG\_SC\_TIME\_LOCAL(t)\ <<\ "{}:"{}\ \ <<\ name()\ <<\ "{}-\/\ "{}\ \ \ <<\ X\ <<\ std::endl}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_EVENT(n,X)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_EVENT\_LOCAL(t,n,X)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_LOG(X)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_LOG\_LOCAL(t,n,X)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#if\ defined(DEBUG\_PRINTS)\ \&\&\ !defined(DEBUG\_DISABLED)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_PRINT(t,X)\ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ std::cerr\ <<\ DEBUG\_PRINT\_STRING\ <<\ DEBUG\_SC\_PROLOG(t)\ <<\ X\ <<\ "{}\ "{}\ <<\ DEBUG\_LOCATION\_SHORT\ \ <<\ std::endl}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_PRINT\_LOCAL(t,n,X)\ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ std::cerr\ <<\ DEBUG\_PRINT\_STRING\_LOCAL\ <<\ DEBUG\_SC\_PROLOG\_LOCAL(t,n)\ <<\ X\ <<\ "{}"{}\ <<\ DEBUG\_LOCATION\_SHORT\ \ <<\ std::endl}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_WARNING(t,X)\ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{std::cerr\ <<\ DEBUG\_WARNING\_STRING\ <<\ DEBUG\_SC\_PROLOG(t)\ <<\ X\ <<\ "{}\ "{}\ <<\ DEBUG\_LOCATION\_SHORT\ \ <<\ std::endl}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_WARNING\_LOCAL(t,n,X)\ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ DEBUG\_WARNING\_STRING\_LOCAL\ <<\ DEBUG\_SC\_PROLOG\_LOCAL(t,n)\ <<\ X\ <<\ "{}\ "{}\ <<\ DEBUG\_LOCATION\_SHORT\ \ <<\ std::endl}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_PRINT(n,X)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_PRINT\_LOCAL(t,n,X)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_WARNING(t,X)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_SC\_WARNING\_LOCAL(t,n,X)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00140\ \textcolor{comment}{//}}
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ The\ macros\ blow\ are\ not\ yet\ revived}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//}}
+\DoxyCodeLine{00143\ \textcolor{comment}{//\ Do\ not\ produce\ log\ messages\ during\ unit\ testing\ or\ if\ explicitly\ suppressed}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#if\ defined(\ SUPPRESS\_LOGGING)}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//\ \ \#define\ LOG\_FATAL(x)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ \#define\ LOG\_CRITICAL(x)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\ \ \#define\ LOG\_WARNING(x)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \#define\ LOG\_SC\_WARNING(x)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \#define\ LOG\_INFO(x)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \#define\ LOG\_INFO\_OBJECT(x)}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \ \#define\ LOG\_SC\_INFO(x)}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\ \ \#define\ LOG\_SC\_INFO\_LOCAL(t,n,x)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \#define\ LOG\_ONLY(x)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ Logging\ is\ not\ suppressed}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ \#include\ <QDebug>}}
+\DoxyCodeLine{00156\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00157\ \ \ \textcolor{comment}{//\ Now\ use\ id\ to\ make\ logging}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ \ \#define\ LOG\_FATAL(x)\ IF\_TO\_LOG\ qFatal().noquote().nospace()\ <<\ x}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \#define\ LOG\_CRITICAL(x)\ IF\_TO\_LOG\ qCritical().noquote().nospace()\ <<\ x}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \#define\ LOG\_WARNING(x)\ \ IF\_TO\_LOG\ qWarning().noquote().nospace()\ <<\ x}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\ \ \#define\ LOG\_SC\_WARNING(x)\ \ IF\_TO\_LOG\ qWarning().noquote().nospace()\ <<\ "{}@"{}\ <<\ DEBUG\_SC\_TIME\ <<\ "{}|"{}\ <<\ name()\ <<\ x}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \#define\ LOG\_INFO(x)\ \ \ \ \ IF\_TO\_LOG\ qInfo().noquote().nospace()\ <<\ "{}@"{}\ <<\ DEBUG\_SC\_TIME\ <<\ "{}|"{}\ <<\ name()\ <<\ x}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\ \ \#define\ LOG\_SC\_INFO(x)\ \ IF\_TO\_LOG\ qInfo().noquote().nospace()\ <<\ "{}@"{}\ <<\ DEBUG\_SC\_TIME\ <<\ "{}|"{}\ <<\ name()\ <<\ "{}:\ "{}\ <<\ x}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\ \ \#define\ LOG\_INFO\_OBJECT(x)\ \ \ \ \ IF\_TO\_LOG\ qInfo().noquote().nospace()\ <<\ "{}@"{}\ <<\ DEBUG\_SC\_TIME\ <<\ "{}|"{}\ <<\ name()\ <<\ PrologString\_Get().c\_str()\ <<\ "{}|\ "{}\ <<\ x}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ LOG\_SC\_INFO\_LOCAL(t,n,x)\ \ IF\_TO\_LOG\ qInfo().noquote().nospace()\ <<\ "{}@"{}\ <<\ DEBUG\_SC\_TIME\_LOCAL(t)\ <<\ "{}|"{}\ <<\ n\ <<\ "{}:\ "{}\ <<\ x}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\ \ \#define\ LOG\_ONLY(x)\ x}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#ifdef\ MAKE\_SIGNAL\_TRACING\ }\textcolor{comment}{//\ Generating\ signal\ trace\ only\ if\ requested}}
+\DoxyCodeLine{00170\ \textcolor{comment}{/*\#define\ LOG\_TRACE\_SIGNAL(TX,VALUE)\ \(\backslash\)}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ \ \ \ if(!UNIT\_TESTING)\{std::cerr\ <<\ PrologString\_Get(PC\_Get()).c\_str()\ <<\ \ std::string(TX).c\_str()\ <<\ "{}\string^"{}}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ VALUE\ ?\ "{}/"{}\ :\ "{}\(\backslash\)\(\backslash\)"{};\ std::cerr\ <<\ VALUE;\(\backslash\)}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(VALUE)\ std::cerr\ <<\ "{}(0x"{}\ <<\ hex\ <<\ VALUE\ <<\ dec\ <<\ "{})"{};\(\backslash\)}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ VALUE\ ?\ "{}\(\backslash\)\(\backslash\)"{}\ :\ \ "{}/"{};\ \(\backslash\)}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ "{}\ @line\ "{}\ <<\ LOG\_LINENO(PC\_Get())\ <<\ "{}:\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00176\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ "{}\ \ \ \ \ "{}\ <<\ LOG\_SOURCELINE(PC\_Get())\ <<\ "{}\(\backslash\)n"{};\}}}
+\DoxyCodeLine{00177\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ LOG\_TRACE\_SIGNAL(TX,VALUE)}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAKE\_SIGNAL\_TRACING}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#ifdef\ MAKE\_LOG\_TRACING\ }\textcolor{comment}{//\ Generating\ trace\ only\ if\ requested}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_LINENO(PC)\ \(\backslash\)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ MainMemory-\/>findLinenoToAddress(PC)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_SOURCELINE(PC)\ \(\backslash\)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ MainMemory-\/>getSourceLine((LOG\_LINENO(PC)))}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE(TX)\ \(\backslash\)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!UNIT\_TESTING)\{std::cerr\ <<\ '@'\ <<\ StringOfTime\_Get()\ \ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\(\backslash\)"{}"{}\ <<\ std::string(TX).c\_str()\ <<\ "{}\(\backslash\)"{}"{}\ <<\ DEBUG\_LOCATION\ <<\ "{}\(\backslash\)"{}"{}\ <<endl;\}}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_SOURCE(TX)\ \(\backslash\)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!UNIT\_TESTING)\{std::cerr\ <<\ '@'\ <<\ StringOfTime\_Get()\ \ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\(\backslash\)"{}"{}\ <<\ std::string(TX).c\_str()\ <<\ "{}\(\backslash\)"{}"{}\ <<\ "{}\(\backslash\)"{}"{}\ "{}@line\ "{}\ <<\ LOG\_LINENO(PC\_Get())\ <<\ "{}:\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ <<\ "{}\ \ \ \ \ \ "{}\ <<\ LOG\_SOURCELINE(PC\_Get())\ <<\ "{}\(\backslash\)n"{};\}}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_FETCH\_SOURCE(TX)\ \(\backslash\)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!UNIT\_TESTING)\{std::cerr\ <<\ '@'\ <<\ StringOfTime\_Get()\ \ <<\ "{}:\ "{}\ <<\ Prologstring\_Get().c\_str()\ <<\ "{}\(\backslash\)"{}"{}\ <<\ std::string(TX).c\_str()\ <<\ "{}\(\backslash\)"{}"{}\ "{}@line\ "{}\ <<\ LOG\_LINENO(fetchPC\_Get())\ <<\ "{}:\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ <<\ "{}\ \ \ \ \ "{}\ <<\ LOG\_SOURCELINE(fetchPC\_Get())\ <<\ "{}\(\backslash\)n"{};\}}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_SOURCE\_CONDITIONAL(B,TX)\ if\ ((B\ \&\&\ !UNIT\_TESTING))\ \{LOG\_TRACE\_SOURCE(TX);\}}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_VALUE(TX,VALUE)\ \(\backslash\)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!UNIT\_TESTING)\{std::cerr\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\ !!\ "{}\ <<\ std::string(TX).c\_str()\ <<\ VALUE\ <<\ "{}\(\backslash\)\(\backslash\)n"{};\}}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_VALUE(TX,VALUE)\ \(\backslash\)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!UNIT\_TESTING)\{std::cerr\ <<\ '@'\ <<\ StringOfTime\_Get()\ \ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\ !!\ "{}\ <<\ std::string(TX).c\_str()\ <<\ VALUE;\(\backslash\)}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(VALUE)\ std::cerr\ <<\ "{}(0x"{}\ <<\ hex\ <<\ VALUE\ <<\ dec\ <<\ "{})"{};\(\backslash\)}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ "{}\ @line\ "{}\ <<\ LOG\_LINENO(PC\_Get())\ <<\ "{}:\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ "{}\ \ \ \ \ "{}\ <<\ LOG\_SOURCELINE(PC\_Get())\ <<\ "{}\(\backslash\)n"{};\}}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_HEXA(TX,VALUE)\ \(\backslash\)}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!UNIT\_TESTING)\{std::cerr\ <<\ '@'\ <<\ StringOfTime\_Get()\ \ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\ !!\ "{}\ <<\ std::string(TX).c\_str()\ <<\ hex\ <<\ "{}0x"{}\ <<\ VALUE\ <<\ \ dec\ <<\ "{}("{}\ <<\ VALUE\ <<\ "{})\(\backslash\)"{}\(\backslash\)n"{};\}}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_HEXA(TX,VALUE)\ \(\backslash\)}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ if(!UNIT\_TESTING)\{std::cerr\ <<\ '@'\ <<\ StringOfTime\_Get()\ \ <<\ "{}:\ "{}\ <<\ "{}\ !!\ "{}\ <<\ std::string(TX).c\_str()\ <<\ hex\ <<\ "{}0x"{}\ <<\ VALUE\ <<\ dec\ <<\ "{}\(\backslash\)"{}\ @line\ "{}\ <<\ LOG\_LINENO(PC\_Get())\ <<\ "{}:\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ "{}\ \ \ \ \ "{}\ <<\ LOG\_SOURCELINE(PC\_Get())\ <<\ "{}\(\backslash\)n"{};\}}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_HEXA\_CONDITIONAL(B,TX,VALUE)\ if\ ((B\ \&\&\ !UNIT\_TESTING))\ LOG\_TRACE\_HEXA(TX,VALUE);}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_VALUE\_CONDITIONAL(B,TX,VALUE)\ if\ ((B\ \&\&\ !UNIT\_TESTING))\ LOG\_TRACE\_VALUE(TX,VALUE);}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_HEXA\_CONDITIONAL(B,TX,VALUE)\ if\ ((B\ \&\&\ !UNIT\_TESTING))\ LOG\_HEXA(TX,VALUE);}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_VALUE\_CONDITIONAL(B,TX,VALUE)\ if\ ((B\ \&\&\ !UNIT\_TESTING))\ LOG\_VALUE(TX,VALUE);}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_LINENO(PC)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_SOURCELINE(PC)}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE(TX)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_SOURCE(TX)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_SOURCE\_CONDITIONAL(B,TX)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_VALUE(TX,VALUE)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_HEXA(TX,VALUE)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_VALUE(TX,VALUE)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_TRACE\_HEXA(TX,VALUE)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_HEXA\_CONDITIONAL(B,TX,VALUE)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ \ \#define\ LOG\_VALUE\_CONDITIONAL(B,TX,VALUE)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAKE\_LOG\_TRACING}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#undef\ MAKE\_LOG\_TRACING}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00234\ \textcolor{comment}{//\ Event\ tracing\ messages\ are\ printed,\ but\ can\ be\ disabled}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#if\ defined(DEBUG\_EVENTS)\ \&\&\ !defined(DEBUG\_DISABLED)}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_PROC(x)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\ \ \ \ std::cerr\ \ \ <<\ "{}EVT\_PRC@"{}<<\ sc\_time\_to\_nsec\_Get().c\_str()\ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\ "{}\ <<\ x\ \ <<\ DEBUG\_LOCATION\ <<\ std::endl}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_GRID(x)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\ \ \ \ std::cerr\ \ \ <<\ "{}EVT\_GRD@"{}<<\ sc\_time\_to\_nsec\_Get().c\_str()\ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\ "{}\ <<\ x\ \ <<\ DEBUG\_LOCATION\ <<\ std::endl}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_THREAD(x)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\ \ \ \ std::cerr\ \ \ <<\ "{}EVT\_THR@"{}<<\ sc\_time\_to\_nsec\_Get().c\_str()\ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\ "{}\ <<\ x\ \ <<\ DEBUG\_LOCATION\ <<\ std::endl}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_MEMORY(x)\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\ \ \ \ std::cerr\ \ \ <<\ "{}EVT\_MEM@"{}<<\ sc\_time\_to\_nsec\_Get().c\_str()\ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\ "{}\ <<\ x\ \ <<\ DEBUG\_LOCATION\ <<\ std::endl}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_SYNAPTIC(x)\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\ \ \ \ std::cerr\ \ \ <<\ "{}EVT\_SYN@"{}<<\ sc\_time\_to\_nsec\_Get().c\_str()\ <<\ "{}:\ "{}\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\ "{}\ <<\ x\ \ <<\ DEBUG\_LOCATION\ <<\ std::endl}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\ \ \#define\ DEBUG\_EVENT(X)\ \(\backslash\)}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{std::cerr\ \ <<\ "{}EVT@"{}<<\ \ DEBUG\_SC\_TIME\ <<\ "{}:\ "{}\ \ <<\ DEBUG\_SC\_PROLOG\_LOCAL(t)\ <<\ X\ <<\ "{}"{}\ <<\ DEBUG\_LOCATION\_SHORT\ \ <<\ std::endl}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ DEBUG\_EVENTS\ not\ printed}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\ \ \#define\ DEBUG\_EVENT(x)}}
+\DoxyCodeLine{00250\ \textcolor{comment}{//\ \ \#define\ DEBUG\_EVENT\_OBJECT(x)}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_PROC(x)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_GRID(x)}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_THREAD(x)}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_MEMORY(x)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_SYNAPTIC(x)}}
+\DoxyCodeLine{00256\ \textcolor{comment}{//\ \ \ \ \#define\ DEBUG\_FETCH\_EVENT(x)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_EVENT\_SC(x)}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DEBUG\_EVENTS}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#undef\ DEBUG\_EVENTS}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#if\ defined(DEBUG\_PRINTS)\ \&\&\ !defined(DEBUG\_DISABLED)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ DEBUG\_ONLY(x)\ x;}}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{comment}{//\ Will\ print\ a\ basic\ message\ info\ in\ form}}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{comment}{//\ Register\ message:\ (7.N:NE)==>Msg:Reg(2,0x11)==>(8.SE)\ (payload\ length,\ mask)}}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{comment}{//\ Memory\ message:\ (7.N:NE)==>Msg:Mem(1,(0.H),0x100)==>(8.SE)\ (length,\ answer\ address,\ memory\ address)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\ \ \ \ \#define\ PRINT\_MESSAGE(M)\ std::cerr\ <<\ Processor-\/>StringOfMessage\_Get(M)\ \ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{comment}{//\ Print\ routing\ information:\ who\ sent,\ what\ message,\ to\ whom}}
+\DoxyCodeLine{00269\ \textcolor{comment}{//\ \ \ \ \#define\ PRINT\_ROUTING(FROM,\ M,\ TO)\ std::cerr\ <<\ Processor-\/>StringOfRouting\_Get(FROM,\ M,\ TO)\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Print\ the\ proxy\ GridPoint\ if\ used}}
+\DoxyCodeLine{00271\ \textcolor{comment}{//\ \ \ \ \#define\ PRINT\_PROXY(C)\ std::cerr\ <<\ Processor-\/>StringOfProxy\ \_Get(C);}}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{comment}{//\ \ \ \ if(C-\/>mClusterAddress.Proxy)\ \{std::cerr\ <<\ "{}:"{}\ <<\ ClusterMembers[C-\/>mClusterAddress.Proxy].name;\}}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{comment}{//\ Print\ the\ cluster\ with\ cluster\ address;\ print\ a\ '!'\ if\ the\ cluster\ head\ has\ a\ phantom\ head}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\ \ \ \ \#define\ PRINT\_CLUSTER(C)\ std::cerr\ <<\ Processor-\/>StringOfCluster\_Get(C);}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_MESSAGE(x,M)\ \(\backslash\)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{std::cerr\ <<\ DEBUG\_PRINT\_STRING\ <<\ "{}PrologString\_Get()"{}\ <<"{}\ "{}\ <<\ x\ <<\ Processor\_Get()-\/>StringOfMessage\_Get(M)\ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_WITH\_SOURCE(TX)\ \(\backslash\)}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ DEBUG\_PRINT\_STRING\ <<\ PrologString\_Get().c\_str()\ <<\ "{}\(\backslash\)"{}"{}\ <<\ std::string(TX).c\_str()\ <<\ "{}\(\backslash\)"{}\ @line\ "{}\ <<\ LOG\_LINENO(PC\_Get())\ <<\ DEBUG\_LOCATION\ <<\ "{}\(\backslash\)n"{}\ \(\backslash\)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ <<\ "{}\ \ \ \ \ "{}\ <<\ LOG\_SOURCELINE(PC\_Get())\ <<\ std::endl}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_OBJECT(x)\ \(\backslash\)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<\ PrologString\_Get()\ <<\ "{}\ "{}\ \ <<\ x\ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_IGP\_MESSAGE(x)\ \ \(\backslash\)}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<\ "{}\ IGP\ MESSAGE\ "{}\ <<\ "{}\ "{}\ \ <<\ x\ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\ \ \ \ \ \#define\ DEBUG\_PRINT(x)\ \(\backslash\)}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<"{}@"{}\ <<\ \ DEBUG\_SC\_TIME\ <<\ "{}\ \(\backslash\)"{}"{}\ <<\ \ x\ \ <<\ "{}\ \(\backslash\)"{}\ "{}\ <<\ DEBUG\_LOCATION\ <<\ "{}\ (::"{}\ <<\ \_\_func\_\_\ <<\ "{})\ "{}\ <<\ std::endl;\}}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_IF\_DIFFERENT(x,A,B)\ \ \(\backslash\)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \{if(A!=B)\ std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<\ "{}@"{}\ <<\ sc\_time\_to\_nsec\_Get(2,\ 6,\ sc\_time\_stamp()).c\_str()\ <<\ "{}ns|"{}\ <<\ name()\ <<\ "{}:>>\ "{}\ <<\ \ x\ \ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_OBJECT\_IF\_DIFFERENT(x,A,B)\ \ \(\backslash\)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{if(A!=B)\ std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<\ PrologString\_Get()\ <<\ "{}\ "{}\ \ <<\ x\ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ DEBUG\_PRINTS\ not\ printed}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_ONLY(x)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\ \ \ \ \#define\ PRINT\_MESSAGE(M)}}
+\DoxyCodeLine{00297\ \textcolor{comment}{//\ \ \ \ \#define\ PRINT\_ROUTING(FROM,\ M,\ TO)}}
+\DoxyCodeLine{00298\ \textcolor{comment}{//\ \ \ \ \#define\ PRINT\_PROXY(C)}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_WITH\_SOURCE(TX)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT(x)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_OBJECT(x)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_MESSAGE(x,M)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_PRINT\_IF\_DIFFERENT(x,A,B)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DEBUG\_PRINTS}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#undef\ DEBUG\_PRINTS}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#ifdef\ USE\_PERFORMANCE\_DIAGRAM}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ PLOT\_FETCH\_BALL(TIME,LENGTH)\ \(\backslash\)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{Plot-\/>PlotQTfetch(ID\_Get(),atoi(sc\_time\_to\_nsec\_Get(TIME,0).c\_str()),fetch.PC,\ atoi(sc\_time\_to\_nsec\_Get(LENGTH,0).c\_str()))}}
+\DoxyCodeLine{00311\ \textcolor{comment}{/*\ \ \ \ \#define\ PLOT\_FETCH\_WAIT\_BALL(TIME,LENGTH)\ \(\backslash\)}}
+\DoxyCodeLine{00312\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTfetchwait(ID\_Get(),atoi(sc\_time\_to\_nsec\_Get(TIME,0).c\_str()),fetch.PC,\ atoi(sc\_time\_to\_nsec\_Get(LENGTH,0).c\_str()))}}
+\DoxyCodeLine{00313\ \textcolor{comment}{\ \ \ \ \#define\ PLOT\_EXEC\_BALL(TIME,LENGTH)\ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTexec(ID\_Get(),atoi(sc\_time\_to\_nsec\_Get(TIME,0).c\_str()),exec.PC,\ atoi(sc\_time\_to\_nsec\_Get(LENGTH,0).c\_str()))}}
+\DoxyCodeLine{00315\ \textcolor{comment}{\ \ \ \ \#define\ PLOT\_EXEC\_WAIT\_BALL(TIME,LENGTH)\ \(\backslash\)}}
+\DoxyCodeLine{00316\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTexec(ID\_Get(),atoi(sc\_time\_to\_nsec\_Get(TIME,0).c\_str()),exec.PC,\ atoi(sc\_time\_to\_nsec\_Get(LENGTH,0).c\_str()))}}
+\DoxyCodeLine{00317\ \textcolor{comment}{\ \ \ \ \#define\ PLOT\_META\_BALL(TIME,LENGTH)\ \(\backslash\)}}
+\DoxyCodeLine{00318\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTmeta(ID\_Get(),atoi(sc\_time\_to\_nsec\_Get(TIME,0).c\_str()),exec.PC,\ atoi(sc\_time\_to\_nsec\_Get(LENGTH,0).c\_str()))}}
+\DoxyCodeLine{00319\ \textcolor{comment}{\ \ \ \ \#define\ PLOT\_ALLOCATON\_BEGIN\_SET(CORE)\ \(\backslash\)}}
+\DoxyCodeLine{00320\ \textcolor{comment}{\ \ \ \ \ \ \ \ CORE-\/>AllocationBegin\_Set(sc\_time\_stamp())}}
+\DoxyCodeLine{00321\ \textcolor{comment}{\ \ \ \ \#define\ PLOT\_QT\_FIGURE()\ \(\backslash\)}}
+\DoxyCodeLine{00322\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTfigure(QTID\_Get(),\ sc\_time\_to\_nsec\_Get(sc\_time\_stamp()-\/AllocationBegin\_Get()+sc\_time\_Get(1,SC\_NS),0),\ ID\_Get(),\ \(\backslash\)}}
+\DoxyCodeLine{00323\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sc\_time\_to\_nsec\_Get(AllocationBegin\_Get(),\ 0),\ 0)}}
+\DoxyCodeLine{00324\ \textcolor{comment}{\ \ \ \ \#define\ PLOT\_QT\_REGISTER\_MASK\_IN(C,MASK)\ \(\backslash\)}}
+\DoxyCodeLine{00325\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTregisterMask(C,\ sc\_time\_to\_nsec\_Get(C-\/>AllocationBegin\_Get(),0),\ MASK,\ true)}}
+\DoxyCodeLine{00326\ \textcolor{comment}{\ \ \ \ \#define\ PLOT\_QT\_REGISTER\_MASK\_OUT(C,MASK)\ \(\backslash\)}}
+\DoxyCodeLine{00327\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTregisterMask(C,\ sc\_time\_to\_nsec\_Get(sc\_time\_stamp(),0),\ MASK,\ false)}}
+\DoxyCodeLine{00328\ \textcolor{comment}{\ \ \ \ \#ifdef\ DEBUG\_PRINTS}}
+\DoxyCodeLine{00329\ \textcolor{comment}{\ \ \ \ \ \ \ \ \#define\ PLOT\_QT\_REGISTER\_MASK\_DEBUG(C,MASK,BOOL)\ \(\backslash\)}}
+\DoxyCodeLine{00330\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTregisterMask(C,\ sc\_time\_to\_nsec\_Get(sc\_time\_stamp(),\ 0),\ MASK,\ BOOL)}}
+\DoxyCodeLine{00331\ \textcolor{comment}{\ \ \ \ \ \ \ \ \#define\ PLOT\_QT\_MEMORY\_DEBUG(C,A,V,BOOL)\ \(\backslash\)}}
+\DoxyCodeLine{00332\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTmemory(C,\ A,\ V,\ sc\_time\_to\_nsec\_Get(sc\_time\_stamp(),\ 0),\ BOOL)}}
+\DoxyCodeLine{00333\ \textcolor{comment}{\ \ \ \ \#else}}
+\DoxyCodeLine{00334\ \textcolor{comment}{\ \ \ \ \ \ \ \ \#define\ PLOT\_QT\_REGISTER\_MASK\_DEBUG(C,MASK,BOOL)}}
+\DoxyCodeLine{00335\ \textcolor{comment}{\ \ \ \ \ \ \ \ \#define\ PLOT\_QT\_MEMORY\_DEBUG(C,A,V,BOOL)}}
+\DoxyCodeLine{00336\ \textcolor{comment}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00337\ \textcolor{comment}{\ \ \ \ \#define\ PLOT\_QT\_WAIT(LENGTH)\ \(\backslash\)}}
+\DoxyCodeLine{00338\ \textcolor{comment}{\ \ \ \ \ \ \ \ Plot-\/>PlotQTwait(ID\_Get(),atoi(sc\_time\_to\_nsec\_Get(sc\_time\_stamp()-\/LENGTH,0).c\_str()),exec.PC,\ atoi(sc\_time\_to\_nsec\_Get(LENGTH,0).c\_str()))}}
+\DoxyCodeLine{00339\ \textcolor{comment}{\#define\ DEBUG\_PRINT(x)\ \ if(!UNIT\_TESTING)\ \(\backslash\)}}
+\DoxyCodeLine{00340\ \textcolor{comment}{\ \ \ \ \{std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<"{}@"{}\ <<\ sc\_time\_to\_nsec\_Get(2,\ 6,\ sc\_core::sc\_time\_stamp()).c\_str()\ <<\ "{}\ "{}\ <<\ \ x\ \ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00341\ \textcolor{comment}{\#define\ DEBUG\_PRINT\_IF\_DIFFERENT(x,A,B)\ \ if(!UNIT\_TESTING)\ \(\backslash\)}}
+\DoxyCodeLine{00342\ \textcolor{comment}{\ \ \ \ \ \{if(A!=B)\ std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<\ "{}@"{}\ <<\ sc\_time\_to\_nsec\_Get(2,\ 6,\ sc\_time\_stamp()).c\_str()\ <<\ "{}ns|"{}\ <<\ name()\ <<\ "{}:>>\ "{}\ <<\ \ x\ \ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00343\ \textcolor{comment}{\#define\ DEBUG\_PRINT\_OBJECT\_IF\_DIFFERENT(x,A,B)\ \ if(!UNIT\_TESTING)\ \(\backslash\)}}
+\DoxyCodeLine{00344\ \textcolor{comment}{\ \ \ \ \{if(A!=B)\ std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<\ PrologString\_Get()\ <<\ "{}\ "{}\ \ <<\ x\ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00345\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ PLOT\_ALLOCATON\_BEGIN\_SET(CORE)}}
+\DoxyCodeLine{00348\ \textcolor{comment}{/*\#define\ DEBUG\_PRINT(x)\ \ if(!UNIT\_TESTING)\ \(\backslash\)}}
+\DoxyCodeLine{00349\ \textcolor{comment}{\ \ \ \ \{std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<\ "{}@"{}\ <<\ sc\_time\_to\_nsec\_Get(2,\ 6,\ sc\_core::sc\_time\_stamp()).c\_str()\ <<\ "{}\ "{}\ <<\ \ x\ \ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00350\ \textcolor{comment}{\#define\ DEBUG\_PRINT\_IF\_DIFFERENT(x,A,B)\ \ if(!UNIT\_TESTING)\ \(\backslash\)}}
+\DoxyCodeLine{00351\ \textcolor{comment}{\ \ \ \ \ \{if(A!=B)\ std::cerr\ \ <<DEBUG\_PRINT\_STRING\ "{}@"{}\ <<\ sc\_time\_to\_nsec\_Get(2,\ 6,\ sc\_time\_stamp()).c\_str()\ <<\ "{}ns|"{}\ <<\ name()\ <<\ "{}:>>\ "{}\ <<\ \ x\ \ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00352\ \textcolor{comment}{\#define\ DEBUG\_PRINT\_OBJECT\_IF\_DIFFERENT(x,A,B)\ \ if(!UNIT\_TESTING)\ \(\backslash\)}}
+\DoxyCodeLine{00353\ \textcolor{comment}{\ \ \ \ \{if(A!=B)\ std::cerr\ \ <<\ DEBUG\_PRINT\_STRING\ <<\ PrologString\_Get()\ <<\ "{}\ "{}\ \ <<\ x\ <<\ DEBUG\_LOCATION\ \ <<\ std::endl;\}}}
+\DoxyCodeLine{00354\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAKE\_PERFORMANCE\_DIAGRAM}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ WAIT\_GATE\ \{wait(SCTIME\_GATE);\ \}}}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \textcolor{comment}{//\ At\ the\ end,\ undefine\ all\ used\ macros}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#undef\ DEBUG\_PRINTS}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DEBUG\_MACROS\_H}}
+
+\end{DoxyCode}

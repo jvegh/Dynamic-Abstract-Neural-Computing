@@ -1,0 +1,93 @@
+\doxysection{Neuron\+Physical.\+h}
+\label{NeuronPhysical_8h_source}\index{NeuronPhysical.h@{NeuronPhysical.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ NEURONPHYSICS\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ NEURONPHYSICS\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}scGenComp\_PU\_Bio.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}NeuronInputCurrent.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MakeDebugPrint\ 0}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//static\ \ NeuronConstants\ DefaultNeuron;}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }ScQtNeuron\_MainWindow;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }NeuronPhysical\ :\ \textcolor{keyword}{public}\ scGenComp\_PU\_Bio,NeuronConstants}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }NeuronInputCurrent;\ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }ScQtNeuron\_MainWindow;}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ NeuronPhysical(sc\_core::sc\_module\_name\ nm\textcolor{comment}{//,\ NeuronConstants*\ Neuron=\&DefaultNeuron}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~NeuronPhysical(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ \ \ \ m\_RushinCurrent\ =\ (NeuronInputCurrent*)NULL;}}
+\DoxyCodeLine{00072\ \ \ \ \ \}\textcolor{comment}{//\ Must\ be\ overridden}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Tracing\_Initialize();\ \textcolor{comment}{//\ Initialize\ tracing:\ voltage\ vs\ time}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Calculate\_Do();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Create\_Rushin();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Computing\_Do();}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Delivering\_Do();}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Heartbeat\_Relaxing\_Do();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Initialize\_Do();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ ComputingBegin\_Do();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Computing\_Stop();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Delivering\_Stop();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Heartbeat\_Relaxing\_Stop();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ InputCurrentDelete(NeuronInputCurrent*\ IC);}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ InputReceived\_Do();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ InputIsLegal(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00165\ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Legal\ =\ \ GenCompStageMachine\_t::gcsm\_Delivering\ !=\ StageFlag\_Get();}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Legal)\ EVENT\_GenComp.InputIllegal.notify(SC\_ZERO\_TIME);\ \textcolor{comment}{//\ Inform\ the\ possible\ observers}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Legal;}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#if\ MakeDebugPrint}}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ OutputItem(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00173\ \ \ \ \ vector\ <NeuronInputCurrent*>\ m\_SynapticCurrents;\ \ \ \ \textcolor{comment}{//\ Stores\ pointers\ to\ the\ currents}}
+\DoxyCodeLine{00174\ \ \ \ \ NeuronInputCurrent\ *m\_RushinCurrent;}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{double}\ dVdtResulting\_Get(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ m\_Membrane\_dVdt\_Resulting;\}}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{double}\ dVdtResultingLast\_Get(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ m\_Membrane\_Last\_dVdt;\}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{double}\ dVdtAIS\_Get(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ m\_Membrane\_dVdt\_AIS;\}}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{double}\ dVdtInput\_Get(\textcolor{keywordtype}{void})\ \{\textcolor{keywordflow}{return}\ m\_Input\_dVdt\ +\ m\_Membrane\_dVdt\_Rushin;\}}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{double}\ I\_AIS\_Get(\textcolor{keywordtype}{void})\{\textcolor{keywordflow}{return}\ m\_AIS\_I;\}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{double}\ I\_Na\_Get(\textcolor{keywordtype}{void})\{\textcolor{keywordflow}{return}\ m\_Na\_I;\}}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{double}\ I\_Resulting\_Get(\textcolor{keywordtype}{void})\{\textcolor{keywordflow}{return}\ m\_Resulting\_I;\}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{comment}{//\ \ \ \ NeuronInputCurrent*\ m\_RushinCurrent;}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//\ Just\ for\ tracing}}
+\DoxyCodeLine{00187\ \textcolor{comment}{//\ \ \ \ double\ m\_dV\_dt\_membrane;\ \ \ \ //\ The\ actual\ time\ derivative}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_V\_Rushin;\ \ \ \ \textcolor{comment}{//\ Only\ for\ tracing}}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Input\_dVdt;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ sum\ of\ the\ input\ gradients}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_dVdt\_AIS;}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_dVdt\_Resulting;}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_dVdt\_Rushin;\ \textcolor{comment}{//\ The\ rushin-\/only\ current}}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_Last\_dVdt;}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_AIS\_I;\ \textcolor{comment}{//\ Current\ through\ the\ AIS}}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Na\_I;}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Resulting\_I;}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ vector<double>\ m\_RushinParameters;\ \ \ \ \textcolor{comment}{//\ Parameters\ for\ the\ rushin\ current}}
+\DoxyCodeLine{00199\ \ \ \ \ vector<double>\ m\_SynapticParameters;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Parameters\ for\ the\ axonal\ input\ current}}
+\DoxyCodeLine{00200\ \ \ \ \ vector<double>\ m\_MembraneParameters;\ \ \textcolor{comment}{//\ Parameters\ for\ the\ membrane}}
+\DoxyCodeLine{00201\ \};\textcolor{comment}{//\ of\ class\ NeuronPhysical}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NEURONPHYSICS\_H}}
+
+\end{DoxyCode}

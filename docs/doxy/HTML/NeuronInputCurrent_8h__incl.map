@@ -1,0 +1,7 @@
+<map id="NeuronInputCurrent.h" name="NeuronInputCurrent.h">
+<area shape="rect" id="Node000001" title="Function prototypes for the physics&#45;based neuron module&#39;s input current." alt="" coords="5,5,168,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="10,79,73,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,32,58,69,54,66,77,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="97,79,167,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,30,120,66,115,69,92,32"/>
+</map>

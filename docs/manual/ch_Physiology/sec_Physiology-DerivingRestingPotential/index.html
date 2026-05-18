@@ -1,0 +1,655 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3.6 Resting potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7</title>
+<!--Generated on Mon May 18 14:57:53 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on May 18, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="../index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="prev" href="../sec_Physiology-Electrodiffusion/sec_Physiology-Spatiotemporal.html" title="3.5.3 Spatiotemporal behavior ‣ 3.5 Electrodiffusion ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="next" href="../sec_Physiology-DerivingActionPotential/index.html" title="3.7 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../Physiology-StateOfTheArt/index.html" title="3.1 State-of-the-art ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../sec_Physiology-Physical/index.html" title="3.2 The physical model ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../sec_AnimalElectricity/index.html" title="3.3 Animal electricity ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../sec_Physology-Addendum/index.html" title="3.4 Addendum ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../sec_Physiology-Electrodiffusion/index.html" title="3.5 Electrodiffusion ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../sec_Physiology-DerivingActionPotential/index.html" title="3.7 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../sec_Physiology-HodgkinHuxley/index.html" title="3.8 Hodgkin&amp;Huxley’s empirical description ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../sec_Physiology-Experimental/index.html" title="3.9 Experimental evidence ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="section" href="../sec_Physiology-Fallacies/index.html" title="3.10 Fallacies ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Single/index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Physics/index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 4 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 5 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 6 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 7 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 8 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">Dynamic Abstract Neural Computing
+<br class="ltx_break">with Electronic Simulation
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics, physiology, computing, and information science
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.7</em>
+<br class="ltx_break">@May 18, 2026</span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Single/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Single (abstract) neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physics/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Physics for neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../Physiology-StateOfTheArt/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Physical/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>The physical model</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_AnimalElectricity/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Animal electricity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physology-Addendum/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Addendum</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Electrodiffusion/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Electrodiffusion</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.6 </span>Resting potential</span></span></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-DerivingActionPotential/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Action potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-HodgkinHuxley/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8 </span>Hodgkin&amp;Huxley’s empirical description</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Experimental/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.9 </span>Experimental evidence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-Fallacies/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.10 </span>Fallacies</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Computing with neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Information in neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Multiple neurons</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Intelligence</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Simulation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href" style="font-size:90%;">Report issue</a><span class="ltx_text" style="font-size:90%;">
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</span></p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Physiology for neurons</span></a><a href="../sec_Physiology-Electrodiffusion/sec_Physiology-Spatiotemporal.html" title="In 3.5 Electrodiffusion ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5.3 </span>Spatiotemporal behavior</span></a><a href="../sec_Physiology-DerivingActionPotential/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Action potential</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.6 </span>Resting potential</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Table <a href="#Tab:SummaryTable" title="Table 3.1 ‣ 3.6 Resting potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1</span></a> shows our results for three different
+famous published cases. It looks like the calibration of the concentration
+of negative and positive ions needs scaling and the measurement of <math id="p1.m1" class="ltx_Math" alttext="Ca^{2+}" display="inline"><mrow><mi>C</mi><mo>⁢</mo><msup><mi>a</mi><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow></math>
+comprises issues.</p>
+</div>
+<figure id="Tab:SummaryTable" class="ltx_table">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_table">Table 3.1: </span>The summary data table for equilibrium (Data from Table 2.1 in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib2" title="" class="ltx_ref">2</a>]</cite>. For the graphic representation
+of potential balance see Figure <a href="../../ch_Single/sec_Single-RestingPotential/index.html#fig:RestingPotential3" title="Figure 1.5 ‣ 1.8 Resting potential ‣ Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.5</span></a> ) </figcaption>
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_tt" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;">Ion</span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_tt" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">[In]</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_tt" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">[Out]</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_tt" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m1" class="ltx_Math" alttext="U_{therm}\frac{RT}{zF}log\bigl{(}\frac{[C]_{o}}{[C]_{i}}\bigr{)}" display="inline"><mrow><msub><mi>U</mi><mrow><mi>t</mi><mo>⁢</mo><mi>h</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mi>m</mi></mrow></msub><mo>⁢</mo><mfrac><mrow><mi>R</mi><mo>⁢</mo><mi>T</mi></mrow><mrow><mi>z</mi><mo>⁢</mo><mi>F</mi></mrow></mfrac><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><msub><mrow><mo stretchy="false">[</mo><mi>C</mi><mo stretchy="false">]</mo></mrow><mi>o</mi></msub><msub><mrow><mo stretchy="false">[</mo><mi>C</mi><mo stretchy="false">]</mo></mrow><mi>i</mi></msub></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_tt" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><math id="Ch3.T1.m2" class="ltx_Math" alttext="U_{electr}^{theor}" display="inline"><msubsup><mi>U</mi><mrow><mi>e</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>r</mi></mrow><mrow><mi>t</mi><mo>⁢</mo><mi>h</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>r</mi></mrow></msubsup></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_tt" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><math id="Ch3.T1.m3" class="ltx_Math" alttext="U_{electr}^{exper}" display="inline"><msubsup><mi>U</mi><mrow><mi>e</mi><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mi>r</mi></mrow><mrow><mi>e</mi><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>p</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>r</mi></mrow></msubsup></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_tt" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:31.3pt;"><math id="Ch3.T1.m4" class="ltx_Math" alttext="U_{membr}" display="inline"><msub><mi>U</mi><mrow><mi>m</mi><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mi>b</mi><mo>⁢</mo><mi>r</mi></mrow></msub></math></span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;"></th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">[mM]</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">[mM]</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;">[mV]</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;">[mV]</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;">[mV]</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:31.3pt;">[mV]</span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;"></th>
+<td class="ltx_td ltx_align_center ltx_align_top ltx_border_l ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;" colspan="6">Squid <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib13" title="" class="ltx_ref">13</a>]</cite>   T=293 <math id="Ch3.T1.m5" class="ltx_Math" alttext="K^{o}" display="inline"><msup><mi>K</mi><mi>o</mi></msup></math>   Width= <span class="ltx_text ltx_font_bold">3</span> [nm]   Field= <span class="ltx_text ltx_font_bold">14.0</span> [MV/m]</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m6" class="ltx_Math" alttext="K^{+}" display="inline"><msup><mi>K</mi><mo>+</mo></msup></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">400</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">20</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m7" class="ltx_Math" alttext="-75.5=58log\bigl{(}\frac{20}{400}\bigr{)}" display="inline"><mrow><mrow><mo>−</mo><mn>75.5</mn></mrow><mo>=</mo><mrow><mn>58</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>20</mn><mn>400</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">41.9</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">41.4</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:31.3pt;">-62.0</span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m8" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">50</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">440</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m9" class="ltx_Math" alttext="+54.8=58log\bigl{(}\frac{440}{50}\bigr{)}" display="inline"><mrow><mrow><mo>+</mo><mn>54.8</mn></mrow><mo>=</mo><mrow><mn>58</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>440</mn><mn>50</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m10" class="ltx_Math" alttext="Cl^{-}" display="inline"><mrow><mi>C</mi><mo>⁢</mo><msup><mi>l</mi><mo>−</mo></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">40</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">560</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m11" class="ltx_Math" alttext="-66.5=58log\bigl{(}\frac{560}{40}\bigr{)}" display="inline"><mrow><mrow><mo>−</mo><mn>66.5</mn></mrow><mo>=</mo><mrow><mn>58</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>560</mn><mn>40</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">41.9</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">42.0</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:31.3pt;">63.0</span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m12" class="ltx_Math" alttext="Ca^{2+}" display="inline"><mrow><mi>C</mi><mo>⁢</mo><msup><mi>a</mi><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;"><math id="Ch3.T1.m13" class="ltx_Math" alttext="0.27^{*}" display="inline"><msup><mn>0.27</mn><mo>∗</mo></msup></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">10</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m14" class="ltx_Math" alttext="+45.5=29log\bigl{(}\frac{10}{0.27}\bigr{)}" display="inline"><mrow><mrow><mo>+</mo><mn>45.5</mn></mrow><mo>=</mo><mrow><mn>29</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>10</mn><mn>0.27</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;"></th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_l ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;" colspan="6">
+<sup class="ltx_sup">∗</sup> used for the published value 0.4</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;"></th>
+<td class="ltx_td ltx_align_center ltx_align_top ltx_border_l ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;" colspan="6">Frog muscle (Conway)   T=293 <math id="Ch3.T1.m16" class="ltx_Math" alttext="K^{o}" display="inline"><msup><mi>K</mi><mi>o</mi></msup></math>   W = <span class="ltx_text ltx_font_bold">8</span> [nm]
+  E= <span class="ltx_text ltx_font_bold">9.6</span> [MV/m]</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m17" class="ltx_Math" alttext="K^{+}" display="inline"><msup><mi>K</mi><mo>+</mo></msup></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">124</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">2.25</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m18" class="ltx_Math" alttext="-101=58log\bigl{(}\frac{2.25}{124}\bigr{)}" display="inline"><mrow><mrow><mo>−</mo><mn>101</mn></mrow><mo>=</mo><mrow><mn>58</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>2.25</mn><mn>124</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">88.9</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">83.6</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:31.3pt;">-125.4</span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m19" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">10.4</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">109</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m20" class="ltx_Math" alttext="+59.2=58log\bigl{(}\frac{109}{10.4}\bigr{)}" display="inline"><mrow><mrow><mo>+</mo><mn>59.2</mn></mrow><mo>=</mo><mrow><mn>58</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>109</mn><mn>10.4</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m21" class="ltx_Math" alttext="Cl^{-}" display="inline"><mrow><mi>C</mi><mo>⁢</mo><msup><mi>l</mi><mo>−</mo></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">1.5</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">77.5</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m22" class="ltx_Math" alttext="-99.4=-58log\bigl{(}\frac{77.5}{1.5}\bigr{)}" display="inline"><mrow><mrow><mo>−</mo><mn>99.4</mn></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>58</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>77.5</mn><mn>1.5</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">88.9</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">82.7</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:31.3pt;">124.1</span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m23" class="ltx_Math" alttext="Ca^{2+}" display="inline"><mrow><mi>C</mi><mo>⁢</mo><msup><mi>a</mi><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;"><math id="Ch3.T1.m24" class="ltx_Math" alttext="0.021^{*}" display="inline"><msup><mn>0.021</mn><mo>∗</mo></msup></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">2.1</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m25" class="ltx_Math" alttext="+58.0=29log\bigl{(}\frac{2.5}{0.25}\bigr{)}" display="inline"><mrow><mrow><mo>+</mo><mn>58.0</mn></mrow><mo>=</mo><mrow><mn>29</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>2.5</mn><mn>0.25</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;"></th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_l ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;" colspan="6">
+<sup class="ltx_sup">∗</sup> used for the published value 4.9</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;"></th>
+<td class="ltx_td ltx_align_center ltx_align_top ltx_border_l ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;" colspan="6">Mammalian cell   T=310 <math id="Ch3.T1.m27" class="ltx_Math" alttext="K^{o}" display="inline"><msup><mi>K</mi><mi>o</mi></msup></math>   W= <span class="ltx_text ltx_font_bold">6</span> [nm]
+  E= <span class="ltx_text ltx_font_bold">11.1</span> [MV/m]</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m28" class="ltx_Math" alttext="K^{+}" display="inline"><msup><mi>K</mi><mo>+</mo></msup></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">140</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">5</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m29" class="ltx_Math" alttext="-89.7=62log\bigl{(}\frac{5}{140}\bigr{)}" display="inline"><mrow><mrow><mo>−</mo><mn>89.7</mn></mrow><mo>=</mo><mrow><mn>62</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>5</mn><mn>140</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">57.7</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">57.3</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:31.3pt;">-85.8</span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m30" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">15</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">145</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m31" class="ltx_Math" alttext="+61.1=62log\bigl{(}\frac{145}{15}\bigr{)}" display="inline"><mrow><mrow><mo>+</mo><mn>61.1</mn></mrow><mo>=</mo><mrow><mn>62</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>145</mn><mn>15</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m32" class="ltx_Math" alttext="Cl^{-}" display="inline"><mrow><mi>C</mi><mo>⁢</mo><msup><mi>l</mi><mo>−</mo></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">4</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">110</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m33" class="ltx_Math" alttext="-89.2=-62log\bigl{(}\frac{110}{4}\bigr{)}" display="inline"><mrow><mrow><mo>−</mo><mn>89.2</mn></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>62</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>110</mn><mn>4</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">57.7</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;"><span class="ltx_text ltx_font_bold">56.9</span></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:31.3pt;">85.9</span>
+</span>
+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m34" class="ltx_Math" alttext="Ca^{2+}" display="inline"><mrow><mi>C</mi><mo>⁢</mo><msup><mi>a</mi><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;"><math id="Ch3.T1.m35" class="ltx_Math" alttext="0.04^{*}" display="inline"><msup><mn>0.04</mn><mo>∗</mo></msup></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">5</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m36" class="ltx_Math" alttext="+60.8=31log\bigl{(}\frac{5}{0.04}\bigr{)}" display="inline"><mrow><mrow><mo>+</mo><mn>60.8</mn></mrow><mo>=</mo><mrow><mn>31</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>5</mn><mn>0.04</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+<td class="ltx_td ltx_align_top ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr" style="padding-top:1.5pt;padding-bottom:1.5pt;"></th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_l ltx_border_r" style="padding-top:1.5pt;padding-bottom:1.5pt;" colspan="6">
+<sup class="ltx_sup">∗</sup> used for the published value 0.0001</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_top ltx_th ltx_th_row ltx_border_l ltx_border_rr ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;"></th>
+<td class="ltx_td ltx_align_center ltx_align_top ltx_border_l ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;" colspan="6">
+<math id="Ch3.T1.m38" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math> ions only <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib75" title="" class="ltx_ref">75</a>]</cite> T=310 <math id="Ch3.T1.m39" class="ltx_Math" alttext="K^{o}" display="inline"><msup><mi>K</mi><mi>o</mi></msup></math>   W= <span class="ltx_text ltx_font_bold">6</span> [nm]
+ E = <span class="ltx_text ltx_font_bold">10.0</span> [MV/m]</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_justify ltx_align_top ltx_th ltx_th_row ltx_border_bb ltx_border_l ltx_border_rr ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:17.1pt;"><math id="Ch3.T1.m40" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math></span>
+</span>
+</th>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_bb ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:25.6pt;">12</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_bb ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:29.9pt;">145</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_bb ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:111.0pt;"><math id="Ch3.T1.m41" class="ltx_Math" alttext="+66.6=62log\bigl{(}\frac{145}{12}\bigr{)}" display="inline"><mrow><mrow><mo>+</mo><mn>66.6</mn></mrow><mo>=</mo><mrow><mn>62</mn><mo>⁢</mo><mi>l</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo maxsize="120%" minsize="120%">(</mo><mfrac><mn>145</mn><mn>12</mn></mfrac><mo maxsize="120%" minsize="120%">)</mo></mrow></mrow></mrow></math></span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_bb ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;">60.7</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_justify ltx_align_top ltx_border_bb ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;">
+<span class="ltx_inline-block ltx_align_top">
+<span class="ltx_p" style="width:28.5pt;">66.6</span>
+</span>
+</td>
+<td class="ltx_td ltx_align_top ltx_border_bb ltx_border_r ltx_border_t" style="padding-top:1.5pt;padding-bottom:1.5pt;"></td>
+</tr>
+</tbody>
+</table>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">When calculating the values in Table <a href="#Tab:SummaryTable" title="Table 3.1 ‣ 3.6 Resting potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1</span></a>, we used <math id="p2.m1" class="ltx_Math" alttext="\Delta z=1.05" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>z</mi></mrow><mo>=</mo><mn>1.05</mn></mrow></math> and employed the membrane’s thickness data from various publications to demonstrate that our theoretical approach is correct and that using the correct data can provide even the absolute values of the membrane potential.
+The higher-than-expected value of <math id="p2.m2" class="ltx_Math" alttext="\Delta z" display="inline"><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>z</mi></mrow></math> may suggest that the ions and membrane’s double layers in the electrolyte may also play a role.
+Dedicated, complete investigations can reveal the details.</p>
+</div>
+<figure id="fig:HypotheticRestingPotential" class="ltx_figure"><img src="fig/HypotheticRestingPotential.png" id="Ch3.F6.g1" class="ltx_graphics ltx_img_square" width="419" height="409" alt="Refer to caption">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 3.6: </span> (Figure 3.1.1 in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib75" title="" class="ltx_ref">75</a>]</cite>) Generation of the Na equilibrium potential across a hypothetical membrane that is permeable only to <math id="Ch3.F6.m10" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math>.
+The <math id="Ch3.F6.m11" class="ltx_Math" alttext="[Na]_{o}" display="inline"><msub><mrow><mo stretchy="false">[</mo><mrow><mi>N</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">]</mo></mrow><mi>o</mi></msub></math> in this case is high, about <math id="Ch3.F6.m12" class="ltx_Math" alttext="145\ mM" display="inline"><mrow><mn>145</mn><mo lspace="0.500em">⁢</mo><mi>m</mi><mo>⁢</mo><mi>M</mi></mrow></math>, whereas <math id="Ch3.F6.m13" class="ltx_Math" alttext="[Na]_{i}" display="inline"><msub><mrow><mo stretchy="false">[</mo><mrow><mi>N</mi><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">]</mo></mrow><mi>i</mi></msub></math> is <math id="Ch3.F6.m14" class="ltx_Math" alttext="12\ mM" display="inline"><mrow><mn>12</mn><mo lspace="0.500em">⁢</mo><mi>m</mi><mo>⁢</mo><mi>M</mi></mrow></math>. Thus the diffusion gradient favors <math id="Ch3.F6.m15" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math> flux from the outside to the inside of the cell.
+Since <math id="Ch3.F6.m16" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math> is electrically charged, flux of only <math id="Ch3.F6.m17" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi>N</mi><mo>⁢</mo><msup><mi>a</mi><mo>+</mo></msup></mrow></math> makes a current across the membrane that separates charges and thus produces an electrical potential.
+The electric field exerts forces on Na+ that retards its movement. When the diffusive force exactly balances the electrical force, flux is zero and the potential is <math id="Ch3.F6.m18" class="ltx_Math" alttext="E_{Na}" display="inline"><msub><mi>E</mi><mrow><mi>N</mi><mo>⁢</mo><mi>a</mi></mrow></msub></math>, the sodium equilibrium potential.
+</figcaption>
+</figure>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="../sec_Physiology-Electrodiffusion/sec_Physiology-Spatiotemporal.html" title="In 3.5 Electrodiffusion ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5.3 </span>Spatiotemporal behavior</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="../sec_Physiology-DerivingActionPotential/index.html" title="In Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.7" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Action potential</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Mon May 18 14:57:53 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

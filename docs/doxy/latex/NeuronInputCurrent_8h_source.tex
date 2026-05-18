@@ -1,0 +1,51 @@
+\doxysection{Neuron\+Input\+Current.\+h}
+\label{NeuronInputCurrent_8h_source}\index{NeuronInputCurrent.h@{NeuronInputCurrent.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ NEURONINPUTCURRENT\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ NEURONINPUTCURRENT\_H}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }NeuronPhysical;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }scGenComp\_PU\_Bio;\ \ \ \textcolor{comment}{//\ Needed\ for\ remembering\ which\ neuron's\ current}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{enum\ class}\ NeuronInputCurrent\_t}
+\DoxyCodeLine{00029\ \{\ \ \ nict\_RushIn,\ \ \ \ \textcolor{comment}{//<\ Rush-\/in\ current}}
+\DoxyCodeLine{00030\ \ \ \ \ nict\_PSP,\ \ \ \ \ \ \ \textcolor{comment}{//<\ Post-\/synaptic\ current\ \(\backslash\)f\$Ampl*(1-\/exp(-\/\(\backslash\)alpha*t)*(-\/\(\backslash\)beta*t)\(\backslash\)f\$}}
+\DoxyCodeLine{00031\ \ \ \ \ nict\_Square,\ \ \ \ \textcolor{comment}{//<\ A\ square\ wave}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }NeuronInputCurrent}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ NeuronInputCurrent(NeuronPhysical*\ ParentNeuron,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ NeuronInputCurrent\_t\ t,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ BeginTime,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ std::vector<double>\ \&Parameters}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~NeuronInputCurrent(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{double}\ CurrentValue\_Get(\textcolor{keywordtype}{double}\ TT);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ CurrentGradient\_Get(\textcolor{keywordtype}{double}\ TT);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{double}\ VoltageValue\_Get(\textcolor{keywordtype}{double}\ TT);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{double}\ VoltageGradient\_Get(\textcolor{keywordtype}{double}\ TT);}
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00105\ \ \ \ \ NeuronPhysical*\ m\_ParentNeuron;}
+\DoxyCodeLine{00106\ \ \ \ \ vector\ <double>\ m\_Parameters;}
+\DoxyCodeLine{00107\ \ \ \ \ NeuronInputCurrent\_t\ m\_CurrentType;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{double}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ m\_BeginTime;\ \ \ \ }
+\DoxyCodeLine{00110\ \ \};\textcolor{comment}{//\ of\ class\ NeuronInputCurrent}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NEURONINPUTCURRENT\_H}}
+
+\end{DoxyCode}

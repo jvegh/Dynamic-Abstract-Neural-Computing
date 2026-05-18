@@ -1,0 +1,40 @@
+\doxysection{Gen\+Comp\+Stage\+Machine\+Type.\+h}
+\label{GenCompStageMachineType_8h_source}\index{GenCompStageMachineType.h@{GenCompStageMachineType.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ GENCOMPSTAGEMACHINETYPE\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GENCOMPSTAGEMACHINE\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\#include\ <bitset>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{enum\ class}\ \ GenCompStageMachine\_t\ :int8\_t\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ gcsm\_Sleeping=0,\ \textcolor{comment}{//\ *!<\ same\ as\ gcsm\_Relaxing,\ but\ no\ Heartbeats\ *\ /}}
+\DoxyCodeLine{00139\ \ \ \ \ gcsm\_Relaxing,\textcolor{comment}{//\ *!<\ Relaxing\ *\ /}}
+\DoxyCodeLine{00140\ \ \ \ \ gcsm\_Computing,}
+\DoxyCodeLine{00141\ \ \ \ \ gcsm\_Delivering,}
+\DoxyCodeLine{00142\ \ \ \ \ gcsm\_Initializing,}
+\DoxyCodeLine{00143\ \ \ \ \ gcsm\_InputReceived,}
+\DoxyCodeLine{00144\ \ \ \ \ gcsm\_Synchronizing,}
+\DoxyCodeLine{00145\ \ \ \ \ gcsm\_Failed,}
+\DoxyCodeLine{00146\ \ \ \ \ gcsm\_SIZE}
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ GenCompStagesString[];}
+\DoxyCodeLine{00155\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GenCompStageMachineType2String(GenCompStageMachine\_t\ e);}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCGENCOMPSTAGEMACHINE\_H}}
+
+\end{DoxyCode}

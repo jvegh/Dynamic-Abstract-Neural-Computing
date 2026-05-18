@@ -1,0 +1,7 @@
+<map id="scGenComp_PU_Abstract" name="scGenComp_PU_Abstract">
+<area shape="rect" id="Node000001" title="A class to deal with operations of an abstract processing unit (PU), implementing a single&#45;shot eleme..." alt="" coords="5,5,223,964"/>
+<area shape="rect" id="Node000002" href="$classscGenComp__PU__Bio.html" title="Implements a general biological&#45;type computing PU. Defaults to variable (that is, biologically define..." alt="" coords="11,1012,217,1257"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,978,117,1012,111,1012,111,978"/>
+<area shape="rect" id="Node000003" href="$classNeuronPhysical.html" title="Implements a general physical&#45;type neuron." alt="" coords="11,1305,217,1675"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,1271,117,1305,111,1305,111,1271"/>
+</map>

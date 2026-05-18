@@ -1,0 +1,29 @@
+\doxysection{sc\+Gen\+Comp\+\_\+\+Config.\+h}
+\label{scGenComp__Config_8h_source}\index{scGenComp\_Config.h@{scGenComp\_Config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCGENCOMP\_CONFIG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCGENCOMP\_CONFIG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ THOUSAND\ 1024}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Config\ parameters\ for\ the\ scGenComp\ units}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ The\ sc\_core::sc\_time(100,SC\_NS)\ form\ must\ not\ be\ used}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ HEARTBEAT\_TIME\_DEFAULT\ sc\_core::sc\_time(1000,SC\_PS)}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ HEARTBEAT\_TIME\_RESOLUTION\ sc\_core::sc\_time(100,SC\_PS)}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\#define\ HEARTBEAT\_TIME\_RESOLUTION\ 10\ //psec}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ HEARTBEAT\_TIME\_DEFAULT\_BIO\ sc\_core::sc\_time(1,SC\_US)}\textcolor{comment}{//usec}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HEARTBEAT\_TIME\_RESOLUTION\_BIO\ sc\_core::sc\_time(1,SC\_US)}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Config\ parameters\ for\ the\ scGenComp\_Bio\ units}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//How\ tightly\ the\ actual\ membrane\ potential\ must\ approach\ its\ resting\ value,\ in\ mV}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ AllowedRestingPotentialDifference\ 1.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ The\ absolute\ value\ of\ the\ resting\ potential}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ RestingMembranePotential\ -\/65}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ The\ difference\ of\ threshold\ potential\ to\ the\ resting\ potential}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ ThresholdPotential\ 20}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCGENCOMP\_CONFIG\_H}}
+
+\end{DoxyCode}

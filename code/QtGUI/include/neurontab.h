@@ -27,8 +27,6 @@ public:
                ScQtNeuron_MainWindow *parent = nullptr);
   ~NeuronTab() override;
 
-//  void initRegWidget();
-
 public slots:
   void restart();
 
@@ -36,17 +34,13 @@ public slots:
 private:
   void setupSimulatorActions(QToolBar *controlToolbar);
   void enableSimulatorControls();
+  void SetupGUI();
 
   Ui::NeuronTab *ui = nullptr;
-/*
- *   QTimer *m_statUpdateTimer;
-*/
   // Actions
   QAction *m_selectNeuronAction = nullptr;
   QAction *m_runAction = nullptr;
-/*  QAction *m_displayValuesAction = nullptr;
-  QAction *m_resetAction = nullptr;
-//  QAction *m_darkmodeAction = nullptr;
+/*//  QAction *m_darkmodeAction = nullptr;
   private:
 */
 };

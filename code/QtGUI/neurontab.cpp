@@ -22,8 +22,17 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
               ) {
     ui = new Ui::NeuronTab;
     ui->setupUi(this);
+    SetupGUI();
 
-    // Set up Slider 3: Amplitude
+//  setupSimulatorActions(controlToolbar);
+
+  // Initially, no file is loaded, disable toolbuttons
+  enableSimulatorControls();
+}
+
+void NeuronTab::SetupGUI()
+{
+    // Set up rush-in curent: Amplitude
     ui->RushinAmplitudeSlider->setMinimum(10);
     ui->RushinAmplitudeSlider->setMaximum(3000);
     ui->RushinAmplitudeSlider->setValue(120);
@@ -32,7 +41,7 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
     QObject::connect(ui->RushinAmplitudeSlider, &QSlider::valueChanged, this, [=] () {
         (ui->RushinAmplitudeSliderValue->setText(QString::number(ui->RushinAmplitudeSlider->value(),'f',2)));
     });
-    // Set up Slider 2 : tau, us
+    // Set up membrane time constant : tau, us
     ui->MembraneTauSlider->setMinimum(500);
     ui->MembraneTauSlider->setMaximum(20000);
     ui->MembraneTauSlider->setValue(1560);
@@ -41,7 +50,7 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
     QObject::connect(ui->MembraneTauSlider, &QSlider::valueChanged, this, [=] () {
         (ui->MembraneTauSliderValue->setText(QString::number(ui->MembraneTauSlider->value(),'f',2)));
     });
-    // Set up Slider 1 : Resistance, MOhm
+    // Set up R_AIS Slider : Resistance, kOhm
     ui->MembraneRSlider->setMinimum(100);
     ui->MembraneRSlider->setMaximum(9000);
     ui->MembraneRSlider->setValue(2500);
@@ -60,17 +69,12 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
     });
     ui->StepNumberBox->setRange(1,100);
     ui->StepTimeBox->setRange(10,1000);
-
-//  setupSimulatorActions(controlToolbar);
-
-  // Initially, no file is loaded, disable toolbuttons
-  enableSimulatorControls();
 }
 
-
 void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
-  const QIcon neuronIcon = QIcon(":/icons/cpu.svg");
-/*  m_selectNeuronAction =
+}
+/*  const QIcon neuronIcon = QIcon(":/icons/cpu.svg");
+  m_selectNeuronAction =
       new QAction(neuronIcon, "Select neuron", this);
   connect(m_selectNeuronAction, &QAction::triggered, this,
           &NeuronTab::neuronSelection);
@@ -92,7 +96,6 @@ void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
   m_darkmodeAction->setChecked(
       RipesSettings::value(RIPES_SETTING_DARKMODE).toBool());
 */
-}
 
 
 

@@ -32,7 +32,7 @@ public:
     ~GradientWindow();
   
     void setupPlot(  );
-    void DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50);
+    void DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50);//, bool RedBackground = false);
 
     void replot(void);
     void Reset();
@@ -43,6 +43,7 @@ public:
 private slots:
     void displayDataSlot();
     void screenShot();
+    void displayIllegalInputSlot();
 private:
     Ui::GradientWindow *ui;
     ScQtSimulator * m_Simulator;

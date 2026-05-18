@@ -25,7 +25,7 @@
 #define Axon_A 0.15
 #define Axon_B 3
 */
-#define Synaptic_Amplitude 20000.
+#define Synaptic_Amplitude 12000.
 #define Synaptic_A 0.15
 #define Synaptic_B 3
 // RC parameters of the membrane
@@ -56,14 +56,12 @@ extern sc_core::sc_time
 // The units of general computing work in the same way, using general events
 // \brief Implement handling the states of computing
     NeuronPhysical::
-NeuronPhysical(sc_core::sc_module_name nm//, NeuronConstants* Neuron
-                   ):
+NeuronPhysical(sc_core::sc_module_name nm):
     scGenComp_PU_Bio(nm), NeuronConstants(),
     m_RushinCurrent((NeuronInputCurrent *)NULL),
     m_RushinParameters(Default_RushinParameters),    // Parameters for the rushin
     m_SynapticParameters(Default_SynapticParameters),            // Parameters for the axonal input
     m_MembraneParameters(Default_MembraneParameters)  // Parameters for the membrane
-//    m_Neuron(Neuron)
 {
 
 //    MembraneFromCPF_TauMSec_Set(5,1);
@@ -161,6 +159,7 @@ void NeuronPhysical::
 void NeuronPhysical::
     InputReceived_Do()
 {
+    if(!InputIsLegal())return;
     scGenComp_PU_Bio::InputReceived_Do();    // Do also inherited processing
              DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"RCVD 'InputReceived' in '" << GenCompStageMachineType2String(mStageFlag) << "'");
     // Add a new synaptic current to the existing ones
@@ -172,17 +171,6 @@ void NeuronPhysical::
                                         ));
 }
 
-// Create a parameter array, will be destroyed by the current
-/*    std::vector<double> *Par = new vector<double>;
-    Par->push_back(Axon_Amplitude);
-    Par->push_back(Axon_A);
-    Par->push_back(Axon_B);
-*/
-/*           new NeuronInputCurrent(this, NeuronInputCurrent_t::nict_RushIn,
-                                         scLocalTimeMS_Get(),
-                                         *Par
-                               ));
-    m_RushinCurrent = */
 
 /**
      * @brief Calculate the membrane's new potential by solving a DE at

@@ -152,8 +152,6 @@ void VoltageWindow::displayDataSlot()
 
 void VoltageWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
 {
-    if ("P"==S)
-        int test = 1;
     // add the text label at the top:
     QCPItemText *textLabel = new QCPItemText(ui->customPlot);
     textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);

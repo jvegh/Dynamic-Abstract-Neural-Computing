@@ -458,7 +458,11 @@ void scGenComp_PU_Abstract::
 void scGenComp_PU_Abstract::
     InputReceived_Do(void)
 {
-//    m_HasUnhandledInput = true;
+    if(!InputIsLegal())
+    {   // Received and illegal input; neglect it
+        EVENT_GenComp.InputIllegal.notify(SC_ZERO_TIME);
+        return;
+    }
     ++mInputsReceived;  // Now we have a valid input
     if(SC_ZERO_TIME == mFixedComputingTime)
     {// we are asynchronous

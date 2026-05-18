@@ -150,6 +150,12 @@ class scGenComp_PU_Abstract: public sc_core::sc_module {
      */
     virtual void InputReceived_Do(void);
 
+    /**
+     * @brief Check the legacy of receiving input
+     * @return true if it is legal to accept an input
+     */
+    virtual bool InputIsLegal(void){    return true;}
+
      /// @return the number of the received inputs
     uint32_t NoOfInputsReceived_Get(){return mInputsReceived;}
 

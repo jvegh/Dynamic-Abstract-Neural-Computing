@@ -72,6 +72,7 @@ public:
         Heartbeat,              // Refresh PU's state
         Initialize,             // Put the unit to its ground state
         InputReceived,          // New input received
+        InputIllegal,           // Received input when input is disable
         RelaxingBegin,          // Begin restoring the 'Ready' state
         RelaxingEnd,            // Begin restoring the 'End' state
         Synchronize,            // External synhronize signal

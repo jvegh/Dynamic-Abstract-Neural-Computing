@@ -30,7 +30,8 @@ GradientWindow::GradientWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neuron
                         );
     setupPlot();
     connect(ui->actionScreenshot, &QAction::triggered, this, &GradientWindow::screenShot);
-    Reset();
+    connect(m_Simulator,SIGNAL(eventHappened()), this, SLOT(displayIllegalInputSlot()));
+     Reset();
 }
 
 void GradientWindow::replot(void)
@@ -68,13 +69,14 @@ void GradientWindow::setupPlot( )
 
     RushinGradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     RushinGradientPlot->setName("Input gradient");
-    RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
     RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
 
     AISGradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     AISGradientPlot->setName("AIS gradient");
-    AISGradientPlot->setLineStyle(QCPCurve::lsLine);
     AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+//    AISGradientPlot->setLineStyle(QCPCurve::lsLine);
+    AISGradientPlot->setLineStyle(QCPCurve::lsNone);
 
     GradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     GradientPlot->setName("Resulting gradient");
@@ -147,6 +149,22 @@ void GradientWindow::RushinRunningPointPositionGradient_Set(double xpos, double 
     RushinRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+2);
 }
 
+
+void GradientWindow::displayIllegalInputSlot()
+{
+    if ( m_neuron->EVENT_GenComp.InputIllegal.triggered() ) {
+        QMessageBox::StandardButton ret;
+        ret = QMessageBox::warning(this, tr("ScQtSimulator"),
+                                   tr("Input is not legal in the present state\n"
+                                      "Maybe you want to exit"),
+                                   QMessageBox::Yes );
+
+        double key2 = m_neuron->LocalTimeInMillisec_Get();
+        double DvDt = m_neuron->dVdtResulting_Get();
+        DrawArrow(key2, DvDt, "!",-0.04,-500);
+    }
+}
+
 void GradientWindow::displayDataSlot()
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get();
@@ -177,6 +195,7 @@ void GradientWindow::displayDataSlot()
 
     // The rest is only for displaying demo legend
     if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
+//        bool RedBackround = (GenCompStageMachine_t::gcsm_Delivering==m_neuron->StageFlag_Get());
         DrawArrow(key2, DvDt, "X",-0.04,-500);
     }
     if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
@@ -218,7 +237,7 @@ GradientWindow::~GradientWindow()
      ui->customPlot->savePdf(fileName, 0, 0);
 }
 
-void GradientWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
+void GradientWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)//, bool RedBackground)
 {
     // add the text label at the top:
     QCPItemText *textLabel = new QCPItemText(ui->customPlot);
@@ -228,6 +247,7 @@ void GradientWindow::DrawArrow(double xpos, double ypos, QString S, double xoffs
     textLabel->setText(S);
     textLabel->setFont(QFont(font().family(), 8)); // make font a bit smaller
     textLabel->setPen(QPen(Qt::red)); // show red border around text
+ //   if(RedBackground)textLabel->setBrush(Qt::red);
 
     // add the arrow:
     QCPItemLine *arrow = new QCPItemLine(ui->customPlot);

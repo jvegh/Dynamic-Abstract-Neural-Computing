@@ -290,13 +290,11 @@ is constant, in biology it is not known where are the charges
 in a delayed current.
 
 
-\subsubsection[Conduction]{Conduction mechanism\label{sec:PHYSICS_ConductionMechanism}}
-
-
+\subsubsection[Conduction mechanism]{Conduction mechanism\label{sec:PHYSICS_ConductionMechanism}}
 
 Ions differ from electrons we used to in physical electricity in many features. Their conduction mechanisms
 are entirely different, and they are not necessarily present 
-in the discussed medium (say, when the medium is surrounded by charged surface, the field moves free ions out of the volume). They may be produced by biological mechanisms, 
+in the discussed medium (say, when the medium is surrounded by a charged surface, the field moves free ions out of the volume). They may be produced by biological mechanisms, 
 and they are slow (have a couple of $m/s$ speed, creating the illusion
 of 'delayed current').
 \index{delayed current}
@@ -318,8 +316,8 @@ Solid state
 \includegraphics[width=.45\textwidth]{fig/SolidResistance.png} & 
 \includegraphics[width=.45\textwidth]{fig/IonicResistance.jpg} \\
 \else
-\includegraphics[width=.35\textwidth]{fig/SolidResistance.png} & 
-\includegraphics[width=.35\textwidth]{fig/IonicResistance.jpg} \\
+\includegraphics[width=.32\textwidth]{fig/SolidResistance.png} & 
+\includegraphics[width=.32\textwidth]{fig/IonicResistance.jpg} \\
 \fi
 \hline
 Current conveyed by electrons in solids & 
@@ -333,47 +331,82 @@ Current conveyed by ions in ion channel\\
 
 
 In solids, as the Drude model describes, 
-electrons (shown in the figure in blue) constantly bounce among heavier, stationary crystal ions (shown in red), that make up the structure of the material. With each collision, though, the electron is deflected in a random direction \textit{with a velocity that is much larger than the velocity gained by the electric field}. The net result is that electrons take a zigzag path due to the collisions, but generally drift in a direction along the electric field. Important, that \textit{the collisions are inelastic}, so the electrons lose (most of) their energy. The energy is absorbed by the solid's gridpoints, which later is released in form of heat. The process is irreversible.
+electrons (shown in the figure in blue) constantly bounce among heavier, stationary crystal ions (shown in red), that make up the structure of the material. With each collision, though, the electron is deflected in a random direction \textit{with a speed that is much larger than the speed gained by the electric field}. The net result is that electrons take a zigzag path due to the collisions, but generally drift in a direction along the electric field. Important, that \textit{the collisions are inelastic}, so the electrons lose (most of) their energy. The solid's gridpoints absorb the energy, which later is released in form of heat. The process is irreversible.
 \index{resistance}
 
 In biological matter, ions convey electricity. So called ion channels
-are used for the transfer. Here diffusion and electromigration takes place, by orders of magnitude different speeds. The ions traverse typically without collision, under the effect of an electric field. The process is mostly reversible.  See also section~\ref{sec:Physics-HeatAbsorption} and Equ.(\ref{eq:StokesEinsteinSpeeddV}). 
+are used for the transfer. Here diffusion and electromigration takes place, by orders of magnitude different speeds. 
+%The ions traverse typically without collision, under the effect of an electric field. 
+The process is mostly reversible.  See also section~\ref{sec:Physics-HeatAbsorption} and Equ.(\ref{eq:StokesEinsteinSpeeddV}). 
 Fig.~\ref{tab:Electric_ResistanceTypes} shows that resistance 
-is interpreted as the interaction of charge carriers with the particles in the material that are transported by a driving force.
-In solid state, the volume considered is "infinitely large" (that is, whe field is homogeneous
+is interpreted as the interaction of charge carriers with the particles in the material that are transported by a driving force (that can comprise also a force of chemical origin).
+In solid state, the volume considered is "infinitely large" (that is, the field is homogeneous
 and the propagation is isotropic), and the charge carriers are uniform that is only one type of interaction is present.
-In biological objects, the volume is more or less limited (is finite), there may be charged objects present that make the propagation non-isotropic and the charge carriers are non-uniform
-that introduces termodynamic interaction in addition to the electrical interaction.
-Ions, under the electrical/thermodynamic field (and maybe mechanical constraints) accelerate to the Stokes-Einstein speed (see Eq.(\ref{eq:StokesSpeed}), move against a friction in the electrolyte.
-The ions suffer (essentially elastic) collision with neutral molecules and transfer their momentum (and so: energy) to them. 
-From the point of ions, the process is energy loss and momentum loss.
-From the point of neutral molecules, the process is energy gain and momentum gain. If the acceleration occurs in a narrow tube 
+In biological objects, the volume is more or less limited (is finite), there may be charged objects present that make the propagation non-isotropic. Furthermore, the charge carriers are non-uniform
+that introduces thermodynamic interaction in addition to the electrical interaction.
+Ions, under the electrical/thermodynamic field (and maybe mechanical constraints) accelerate to the Stokes-Einstein speed (see Eq.(\ref{eq:StokesSpeed})), move against a friction in the electrolyte.
+The ions suffer (essentially elastic) collisions with neutral molecules and transfer their momentum (and so: energy) to them. 
+From the point of view of ions, the process is energy loss and momentum loss.
+From the point of neutral molecules, the process is energy gain and momentum gain. In a free space, the energy and momentum quickly distribute in the entire volume, so the
+process in finally irreversible.
+
+\paragraph{Conduction under constrains\label{sec:PHYSICS_ConductionConstrained}}
+
+If the acceleration occurs in a narrow tube 
 such as an ion channel, the wall prevents gaining momentum in the 
 direction perpendicular to the direction of acceleration. 
 Given that the collisions are elastic, no energy dissipates;
 so, in principle, the process is reversible.
-Furthermore, the momentum loss results in momentum gain of the neutral molecules. Strangely enough, this way the electrical force
+Strangely enough, this way the electrical force
 accelerates also the neutral molecules; furthermore, their momentum (using an elastic membrane) can fully contribute to the operation
 of neuron (forms the \gls{AP}). 
 
+
 In a narrow tube (such as an ion channel) the momentum exchange
-is limited to one direction, both the "lost" momentum of the ions and the "gained" momentum of the neutral particles.
+is limited to one direction.
 If the ions are accelerated through the channel, due  to the
 frequent collisions, they can entirely transfer their 
 energy to a large number of neutral molecules. 
-Those accelerated molecules having the same velocity
+Those accelerated molecules having the same speed
 may represent a significant "impact force", sufficient
 to cause significant mechanical changes throughout
 biological systems.
 \index{impact force}
-Notice that the momemntum transfer by collisions
-is a two-way process. If a small amount of ionized
+The momentum transfer by collisions
+is a two-way process, it is reversible also in the practice. If a small amount of ionized
 particles is present in the tube, under an external electrical
 field, the charged particles can accelerate the neutral ones.
 Vice versa, if the bulk of the particles are moved mechanically (say, when an ultrasound wave
- presses the neuron), the one-directionally moving
+ presses the neuron or a rush-in process transfers electric energy to the membrane), the one-directionally moving
  neutral molecules transfer momentum to the charged particles,
- this way producing measurable electrical waves (such as \gls{AP}).
+ this way producing measurable electrical waves (such as an \gls{AP}).
+
+
+The secondary electric quantities can be derived from
+the primary quantity: the bulk of the undissociated molecules
+'resist' transferring ions under the effect of an electric field (the liquid must be pressed through the tube).
+One can measure potential and current along the ion
+channel (and so, to calculate resistance), but the behavior of the resistance/conductance is 
+drastically different. One has a pneumatic system instead of a voltage generator and the resistance originates in viscosity. Most of the energy is converted to
+mechanical energy instead of heat, making the process (mostly) reversible.
+The \gls{AP} initially produces an impulse force that compresses the membrane. The compressed membrane, while performing a damped oscillation, pushes and pulls the incompressible electrolyte that contains a small amount of dissociated ions, this way (per defitionem)
+creating an observable current and voltage wave. In the 
+positive and negative half periods of the elastic oscillation,
+due to opposite elastic/pneumatic forces, the current and voltage  change their sign. Given that the charges move at their
+Stokes-Einstein speed, the voltage-, current- and pressure waves are synchronized, as observed. The different 
+experimental observations measure the same effect
+by using their disciplinary measuring devices.
+The energy of the ions cannot dissipate; instead, the neutral and charged 
+particles share it, and convert between kinetic and elastic energies (the electric energy is much smaller).
+That is, the 
+neuron can produce heat in the positive phase of the
+elastic oscillation (the electrolyte is compressed),
+and can reabsorb heat in the negative phase (decompression), in full accordance with the correctly interpreted laws of physics.
+This way, by introducing the correct interpretation of "resistance" for electrolytes, the seven-decades-old
+contradiction~\cite{HeatProductionNeuron:1958}
+between the electrical and thermodynamic observations
+are finally resolved, furthermore, the conflicting theories
+can be naturally unified.
 
 
 
@@ -398,15 +431,6 @@ capacitive and inductive current, capacitive and inductive energy.
 
 
 
-As we derive in Eq.(\ref{eq:ConcentrationCurrent}), 
-we can define a current for charges moving in an external force field,
-but the physical background in the two cases are entirely different.
-The technical current direction is opposite with the 
-flow of electrons (and negative ions) but agrees with the direction
-of positive ions. The ions are much heavier than electrons, and even
-they can combine in electrolytes with water molecules, so their mass
-ratio can reach the order of $50,000-100,000$.
-The charge propagation mechanisms for electron and ions are entirely different (see also Fig.~\ref{tab:Electric_ResistanceTypes}).
 When those secondary entities
 interact with some macroscopic material, their relation to that material
 defines a feature, such as dielectricity or resistance. \textit{Those
@@ -415,13 +439,10 @@ is present.} Experience shows that, \textit{in the presence of electric
 potential}, different media show different resistance against \textit{transferring
 charges}, so we define resistance/conductance \textit{as one of the
 media's macroscopic features} (which is connected to microscopic features
-by Stokes's Law). There are crucial differences between the current propagation's mechanisms in solids and in biological materials. 
+by Stokes's Law). There are, however, further crucial differences between the current propagation's mechanisms in solids and in biological materials. 
 
 
-Resistance, as can be concluded from its name, means that in a medium some external (electrical, mechanical, thermodynamic, or any other) power exerts a force on an electric charge
-and the medium exerts a counterforce on the charge (resists moving the charge). In the case of solids (metals), the medium 
-has free charge carriers (electrons) inside, which mediate
-the electric field applied to a space segment of the solid. 
+
 Due to the charge transmission mechanism, the charge carriers form "instantly" a field inside the solid. However, it is known that the propagation speed is finite: it takes about \SI{1}{\nano\second} to propagate to a \SI{30}{\centi\meter} distance, forcing the designers of electronic circuits
 to introduce "clock domains", "clock distribution tree" and so on, when the accurate timing of signals is of importance.
 In the case of electrolytes, the charge carriers are ions
@@ -435,7 +456,7 @@ to what is expected having "fast" charge carriers in mind (and their behavior in
 Furthermore, biologically active structures may "produce"
 charge carriers inside.
 As a consequence, when deriving ternary quantities from 
-those secondary quantities, we may use non-macthing quantity pairs (measured at different times), that produces wrong (unphysical) conclusions.
+those secondary quantities, we may use non-matching quantity pairs (measured at different times), that produces wrong (unphysical) conclusions.
 The fundamental laws of electricity are the same, but describing electrical processes of living matter with 
 internal processes inside need more care
 than in the case of non-living matter without such processes.   
@@ -454,8 +475,8 @@ and displays the calculated result in units of resistance/conductance.
 The device uses the differential form of 
 deriving the current: measures 
 the voltage and the current at the 
-same time. Here comes into the play the cheating: instead of actually measuring the voltage, the device uses voltage measured earlier and current value measured at the time of measurement.
-In the case of 'instant interaction', the two measurement are simultaneous.
+same time. Here comes into play the cheating: instead of actually measuring the voltage, the device uses voltage measured earlier and current value measured at the time of measurement.
+In the case of 'instant interaction', the two measurements are simultaneous.
 The procedure is anyhow an invasion into the circuit, but
 (when used with care and knowing how the device works) 
 perfect for performing a simplified and bequem measurement.
@@ -517,7 +538,7 @@ part of the charge remains permanently in the element, part of it
 just is travelling on the surfaces of its plates, between the 
 junctions of the wires to the capacitor. 
 As we discussed, in the engineering the current is instant, so
-the  dynamic component is missing: the charge instantly arrives 
+the  dynamic component is practically missing: the charge instantly arrives 
 from the beginning junction to the end, while it is accumulated in its two extended pieces of wire, as discussed in section~\ref{sec:Physics-SimpleSheet}.
 
 The slow ions also cause deviations in charge storing.

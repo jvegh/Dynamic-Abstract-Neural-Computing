@@ -10,7 +10,6 @@
 */
 #include "ScQtNeuron_MainWindow.h"
 #include "ui_ScQtNeuron_MainWindow.h"
-//#include "ui_PhasePlotWindow.h"
 #include <QMdiSubWindow>
 #include <QtCore>
 #include <QFileSystemModel>
@@ -19,7 +18,6 @@
 #include <QSystemTrayIcon>
 //#include "QStuff.h"
 //#include "Stuff.h"
-//#include "edittab.h"
 #include "neurontab.h"
 #include "gitversion.h"
 #include "ui_neurontab.h"
@@ -77,11 +75,13 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 
     connect(m_neuronTab->ui->resetButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_resetButton_clicked);
+    connect(m_neuronTab->ui->restartButton, &QPushButton::clicked, this,
+            &ScQtNeuron_MainWindow::on_restartButton_clicked);
 
     connect(m_neuronTab->ui->DisplayReversedBox, &QCheckBox::clicked, this,
             &ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked);
     MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
-   //
+    //
     // The thread and the simulator are created in the constructor so it is always safe to delete them.
     //
     m_thread = new QThread();
@@ -95,13 +95,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_thread->start();
     connect(m_Simulator,SIGNAL(eventHappened()), this, SLOT(on_eventHappened()));
 
-/*
-     auto *editToolbar = addToolBar("Edit");
-    editToolbar->setVisible(false);
-    auto *editTab = new EditTab(editToolbar, this);
-    m_stackedTabs->insertWidget(EditTabID, editTab);
-    m_tabWidgets[EditTabID] = {editTab, editToolbar};
-*/
     // Setup tab bar
     setIconSize(QSize(32,32));
     ui->tabbar->addFancyTab(QIcon(":/icons/neurer.png"), "Neuron");
@@ -113,7 +106,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 //     SetFileMenu();
     /*
     SetProcessMenu();
-//    initFileFilterList();
     SetupSystemDirectories(this); // Establish system and user directories
     readSettings(); // Read window-related settings
     setupToolBoxes();   // Set up the tool box contents
@@ -129,6 +121,13 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_PhasePlotWindow->DisplayMode_Set(false);
     m_neuronTab->ui->DisplayReversedBox->setCheckState( Qt::CheckState(m_PhasePlotWindow->DisplayMode_Get()));
 }
+/*
+     auto *editToolbar = addToolBar("Edit");
+    editToolbar->setVisible(false);
+    auto *editTab = new EditTab(editToolbar, this);
+    m_stackedTabs->insertWidget(EditTabID, editTab);
+    m_tabWidgets[EditTabID] = {editTab, editToolbar};
+*/
 
 ScQtNeuron_MainWindow::~ScQtNeuron_MainWindow()
 {
@@ -167,11 +166,11 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
 {
     m_neuronTab->ui->DisplayReversedBox->setEnabled(false);
     m_StepNumber = m_neuronTab->ui->StepNumberBox->value();
+    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->ui->StepTimeBox->value(),sc_core::SC_US);
  /*   MyNeuron->MembraneFromRGOhm_TauMSec_Set(m_neuronTab->ui->Slider1->value()/1000., // Resistance, [GOhm]
                                             m_neuronTab->ui->Slider2->value()/1000.  // TimeConst, [ms]
         );*/
 //    APParameters[0] = m_neuronTab->ui->Slider3->value()*1000.; // Amplitude, pA
-    m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->ui->StepTimeBox->value(),sc_core::SC_US);
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     m_terminated = false;
 }
@@ -186,20 +185,25 @@ void ScQtNeuron_MainWindow::on_stopButton_clicked()
     m_Simulator->abort(); m_terminated = true;
 }
 
+void ScQtNeuron_MainWindow::on_restartButton_clicked()
+{
+    m_Simulator->abort(); m_terminated = true;
+}
+
 void ScQtNeuron_MainWindow::on_resetButton_clicked()
 {
 //    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 //    m_Simulator->abort();
     m_Simulator->TimesReset();
     displayTime_Reset();
-    MyNeuron->Initialize_Do();
+//    MyNeuron->Initialize_Do();
 
     m_neuronTab->ui->DisplayReversedBox->setEnabled(true);
     m_PhasePlotWindow->Reset();
     m_VoltageWindow->Reset();
     m_CurrentWindow->Reset();
     m_GradientWindow->Reset();
-    on_eventHappened();
+//    on_eventHappened();
 }
 
 
@@ -223,6 +227,15 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,3,7).c_str()));
     m_neuronTab->ui->DisplayTimeValue->setText(QString(time_String_Get(displayTime_Get()/1000/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
+    if ( MyNeuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
+        QMessageBox::StandardButton ret;
+        ret = QMessageBox::warning(this, tr("ScQtSimulator"),
+                                   tr("Simulation of a single AP successfully terminated\n"
+                                      "Maybe you want to make screenshots"),
+                                   QMessageBox::Yes );
+        m_Simulator->abort();
+        m_terminated = true;
+    }
     if((
         (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()))
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
@@ -237,19 +250,8 @@ void ScQtNeuron_MainWindow::on_eventHappened()
                            +m_neuronTab->ui->DisplaySlider->value(), this, SLOT(on_MakeSimulationStep()));
     }
     BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
-    if ( MyNeuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
-        QMessageBox::StandardButton ret;
-        ret = QMessageBox::warning(this, tr("ScQtSimulator"),
-                                   tr("Simulation of a single AP successfully terminated\n"
-                                      "Maybe you want to make screenshots"),
-                                   QMessageBox::Yes );
-        m_Simulator->abort();
-        m_terminated = true;
-    }
 }
 
-//BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here
-//BBENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
 
 bool ScQtNeuron_MainWindow::maybeClose()
 {

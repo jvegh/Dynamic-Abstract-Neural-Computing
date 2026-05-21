@@ -13,7 +13,6 @@ DemoNeuronPhysical::
    NeuronPhysical (nm)
 { /// Just an empty constructor
     std::cerr << "constructor called\n";
-//        Initialize_Do();
     SC_THREAD(GenerateSimpleSingleAP);
     sensitive << EVENT_GenComp.Initialize;
 //    dont_initialize();

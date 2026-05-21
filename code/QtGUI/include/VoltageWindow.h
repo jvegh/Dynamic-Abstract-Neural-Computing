@@ -52,13 +52,17 @@ private:
   ScQtSimulator * m_Simulator;
   NeuronPhysical *m_neuron;
   void setupMenus();
-//  QString demoName;
-//  QVector<double> x, y0, y1;
+  void PlotBrackets(int32_t key, double coord1, double coord2, double y);
 
   bool m_HaveAlreadyH, m_HaveAlreadyP;
   QCPCurve *VoltagePlot;
   QVector<QCPCurveData> dataVoltagePlot;
   QCPItemEllipse *RunningPoint;
+
+  double m_T_DeliveringBegin;
+  double m_T_RelaxingBegin;
+  double m_V_Peak;
+  bool m_FirstRelax;
 };
 
 #endif // VoltageWindow_H

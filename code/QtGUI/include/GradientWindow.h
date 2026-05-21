@@ -63,6 +63,10 @@ private:
     void RunningPointPositionGradient_Set(double xpos, double ypos);
     void AISRunningPointPositionGradient_Set(double xpos, double ypos);
     void RushinRunningPointPositionGradient_Set(double xpos, double ypos);
+    void PlotBrackets(int32_t key, double coord1, double coord2, double y);
+    double m_T_DeliveringBegin;
+    double m_T_RelaxingBegin;
+    double m_V_Peak;
 };
 
 #endif // GradientWindow_H

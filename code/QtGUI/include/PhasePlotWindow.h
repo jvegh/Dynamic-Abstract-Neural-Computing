@@ -60,6 +60,8 @@ private:
   QVector<QCPCurveData> dataPhasePlot;
   bool m_DisplayMode = true;
   QCPItemEllipse *RunningPoint;
+  void PlotBracketsV(int32_t key, double coord1, double coord2, double y);
+  double m_V_Peak;
 };
 
 #endif // PhasePlotWindow_H

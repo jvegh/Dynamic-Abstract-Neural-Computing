@@ -86,18 +86,6 @@ void CurrentWindow::setupDataPlot()
 {
     double key2 = m_neuron->LocalTimeInMillisec_Get();
     double Volt2 = m_neuron->MembraneRelativePotential_Get();
-/*    double I_AIS = m_neuron->I_AIS_Get();
-*/    // Add an ellipse
-    AISRunningPoint = new QCPItemEllipse(ui->customPlot);
-    AISRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
-    AISRunningPoint->setPen(QPen(Qt::red));
-    AISRunningPointPosition_Set(key2,Volt2);
-    // Add an ellipse
-    NaRunningPoint = new QCPItemEllipse(ui->customPlot);
-    NaRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
-    NaRunningPoint->setPen(QPen(Qt::green));
-    NaRunningPointPosition_Set(key2,Volt2);
-
     AISCurrentPlot = new QCPCurve(ui->customPlot->xAxis,ui->customPlot->yAxis);
     AISCurrentPlot->data()->set(dataAISCurrentPlot, true);
     AISCurrentPlot->setPen(QPen(Qt::red));
@@ -105,6 +93,11 @@ void CurrentWindow::setupDataPlot()
     AISCurrentPlot->setLineStyle(QCPCurve::lsLine);
     AISCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
     AISCurrentPlot->setName("AIS (K+)");
+        // Add an ellipse
+    AISRunningPoint = new QCPItemEllipse(ui->customPlot);
+    AISRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
+    AISRunningPoint->setPen(QPen(Qt::red));
+    AISRunningPointPosition_Set(key2,Volt2);
 
     NaCurrentPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     NaCurrentPlot->data()->set(dataNaCurrentPlot, true);
@@ -113,6 +106,11 @@ void CurrentWindow::setupDataPlot()
     NaCurrentPlot->setLineStyle(QCPCurve::lsLine);
     NaCurrentPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
     NaCurrentPlot->setName("Na+");
+        // Add an ellipse
+    NaRunningPoint = new QCPItemEllipse(ui->customPlot);
+    NaRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
+    NaRunningPoint->setPen(QPen(Qt::green));
+    NaRunningPointPosition_Set(key2,Volt2);
 
     ResultingCurrentPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     ResultingCurrentPlot->data()->set(dataResultingCurrentPlot, true);
@@ -158,6 +156,8 @@ void CurrentWindow::ResultingRunningPointPosition_Set(double xpos, double ypos)
     ResultingRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+1);
 */
 }
+
+
 
 
 void CurrentWindow::displayDataSlot()

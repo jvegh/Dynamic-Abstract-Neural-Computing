@@ -61,34 +61,36 @@ void GradientWindow::setupPlot( )
      // Add ellipses
     RunningPoint = new QCPItemEllipse(ui->customPlot);
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
-    RunningPoint->setPen(QPen(Qt::red));
+    RunningPoint->setPen(QPen(Qt::blue));
     AISRunningPoint  = new QCPItemEllipse(ui->customPlot);
     AISRunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     AISRunningPoint->setPen(QPen(Qt::red));
     RushinRunningPoint  = new QCPItemEllipse(ui->customPlot);
+    RushinRunningPoint->setBrush(QBrush(QColor(0,255,  0, 50)));
+    RushinRunningPoint->setPen(QPen(Qt::green));
 
     RushinGradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     RushinGradientPlot->setName("Input gradient");
-    RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
-    RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
+    RushinGradientPlot->setPen(QPen(Qt::green));
+    RushinGradientPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
+//    RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+//    RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
 
     AISGradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     AISGradientPlot->setName("AIS gradient");
-    AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    AISGradientPlot->setPen(QPen(Qt::red));
+    AISGradientPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
+//    AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 //    AISGradientPlot->setLineStyle(QCPCurve::lsLine);
-    AISGradientPlot->setLineStyle(QCPCurve::lsNone);
+//    AISGradientPlot->setLineStyle(QCPCurve::lsNone);
 
     GradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     GradientPlot->setName("Resulting gradient");
-    GradientPlot->setLineStyle(QCPCurve::lsLine);
-    GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
-
     GradientPlot->setPen(QPen(Qt::blue));
     GradientPlot->setBrush(QBrush(QColor(2, 2, 20, 20)));
-    AISGradientPlot->setPen(QPen(Qt::red));
-    AISGradientPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
-    RushinGradientPlot->setPen(QPen(Qt::green));
-    RushinGradientPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
+//    GradientPlot->setLineStyle(QCPCurve::lsLine);
+//    GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+
 
     ui->customPlot->legend->setVisible(true); // Ensure legend is visible
     ui->customPlot->legend->setFont(QFont("Helvetica", 9));
@@ -101,7 +103,7 @@ void GradientWindow::setupPlot( )
     ui->customPlot->xAxis->setLabel("Time (ms)");
     ui->customPlot->yAxis->setLabel("Membrane gradient (V/s)");
     // set axes ranges, so we see all data:
-    ui->customPlot->xAxis->setRange(0,1);
+    ui->customPlot->xAxis->setRange(0,.3);
     ui->customPlot->yAxis->setRange(-2000,4000);
     // set some basic customPlot config:
     ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
@@ -149,6 +151,60 @@ void GradientWindow::RushinRunningPointPositionGradient_Set(double xpos, double 
     RushinRunningPoint->bottomRight->setCoords(xpos+0.01, ypos+2);
 }
 
+void GradientWindow::PlotBrackets(int32_t key, double coord1, double coord2, double y)
+{
+    switch(key)
+    {
+    case 0:
+    {
+        // add the bracket for the "Computing" phase:
+        QCPItemBracket *computingBracket = new QCPItemBracket(ui->customPlot);
+        computingBracket->left->setCoords(coord1, y+10);
+        computingBracket->right->setCoords(coord2, y+10);
+        computingBracket->setLength(13);
+
+        // add the text label at the top:
+        QCPItemText *computingText = new QCPItemText(ui->customPlot);
+        computingText->position->setParentAnchor(computingBracket->center);
+        computingText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+        computingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        computingText->setText("Computing");
+        computingText->setFont(QFont(font().family(), 10));
+    } break;
+    case 1:
+    {
+        // add the bracket for the "Delivering" phase:
+        QCPItemBracket *deliveringBracket = new QCPItemBracket(ui->customPlot);
+        deliveringBracket->left->setCoords(coord1,y);
+        deliveringBracket->right->setCoords(coord2, y);
+        deliveringBracket->setLength(13);
+
+        // add the text label at the top:
+        QCPItemText *deliveringText = new QCPItemText(ui->customPlot);
+        deliveringText->position->setParentAnchor(deliveringBracket->center);
+        deliveringText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+        deliveringText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        deliveringText->setText("Delivering");
+        deliveringText->setFont(QFont(font().family(), 10));
+    } break;
+    case 2:
+    {
+        // add the bracket for the "Delivering" phase:
+        QCPItemBracket *relaxingBracket = new QCPItemBracket(ui->customPlot);
+        relaxingBracket->left->setCoords(coord1, y);
+        relaxingBracket->right->setCoords(coord2, y);
+        relaxingBracket->setLength(13);
+
+        // add the text label at the top:
+        QCPItemText *relaxingText = new QCPItemText(ui->customPlot);
+        relaxingText->position->setParentAnchor(relaxingBracket->center);
+        relaxingText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+        relaxingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        relaxingText->setText("Relaxing");
+        relaxingText->setFont(QFont(font().family(), 10));
+    }break;
+    default: assert(0);    }
+}
 
 void GradientWindow::displayIllegalInputSlot()
 {
@@ -200,27 +256,43 @@ void GradientWindow::displayDataSlot()
     }
     if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
         DrawArrow(key2, DvDt, "<R",0.03,700);
+        m_T_DeliveringBegin = key2;
+        m_V_Peak = Membrane_dVdt_Input;
+//        PlotBrackets(0,0.,key2,DvDt*1.5+500);
+        PlotBrackets(0,0.,key2,-1500);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
         DrawArrow(key2, DvDt, "R>",-0.05,1300);
+        m_T_RelaxingBegin = key2;
+//        PlotBrackets(1,m_T_DeliveringBegin,key2, m_V_Peak*1.5+500);
+        PlotBrackets(1,m_T_DeliveringBegin,key2, -1500);
+    }
+    if ( m_neuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
+        DrawArrow(key2, DvDt, "E",-0.05,18);
+//        PlotBrackets(2,m_T_RelaxingBegin,key2, m_V_Peak+20);
+        PlotBrackets(2,m_T_RelaxingBegin,key2, -1500);
     }
 
     if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
     {
         if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
         {   // We are at the point of maximum polarization
-
             if(!m_HaveAlreadyP){DrawArrow(key2, DvDt, "P",+0.04,1400); m_HaveAlreadyP = true;}
-        }
+         }
     }
+
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
     {
-        if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
-        {   // We are at the point of maximum hyperpolarization; avoid duplums
-            if(!m_HaveAlreadyH){DrawArrow(key2, DvDt, "H",0,1000); m_HaveAlreadyH = true;}
+        if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() > 0))
+        {   // We are at the point of maximum hyperpolarization
+            if(!m_HaveAlreadyH){
+                DrawArrow(key2, Membrane_dVdt_Input, "H",0,1000); m_HaveAlreadyH = true;
+ //               PlotBrackets(2,m_T_RelaxingBegin,key2, 2000);//Membrane_dVdt_Input+3000);
+                PlotBrackets(2,m_T_RelaxingBegin,key2, -1200);//Membrane_dVdt_Input+3000);
+            }
         }
     }
-    ui->customPlot->replot();
+     ui->customPlot->replot();
 }
 
 GradientWindow::~GradientWindow()

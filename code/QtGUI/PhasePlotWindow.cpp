@@ -36,7 +36,7 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   PhasePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
   PhasePlot->setPen(QPen(Qt::blue));
   PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-  PhasePlot->setName("AP phase plot");
+ // PhasePlot->setName("AP phase plot");
   PhasePlot->setLineStyle(QCPCurve::lsLine);
   PhasePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
   // Add an ellipse
@@ -186,25 +186,34 @@ void PhasePlotWindow::displayDataSlot()
         }
         if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
             DrawArrow( DvDt, Volt2, "<R",-300.,45);
+            PlotBracketsV(0,DvDt,0.,Volt2);
         }
         if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
             DrawArrow( DvDt, Volt2, "R>",1100,45);
+            PlotBracketsV(1,DvDt,m_V_Peak, Volt2);
+            m_V_Peak = Volt2;
         }
 
         if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
         {
-            if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
+            if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() <= 0))
             {   // We are at the point of maximum polarization
-
-                if(!m_HaveAlreadyP){DrawArrow( DvDt, Volt2,"P",300,-20); m_HaveAlreadyP = true;}
+                if(!m_HaveAlreadyP)
+                {
+                    DrawArrow( DvDt, Volt2,"P",300,-20); m_HaveAlreadyP = true;
+                    m_V_Peak = Volt2;
+                }
             }
         }
         if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
         {
-            if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
+            if ((m_neuron->dVdtResultingLast_Get() < 0) && (m_neuron->dVdtResulting_Get() > 0))
             {   // We are at the point of maximum hyperpolarization
-
-                if(!m_HaveAlreadyH){ DrawArrow(DvDt, Volt2, "H",-0,50); m_HaveAlreadyH = true;}
+                if(!m_HaveAlreadyH)
+                {
+                    DrawArrow(DvDt, Volt2, "H",-0,50); m_HaveAlreadyH = true;
+                    PlotBracketsV(2,DvDt,m_V_Peak, Volt2);
+                }
             }
         }
     };
@@ -234,6 +243,60 @@ void PhasePlotWindow::DrawArrow(double xpos, double ypos, QString S, double xoff
     arrow->setHead(QCPLineEnding::esSpikeArrow);
 }
 
+void PhasePlotWindow::PlotBracketsV(int32_t key, double x, double coord1, double coord2)
+{
+    switch(key)
+    {
+    case 0:
+    {
+        // add the bracket for the "Computing" phase:
+        QCPItemBracket *computingBracket = new QCPItemBracket(ui->customPlot);
+        computingBracket->left->setCoords(x+1500, coord2);
+        computingBracket->right->setCoords(x+1500, coord1);
+        computingBracket->setLength(13);
+
+        // add the text label at the top:
+        QCPItemText *computingText = new QCPItemText(ui->customPlot);
+        computingText->position->setParentAnchor(computingBracket->center);
+        computingText->position->setCoords(0+15, 0); // move 10 pixels to the top from bracket center anchor
+        computingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        computingText->setText("Computing");
+        computingText->setFont(QFont(font().family(), 10));
+    } break;
+    case 1:
+    {
+        // add the bracket for the "Delivering" phase:
+        QCPItemBracket *deliveringBracket = new QCPItemBracket(ui->customPlot);
+        deliveringBracket->left->setCoords(x-1000, coord2);
+        deliveringBracket->right->setCoords(x-1000, coord1);
+        deliveringBracket->setLength(13);
+
+        // add the text label at the top:
+        QCPItemText *deliveringText = new QCPItemText(ui->customPlot);
+        deliveringText->position->setParentAnchor(deliveringBracket->center);
+        deliveringText->position->setCoords(0-30,0); // move 10 pixels to the top from bracket center anchor
+        deliveringText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        deliveringText->setText("Delivering");
+        deliveringText->setFont(QFont(font().family(), 10));
+    } break;
+    case 2:
+    {
+        // add the bracket for the "Delivering" phase:
+        QCPItemBracket *relaxingBracket = new QCPItemBracket(ui->customPlot);
+        relaxingBracket->left->setCoords(x-1000, coord1);
+        relaxingBracket->right->setCoords(x-1000, coord2);
+        relaxingBracket->setLength(13);
+
+        // add the text label at the top:
+        QCPItemText *relaxingText = new QCPItemText(ui->customPlot);
+        relaxingText->position->setParentAnchor(relaxingBracket->center);
+        relaxingText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+        relaxingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+        relaxingText->setText("Relaxing");
+        relaxingText->setFont(QFont(font().family(), 10));
+    }break;
+    default: assert(0);    }
+}
 void PhasePlotWindow::DisplayMode_Set(bool M)
 {
     m_DisplayMode = M;  // Change the mode

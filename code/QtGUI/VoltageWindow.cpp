@@ -65,19 +65,25 @@ void VoltageWindow::setupPlot()
     double key2 = m_neuron->LocalTimeInMillisec_Get()*2.4;
     double Volt2 = m_neuron->MembraneRelativePotential_Get()*15;
     VoltagePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
-//    VoltagePlot->data()->set(dataVoltagePlot, true);
+
+    VoltagePlot->setPen(QPen(Qt::blue));
+    VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
+    VoltagePlot->setName("AP phase plot");
+    VoltagePlot->setLineStyle(QCPCurve::lsLine);
+    VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+#if 0
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
     VoltagePlot->setName("Action Potential");
     VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
-    VoltagePlot->setLineStyle(QCPCurve::lsLine);
-
+//    VoltagePlot->setLineStyle(QCPCurve::lsLine);
+#endif
 
     // give the axes some labels:
     ui->customPlot->xAxis->setLabel("Time (ms)");
     ui->customPlot->yAxis->setLabel("Membrane voltage (mV)");
     // set axes ranges, so we see all data:
-    ui->customPlot->xAxis->setRange(0,1);
+    ui->customPlot->xAxis->setRange(0,2);
     ui->customPlot->yAxis->setRange(-30,130);
     // set some basic customPlot config:
     ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
@@ -88,10 +94,67 @@ void VoltageWindow::setupPlot()
     RunningPoint->setBrush(QBrush(QColor(255, 0, 0, 50)));
     RunningPoint->setPen(QPen(Qt::red));
     RunningPointPosition_Set(key2,Volt2);
+    m_FirstRelax = true;
 
 //    connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(displayDataSlot()));
     ui->customPlot->axisRect()->setupFullAxesBox();
     Reset();
+}
+
+void VoltageWindow::PlotBrackets(int32_t key, double coord1, double coord2, double y)
+{
+    switch(key)
+    {
+    case 0:
+    {
+    // add the bracket for the "Computing" phase:
+    QCPItemBracket *computingBracket = new QCPItemBracket(ui->customPlot);
+    computingBracket->left->setCoords(coord2, y+10);
+    computingBracket->right->setCoords(coord1, y+10);
+    computingBracket->setLength(13);
+
+    // add the text label at the top:
+    QCPItemText *computingText = new QCPItemText(ui->customPlot);
+    computingText->position->setParentAnchor(computingBracket->center);
+    computingText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+    computingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+    computingText->setText("Computing");
+    computingText->setFont(QFont(font().family(), 10));
+    } break;
+    case 1:
+    {
+    // add the bracket for the "Delivering" phase:
+    QCPItemBracket *deliveringBracket = new QCPItemBracket(ui->customPlot);
+    deliveringBracket->left->setCoords(coord2,y);
+    deliveringBracket->right->setCoords(coord1, y);
+    deliveringBracket->setLength(13);
+
+    // add the text label at the top:
+    QCPItemText *deliveringText = new QCPItemText(ui->customPlot);
+    deliveringText->position->setParentAnchor(deliveringBracket->center);
+    deliveringText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+    deliveringText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+    deliveringText->setText("Delivering");
+    deliveringText->setFont(QFont(font().family(), 10));
+    } break;
+    case 2:
+    {
+    // add the bracket for the "Relaxing" phase:
+        if(m_FirstRelax){   m_FirstRelax = false; break;}
+    QCPItemBracket *relaxingBracket = new QCPItemBracket(ui->customPlot);
+    relaxingBracket->left->setCoords(coord2, y);
+    relaxingBracket->right->setCoords(coord1, y);
+    relaxingBracket->setLength(13);
+
+    // add the text label at the top:
+    QCPItemText *relaxingText = new QCPItemText(ui->customPlot);
+    relaxingText->position->setParentAnchor(relaxingBracket->center);
+    relaxingText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+    relaxingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
+    relaxingText->setText("Relaxing");
+    relaxingText->setFont(QFont(font().family(), 10));
+    }break;
+    default: assert(0);    }
 }
 
 void VoltageWindow::RunningPointPosition_Set(double xpos, double ypos)
@@ -119,16 +182,23 @@ void VoltageWindow::displayDataSlot()
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
-
     // The rest is only for displaying demo legend
     if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
         DrawArrow(key2, Volt2, "X",.02,-15);
     }
     if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
         DrawArrow(key2, Volt2, "<R",+0.068,18);
+        m_T_DeliveringBegin = key2;
+        PlotBrackets(0,0.,key2,-40);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
         DrawArrow(key2, Volt2, "R>",-0.05,18);
+        m_T_RelaxingBegin = key2;
+        PlotBrackets(1,m_T_DeliveringBegin,key2, -20);
+    }
+    if ( m_neuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
+        DrawArrow(key2, Volt2, "E",-0.05,18);
+        PlotBrackets(2,m_T_RelaxingBegin,key2, m_V_Peak+40);
     }
 
     if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
@@ -136,18 +206,24 @@ void VoltageWindow::displayDataSlot()
         if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
         {   // We are at the point of maximum polarization
 
-            if(!m_HaveAlreadyP){DrawArrow(key2, Volt2, "P",0.03,-30); m_HaveAlreadyP = true;}
+            if(!m_HaveAlreadyP){
+                DrawArrow(key2, Volt2, "P",0.03,-30); m_HaveAlreadyP = true;
+                m_V_Peak = Volt2;
+            }
         }
     }
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
     {
-        if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
-        {   // We are at the point of maximum polarization
-
-            if(!m_HaveAlreadyH){ DrawArrow(key2, Volt2, "H",-0,50); m_HaveAlreadyH = true;}
+        if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() > 0))
+        {   // We are at the point of maximum hyperpolarization
+            if(!m_HaveAlreadyH){
+                DrawArrow(key2, Volt2, "H",-0,50); m_HaveAlreadyH = true;
+                PlotBrackets(2,m_T_RelaxingBegin,key2, -20);
+                }
         }
     }
-     ui->customPlot->replot();
+
+    ui->customPlot->replot();
 }
 
 void VoltageWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
@@ -178,7 +254,7 @@ void VoltageWindow::screenShot()
     QTime now = QTime::currentTime();
     QString fileName = //=QString("screenshots/")+
                        QString(m_neuron->name())+QString("_Voltage Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
-    fileName.replace(" ", "");
+    fileName.replace(" ", "-");
     ui->customPlot->savePdf(fileName, 0, 0);
 }
 

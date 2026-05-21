@@ -258,19 +258,17 @@ void GradientWindow::displayDataSlot()
         DrawArrow(key2, DvDt, "<R",0.03,700);
         m_T_DeliveringBegin = key2;
         m_V_Peak = Membrane_dVdt_Input;
-//        PlotBrackets(0,0.,key2,DvDt*1.5+500);
-        PlotBrackets(0,0.,key2,-1500);
+        PlotBrackets(0,key2,0.,-1500);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
         DrawArrow(key2, DvDt, "R>",-0.05,1300);
         m_T_RelaxingBegin = key2;
 //        PlotBrackets(1,m_T_DeliveringBegin,key2, m_V_Peak*1.5+500);
-        PlotBrackets(1,m_T_DeliveringBegin,key2, -1500);
+        PlotBrackets(1,key2,m_T_DeliveringBegin, -1500);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
         DrawArrow(key2, DvDt, "E",-0.05,18);
-//        PlotBrackets(2,m_T_RelaxingBegin,key2, m_V_Peak+20);
-        PlotBrackets(2,m_T_RelaxingBegin,key2, -1500);
+//        PlotBrackets(2,key2,m_T_RelaxingBegin, -1500);
     }
 
     if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
@@ -278,7 +276,7 @@ void GradientWindow::displayDataSlot()
         if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
         {   // We are at the point of maximum polarization
             if(!m_HaveAlreadyP){DrawArrow(key2, DvDt, "P",+0.04,1400); m_HaveAlreadyP = true;}
-         }
+        }
     }
 
     if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
@@ -287,8 +285,7 @@ void GradientWindow::displayDataSlot()
         {   // We are at the point of maximum hyperpolarization
             if(!m_HaveAlreadyH){
                 DrawArrow(key2, Membrane_dVdt_Input, "H",0,1000); m_HaveAlreadyH = true;
- //               PlotBrackets(2,m_T_RelaxingBegin,key2, 2000);//Membrane_dVdt_Input+3000);
-                PlotBrackets(2,m_T_RelaxingBegin,key2, -1200);//Membrane_dVdt_Input+3000);
+                PlotBrackets(2,key2,m_T_RelaxingBegin, -1500);//Membrane_dVdt_Input+3000);
             }
         }
     }
@@ -303,8 +300,9 @@ GradientWindow::~GradientWindow()
  void GradientWindow::screenShot()
 {
      QTime now = QTime::currentTime();
-     QString fileName = //QString("./screenshots/")+
-         QString(m_neuron->name())+QString("_Gradients Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
+    QDate today = QDate::currentDate();
+    QString fileName = //QString("screenshots/")+
+        QString(m_neuron->name())+QString("_Gradients Plot_"+today.toString("yy.MM.dd") + QString("_") + now.toString("hh:mm:ss"))+QString(".pdf");
      fileName.replace(" ", "");
      ui->customPlot->savePdf(fileName, 0, 0);
 }

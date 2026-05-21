@@ -109,8 +109,8 @@ void VoltageWindow::PlotBrackets(int32_t key, double coord1, double coord2, doub
     {
     // add the bracket for the "Computing" phase:
     QCPItemBracket *computingBracket = new QCPItemBracket(ui->customPlot);
-    computingBracket->left->setCoords(coord2, y+10);
-    computingBracket->right->setCoords(coord1, y+10);
+    computingBracket->left->setCoords(coord2, y);
+    computingBracket->right->setCoords(coord1, y);
     computingBracket->setLength(13);
 
     // add the text label at the top:
@@ -136,6 +136,8 @@ void VoltageWindow::PlotBrackets(int32_t key, double coord1, double coord2, doub
     deliveringText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
     deliveringText->setText("Delivering");
     deliveringText->setFont(QFont(font().family(), 10));
+
+    m_FirstRelax = false; //?? temp
     } break;
     case 2:
     {
@@ -189,7 +191,7 @@ void VoltageWindow::displayDataSlot()
     if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
         DrawArrow(key2, Volt2, "<R",+0.068,18);
         m_T_DeliveringBegin = key2;
-        PlotBrackets(0,0.,key2,-40);
+        PlotBrackets(0,0.,key2,-20);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
         DrawArrow(key2, Volt2, "R>",-0.05,18);
@@ -198,7 +200,7 @@ void VoltageWindow::displayDataSlot()
     }
     if ( m_neuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
         DrawArrow(key2, Volt2, "E",-0.05,18);
-        PlotBrackets(2,m_T_RelaxingBegin,key2, m_V_Peak+40);
+ //       PlotBrackets(2,m_T_RelaxingBegin,key2, m_V_Peak+40);
     }
 
     if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
@@ -252,8 +254,9 @@ VoltageWindow::~VoltageWindow()
 void VoltageWindow::screenShot()
 {
     QTime now = QTime::currentTime();
-    QString fileName = //=QString("screenshots/")+
-                       QString(m_neuron->name())+QString("_Voltage Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
+    QDate today = QDate::currentDate();
+    QString fileName = //QString("screenshots/")+
+        QString(m_neuron->name())+QString("_Voltage Plot_"+today.toString("yy.MM.dd") + QString("_") + now.toString("hh:mm:ss"))+QString(".pdf");
     fileName.replace(" ", "-");
     ui->customPlot->savePdf(fileName, 0, 0);
 }

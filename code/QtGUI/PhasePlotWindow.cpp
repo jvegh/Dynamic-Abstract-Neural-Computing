@@ -36,7 +36,7 @@ PhasePlotWindow::PhasePlotWindow(ScQtSimulator *Simulator,  NeuronPhysical *Neur
   PhasePlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
   PhasePlot->setPen(QPen(Qt::blue));
   PhasePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
- // PhasePlot->setName("AP phase plot");
+  PhasePlot->setName("AP phase plot");
   PhasePlot->setLineStyle(QCPCurve::lsLine);
   PhasePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
   // Add an ellipse
@@ -190,7 +190,7 @@ void PhasePlotWindow::displayDataSlot()
         }
         if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
             DrawArrow( DvDt, Volt2, "R>",1100,45);
-            PlotBracketsV(1,DvDt,m_V_Peak, Volt2);
+            PlotBracketsV(1,DvDt, m_V_Peak, Volt2);
             m_V_Peak = Volt2;
         }
 
@@ -212,10 +212,11 @@ void PhasePlotWindow::displayDataSlot()
                 if(!m_HaveAlreadyH)
                 {
                     DrawArrow(DvDt, Volt2, "H",-0,50); m_HaveAlreadyH = true;
-                    PlotBracketsV(2,DvDt,m_V_Peak, Volt2);
+                    PlotBracketsV(2,DvDt, Volt2,m_V_Peak);
                 }
             }
         }
+
     };
 
     PhasePlot->data()->set(dataPhasePlot, true);
@@ -258,7 +259,7 @@ void PhasePlotWindow::PlotBracketsV(int32_t key, double x, double coord1, double
         // add the text label at the top:
         QCPItemText *computingText = new QCPItemText(ui->customPlot);
         computingText->position->setParentAnchor(computingBracket->center);
-        computingText->position->setCoords(0+15, 0); // move 10 pixels to the top from bracket center anchor
+        computingText->position->setCoords(0+20, 0); // move 10 pixels to the top from bracket center anchor
         computingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         computingText->setText("Computing");
         computingText->setFont(QFont(font().family(), 10));
@@ -290,7 +291,7 @@ void PhasePlotWindow::PlotBracketsV(int32_t key, double x, double coord1, double
         // add the text label at the top:
         QCPItemText *relaxingText = new QCPItemText(ui->customPlot);
         relaxingText->position->setParentAnchor(relaxingBracket->center);
-        relaxingText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+        relaxingText->position->setCoords(0, 30); // move 10 pixels to the top from bracket center anchor
         relaxingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         relaxingText->setText("Relaxing");
         relaxingText->setFont(QFont(font().family(), 10));
@@ -322,8 +323,9 @@ void PhasePlotWindow::DisplayMode_Set(bool M)
 void PhasePlotWindow::screenShot()
 {
       QTime now = QTime::currentTime();
+    QDate today = QDate::currentDate();
     QString fileName = //QString("screenshots/")+
-      QString(m_neuron->name())+QString("_Phase Plot_"+now.toString("hh:mm:ss"))+QString(".pdf");
+      QString(m_neuron->name())+QString("_Phase Plot_"+today.toString("yy.MM.dd") + QString("_") + now.toString("hh:mm:ss"))+QString(".pdf");
   fileName.replace(" ", "");
   ui->customPlot->savePdf(fileName, 0, 0);
 }

@@ -1,0 +1,173 @@
+% This is the Introduction to the Hodgkin-Huxley neuron model V2.0 book
+
+\chapter{Introduction\label{ch:Introduction}}
+
+
+
+
+%\paragraph*{Understanding the dynamic brain}
+The \textbf{\textit{dynamic}} operation of individual neurons, their connections, higher-level organizations, connections,
+the brain with its information processing capability, and finally, the mind with its conscience and behavior,
+are still among the big mysteries of science: \textit{at which point
+\hyperlink{LivingMatter}
+{the non-living matter becomes a living one}}, \textit{at which point \hyperlink{CognitiveMatter}{the living matter becomes intelligent}} and conscious; whether and \hyperlink{PhysicalPictureNeuron}{how science can handle} all this stuff. 
+We really need a \hyperlink{NewUnderstanding}
+{new understanding} that we provide here.
+%
+The hype in the newly launched projects is excessive and seems to lose the hope 
+to build brain research on a firm science base.
+For example, the newly (at the end of 2025) launched “\href{https://brainminds.jp/en}{Brain/MINDS 2.0}” program in Japan was launched 
+%"with the goal of developing a marmoset model for neuroscience",
+using only mathematical models, \textit{without targeting the understanding of the underlying physical processes}.
+% The case is much similar 
+%to the 'Theory of Everything' in physics, which is developed since science exists and is a never-ending project. Likely, the length of the time needed for neuroscience will not be much shorter, although the project period is limited to years.
+In neuron models, 'dynamics' refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example~\cite{NeuralDynamicsGertsner:2014}. We use a real dynamics,
+based on physics, in the sense as Newton introduced his laws of motion to describe
+response of neurons.
+\index{laws of motion}
+
+
+
+%Hodgkin and Huxley's classic (V1.0) "model", which fundamentally changed our ideas about the physiology of neurons and which has served as the basis for describing the functioning of neurons for several decades, can hardly be overestimated; it is truly the crown jewel of neuroscience. However, its authors, quite realistically, assessed that the physical picture behind the observations they mathematically formulated could be partially or completely incorrect. Already in their original communication, they drew attention to the fact that their equations did not fully describe their observations, that - due to the lack of certain knowledge - they were forced to formulate ad hoc assumptions and that the formalism of the equations could not describe only one physical process. Some of the assumptions proved to be a brilliant vision, but in quite a few cases it turned out that they did not always put the right physical background behind their observations, which were generally correctly described mathematically, and that their model designed for mechanical computers had obvious limitations. Already at the time of the introduction of the model, doubts arose as to whether the purely electrical model could fully describe the observations known up to that time, and later, as the accuracy, directionality and detail of the observations increased, it became necessary to introduce more and more ad hoc assumptions in order to maintain the consistency of the model assuming purely electrical operation.
+%
+
+
+%A könyv több rétegű. A mindenki (azaz elsősorban a megfelelő
+%fiziológiai háttérrel rendelkező olvasó)
+%által megérthetőnek szánt részek mellett a vonatkozó más jellegű háttérrel rendelkezők számára találhatók 
+%a szükséges \textbf{matematikai~\ref{intro:MyMathematicsPanel}} és
+%\textbf{fizikai~\ref{intro:MyPhysicsPanel}} ismereteket tartalmazó panelek is, amelyeknek megértéséhez legalább a megfelelő szintű BSc ismeretek, de néha ezt túllépő tudás, esetenként 
+%a gondolatok szokatlanságával elmélyülésre késztető 
+%ismeretek és magyarázatok találhatók.
+%A jelenségkör bonyolultsága, sok közelítést tesz szükségessé,
+%de a megfelelő közelítések és absztrakciók felhasználásával 
+%numerikus eredményeket (néha csupán észszerű becsléseket)
+%tartalmaznak a \textbf{numerikus \ref{num:MyNumericsPanel}} panelek.
+%Törekszünk arra, hogy az anyag ezek nélkül is érthető legyen,
+%ezekkel együtt pedig a megfelelő szakképzettségű olvasó
+%továbbgondolásra ösztönző tudást meríthessen.
+The book has several layers. In addition to the sections intended to be understandable by everyone (i.e. primarily readers with a suitable physiological and neuroscience background), there are also panels for those with other relevant backgrounds containing the necessary \textbf{mathematical~\ref{intro:MyMathematicsPanel}} and \textbf{physical~\ref{intro:MyPhysicsPanel}} knowledge, which require at least the appropriate level of BSc knowledge to understand, but sometimes knowledge that goes beyond this, and sometimes
+knowledge and explanations that make you delve deeper into the unusualness of the ideas. The complexity of the phenomenon requires many approximations, but by using the appropriate approximations and abstractions, the \textbf{numeric \ref{num:MyNumericsPanel}} panels contain numerical results (sometimes only reasonable estimates). We strive to make the material understandable without them, and with them, the reader with the appropriate qualifications
+will be able to gain knowledge that encourages further thought.
+
+
+\physicspanel{intro:MyPhysicsPanel}
+{
+%A tudományok specializálódása során a fizika az élettelen természet 
+%leírására szakosodott és (az észszerű leírhatóság érdekében)
+%korlátozott érvényességű szakterületeket hozott létre.
+%Az élő természet tanulmányozása során már természetes módon
+%használták eredményeit, módszereit és eszközeit.
+%Ennek során abból a helyes nézőpontból indultak ki, hogy
+%a természetben található objektumok és kölcsönhatásaik leírására
+%ugyanazoknak a törvényeknek kell vonatkozni. Nem vették azonban figyelembe, hogy a természet bonyolultsága miatt,
+%a leírhatóság érdekében, közelítéseket és elhanyagolásokat kell tennünk. A diszciplináris törvények egy-egy jelenségköre vonatkozóan
+%absztrakt fogalmakat alkotnak és a törvények ezeket az absztrakt
+%fogalmakat írják le pontosan, nem pedig azokat a jelenségeket,
+%amelyek a természetben előfordulnak. Az esetek jelentős részében
+%ezek a törvények teljes egészükben használhatók, 
+%az élő és élettelen környezet körülményeinek jelentős eltérései miatt
+%sokszor csak jelentős módosítással vagy akár teljes újragondolással alkalmazhatók; lásd Erwin Schrödinger lényeglátó kérdéseinek értelmezését
+%\index{Schrödinger, Erwin}
+%a \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}} 
+During the specialization of sciences, physics specialized in the description of inanimate nature and (in the interest of reasonable description) created fields of limited validity. In the study of living nature, its results, methods and tools were already used in a natural way. In doing so, they started from the correct point of view that the description of objects in nature and their interactions should be governed by the same laws. However, they did not take into account that due to the complexity of nature, approximations and neglects must be made in order to be able to describe them. Disciplinary laws create abstract concepts for a certain range of phenomena, and the laws describe these abstract concepts precisely, not the phenomena that occur in nature. In most cases
+these laws can be used in their entirety,
+due to the significant differences in the conditions of the living and non-living environment
+often they can only be used with significant modification or even complete rethinking; see the interpretation of Erwin Schrödinger's insightful questions
+\index{Schrödinger, Erwin}
+in \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}}
+}
+
+\mathematicspanel{intro:MyMathematicsPanel}
+{This is mathematics
+}
+
+\numericspanel{intro:MyNumericsPanel}
+{This is numeric
+}
+
+\quotationbox
+{"The Human Brain Project should lay the technical foundation for a \textbf{new model} of ICT-based brain research, driving \textit{integration between data and knowledge from different disciplines}, and catalysing a community effort to achieve a \textbf{new understanding of the brain}%, new treatments for brain disease 
+\dots and \textit{new brain-like computing technologies}."\\
+{the \href{https://www.humanbrainproject.eu/en/}{Human Brain Project},  summarised its goal @2012}}
+
+
+
+\paragraph*{Understanding the dynamic brain}
+The \textbf{\textit{dynamic}} operation of individual neurons, their connections, higher-level organizations, connections,
+the brain with its information processing capability, and finally, the mind with its conscience and behavior,
+are still among the big mysteries of science: \textit{at which point
+\hyperlink{LivingMatter}
+{the non-living matter becomes a living one}}, \textit{at which point \hyperlink{CognitiveMatter}{the living matter becomes intelligent}} and conscious; whether and \hyperlink{PhysicalPictureNeuron}{how science can handle} all this stuff. 
+We really need a \hyperlink{NewUnderstanding}
+{new understanding} that we provide here.
+%
+The hype in the newly launched projects is excessive and seems to lose the hope 
+to build brain research on a firm science base.
+For example, the newly (at the end of 2025) launched “\href{https://brainminds.jp/en}{Brain/MINDS 2.0}” program in Japan was launched 
+%"with the goal of developing a marmoset model for neuroscience",
+using only mathematical models, \textit{without targeting the understanding of the underlying physical processes}.
+% The case is much similar 
+%to the 'Theory of Everything' in physics, which is developed since science exists and is a never-ending project. Likely, the length of the time needed for neuroscience will not be much shorter, although the project period is limited to years.
+In neuron models, 'dynamics' refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example~\cite{NeuralDynamicsGertsner:2014}. We use a real dynamics,
+based on physics, in the sense as Newton introduced his laws of motion to describe
+response of neurons.
+\index{laws of motion}
+
+
+\paragraph*{Abstract discussion}
+
+Nature uses an infinite variety of implementing neurons. 
+%Our goal is not to discuss all
+%infinitely complex molecular, biochemical and physiological details
+%of neuronal operation; it is not necessary, since 
+In the \gls{CNS} 
+they can cooperate
+with each other, 'despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity,
+\textit{the nervous systems adopt \textbf{a number of
+ basic principles}}
+for all neurons and synapses',
+\cite{JohnstonWuNeurophysiology:1995}
+independently from the infinitely complex molecular, biochemical and physiological details.
+\index{Johnston Daniel}
+\index{Wu Samuel Miao-sin }
+We \textit{will base our holistic discussion on those general basic principles 
+and create an 
+\hyperlink{NeuronPhysical}
+{'abstract physical neuron'}; a hypothetical element, which functions
+essentially like a neuron},
+skipping the 'implementation details' nature uses.
+We essentially follow von Neumann's method in describing the foundations of
+computing science~\cite{EDVACreport1945}: "we will base our considerations on a hypothetical element, which functions essentially like a neuron".
+We need \hyperlink{Abstractions}
+{different abstractions and approximations} 
+(furthermore, \hyperlink{NonOrdinaryLaws}{'non-ordinary' laws} of science) for describing biological processes.
+\index{ordinary laws}
+However, an abstraction is usable
+in practice only when paired with a generalization: the more abstract the assumption, the more general and widely applicable the concept or conclusion.
+\textit{By abstractions, we can reduce the unbelievably detailed world into manageable pieces, and we can learn anything general.}
+We must show which approximations are oversimplifications and which phenomena are misunderstood; measured, or interpreted in a wrong approach.
+% Abstraction is, in fact, everywhere, including inside each of us. It is a core element of science and cognition. 
+
+
+
+\paragraph*{Zigzag reading}
+For the same reasons, we follow von Neumann's method when he described principles of technical computing~\cite{EDVACreport1945}. "The ideal procedure would be, to take up the specific parts in some definite order, to treat
+each one of them exhaustively, and go on to the next one only after the predecessor is completely
+disposed of. However, this seems hardly feasible. The desirable features of the various parts, and
+the decisions based on them, emerge only after a somewhat \hypertarget{zigzagdiscussion}
+{zigzagging discussion}. It is, therefore,
+necessary to take up one part first, pass after an incomplete discussion to a second part, return after
+an equally incomplete discussion of the latter with the combined results to the first part, extend
+the discussion of the first part without yet concluding it, then possibly go on to a third part, etc.
+Furthermore, these discussions of specific parts will be mixed with discussions of general principles, of the elements to be used, etc."
+\index{von Neumann!'zigzag' way}
+For example, basic concepts such as the membrane potential and its regulation in resting and transiens states, belong to chapter Physics,
+and their detailed scientific, physics-based, discussion is given there, 
+but their corresponding aspects must be discussed in chapters 'Abstract neuron' and less abstract 'Physiology' as well.
+The contents are inherently intertwinned, and the form must follow the contents.
+We make this zigzag reading more accessible by using hyperlinks and cross-references throughout the document. 
+
+
+
+

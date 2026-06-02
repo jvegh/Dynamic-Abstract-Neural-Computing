@@ -1,0 +1,115 @@
+\documentclass{book}
+\def\MyVersion{0.0.1}
+\tolerance 500%
+\renewcommand{\topfraction}{.8}
+\renewcommand{\floatpagefraction}{.8}
+\emergencystretch 1em\relax
+\hfuzz .2pt\relax
+
+
+\usepackage{graphicx}
+\usepackage{latexml}
+\iflatexml
+\else
+\usepackage{minitoc}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\fi
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage[makeroom]{cancel}
+\usepackage{amsmath}
+
+
+\input{src/Macros}
+\setcounter{secnumdepth}{2}
+\newcommand*{\doi}[1]{\href{http://dx.doi.org/#1}{doi: #1}}
+
+\usepackage{makeidx}
+\makeindex
+\usepackage{glossaries}
+\makeglossaries
+\usepackage{hyperref}
+
+\input{src/Glossary}
+\input{src/TitlePage}
+
+
+%============================================================
+%============================================================
+\begin{document}%\label{top}
+
+\frontmatter
+    \input{src/Heading}
+\mainmatter
+\tableofcontents
+	\input{src/Foreword}
+	\input{src/Introduction}
+	\input{src/Modeling}
+	\input{src/Physics}
+%	\input{src/Mathematics}
+%
+	\input{src/VersionHistory}	
+
+%\pagebreak
+%\backmatter
+%\vfill
+%\pagebreak
+%\iflatexml
+%\chapter*{ListOfTables\label{Ch:ListOfTables}}
+%\else
+%\fi
+%\addcontentsline{toc}{chapter}{List of tables} 
+%
+%\listoftables
+%\vfill
+%
+%\pagebreak
+%\iflatexml
+%\chapter*{ListOfFigures\label{Ch:ListOfFigures}}
+%\else
+%\fi
+%\addcontentsline{toc}{chapter}{List of figures} 
+%\listoffigures
+%\vfill
+%\pagebreak
+%
+%\iflatexml
+%\chapter*{Index\label{Ch:Index}}\label{index}\label{Index}
+%
+%\else
+%\fi
+%\addcontentsline{toc}{chapter}{Index} 
+%\printindex
+%\vfill
+%
+%\pagebreak
+%%\iflatexml
+%\chapter*{Glossary\label{Ch:Glossary}}
+%%\else
+%%\fi
+%\addcontentsline{toc}{chapter}{Glossary} 
+%%\printglossary[type=\acronymtype]
+% \printglossaries
+% 
+% \vfill
+%
+\pagebreak
+%\addcontentsline{toc}{chapter}{Bibliography} 
+\bibliographystyle{elsarticle-num}
+
+%\bibliographystyle{spphys}
+
+%\label{Bibliography}
+%\iflatexml
+%   \input{manual.bbl}
+%\else
+%\chapter*{Bibliography\label{ch:bibliography}}
+%\fi
+ \bibliography{
+	../../../LaTeX/CommonBibliography%
+	,../../..//LaTeX/CommonPrivateBibliography%
+	,../../../LaTeX/CommonNeuronalBibliography%
+	,../../../LaTeX/CommonAIBibliography%
+}
+\end{document}

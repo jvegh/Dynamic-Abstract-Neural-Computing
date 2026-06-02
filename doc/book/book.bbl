@@ -1,0 +1,54 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Schrodinger:1992}
+E.~Schr\"odinger, Is life based on the laws of physics?, Cambridge University
+  Press, Canto, 1992, pp. 76--85.
+
+\bibitem{PrinciplesNeuralScience:2013}
+E.~R. Kandel, J.~H. Schwartz, T.~M. Jessell, S.~A. Siegelbaum, A.~J. Hudspeth,
+  Principles of Neural Science, 5th Edition, The McGraw-Hill Medical, New York
+  Chicago etc., 2013.
+
+\bibitem{NeuralDynamicsGertsner:2014}
+W.~Gerstner, W.~M. Kistler, R.~Naud, L.~Paninski, Neuronal Dynamics: From
+  single neurons to networks and models of cognition and beyond, Cambridge
+  University Press, Cambridge, UK, 2014.
+
+\bibitem{JohnstonWuNeurophysiology:1995}
+D.~Johnston, S.~M.-S. Wu, Foundations of Cellular Neurophysiology,
+  Massachusetts Institute of Technology, Cambridge, Massachusetts and London,
+  England, 1995.
+
+\bibitem{EDVACreport1945}
+J.~von Neumann, {First draft of a report on the EDVAC}, IEEE Annals of the
+  History of Computing 15~(4) (1993) 27--75.
+\newblock \href {https://doi.org/10.1109/85.238389}
+  {\path{doi:10.1109/85.238389}}.
+
+\bibitem{VollmerLimitsOfBiology:1995}
+G.~Vollmer,
+  \href{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}{The
+  limits of biology}, in: D.~Prawitz, B.~Skyrms, D.~Westerståhl (Eds.), Logic,
+  Methodology and Philosophy of Science IX, Vol. 134 of Studies in Logic and
+  the Foundations of Mathematics, Elsevier, Amsterdam, 1995, pp. 659--676.
+\newblock \href {https://doi.org/https://doi.org/10.1016/S0049-237X(06)80068-6}
+  {\path{doi:https://doi.org/10.1016/S0049-237X(06)80068-6}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}
+
+\bibitem{MechanisticModelHodgkinHuxleyCraver:2006}
+C.~F. Craver, When mechanistic models explain, Synthese 153~(3) (2006)
+  355--376.
+\newblock \href {https://doi.org/10.1007/s11229-006-9097-x}
+  {\path{doi:10.1007/s11229-006-9097-x}}.
+
+\bibitem{FeynmanThinking:1980}
+R.~P. Feynman, Principles of scientific thinking,
+  \url{https://blog.hptbydts.com/richard-feynmans-principles-of-scientific-thinking}
+  (1980).
+
+\end{thebibliography}

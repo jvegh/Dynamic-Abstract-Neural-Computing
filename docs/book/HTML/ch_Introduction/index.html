@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Chapter 1 Introduction ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Sun May 31 23:31:48 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on May 31, 2026.-->
+
+<link rel="shortcut icon" href="../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../latexmldoc.css" type="text/css">
+<script src="../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="../ch_Foreword/index.html" title="Foreword ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="../ch_Physics/index.html" title="Chapter 2 Physics ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../ch_Foreword/index.html" title="Foreword ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../ch_Physics/index.html" title="Chapter 2 Physics ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../ch_Version/index.html" title="Version history ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="bibliography" href="../bib.html" title="Bibliography ‣ The Hodgkin-Huxley neuron model V2.0">
+<meta name="keywords" lang="en" content="Johnston Daniel, Schrödinger, Erwin, Wu Samuel Miao-sin, laws of motion, ordinary laws, von Neumann, ’zigzag’ way">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">The Hodgkin-Huxley neuron model V2.0
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.0.1</em>
+<br class="ltx_break"></span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_Foreword/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></span></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_Physics/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Physics</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_Version/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="../index.html" title="" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">
+The Hodgkin-Huxley neuron model V2.0
+</span></a><a href="../ch_Foreword/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">Foreword</span></a><a href="../ch_Physics/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Physics</span></span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 1 </span>Introduction</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_font_bold ltx_font_italic">dynamic</span> operation of individual neurons, their connections, higher-level organizations, connections,
+the brain with its information processing capability, and finally, the mind with its conscience and behavior,
+are still among the big mysteries of science: <span class="ltx_text ltx_font_italic">at which point
+<span class="ltx_ref ltx_ref_self">the non-living matter becomes a living one</span></span>, <span class="ltx_text ltx_font_italic">at which point <span class="ltx_ref ltx_ref_self">the living matter becomes intelligent</span></span> and conscious; whether and <span class="ltx_ref ltx_ref_self">how science can handle</span> all this stuff.
+We really need a <span class="ltx_ref ltx_ref_self">new understanding</span> that we provide here.
+The hype in the newly launched projects is excessive and seems to lose the hope
+to build brain research on a firm science base.
+For example, the newly (at the end of 2025) launched “<a href="https://brainminds.jp/en" title="" class="ltx_ref ltx_href">Brain/MINDS 2.0</a>” program in Japan was launched
+using only mathematical models, <span class="ltx_text ltx_font_italic">without targeting the understanding of the underlying physical processes</span>.
+In neuron models, ’dynamics’ refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example <cite class="ltx_cite ltx_citemacro_cite">[<a href="../bib.html#bib3" title="" class="ltx_ref">3</a>]</cite>. We use a real dynamics,
+based on physics, in the sense as Newton introduced his laws of motion to describe
+response of neurons.
+</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">The book has several layers. In addition to the sections intended to be understandable by everyone (i.e. primarily readers with a suitable physiological and neuroscience background), there are also panels for those with other relevant backgrounds containing the necessary <span class="ltx_text ltx_font_bold">mathematical <span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_tag">1</span></span></span> and <span class="ltx_text ltx_font_bold">physical <span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_tag">1</span></span></span> knowledge, which require at least the appropriate level of BSc knowledge to understand, but sometimes knowledge that goes beyond this, and sometimes
+knowledge and explanations that make you delve deeper into the unusualness of the ideas. The complexity of the phenomenon requires many approximations, but by using the appropriate approximations and abstractions, the <span class="ltx_text ltx_font_bold">numeric <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:num:MyNumericsPanel</span></span> panels contain numerical results (sometimes only reasonable estimates). We strive to make the material understandable without them, and with them, the reader with the appropriate qualifications
+will be able to gain knowledge that encourages further thought.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="color:#00FF00;border-color: #4DFF4D;">
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:390.3pt;background-color:#FFFFE6;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Physics panel 1.1
+<br class="ltx_break"></span>
+
+During the specialization of sciences, physics specialized in the description of inanimate nature and (in the interest of reasonable description) created fields of limited validity. In the study of living nature, its results, methods and tools were already used in a natural way. In doing so, they started from the correct point of view that the description of objects in nature and their interactions should be governed by the same laws. However, they did not take into account that due to the complexity of nature, approximations and neglects must be made in order to be able to describe them. Disciplinary laws create abstract concepts for a certain range of phenomena, and the laws describe these abstract concepts precisely, not the phenomena that occur in nature. In most cases
+these laws can be used in their entirety,
+due to the significant differences in the conditions of the living and non-living environment
+often they can only be used with significant modification or even complete rethinking; see the interpretation of Erwin Schrödinger’s insightful questions
+
+in <span class="ltx_text ltx_font_bold">Physics Panel <a href="../ch_Physics/Physics-Schr%C3%B6dingerOnLife.html" title="2.1 Schrödinger on life ‣ Chapter 2 Physics ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a></span></span>
+</span><span class="ltx_text" style="background-color:#FFFFE6;">
+</span></span><span class="ltx_text" style="color:#00FF00;">
+<span class="ltx_text" style="color:#000000;"></span></span></p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="color:#BF8040;border-color: #86592D;">
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:390.3pt;background-color:#FFF2E6;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Mathematics panel 1.1
+<br class="ltx_break"></span>
+This is mathematics</span>
+</span><span class="ltx_text" style="background-color:#FFF2E6;">
+</span></span><span class="ltx_text" style="color:#BF8040;">
+<span class="ltx_text" style="color:#000000;"></span></span></p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="color:#0000FF;border-color: #4D4DFF;">
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:390.3pt;background-color:#E6FFE6;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Numerics panel 1.1
+<br class="ltx_break"></span>
+This is numeric</span>
+</span><span class="ltx_text" style="background-color:#E6FFE6;">
+</span></span><span class="ltx_text" style="color:#0000FF;">
+<span class="ltx_text" style="color:#000000;"></span></span></p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="color:#800080;border-color: #E6CCE6;">
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:390.3pt;background-color:#FFFFE6;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Quotation:
+<br class="ltx_break"></span>
+”The Human Brain Project should lay the technical foundation for a <span class="ltx_text ltx_font_bold">new model</span> of ICT-based brain research, driving <span class="ltx_text ltx_font_italic">integration between data and knowledge from different disciplines</span>, and catalysing a community effort to achieve a <span class="ltx_text ltx_font_bold">new understanding of the brain</span>…and <span class="ltx_text ltx_font_italic">new brain-like computing technologies</span>.”</span>
+<span class="ltx_p">the <a href="https://www.humanbrainproject.eu/en/" title="" class="ltx_ref ltx_href">Human Brain Project</a>, summarised its goal @2012</span>
+</span><span class="ltx_text" style="background-color:#FFFFE6;">
+</span></span><span class="ltx_text" style="color:#800080;">
+<span class="ltx_text" style="color:#000000;"></span></span></p>
+</div>
+<section id="S0.SS0.SSS0.Px1" class="ltx_paragraph">
+<h2 class="ltx_title ltx_title_paragraph" style="color:#000000;">Understanding the dynamic brain</h2>
+
+<div id="S0.SS0.SSS0.Px1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The </span><span class="ltx_text ltx_font_bold ltx_font_italic" style="color:#000000;">dynamic</span><span class="ltx_text" style="color:#000000;"> operation of individual neurons, their connections, higher-level organizations, connections,
+the brain with its information processing capability, and finally, the mind with its conscience and behavior,
+are still among the big mysteries of science: </span><span class="ltx_text ltx_font_italic" style="color:#000000;">at which point
+<span class="ltx_ref ltx_ref_self">the non-living matter becomes a living one</span></span><span class="ltx_text" style="color:#000000;">, </span><span class="ltx_text ltx_font_italic" style="color:#000000;">at which point <span class="ltx_ref ltx_ref_self">the living matter becomes intelligent</span></span><span class="ltx_text" style="color:#000000;"> and conscious; whether and </span><span class="ltx_ref ltx_ref_self" style="color:#000000;">how science can handle</span><span class="ltx_text" style="color:#000000;"> all this stuff.
+We really need a </span><span class="ltx_ref ltx_ref_self" style="color:#000000;">new understanding</span><span class="ltx_text" style="color:#000000;"> that we provide here.
+The hype in the newly launched projects is excessive and seems to lose the hope
+to build brain research on a firm science base.
+For example, the newly (at the end of 2025) launched “</span><a href="https://brainminds.jp/en" title="" class="ltx_ref ltx_href" style="color:#000000;">Brain/MINDS 2.0</a><span class="ltx_text" style="color:#000000;">” program in Japan was launched
+using only mathematical models, </span><span class="ltx_text ltx_font_italic" style="color:#000000;">without targeting the understanding of the underlying physical processes</span><span class="ltx_text" style="color:#000000;">.
+In neuron models, ’dynamics’ refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib3" title="" class="ltx_ref">3</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">. We use a real dynamics,
+based on physics, in the sense as Newton introduced his laws of motion to describe
+response of neurons.
+</span><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+</section>
+<section id="S0.SS0.SSS0.Px2" class="ltx_paragraph">
+<h2 class="ltx_title ltx_title_paragraph" style="color:#000000;">Abstract discussion</h2>
+
+<div id="S0.SS0.SSS0.Px2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Nature uses an infinite variety of implementing neurons.
+In the </span><span title="" class="ltx_glossaryref" style="color:#000000;">Central Nervous System (CNS)</span><span class="ltx_text" style="color:#000000;"> they can cooperate
+with each other, ’despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity,
+</span><span class="ltx_text ltx_font_italic" style="color:#000000;">the nervous systems adopt <span class="ltx_text ltx_font_bold">a number of
+basic principles</span></span><span class="ltx_text" style="color:#000000;">
+for all neurons and synapses’,
+</span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib4" title="" class="ltx_ref">4</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">
+independently from the infinitely complex molecular, biochemical and physiological details.
+</span><span class="ltx_text" style="color:#000000;">
+</span><span class="ltx_text" style="color:#000000;">
+We </span><span class="ltx_text ltx_font_italic" style="color:#000000;">will base our holistic discussion on those general basic principles
+and create an
+<span class="ltx_ref ltx_ref_self">’abstract physical neuron’</span>; a hypothetical element, which functions
+essentially like a neuron</span><span class="ltx_text" style="color:#000000;">,
+skipping the ’implementation details’ nature uses.
+We essentially follow von Neumann’s method in describing the foundations of
+computing science </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib5" title="" class="ltx_ref">5</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">: ”we will base our considerations on a hypothetical element, which functions essentially like a neuron”.
+We need </span><span class="ltx_ref ltx_ref_self" style="color:#000000;">different abstractions and approximations</span><span class="ltx_text" style="color:#000000;">
+(furthermore, </span><span class="ltx_ref ltx_ref_self" style="color:#000000;">’non-ordinary’ laws</span><span class="ltx_text" style="color:#000000;"> of science) for describing biological processes.
+</span><span class="ltx_text" style="color:#000000;">
+However, an abstraction is usable
+in practice only when paired with a generalization: the more abstract the assumption, the more general and widely applicable the concept or conclusion.
+</span><span class="ltx_text ltx_font_italic" style="color:#000000;">By abstractions, we can reduce the unbelievably detailed world into manageable pieces, and we can learn anything general.</span><span class="ltx_text" style="color:#000000;">
+We must show which approximations are oversimplifications and which phenomena are misunderstood; measured, or interpreted in a wrong approach.</span></p>
+</div>
+</section>
+<section id="S0.SS0.SSS0.Px3" class="ltx_paragraph">
+<h2 class="ltx_title ltx_title_paragraph" style="color:#000000;">Zigzag reading</h2>
+
+<div id="S0.SS0.SSS0.Px3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">For the same reasons, we follow von Neumann’s method when he described principles of technical computing </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib5" title="" class="ltx_ref">5</a><span class="ltx_text" style="color:#000000;">]</span></cite><a name="zigzagdiscussion" id="zigzagdiscussion" class="ltx_anchor"><span class="ltx_text" style="color:#000000;">. ”The ideal procedure would be, to take up the specific parts in some definite order, to treat
+each one of them exhaustively, and go on to the next one only after the predecessor is completely
+disposed of. However, this seems hardly feasible. The desirable features of the various parts, and
+the decisions based on them, emerge only after a somewhat zigzagging discussion</span></a><span class="ltx_text" style="color:#000000;">. It is, therefore,
+necessary to take up one part first, pass after an incomplete discussion to a second part, return after
+an equally incomplete discussion of the latter with the combined results to the first part, extend
+the discussion of the first part without yet concluding it, then possibly go on to a third part, etc.
+Furthermore, these discussions of specific parts will be mixed with discussions of general principles, of the elements to be used, etc.”
+</span><span class="ltx_text" style="color:#000000;">
+For example, basic concepts such as the membrane potential and its regulation in resting and transiens states, belong to chapter Physics,
+and their detailed scientific, physics-based, discussion is given there,
+but their corresponding aspects must be discussed in chapters ’Abstract neuron’ and less abstract ’Physiology’ as well.
+The contents are inherently intertwinned, and the form must follow the contents.
+We make this zigzag reading more accessible by using hyperlinks and cross-references throughout the document.</span></p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="../ch_Foreword/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">Foreword</span></a><a href="../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="../ch_Physics/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Physics</span></span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun May 31 23:31:48 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

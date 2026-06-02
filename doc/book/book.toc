@@ -1,0 +1,11 @@
+\contentsline {chapter}{Foreword}{3}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Modeling}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Methods}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Disciplinarity}{9}{subsection.2.1.1}%
+\contentsline {chapter}{\numberline {3}Physics}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Schrödinger on life}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Disciplinarity}{12}{section.3.2}%
+\contentsline {paragraph}{Version 0.2.1 @ 2026.02.23}{15}{section*.10}%
+\contentsline {paragraph}{Version 0.2.0 @ 2026.02.11}{15}{section*.11}%
+\contentsline {paragraph}{Version 0.1.18 @ 2026.02.01}{16}{section*.13}%

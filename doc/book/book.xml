@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?latexml searchpaths="/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/sty,/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc,/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/doc/book"?>
+<?latexml class="book"?>
+<?latexml package="graphicx"?>
+<?latexml package="latexml"?>
+<?latexml package="siunitx"?>
+<?latexml package="xcolor"?>
+<?latexml package="cancel" options="makeroom"?>
+<?latexml package="amsmath"?>
+<!--  %%% This defines numeric panels --><!--  %%% This defines physics panels --><!--  %%% This defines mathematics panels --><?latexml package="makeidx"?>
+<?latexml package="glossaries"?>
+<?latexml package="hyperref"?>
+<?latexml RelaxNGSchema="LaTeXML"?>
+<document xmlns="http://dlmf.nist.gov/LaTeXML">
+  <resource src="LaTeXML.css" type="text/css"/>
+  <resource src="ltx-book.css" type="text/css"/>
+  <title><!--  %“iflatexml -->
+The Hodgkin-Huxley neuron model V2.0
+<!--  %“else 
+     %“vskip 1 cm 
+     %“small–The true physics and physiology behind neuronal operation˝ 
+     %“fi --></title>
+  <creator role="author">
+    <personname>János Végh</personname>
+  </creator>
+  <date role="creation">May 31, 2026</date>
+  <date role="creation"><text fontsize="90%">May 31, 2026</text></date>
+  <keywords name="keywords">dynamic neural modelling, Hodgkin-Huxley model, unified neuron model, neural information, neural computing, physics for biology, time-aware computing</keywords>
+  <glossarydefinition inlist="main" key="AI">
+    <glossaryphrase key="AI" role="description">Artificial Intelligence</glossaryphrase>
+    <glossaryphrase key="AI" role="long">Artificial Intelligence</glossaryphrase>
+    <glossaryphrase key="AI" role="longplural">Artificial Intelligences</glossaryphrase>
+    <glossaryphrase key="AI" role="name">AI</glossaryphrase>
+    <glossaryphrase key="AI" role="short">AI</glossaryphrase>
+    <glossaryphrase key="AI" role="shortplural">AIs</glossaryphrase>
+    <glossaryphrase key="AI" role="sort">AI</glossaryphrase>
+    <glossaryphrase key="AI" role="text">AI</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="AP">
+    <glossaryphrase key="AP" role="description">Action Potential</glossaryphrase>
+    <glossaryphrase key="AP" role="long">Action Potential</glossaryphrase>
+    <glossaryphrase key="AP" role="longplural">Action Potentials</glossaryphrase>
+    <glossaryphrase key="AP" role="name">AP</glossaryphrase>
+    <glossaryphrase key="AP" role="short">AP</glossaryphrase>
+    <glossaryphrase key="AP" role="shortplural">APs</glossaryphrase>
+    <glossaryphrase key="AP" role="sort">AP</glossaryphrase>
+    <glossaryphrase key="AP" role="text">AP</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="AIS">
+    <glossaryphrase key="AIS" role="description">Axon Initial Segment</glossaryphrase>
+    <glossaryphrase key="AIS" role="long">Axon Initial Segment</glossaryphrase>
+    <glossaryphrase key="AIS" role="longplural">Axon Initial Segments</glossaryphrase>
+    <glossaryphrase key="AIS" role="name">AIS</glossaryphrase>
+    <glossaryphrase key="AIS" role="short">AIS</glossaryphrase>
+    <glossaryphrase key="AIS" role="shortplural">AISs</glossaryphrase>
+    <glossaryphrase key="AIS" role="sort">AIS</glossaryphrase>
+    <glossaryphrase key="AIS" role="text">AIS</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="ATP">
+    <glossaryphrase key="ATP" role="description">Adenozine Triphosphate</glossaryphrase>
+    <glossaryphrase key="ATP" role="long">Adenozine Triphosphate</glossaryphrase>
+    <glossaryphrase key="ATP" role="longplural">Adenozine Triphosphates</glossaryphrase>
+    <glossaryphrase key="ATP" role="name">ATP</glossaryphrase>
+    <glossaryphrase key="ATP" role="short">ATP</glossaryphrase>
+    <glossaryphrase key="ATP" role="shortplural">ATPs</glossaryphrase>
+    <glossaryphrase key="ATP" role="sort">ATP</glossaryphrase>
+    <glossaryphrase key="ATP" role="text">ATP</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="BI">
+    <glossaryphrase key="BI" role="description">Brain Initiative</glossaryphrase>
+    <glossaryphrase key="BI" role="long">Brain Initiative</glossaryphrase>
+    <glossaryphrase key="BI" role="longplural">Brain Initiatives</glossaryphrase>
+    <glossaryphrase key="BI" role="name">BI</glossaryphrase>
+    <glossaryphrase key="BI" role="short">BI</glossaryphrase>
+    <glossaryphrase key="BI" role="shortplural">BIs</glossaryphrase>
+    <glossaryphrase key="BI" role="sort">BI</glossaryphrase>
+    <glossaryphrase key="BI" role="text">BI</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="CNS">
+    <glossaryphrase key="CNS" role="description">Central Nervous System</glossaryphrase>
+    <glossaryphrase key="CNS" role="long">Central Nervous System</glossaryphrase>
+    <glossaryphrase key="CNS" role="longplural">Central Nervous Systems</glossaryphrase>
+    <glossaryphrase key="CNS" role="name">CNS</glossaryphrase>
+    <glossaryphrase key="CNS" role="short">CNS</glossaryphrase>
+    <glossaryphrase key="CNS" role="shortplural">CNSs</glossaryphrase>
+    <glossaryphrase key="CNS" role="sort">CNS</glossaryphrase>
+    <glossaryphrase key="CNS" role="text">CNS</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="EM">
+    <glossaryphrase key="EM" role="description">electromagnetic</glossaryphrase>
+    <glossaryphrase key="EM" role="long">electromagnetic</glossaryphrase>
+    <glossaryphrase key="EM" role="longplural">electromagnetics</glossaryphrase>
+    <glossaryphrase key="EM" role="name">EM</glossaryphrase>
+    <glossaryphrase key="EM" role="short">EM</glossaryphrase>
+    <glossaryphrase key="EM" role="shortplural">EMs</glossaryphrase>
+    <glossaryphrase key="EM" role="sort">EM</glossaryphrase>
+    <glossaryphrase key="EM" role="text">EM</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="GHK">
+    <glossaryphrase key="GHK" role="description">Goldman-Hodgkin-Katz</glossaryphrase>
+    <glossaryphrase key="GHK" role="long">Goldman-Hodgkin-Katz</glossaryphrase>
+    <glossaryphrase key="GHK" role="longplural">Goldman-Hodgkin-Katzs</glossaryphrase>
+    <glossaryphrase key="GHK" role="name">GHK</glossaryphrase>
+    <glossaryphrase key="GHK" role="short">GHK</glossaryphrase>
+    <glossaryphrase key="GHK" role="shortplural">GHKs</glossaryphrase>
+    <glossaryphrase key="GHK" role="sort">GHK</glossaryphrase>
+    <glossaryphrase key="GHK" role="text">GHK</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="HBP">
+    <glossaryphrase key="HBP" role="description">Human Brain Project</glossaryphrase>
+    <glossaryphrase key="HBP" role="long">Human Brain Project</glossaryphrase>
+    <glossaryphrase key="HBP" role="longplural">Human Brain Projects</glossaryphrase>
+    <glossaryphrase key="HBP" role="name">HBP</glossaryphrase>
+    <glossaryphrase key="HBP" role="short">HBP</glossaryphrase>
+    <glossaryphrase key="HBP" role="shortplural">HBPs</glossaryphrase>
+    <glossaryphrase key="HBP" role="sort">HBP</glossaryphrase>
+    <glossaryphrase key="HBP" role="text">HBP</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="HH">
+    <glossaryphrase key="HH" role="description">Hodgkin and Huxley</glossaryphrase>
+    <glossaryphrase key="HH" role="long">Hodgkin and Huxley</glossaryphrase>
+    <glossaryphrase key="HH" role="longplural">Hodgkin and Huxleys</glossaryphrase>
+    <glossaryphrase key="HH" role="name">HH</glossaryphrase>
+    <glossaryphrase key="HH" role="short">HH</glossaryphrase>
+    <glossaryphrase key="HH" role="shortplural">HHs</glossaryphrase>
+    <glossaryphrase key="HH" role="sort">HH</glossaryphrase>
+    <glossaryphrase key="HH" role="text">HH</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="HW">
+    <glossaryphrase key="HW" role="description">hardware</glossaryphrase>
+    <glossaryphrase key="HW" role="long">hardware</glossaryphrase>
+    <glossaryphrase key="HW" role="longplural">hardwares</glossaryphrase>
+    <glossaryphrase key="HW" role="name">HW</glossaryphrase>
+    <glossaryphrase key="HW" role="short">HW</glossaryphrase>
+    <glossaryphrase key="HW" role="shortplural">HWs</glossaryphrase>
+    <glossaryphrase key="HW" role="sort">HW</glossaryphrase>
+    <glossaryphrase key="HW" role="text">HW</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="ICT">
+    <glossaryphrase key="ICT" role="description">Info-Communication Technology</glossaryphrase>
+    <glossaryphrase key="ICT" role="long">Info-Communication Technology</glossaryphrase>
+    <glossaryphrase key="ICT" role="longplural">Info-Communication Technologys</glossaryphrase>
+    <glossaryphrase key="ICT" role="name">ICT</glossaryphrase>
+    <glossaryphrase key="ICT" role="short">ICT</glossaryphrase>
+    <glossaryphrase key="ICT" role="shortplural">ICTs</glossaryphrase>
+    <glossaryphrase key="ICT" role="sort">ICT</glossaryphrase>
+    <glossaryphrase key="ICT" role="text">ICT</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="ML">
+    <glossaryphrase key="ML" role="description">Machine Learning</glossaryphrase>
+    <glossaryphrase key="ML" role="long">Machine Learning</glossaryphrase>
+    <glossaryphrase key="ML" role="longplural">Machine Learnings</glossaryphrase>
+    <glossaryphrase key="ML" role="name">ML</glossaryphrase>
+    <glossaryphrase key="ML" role="short">ML</glossaryphrase>
+    <glossaryphrase key="ML" role="shortplural">MLs</glossaryphrase>
+    <glossaryphrase key="ML" role="sort">ML</glossaryphrase>
+    <glossaryphrase key="ML" role="text">ML</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="PID">
+    <glossaryphrase key="PID" role="description">Proportional-Integral-Derivative</glossaryphrase>
+    <glossaryphrase key="PID" role="long">Proportional-Integral-Derivative</glossaryphrase>
+    <glossaryphrase key="PID" role="longplural">Proportional-Integral-Derivatives</glossaryphrase>
+    <glossaryphrase key="PID" role="name">PID</glossaryphrase>
+    <glossaryphrase key="PID" role="short">PID</glossaryphrase>
+    <glossaryphrase key="PID" role="shortplural">PIDs</glossaryphrase>
+    <glossaryphrase key="PID" role="sort">PID</glossaryphrase>
+    <glossaryphrase key="PID" role="text">PID</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="PSP">
+    <glossaryphrase key="PSP" role="description">Post-Synaptic Potential</glossaryphrase>
+    <glossaryphrase key="PSP" role="long">Post-Synaptic Potential</glossaryphrase>
+    <glossaryphrase key="PSP" role="longplural">Post-Synaptic Potentials</glossaryphrase>
+    <glossaryphrase key="PSP" role="name">PSP</glossaryphrase>
+    <glossaryphrase key="PSP" role="short">PSP</glossaryphrase>
+    <glossaryphrase key="PSP" role="shortplural">PSPs</glossaryphrase>
+    <glossaryphrase key="PSP" role="sort">PSP</glossaryphrase>
+    <glossaryphrase key="PSP" role="text">PSP</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="RC">
+    <glossaryphrase key="RC" role="description">RC circuit</glossaryphrase>
+    <glossaryphrase key="RC" role="long">RC circuit</glossaryphrase>
+    <glossaryphrase key="RC" role="longplural">RC circuits</glossaryphrase>
+    <glossaryphrase key="RC" role="name">RC</glossaryphrase>
+    <glossaryphrase key="RC" role="short">RC</glossaryphrase>
+    <glossaryphrase key="RC" role="shortplural">RCs</glossaryphrase>
+    <glossaryphrase key="RC" role="sort">RC</glossaryphrase>
+    <glossaryphrase key="RC" role="text">RC</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="SW">
+    <glossaryphrase key="SW" role="description">software</glossaryphrase>
+    <glossaryphrase key="SW" role="long">software</glossaryphrase>
+    <glossaryphrase key="SW" role="longplural">softwares</glossaryphrase>
+    <glossaryphrase key="SW" role="name">SW</glossaryphrase>
+    <glossaryphrase key="SW" role="short">SW</glossaryphrase>
+    <glossaryphrase key="SW" role="shortplural">SWs</glossaryphrase>
+    <glossaryphrase key="SW" role="sort">SW</glossaryphrase>
+    <glossaryphrase key="SW" role="text">SW</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="PID controller">
+    <glossaryphrase key="PID controller" role="description">
+
+<text framecolor="#4D4DFF" framed="rectangle"><inline-block backgroundcolor="#E6FFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+<!--  %**** Macros.tex Line 150 **** -->          <p><text color="#000000" font="bold">Supplement: <text font="medium"><!--  %**** Glossary.tex Line 25 **** -->A proportional–integral–derivative controller is a feedback-based control loop mechanism commonly used to manage machines and processes that require continuous control and automatic adjustment.</text></text></p>
+        </inline-block><text backgroundcolor="#E6FFE6">
+</text></text></glossaryphrase>
+    <glossaryphrase key="PID controller" role="name">PID controller</glossaryphrase>
+    <glossaryphrase key="PID controller" role="sort">PID controller</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="setpoint">
+    <glossaryphrase key="setpoint" role="description">
+
+<text framecolor="#4D4DFF" framed="rectangle"><inline-block backgroundcolor="#E6FFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+<!--  %**** Macros.tex Line 150 **** -->          <p><text color="#000000" font="bold">Supplement: <text font="medium">A <glossaryref inlist="main" key="PID">Proportional-Integral-Derivative (PID)</glossaryref> controller (Proportional-Integral-Derivative) maintains a process variable (PV)—the membrane potential—at a specific, desired target value known as the setpoint (SP).</text></text></p>
+        </inline-block><text backgroundcolor="#E6FFE6">
+</text></text></glossaryphrase>
+    <glossaryphrase key="setpoint" role="name">setpoint</glossaryphrase>
+    <glossaryphrase key="setpoint" role="sort">setpoint</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="local time">
+    <glossaryphrase key="local time" role="description">
+
+<text framecolor="#4D4DFF" framed="rectangle"><inline-block backgroundcolor="#E6FFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+<!--  %**** Macros.tex Line 150 **** -->          <p><text color="#000000" font="bold">Supplement: <text font="medium">The biological time the individual neuron’s operation
+that begins when their first synaptic input arrives</text></text></p>
+        </inline-block><text backgroundcolor="#E6FFE6">
+</text></text></glossaryphrase>
+    <glossaryphrase key="local time" role="name">local time</glossaryphrase>
+    <glossaryphrase key="local time" role="sort">local time</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="potential-assisted speed">
+    <glossaryphrase key="potential-assisted speed" role="description">
+
+<text framecolor="#4D4DFF" framed="rectangle"><inline-block backgroundcolor="#E6FFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+<!--  %**** Macros.tex Line 150 **** -->          <p><text color="#000000" font="bold">Supplement: <text font="medium"><!--  %**** Glossary.tex Line 50 **** -->In biological systems, the ions contribute
+an electrostatic component to the forces acting on an ion,
+so the ions increase their speed in the field of other ions.
+Only the component in the direcion of the field gradient
+due to the distribution of freely moving charges changes,
+moderately.</text></text></p>
+        </inline-block><text backgroundcolor="#E6FFE6">
+</text></text></glossaryphrase>
+    <glossaryphrase key="potential-assisted speed" role="name">potential-assisted speed</glossaryphrase>
+    <glossaryphrase key="potential-assisted speed" role="sort">potential-assisted speed</glossaryphrase>
+  </glossarydefinition>
+  <glossarydefinition inlist="main" key="potential-accelerated speed">
+    <glossaryphrase key="potential-accelerated speed" role="description">
+
+<text framecolor="#4D4DFF" framed="rectangle"><inline-block backgroundcolor="#E6FFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+<!--  %**** Macros.tex Line 150 **** -->          <p><text color="#000000" font="bold">Supplement: <text font="medium">In biological systems some components
+acquire charges and form surfaces having higher potential,
+which act as an electrostatic accelerator.
+Only the component in the direcion of the field gradient
+due to charges fixed to those surfaces changes,
+strongly.</text></text></p>
+        </inline-block><text backgroundcolor="#E6FFE6">
+</text></text></glossaryphrase>
+    <glossaryphrase key="potential-accelerated speed" role="name">potential-accelerated speed</glossaryphrase>
+    <glossaryphrase key="potential-accelerated speed" role="sort">potential-accelerated speed</glossaryphrase>
+  </glossarydefinition>
+<!--  %============================================================ 
+     %============================================================ 
+     %“label–top˝ 
+     %“input–src/Heading˝ -->  <TOC lists="toc" scope="global" select="ltx:part | ltx:chapter | ltx:section | ltx:subsection | ltx:appendix | ltx:index | ltx:bibliography">
+    <title>Contents</title>
+  </TOC>
+<!--  %This is the Foreword to the Hodgkin-Huxley neuron model V2.0 book -->  <chapter inlist="toc" labels="LABEL:ch:Foreword" xml:id="Chx1">
+    <title>Foreword</title>
+    <para xml:id="Chx1.p1">
+      <p>Hodgkin and Huxley’s classic (V1.0) ”model”, which fundamentally changed our ideas about the physiology of neurons and which has served as the basis for describing the functioning of neurons for several decades, can hardly be overestimated; it is truly the crown jewel of neuroscience. However, its authors, quite realistic
+ally, assessed that the physical picture behind the observations they mathematically formulated could be partially or completely incorrect. Already in their original communication, they drew attention to the fact that their equations did not fully describe their observations. Due to the lack of certain knowledge, they were forced to formulate ad hoc assumptions and that the formalism of the equations could describe more than one physical process. Some of the assumptions proved to be a brilliant vision, but in quite a few cases it turned out that they did not always put the right physical background behind their observations, which were generally correctly described mathematically, and that their model designed for mechanical computers had obvious limitations. Already at the time of the introduction of the model, doubts arose as to whether the purely electrical model could fully describe the observations known up to that time, and later, as the accuracy, directionality and detail of the observations increased, it became necessary to introduce more and more ad hoc assumptions in order to maintain the consistency of the model assuming purely electrical operation.</p>
+    </para>
+<!--  %“vbox– 
+     %”“textit–Though this be madness, yet there is method in’t.˝” 
+     %“hfill Shakespeare: Hamlet: Act 2 Scene 2 
+     %“vskip 2 in 
+     %“null 
+     %“centering 
+     %–“LARGE “@title “par˝% 
+     %%    “vskip 1.0em% 
+     %%    –“large “@subtitle “par˝% 
+     %“vskip 10em% 
+     %–“large “@author “par˝% 
+     %“vskip 1.5em% 
+     %–“large “@date “par˝%       % Set date in “large size. 
+     %**** Foreword.tex Line 25 **** 
+     %“vskip 3em% 
+     %“null 
+     %˝% 
+     %Az elmúlt évtizedekben számos (V1.0x) modell jött létre, több-kevesebb sikerrel módosítva és kiegészítve ezt a tisztán elektromos, diszciplináris, őseredeti modellt (ami végső soron “gls–HH˝ követőinek 
+     %tevékenysége nyomán vált modellé). Születtek olyan (V1.y) modellek is, amelyek 
+     %teljesen más diszciplina keretében próbálják a neuront modellezni, 
+     %főként annak termodinamikai, mechanikai, optikai, stb. jelenségeit értelmezni. 
+     %Mindezen modellek közös sajátsága, hogy nem tudnak teljes körű 
+     %(valamennyi megfigyelést ellentmondásmentesen leíró) modellt nyújtani. 
+     %Vannak olyan modellek is, amelyek nem is törekszenek arra, hogy 
+     %egy fizikai működési mechanizmust próbáljanak meg leírni; 
+     %megelégszenek egy olyan matematikai formalismussal, amelyik 
+     %a tapasztalattal megegyező viselkedést mutat; anélkül, hogy 
+     %a ’miért’, ’milyen mechanizmussal’ kérdésekre akár csak megpróbálnának 
+     %választ adni. -->    <para xml:id="Chx1.p2">
+      <p>In the past decades, numerous (V1.0x) models have been created, modifying and supplementing this purely electrical, disciplinary, original model with more or less success (which ultimately became a model due to the activities of <glossaryref inlist="main" key="HH">Hodgkin and Huxley (HH)</glossaryref>’s followers). There have also been (V1.y) models that try to model the neuron within the framework of an entirely different discipline, mainly interpreting its thermodynamic, mechanical, optical, etc. phenomena. The common feature of all these models is that they cannot provide a complete model (describing all observations without contradiction). There are also models that do not even strive to describe a physical operating mechanism; they are satisfied with providing a mathematical formalism that shows behavior that is consistent with experience; without even trying to answer the questions ’why’ and ’by what mechanism’.</p>
+    </para>
+    <para xml:id="Chx1.p3">
+      <p>Due to the lack of the needed expertize in physics,
+biophysics introduced the idea of the ”whatnot” <cite class="ltx_citemacro_cite">[<bibref bibrefs="Schrodinger:1992" separator="," yyseparator=","/>]</cite> protein mechanisms that totally misguided physiology and neuroscience.
+Biology has no laws of motion in the sense as physics has Newton’s laws.
+The many speculative hypotheses hyde that science can describe
+living matter, but needs a different approach.
+Claims such as ”pumps [by using protein mechanisms] …transport ions <text font="italic"><!--  %**** Foreword.tex Line 50 **** -->against their
+electrical and chemical gradients</text>” <cite class="ltx_citemacro_cite">[<bibref bibrefs="PrinciplesNeuralScience:2013" separator="," yyseparator=","/>]</cite>, page 101,
+or ”the flux of ions through ion channels is passive,
+requiring <text font="italic">no expenditure of metabolic energy</text> by the
+channels.” <cite class="ltx_citemacro_cite">[<bibref bibrefs="PrinciplesNeuralScience:2013" separator="," yyseparator=","/>]</cite>, page 107, are as scientific as in the pre-Newtonian age,
+there was a notion related to Aristotelian philosophy. This concept gave credence to the “theory” that the celestial spheres and, later on, the planets were pushed or moved by celestial movers, celestial intelligences, or angels against physical forces. Inventing the universal
+gravitational law made the complex interplay of those spheres obsolete,
+although, for the first look, it seemed to be unrelated.</p>
+    </para>
+    <para xml:id="Chx1.p4">
+      <p>Describing life science is still in the pre-Newtonian age: it has a lot of ”spheres”
+described by complicated theories that contradict each other,
+and does not have its laws of motion, in the sense as Newton’s Laws in physics. What is worse, it did not invent and test the laws describing
+living matter. Instead, it borrowed the disciplinary laws of physics,
+without recognizing that its different discipline has different
+conditions and requires different approximations; that is similar, but differently used laws.
+<indexmark>
+          <indexphrase key="law of motion">law of motion</indexphrase>
+        </indexmark>
+Without questioning the merits of the V1.0 model, the experimental experience accumulated in recent decades, the dizzying development of technology and instrumental measurements, and the ever-increasing demand for the results of neuroscience have made it necessary to develop the (V2.0) model. The model is necessarily cross-disciplinary; no single physical discipline alone allows for a complete and consistent interpretation of the phenomena of the living organism.</p>
+    </para>
+<!--  %Nem vonva kétségbe a V1.0 modell érdemeit, az elmúlt évtizedekben 
+     %felhalmozott kísérleti tapasztalatok, a technika és a műszeres mérésések 
+     %szédítő mértékű fejlődése, az idegtudomány eredményei iránti igény 
+     %mind erősebb növekedése szükségessé teszi (V2.0) modell kidolgozását. 
+     %A modell cross-disciplináris; egyedül egyik fizikai disciplina sem teszi 
+     %lehetővé az élő szervezet jelenségeinek teljes körű és 
+     %ellentmondásmentes értelmezését. 
+     %This is the Introduction to the Hodgkin-Huxley neuron model V2.0 book -->  </chapter>
+  <chapter inlist="toc" labels="LABEL:ch:Introduction LABEL:intro:MyMathematicsPanel LABEL:intro:MyNumericsPanel LABEL:intro:MyPhysicsPanel" xml:id="Ch1">
+    <tags>
+      <tag>Chapter 1</tag>
+      <tag role="autoref">chapter 1</tag>
+      <tag role="refnum">1</tag>
+      <tag role="typerefnum">Chapter 1</tag>
+    </tags>
+    <title><tag close=" ">Chapter 1</tag>Introduction</title>
+    <toctitle><tag close=" ">1</tag>Introduction</toctitle>
+    <para xml:id="Ch1.p1">
+      <p><!--  %“paragraph*–Understanding the dynamic brain˝ -->The <text font="bold italic">dynamic</text> operation of individual neurons, their connections, higher-level organizations, connections,
+the brain with its information processing capability, and finally, the mind with its conscience and behavior,
+are still among the big mysteries of science: <text font="italic">at which point
+<ref idref="LivingMatter">the non-living matter becomes a living one</ref></text>, <text font="italic">at which point <ref idref="CognitiveMatter">the living matter becomes intelligent</ref></text> and conscious; whether and <ref idref="PhysicalPictureNeuron">how science can handle</ref> all this stuff.
+We really need a <ref idref="NewUnderstanding">new understanding</ref> that we provide here.
+The hype in the newly launched projects is excessive and seems to lose the hope
+to build brain research on a firm science base.
+For example, the newly (at the end of 2025) launched “<ref class="ltx_href" href="https://brainminds.jp/en">Brain/MINDS 2.0</ref><!--  %”with the goal of developing a marmoset model for neuroscience”, -->” program in Japan was launched
+using only mathematical models, <text font="italic">without targeting the understanding of the underlying physical processes</text><!--  %The case is much similar -->.
+In neuron models, ’dynamics’ refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example <!--  %to the ’Theory of Everything’ in physics, which is developed since science exists and is a never-ending project. Likely, the length of the time needed for neuroscience will not be much shorter, although the project period is limited to years. --><cite class="ltx_citemacro_cite">[<bibref bibrefs="NeuralDynamicsGertsner:2014" separator="," yyseparator=","/>]</cite><!--  %**** Introduction.tex Line 25 **** -->. We use a real dynamics,
+based on physics, in the sense as Newton introduced his laws of motion to describe
+response of neurons.
+<indexmark>
+          <indexphrase key="laws of motion">laws of motion</indexphrase>
+        </indexmark></p>
+    </para>
+<!--  %Hodgkin and Huxley’s classic (V1.0) ”model”, which fundamentally changed our ideas about the physiology of neurons and which has served as the basis for describing the functioning of neurons for several decades, can hardly be overestimated; it is truly the crown jewel of neuroscience. However, its authors, quite realistically, assessed that the physical picture behind the observations they mathematically formulated could be partially or completely incorrect. Already in their original communication, they drew attention to the fact that their equations did not fully describe their observations, that - due to the lack of certain knowledge - they were forced to formulate ad hoc assumptions and that the formalism of the equations could not describe only one physical process. Some of the assumptions proved to be a brilliant vision, but in quite a few cases it turned out that they did not always put the right physical background behind their observations, which were generally correctly described mathematically, and that their model designed for mechanical computers had obvious limitations. Already at the time of the introduction of the model, doubts arose as to whether the purely electrical model could fully describe the observations known up to that time, and later, as the accuracy, directionality and detail of the observations increased, it became necessary to introduce more and more ad hoc assumptions in order to maintain the consistency of the model assuming purely electrical operation. -->    <para xml:id="Ch1.p2">
+      <p><!--  %A könyv több rétegű. A mindenki (azaz elsősorban a megfelelő -->The book has several layers. In addition to the sections intended to be understandable by everyone (i.e. primarily readers with a suitable physiological and neuroscience background), there are also panels for those with other relevant backgrounds containing the necessary <!--  %fiziológiai háttérrel rendelkező olvasó) 
+     %által megérthetőnek szánt részek mellett a vonatkozó más jellegű háttérrel rendelkezők számára találhatók 
+     %a szükséges “textbf–matematikai~“ref–intro:MyMathematicsPanel˝˝ és 
+     %“textbf–fizikai~“ref–intro:MyPhysicsPanel˝˝ ismereteket tartalmazó panelek is, amelyeknek megértéséhez legalább a megfelelő szintű BSc ismeretek, de néha ezt túllépő tudás, esetenként 
+     %a gondolatok szokatlanságával elmélyülésre késztető 
+     %ismeretek és magyarázatok találhatók. 
+     %A jelenségkör bonyolultsága, sok közelítést tesz szükségessé, 
+     %de a megfelelő közelítések és absztrakciók felhasználásával 
+     %numerikus eredményeket (néha csupán észszerű becsléseket) 
+     %tartalmaznak a “textbf–numerikus “ref–num:MyNumericsPanel˝˝ panelek. 
+     %Törekszünk arra, hogy az anyag ezek nélkül is érthető legyen, 
+     %ezekkel együtt pedig a megfelelő szakképzettségű olvasó 
+     %továbbgondolásra ösztönző tudást meríthessen. --><text font="bold">mathematical <ref labelref="LABEL:intro:MyMathematicsPanel"/></text> and <text font="bold">physical <ref labelref="LABEL:intro:MyPhysicsPanel"/></text><!--  %**** Introduction.tex Line 50 **** --> knowledge, which require at least the appropriate level of BSc knowledge to understand, but sometimes knowledge that goes beyond this, and sometimes
+knowledge and explanations that make you delve deeper into the unusualness of the ideas. The complexity of the phenomenon requires many approximations, but by using the appropriate approximations and abstractions, the <text font="bold">numeric <ref labelref="LABEL:num:MyNumericsPanel"/></text> panels contain numerical results (sometimes only reasonable estimates). We strive to make the material understandable without them, and with them, the reader with the appropriate qualifications
+will be able to gain knowledge that encourages further thought.</p>
+    </para>
+<!--  %Work for .html -->    <para xml:id="Ch1.p4">
+      <p><text color="#00FF00" framecolor="#4DFF4D" framed="rectangle"><inline-block backgroundcolor="#FFFFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+            <p><text font="bold">Physics panel 1.1<break/><!--  %**** Macros.tex Line 100 **** --></text><!--  %A tudományok specializálódása során a fizika az élettelen természet -->
+
+During the specialization of sciences, physics specialized in the description of inanimate nature and (in the interest of reasonable description) created fields of limited validity. In the study of living nature, its results, methods and tools were already used in a natural way. In doing so, they started from the correct point of view that the description of objects in nature and their interactions should be governed by the same laws. However, they did not take into account that due to the complexity of nature, approximations and neglects must be made in order to be able to describe them. Disciplinary laws create abstract concepts for a certain range of phenomena, and the laws describe these abstract concepts precisely, not the phenomena that occur in nature. In most cases
+these laws can be used in their entirety,
+due to the significant differences in the conditions of the living and non-living environment
+often they can only be used with significant modification or even complete rethinking; see the interpretation of Erwin Schrödinger’s insightful questions
+<!--  %leírására szakosodott és (az észszerű leírhatóság érdekében) 
+     %korlátozott érvényességű szakterületeket hozott létre. 
+     %Az élő természet tanulmányozása során már természetes módon 
+     %használták eredményeit, módszereit és eszközeit. 
+     %Ennek során abból a helyes nézőpontból indultak ki, hogy 
+     %a természetben található objektumok és kölcsönhatásaik leírására 
+     %ugyanazoknak a törvényeknek kell vonatkozni. Nem vették azonban figyelembe, hogy a természet bonyolultsága miatt, 
+     %a leírhatóság érdekében, közelítéseket és elhanyagolásokat kell tennünk. A diszciplináris törvények egy-egy jelenségköre vonatkozóan 
+     %absztrakt fogalmakat alkotnak és a törvények ezeket az absztrakt 
+     %fogalmakat írják le pontosan, nem pedig azokat a jelenségeket, 
+     %amelyek a természetben előfordulnak. Az esetek jelentős részében 
+     %ezek a törvények teljes egészükben használhatók, 
+     %az élő és élettelen környezet körülményeinek jelentős eltérései miatt 
+     %sokszor csak jelentős módosítással vagy akár teljes újragondolással alkalmazhatók; lásd Erwin Schrödinger lényeglátó kérdéseinek értelmezését 
+     %“index–Schrödinger, Erwin˝ 
+     %a “textbf–Physics Panel~“ref–phys:SchrödingerNonOrdinaryLaws˝˝ 
+     %**** Introduction.tex Line 75 **** --><indexmark>
+                <indexphrase key="Schrödinger, Erwin">Schrödinger, Erwin</indexphrase>
+              </indexmark>
+in <text font="bold">Physics Panel <ref labelref="LABEL:phys:SchrödingerNonOrdinaryLaws"/></text></p>
+          </inline-block><text backgroundcolor="#FFFFE6">
+</text></text><text color="#00FF00">
+<text color="#000000"></text></text></p>
+    </para>
+<!--  %**** Macros.tex Line 125 **** 
+     %Work for .html -->    <para xml:id="Ch1.p6">
+      <p><text color="#BF8040" framecolor="#86592D" framed="rectangle"><inline-block backgroundcolor="#FFF2E6" class="ltx_parbox" vattach="middle" width="390.3pt">
+            <p><text font="bold">Mathematics panel 1.1<break/></text>
+This is mathematics</p>
+          </inline-block><text backgroundcolor="#FFF2E6">
+</text></text><text color="#BF8040">
+<text color="#000000"></text></text></p>
+    </para>
+<!--  %Work for .html -->    <para xml:id="Ch1.p8">
+      <p><text color="#0000FF" framecolor="#4D4DFF" framed="rectangle"><inline-block backgroundcolor="#E6FFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+            <p><text font="bold">Numerics panel 1.1<break/></text>
+This is numeric</p>
+          </inline-block><text backgroundcolor="#E6FFE6">
+</text></text><text color="#0000FF">
+<text color="#000000"><!--  %**** Macros.tex Line 75 **** --></text></text></p>
+    </para>
+<!--  %Work for .html -->    <para xml:id="Ch1.p10">
+      <p><text color="#800080" framecolor="#E6CCE6" framed="rectangle"><inline-block backgroundcolor="#FFFFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+            <p><text font="bold">Quotation:<break/></text>
+”The Human Brain Project should lay the technical foundation for a <text font="bold">new model</text> of ICT-based brain research, driving <text font="italic">integration between data and knowledge from different disciplines</text>, and catalysing a community effort to achieve a <text font="bold"><!--  %, new treatments for brain disease -->new understanding of the brain</text>…and <text font="italic">new brain-like computing technologies</text>.”</p>
+            <p>the <ref class="ltx_href" href="https://www.humanbrainproject.eu/en/">Human Brain Project</ref>, summarised its goal @2012</p>
+          </inline-block><text backgroundcolor="#FFFFE6">
+</text></text><text color="#800080">
+<text color="#000000"></text></text></p>
+    </para>
+    <paragraph xml:id="Ch1.S0.SS0.SSS0.Px1">
+      <title color="#000000">Understanding the dynamic brain</title>
+      <para xml:id="Ch1.S0.SS0.SSS0.Px1.p1">
+        <p><text color="#000000">The </text><text color="#000000" font="bold italic">dynamic</text><text color="#000000"> operation of individual neurons, their connections, higher-level organizations, connections,
+the brain with its information processing capability, and finally, the mind with its conscience and behavior,
+are still among the big mysteries of science: </text><text color="#000000" font="italic">at which point
+<ref idref="LivingMatter">the non-living matter becomes a living one</ref></text><text color="#000000">, </text><text color="#000000" font="italic">at which point <ref idref="CognitiveMatter">the living matter becomes intelligent</ref></text><text color="#000000"> and conscious; whether and </text><ref color="#000000" idref="PhysicalPictureNeuron">how science can handle</ref><text color="#000000"> all this stuff.
+We really need a </text><ref color="#000000" idref="NewUnderstanding">new understanding</ref><text color="#000000"> that we provide here.
+The hype in the newly launched projects is excessive and seems to lose the hope
+to build brain research on a firm science base.
+For example, the newly (at the end of 2025) launched “</text><ref class="ltx_href" color="#000000" href="https://brainminds.jp/en">Brain/MINDS 2.0</ref><!--  %”with the goal of developing a marmoset model for neuroscience”, --><text color="#000000">” program in Japan was launched
+using only mathematical models, </text><text color="#000000" font="italic">without targeting the understanding of the underlying physical processes</text><!--  %The case is much similar --><text color="#000000">.
+In neuron models, ’dynamics’ refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example </text><!--  %to the ’Theory of Everything’ in physics, which is developed since science exists and is a never-ending project. Likely, the length of the time needed for neuroscience will not be much shorter, although the project period is limited to years. --><cite class="ltx_citemacro_cite"><text color="#000000">[</text><bibref bibrefs="NeuralDynamicsGertsner:2014" separator="," yyseparator=","/><text color="#000000">]</text></cite><text color="#000000">. We use a real dynamics,
+based on physics, in the sense as Newton introduced his laws of motion to describe
+response of neurons.
+</text><indexmark>
+            <indexphrase key="laws of motion">laws of motion</indexphrase>
+          </indexmark><text color="#000000"></text></p>
+      </para>
+    </paragraph>
+    <paragraph xml:id="Ch1.S0.SS0.SSS0.Px2">
+      <title color="#000000">Abstract discussion</title>
+      <para xml:id="Ch1.S0.SS0.SSS0.Px2.p1">
+        <p><!--  %Our goal is not to discuss all --><text color="#000000">Nature uses an infinite variety of implementing neurons.
+In the </text><!--  %infinitely complex molecular, biochemical and physiological details 
+     %of neuronal operation; it is not necessary, since --><glossaryref color="#000000" inlist="main" key="CNS"><!--  %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** -->Central Nervous System (CNS)<!--  %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** 
+     %**** Introduction.tex Line 125 **** --></glossaryref><text color="#000000"> they can cooperate
+with each other, ’despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity,
+</text><text color="#000000" font="italic">the nervous systems adopt <text font="bold">a number of
+basic principles</text></text><text color="#000000">
+for all neurons and synapses’,
+</text><cite class="ltx_citemacro_cite"><text color="#000000">[</text><bibref bibrefs="JohnstonWuNeurophysiology:1995" separator="," yyseparator=","/><text color="#000000">]</text></cite><text color="#000000">
+independently from the infinitely complex molecular, biochemical and physiological details.
+</text><indexmark>
+            <indexphrase key="Johnston Daniel">Johnston Daniel</indexphrase>
+          </indexmark><text color="#000000">
+</text><indexmark>
+            <indexphrase key="Wu Samuel Miao-sin">Wu Samuel Miao-sin</indexphrase>
+          </indexmark><text color="#000000">
+We </text><text color="#000000" font="italic">will base our holistic discussion on those general basic principles
+and create an
+<ref idref="NeuronPhysical">’abstract physical neuron’</ref>; a hypothetical element, which functions
+essentially like a neuron</text><text color="#000000">,
+skipping the ’implementation details’ nature uses.
+We essentially follow von Neumann’s method in describing the foundations of
+computing science </text><cite class="ltx_citemacro_cite"><text color="#000000">[</text><bibref bibrefs="EDVACreport1945" separator="," yyseparator=","/><text color="#000000">]</text></cite><text color="#000000">: ”we will base our considerations on a hypothetical element, which functions essentially like a neuron”.
+We need </text><ref color="#000000" idref="Abstractions">different abstractions and approximations</ref><text color="#000000">
+(furthermore, </text><ref color="#000000" idref="NonOrdinaryLaws">’non-ordinary’ laws</ref><text color="#000000"> of science) for describing biological processes.
+</text><indexmark>
+            <indexphrase key="ordinary laws">ordinary laws</indexphrase>
+          </indexmark><text color="#000000">
+However, an abstraction is usable
+in practice only when paired with a generalization: the more abstract the assumption, the more general and widely applicable the concept or conclusion.
+</text><text color="#000000" font="italic">By abstractions, we can reduce the unbelievably detailed world into manageable pieces, and we can learn anything general.</text><text color="#000000">
+We must show which approximations are oversimplifications and which phenomena are misunderstood; measured, or interpreted in a wrong approach.</text></p>
+      </para>
+<!--  %**** Introduction.tex Line 150 **** 
+     %Abstraction is, in fact, everywhere, including inside each of us. It is a core element of science and cognition. -->    </paragraph>
+    <paragraph xml:id="Ch1.S0.SS0.SSS0.Px3">
+      <title color="#000000">Zigzag reading</title>
+      <para xml:id="Ch1.S0.SS0.SSS0.Px3.p1">
+        <p><text color="#000000">For the same reasons, we follow von Neumann’s method when he described principles of technical computing </text><cite class="ltx_citemacro_cite"><text color="#000000">[</text><bibref bibrefs="EDVACreport1945" separator="," yyseparator=","/><text color="#000000">]</text></cite><anchor xml:id="zigzagdiscussion"><text color="#000000">. ”The ideal procedure would be, to take up the specific parts in some definite order, to treat
+each one of them exhaustively, and go on to the next one only after the predecessor is completely
+disposed of. However, this seems hardly feasible. The desirable features of the various parts, and
+the decisions based on them, emerge only after a somewhat zigzagging discussion</text></anchor><text color="#000000">. It is, therefore,
+necessary to take up one part first, pass after an incomplete discussion to a second part, return after
+an equally incomplete discussion of the latter with the combined results to the first part, extend
+the discussion of the first part without yet concluding it, then possibly go on to a third part, etc.
+Furthermore, these discussions of specific parts will be mixed with discussions of general principles, of the elements to be used, etc.”
+</text><indexmark>
+            <indexphrase key="von Neumann">von Neumann</indexphrase>
+            <indexphrase key="’zigzag’ way">’zigzag’ way</indexphrase>
+          </indexmark><text color="#000000">
+For example, basic concepts such as the membrane potential and its regulation in resting and transiens states, belong to chapter Physics,
+and their detailed scientific, physics-based, discussion is given there,
+but their corresponding aspects must be discussed in chapters ’Abstract neuron’ and less abstract ’Physiology’ as well.
+The contents are inherently intertwinned, and the form must follow the contents.
+We make this zigzag reading more accessible by using hyperlinks and cross-references throughout the document.</text></p>
+      </para>
+<!--  %“input–src/Modeling˝ 
+     %This is the Physics to the Hodgkin-Huxley neuron model V2.0 book -->    </paragraph>
+  </chapter>
+  <chapter inlist="toc" labels="LABEL:ch:Physics" xml:id="Ch2">
+    <tags>
+      <tag>Chapter 2</tag>
+      <tag role="autoref">chapter 2</tag>
+      <tag role="refnum">2</tag>
+      <tag role="typerefnum">Chapter 2</tag>
+    </tags>
+    <title color="#000000"><tag close=" ">Chapter 2</tag>Physics</title>
+    <toctitle><tag close=" "><text color="#000000">2</text></tag><text color="#000000">Physics</text></toctitle>
+    <section class="ltx_pruned_first" inlist="toc" labels="LABEL:Physics-SchrödingerOnLife LABEL:phys:SchrödingerNonOrdinaryLaws LABEL:phys:SchrödingerPoints" xml:id="Ch2.S1">
+      <tags>
+        <tag>2.1</tag>
+        <tag role="autoref">section 2.1</tag>
+        <tag role="refnum">2.1</tag>
+        <tag role="typerefnum">§2.1</tag>
+      </tags>
+      <title color="#000000"><tag close=" ">2.1</tag>Schrödinger on life</title>
+<!--  %Work for .html -->      <para xml:id="Ch2.S1.p2">
+        <p><text color="#800080" framecolor="#E6CCE6" framed="rectangle"><inline-block backgroundcolor="#FFFFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+              <p><text font="bold">Quotation:<break/></text>
+
+”Is life based on the laws of physics?”…”<text font="italic">New laws to be expected in the organism</text>”…<ref class="ltx_href" href="https://www.cambridge.org/core/books/abs/what-is-life/is-life-based-on-the-laws-of-physics/5BA8DE837F72FC4EEF70FE8470ADFE7B">E. Schrödinger: What is life?</ref><cite class="ltx_citemacro_cite">[<bibref bibrefs="Schrodinger:1992" separator="," yyseparator=","/>]</cite> @1944</p>
+            </inline-block><text backgroundcolor="#FFFFE6">
+</text></text><text color="#800080">
+</text><text color="#000000">
+
+</text><indexmark>
+            <indexphrase key="ordinary laws">ordinary laws</indexphrase>
+          </indexmark><text color="#000000"></text></p>
+      </para>
+<!--  %Work for .html -->      <para xml:id="Ch2.S1.p4">
+        <p><text color="#00FF00" framecolor="#4DFF4D" framed="rectangle"><inline-block backgroundcolor="#FFFFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+              <p><text font="bold">Physics panel 2.1<break/><!--  %**** Macros.tex Line 100 **** --></text>
+
+”From all we have learnt about the structure of living matter, we must be prepared to find it working in a manner that cannot be reduced to the <text backgroundcolor="#FFFFE6" font="bold italic">ordinary<text backgroundcolor="#FFFFE6" font="upright"> laws of physics</text></text>.
+And <text font="italic">that not on the ground that there is any ‘new force’ or what not</text>, directing the behavior of the single atoms within a living organism, <text font="italic">but because the construction is different from anything we have yet tested in the physical laboratory</text>.”…”How can the <text font="italic">events</text> in <text font="italic">space and time</text> which take place <text font="italic">within the spatial boundary</text> of a <text font="italic">living organism</text> be <text font="italic">accounted for by physics</text><!--  %**** Physics.tex Line 25 **** --> and chemistry?” …”living matter, while
+not eluding the ’laws of physics’ as established up to date, is likely to involve ’other laws of
+physics’ hitherto unknown, which, however, once
+they have been revealed, will form just as
+integral a part of this science as the former.”
+(for the interpretation of those points, see <text font="bold">Physics panel<ref labelref="LABEL:phys:SchrödingerPoints"/></text>)
+<ref class="ltx_href" href="https://www.cambridge.org/core/books/abs/what-is-life/is-life-based-on-the-laws-of-physics/5BA8DE837F72FC4EEF70FE8470ADFE7B">E. Schrödinger: What is life?</ref><cite class="ltx_citemacro_cite">[<bibref bibrefs="Schrodinger:1992" separator="," yyseparator=","/>]</cite> @1944</p>
+            </inline-block><text backgroundcolor="#FFFFE6">
+</text></text><text color="#00FF00">
+</text><text color="#000000">
+
+</text><indexmark>
+            <indexphrase key="Schrödinger, Erwin">Schrödinger, Erwin</indexphrase>
+          </indexmark><text color="#000000"></text></p>
+      </para>
+<!--  %Work for .html -->      <para xml:id="Ch2.S1.p6">
+        <p><text color="#00FF00" framecolor="#4DFF4D" framed="rectangle"><inline-block backgroundcolor="#FFFFE6" class="ltx_parbox" vattach="middle" width="390.3pt">
+              <p><text font="bold">Physics panel 2.2<break/><!--  %**** Macros.tex Line 100 **** --></text>
+
+In his very accurately formulated question (see <text font="bold">Physics panel <ref labelref="LABEL:phys:SchrödingerNonOrdinaryLaws"/></text><!--  %”How can the “textit–events˝ in “textit–space and time˝ which take place “textit–within the spatial boundary˝ of a “textit–living organism˝ be “textit–accounted for by physics˝ and chemistry?”, -->),
+Schrödinger focused on (at least) these significant points</p>
+              <itemize xml:id="Ch2.S1.I1">
+                <item xml:id="Ch2.S1.I1.i1">
+                  <tags>
+                    <tag><text color="#000000">•</text></tag>
+                    <tag role="autoref"><text color="#000000">item </text></tag>
+                    <tag role="typerefnum"><text color="#000000">1st item</text></tag>
+                  </tags>
+                  <para xml:id="Ch2.S1.I1.i1.p1">
+                    <p>’<text font="italic">events</text>’ <indexmark>
+                        <indexphrase key="event">event</indexphrase>
+                      </indexmark> Unlike non-living matter, <text font="italic">living matter is dynamic, changing autonomously by its internal laws</text>; we must think differently about it, including making hypotheses and testing them in the labs.
+Those laws are non-ordinary ’because the construction is different’, but its principles must not differ from the ones we already know.</p>
+                  </para>
+                </item>
+                <item xml:id="Ch2.S1.I1.i2">
+                  <tags>
+                    <tag><text color="#000000">•</text></tag>
+                    <tag role="autoref"><text color="#000000">item </text></tag>
+                    <tag role="typerefnum"><text color="#000000">2nd item</text></tag>
+                  </tags>
+                  <para xml:id="Ch2.S1.I1.i2.p1">
+                    <p>’<text font="italic">space and time</text>’ Those characteristic points are significant changes resulting from processes that have material carriers,
+which change their positions with finite speed, so (unlike in classical mechanics) the events also have the characteristics ’time’ in addition to their ’position’.
+In biology, the <ref idref="spatiotemporal">spatiotemporal</ref> behavior is implemented by <text font="italic">slow ion currents</text>.
+<indexmark>
+                        <indexphrase key="spatiotemporal">spatiotemporal</indexphrase>
+                      </indexmark>
+The meticulous observations must describe the events by using
+special ’space-time’ coordinates (to distinguish it from the one used in
+theories of relativity, we call it ’time-space’ coordinate).
+<indexmark>
+                        <indexphrase key="time-space coordinate">time-space coordinate</indexphrase>
+                      </indexmark><!--  %**** Physics.tex Line 50 **** -->
+In other words, instead of ’moments’ we must consider ’periods’
+and define the ’events’ that define the beginning and the end of those periods.</p>
+                  </para>
+                </item>
+                <item xml:id="Ch2.S1.I1.i3">
+                  <tags>
+                    <tag><text color="#000000">•</text></tag>
+                    <tag role="autoref"><text color="#000000">item </text></tag>
+                    <tag role="typerefnum"><text color="#000000">3rd item</text></tag>
+                  </tags>
+                  <para xml:id="Ch2.S1.I1.i3.p1">
+                    <p>’<text font="italic">within the spatial boundary</text>’
+Laws of physics are usually derived for stand-alone systems, in the sense that
+the considered system is infinitely far from the rest of the world; also, in the sense that the changes we observe do not significantly change the external world, so its idealized disturbing effect will not change it.
+The ’construction’ also results in constraint forces. Furthermore, we must consider the issue of finite resources.</p>
+                  </para>
+                </item>
+                <item xml:id="Ch2.S1.I1.i4">
+                  <tags>
+                    <tag><text color="#000000">•</text></tag>
+                    <tag role="autoref"><text color="#000000">item </text></tag>
+                    <tag role="typerefnum"><text color="#000000">4th item</text></tag>
+                  </tags>
+                  <para xml:id="Ch2.S1.I1.i4.p1">
+                    <p>’<text font="italic">accounted for by physics</text>’[by extraordinary laws]
+We are accustomed to abstracting and testing a static attribute, and we derive the ’ordinary’ laws of motion for the ’net’ interactions.
+In the case of physiology, nature prevents us from testing ’net’ interactions.
+We must understand that some interactions are non-separable, and we must derive ’extraordinary’ laws.
+The forces are not unknown, but the known ’ordinary’ laws of motion of physics are about single-speed interactions.</p>
+                  </para>
+                </item>
+                <item xml:id="Ch2.S1.I1.i5">
+                  <tags>
+                    <tag><text color="#000000">•</text></tag>
+                    <tag role="autoref"><text color="#000000">item </text></tag>
+                    <tag role="typerefnum"><text color="#000000">5th item</text></tag>
+                  </tags>
+                  <para xml:id="Ch2.S1.I1.i5.p1">
+                    <p>’<text font="italic">living matter</text>’ To describe its dynamic behavior, we must introduce a dynamic description. Processes happen inside it, and we can observe some characteristic points.
+The internal processes also manifest in changing physical quantities
+which are inseparable from the ones the experimenter intended to change.</p>
+                  </para>
+                </item>
+                <item xml:id="Ch2.S1.I1.i6">
+                  <tags>
+                    <tag><text color="#000000">•</text></tag>
+                    <tag role="autoref"><text color="#000000">item </text></tag>
+                    <tag role="typerefnum"><text color="#000000">6th item</text></tag>
+                  </tags>
+                  <para xml:id="Ch2.S1.I1.i6.p1">
+                    <p>’<text font="italic">yet tested in the physical laboratory</text>’[including physiological ones] We test those ’constructions’ in laboratories,
+in their actual environment, and in ’working state’. As we did with inanimate matter, we must develop and gradually refine the testing methods as well as the hypotheses.
+Moreover, we must not forget that our methods refer to ’states’, and this time, we test ’processes’. Not only in measuring them (including measurement design and evaluation) but also in handling them computationally, we need more or less different thinking and algorithms.</p>
+                  </para>
+                </item>
+              </itemize>
+            </inline-block><text backgroundcolor="#FFFFE6">
+</text></text><text color="#00FF00">
+</text><text color="#000000"></text></p>
+      </para>
+<!--  %“mathematicspanel–num:MyMathematicsPanel˝ 
+     %–This is mathematics 
+     %˝ 
+     %**** Physics.tex Line 75 **** 
+     %“numericspanel–num:MyNumericsPanel˝ 
+     %–This is numeric 
+     %˝ 
+     %“quotationbox 
+     %–”The Human Brain Project should lay the technical foundation for a “textbf–new model˝ of ICT-based brain research, driving “textit–integration between data and knowledge from different disciplines˝, and catalysing a community effort to achieve a “textbf–new understanding of the brain˝%, new treatments for brain disease 
+     %“dots and “textit–new brain-like computing technologies˝.”““ 
+     %–the “href–https://www.humanbrainproject.eu/en/˝–Human Brain Project˝,  summarised its goal @2012˝˝ 
+     %“paragraph*–Understanding the dynamic brain˝ 
+     %The “textbf–“textit–dynamic˝˝ operation of individual neurons, their connections, higher-level organizations, connections, 
+     %the brain with its information processing capability, and finally, the mind with its conscience and behavior, 
+     %are still among the big mysteries of science: “textit–at which point 
+     %“hyperlink–LivingMatter˝ 
+     %–the non-living matter becomes a living one˝˝, “textit–at which point “hyperlink–CognitiveMatter˝–the living matter becomes intelligent˝˝ and conscious; whether and “hyperlink–PhysicalPictureNeuron˝–how science can handle˝ all this stuff. 
+     %We really need a “hyperlink–NewUnderstanding˝ 
+     %–new understanding˝ that we provide here. 
+     %% 
+     %The hype in the newly launched projects is excessive and seems to lose the hope 
+     %to build brain research on a firm science base. 
+     %For example, the newly (at the end of 2025) launched ““href–https://brainminds.jp/en˝–Brain/MINDS 2.0˝” program in Japan was launched 
+     %%”with the goal of developing a marmoset model for neuroscience”, 
+     %using only mathematical models, “textit–without targeting the understanding of the underlying physical processes˝. 
+     %**** Physics.tex Line 100 **** 
+     %% The case is much similar 
+     %%to the ’Theory of Everything’ in physics, which is developed since science exists and is a never-ending project. Likely, the length of the time needed for neuroscience will not be much shorter, although the project period is limited to years. 
+     %In neuron models, ’dynamics’ refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example~“cite–NeuralDynamicsGertsner:2014˝. We use a real dynamics, 
+     %based on physics, in the sense as Newton introduced his laws of motion to describe 
+     %response of neurons. 
+     %“index–laws of motion˝ 
+     %“paragraph*–Abstract discussion˝ 
+     %Nature uses an infinite variety of implementing neurons. 
+     %%Our goal is not to discuss all 
+     %%infinitely complex molecular, biochemical and physiological details 
+     %%of neuronal operation; it is not necessary, since 
+     %In the “gls–CNS˝ 
+     %they can cooperate 
+     %with each other, ’despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity, 
+     %“textit–the nervous systems adopt “textbf–a number of 
+     %basic principles˝˝ 
+     %for all neurons and synapses’, 
+     %“cite–JohnstonWuNeurophysiology:1995˝ 
+     %independently from the infinitely complex molecular, biochemical and physiological details. 
+     %“index–Johnston Daniel˝ 
+     %“index–Wu Samuel Miao-sin ˝ 
+     %We “textit–will base our holistic discussion on those general basic principles 
+     %**** Physics.tex Line 125 **** 
+     %and create an 
+     %“hyperlink–NeuronPhysical˝ 
+     %–’abstract physical neuron’˝; a hypothetical element, which functions 
+     %essentially like a neuron˝, 
+     %skipping the ’implementation details’ nature uses. 
+     %We essentially follow von Neumann’s method in describing the foundations of 
+     %computing science~“cite–EDVACreport1945˝: ”we will base our considerations on a hypothetical element, which functions essentially like a neuron”. 
+     %We need “hyperlink–Abstractions˝ 
+     %–different abstractions and approximations˝ 
+     %(furthermore, “hyperlink–NonOrdinaryLaws˝–’non-ordinary’ laws˝ of science) for describing biological processes. 
+     %“index–ordinary laws˝ 
+     %However, an abstraction is usable 
+     %in practice only when paired with a generalization: the more abstract the assumption, the more general and widely applicable the concept or conclusion. 
+     %“textit–By abstractions, we can reduce the unbelievably detailed world into manageable pieces, and we can learn anything general.˝ 
+     %We must show which approximations are oversimplifications and which phenomena are misunderstood; measured, or interpreted in a wrong approach. 
+     %% Abstraction is, in fact, everywhere, including inside each of us. It is a core element of science and cognition. -->    </section>
+    <section inlist="toc" labels="LABEL:Physics-Disciplinarity" xml:id="Ch2.S2">
+      <tags>
+        <tag>2.2</tag>
+        <tag role="autoref">section 2.2</tag>
+        <tag role="refnum">2.2</tag>
+        <tag role="typerefnum">§2.2</tag>
+      </tags>
+      <title color="#000000"><tag close=" ">2.2</tag>Disciplinarity</title>
+<!--  %“input–src/Mathematics˝ 
+     %**** book.tex Line 50 **** 
+     %%% Last edited 2026.02.20 -->    </section>
+  </chapter>
+  <chapter labels="LABEL:ch:Version" xml:id="Chx2">
+    <title color="#000000">Version history</title>
+    <para xml:id="Chx2.p1">
+      <p><text color="#000000">This is the documentation of the development of the site
+about neuronal operation,
+including the description of the unified theory of
+neuronal operation, its aspects in physics, physiology, computing and information theory and more.
+It discusses the simulator, which performs a time-aware simulation
+using the SystemC engine.</text></p>
+    </para>
+    <section labels="LABEL:sec:Versioning-Main" xml:id="Chx2.Sx1">
+      <title color="#000000"> Versioning principles</title>
+      <para xml:id="Chx2.Sx1.p1">
+        <p><text color="#000000">The versions are ordered by the date of publishing.
+Only the middle versions are listed, the minor versions are
+only mentioned. Details are in the logs of the repository.</text></p>
+      </para>
+      <para xml:id="Chx2.Sx1.p2">
+        <p><text color="#000000">The contents are under development, and maintaining the
+versioning is of medium priority, so delays and</text></p>
+      </para>
+    </section>
+    <section labels="LABEL:sec:Version-0.2.x" xml:id="Chx2.Sx2">
+      <title color="#000000">V0.2.x</title>
+      <paragraph inlist="toc" xml:id="Chx2.Sx2.SS0.SSS0.Px1">
+        <title color="#000000">Forces exerting on ions on the surface of the membrane added.</title>
+        <toctitle><text color="#000000">Version 0.2.1 @ 2026.02.23</text></toctitle>
+      </paragraph>
+      <paragraph inlist="toc" xml:id="Chx2.Sx2.SS0.SSS0.Px2">
+        <title color="#000000">The version description was added.
+Text from the paper in ”Foundations of Science” added.</title>
+        <toctitle><text color="#000000">Version 0.2.0 @ 2026.02.11</text></toctitle>
+      </paragraph>
+    </section>
+    <section labels="LABEL:sec:Version-0.1.x" xml:id="Chx2.Sx3">
+      <title color="#000000">V0.1.x</title>
+      <paragraph inlist="toc" xml:id="Chx2.Sx3.SS0.SSS0.Px1">
+        <title color="#000000">The consequences of science disciplinarity added</title>
+        <toctitle><text color="#000000">Version 0.1.18 @ 2026.02.01</text></toctitle>
+        <pagination role="newpage"/>
+<!--  %“pagebreak 
+     %“backmatter 
+     %“vfill 
+     %“pagebreak 
+     %“iflatexml 
+     %“chapter*–ListOfTables“label–Ch:ListOfTables˝˝ 
+     %“else 
+     %“fi 
+     %“addcontentsline–toc˝–chapter˝–List of tables˝ 
+     %“listoftables 
+     %“vfill 
+     %“pagebreak 
+     %“iflatexml 
+     %“chapter*–ListOfFigures“label–Ch:ListOfFigures˝˝ 
+     %“else 
+     %“fi 
+     %“addcontentsline–toc˝–chapter˝–List of figures˝ 
+     %“listoffigures 
+     %“vfill 
+     %“pagebreak 
+     %**** book.tex Line 75 **** 
+     %“iflatexml 
+     %“chapter*–Index“label–Ch:Index˝˝“label–index˝“label–Index˝ 
+     %“else 
+     %“fi 
+     %“addcontentsline–toc˝–chapter˝–Index˝ 
+     %“printindex 
+     %“vfill 
+     %“pagebreak 
+     %%“iflatexml 
+     %“chapter*–Glossary“label–Ch:Glossary˝˝ 
+     %%“else 
+     %%“fi 
+     %“addcontentsline–toc˝–chapter˝–Glossary˝ 
+     %%“printglossary[type=“acronymtype] 
+     %“printglossaries 
+     %“vfill 
+     %“addcontentsline–toc˝–chapter˝–Bibliography˝ 
+     %**** book.tex Line 100 **** 
+     %“bibliographystyle–spphys˝ 
+     %“label–Bibliography˝ 
+     %“iflatexml 
+     %“input–manual.bbl˝ 
+     %“else 
+     %“chapter*–Bibliography“label–ch:bibliography˝˝ 
+     %“fi -->      </paragraph>
+    </section>
+  </chapter>
+  <bibliography xml:id="bib">
+    <title color="#000000">Bibliography</title>
+    <biblist>
+      <bibitem key="Schrodinger:1992" xml:id="bib.bib1">
+        <tags>
+          <tag>[1]</tag>
+          <tag role="autoref">1</tag>
+          <tag role="refnum">1</tag>
+        </tags>
+        <bibblock><text color="#000000">
+E. Schrödinger, Is life based on the laws of physics?, Cambridge University
+Press, Canto, 1992, pp. 76–85.
+</text></bibblock>
+      </bibitem>
+      <bibitem key="PrinciplesNeuralScience:2013" xml:id="bib.bib2">
+        <tags>
+          <tag>[2]</tag>
+          <tag role="autoref">2</tag>
+          <tag role="refnum">2</tag>
+        </tags>
+        <bibblock><text color="#000000">
+E. R. Kandel, J. H. Schwartz, T. M. Jessell, S. A. Siegelbaum, A. J. Hudspeth,
+Principles of Neural Science, 5th Edition, The McGraw-Hill Medical, New York
+Chicago etc., 2013.
+</text></bibblock>
+      </bibitem>
+      <bibitem key="NeuralDynamicsGertsner:2014" xml:id="bib.bib3">
+        <tags>
+          <tag>[3]</tag>
+          <tag role="autoref">3</tag>
+          <tag role="refnum">3</tag>
+        </tags>
+        <bibblock><text color="#000000">
+W. Gerstner, W. M. Kistler, R. Naud, L. Paninski, Neuronal Dynamics: From
+single neurons to networks and models of cognition and beyond, Cambridge
+University Press, Cambridge, UK, 2014.
+</text></bibblock>
+      </bibitem>
+      <bibitem key="JohnstonWuNeurophysiology:1995" xml:id="bib.bib4">
+        <tags>
+          <tag>[4]</tag>
+          <tag role="autoref">4</tag>
+          <tag role="refnum">4</tag>
+        </tags>
+        <bibblock><!--  %**** book.bbl Line 25 **** --><text color="#000000">
+D. Johnston, S. M.-S. Wu, Foundations of Cellular Neurophysiology,
+Massachusetts Institute of Technology, Cambridge, Massachusetts and London,
+England, 1995.
+</text></bibblock>
+      </bibitem>
+      <bibitem key="EDVACreport1945" xml:id="bib.bib5">
+        <tags>
+          <tag>[5]</tag>
+          <tag role="autoref">5</tag>
+          <tag role="refnum">5</tag>
+        </tags>
+        <bibblock><text color="#000000">
+J. von Neumann, First draft of a report on the EDVAC, IEEE Annals of the
+History of Computing 15 (4) (1993) 27–75.
+</text></bibblock>
+        <bibblock><ref class="ltx_href" color="#000000" href="https://doi.org/10.1109/85.238389"><ref class="ltx_nolink ltx_path" font="typewriter" href="doi:10.1109/85.238389">doi:10.1109/85.238389</ref></ref><text color="#000000">.
+</text></bibblock>
+      </bibitem>
+    </biblist>
+  </bibliography>
+  <navigation>
+    <inline-logical-block class="ltx_page_navbar">
+<!--  %============================================================ -->      <para xml:id="p1">
+        <graphics candidates="../graphics/neurer.png" graphic="../graphics/neurer.png" options="width=162.6075pt,keepaspectratio=true" xml:id="p1.g1"/>
+        <p>The Hodgkin-Huxley neuron model V2.0<break/><text fontsize="90%">The true physics and physiology<break/>behind neuronal operation<break/>(DANCES) Version <emph font="italic">0.0.1</emph><break/><!--  %“@“today --></text></p>
+      </para>
+      <TOC format="context"/>
+      <para xml:id="p2">
+        <graphics candidates="../graphics/NeuronAndBrain.jpg" graphic="../graphics/NeuronAndBrain.jpg" options="width=177.78578pt,keepaspectratio=true" xml:id="p2.g1"/>
+      </para>
+    </inline-logical-block>
+  </navigation>
+</document>

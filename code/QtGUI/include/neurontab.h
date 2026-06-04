@@ -40,6 +40,7 @@ private:
   // Actions
   QAction *m_selectNeuronAction = nullptr;
   QAction *m_runAction = nullptr;
+  ScQtNeuron_MainWindow *m_parent;
 /*//  QAction *m_darkmodeAction = nullptr;
   private:
 */

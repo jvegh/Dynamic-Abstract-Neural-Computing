@@ -55,7 +55,7 @@
                  <x>0</x>
                  <y>0</y>
                  <width>521</width>
-                 <height>351</height>
+                 <height>401</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -305,7 +305,7 @@
                      <rect>
                       <x>0</x>
                       <y>20</y>
-                      <width>266</width>
+                      <width>346</width>
                       <height>28</height>
                      </rect>
                     </property>
@@ -344,20 +344,14 @@
                        </property>
                       </spacer>
                      </item>
+                     <item>
+                      <widget class="QPushButton" name="startButton">
+                       <property name="text">
+                        <string>Start</string>
+                       </property>
+                      </widget>
+                     </item>
                     </layout>
-                   </widget>
-                   <widget class="QPushButton" name="startButton">
-                    <property name="geometry">
-                     <rect>
-                      <x>250</x>
-                      <y>20</y>
-                      <width>80</width>
-                      <height>26</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>Start</string>
-                    </property>
                    </widget>
                   </widget>
                   <widget class="QGroupBox" name="SimulatorTimesGroup">
@@ -506,9 +500,17 @@
                       <string>Time</string>
                      </property>
                     </widget>
+                    <widget class="QRadioButton" name="stepMode">
+                     <property name="text">
+                      <string>Step</string>
+                     </property>
+                    </widget>
                     <widget class="QRadioButton" name="spikeMode">
                      <property name="text">
                       <string>Spike</string>
+                     </property>
+                     <property name="checked">
+                      <bool>false</bool>
                      </property>
                     </widget>
                     <widget class="QRadioButton" name="eventMode">
@@ -516,17 +518,19 @@
                       <string>Event</string>
                      </property>
                      <property name="checked">
-                      <bool>false</bool>
-                     </property>
-                    </widget>
-                    <widget class="QRadioButton" name="stepMode">
-                     <property name="text">
-                      <string>Step</string>
-                     </property>
-                     <property name="checked">
                       <bool>true</bool>
                      </property>
                     </widget>
+                   </widget>
+                   <widget class="QComboBox" name="comboBox">
+                    <property name="geometry">
+                     <rect>
+                      <x>370</x>
+                      <y>20</y>
+                      <width>131</width>
+                      <height>26</height>
+                     </rect>
+                    </property>
                    </widget>
                   </widget>
                   <widget class="QLineEdit" name="SimulatedTimeValue">

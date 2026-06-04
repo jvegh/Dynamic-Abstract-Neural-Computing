@@ -178,7 +178,10 @@ public:
     double I_AIS_Get(void){return m_AIS_I;}
     double I_Na_Get(void){return m_Na_I;}
     double I_Resulting_Get(void){return m_Resulting_I;}
-
+    vector<double> *MembraneParameters_Get() {return &m_MembraneParameters;}
+    vector<double> *RushinParameters_Get() {return &m_RushinParameters;}
+    void RushinParameters_Set(uint32_t index, double value) {m_RushinParameters[index] = value;}
+    void MembraneParameters_Set(uint32_t index, double value) {m_MembraneParameters[index] = value;}
 protected:
 
 //    NeuronInputCurrent* m_RushinCurrent;

@@ -145,14 +145,6 @@ private:
      * Simulating is interrupted if #_abort or #_interrupt is set to true.
      */
     void doSimulationSteps();
-#if 0
-    /**
-     * @brief Simulated-time-limited stepping mode
-     *
-     * Simulating is interrupted if #_abort or #_interrupt is set to true.
-     */
-    void doSimulatedTime();
-#endif
 signals:
     /**
      * @brief This signal is emitted when counted value is changed (every sec)
@@ -167,8 +159,6 @@ signals:
      * @brief This signal is emitted when process is finished
      */
     void finished();
-
-    void inputReceivedSignal();
 
 public slots:
     /**

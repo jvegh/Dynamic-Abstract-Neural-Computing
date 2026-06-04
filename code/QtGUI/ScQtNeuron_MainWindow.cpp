@@ -48,6 +48,9 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     setMinimumSize(550, 450);
     setMaximumSize(800, 600);
     resize(641, 481);
+
+    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
+
     // Create tabs
     m_stackedTabs = new QStackedWidget(this);
     ui->centrallayout->addWidget(m_stackedTabs);
@@ -80,7 +83,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 
     connect(m_neuronTab->ui->DisplayReversedBox, &QCheckBox::clicked, this,
             &ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked);
-    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
     //
     // The thread and the simulator are created in the constructor so it is always safe to delete them.
     //
@@ -171,6 +173,7 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
                                             m_neuronTab->ui->Slider2->value()/1000.  // TimeConst, [ms]
         );*/
 //    APParameters[0] = m_neuronTab->ui->Slider3->value()*1000.; // Amplitude, pA
+//??    MyNeuron->RushinParameters_Set(0,m_neuronTab->ui->RushinAmplitudeSlider->value()/1000);
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     m_terminated = false;
 }
@@ -196,13 +199,24 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
 //    m_Simulator->abort();
     m_Simulator->TimesReset();
     displayTime_Reset();
-//    MyNeuron->Initialize_Do();
+    MyNeuron->Initialize_Do();
 
     m_neuronTab->ui->DisplayReversedBox->setEnabled(true);
-    m_PhasePlotWindow->Reset();
+
+    delete m_PhasePlotWindow;
+    m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
+    m_PhasePlotWindow->show();
+    m_PhasePlotWindow->DisplayMode_Set(false);
+
+//    m_PhasePlotWindow->Reset();
     m_VoltageWindow->Reset();
     m_CurrentWindow->Reset();
-    m_GradientWindow->Reset();
+//    m_GradientWindow->Reset();
+    delete m_GradientWindow;
+    m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
+    m_GradientWindow->show();
+//    m_GradientWindow->DisplayMode_Set(false);
+
 //    on_eventHappened();
 }
 
@@ -238,7 +252,7 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     }
     if((
         (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()))
-        || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
+        || (m_neuronTab->ui->eventMode->isChecked() && (m_StepNumber-->0))
         || (m_neuronTab->ui->continuousMode->isChecked())
         )
         && !m_terminated //&& (!m_Simulator->_abort) //&& (m_Simulator->_interrupt)

@@ -72,6 +72,7 @@ struct TabWidgets {
 
 class ScQtNeuron_MainWindow : public QMainWindow
 {
+    friend class NeuronTab;
     Q_OBJECT
     enum TabIndex {
         NeuronTabID,

@@ -6,6 +6,7 @@
 #include <QScrollBar>
 #include <QSpinBox>
 #include <QTemporaryFile>
+#include "ScQtNeuron_MainWindow.h"
 //#include "consolewidget.h"
 
 //#include "neuronhandler.h"
@@ -19,7 +20,9 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
                      ScQtNeuron_MainWindow *parent)
 //    : Ripes::RipesTab(additionalToolbar,
     :QWidget( //parent
-              ) {
+              ),
+      m_parent(parent)
+{
     ui = new Ui::NeuronTab;
     ui->setupUi(this);
     SetupGUI();
@@ -30,21 +33,30 @@ NeuronTab::NeuronTab(QToolBar *controlToolbar,
   enableSimulatorControls();
 }
 
+//extern vector<double> Default_MembraneParameters;
 void NeuronTab::SetupGUI()
 {
     // Set up rush-in curent: Amplitude
     ui->RushinAmplitudeSlider->setMinimum(10);
-    ui->RushinAmplitudeSlider->setMaximum(3000);
+    ui->RushinAmplitudeSlider->setMaximum(30000);
+
+
     ui->RushinAmplitudeSlider->setValue(120);
+//??    ui->RushinAmplitudeSlider->setValue(m_parent->MyNeuron->RushinParameters_Get()->at(0));
     ui->RushinAmplitudeSlider->setPageStep(20);
     ui->RushinAmplitudeSliderValue->setText(QString::number(ui->RushinAmplitudeSlider->value()));
     QObject::connect(ui->RushinAmplitudeSlider, &QSlider::valueChanged, this, [=] () {
         (ui->RushinAmplitudeSliderValue->setText(QString::number(ui->RushinAmplitudeSlider->value(),'f',2)));
     });
     // Set up membrane time constant : tau, us
-    ui->MembraneTauSlider->setMinimum(500);
-    ui->MembraneTauSlider->setMaximum(20000);
-    ui->MembraneTauSlider->setValue(1560);
+    ui->MembraneTauSlider->setMinimum(100);
+    ui->MembraneTauSlider->setMaximum(500);
+    ui->MembraneTauSlider->setValue(220);
+ //   Membrane_R, Membrane_C, Membrane_Tau
+ //   ui->MembraneTauSlider->setValue(m_parent->MyNeuron->MembraneParameters_Get()->at(2)*1000);
+//??    ui->MembraneTauSlider->setValue(Default_MembraneParameters[2]);
+
+
     ui->MembraneTauSlider->setPageStep(500);
     ui->MembraneTauSliderValue->setText(QString::number(ui->MembraneTauSlider->value()));
     QObject::connect(ui->MembraneTauSlider, &QSlider::valueChanged, this, [=] () {
@@ -52,8 +64,9 @@ void NeuronTab::SetupGUI()
     });
     // Set up R_AIS Slider : Resistance, kOhm
     ui->MembraneRSlider->setMinimum(100);
-    ui->MembraneRSlider->setMaximum(9000);
+    ui->MembraneRSlider->setMaximum(900);
     ui->MembraneRSlider->setValue(2500);
+//    ui->MembraneRSlider->setValue(m_parent->MyNeuron->MembraneParameters_Get()->at(0)*1000);
     ui->MembraneRSlider->setPageStep(100);
     ui->MembraneRSliderValue->setText(QString::number(ui->MembraneRSlider->value()));
     QObject::connect(ui->MembraneRSlider, &QSlider::valueChanged, this, [=] () {
@@ -73,15 +86,6 @@ void NeuronTab::SetupGUI()
 
 void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {
 }
-/*  const QIcon neuronIcon = QIcon(":/icons/cpu.svg");
-  m_selectNeuronAction =
-      new QAction(neuronIcon, "Select neuron", this);
-  connect(m_selectNeuronAction, &QAction::triggered, this,
-          &NeuronTab::neuronSelection);
-  controlToolbar->addAction(m_selectNeuronAction);
-  controlToolbar->addSeparator();
-//  const QIcon clockIcon = QIcon(":/icons/step.svg");
-*/
 
 
 /*

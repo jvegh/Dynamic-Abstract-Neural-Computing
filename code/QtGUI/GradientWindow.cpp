@@ -73,14 +73,14 @@ void GradientWindow::setupPlot( )
     RushinGradientPlot->setName("Input gradient");
     RushinGradientPlot->setPen(QPen(Qt::green));
     RushinGradientPlot->setBrush(QBrush(QColor(2, 20, 2, 20)));
-//    RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    RushinGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 //    RushinGradientPlot->setLineStyle(QCPCurve::lsLine);
 
     AISGradientPlot = new QCPCurve(ui->customPlot->xAxis, ui->customPlot->yAxis);
     AISGradientPlot->setName("AIS gradient");
     AISGradientPlot->setPen(QPen(Qt::red));
     AISGradientPlot->setBrush(QBrush(QColor(20, 2, 2, 20)));
-//    AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    AISGradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 //    AISGradientPlot->setLineStyle(QCPCurve::lsLine);
 //    AISGradientPlot->setLineStyle(QCPCurve::lsNone);
 
@@ -89,7 +89,7 @@ void GradientWindow::setupPlot( )
     GradientPlot->setPen(QPen(Qt::blue));
     GradientPlot->setBrush(QBrush(QColor(2, 2, 20, 20)));
 //    GradientPlot->setLineStyle(QCPCurve::lsLine);
-//    GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
+    GradientPlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 
 
     ui->customPlot->legend->setVisible(true); // Ensure legend is visible

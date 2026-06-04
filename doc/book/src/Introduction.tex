@@ -2,7 +2,10 @@
 
 \chapter{Introduction\label{ch:Introduction}}
 
-
+\quotationbox
+{"The Human Brain Project should lay the technical foundation for a \textbf{new model} of ICT-based brain research, driving \textit{integration between data and knowledge from different disciplines}, and catalysing a community effort to achieve a \textbf{new understanding of the brain}%, new treatments for brain disease 
+\dots and \textit{new brain-like computing technologies}."\\
+{the \href{https://www.humanbrainproject.eu/en/}{Human Brain Project},  summarised its goal @2012}}
 
 
 %\paragraph*{Understanding the dynamic brain}
@@ -16,11 +19,8 @@ We really need a \hyperlink{NewUnderstanding}
 %
 The hype in the newly launched projects is excessive and seems to lose the hope 
 to build brain research on a firm science base.
-For example, the newly (at the end of 2025) launched “\href{https://brainminds.jp/en}{Brain/MINDS 2.0}” program in Japan was launched 
-%"with the goal of developing a marmoset model for neuroscience",
+For example, the newly (at the end of 2025) launched "\href{https://brainminds.jp/en}{Brain/MINDS 2.0}" program in Japan was launched 
 using only mathematical models, \textit{without targeting the understanding of the underlying physical processes}.
-% The case is much similar 
-%to the 'Theory of Everything' in physics, which is developed since science exists and is a never-ending project. Likely, the length of the time needed for neuroscience will not be much shorter, although the project period is limited to years.
 In neuron models, 'dynamics' refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example~\cite{NeuralDynamicsGertsner:2014}. We use a real dynamics,
 based on physics, in the sense as Newton introduced his laws of motion to describe
 response of neurons.
@@ -46,81 +46,62 @@ response of neurons.
 %Törekszünk arra, hogy az anyag ezek nélkül is érthető legyen,
 %ezekkel együtt pedig a megfelelő szakképzettségű olvasó
 %továbbgondolásra ösztönző tudást meríthessen.
-The book has several layers. In addition to the sections intended to be understandable by everyone (i.e. primarily readers with a suitable physiological and neuroscience background), there are also panels for those with other relevant backgrounds containing the necessary \textbf{mathematical~\ref{intro:MyMathematicsPanel}} and \textbf{physical~\ref{intro:MyPhysicsPanel}} knowledge, which require at least the appropriate level of BSc knowledge to understand, but sometimes knowledge that goes beyond this, and sometimes
-knowledge and explanations that make you delve deeper into the unusualness of the ideas. The complexity of the phenomenon requires many approximations, but by using the appropriate approximations and abstractions, the \textbf{numeric \ref{num:MyNumericsPanel}} panels contain numerical results (sometimes only reasonable estimates). We strive to make the material understandable without them, and with them, the reader with the appropriate qualifications
+
+\section{Disciplinary layers\label{sec:Intro-Disciplinar}}
+The book has several layers. In addition to the sections intended to be understandable by everyone (i.e. primarily readers with a suitable physiological and neuroscience background), there are also panels (typically in another chapters) for those with the relevant background, containing the necessary \textbf{mathematical~\ref{intro:MyMathematicsPanel}} and \textbf{physical~\ref{intro:MyPhysicsPanel}} knowledge, which require at least the appropriate level of BSc knowledge to understand, but sometimes knowledge that goes beyond this, and sometimes
+knowledge and explanations that make you delve deeper into the unusualness of the ideas. This method naturally leads
+to some redundancy, but enables the audience to read only
+the text his/her background qualifies for.
+ We strive to make the material understandable without those supplementary material, and with them, the reader with the appropriate qualifications
 will be able to gain knowledge that encourages further thought.
 
 
 \physicspanel{intro:MyPhysicsPanel}
 {
-%A tudományok specializálódása során a fizika az élettelen természet 
-%leírására szakosodott és (az észszerű leírhatóság érdekében)
-%korlátozott érvényességű szakterületeket hozott létre.
-%Az élő természet tanulmányozása során már természetes módon
-%használták eredményeit, módszereit és eszközeit.
-%Ennek során abból a helyes nézőpontból indultak ki, hogy
-%a természetben található objektumok és kölcsönhatásaik leírására
-%ugyanazoknak a törvényeknek kell vonatkozni. Nem vették azonban figyelembe, hogy a természet bonyolultsága miatt,
-%a leírhatóság érdekében, közelítéseket és elhanyagolásokat kell tennünk. A diszciplináris törvények egy-egy jelenségköre vonatkozóan
-%absztrakt fogalmakat alkotnak és a törvények ezeket az absztrakt
-%fogalmakat írják le pontosan, nem pedig azokat a jelenségeket,
-%amelyek a természetben előfordulnak. Az esetek jelentős részében
-%ezek a törvények teljes egészükben használhatók, 
-%az élő és élettelen környezet körülményeinek jelentős eltérései miatt
-%sokszor csak jelentős módosítással vagy akár teljes újragondolással alkalmazhatók; lásd Erwin Schrödinger lényeglátó kérdéseinek értelmezését
+%%A tudományok specializálódása során a fizika az élettelen természet 
+%%leírására szakosodott és (az észszerű leírhatóság érdekében)
+%%korlátozott érvényességű szakterületeket hozott létre.
+%%Az élő természet tanulmányozása során már természetes módon
+%%használták eredményeit, módszereit és eszközeit.
+%%Ennek során abból a helyes nézőpontból indultak ki, hogy
+%%a természetben található objektumok és kölcsönhatásaik leírására
+%%ugyanazoknak a törvényeknek kell vonatkozni. Nem vették azonban figyelembe, hogy a természet bonyolultsága miatt,
+%%a leírhatóság érdekében, közelítéseket és elhanyagolásokat kell tennünk. A diszciplináris törvények egy-egy jelenségköre vonatkozóan
+%%absztrakt fogalmakat alkotnak és a törvények ezeket az absztrakt
+%%fogalmakat írják le pontosan, nem pedig azokat a jelenségeket,
+%%amelyek a természetben előfordulnak. Az esetek jelentős részében
+%%ezek a törvények teljes egészükben használhatók, 
+%%az élő és élettelen környezet körülményeinek jelentős eltérései miatt
+%%sokszor csak jelentős módosítással vagy akár teljes újragondolással alkalmazhatók; lásd Erwin Schrödinger lényeglátó kérdéseinek értelmezését
+%%\index{Schrödinger, Erwin}
+%%a \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}} 
+%During the specialization of sciences, physics specialized in the description of inanimate nature and (in the interest of reasonable description) created fields of limited validity. In the study of living nature, its results, methods and tools were already used in a natural way. In doing so, they started from the correct point of view that the description of objects in nature and their interactions should be governed by the same laws. However, they did not take into account that due to the complexity of nature, approximations and neglects must be made in order to be able to describe them. Disciplinary laws create abstract concepts for a certain range of phenomena, and the laws describe these abstract concepts precisely, not the phenomena that occur in nature. In most cases
+%these laws can be used in their entirety,
+%due to the significant differences in the conditions of the living and non-living environment
+%often they can only be used with significant modification or even complete rethinking; see the interpretation of Erwin Schrödinger's insightful questions
 %\index{Schrödinger, Erwin}
-%a \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}} 
-During the specialization of sciences, physics specialized in the description of inanimate nature and (in the interest of reasonable description) created fields of limited validity. In the study of living nature, its results, methods and tools were already used in a natural way. In doing so, they started from the correct point of view that the description of objects in nature and their interactions should be governed by the same laws. However, they did not take into account that due to the complexity of nature, approximations and neglects must be made in order to be able to describe them. Disciplinary laws create abstract concepts for a certain range of phenomena, and the laws describe these abstract concepts precisely, not the phenomena that occur in nature. In most cases
-these laws can be used in their entirety,
-due to the significant differences in the conditions of the living and non-living environment
-often they can only be used with significant modification or even complete rethinking; see the interpretation of Erwin Schrödinger's insightful questions
-\index{Schrödinger, Erwin}
-in \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}}
+%in \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}}
 }
 
 \mathematicspanel{intro:MyMathematicsPanel}
-{This is mathematics
+{Mathematics panels typically contain equations and 
+their explanations.
 }
 
 \numericspanel{intro:MyNumericsPanel}
-{This is numeric
+{
+The complexity of the phenomena requires many approximations, but by using the appropriate approximations and abstractions,  numerical results (sometimes only reasonable estimates) are provided in the corresponding numeric panels.
 }
 
-\quotationbox
-{"The Human Brain Project should lay the technical foundation for a \textbf{new model} of ICT-based brain research, driving \textit{integration between data and knowledge from different disciplines}, and catalysing a community effort to achieve a \textbf{new understanding of the brain}%, new treatments for brain disease 
-\dots and \textit{new brain-like computing technologies}."\\
-{the \href{https://www.humanbrainproject.eu/en/}{Human Brain Project},  summarised its goal @2012}}
 
 
 
-\paragraph*{Understanding the dynamic brain}
-The \textbf{\textit{dynamic}} operation of individual neurons, their connections, higher-level organizations, connections,
-the brain with its information processing capability, and finally, the mind with its conscience and behavior,
-are still among the big mysteries of science: \textit{at which point
-\hyperlink{LivingMatter}
-{the non-living matter becomes a living one}}, \textit{at which point \hyperlink{CognitiveMatter}{the living matter becomes intelligent}} and conscious; whether and \hyperlink{PhysicalPictureNeuron}{how science can handle} all this stuff. 
-We really need a \hyperlink{NewUnderstanding}
-{new understanding} that we provide here.
-%
-The hype in the newly launched projects is excessive and seems to lose the hope 
-to build brain research on a firm science base.
-For example, the newly (at the end of 2025) launched “\href{https://brainminds.jp/en}{Brain/MINDS 2.0}” program in Japan was launched 
-%"with the goal of developing a marmoset model for neuroscience",
-using only mathematical models, \textit{without targeting the understanding of the underlying physical processes}.
-% The case is much similar 
-%to the 'Theory of Everything' in physics, which is developed since science exists and is a never-ending project. Likely, the length of the time needed for neuroscience will not be much shorter, although the project period is limited to years.
-In neuron models, 'dynamics' refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example~\cite{NeuralDynamicsGertsner:2014}. We use a real dynamics,
-based on physics, in the sense as Newton introduced his laws of motion to describe
-response of neurons.
-\index{laws of motion}
-
-
-\paragraph*{Abstract discussion}
+\section[Abstract discussion]{Abstract discussion\label{sec:Intro-Abstract}}
 
 Nature uses an infinite variety of implementing neurons. 
-%Our goal is not to discuss all
-%infinitely complex molecular, biochemical and physiological details
-%of neuronal operation; it is not necessary, since 
+Our goal is not to discuss all
+infinitely complex molecular, biochemical and physiological details
+of neuronal operation
 In the \gls{CNS} 
 they can cooperate
 with each other, 'despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity,
@@ -147,12 +128,10 @@ However, an abstraction is usable
 in practice only when paired with a generalization: the more abstract the assumption, the more general and widely applicable the concept or conclusion.
 \textit{By abstractions, we can reduce the unbelievably detailed world into manageable pieces, and we can learn anything general.}
 We must show which approximations are oversimplifications and which phenomena are misunderstood; measured, or interpreted in a wrong approach.
-% Abstraction is, in fact, everywhere, including inside each of us. It is a core element of science and cognition. 
+Abstraction is, in fact, everywhere, including inside each of us. It is a core element of science and cognition. 
 
 
-
-\paragraph*{Zigzag reading}
-For the same reasons, we follow von Neumann's method when he described principles of technical computing~\cite{EDVACreport1945}. "The ideal procedure would be, to take up the specific parts in some definite order, to treat
+We follow von Neumann's method when he described principles of technical computing~\cite{EDVACreport1945}. "The ideal procedure would be, to take up the specific parts in some definite order, to treat
 each one of them exhaustively, and go on to the next one only after the predecessor is completely
 disposed of. However, this seems hardly feasible. The desirable features of the various parts, and
 the decisions based on them, emerge only after a somewhat \hypertarget{zigzagdiscussion}
@@ -169,5 +148,42 @@ The contents are inherently intertwinned, and the form must follow the contents.
 We make this zigzag reading more accessible by using hyperlinks and cross-references throughout the document. 
 
 
+\section[Electrical model
+]{Electrical neuron model in a nutshell\label{sec:Single-ElectricalNutshell}}
 
+
+Despite that we attach mechanical and other phenomena to the
+electrical ones, our motto is similar to the frequently cited saying \href{https://en.wikipedia.org/wiki/Cherchez_la_femme"}{'Cherchez la femme'}:
+\textit{Look for the charge},
+\index{Cherchez la femme}
+meaning "\textit{no matter what the problem, some charge is often the root cause}" (however, we consider also effects of the thermodynamics 
+on charge, given that the charges are ions instead of electrons. Furthermore, we shortly consider the mechanical, optical, etc. consequences.).
+The expression comes from the novel \textit{The Mohicans of Paris} by Alexandre Dumas and is frequently used
+in detective novels in the sense that there are always complications and unusual
+situations, but "no matter what the problem, a woman is often the root cause". 
+Although, in most cases, the cause is seemingly different.
+
+Similarly, the charge is always the primary quantity when speaking about neural operations. 
+We follow this line and explain how processes, that traditionally
+belong to different classical science disciplines, redistribute charges and create
+electrical currents and voltages, then discuss how the cell handles the electrical charge. We note, however, that the different charge carrier (ions instead of electrons) needs care: the "slow current"
+shows unusual behavior and the needs using known laws in 
+more or less different form.
+Also, we make hints that in most cases, the classical disciplines, alone, are not qualified to describe phenomena of living matter.
+The details are described in Chapter~\ref{ch:Physics}, where
+the fundamental differences caused by the charge carrier are discussed. 
+
+We show that, alhough the thermodynamic effects
+are inseparable from the electrical ones, an appropriate combination of the disciplines satisfactorily describe the observations.
+We consider that \href{https://neuronaldynamics.epfl.ch/online/Ch1.S1.html}{neurotransmitters, receptors and specialized membrane proteins}
+\textit{only implement a kind of (time and energy-consuming)
+	chemical/enzymatic decoupling
+	of the signal transmission mechanism.} The idea resembles opto-coupling in electronics:
+makes \textit{the signal transmission independent from the local potential value}.
+Suppose neurons use galvanic coupling
+when the resting potential of one of the neurons equals the extracellular space. In that case,
+all connected neurons' resting potentials are
+equal to that of the extracellular space. Without this decoupling, the death
+of one neuron would immediately lead to the death of the entire neural network.
+Furthermore, the neurons could not make independent signal processing.
 

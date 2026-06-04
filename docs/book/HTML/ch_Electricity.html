@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Tue Jun  2 16:18:41 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="shortcut icon" href="../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../latexmldoc.css" type="text/css">
+<script src="../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="ch_Thermodynamics.html" title="Chapter 2 Thermodynamics for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="ch_Thermodynamics.html" title="Chapter 2 Thermodynamics for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="bibliography" href="bib.html" title="Bibliography ‣ The Hodgkin-Huxley neuron model V2.0">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">
+The Hodgkin-Huxley neuron model V2.0
+</span></a><a href="index.html" title="" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">
+The Hodgkin-Huxley neuron model V2.0
+</span></a><a href="ch_Thermodynamics.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamics for neurons</span></span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter">
+<h1 class="ltx_title ltx_title_chapter" style="color:#000000;">
+<span class="ltx_tag ltx_tag_chapter">Chapter 1 </span>Electricity for neurons</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The excellent textbook </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="bib.html#bib1" title="" class="ltx_ref">1</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> (of course, having V1.0 in mind) separates the neuron membrane’s states into resting and transient states. The statement that ”the resting membrane potential results
+from the separation of charge across the
+cell membrane” is only half the truth; we tell the second half in section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Physics-segmented</span><span class="ltx_text" style="color:#000000;">.
+We refine their statement ”by discussing how resting ion channels
+establish and maintain the resting potential” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="bib.html#bib1" title="" class="ltx_ref">1</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">, page 126.
+As we show in section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Physics-FormingPotential</span><span class="ltx_text" style="color:#000000;">, two different physical mechanisms
+operate in the resting and the transient states. A primary reason for misguiding neurophysiology was projecting the mechanism of the resting state to the transient state.</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The book </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="bib.html#bib1" title="" class="ltx_ref">1</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> asks the central questions, ”How do ionic [i.e., electrical and chemical] gradients contribute to the resting membrane potential? What prevents
+the ionic gradients from dissipating by diffusion of
+ions across the membrane through the resting channels?”
+However, it leaves them essentially open by giving only a qualitative answer, discussing only membrane permeability without explaining how the resting potential is created and regulated through charging and polarization.
+We demonstrate in section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Physics-FormingPotential</span><span class="ltx_text" style="color:#000000;"> that classical methods of electricity enable us to calculate the membrane’s potential.
+Our results underpin that ”the crucial system in biology isn’t a molecule or a molecular class whatsoever, but the interface created by biomolecules in water” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="bib.html#bib2" title="" class="ltx_ref">2</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">. However, we add that mainly
+physical processes and speed gradients control the processes.
+More precisely, inseparable thermodynamic and electrical processes keep the potential set by the inseparable electrical and thermodynamic backbone defined by the lipid/protein structure of the cell. It is one of the frequent cases when
+one effect implements a functionality (the backbone closely defines the frames of the operation), and the other (in this case, combined thermodynamics and electricity) corrects it when it implements a complex operational (dynamical) functionality:
+”stimulated phase transitions enable the phase-dependent processes to replace each other … one process to build and the other
+to correct” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="bib.html#bib3" title="" class="ltx_ref">3</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.</span></p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="index.html" title="" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">
+The Hodgkin-Huxley neuron model V2.0
+</span></a><a href="bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="ch_Thermodynamics.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamics for neurons</span></span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Jun  2 16:18:41 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

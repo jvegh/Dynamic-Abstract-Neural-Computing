@@ -75,13 +75,13 @@ if ($dopdf) {
     indexoptions => [],
     force        => $force);
 #  copy("$MANDIR/manual.pdf", "$LATEXMLDIR/manual.pdf");
-#   copy("$MANDIR/manual.pdf", "$WEBDIR/manual.pdf");
+   copy("$MANDIR/book.pdf", "$WEBDIR/book.pdf");
    copy("$MANDIR/README.md", "$LATEXMLDIR/README.md");
    copy("$MANDIR/README.md", "$WEBDIR/README.md");
 }
 
 if ($dohtml) {
-  heading("Generating pdf of HH V2.0 book");
+  heading("Generating HTML of HH V2.0 book");
   latexml("$MANDIR/book.tex" => "$WEBDIR/HTML/index.html",
     dependencies => ["$DOCDIR/sty/latexmldoc.sty.ltxml"],
     postoptions => [

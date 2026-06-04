@@ -1,0 +1,157 @@
+
+%%% This defines quotation box
+\newcommand{\warningbox}[1]
+{ 
+\indent\par\smallskip
+   
+\iflatexml
+%Work for .html
+   \color{red}
+
+ \fcolorbox{red!70!white}{orange!10!white}{\parbox{.9\textwidth}{
+   \textbf{Warning:\\
+    \rmfamily}
+{#1}
+}
+}
+      \color{black}
+\else
+% Work for .PDF
+\begin{tcolorbox}[float,
+colback=red!10!white, colframe=black!10!red,coltitle=white,
+title=\textbf{Warning:\\
+    \rmfamily}]
+	{#1}
+\end{tcolorbox}
+\fi
+}
+
+%%% This defines quotation box
+\newcommand{\quotationbox}[1]
+{ 
+\indent\par\smallskip
+   
+\iflatexml
+%Work for .html
+   \color{violet}
+
+ \fcolorbox{violet!20!white}{yellow!10!white}{\parbox{.9\textwidth}{
+   \textbf{Quotation:\\
+    \rmfamily}
+{#1}
+}
+}
+      \color{black}
+\else
+% Work for .PDF
+\begin{tcolorbox}[float,
+colback=violet!5!white, colframe=black!5!blue!15, coltitle=white,
+title=\textbf{Quotation:\\
+    \rmfamily}]
+	{#1}
+\end{tcolorbox}
+\fi
+}
+
+%%% This defines numeric panels
+\newcounter{numericsctr}
+\numberwithin{numericsctr}{chapter}
+\newcommand{\numericspanel}[2]
+{ 
+\noindent
+\refstepcounter{numericsctr}\par\smallskip
+   
+\iflatexml
+%Work for .html
+   \color{blue}
+
+ \fcolorbox{blue!70!white}{green!10!white}{\parbox{.9\textwidth}{
+   \textbf{Numerics panel~\thenumericsctr\\
+    \rmfamily}
+{#2}\label{#1}\hypertarget{#1}
+}
+}
+      \color{black}
+\else
+% Work for .PDF
+\begin{tcolorbox}[float,breakable,
+colback=blue!10!white, colframe=black!10!blue,coltitle=white,
+title=\textbf{Numerics panel~\thenumericsctr\\
+    \rmfamily}]
+	{#2}\label{#1}
+\end{tcolorbox}
+\fi
+}
+
+%%% This defines physics panels
+\newcounter{physicsctr}
+\numberwithin{physicsctr}{chapter}
+\newcommand{\physicspanel}[2]
+{ 
+\noindent
+\refstepcounter{physicsctr}\par\smallskip
+   
+\iflatexml
+%Work for .html
+   \color{green}
+
+ \fcolorbox{green!70!black}{yellow!10!white}{\parbox{.9\textwidth}{
+   \textbf{Physics panel~\thephysicsctr\\
+    \rmfamily}
+{#2}\label{#1}\hypertarget{#1}
+}
+}
+      \color{black}
+\else
+% Work for .PDF
+\begin{tcolorbox}[float,breakable,
+colback=green!10!white, colframe=yellow!10!green,coltitle=white,
+title=\textbf{Physics panel~\thephysicsctr\\
+    \rmfamily}]
+	{#2}\label{#1}
+\end{tcolorbox}
+\fi
+}
+
+%%% This defines mathematics panels
+\newcounter{mathematicsctr}
+\numberwithin{mathematicsctr}{chapter}
+\newcommand{\mathematicspanel}[2]
+{ 
+\noindent
+\refstepcounter{mathematicsctr}\par\smallskip
+   
+\iflatexml
+%Work for .html
+   \color{brown}
+ \fcolorbox{brown!70!black}{orange!10!white}{\parbox{.9\textwidth}{
+   \textbf{Mathematics panel~\themathematicsctr\\
+    \rmfamily}
+{#2}\label{#1}\hypertarget{#1}
+}
+}
+      \color{black}
+\else
+% Work for .PDF
+\begin{tcolorbox}[float,breakable,
+colback=brown!10!white, colframe=orange!70!brown,coltitle=white,
+title=\textbf{Mathematics panel~\themathematicsctr\\
+    \rmfamily}]
+	{#2}\label{#1}
+\end{tcolorbox}
+\fi
+}
+
+\newcommand{\supplementbox}[1]
+{ 
+{ 
+\noindent
+ \fcolorbox{blue!70!white}{green!10!white}{\parbox{.9\textwidth}{
+   \color{black}
+   \textbf{Supplement: }{#1}
+}
+}}}
+
+\newcommand{\indexit}[1]{\index{#1}{%\sffamily
+%\color{blue}
+#1}}

@@ -6,46 +6,48 @@ Database file #1: ../../../LaTeX/CommonBibliography.bib
 Database file #2: ../../..//LaTeX/CommonPrivateBibliography.bib
 Database file #3: ../../../LaTeX/CommonNeuronalBibliography.bib
 Database file #4: ../../../LaTeX/CommonAIBibliography.bib
+Warning--I didn't find a database entry for "VeghDANCES:2025"
 Warning--empty chapter and pages in Schrodinger:1992
-You've used 8 entries,
+Warning--can't use both author and editor fields in OriginMembranePotential:2017
+You've used 64 entries,
             2952 wiz_defined-function locations,
-            740 strings with 7058 characters,
-and the built_in function-call counts, 2520 in all, are:
-= -- 224
-> -- 67
-< -- 4
-+ -- 27
-- -- 19
-* -- 167
-:= -- 326
-add.period$ -- 11
-call.type$ -- 8
-change.case$ -- 6
-chr.to.int$ -- 3
-cite$ -- 9
-duplicate$ -- 86
-empty$ -- 315
-format.name$ -- 23
-if$ -- 680
+            1179 strings with 21105 characters,
+and the built_in function-call counts, 19559 in all, are:
+= -- 1979
+> -- 545
+< -- 9
++ -- 222
+- -- 158
+* -- 1474
+:= -- 2673
+add.period$ -- 107
+call.type$ -- 64
+change.case$ -- 65
+chr.to.int$ -- 15
+cite$ -- 66
+duplicate$ -- 565
+empty$ -- 2222
+format.name$ -- 198
+if$ -- 5166
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 11
-newline$ -- 36
-num.names$ -- 10
-pop$ -- 79
+int.to.str$ -- 64
+missing$ -- 66
+newline$ -- 260
+num.names$ -- 68
+pop$ -- 359
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 172
+skip$ -- 1280
 stack$ -- 0
-substring$ -- 90
-swap$ -- 30
-text.length$ -- 3
+substring$ -- 908
+swap$ -- 199
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 17
-width$ -- 9
-write$ -- 78
-(There was 1 warning)
+warning$ -- 2
+while$ -- 118
+width$ -- 66
+write$ -- 636
+(There were 3 warnings)

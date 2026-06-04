@@ -1,11 +1,51 @@
 \contentsline {chapter}{Foreword}{3}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Disciplinary layers}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Abstract discussion}{6}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Electrical model }{7}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Modeling}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Methods}{9}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Disciplinarity}{9}{subsection.2.1.1}%
-\contentsline {chapter}{\numberline {3}Physics}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Schrödinger on life}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Disciplinarity}{12}{section.3.2}%
-\contentsline {paragraph}{Version 0.2.1 @ 2026.02.23}{15}{section*.10}%
-\contentsline {paragraph}{Version 0.2.0 @ 2026.02.11}{15}{section*.11}%
-\contentsline {paragraph}{Version 0.1.18 @ 2026.02.01}{16}{section*.13}%
+\contentsline {section}{\numberline {2.2}The V2.0 model}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Differences to V1.0}{15}{subsection.2.2.1}%
+\contentsline {chapter}{\numberline {3}Resting Potential}{17}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Transient potential}{19}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Physics for neurons}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Schrödinger on life}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Disciplinarity}{21}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Electricity for neurons}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Membrane's electricity}{26}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Condenser}{27}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Resistor}{27}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Electrolytes}{29}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Thermodynamic field}{30}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}One segment}{33}{subsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.1.6}Two segments}{33}{subsection.6.1.6}%
+\contentsline {paragraph}{Warning}{34}{section*.4}%
+\contentsline {subsubsection}{Charge layers in segments}{34}{section*.5}%
+\contentsline {subsubsection}{Simple conducting sheet (a physical condenser)}{37}{section*.6}%
+\contentsline {subsubsection}{Condenser in dielectric material}{40}{section*.7}%
+\contentsline {subsection}{\numberline {6.1.7}Bridging the micro- and macro views}{42}{subsection.6.1.7}%
+\contentsline {subsection}{\numberline {6.1.8}Ionic currents in a cell}{43}{subsection.6.1.8}%
+\contentsline {subsection}{\numberline {6.1.9}Imitating slow currents}{47}{subsection.6.1.9}%
+\contentsline {section}{\numberline {6.2}Forming membrane's potential}{50}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}States}{50}{subsection.6.2.1}%
+\contentsline {subsubsection}{Resting state}{53}{section*.8}%
+\contentsline {subsubsection}{Transient state}{56}{section*.9}%
+\contentsline {subsection}{\numberline {6.2.2}Controlling states}{60}{subsection.6.2.2}%
+\contentsline {subsubsection}{Neuron as a PID controller}{60}{section*.10}%
+\contentsline {subsubsection}{Robustness of the control circle}{64}{section*.11}%
+\contentsline {subsection}{\numberline {6.2.3}Goldman-Hodgkin-Katz potential}{65}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}The Action Potential}{66}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}The physical process}{66}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}The oscillator model}{68}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Mathematics of the ActionPotential}{71}{subsection.6.3.3}%
+\contentsline {chapter}{\numberline {7}Thermodynamics for neurons}{75}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Transmission}{77}{chapter.8}%
+\contentsline {paragraph}{Version 0.2.1 @ 2026.02.23}{79}{section*.15}%
+\contentsline {paragraph}{Version 0.2.0 @ 2026.02.11}{79}{section*.16}%
+\contentsline {paragraph}{Version 0.1.18 @ 2026.02.01}{80}{section*.18}%
+\contentsline {chapter}{List of tables}{81}{section*.18}%
+\contentsline {chapter}{List of figures}{82}{chapter*.19}%
+\contentsline {chapter}{Index}{86}{chapter*.20}%
+\contentsline {chapter}{Glossary}{87}{chapter*.21}%

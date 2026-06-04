@@ -45,7 +45,7 @@ title=\textbf{Warning:\\
 \else
 % Work for .PDF
 \begin{tcolorbox}[float,
-colback=violet!2!white, colframe=black!5!blue!15,coltitle=white,
+colback=violet!2!white, colframe=black!5!blue!25, coltitle=white,
 title=\textbf{Quotation:\\
     \rmfamily}]
 	{#1}
@@ -55,7 +55,7 @@ title=\textbf{Quotation:\\
 
 %%% This defines numeric panels
 \newcounter{numericsctr}
-\numberwithin{numericsctr}{chapter}
+\numberwithin{numericsctr}{section}
 \newcommand{\numericspanel}[2]
 { 
 \noindent
@@ -74,7 +74,7 @@ title=\textbf{Quotation:\\
       \color{black}
 \else
 % Work for .PDF
-\begin{tcolorbox}[float,breakable,
+\begin{tcolorbox}[float=htpb!,breakable,
 colback=blue!10!white, colframe=black!10!blue,coltitle=white,
 title=\textbf{Numerics panel~\thenumericsctr\\
     \rmfamily}]
@@ -85,7 +85,7 @@ title=\textbf{Numerics panel~\thenumericsctr\\
 
 %%% This defines physics panels
 \newcounter{physicsctr}
-\numberwithin{physicsctr}{chapter}
+\numberwithin{physicsctr}{section}
 \newcommand{\physicspanel}[2]
 { 
 \noindent
@@ -104,10 +104,12 @@ title=\textbf{Numerics panel~\thenumericsctr\\
       \color{black}
 \else
 % Work for .PDF
-\begin{tcolorbox}[float,breakable,
+\begin{tcolorbox}
+[float=htpb!,breakable,
 colback=green!10!white, colframe=yellow!10!green,coltitle=white,
 title=\textbf{Physics panel~\thephysicsctr\\
-    \rmfamily}]
+    \rmfamily}
+]
 	{#2}\label{#1}
 \end{tcolorbox}
 \fi
@@ -115,7 +117,7 @@ title=\textbf{Physics panel~\thephysicsctr\\
 
 %%% This defines mathematics panels
 \newcounter{mathematicsctr}
-\numberwithin{mathematicsctr}{chapter}
+\numberwithin{mathematicsctr}{section}
 \newcommand{\mathematicspanel}[2]
 { 
 \noindent
@@ -133,7 +135,7 @@ title=\textbf{Physics panel~\thephysicsctr\\
       \color{black}
 \else
 % Work for .PDF
-\begin{tcolorbox}[float,breakable,
+\begin{tcolorbox}[float=htpb!,breakable,
 colback=brown!10!white, colframe=orange!70!brown,coltitle=white,
 title=\textbf{Mathematics panel~\themathematicsctr\\
     \rmfamily}]
@@ -142,15 +144,38 @@ title=\textbf{Mathematics panel~\themathematicsctr\\
 \fi
 }
 
+%\newcommand{\supplementbox}[1]
+%{ 
+%{ 
+%\noindent
+% \fcolorbox{blue!70!white}{green!10!white}{
+%\parbox{.9\textwidth}{
+%   \color{black}
+%   \textbf{Supplement: }{#1}
+%}
+%}}}
+
+%%% This defines quotation box
 \newcommand{\supplementbox}[1]
 { 
-{ 
-\noindent
- \fcolorbox{blue!70!white}{green!10!white}{\parbox{.9\textwidth}{
-   \color{black}
-   \textbf{Supplement: }{#1}
+\indent\par\smallskip
+   
+\iflatexml
+%Work for .html
+   \color{violet}
+
+ \fcolorbox{blue!70!white}{green!10!white}{\parbox{.9\textwidth}
+{#1}
 }
-}}}
+      \color{black}
+\else
+% Work for .PDF
+\begin{tcolorbox}[float,
+colback={green!10!white}, colframe=blue!70!white]
+	{#1}
+\end{tcolorbox}
+\fi
+}
 
 \newcommand{\indexit}[1]{\index{#1}{%\sffamily
 %\color{blue}

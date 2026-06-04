@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1.1.7 Bridging the micro- and macro views ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Tue Jun  2 19:57:38 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up" href="../index.html" title="Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up up" href="../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="sec_Physics-TwoSegments.html" title="1.1.6 Two segments ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="sec_IonicCurrent.html" title="1.1.8 Ionic currents in a cell ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_Physics-Condenser.html" title="1.1.1 Condenser ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_Physics-Resistor.html" title="1.1.2 Resistor ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_Physics-ElectrolytesConductivity.html" title="1.1.3 Electrolytes ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_Physics-ElectrolyteInhomogeneity.html" title="1.1.4 Deriving the ”thermodynamic electrical field” ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_Physics-OneSegment.html" title="1.1.5 One segment ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_Physics-TwoSegments.html" title="1.1.6 Two segments ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_IonicCurrent.html" title="1.1.8 Ionic currents in a cell ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_SlowCurrent.html" title="1.1.9 Imitating slow currents ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="index.html" title="1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_Physics-FormingPotential/index.html" title="1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_ActionPotential/index.html" title="1.3 The Action Potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../index.html" title="Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../ch_Thermodynamics/index.html" title="Chapter 2 Thermodynamics for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ The Hodgkin-Huxley neuron model V2.0">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Membrane’s electricity</span></a><a href="sec_Physics-TwoSegments.html" title="In 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.6 </span>Two segments</span></a><a href="sec_IonicCurrent.html" title="In 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.8 </span>Ionic currents in a cell</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection" style="color:#000000;">
+<span class="ltx_tag ltx_tag_subsection">1.1.7 </span>Bridging the micro- and macro views</h1>
+
+<div id="p1" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We assumed that the function can be interpreted for regions
+</span><math id="p1.m1" class="ltx_Math" alttext="(-\infty,0)" display="inline"><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mo mathcolor="#000000">−</mo><mi mathcolor="#000000" mathvariant="normal">∞</mi></mrow><mo mathcolor="#000000">,</mo><mn mathcolor="#000000">0</mn><mo mathcolor="#000000" stretchy="false">)</mo></mrow></math><span class="ltx_text" style="color:#000000;"> and </span><math id="p1.m2" class="ltx_Math" alttext="(1,+\infty)" display="inline"><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mn mathcolor="#000000">1</mn><mo mathcolor="#000000">,</mo><mrow><mo mathcolor="#000000">+</mo><mi mathcolor="#000000" mathvariant="normal">∞</mi></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></math><span class="ltx_text" style="color:#000000;">. However, we have arrived at the boundary between particles and continuous electricity.
+We use a trick similar to the one Boltzmann used in his famous equation, except that we calculate the number of charge carriers from
+geometrical instead of statistical assumptions.
+The minimal thickness of layers is limited, at least by the size of ions. Furthermore, the membrane’s surface is not flat; there are structures (mainly proteins/lipids) with sizes of up to </span><math id="p1.m3" class="ltx_Math" alttext="1~{}nm" display="inline"><mrow><mn mathcolor="#000000">1</mn><mo lspace="0.330em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></math><span class="ltx_text" style="color:#000000;">, so it is likely
+realistic to consider a layer thickness of </span><math id="p1.m4" class="ltx_Math" alttext="0.5~{}nm" display="inline"><mrow><mn mathcolor="#000000">0.5</mn><mo lspace="0.330em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></math><span class="ltx_text" style="color:#000000;"> as we did above
+(on our mathematical scale </span><math id="p1.m5" class="ltx_Math" alttext="0.1=\frac{0.5~{}nm}{5~{}nm}" display="inline"><mrow><mn mathcolor="#000000">0.1</mn><mo mathcolor="#000000">=</mo><mfrac mathcolor="#000000"><mrow><mn mathcolor="#000000">0.5</mn><mo lspace="0.230em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow><mrow><mn mathcolor="#000000">5</mn><mo lspace="0.230em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></mfrac></mrow></math><span class="ltx_text" style="color:#000000;">), for which a multiplier of </span><math id="p1.m6" class="ltx_Math" alttext="1.7" display="inline"><mn mathcolor="#000000">1.7</mn></math><span class="ltx_text" style="color:#000000;"> between the classical and the electrolytic fields exists.
+A similar calculation using a layer thickness of </span><math id="p1.m7" class="ltx_Math" alttext="0.1~{}nm" display="inline"><mrow><mn mathcolor="#000000">0.1</mn><mo lspace="0.330em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></math><span class="ltx_text" style="color:#000000;"> (on our mathematical scale, 0.02) results in a multiplier of </span><math id="p1.m8" class="ltx_Math" alttext="3.2" display="inline"><mn mathcolor="#000000">3.2</mn></math><span class="ltx_text" style="color:#000000;">;
+so we use a multiplier of value 3 (that corresponds to a layer thickness of </span><math id="p1.m9" class="ltx_Math" alttext="0.125~{}nm" display="inline"><mrow><mn mathcolor="#000000">0.125</mn><mo lspace="0.330em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></math><span class="ltx_text" style="color:#000000;"> (the radius of a </span><math id="p1.m10" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi mathcolor="#000000">N</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mo mathcolor="#000000">+</mo></msup></mrow></math><span class="ltx_text" style="color:#000000;"> ion is </span><math id="p1.m11" class="ltx_Math" alttext="0.116~{}nm" display="inline"><mrow><mn mathcolor="#000000">0.116</mn><mo lspace="0.330em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></math><span class="ltx_text" style="color:#000000;">)).
+Correspondingly, we assume an electrical field</span></p>
+<table id="Ch1.E17" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E17.m1" class="ltx_Math" alttext="E^{Gap}_{Dielectric}(c,\Delta z)=3*E^{Gap}_{Classic}(c,\Delta z)\quad\biggl{[}%
+\frac{V}{m}\frac{1}{nm*mM}\biggr{]}" display="block"><mrow><mrow><msubsup><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">D</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi></mrow><mrow><mi mathcolor="#000000">G</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow></msubsup><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">c</mi><mo mathcolor="#000000">,</mo><mrow><mi mathcolor="#000000" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><mrow><mn mathcolor="#000000">3</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msubsup><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi></mrow><mrow><mi mathcolor="#000000">G</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow></msubsup></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">c</mi><mo mathcolor="#000000">,</mo><mrow><mi mathcolor="#000000" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mspace width="1em"></mspace><mrow><mo mathcolor="#000000" maxsize="210%" minsize="210%">[</mo><mrow><mfrac mathcolor="#000000"><mi mathcolor="#000000">V</mi><mi mathcolor="#000000">m</mi></mfrac><mo>⁢</mo><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mrow><mrow><mrow><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">m</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">M</mi></mrow></mfrac></mrow><mo mathcolor="#000000" maxsize="210%" minsize="210%">]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.17)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">due to the dielectric properties of the segment.
+This contribution arises from the dielectricity in the segment (for simplicity, we have neglected the relative permittivity). It is to be added to the value of the
+classical contribution, the
+field generated by the conducting plates, so the
+final multiplier is </span><math id="p1.m12" class="ltx_Math" alttext="4" display="inline"><mn mathcolor="#000000">4</mn></math><span class="ltx_text" style="color:#000000;">.
+(The experience
+is known in technical electricity: the </span><a href="https://en.wikipedia.org/wiki/Electrolytic_capacitor" title="" class="ltx_ref ltx_href" style="color:#000000;">electrolytic capacitors</a><span class="ltx_text" style="color:#000000;">
+</span><span class="ltx_text ltx_font_italic" style="color:#000000;">achieve several times higher charge storage capacity by using (<a href="https://en.wikipedia.org/wiki/Pseudocapacitance" title="" class="ltx_ref ltx_href">pseudocapacitance</a>)</span><span class="ltx_text" style="color:#000000;">.
+Using ”roughened anode foil” increases the electrolyte thickness, and the roughening provides the necessary mechanical support.
+A thicker electrolyte layer wraps the condenser plates, and the dipoles in the thicker electrolyte provide an additional charge storage facility.)</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Correspondingly,</span></p>
+</div>
+<div id="p3" class="ltx_para">
+<table id="eq:ElectricGradient" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E18.m1" class="ltx_Math" alttext="E_{Gap}^{Total}(400,0.5)=4*E^{Gap}_{Classic}(400,0.5)=8.8*10^{6}\bigl{[}\frac{%
+V}{m}\bigr{]}" display="block"><mrow><mrow><msubsup><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">G</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow><mrow><mi mathcolor="#000000">T</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msubsup><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mn mathcolor="#000000">400</mn><mo mathcolor="#000000">,</mo><mn mathcolor="#000000">0.5</mn><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><mn mathcolor="#000000">4</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msubsup><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi></mrow><mrow><mi mathcolor="#000000">G</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow></msubsup></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mn mathcolor="#000000">400</mn><mo mathcolor="#000000">,</mo><mn mathcolor="#000000">0.5</mn><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><mn mathcolor="#000000">8.8</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msup><mn mathcolor="#000000">10</mn><mn mathcolor="#000000">6</mn></msup></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">[</mo><mfrac mathcolor="#000000"><mi mathcolor="#000000">V</mi><mi mathcolor="#000000">m</mi></mfrac><mo mathcolor="#000000" maxsize="120%" minsize="120%">]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.18)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p4" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">and at a </span><math id="p4.m1" class="ltx_Math" alttext="5\ nm" display="inline"><mrow><mn mathcolor="#000000">5</mn><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></math><span class="ltx_text" style="color:#000000;"> membrane thickness, the voltage across the plates becomes</span></p>
+<table id="eq:UGapTotal400" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E19.m1" class="ltx_Math" alttext="U_{Gap}^{Total}(400,0.5,5)=E_{Gap}^{Total}(400,0.5)*(5*{10^{-9}})=45\ \bigl{[}%
+mV\bigr{]}" display="block"><mrow><mrow><msubsup><mi mathcolor="#000000">U</mi><mrow><mi mathcolor="#000000">G</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow><mrow><mi mathcolor="#000000">T</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msubsup><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mn mathcolor="#000000">400</mn><mo mathcolor="#000000">,</mo><mn mathcolor="#000000">0.5</mn><mo mathcolor="#000000">,</mo><mn mathcolor="#000000">5</mn><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><msubsup><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">G</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow><mrow><mi mathcolor="#000000">T</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msubsup><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mn mathcolor="#000000">400</mn><mo mathcolor="#000000">,</mo><mn mathcolor="#000000">0.5</mn><mo mathcolor="#000000" rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000" rspace="0.222em">∗</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mn mathcolor="#000000">5</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msup><mn mathcolor="#000000">10</mn><mrow><mo mathcolor="#000000">−</mo><mn mathcolor="#000000">9</mn></mrow></msup></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><mn mathcolor="#000000">45</mn><mo lspace="0.500em">⁢</mo><mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">[</mo><mrow><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">V</mi></mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.19)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">”The plasma
+membrane of all cells, including nerve cells, is approximately 6 to 8 nm thick and consists of a mosaic of lipids
+and proteins.” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib1" title="" class="ltx_ref">1</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">, page 71.
+Using such a value for the membrane’s thickness may yield a thickness up to 60% higher.
+Furthermore, the usual concentration is
+also up to 10% higher.
+Hodgkin, in 1964, measured molarity values in squid axons for ions </span><math id="p4.m2" class="ltx_Math" alttext="K^{+}" display="inline"><msup><mi mathcolor="#000000">K</mi><mo mathcolor="#000000">+</mo></msup></math><span class="ltx_text" style="color:#000000;">, </span><math id="p4.m3" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi mathcolor="#000000">N</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mo mathcolor="#000000">+</mo></msup></mrow></math><span class="ltx_text" style="color:#000000;">, and </span><math id="p4.m4" class="ltx_Math" alttext="Cl^{-}" display="inline"><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><msup><mi mathcolor="#000000">l</mi><mo mathcolor="#000000">−</mo></msup></mrow></math><span class="ltx_text" style="color:#000000;">, (400,50,40-150) inside and (20,440,560) outside, and they provided potential values
+</span><math id="p4.m5" class="ltx_Math" alttext="55-75~{}mV" display="inline"><mrow><mn mathcolor="#000000">55</mn><mo mathcolor="#000000">−</mo><mrow><mn mathcolor="#000000">75</mn><mo lspace="0.330em">⁢</mo><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">V</mi></mrow></mrow></math><span class="ltx_text" style="color:#000000;"> </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib23" title="" class="ltx_ref">23</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+Given that we used a plausible but ad hoc ”charged layer thickness”
+and gap distance, we cannot expect a better agreement.
+However, our qualitative conclusions remain valid and can be adjusted
+quantitatively to the results of dedicated measurements.</span></p>
+</div>
+<figure id="fig:The-membrane's-extra-gradient" class="ltx_figure"><img src="x2.png" id="Ch1.F4.g1" class="ltx_graphics ltx_img_landscape" width="830" height="612" alt="Refer to caption">
+<figcaption class="ltx_caption" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 1.4: </span>The neuronal membrane’s <em class="ltx_emph ltx_font_italic">electrical field</em> in the function
+of the distance from the membrane’s surface.
+The thickness of the ’atomic layers’ proximal to the membrane’s surfaces
+are also shown.
+The electrical field is linear inside the uniformly charged atomic ion layer on the surface and is described by Eq.(<a href="sec_Physics-TwoSegments.html#eq:ElectricFieldOutside" title="In Condenser in dielectric material ‣ 1.1.6 Two segments ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.14</span></a>) in the electrolyte.
+For visibility, a layer thickness <math id="Ch1.F4.m2" class="ltx_Math" alttext="0.5\ nm" display="inline"><mrow><mn mathcolor="#000000">0.5</mn><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></math> is assumed.
+For illustration, a simple capped ion channel in the membrane’s wall
+is also displayed. </figcaption>
+</figure>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We have the boundary conditions that we know the electrical field at the membrane’s surface through the volume charge density, and the Nernst-Planck equation delivers the change
+of the electrical field due to the change in concentration.
+The physical constraint is that the layer thickness
+cannot be infinitely small. If we use a parameter for layer thickness equal to that of the surface layer,
+the calculated electrical field distribution will be
+scalable.</span></p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="sec_Physics-TwoSegments.html" title="In 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.6 </span>Two segments</span></a><a href="../../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_IonicCurrent.html" title="In 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.8 </span>Ionic currents in a cell</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Jun  2 19:57:38 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

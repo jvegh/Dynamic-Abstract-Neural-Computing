@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1.2.3 Goldman-Hodgkin-Katz potential ‣ 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Tue Jun  2 19:57:38 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up" href="../index.html" title="Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up up" href="../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="Physics-ControlTheory.html" title="1.2.2 Controlling neuronal stages ‣ 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="../sec_ActionPotential/index.html" title="1.3 The Action Potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_PHYSICS_STATES.html" title="1.2.1 States ‣ 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="Physics-ControlTheory.html" title="1.2.2 Controlling neuronal stages ‣ 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_Physics-segmented/index.html" title="1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="index.html" title="1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_ActionPotential/index.html" title="1.3 The Action Potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../index.html" title="Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../ch_Thermodynamics/index.html" title="Chapter 2 Thermodynamics for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ The Hodgkin-Huxley neuron model V2.0">
+</head>
+<body>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Forming membrane’s potential</span></a><a href="Physics-ControlTheory.html" title="In 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">1.2.2</span> </span><span class="ltx_text" style="color:#000000;">Controlling states</span></span></a><a href="../sec_ActionPotential/index.html" title="In Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>The Action Potential</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection" style="color:#000000;">
+<span class="ltx_tag ltx_tag_subsection">1.2.3 </span>Goldman-Hodgkin-Katz potential</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">It has already been stated, based on experimental evidence, that ”the membrane permeability to the ions has nothing to do with the potential generation and the ions’ adsorption on the membrane surface generates the membrane potential”; for a review, see </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib5" title="" class="ltx_ref">5</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+The idea itself is nonsense: in a balanced state, no ion transport happens, so even without permeability, the balanced state persists; the resting potential has nothing to do with either ions’ mobility or permeability or with ion absorption </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib9" title="" class="ltx_ref">9</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+Furthermore, there is no idea in </span><a href="../../ch_Thermodynamics/index.html#glo.main.GHK"><span href="../../ch_Thermodynamics/index.html#glo.main.GHK" title="Goldman-Hodgkin-Katz" class="ltx_glossaryref" style="color:#000000;">GHK</span></a><span class="ltx_text" style="color:#000000;"> about whether the ’setpoint’ (why that specific concentration or potential difference) is present and why the same potential is reset after rough perturbations such as issuing an </span><a href="../../ch_Thermodynamics/index.html#glo.main.AP"><span href="../../ch_Thermodynamics/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref" style="color:#000000;">AP</span></a><span class="ltx_text" style="color:#000000;"> or replicating a cell.
+The causality is reversed: the potential is a static concept and is set electrically, and
+the two gradients form the experienced concentrations from the available solvent molecules.
+For the time course of gradient formation, mobility and permeability play a role, but not in determining concentrations or the resting potential.</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">In our clear physical picture, the thermodynamic forces on one side
+and on the other side of the membrane are summed. They counterbalance each other; furthermore, jointly the effect of the neuronal condenser, see Fig. </span><a href="sec_PHYSICS_STATES.html#fig:RestingPotential3" title="Figure 1.8 ‣ Resting state ‣ 1.2.1 States ‣ 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">1.8</span></a><span class="ltx_text" style="color:#000000;">.
+As we emphasized, the concentration gradients are ion-specific.
+Furthermore, as discussed in connection with Eq.(</span><a href="../sec_Physics-segmented/sec_Physics-ElectrolyteInhomogeneity.html#eq:Nernst1" title="In 1.1.4 Deriving the ”thermodynamic electrical field” ‣ 1.1 Membrane’s electricity ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">1.2</span></a><span class="ltx_text" style="color:#000000;">), the Nernst equation comprises a per-ion indefinite constant (a potential difference).
+To calculate a linear combination of terms comprising an arbitrary constant is nonsense,
+and so is adding absolute concentrations on the different sides of the membrane, or changing the base of the logarithm used in a calculation to match
+the experimental value. It is not more than number magic. The potential is described by coupled equations as discussed in connection with Eq. (</span><a href="sec_PHYSICS_STATES.html#eq:coupling" title="In Resting state ‣ 1.2.1 States ‣ 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">1.42</span></a><span class="ltx_text" style="color:#000000;">).</span></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The </span><math id="p3.m1" class="ltx_Math" alttext="Ca^{2+}" display="inline"><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mrow><mn mathcolor="#000000">2</mn><mo mathcolor="#000000">+</mo></mrow></msup></mrow></math><span class="ltx_text" style="color:#000000;"> ions do not fit into the </span><a href="../../ch_Thermodynamics/index.html#glo.main.GHK"><span href="../../ch_Thermodynamics/index.html#glo.main.GHK" title="Goldman-Hodgkin-Katz" class="ltx_glossaryref" style="color:#000000;">GHK</span></a><span class="ltx_text" style="color:#000000;"> picture.
+One of the reasons why </span><a href="../../ch_Thermodynamics/index.html#glo.main.GHK"><span href="../../ch_Thermodynamics/index.html#glo.main.GHK" title="Goldman-Hodgkin-Katz" class="ltx_glossaryref" style="color:#000000;">GHK</span></a><span class="ltx_text" style="color:#000000;"> cannot be good is that </span><math id="p3.m2" class="ltx_Math" alttext="[Ca^{2+}]" display="inline"><mrow><mo mathcolor="#000000" stretchy="false">[</mo><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mrow><mn mathcolor="#000000">2</mn><mo mathcolor="#000000">+</mo></mrow></msup></mrow><mo mathcolor="#000000" stretchy="false">]</mo></mrow></math><span class="ltx_text" style="color:#000000;">
+is omitted. Biologically, it is hard to believe that </span><math id="p3.m3" class="ltx_Math" alttext="Ca^{2+}" display="inline"><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mrow><mn mathcolor="#000000">2</mn><mo mathcolor="#000000">+</mo></mrow></msup></mrow></math><span class="ltx_text" style="color:#000000;"> does not participate in the game of life (especially since biology sees the need for </span><math id="p3.m4" class="ltx_Math" alttext="Ca^{2+}" display="inline"><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mrow><mn mathcolor="#000000">2</mn><mo mathcolor="#000000">+</mo></mrow></msup></mrow></math><span class="ltx_text" style="color:#000000;"> pumps). Physically, a single concentration on one side of the membrane cannot maintain balance; as the different ion-exchange processes shown in Table </span><a href="sec_PHYSICS_STATES.html#Tab:SummaryTable" title="Table 1.1 ‣ Resting state ‣ 1.2.1 States ‣ 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">1.1</span></a><span class="ltx_text" style="color:#000000;"> and Fig. </span><a href="sec_PHYSICS_STATES.html#fig:RestingPotential3" title="Figure 1.8 ‣ Resting state ‣ 1.2.1 States ‣ 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">1.8</span></a><span class="ltx_text" style="color:#000000;"> demonstrate.
+When adding a new ion to the solution, the sum concentration
+increases, and so the electrical force increases, forcing the previous
+elements to find new concentrations on both sides.
+The appearance of a new chemical element indirectly changes the concentrations of the others (a good example is the role of the negligible amount of </span><math id="p3.m5" class="ltx_Math" alttext="Ca^{2+}" display="inline"><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mrow><mn mathcolor="#000000">2</mn><mo mathcolor="#000000">+</mo></mrow></msup></mrow></math><span class="ltx_text" style="color:#000000;">).</span></p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="Physics-ControlTheory.html" title="In 1.2 Forming membrane’s potential ‣ Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">1.2.2</span> </span><span class="ltx_text" style="color:#000000;">Controlling states</span></span></a><a href="../../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="../sec_ActionPotential/index.html" title="In Chapter 1 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>The Action Potential</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Jun  2 19:57:38 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -12,58 +12,16 @@
 \iflatexml
 \else
 \usepackage{minitoc}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
 \fi
 \usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage[makeroom]{cancel}
 \usepackage{amsmath}
 
-\newcommand{\warningbox}[1]
-{
-\noindent
- \fcolorbox{blue!70!white}{red!10!white}{\parbox{\textwidth}{
-   \color{black}
-   \textbf{Warning: }{#1}
-}
-}}
+\include{src/Macros}
 
-\newcommand{\quotationbox}[1]
-{ 
-\noindent
- \fcolorbox{blue!70!white}{orange!10!white}{\parbox{.9\textwidth}{
-   \color{black}
-   \textbf{Quotation: }{#1}
-}
-}}
-
-\newcounter{numericctr}
-\newcommand{\numericalbox}[2]
-{ 
-\noindent
-\label{#1}
- \fcolorbox{blue!70!white}{green!10!white}{\parbox{.95\textwidth}{
-   \refstepcounter{numericctr}% increment the environment's counter
-   \color{black}
-   \textsc{Numerical \#\thenumericctr: }{#2}
-}}}
-
-\numberwithin{numericctr}{chapter}
-
-\newcommand{\supplementbox}[1]
-{ 
-{ 
-\noindent
- \fcolorbox{blue!70!white}{green!10!white}{\parbox{.9\textwidth}{
-   \color{black}
-   \textbf{Supplement: }{#1}
-}
-}}}
-
-\newcommand{\indexit}[1]{\index{#1}{%\sffamily
-%\color{blue}
-#1}}
-\setcounter{secnumdepth}{2}
-\newcommand*{\doi}[1]{\href{http://dx.doi.org/#1}{doi: #1}}
 
 \usepackage{makeidx}
 \makeindex

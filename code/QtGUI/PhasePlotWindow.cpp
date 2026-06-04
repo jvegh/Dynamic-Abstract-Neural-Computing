@@ -252,40 +252,42 @@ void PhasePlotWindow::PlotBracketsV(int32_t key, double x, double coord1, double
     {
         // add the bracket for the "Computing" phase:
         QCPItemBracket *computingBracket = new QCPItemBracket(ui->customPlot);
-        computingBracket->left->setCoords(x+1500, coord2);
-        computingBracket->right->setCoords(x+1500, coord1);
+        computingBracket->left->setCoords(x+500, coord2);
+        computingBracket->right->setCoords(x+500, coord1);
         computingBracket->setLength(13);
 
         // add the text label at the top:
         QCPItemText *computingText = new QCPItemText(ui->customPlot);
         computingText->position->setParentAnchor(computingBracket->center);
-        computingText->position->setCoords(0+20, 0); // move 10 pixels to the top from bracket center anchor
+        computingText->position->setCoords(0+200, 0); // move 10 pixels to the top from bracket center anchor
         computingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         computingText->setText("Computing");
+    //    computingText->rotation();
         computingText->setFont(QFont(font().family(), 10));
     } break;
     case 1:
     {
         // add the bracket for the "Delivering" phase:
         QCPItemBracket *deliveringBracket = new QCPItemBracket(ui->customPlot);
-        deliveringBracket->left->setCoords(x-1000, coord2);
-        deliveringBracket->right->setCoords(x-1000, coord1);
+        deliveringBracket->left->setCoords(x-500, coord2);
+        deliveringBracket->right->setCoords(x-500, coord1);
         deliveringBracket->setLength(13);
 
         // add the text label at the top:
         QCPItemText *deliveringText = new QCPItemText(ui->customPlot);
         deliveringText->position->setParentAnchor(deliveringBracket->center);
-        deliveringText->position->setCoords(0-30,0); // move 10 pixels to the top from bracket center anchor
+        deliveringText->position->setCoords(0-50,0); // move 10 pixels to the top from bracket center anchor
         deliveringText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         deliveringText->setText("Delivering");
+        deliveringText->rotation();
         deliveringText->setFont(QFont(font().family(), 10));
     } break;
     case 2:
     {
         // add the bracket for the "Delivering" phase:
         QCPItemBracket *relaxingBracket = new QCPItemBracket(ui->customPlot);
-        relaxingBracket->left->setCoords(x-1000, coord1);
-        relaxingBracket->right->setCoords(x-1000, coord2);
+        relaxingBracket->left->setCoords(x-500, coord1);
+        relaxingBracket->right->setCoords(x-500, coord2);
         relaxingBracket->setLength(13);
 
         // add the text label at the top:

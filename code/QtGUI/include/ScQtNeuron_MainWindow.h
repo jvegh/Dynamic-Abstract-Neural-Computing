@@ -86,7 +86,6 @@ public:
 //    QToolBar * plotToolBar;
 //    QToolBar * procToolBar;
     QAction *fileNewWindowAction, *fileOpenAction, *fileExitAction;
-//    QAction *processFitAction;
     ScQtSimulator * m_Simulator;
 //    SimulatorControlWindow *m_Simulator_ControlWindow;
     ScQtAbout* aboutWdw;
@@ -101,8 +100,6 @@ public:
      void writeSettings();
 //     void setupToolBoxes(void);
      void replot();
-//     void ProcessLine(QString line);
-//     void GetData(QString fileName);
      VoltageWindow *VoltageWindow_Get(){return m_VoltageWindow;}
      GradientWindow *GradientWindow_Get(){return m_GradientWindow;}
      PhasePlotWindow *PhasePlotWindow_Get(){return m_PhasePlotWindow;}
@@ -115,7 +112,7 @@ private slots:
      void version();
      void on_MakeSimulationStep();
      void on_startButton_clicked();
-     void on_stopButton_clicked();
+     void on_breakButton_clicked();
      void on_resetButton_clicked();
      void on_restartButton_clicked();
      void on_ReversedDisplayModeClicked();
@@ -123,7 +120,7 @@ private slots:
 /*    void fileNewWindow();
     void fileOpenDialog();
     virtual void fileExit();
-    void realtimeDataSlot();*/
+*/
 private:
     void SetFileMenu(void);
     void SetProcessMenu(void);
@@ -163,7 +160,6 @@ private:
     NeuronTab *m_neuronTab;
 protected:
     Ui::ScQtNeuron_MainWindow *ui;
-//    QTimer m_Display_Timer;
     chrono::steady_clock::time_point m_display_t =chrono::steady_clock::now();
         double displayTime_Get()
         {

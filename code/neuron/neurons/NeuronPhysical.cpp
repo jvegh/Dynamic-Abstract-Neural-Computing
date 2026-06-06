@@ -13,7 +13,7 @@
 #include "NeuronPhysical.h"
 
 // Define parameters for calculating membrane voltage's time derivative
-#define Rushin_Amplitude 28000.
+#define Rushin_Amplitude 40000.
 // ** #define Rushin_Amplitude 140000.
 #define Rushin_A 0.1
 //#define Rushin_B 0.2

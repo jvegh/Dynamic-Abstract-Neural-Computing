@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>553</width>
-    <height>413</height>
+    <height>386</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -70,160 +70,51 @@
                      <x>10</x>
                      <y>200</y>
                      <width>501</width>
-                     <height>41</height>
+                     <height>51</height>
                     </rect>
                    </property>
                    <property name="title">
                     <string>Display mode</string>
                    </property>
-                   <widget class="QLabel" name="DisplayLabel">
-                    <property name="geometry">
-                     <rect>
-                      <x>100</x>
-                      <y>20</y>
-                      <width>111</width>
-                      <height>18</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>Disp slowdown</string>
-                    </property>
-                   </widget>
-                   <widget class="QSlider" name="DisplaySlider">
-                    <property name="geometry">
-                     <rect>
-                      <x>210</x>
-                      <y>20</y>
-                      <width>221</width>
-                      <height>20</height>
-                     </rect>
-                    </property>
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
-                   </widget>
-                   <widget class="QLabel" name="DisplayValue">
-                    <property name="geometry">
-                     <rect>
-                      <x>430</x>
-                      <y>20</y>
-                      <width>71</width>
-                      <height>18</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>TextLabel</string>
-                    </property>
-                   </widget>
-                   <widget class="QCheckBox" name="DisplayReversedBox">
+                   <widget class="QWidget" name="">
                     <property name="geometry">
                      <rect>
                       <x>0</x>
                       <y>20</y>
-                      <width>91</width>
-                      <height>23</height>
+                      <width>501</width>
+                      <height>25</height>
                      </rect>
                     </property>
-                    <property name="text">
-                     <string>Reversed</string>
-                    </property>
-                   </widget>
-                  </widget>
-                  <widget class="QGroupBox" name="groupBox_2">
-                   <property name="geometry">
-                    <rect>
-                     <x>10</x>
-                     <y>240</y>
-                     <width>501</width>
-                     <height>91</height>
-                    </rect>
-                   </property>
-                   <property name="title">
-                    <string>Neuron parameters</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget">
-                    <property name="geometry">
-                     <rect>
-                      <x>110</x>
-                      <y>19</y>
-                      <width>321</width>
-                      <height>59</height>
-                     </rect>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_3">
+                    <layout class="QHBoxLayout" name="horizontalLayout_4">
                      <item>
-                      <widget class="QSlider" name="MembraneTauSlider">
+                      <widget class="QCheckBox" name="DisplayReversedBox">
+                       <property name="text">
+                        <string>Reversed</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="DisplayLabel">
+                       <property name="text">
+                        <string>Disp slowdown</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSlider" name="DisplaySlider">
                        <property name="orientation">
                         <enum>Qt::Orientation::Horizontal</enum>
                        </property>
                       </widget>
                      </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="layoutWidget">
-                    <property name="geometry">
-                     <rect>
-                      <x>430</x>
-                      <y>20</y>
-                      <width>68</width>
-                      <height>68</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_2">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="MembraneTauSliderValue">
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="MembraneRSliderValue">
+                     <item>
+                      <widget class="QLabel" name="DisplayValue">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
                       </widget>
                      </item>
                     </layout>
-                   </widget>
-                   <widget class="QWidget" name="layoutWidget">
-                    <property name="geometry">
-                     <rect>
-                      <x>-1</x>
-                      <y>18</y>
-                      <width>131</width>
-                      <height>77</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_3">
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="MembraneRSliderLabel">
-                       <property name="text">
-                        <string>AIS R (MOhm)</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="MembraneTauSliderLabel">
-                       <property name="text">
-                        <string>Membrane tau (us)</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QSlider" name="MembraneRSlider">
-                    <property name="geometry">
-                     <rect>
-                      <x>130</x>
-                      <y>70</y>
-                      <width>301</width>
-                      <height>20</height>
-                     </rect>
-                    </property>
-                    <property name="orientation">
-                     <enum>Qt::Orientation::Horizontal</enum>
-                    </property>
                    </widget>
                   </widget>
                   <widget class="QGroupBox" name="groupBox_4">
@@ -300,51 +191,38 @@
                    <property name="flat">
                     <bool>true</bool>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="">
                     <property name="geometry">
                      <rect>
-                      <x>0</x>
-                      <y>20</y>
-                      <width>346</width>
+                      <x>1</x>
+                      <y>21</y>
+                      <width>340</width>
                       <height>28</height>
                      </rect>
                     </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout">
-                     <item>
-                      <widget class="QPushButton" name="stopButton">
+                    <layout class="QGridLayout" name="gridLayout_2">
+                     <item row="0" column="0">
+                      <widget class="QPushButton" name="breakButton">
                        <property name="text">
                         <string>Break</string>
                        </property>
                       </widget>
                      </item>
-                     <item>
+                     <item row="0" column="1">
                       <widget class="QPushButton" name="resetButton">
                        <property name="text">
                         <string>Reset</string>
                        </property>
                       </widget>
                      </item>
-                     <item>
+                     <item row="0" column="2">
                       <widget class="QPushButton" name="restartButton">
                        <property name="text">
                         <string>Restart</string>
                        </property>
                       </widget>
                      </item>
-                     <item>
-                      <spacer name="horizontalSpacer_2">
-                       <property name="orientation">
-                        <enum>Qt::Orientation::Horizontal</enum>
-                       </property>
-                       <property name="sizeHint" stdset="0">
-                        <size>
-                         <width>40</width>
-                         <height>20</height>
-                        </size>
-                       </property>
-                      </spacer>
-                     </item>
-                     <item>
+                     <item row="0" column="3">
                       <widget class="QPushButton" name="startButton">
                        <property name="text">
                         <string>Start</string>
@@ -363,11 +241,11 @@
                      <x>10</x>
                      <y>0</y>
                      <width>511</width>
-                     <height>61</height>
+                     <height>51</height>
                     </rect>
                    </property>
                    <property name="title">
-                    <string>Simulation times</string>
+                    <string>Simulator times</string>
                    </property>
                    <widget class="QLabel" name="UserTimeLabel">
                     <property name="geometry">
@@ -473,7 +351,7 @@
                     </rect>
                    </property>
                    <property name="title">
-                    <string>Simulating mode</string>
+                    <string>Break for</string>
                    </property>
                    <property name="flat">
                     <bool>true</bool>
@@ -533,35 +411,6 @@
                     </property>
                    </widget>
                   </widget>
-                  <widget class="QLineEdit" name="SimulatedTimeValue">
-                   <property name="geometry">
-                    <rect>
-                     <x>90</x>
-                     <y>80</y>
-                     <width>81</width>
-                     <height>21</height>
-                    </rect>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>81</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                  </widget>
-                  <widget class="QLabel" name="SimulatedTimeLabel">
-                   <property name="geometry">
-                    <rect>
-                     <x>10</x>
-                     <y>80</y>
-                     <width>81</width>
-                     <height>20</height>
-                    </rect>
-                   </property>
-                   <property name="text">
-                    <string>Neuron(ms)</string>
-                   </property>
-                  </widget>
                   <widget class="QLabel" name="label">
                    <property name="geometry">
                     <rect>
@@ -574,6 +423,277 @@
                    <property name="text">
                     <string>Simulated time</string>
                    </property>
+                  </widget>
+                  <widget class="QGroupBox" name="groupBox_6">
+                   <property name="geometry">
+                    <rect>
+                     <x>200</x>
+                     <y>350</y>
+                     <width>501</width>
+                     <height>91</height>
+                    </rect>
+                   </property>
+                   <property name="title">
+                    <string>Synaptic current parameters</string>
+                   </property>
+                   <widget class="QWidget" name="layoutWidget_12">
+                    <property name="geometry">
+                     <rect>
+                      <x>140</x>
+                      <y>18</y>
+                      <width>281</width>
+                      <height>71</height>
+                     </rect>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_9">
+                     <item>
+                      <widget class="QSlider" name="SynapticAmplitudeSlider_3">
+                       <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSlider" name="SynapticASlider_3">
+                       <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSlider" name="SynapticBSlider_3">
+                       <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="layoutWidget_13">
+                    <property name="geometry">
+                     <rect>
+                      <x>430</x>
+                      <y>20</y>
+                      <width>68</width>
+                      <height>68</height>
+                     </rect>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_14">
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="SynapticAmplitudeSliderValue_3">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="SynapticASliderValue_3">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="SynapricBSliderValue_3">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="layoutWidget_14">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>20</y>
+                      <width>131</width>
+                      <height>68</height>
+                     </rect>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_15">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="Slider3Label_5">
+                       <property name="text">
+                        <string>Synaptic ampl. (pA)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="Slider2Label_5">
+                       <property name="text">
+                        <string>Synaptic A (s)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="SynapricBSliderLabel_3">
+                       <property name="text">
+                        <string>Synaptic B (s)</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                  <widget class="QGroupBox" name="NeuronParametersBox">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>250</y>
+                     <width>501</width>
+                     <height>81</height>
+                    </rect>
+                   </property>
+                   <property name="title">
+                    <string>Neuron parameters</string>
+                   </property>
+                   <widget class="QLabel" name="MembraneTauSliderLabel">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>20</y>
+                      <width>131</width>
+                      <height>18</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Membrane tau (us)</string>
+                    </property>
+                   </widget>
+                   <widget class="QSlider" name="MembraneTauSlider">
+                    <property name="geometry">
+                     <rect>
+                      <x>140</x>
+                      <y>20</y>
+                      <width>281</width>
+                      <height>20</height>
+                     </rect>
+                    </property>
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="MembraneTauSliderValue">
+                    <property name="geometry">
+                     <rect>
+                      <x>430</x>
+                      <y>20</y>
+                      <width>71</width>
+                      <height>18</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="MembraneRSliderLabel">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>40</y>
+                      <width>141</width>
+                      <height>18</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Membrane R (kOhm)</string>
+                    </property>
+                   </widget>
+                   <widget class="QSlider" name="MembraneRSlider">
+                    <property name="geometry">
+                     <rect>
+                      <x>140</x>
+                      <y>40</y>
+                      <width>281</width>
+                      <height>21</height>
+                     </rect>
+                    </property>
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="MembraneRSliderValue">
+                    <property name="geometry">
+                     <rect>
+                      <x>430</x>
+                      <y>40</y>
+                      <width>71</width>
+                      <height>18</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="MembraneAISRSliderLabel">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>60</y>
+                      <width>131</width>
+                      <height>18</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>AIS R (kOhm)</string>
+                    </property>
+                   </widget>
+                   <widget class="QSlider" name="MembraneAISRSlider">
+                    <property name="geometry">
+                     <rect>
+                      <x>140</x>
+                      <y>60</y>
+                      <width>281</width>
+                      <height>20</height>
+                     </rect>
+                    </property>
+                    <property name="orientation">
+                     <enum>Qt::Orientation::Horizontal</enum>
+                    </property>
+                   </widget>
+                   <widget class="QLabel" name="MembraneAISRSliderValue">
+                    <property name="geometry">
+                     <rect>
+                      <x>430</x>
+                      <y>60</y>
+                      <width>71</width>
+                      <height>18</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                   </widget>
+                  </widget>
+                  <widget class="QWidget" name="">
+                   <property name="geometry">
+                    <rect>
+                     <x>10</x>
+                     <y>80</y>
+                     <width>161</width>
+                     <height>28</height>
+                    </rect>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout">
+                    <item>
+                     <widget class="QLabel" name="SimulatedTimeLabel">
+                      <property name="text">
+                       <string>Neuron(ms)</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLineEdit" name="SimulatedTimeValue">
+                      <property name="minimumSize">
+                       <size>
+                        <width>81</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </widget>
                 </item>
@@ -611,7 +731,7 @@
                      <x>10</x>
                      <y>0</y>
                      <width>501</width>
-                     <height>111</height>
+                     <height>101</height>
                     </rect>
                    </property>
                    <property name="title">
@@ -621,9 +741,9 @@
                     <property name="geometry">
                      <rect>
                       <x>140</x>
-                      <y>18</y>
+                      <y>20</y>
                       <width>281</width>
-                      <height>81</height>
+                      <height>71</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -674,6 +794,13 @@
                        </property>
                       </widget>
                      </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="RushinBSliderValue">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
                     </layout>
                    </widget>
                    <widget class="QWidget" name="layoutWidget_4">
@@ -686,47 +813,28 @@
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_8">
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="RushinASliderLabel">
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="RushinBSliderLabel">
                        <property name="text">
-                        <string>Rushin A (s)</string>
+                        <string>Rushin B (s)</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="0" column="0">
+                     <item row="3" column="0">
                       <widget class="QLabel" name="RushinAmplitudeSliderLabel">
                        <property name="text">
                         <string>Rushin ampl. (pA)</string>
                        </property>
                       </widget>
                      </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="RushinASliderLabel">
+                       <property name="text">
+                        <string>Rushin A (s)</string>
+                       </property>
+                      </widget>
+                     </item>
                     </layout>
-                   </widget>
-                   <widget class="QLabel" name="RushinBSliderLabel">
-                    <property name="geometry">
-                     <rect>
-                      <x>0</x>
-                      <y>80</y>
-                      <width>129</width>
-                      <height>31</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>Rushin B (s)</string>
-                    </property>
-                   </widget>
-                   <widget class="QLabel" name="RushinBSliderValue">
-                    <property name="geometry">
-                     <rect>
-                      <x>430</x>
-                      <y>90</y>
-                      <width>66</width>
-                      <height>18</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>TextLabel</string>
-                    </property>
                    </widget>
                   </widget>
                   <widget class="QGroupBox" name="groupBox_5">
@@ -735,7 +843,7 @@
                      <x>10</x>
                      <y>110</y>
                      <width>501</width>
-                     <height>111</height>
+                     <height>91</height>
                     </rect>
                    </property>
                    <property name="title">
@@ -747,7 +855,7 @@
                       <x>140</x>
                       <y>18</y>
                       <width>281</width>
-                      <height>91</height>
+                      <height>71</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -784,6 +892,13 @@
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_9">
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="SynapticAmplitudeSliderValue">
+                       <property name="text">
+                        <string>TextLabel</string>
+                       </property>
+                      </widget>
+                     </item>
                      <item row="2" column="0">
                       <widget class="QLabel" name="SynapticASliderValue">
                        <property name="text">
@@ -791,8 +906,8 @@
                        </property>
                       </widget>
                      </item>
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="SynapticAmplitudeSliderValue">
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="SynapricBSliderValue">
                        <property name="text">
                         <string>TextLabel</string>
                        </property>
@@ -824,33 +939,14 @@
                        </property>
                       </widget>
                      </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="SynapricBSliderLabel">
+                       <property name="text">
+                        <string>Synaptic B (s)</string>
+                       </property>
+                      </widget>
+                     </item>
                     </layout>
-                   </widget>
-                   <widget class="QLabel" name="SynapricBSliderLabel">
-                    <property name="geometry">
-                     <rect>
-                      <x>0</x>
-                      <y>80</y>
-                      <width>129</width>
-                      <height>31</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>Synaptic B (s)</string>
-                    </property>
-                   </widget>
-                   <widget class="QLabel" name="SynapricBSliderValue">
-                    <property name="geometry">
-                     <rect>
-                      <x>430</x>
-                      <y>90</y>
-                      <width>66</width>
-                      <height>18</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>TextLabel</string>
-                    </property>
                    </widget>
                   </widget>
                  </widget>

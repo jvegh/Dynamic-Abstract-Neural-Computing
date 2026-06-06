@@ -73,8 +73,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     connect(m_neuronTab->ui->startButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_startButton_clicked);
 
-    connect(m_neuronTab->ui->stopButton, &QPushButton::clicked, this,
-            &ScQtNeuron_MainWindow::on_stopButton_clicked);
+    connect(m_neuronTab->ui->breakButton, &QPushButton::clicked, this,
+            &ScQtNeuron_MainWindow::on_breakButton_clicked);
 
     connect(m_neuronTab->ui->resetButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_resetButton_clicked);
@@ -174,6 +174,11 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
         );*/
 //    APParameters[0] = m_neuronTab->ui->Slider3->value()*1000.; // Amplitude, pA
     MyNeuron->RushinParameters_Set(0,m_neuronTab->ui->RushinAmplitudeSlider->value()*1000);
+    MyNeuron->RushinParameters_Set(1,m_neuronTab->ui->RushinASlider->value()*1000);
+    MyNeuron->RushinParameters_Set(2,m_neuronTab->ui->RushinBSlider->value()*1000);
+    MyNeuron->MembraneParameters_Set(0, m_neuronTab->ui->MembraneTauSlider->value()*1000);
+    MyNeuron->MembraneParameters_Set(1, m_neuronTab->ui->MembraneRSlider->value()*1000);
+
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     m_terminated = false;
 }
@@ -183,7 +188,7 @@ void ScQtNeuron_MainWindow::on_MakeSimulationStep()
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 }
 
-void ScQtNeuron_MainWindow::on_stopButton_clicked()
+void ScQtNeuron_MainWindow::on_breakButton_clicked()
 {
     m_Simulator->abort(); m_terminated = true;
 }

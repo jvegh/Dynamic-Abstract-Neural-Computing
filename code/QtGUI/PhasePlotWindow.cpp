@@ -259,7 +259,7 @@ void PhasePlotWindow::PlotBracketsV(int32_t key, double x, double coord1, double
         // add the text label at the top:
         QCPItemText *computingText = new QCPItemText(ui->customPlot);
         computingText->position->setParentAnchor(computingBracket->center);
-        computingText->position->setCoords(0+200, 0); // move 10 pixels to the top from bracket center anchor
+        computingText->position->setCoords(0+50, 0); // move 10 pixels to the top from bracket center anchor
         computingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         computingText->setText("Computing");
     //    computingText->rotation();
@@ -293,7 +293,7 @@ void PhasePlotWindow::PlotBracketsV(int32_t key, double x, double coord1, double
         // add the text label at the top:
         QCPItemText *relaxingText = new QCPItemText(ui->customPlot);
         relaxingText->position->setParentAnchor(relaxingBracket->center);
-        relaxingText->position->setCoords(0, 30); // move 10 pixels to the top from bracket center anchor
+        relaxingText->position->setCoords(-30, 30); // move 10 pixels to the top from bracket center anchor
         relaxingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         relaxingText->setText("Relaxing");
         relaxingText->setFont(QFont(font().family(), 10));

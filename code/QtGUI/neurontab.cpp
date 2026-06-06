@@ -38,11 +38,11 @@ void NeuronTab::SetupGUI()
 {
     // Set up rush-in curent: Amplitude
     ui->RushinAmplitudeSlider->setMinimum(10);
-    ui->RushinAmplitudeSlider->setMaximum(30000);
+    ui->RushinAmplitudeSlider->setMaximum(300);
 
 
-    ui->RushinAmplitudeSlider->setValue(120);
-//??    ui->RushinAmplitudeSlider->setValue(m_parent->MyNeuron->RushinParameters_Get()->at(0));
+//    ui->RushinAmplitudeSlider->setValue(120);
+    ui->RushinAmplitudeSlider->setValue(m_parent->MyNeuron->RushinParameters_Get()->at(0)/1000);
     ui->RushinAmplitudeSlider->setPageStep(20);
     ui->RushinAmplitudeSliderValue->setText(QString::number(ui->RushinAmplitudeSlider->value()));
     QObject::connect(ui->RushinAmplitudeSlider, &QSlider::valueChanged, this, [=] () {

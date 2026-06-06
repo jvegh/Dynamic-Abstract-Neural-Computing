@@ -710,6 +710,8 @@ electrodiffusion, the velocity changes the concentration gradient, and simultane
 potential gradient. 
 
 
+%\physicspanel{phys:PlanckTimeDerivatives}{Deriving time derivatives from space derivatives}
+{
 We assume that equation~(\ref{eq:NernstPlanck}) is valid for a given time
 $t$.
 At time $t+dt$, in another steady state, the two interactions
@@ -750,9 +752,10 @@ dC_{k}(z-v(z)*dt)=dz*\frac{d}{dz}C_{k}(z)=-dz\frac{q*F}{RT}V_{m}(z)\frac{d}{dz}V
 \begin{equation}
 \frac{d}{dt}C_{k}(z)=v(z)*\frac{d}{dz}C_{k}(z)=-v(z)\frac{q*F}{RT}V_{m}(z)\frac{d}{dz}V_{m}(z)\label{eq:Nernst-dCdt}
 \end{equation}
+}
 
-
-
+%\physicspanel{phys:PlanckStokesEinstein}{Considering the speed in electrolytes}
+{
 We expressed the dependence of gradients on each other using the ion's speed $v$ as intermediate variable, that can be expressed by the Stokes-Einstein relation as
 \begin{equation}
 	v= -\frac{D*R}{F}*C(z)*\frac{dC}{dz}
@@ -767,7 +770,7 @@ After simplifying the expression and using the aforementioned special feature of
 	\frac{dV}{dt}=\biggl(\frac{T*R^2}{q*F^2}\biggr)*D*\frac{d^2C}{dz^2}
 	\label{eq:FickSecondElectrodiffusion}
 \end{equation}
-
+}
 
 %
 As section~\ref{sec:PHYSICS_MEASURINGOSCILLATOR} discusses, in general, the electric operation
@@ -850,6 +853,8 @@ whether concentrations, or mobilities, or Nernst voltages, as it happens in the 
 \subsection{Fick's Law\label{sec:Fick-Electrodiffusion}}
 \index{Fick's Law}
 
+%\physicspanel{phys:FicksLawElectrodiffusion}{Deriving Fick's Law for electrodiffusion}
+{
 By expressing the speed through the Stokes-Einstein relation, see Eq.(\ref{eq:StokesEinsteinSpeeddC})
 \begin{equation}
 	\frac{dV}{dt}=\frac{D*R*R*T}{q*F*F}*\frac{d^2C}{dx^2}=\biggl(\frac{T*R^2}{q*F^2}\biggr)*D*\frac{d^2C}{dx^2}\label{eq:Nernst-dVdtStokes}
@@ -872,6 +877,7 @@ $T=300\ K$, $q=1$, $F=\ 96495\ A*s/mol$, $R=8.31446261815324\ J*K^{-1}*mol^{-1}$
 \begin{equation}
 	\frac{dV}{dt}=2.23*10^{-6}*D*\frac{d^2C}{dx^2} = \mathbf{2.23*10^{-6}}\frac{dC}{dt}\label{eq:PhysicsGradientRatio}
 \end{equation}
+}
 
 We can provide a rough (experimental) estimation of the value. The time course of the gradient (half-width) in Figure 2.2 in \cite{JohnstonWuNeurophysiology:1995}  was produced in~$0.3*10^3~ s$. Reciprocally, a voltage gradient needs $0.1*10^{-3}\ s$
 to produce the same concentration gradient, see

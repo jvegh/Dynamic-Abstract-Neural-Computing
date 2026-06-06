@@ -56,7 +56,7 @@ title=\textbf{Quotation:\\
 %%% This defines numeric panels
 \newcounter{numericsctr}
 \numberwithin{numericsctr}{section}
-\newcommand{\numericspanel}[2]
+\newcommand{\numericspanel}[3]
 { 
 \noindent
 \refstepcounter{numericsctr}\par\smallskip
@@ -66,9 +66,9 @@ title=\textbf{Quotation:\\
    \color{blue}
 
  \fcolorbox{blue!70!white}{green!10!white}{\parbox{.9\textwidth}{
-   \textbf{Numerics panel~\thenumericsctr\\
+   \textbf{Numerics panel~\thenumericsctr:\\{#2}
     \rmfamily}
-{#2}\label{#1}\hypertarget{#1}
+{#3}\label{#1}\hypertarget{#1}
 }
 }
       \color{black}
@@ -76,9 +76,9 @@ title=\textbf{Quotation:\\
 % Work for .PDF
 \begin{tcolorbox}[float=htpb!,breakable,
 colback=blue!10!white, colframe=black!10!blue,coltitle=white,
-title=\textbf{Numerics panel~\thenumericsctr\\
+title=\textbf{Numerics panel~\thenumericsctr:\\{#2}
     \rmfamily}]
-	{#2}\label{#1}
+	{#3}\label{#1}
 \end{tcolorbox}
 \fi
 }
@@ -86,7 +86,7 @@ title=\textbf{Numerics panel~\thenumericsctr\\
 %%% This defines physics panels
 \newcounter{physicsctr}
 \numberwithin{physicsctr}{section}
-\newcommand{\physicspanel}[2]
+\newcommand{\physicspanel}[3]
 { 
 \noindent
 \refstepcounter{physicsctr}\par\smallskip
@@ -96,9 +96,9 @@ title=\textbf{Numerics panel~\thenumericsctr\\
    \color{green}
 
  \fcolorbox{green!70!black}{yellow!10!white}{\parbox{.9\textwidth}{
-   \textbf{Physics panel~\thephysicsctr\\
+   \textbf{Physics panel~\thephysicsctr:\\{#2}
     \rmfamily}
-{#2}\label{#1}\hypertarget{#1}
+{#3}\label{#1}\hypertarget{#1}
 }
 }
       \color{black}
@@ -107,10 +107,10 @@ title=\textbf{Numerics panel~\thenumericsctr\\
 \begin{tcolorbox}
 [float=htpb!,breakable,
 colback=green!10!white, colframe=yellow!10!green,coltitle=white,
-title=\textbf{Physics panel~\thephysicsctr\\
+title=\textbf{Physics panel~\thephysicsctr:\\{#2}
     \rmfamily}
 ]
-	{#2}\label{#1}
+	{#3}\label{#1}
 \end{tcolorbox}
 \fi
 }
@@ -118,7 +118,7 @@ title=\textbf{Physics panel~\thephysicsctr\\
 %%% This defines mathematics panels
 \newcounter{mathematicsctr}
 \numberwithin{mathematicsctr}{section}
-\newcommand{\mathematicspanel}[2]
+\newcommand{\mathematicspanel}[3]
 { 
 \noindent
 \refstepcounter{mathematicsctr}\par\smallskip
@@ -127,9 +127,9 @@ title=\textbf{Physics panel~\thephysicsctr\\
 %Work for .html
    \color{brown}
  \fcolorbox{brown!70!black}{orange!10!white}{\parbox{.9\textwidth}{
-   \textbf{Mathematics panel~\themathematicsctr\\
+   \textbf{Mathematics panel~\themathematicsctr:\\{#2}
     \rmfamily}
-{#2}\label{#1}\hypertarget{#1}
+{#3}\label{#1}\hypertarget{#1}
 }
 }
       \color{black}
@@ -137,23 +137,13 @@ title=\textbf{Physics panel~\thephysicsctr\\
 % Work for .PDF
 \begin{tcolorbox}[float=htpb!,breakable,
 colback=brown!10!white, colframe=orange!70!brown,coltitle=white,
-title=\textbf{Mathematics panel~\themathematicsctr\\
+title=\textbf{Mathematics panel~\themathematicsctr:\\{#2}
     \rmfamily}]
-	{#2}\label{#1}
+	{#3}\label{#1}
 \end{tcolorbox}
 \fi
 }
 
-%\newcommand{\supplementbox}[1]
-%{ 
-%{ 
-%\noindent
-% \fcolorbox{blue!70!white}{green!10!white}{
-%\parbox{.9\textwidth}{
-%   \color{black}
-%   \textbf{Supplement: }{#1}
-%}
-%}}}
 
 %%% This defines quotation box
 \newcommand{\supplementbox}[1]

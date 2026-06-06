@@ -1,5 +1,5 @@
 % This is the chapter 'Electricity of membrane' to the "Hodgkin-Huxley  neuron model V2.0 book"
-% Last edited 2026.06.02
+% Last edited 2026.06.05
 
 \section{Membrane's electricity\label{sec:Physics-segmented}}
 
@@ -173,7 +173,7 @@ electrical spatial gradients depend on each other,
 shows a practical approximation for calculating it, with 
 the calculated figures in \textbf{Numerics panel~\ref{num:EquivalentField_Membrane}}. 
 
-\physicspanel{phys:Nernst-Planck}
+\physicspanel{phys:Nernst-Planck}{The Nernst-Plack law}
 {
 The Nernst-Planck electrodiffusion equation in a balanced state
 \begin{equation}
@@ -190,7 +190,7 @@ of the chemical ion. The two sides are the derivatives of the equation
 \begin{equation}
 	V_{m} =\frac{RT}{q*F}\ln{\biggl(\frac{C_{k}^{ext}}{C_{k}^{int}}\biggr)}\label{eq:Nernst1}
 \end{equation}
-\noindent known as \textit{Nernst equation}.  In other words, Eq.(\ref{eq:NernstPlanck}) and Eq.(\ref{eq:Nernst1}) are the differential and integral formulations of the same knowledge. The limits of the integration are chosen arbitrarily (by choosing the reference concentration $C_{k}^{int}$).
+\noindent known as \textit{Nernst equation}.  In other words, \textbf{Eqs.(\ref{eq:NernstPlanck}) and Eq.(\ref{eq:Nernst1}) are the differential and integral formulations of the same knowledge}. The limits of the integration are chosen arbitrarily (by choosing the reference concentration $C_{k}^{int}$).
 }
 
 
@@ -199,6 +199,7 @@ of the chemical ion. The two sides are the derivatives of the equation
 %a current. Instead, its gradient ($E=U/d$) has the effect, where $d$ is the distance, for example, between the clamping point and the membrane or the \gls{AIS}.
 
 \physicspanel{phys:EquivalentField_Membrane}
+{The membrane's eqivalent electrical themodynamic field}
 {
 We assume that, in a balanced state, the concentrations on the two sides of the membrane are $C_{k}^{ext}$ and $C_{k}^{in}$, respectively; furthermore we assume that \[\frac{dC_{k}}{dz}\approx\frac{C_{k}^{ext}-C_{k}^{in}}{d}\]
 To simplify the math writing, we neglect the change caused by considering 
@@ -213,7 +214,8 @@ The equivalent thermodynamic electric field does not depend on concentration, bu
 We provide the numerical values in \textbf{Numerics panel \ref{num:EquivalentField_Membrane}} for the case of ion channels in the membrane's wall.
 }
 
-\numericspanel{num:EquivalentField_Membrane}
+\numericspanel{num:EquivalentField_Membrane}{Neuron's equivalent 
+thermodynamic electrical field}
 {
 It is valid separately for all $C_k$
 \begin{equation}
@@ -242,7 +244,7 @@ also changes.) Correspondingly, by using that $U=E*d$,
 \end{figure}
 \index{equivalent electrical field}
 
-\physicspanel{phys:EquivalentField_GHK}
+\physicspanel{phys:EquivalentField_GHK}{The effect of Nernst-Plack law of the GHK equation}
 {
 \paragraph{Warning}
 The potential derived in \textbf{Physics panel~\ref{phys:Nernst-Planck}} inherently comprises an additive term (a potential difference), so they must not be compared directly if they use a different reference $C_{k}^{int}$
@@ -305,7 +307,7 @@ We compose the segments from such layers (sheets), $(x,y)$
 parallel plates, and describe the gradients in the direction of $z$.
 We introduce the concept of a 'thin physical layer' parallel to the membrane, characterized by a finite width. The detailed calculations are shown in \textbf{Numeric panel~\ref{num:MembraneOneSegment}}.
 
-\numericspanel{num:MembraneOneSegment}
+\numericspanel{num:MembraneOneSegment}{The electric field of a physical charged sheet}
 {
 In the calculations below, we require the 'surface charge density' (interpreted as an 'infinitely thin layer' in physics, expressed in $C * m^{-2}$).
 We can derive (assuming singly-charged ions) the \textit{volume charge density}
@@ -351,7 +353,7 @@ the issues with the ill-defined biological boundaries.
 
 
 %
-\physicspanel{phys:ClassicalCondenser}
+\physicspanel{phys:ClassicalCondenser}{The classical condenser}
 {
 In classical electricity, the charge remains on the surface of the conducting layer, and the distribution is homogeneous (although the charge is concentrated on the surface and the electrical field is zero inside the conducting layer). Hence, the electrical field contributions cancel each other.
 In electrolyte segments, (a tiny fraction of) the molecules decompose into an ionized state (dissociate), and the created ions interact with a bounding
@@ -374,6 +376,7 @@ One must describe a physically discontinuous layer (electrolyte, ion layer on th
 \end{figure}
 
 \physicspanel{phys:CondenserBoundaryProblem}
+{The boundary problem of a physics condenser}
 {
 The behavior near the boundary layers is problematic, primarily because
 the layers themselves are ill-defined.
@@ -447,7 +450,7 @@ the "conducting sheets" (the 'bulk' portions) and inside the sheets.  Between th
 on the two sides of the physical layer. The physical layer emulates the well-defined boundary
 on the side opposite to that proximal to the membrane. Here, we still assume that a mechanical counterforce due to the surface's roughness keeps the charges inside the charged layer.)
 
-\numericspanel{num:ClassicalField}
+\numericspanel{num:ClassicalField}{The voltage in a classical neuronal condenser}
 {
 We assume that all unbalanced (dissociated) ions are in the layer,
 and the rest contains no dissociated ions; furthermore, 

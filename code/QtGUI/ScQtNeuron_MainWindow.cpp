@@ -173,7 +173,7 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
                                             m_neuronTab->ui->Slider2->value()/1000.  // TimeConst, [ms]
         );*/
 //    APParameters[0] = m_neuronTab->ui->Slider3->value()*1000.; // Amplitude, pA
-//??    MyNeuron->RushinParameters_Set(0,m_neuronTab->ui->RushinAmplitudeSlider->value()/1000);
+    MyNeuron->RushinParameters_Set(0,m_neuronTab->ui->RushinAmplitudeSlider->value()*1000);
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     m_terminated = false;
 }

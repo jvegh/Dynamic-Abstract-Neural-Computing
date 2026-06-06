@@ -14,10 +14,25 @@ E.~R. Kandel, J.~H. Schwartz, T.~M. Jessell, S.~A. Siegelbaum, A.~J. Hudspeth,
   Principles of Neural Science, 5th Edition, The McGraw-Hill Medical, New York
   Chicago etc., 2013.
 
+\bibitem{BrainInitiative10:2024}
+J.~Ngai, Brain @ 10: A decade of innovation, Neuron 112 (2024).
+\newblock \href {https://doi.org/10.1016/j.neuron.2024.09.007}
+  {\path{doi:10.1016/j.neuron.2024.09.007}}.
+
 \bibitem{NeuralDynamicsGertsner:2014}
 W.~Gerstner, W.~M. Kistler, R.~Naud, L.~Paninski, Neuronal Dynamics: From
   single neurons to networks and models of cognition and beyond, Cambridge
   University Press, Cambridge, UK, 2014.
+
+\bibitem{VollmerLimitsOfBiology:1995}
+G.~Vollmer,
+  \href{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}{The
+  limits of biology}, in: D.~Prawitz, B.~Skyrms, D.~Westerståhl (Eds.), Logic,
+  Methodology and Philosophy of Science IX, Vol. 134 of Studies in Logic and
+  the Foundations of Mathematics, Elsevier, Amsterdam, 1995, pp. 659--676.
+\newblock \href {https://doi.org/https://doi.org/10.1016/S0049-237X(06)80068-6}
+  {\path{doi:https://doi.org/10.1016/S0049-237X(06)80068-6}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}
 
 \bibitem{JohnstonWuNeurophysiology:1995}
 D.~Johnston, S.~M.-S. Wu, Foundations of Cellular Neurophysiology,
@@ -29,16 +44,6 @@ J.~von Neumann, {First draft of a report on the EDVAC}, IEEE Annals of the
   History of Computing 15~(4) (1993) 27--75.
 \newblock \href {https://doi.org/10.1109/85.238389}
   {\path{doi:10.1109/85.238389}}.
-
-\bibitem{VollmerLimitsOfBiology:1995}
-G.~Vollmer,
-  \href{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}{The
-  limits of biology}, in: D.~Prawitz, B.~Skyrms, D.~Westerståhl (Eds.), Logic,
-  Methodology and Philosophy of Science IX, Vol. 134 of Studies in Logic and
-  the Foundations of Mathematics, Elsevier, Amsterdam, 1995, pp. 659--676.
-\newblock \href {https://doi.org/https://doi.org/10.1016/S0049-237X(06)80068-6}
-  {\path{doi:https://doi.org/10.1016/S0049-237X(06)80068-6}}.
-\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}
 
 \bibitem{MechanisticModelHodgkinHuxleyCraver:2006}
 C.~F. Craver, When mechanistic models explain, Synthese 153~(3) (2006)
@@ -150,6 +155,16 @@ B.~Podobnik, M.~Jusup, Z.~Tiganj, W.-X. Wangi, J.~M. Buld, H.~E. Stanley,
   neuronal networks, Applied Physical Sciences 45 (2017) 11826--11831.
 \newblock \href {https://doi.org/10.1073/pnas.1705704114}
   {\path{doi:10.1073/pnas.1705704114}}.
+
+\bibitem{BuzsakiCellAssemblies:2010}
+G.~Buzs\'aki, {Neural syntax: cell assemblies, synapsembles, and readers},
+  Neuron 68~(4) (2010) 362--85.
+\newblock \href {https://doi.org/10.1016/j.neuron.2010.09.023}
+  {\path{doi:10.1016/j.neuron.2010.09.023}}.
+
+\bibitem{MillerComputationalNeuroscience:2018}
+P.~Miller, {An Introductory Course in Computational Neuroscience}, {The MIT
+  Press}, {Cambridge, Massachusets, London, England}, 2018.
 
 \bibitem{UpdateHodgkinHuxley:1990}
 J.~Rinzel,
@@ -346,6 +361,10 @@ Y.~Wang, R.~Wang, X.~Xu,
   {\path{doi:https://doi.org/10.1155/2017/6207141}}.
 \newline\urlprefix\url{https://pmc.ncbi.nlm.nih.gov/articles/PMC5337805/}
 
+\bibitem{VeghDANCES:2026}
+J.~V{\'{e}}gh, {Dynamic Abstract Neural Computing with Electronic Simulation},
+  \url{https://jvegh.github.io/DANCES/} (Accessed on Mar 03, 2026) (2026).
+
 \bibitem{VeghTechnomorphBiology:2025}
 J.~V{\'e}gh, \href{https://www.mdpi.com/2076-3417/15/11/5805}{On implementing
   technomorph biology for inefficient computing}, Applied Sciences 15~(11)
@@ -413,10 +432,6 @@ T.~Heimburg,
 B.~Bean, The action potential in mammalian central neurons, Nature Reviews
   Neuroscience 8 (2007).
 \newblock \href {https://doi.org/10.1038/nrn2148} {\path{doi:10.1038/nrn2148}}.
-
-\bibitem{VeghDANCES:2026}
-J.~V{\'{e}}gh, {Dynamic Abstract Neural Computing with Electronic Simulation},
-  \url{https://jvegh.github.io/DANCES/} (Accessed on Mar 03, 2026) (2026).
 
 \bibitem{AnalogInMemoryComputing:2024}
 A.~Antolini, A.~Lico, F.~Zavalloni, E.~F. Scarselli, A.~Gnudi, M.~L. Torres,

@@ -51,6 +51,7 @@ void NeuronTab::SetupGUI()
     ui->RushinASlider->setMaximum(300);
     ui->RushinASlider->setValue(m_parent->MyNeuron->RushinParameters_Get()->at(1)*1000);
     ui->RushinASlider->setPageStep(20);
+    double temp = ui->RushinASlider->value();
     ui->RushinASliderValue->setText(QString::number(ui->RushinASlider->value()));
     QObject::connect(ui->RushinASlider, &QSlider::valueChanged, this, [=] () {
         (ui->RushinASliderValue->setText(QString::number(ui->RushinASlider->value(),'f',2)));
@@ -108,6 +109,7 @@ void NeuronTab::SetupGUI()
     });
     ui->StepNumberBox->setRange(1,100);
     ui->StepTimeBox->setRange(10,1000);
+    ui->StepTimeBox->setValue(50);
 }
 
 void NeuronTab::setupSimulatorActions(QToolBar *controlToolbar) {

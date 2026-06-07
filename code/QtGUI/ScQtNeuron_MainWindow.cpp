@@ -169,15 +169,11 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
     m_neuronTab->ui->DisplayReversedBox->setEnabled(false);
     m_StepNumber = m_neuronTab->ui->StepNumberBox->value();
     m_FinalTime = sc_core::sc_time_stamp() + sc_core::sc_time(m_neuronTab->ui->StepTimeBox->value(),sc_core::SC_US);
- /*   MyNeuron->MembraneFromRGOhm_TauMSec_Set(m_neuronTab->ui->Slider1->value()/1000., // Resistance, [GOhm]
-                                            m_neuronTab->ui->Slider2->value()/1000.  // TimeConst, [ms]
-        );*/
-//    APParameters[0] = m_neuronTab->ui->Slider3->value()*1000.; // Amplitude, pA
     MyNeuron->RushinParameters_Set(0,m_neuronTab->ui->RushinAmplitudeSlider->value()*1000);
-    MyNeuron->RushinParameters_Set(1,m_neuronTab->ui->RushinASlider->value()*1000);
-    MyNeuron->RushinParameters_Set(2,m_neuronTab->ui->RushinBSlider->value()*1000);
-    MyNeuron->MembraneParameters_Set(0, m_neuronTab->ui->MembraneTauSlider->value()*1000);
-    MyNeuron->MembraneParameters_Set(1, m_neuronTab->ui->MembraneRSlider->value()*1000);
+    MyNeuron->RushinParameters_Set(1,m_neuronTab->ui->RushinASlider->value()/1000.);
+    MyNeuron->RushinParameters_Set(2,m_neuronTab->ui->RushinBSlider->value()/1000.);
+    MyNeuron->MembraneParameters_Set(0, m_neuronTab->ui->MembraneTauSlider->value()/1000);
+    MyNeuron->MembraneParameters_Set(1, m_neuronTab->ui->MembraneRSlider->value()/1000);
 
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     m_terminated = false;
@@ -257,7 +253,7 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     }
     if((
         (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()))
-        || (m_neuronTab->ui->eventMode->isChecked() && (m_StepNumber-->0))
+        || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
         || (m_neuronTab->ui->continuousMode->isChecked())
         )
         && !m_terminated //&& (!m_Simulator->_abort) //&& (m_Simulator->_interrupt)

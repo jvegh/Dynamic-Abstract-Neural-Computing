@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>553</width>
-    <height>386</height>
+    <height>405</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -94,13 +94,6 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="DisplayLabel">
-                       <property name="text">
-                        <string>Disp slowdown</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
                       <widget class="QSlider" name="DisplaySlider">
                        <property name="orientation">
                         <enum>Qt::Orientation::Horizontal</enum>
@@ -115,6 +108,19 @@
                       </widget>
                      </item>
                     </layout>
+                   </widget>
+                   <widget class="QLabel" name="DisplayLabel">
+                    <property name="geometry">
+                     <rect>
+                      <x>100</x>
+                      <y>0</y>
+                      <width>131</width>
+                      <height>23</height>
+                     </rect>
+                    </property>
+                    <property name="text">
+                     <string>Display slowdown</string>
+                    </property>
                    </widget>
                   </widget>
                   <widget class="QGroupBox" name="groupBox_4">
@@ -224,6 +230,43 @@
                      </item>
                      <item row="0" column="3">
                       <widget class="QPushButton" name="startButton">
+                       <property name="palette">
+                        <palette>
+                         <active>
+                          <colorrole role="Accent">
+                           <brush brushstyle="SolidPattern">
+                            <color alpha="255">
+                             <red>53</red>
+                             <green>132</green>
+                             <blue>228</blue>
+                            </color>
+                           </brush>
+                          </colorrole>
+                         </active>
+                         <inactive>
+                          <colorrole role="Accent">
+                           <brush brushstyle="SolidPattern">
+                            <color alpha="255">
+                             <red>53</red>
+                             <green>132</green>
+                             <blue>228</blue>
+                            </color>
+                           </brush>
+                          </colorrole>
+                         </inactive>
+                         <disabled>
+                          <colorrole role="Accent">
+                           <brush brushstyle="SolidPattern">
+                            <color alpha="255">
+                             <red>53</red>
+                             <green>132</green>
+                             <blue>228</blue>
+                            </color>
+                           </brush>
+                          </colorrole>
+                         </disabled>
+                        </palette>
+                       </property>
                        <property name="text">
                         <string>Start</string>
                        </property>
@@ -295,7 +338,7 @@
                    <widget class="QLineEdit" name="DisplayTimeValue">
                     <property name="geometry">
                      <rect>
-                      <x>260</x>
+                      <x>270</x>
                       <y>30</y>
                       <width>91</width>
                       <height>20</height>
@@ -680,19 +723,19 @@
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout">
                     <item>
-                     <widget class="QLabel" name="SimulatedTimeLabel">
-                      <property name="text">
-                       <string>Neuron(ms)</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
                      <widget class="QLineEdit" name="SimulatedTimeValue">
                       <property name="minimumSize">
                        <size>
                         <width>81</width>
                         <height>0</height>
                        </size>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="SimulatedTimeLabel">
+                      <property name="text">
+                       <string>Neuron(ms)</string>
                       </property>
                      </widget>
                     </item>
@@ -733,7 +776,7 @@
                     <rect>
                      <x>10</x>
                      <y>0</y>
-                     <width>501</width>
+                     <width>511</width>
                      <height>101</height>
                     </rect>
                    </property>
@@ -845,7 +888,7 @@
                     <rect>
                      <x>10</x>
                      <y>110</y>
-                     <width>501</width>
+                     <width>511</width>
                      <height>91</height>
                     </rect>
                    </property>

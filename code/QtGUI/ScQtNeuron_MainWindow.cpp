@@ -172,8 +172,8 @@ void ScQtNeuron_MainWindow::on_startButton_clicked()
     MyNeuron->RushinParameters_Set(0,m_neuronTab->ui->RushinAmplitudeSlider->value()*1000);
     MyNeuron->RushinParameters_Set(1,m_neuronTab->ui->RushinASlider->value()/1000.);
     MyNeuron->RushinParameters_Set(2,m_neuronTab->ui->RushinBSlider->value()/1000.);
-    MyNeuron->MembraneParameters_Set(0, m_neuronTab->ui->MembraneTauSlider->value()/1000);
-    MyNeuron->MembraneParameters_Set(1, m_neuronTab->ui->MembraneRSlider->value()/1000);
+    MyNeuron->MembraneParameters_Set(0, m_neuronTab->ui->MembraneTauSlider->value()/1000.);
+    MyNeuron->MembraneParameters_Set(1, m_neuronTab->ui->MembraneRSlider->value()/1000.);
 
     m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
     m_terminated = false;

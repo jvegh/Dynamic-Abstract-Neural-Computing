@@ -39,6 +39,7 @@ public:
   void Reset();
   void ResetDisplay(void){index = 0;}
   void RunningPointPosition_Set(double xpos, double ypos);
+  void DrawItemText(double xpos, double ypos, QString S, QColor Col);
   uint32_t index;
 
   QVector<double> Time, Voltage, Gradient;

@@ -185,21 +185,30 @@ void VoltageWindow::displayDataSlot()
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
 
     // The rest is only for displaying demo legend
+
     if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
-        DrawArrow(key2, Volt2, "X",.02,-15);
+        if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
+            DrawItemText(key2, Volt2, "X", Qt::red);
+        else
+            DrawItemText(key2, Volt2, "X", Qt::green);
+        // DrawArrow(Volt2,DvDt,  "X",-10,800);
     }
+
     if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-        DrawArrow(key2, Volt2, "<R",+0.068,18);
+//        DrawArrow(key2, Volt2, "<R",+0.068,18);
+        DrawItemText(key2, Volt2, "<R", Qt::yellow);
         m_T_DeliveringBegin = key2;
         PlotBrackets(0,0.,key2,-20);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
-        DrawArrow(key2, Volt2, "R>",-0.05,18);
+//        DrawArrow(key2, Volt2, "R>",-0.05,18);
+        DrawItemText(key2, Volt2, "R>", Qt::yellow);
         m_T_RelaxingBegin = key2;
         PlotBrackets(1,m_T_DeliveringBegin,key2, -20);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
-        DrawArrow(key2, Volt2, "E",-0.05,18);
+//        DrawArrow(key2, Volt2, "E",-0.05,18);
+        DrawItemText(key2, Volt2, "E", Qt::yellow);
  //       PlotBrackets(2,m_T_RelaxingBegin,key2, m_V_Peak+40);
     }
 
@@ -209,7 +218,9 @@ void VoltageWindow::displayDataSlot()
         {   // We are at the point of maximum polarization
 
             if(!m_HaveAlreadyP){
-                DrawArrow(key2, Volt2, "P",0.03,-30); m_HaveAlreadyP = true;
+//                DrawArrow(key2, Volt2, "P",0.03,-30);
+                DrawItemText(key2, Volt2, "P", Qt::yellow);
+                m_HaveAlreadyP = true;
                 m_V_Peak = Volt2;
             }
         }
@@ -219,13 +230,26 @@ void VoltageWindow::displayDataSlot()
         if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() > 0))
         {   // We are at the point of maximum hyperpolarization
             if(!m_HaveAlreadyH){
-                DrawArrow(key2, Volt2, "H",-0,50); m_HaveAlreadyH = true;
+//                DrawArrow(key2, Volt2, "H",-0,50); m_HaveAlreadyH = true;
+                DrawItemText(key2, Volt2, "H", Qt::yellow);
                 PlotBrackets(2,m_T_RelaxingBegin,key2, -20);
                 }
         }
     }
-
     ui->customPlot->replot();
+}
+
+void VoltageWindow::DrawItemText(double xpos, double ypos, QString S, QColor Col)
+{
+    // add the text label at the top:
+    QCPItemText *textLabel = new QCPItemText(ui->customPlot);
+    textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);
+    //textLabel->position->setType(QCPItemPosition::ptAxisRectRatio);
+    textLabel->position->setCoords(xpos, ypos); // place position at center/top of axis rect
+    textLabel->setText(S);
+    textLabel->setFont(QFont(font().family(), 8)); // make font a bit larger
+    textLabel->setPen(QPen(Col)); // show red border around text
+    textLabel->setBrush(QBrush(Col)); // show red border around text
 }
 
 void VoltageWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)

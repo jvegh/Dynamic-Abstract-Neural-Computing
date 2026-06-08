@@ -87,23 +87,18 @@ void PhasePlotWindow::setupDataPlot(    )
        ui->customPlot->xAxis->setLabel("Voltage (mV)");
        ui->customPlot->yAxis->setLabel("Gradient (V/s)");
         ui->customPlot->xAxis->setRange(-30, 130);
-       ui->customPlot->yAxis->setRange(-8000, 3500);
+       ui->customPlot->yAxis->setRange(-1500, 4000);
     }
     else
     {
         ui->customPlot->xAxis->setLabel("Gradient (V/s)");
        ui->customPlot->yAxis->setLabel("Voltage (mV)");
-       ui->customPlot->xAxis->setRange(-8000, 3500);
+       ui->customPlot->xAxis->setRange(-1500, 4000);
        ui->customPlot->yAxis->setRange(-30, 130);
     }; //REVERSEDGRADIENT
     ui->customPlot->axisRect()->setupFullAxesBox();
     ui->customPlot->rescaleAxes();
 }
-
-//BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here
-//BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
-
-
 
 /* For speed-up
   customPlot->setNotAntialiasedElements(QCP::aeAll);
@@ -120,6 +115,7 @@ void PhasePlotWindow::replot(void)
 void PhasePlotWindow::Reset()
 {
     dataPhasePlot.clear();  RunningPointPosition_Set(0,0);  index = 0;
+    m_HaveAlreadyH = false; m_HaveAlreadyP = false;
     PhasePlot->data()->set(dataPhasePlot, true);
     replot();
 }
@@ -150,28 +146,48 @@ void PhasePlotWindow::displayDataSlot()
         dataPhasePlot.push_back(QCPCurveData(index++,Volt2, DvDt));
         // The rest is only for displaying demo legend
         if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
-            DrawArrow(Volt2,DvDt,  "X",-10,800);
+            if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
+                DrawItemText(Volt2, DvDt, "X", Qt::red);
+            else
+                DrawItemText(Volt2,DvDt,  "X", Qt::green);
+           // DrawArrow(Volt2,DvDt,  "X",-10,800);
         }
         if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-            DrawArrow(Volt2, DvDt, "<R",15,250);
+ //           DrawArrow(Volt2, DvDt, "<R",15,250);
+            DrawItemText(Volt2,DvDt, "<R", Qt::yellow);
+            PlotBracketsV(0,Volt2,0.,DvDt);
         }
         if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
-            DrawArrow( Volt2, DvDt, "R>",35,800);
+//            DrawArrow( Volt2, DvDt, "R>",35,800);
+            DrawItemText(Volt2, DvDt,  "R>", Qt::yellow);
+            PlotBracketsV(1, Volt2, m_V_Peak,DvDt);
+            m_V_Peak = Volt2;
         }
 
         if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
         {
             if ((m_neuron->dVdtResultingLast_Get() >=0) && (m_neuron->dVdtResulting_Get() < 0))
             {   // We are at the point of maximum polarization
-                if(!m_HaveAlreadyP){DrawArrow( Volt2, DvDt,"P",-65,900); m_HaveAlreadyP = true;}
+                if(!m_HaveAlreadyP)
+                {   //DrawArrow( Volt2, DvDt,"P",-65,900);
+                    DrawItemText( Volt2, DvDt,  "P", Qt::yellow);
+
+                    m_HaveAlreadyP = true;
+                    m_V_Peak = Volt2;
+                }
             }
         }
         if(GenCompStageMachine_t::gcsm_Relaxing == m_neuron->StageFlag_Get())
         {
             if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() >= 0))
             {   // We are at the point of maximum hyperpolarization
-                if(!m_HaveAlreadyH){DrawArrow(Volt2,  DvDt, "H",5,500);; m_HaveAlreadyH = true;}
-
+                if(!m_HaveAlreadyH)
+                {
+//                    DrawArrow(Volt2,  DvDt, "H",5,500);; m_HaveAlreadyH = true;
+                    m_HaveAlreadyH = true;
+                    DrawItemText(Volt2, DvDt,  "H",Qt::yellow);
+                    PlotBracketsV(2, Volt2,DvDt,m_V_Peak);
+                }
             }
         }
     }
@@ -182,14 +198,21 @@ void PhasePlotWindow::displayDataSlot()
 
         // The rest is only for displaying demo legend
         if ( m_neuron->EVENT_GenComp.InputReceived.triggered() ) {
-            DrawArrow(DvDt,Volt2,  "X",300,-15);
+//            DrawArrow(DvDt,Volt2,  "X",300,-15);
+//            DrawItemText( Volt2, DvDt, "@",Qt::red);
+            if(GenCompStageMachine_t::gcsm_Delivering == m_neuron->StageFlag_Get())
+                    DrawItemText(DvDt, Volt2, "X", Qt::red);
+                else
+                    DrawItemText(DvDt, Volt2, "X", Qt::green);
         }
         if ( m_neuron->EVENT_GenComp.DeliveringBegin.triggered() ) {
-            DrawArrow( DvDt, Volt2, "<R",-300.,45);
+//            DrawArrow( DvDt, Volt2, "<R",-300.,45);
+            DrawItemText(DvDt,Volt2, "<R", Qt::yellow);
             PlotBracketsV(0,DvDt,0.,Volt2);
         }
         if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
-            DrawArrow( DvDt, Volt2, "R>",1100,45);
+//            DrawArrow( DvDt, Volt2, "R>",1100,45);
+            DrawItemText(DvDt,Volt2,  "R>", Qt::yellow);
             PlotBracketsV(1,DvDt, m_V_Peak, Volt2);
             m_V_Peak = Volt2;
         }
@@ -200,7 +223,10 @@ void PhasePlotWindow::displayDataSlot()
             {   // We are at the point of maximum polarization
                 if(!m_HaveAlreadyP)
                 {
-                    DrawArrow( DvDt, Volt2,"P",300,-20); m_HaveAlreadyP = true;
+//                    DrawArrow( DvDt, Volt2,"P",300,-20);
+                    DrawItemText(DvDt,Volt2,  "P", Qt::yellow);
+
+                    m_HaveAlreadyP = true;
                     m_V_Peak = Volt2;
                 }
             }
@@ -211,19 +237,32 @@ void PhasePlotWindow::displayDataSlot()
             {   // We are at the point of maximum hyperpolarization
                 if(!m_HaveAlreadyH)
                 {
-                    DrawArrow(DvDt, Volt2, "H",-0,50); m_HaveAlreadyH = true;
+                   // DrawArrow(DvDt, Volt2, "H",-0,50);
+                    m_HaveAlreadyH = true;
+                    DrawItemText(DvDt, Volt2, "H",Qt::yellow);
                     PlotBracketsV(2,DvDt, Volt2,m_V_Peak);
                 }
             }
         }
-
     };
 
     PhasePlot->data()->set(dataPhasePlot, true);
 
-
     ui->customPlot->replot();
  //           BENCHMARK_TIME_END(&m_Simulator->m_display_t,m_Simulator->&m_display_x,&m_Simulator->m_display_s);   // End benchmarking here
+}
+
+void PhasePlotWindow::DrawItemText(double xpos, double ypos, QString S, QColor Col)
+{
+    // add the text label at the top:
+    QCPItemText *textLabel = new QCPItemText(ui->customPlot);
+    textLabel->setPositionAlignment(Qt::AlignTop|Qt::AlignHCenter);
+    //textLabel->position->setType(QCPItemPosition::ptAxisRectRatio);
+    textLabel->position->setCoords(xpos, ypos); // place position at center/top of axis rect
+    textLabel->setText(S);
+    textLabel->setFont(QFont(font().family(), 8)); // make font a bit larger
+    textLabel->setPen(QPen(Col)); // show red border around text
+    textLabel->setBrush(QBrush(Col)); // show red border around text
 }
 
 void PhasePlotWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)

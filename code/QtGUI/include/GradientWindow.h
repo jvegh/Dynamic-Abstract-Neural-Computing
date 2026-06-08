@@ -37,8 +37,9 @@ public:
     void replot(void);
     void Reset();
     uint32_t index;
+    void DrawItemText(double xpos, double ypos, QString S, QColor Col);
 
-    QVector<double> Time, Voltage, Gradient;
+//    QVector<double> Time, Voltage, Gradient;
 
 private slots:
     void displayDataSlot();

@@ -58,13 +58,13 @@ void NeuronTab::SetupGUI()
     });
 
     // Set up rush-in B the falling edge
-    ui->RushinBSlider->setMinimum(100);
-    ui->RushinBSlider->setMaximum(3000);
+    ui->RushinBSlider->setMinimum(10);
+    ui->RushinBSlider->setMaximum(1000);
     ui->RushinBSlider->setValue(m_parent->MyNeuron->RushinParameters_Get()->at(2)*1000);
     ui->RushinBSlider->setPageStep(20);
     ui->RushinBSliderValue->setText(QString::number(ui->RushinBSlider->value()));
     QObject::connect(ui->RushinBSlider, &QSlider::valueChanged, this, [=] () {
-        (ui->RushinASliderValue->setText(QString::number(ui->RushinBSlider->value(),'f',2)));
+        (ui->RushinBSliderValue->setText(QString::number(ui->RushinBSlider->value(),'f',2)));
     });
 
     // Set up membrane time constant : tau, us

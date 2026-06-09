@@ -68,7 +68,7 @@ void VoltageWindow::setupPlot()
 
     VoltagePlot->setPen(QPen(Qt::blue));
     VoltagePlot->setBrush(QBrush(QColor(2, 20, 20, 20)));
-    VoltagePlot->setName("AP phase plot");
+    VoltagePlot->setName("Action Potential");
     VoltagePlot->setLineStyle(QCPCurve::lsLine);
     VoltagePlot->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 2));
 #if 0
@@ -98,6 +98,13 @@ void VoltageWindow::setupPlot()
 
 //    connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(displayDataSlot()));
     ui->customPlot->axisRect()->setupFullAxesBox();
+    // set some basic customPlot config:
+    ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+    ui->customPlot->legend->setVisible(true); // Ensure legend is visible
+    ui->customPlot->legend->setFont(QFont("Helvetica", 9));
+    ui->customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // Set a semi-transparent brush for the legend:
+    // Set position to upper left inside the axis rect
+    ui->customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight | Qt::AlignTop);
     Reset();
 }
 
@@ -109,32 +116,34 @@ void VoltageWindow::PlotBrackets(int32_t key, double coord1, double coord2, doub
     {
     // add the bracket for the "Computing" phase:
     QCPItemBracket *computingBracket = new QCPItemBracket(ui->customPlot);
-    computingBracket->left->setCoords(coord2, y);
-    computingBracket->right->setCoords(coord1, y);
+    computingBracket->left->setCoords(coord1, y);
+    computingBracket->right->setCoords(coord2, y);
     computingBracket->setLength(13);
 
     // add the text label at the top:
     QCPItemText *computingText = new QCPItemText(ui->customPlot);
     computingText->position->setParentAnchor(computingBracket->center);
-    computingText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+    computingText->position->setCoords(0, +20); // move 10 pixels to the top from bracket center anchor
     computingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
     computingText->setText("Computing");
+    computingText->setRotation(-90);
     computingText->setFont(QFont(font().family(), 10));
     } break;
     case 1:
     {
     // add the bracket for the "Delivering" phase:
     QCPItemBracket *deliveringBracket = new QCPItemBracket(ui->customPlot);
-    deliveringBracket->left->setCoords(coord2,y);
-    deliveringBracket->right->setCoords(coord1, y);
+    deliveringBracket->left->setCoords(coord2,y+10);
+    deliveringBracket->right->setCoords(coord1, y+10);
     deliveringBracket->setLength(13);
 
     // add the text label at the top:
     QCPItemText *deliveringText = new QCPItemText(ui->customPlot);
     deliveringText->position->setParentAnchor(deliveringBracket->center);
-    deliveringText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
+    deliveringText->position->setCoords(0, +20); // move 10 pixels to the top from bracket center anchor
     deliveringText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
     deliveringText->setText("Delivering");
+    deliveringText->setRotation(-90);
     deliveringText->setFont(QFont(font().family(), 10));
 
     m_FirstRelax = false; //?? temp
@@ -144,8 +153,8 @@ void VoltageWindow::PlotBrackets(int32_t key, double coord1, double coord2, doub
     // add the bracket for the "Relaxing" phase:
         if(m_FirstRelax){   m_FirstRelax = false; break;}
     QCPItemBracket *relaxingBracket = new QCPItemBracket(ui->customPlot);
-    relaxingBracket->left->setCoords(coord2, y);
-    relaxingBracket->right->setCoords(coord1, y);
+    relaxingBracket->left->setCoords(coord1, y+10);
+    relaxingBracket->right->setCoords(coord2, y+10);
     relaxingBracket->setLength(13);
 
     // add the text label at the top:
@@ -198,13 +207,13 @@ void VoltageWindow::displayDataSlot()
 //        DrawArrow(key2, Volt2, "<R",+0.068,18);
         DrawItemText(key2, Volt2, "<R", Qt::yellow);
         m_T_DeliveringBegin = key2;
-        PlotBrackets(0,0.,key2,-20);
+        PlotBrackets(0,0.,key2,20);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
 //        DrawArrow(key2, Volt2, "R>",-0.05,18);
         DrawItemText(key2, Volt2, "R>", Qt::yellow);
         m_T_RelaxingBegin = key2;
-        PlotBrackets(1,m_T_DeliveringBegin,key2, -20);
+        PlotBrackets(1,key2,m_T_DeliveringBegin, +20);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
 //        DrawArrow(key2, Volt2, "E",-0.05,18);
@@ -230,8 +239,8 @@ void VoltageWindow::displayDataSlot()
         if ((m_neuron->dVdtResultingLast_Get() <0) && (m_neuron->dVdtResulting_Get() > 0))
         {   // We are at the point of maximum hyperpolarization
             if(!m_HaveAlreadyH){
-//                DrawArrow(key2, Volt2, "H",-0,50); m_HaveAlreadyH = true;
-                DrawItemText(key2, Volt2, "H", Qt::yellow);
+//                DrawArrow(key2, Volt2, "H",-0,50);
+                DrawItemText(key2, Volt2, "H", Qt::yellow); m_HaveAlreadyH = true;
                 PlotBrackets(2,m_T_RelaxingBegin,key2, -20);
                 }
         }

@@ -157,8 +157,8 @@ void GradientWindow::PlotBrackets(int32_t key, double coord1, double coord2, dou
     {
         // add the bracket for the "Computing" phase:
         QCPItemBracket *computingBracket = new QCPItemBracket(ui->customPlot);
-        computingBracket->left->setCoords(coord1, y+10);
-        computingBracket->right->setCoords(coord2, y+10);
+        computingBracket->left->setCoords(coord2, y+10);
+        computingBracket->right->setCoords(coord1, y+10);
         computingBracket->setLength(13);
 
         // add the text label at the top:
@@ -167,6 +167,7 @@ void GradientWindow::PlotBrackets(int32_t key, double coord1, double coord2, dou
         computingText->position->setCoords(0, -10); // move 10 pixels to the top from bracket center anchor
         computingText->setPositionAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         computingText->setText("Computing");
+        computingText->setRotation(-90);
         computingText->setFont(QFont(font().family(), 10));
     } break;
     case 1:
@@ -260,14 +261,14 @@ void GradientWindow::displayDataSlot()
         DrawItemText(key2,DvDt,  "<R", Qt::yellow);
         m_T_DeliveringBegin = key2;
         m_V_Peak = Membrane_dVdt_Input;
-        PlotBrackets(0,key2,0.,-1500);
+        PlotBrackets(0,key2,0.,2500);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingBegin.triggered() ) {
 //        DrawArrow(key2, DvDt, "R>",-0.05,1300);
         DrawItemText(key2,DvDt,  "R>", Qt::yellow);
         m_T_RelaxingBegin = key2;
 //        PlotBrackets(1,m_T_DeliveringBegin,key2, m_V_Peak*1.5+500);
-        PlotBrackets(1,key2,m_T_DeliveringBegin, -1500);
+        PlotBrackets(1,m_T_DeliveringBegin,key2, +1500);
     }
     if ( m_neuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
 //        DrawArrow(key2, DvDt, "E",-0.05,18);

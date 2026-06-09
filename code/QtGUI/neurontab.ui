@@ -40,7 +40,7 @@
         <item>
          <widget class="QTabWidget" name="tabWidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab1">
            <attribute name="title">
@@ -859,10 +859,10 @@
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_8">
-                     <item row="4" column="0">
+                     <item row="5" column="0">
                       <widget class="QLabel" name="RushinBSliderLabel">
                        <property name="text">
-                        <string>Rushin B (s)</string>
+                        <string>Rushin B (ms)</string>
                        </property>
                       </widget>
                      </item>
@@ -873,10 +873,10 @@
                        </property>
                       </widget>
                      </item>
-                     <item row="2" column="0">
+                     <item row="4" column="0">
                       <widget class="QLabel" name="RushinASliderLabel">
                        <property name="text">
-                        <string>Rushin A (s)</string>
+                        <string>Rushin A (ms)</string>
                        </property>
                       </widget>
                      </item>
@@ -981,14 +981,14 @@
                      <item row="1" column="0">
                       <widget class="QLabel" name="Slider2Label_3">
                        <property name="text">
-                        <string>Synaptic A (s)</string>
+                        <string>Synaptic A (ms)</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="0">
                       <widget class="QLabel" name="SynapricBSliderLabel">
                        <property name="text">
-                        <string>Synaptic B (s)</string>
+                        <string>Synaptic B (ms)</string>
                        </property>
                       </widget>
                      </item>

@@ -1,0 +1,15 @@
+<map id="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/neurons/include/scGenComp_PU_Abstract.h" name="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/neurons/include/scGenComp_PU_Abstract.h">
+<area shape="rect" id="Node000001" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="478,5,691,75"/>
+<area shape="rect" id="Node000002" href="$scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="351,123,565,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="540,86,497,124,493,120,536,82"/>
+<area shape="rect" id="Node000007" href="$scGenComp__PU__Abstract_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="589,123,833,192"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="633,82,676,120,672,124,630,86"/>
+<area shape="rect" id="Node000003" href="$NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="225,240,438,309"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,203,370,242,367,238,409,199"/>
+<area shape="rect" id="Node000006" href="$scGenComp__PU__Bio_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="463,240,707,309"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="507,199,549,238,546,242,503,203"/>
+<area shape="rect" id="Node000004" href="$NeuronInputCurrent_8cpp.html" title="The physics&#45;based abstract neuron&#39;s input current." alt="" coords="5,357,327,412"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="270,319,208,359,205,355,267,315"/>
+<area shape="rect" id="Node000005" href="$NeuronPhysical_8cpp.html" title="The physics&#45;based abstract neuron." alt="" coords="351,357,645,412"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="396,315,459,355,456,359,393,319"/>
+</map>

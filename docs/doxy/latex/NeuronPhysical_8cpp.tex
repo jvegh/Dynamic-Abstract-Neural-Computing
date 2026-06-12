@@ -1,10 +1,12 @@
-\doxysection{Neuron\+Physical.\+cpp File Reference}
-\label{NeuronPhysical_8cpp}\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysection{/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/neurons/\+Neuron\+Physical.cpp File Reference}
+\hypertarget{NeuronPhysical_8cpp}{}\label{NeuronPhysical_8cpp}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/NeuronPhysical.cpp@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/NeuronPhysical.cpp}}
 
 
 The physics-\/based abstract neuron.  
 
 
+{\ttfamily \#include "{}Neuron\+Physical.\+h"{}}\newline
+{\ttfamily \#include "{}Debug\+Macros.\+h"{}}\newline
 Include dependency graph for Neuron\+Physical.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -16,11 +18,220 @@ Include dependency graph for Neuron\+Physical.\+cpp\+:
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\label{NeuronPhysical_8cpp_a133d8993848d3fa2c41270511f133eb7} 
-\#define {\bfseries DEBUG\+\_\+\+EVENTS}
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_a31ccaab9818325d0300a933482d37150}{MAKE\+\_\+\+TIME\+\_\+\+BENCHMARKING}}
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_a1c98a41a26f2bc5193956299ea0b1aed}{SC\+\_\+\+MAKE\+\_\+\+TIME\+\_\+\+BENCHMARKING}}
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_af050edf82f5529367a0257b027ff6229}{Rushin\+\_\+\+Amplitude}}~40000.
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_a5a7ed55271991733a48eb0923c130aa9}{Rushin\+\_\+A}}~0.\+1
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_ac2db22fd0f403aca70c4d2e6068a35ac}{Rushin\+\_\+B}}~2
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_a39d9f2e5a2851e8ee76c6038dff1b320}{Synaptic\+\_\+\+Amplitude}}~12000.
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_a7b39bc23dda3d6282f179bc0e9d5f41c}{Synaptic\+\_\+A}}~0.\+15
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_a23daea6d7b4fa46427a5563ed39efab3}{Synaptic\+\_\+B}}~3
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_a0a7260846a21fa5b597a90923bec6fcf}{Membrane\+\_\+\+Tau}}~.\+22
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_af0e62d53754952cefc0a5496778fafac}{Membrane\+\_\+R}}~.\+20
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_ab506eaceba6810e575bc326bd811b683}{Membrane\+\_\+C}}~Membrane\+\_\+\+Tau/ Membrane\+\_\+R
+\item 
+\#define \mbox{\hyperlink{NeuronPhysical_8cpp_a133d8993848d3fa2c41270511f133eb7}{DEBUG\+\_\+\+EVENTS}}
 \begin{DoxyCompactList}\small\item\em Print event debug messages for this module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{NeuronPhysical_8cpp_a45f2000e0ffbab4dbd1efc35bf0e6bc5}{Default\+\_\+\+Rushin\+Parameters}} = \{Rushin\+\_\+\+Amplitude, Rushin\+\_\+A, Rushin\+\_\+B\}
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{NeuronPhysical_8cpp_ab58872dc746d7e65d5f2f214f5d48c3e}{Default\+\_\+\+Synaptic\+Parameters}} = \{Synaptic\+\_\+\+Amplitude, Synaptic\+\_\+A, Synaptic\+\_\+B\}
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{NeuronPhysical_8cpp_a7338781db14a314727e2a1d919e678b2}{Default\+\_\+\+Membrane\+Parameters}} = \{Membrane\+\_\+R, Membrane\+\_\+C, Membrane\+\_\+\+Tau\}
+\item 
+\Hypertarget{NeuronPhysical_8cpp_a3850fb0c8428b187d291f79dd5bf1fbe}\label{NeuronPhysical_8cpp_a3850fb0c8428b187d291f79dd5bf1fbe} 
+sc\+\_\+core\+::sc\+\_\+time {\bfseries Heartbeat\+\_\+time\+\_\+default}
+\item 
+sc\+\_\+core\+::sc\+\_\+time \mbox{\hyperlink{NeuronPhysical_8cpp_a17884a662525d073d79b223b2a709a2a}{Heartbeat\+\_\+time\+\_\+resolution}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 The physics-\/based abstract neuron. 
+
+
+
+Definition in file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{NeuronPhysical_8cpp_a133d8993848d3fa2c41270511f133eb7}\label{NeuronPhysical_8cpp_a133d8993848d3fa2c41270511f133eb7} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!DEBUG\_EVENTS@{DEBUG\_EVENTS}}
+\index{DEBUG\_EVENTS@{DEBUG\_EVENTS}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENTS}{DEBUG\_EVENTS}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENTS}
+
+
+
+Print event debug messages for this module. 
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a31ccaab9818325d0300a933482d37150}\label{NeuronPhysical_8cpp_a31ccaab9818325d0300a933482d37150} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!MAKE\_TIME\_BENCHMARKING@{MAKE\_TIME\_BENCHMARKING}}
+\index{MAKE\_TIME\_BENCHMARKING@{MAKE\_TIME\_BENCHMARKING}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{MAKE\_TIME\_BENCHMARKING}{MAKE\_TIME\_BENCHMARKING}}
+{\footnotesize\ttfamily \#define MAKE\+\_\+\+TIME\+\_\+\+BENCHMARKING}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_ab506eaceba6810e575bc326bd811b683}\label{NeuronPhysical_8cpp_ab506eaceba6810e575bc326bd811b683} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Membrane\_C@{Membrane\_C}}
+\index{Membrane\_C@{Membrane\_C}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Membrane\_C}{Membrane\_C}}
+{\footnotesize\ttfamily \#define Membrane\+\_\+C~Membrane\+\_\+\+Tau/ Membrane\+\_\+R}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_af0e62d53754952cefc0a5496778fafac}\label{NeuronPhysical_8cpp_af0e62d53754952cefc0a5496778fafac} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Membrane\_R@{Membrane\_R}}
+\index{Membrane\_R@{Membrane\_R}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Membrane\_R}{Membrane\_R}}
+{\footnotesize\ttfamily \#define Membrane\+\_\+R~.\+20}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a0a7260846a21fa5b597a90923bec6fcf}\label{NeuronPhysical_8cpp_a0a7260846a21fa5b597a90923bec6fcf} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Membrane\_Tau@{Membrane\_Tau}}
+\index{Membrane\_Tau@{Membrane\_Tau}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Membrane\_Tau}{Membrane\_Tau}}
+{\footnotesize\ttfamily \#define Membrane\+\_\+\+Tau~.\+22}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a5a7ed55271991733a48eb0923c130aa9}\label{NeuronPhysical_8cpp_a5a7ed55271991733a48eb0923c130aa9} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Rushin\_A@{Rushin\_A}}
+\index{Rushin\_A@{Rushin\_A}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Rushin\_A}{Rushin\_A}}
+{\footnotesize\ttfamily \#define Rushin\+\_\+A~0.\+1}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_af050edf82f5529367a0257b027ff6229}\label{NeuronPhysical_8cpp_af050edf82f5529367a0257b027ff6229} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Rushin\_Amplitude@{Rushin\_Amplitude}}
+\index{Rushin\_Amplitude@{Rushin\_Amplitude}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Rushin\_Amplitude}{Rushin\_Amplitude}}
+{\footnotesize\ttfamily \#define Rushin\+\_\+\+Amplitude~40000.}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_ac2db22fd0f403aca70c4d2e6068a35ac}\label{NeuronPhysical_8cpp_ac2db22fd0f403aca70c4d2e6068a35ac} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Rushin\_B@{Rushin\_B}}
+\index{Rushin\_B@{Rushin\_B}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Rushin\_B}{Rushin\_B}}
+{\footnotesize\ttfamily \#define Rushin\+\_\+B~2}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a1c98a41a26f2bc5193956299ea0b1aed}\label{NeuronPhysical_8cpp_a1c98a41a26f2bc5193956299ea0b1aed} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!SC\_MAKE\_TIME\_BENCHMARKING@{SC\_MAKE\_TIME\_BENCHMARKING}}
+\index{SC\_MAKE\_TIME\_BENCHMARKING@{SC\_MAKE\_TIME\_BENCHMARKING}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{SC\_MAKE\_TIME\_BENCHMARKING}{SC\_MAKE\_TIME\_BENCHMARKING}}
+{\footnotesize\ttfamily \#define SC\+\_\+\+MAKE\+\_\+\+TIME\+\_\+\+BENCHMARKING}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a7b39bc23dda3d6282f179bc0e9d5f41c}\label{NeuronPhysical_8cpp_a7b39bc23dda3d6282f179bc0e9d5f41c} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Synaptic\_A@{Synaptic\_A}}
+\index{Synaptic\_A@{Synaptic\_A}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Synaptic\_A}{Synaptic\_A}}
+{\footnotesize\ttfamily \#define Synaptic\+\_\+A~0.\+15}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a39d9f2e5a2851e8ee76c6038dff1b320}\label{NeuronPhysical_8cpp_a39d9f2e5a2851e8ee76c6038dff1b320} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Synaptic\_Amplitude@{Synaptic\_Amplitude}}
+\index{Synaptic\_Amplitude@{Synaptic\_Amplitude}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Synaptic\_Amplitude}{Synaptic\_Amplitude}}
+{\footnotesize\ttfamily \#define Synaptic\+\_\+\+Amplitude~12000.}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a23daea6d7b4fa46427a5563ed39efab3}\label{NeuronPhysical_8cpp_a23daea6d7b4fa46427a5563ed39efab3} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Synaptic\_B@{Synaptic\_B}}
+\index{Synaptic\_B@{Synaptic\_B}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Synaptic\_B}{Synaptic\_B}}
+{\footnotesize\ttfamily \#define Synaptic\+\_\+B~3}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{NeuronPhysical_8cpp_a7338781db14a314727e2a1d919e678b2}\label{NeuronPhysical_8cpp_a7338781db14a314727e2a1d919e678b2} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Default\_MembraneParameters@{Default\_MembraneParameters}}
+\index{Default\_MembraneParameters@{Default\_MembraneParameters}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Default\_MembraneParameters}{Default\_MembraneParameters}}
+{\footnotesize\ttfamily vector$<$double$>$ Default\+\_\+\+Membrane\+Parameters = \{Membrane\+\_\+R, Membrane\+\_\+C, Membrane\+\_\+\+Tau\}}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a45f2000e0ffbab4dbd1efc35bf0e6bc5}\label{NeuronPhysical_8cpp_a45f2000e0ffbab4dbd1efc35bf0e6bc5} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Default\_RushinParameters@{Default\_RushinParameters}}
+\index{Default\_RushinParameters@{Default\_RushinParameters}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Default\_RushinParameters}{Default\_RushinParameters}}
+{\footnotesize\ttfamily vector$<$double$>$ Default\+\_\+\+Rushin\+Parameters = \{Rushin\+\_\+\+Amplitude, Rushin\+\_\+A, Rushin\+\_\+B\}}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_ab58872dc746d7e65d5f2f214f5d48c3e}\label{NeuronPhysical_8cpp_ab58872dc746d7e65d5f2f214f5d48c3e} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Default\_SynapticParameters@{Default\_SynapticParameters}}
+\index{Default\_SynapticParameters@{Default\_SynapticParameters}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Default\_SynapticParameters}{Default\_SynapticParameters}}
+{\footnotesize\ttfamily vector$<$double$>$ Default\+\_\+\+Synaptic\+Parameters = \{Synaptic\+\_\+\+Amplitude, Synaptic\+\_\+A, Synaptic\+\_\+B\}}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
+
+\Hypertarget{NeuronPhysical_8cpp_a17884a662525d073d79b223b2a709a2a}\label{NeuronPhysical_8cpp_a17884a662525d073d79b223b2a709a2a} 
+\index{NeuronPhysical.cpp@{NeuronPhysical.cpp}!Heartbeat\_time\_resolution@{Heartbeat\_time\_resolution}}
+\index{Heartbeat\_time\_resolution@{Heartbeat\_time\_resolution}!NeuronPhysical.cpp@{NeuronPhysical.cpp}}
+\doxysubsubsection{\texorpdfstring{Heartbeat\_time\_resolution}{Heartbeat\_time\_resolution}}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time Heartbeat\+\_\+time\+\_\+resolution}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronPhysical_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{NeuronPhysical_8cpp_source}{Neuron\+Physical.\+cpp}}.
 

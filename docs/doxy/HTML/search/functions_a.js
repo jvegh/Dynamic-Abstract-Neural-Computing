@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['observernotify_0',['ObserverNotify',['../classscGenComp__PU__Abstract.html#afb4e5d3dc957fab774e3228b05ba77a3',1,'scGenComp_PU_Abstract']]],
-  ['observingbit_5fget_1',['ObservingBit_Get',['../classscGenComp__PU__Abstract.html#abd6bf6ea589d80f5a7b4a130bf6d18d9',1,'scGenComp_PU_Abstract']]],
-  ['observingbit_5fset_2',['ObservingBit_Set',['../classscGenComp__PU__Abstract.html#ace7c3b81159733df6d705fc597d9cb32',1,'scGenComp_PU_Abstract']]],
-  ['operationcounter_5fget_3',['OperationCounter_Get',['../classscGenComp__PU__Abstract.html#a399d6568bedd90fcbf4f71f9a06b3418',1,'scGenComp_PU_Abstract']]]
+  ['neuronconstants_0',['NeuronConstants',['../classNeuronConstants.html#a1c970c7d514554aebeef16015f59e9ec',1,'NeuronConstants']]],
+  ['neuroninputcurrent_1',['NeuronInputCurrent',['../classNeuronInputCurrent.html#af41bf336678c16b9b38e922e8bc43d16',1,'NeuronInputCurrent']]],
+  ['neuronphysical_2',['NeuronPhysical',['../classNeuronPhysical.html#a19c07d130f56dc9873315446620d0a9a',1,'NeuronPhysical']]],
+  ['noofinputsreceived_5fget_3',['NoOfInputsReceived_Get',['../classscGenComp__PU__Abstract.html#ae00a1e214d66761f99ddfef64839fbb0',1,'scGenComp_PU_Abstract']]]
 ];

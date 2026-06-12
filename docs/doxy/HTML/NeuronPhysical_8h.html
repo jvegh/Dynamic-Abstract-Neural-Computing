@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13: NeuronPhysical.h File Reference</title>
+<title>DANCES: /home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/include/NeuronPhysical.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
@@ -44,21 +39,10 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TAC_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</a>
+   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">DANCES</a>
    </div>
+   <div id="projectbrief">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +54,17 @@ MathJax.Hub.Config({
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -110,61 +105,81 @@ $(document).ready(function(){initNavTree('NeuronPhysical_8h.html',''); initResiz
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">NeuronPhysical.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Function prototypes for the physics-based neuron module.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div class="textblock"><code>#include &quot;<a class="el" href="scGenComp__PU__Bio_8h_source.html">scGenComp_PU_Bio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NeuronInputCurrent_8h_source.html">NeuronInputCurrent.h</a>&quot;</code><br />
+<code>#include &quot;../3rdParty/ode/include/ode/ode_euler.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for NeuronPhysical.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="NeuronPhysical_8h__incl.png" border="0" usemap="#aNeuronPhysical_8h" alt=""/></div>
-<map name="aNeuronPhysical_8h" id="aNeuronPhysical_8h">
-<area shape="rect" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="649,5,783,31"/>
-<area shape="rect" href="scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="540,79,705,104"/>
-<area shape="poly" title=" " alt="" coords="703,33,650,72,647,68,699,29"/>
-<area shape="rect" href="NeuronInputCurrent_8h.html" title="Function prototypes for the physics&#45;based neuron module&#39;s input current." alt="" coords="729,79,892,104"/>
-<area shape="poly" title=" " alt="" coords="733,29,786,68,783,72,730,33"/>
-<area shape="rect" href="scGenComp__PU__Abstract_8h.html" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="523,152,722,177"/>
-<area shape="poly" title=" " alt="" coords="625,104,625,138,620,138,620,104"/>
-<area shape="rect" title=" " alt="" coords="5,225,64,251"/>
-<area shape="poly" title=" " alt="" coords="523,175,322,193,201,208,78,228,77,223,200,203,321,188,523,169"/>
-<area shape="rect" title=" " alt="" coords="88,225,171,251"/>
-<area shape="poly" title=" " alt="" coords="524,180,368,200,185,228,184,222,368,194,523,175"/>
-<area shape="rect" title=" " alt="" coords="195,225,259,251"/>
-<area shape="poly" title=" " alt="" coords="544,180,421,200,273,228,272,223,420,195,543,175"/>
-<area shape="rect" href="Constants_8h.html" title="Constants used in the neuronal computations Header only." alt="" coords="283,225,381,251"/>
-<area shape="poly" title=" " alt="" coords="577,180,393,225,391,219,575,175"/>
-<area shape="rect" href="scGenComp__Config_8h_source.html" title=" " alt="" coords="651,225,811,251"/>
-<area shape="poly" title=" " alt="" coords="641,175,703,215,700,220,639,180"/>
-<area shape="rect" href="EventGencomp_8h_source.html" title=" " alt="" coords="835,225,968,251"/>
-<area shape="poly" title=" " alt="" coords="668,175,844,219,842,224,667,180"/>
-<area shape="rect" href="GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="406,225,626,251"/>
-<area shape="poly" title=" " alt="" coords="607,180,546,220,543,215,604,175"/>
-<area shape="rect" title=" " alt="" coords="993,225,1175,251"/>
-<area shape="poly" title=" " alt="" coords="697,175,997,221,996,226,696,180"/>
-<area shape="rect" href="scMacroTimeBenchmarking_8h.html" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="1199,225,1414,251"/>
-<area shape="poly" title=" " alt="" coords="722,174,1186,222,1186,227,722,179"/>
-<area shape="rect" href="MacroTimeBenchmarking_8h.html" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="1438,225,1639,251"/>
-<area shape="poly" title=" " alt="" coords="722,173,748,175,1085,198,1425,223,1424,228,1084,203,748,180,722,178"/>
-<area shape="rect" title=" " alt="" coords="301,299,363,324"/>
-<area shape="poly" title=" " alt="" coords="335,251,335,285,329,285,329,251"/>
-<area shape="rect" title=" " alt="" coords="391,299,457,324"/>
-<area shape="poly" title=" " alt="" coords="348,249,400,288,397,292,345,253"/>
-<area shape="rect" title=" " alt="" coords="483,299,541,324"/>
-<area shape="poly" title=" " alt="" coords="362,248,471,291,469,296,360,253"/>
-<area shape="rect" title=" " alt="" coords="863,299,940,324"/>
-<area shape="poly" title=" " alt="" coords="904,251,904,285,899,285,899,251"/>
-<area shape="poly" title=" " alt="" coords="503,253,451,292,448,288,500,249"/>
-<area shape="poly" title=" " alt="" coords="518,251,516,285,511,285,513,251"/>
-<area shape="rect" title=" " alt="" coords="854,152,917,177"/>
-<area shape="poly" title=" " alt="" coords="824,102,865,141,861,144,821,106"/>
-<area shape="rect" title=" " alt="" coords="760,152,829,177"/>
-<area shape="poly" title=" " alt="" coords="811,105,803,139,798,138,805,104"/>
+<div class="center"><img src="NeuronPhysical_8h__incl.png" border="0" usemap="#a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2NeuronPhysical_8h" alt=""/></div>
+<map name="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2NeuronPhysical_8h" id="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2NeuronPhysical_8h">
+<area shape="rect" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="704,5,917,75"/>
+<area shape="rect" href="scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="540,130,705,155"/>
+<area shape="poly" title=" " alt="" coords="749,77,657,126,655,121,746,73"/>
+<area shape="rect" href="NeuronInputCurrent_8h.html" title="Function prototypes for the physics&#45;based neuron module&#39;s input current." alt="" coords="729,130,892,155"/>
+<area shape="poly" title=" " alt="" coords="813,75,813,116,808,116,808,75"/>
+<area shape="rect" title=" " alt="" coords="917,123,1083,163"/>
+<area shape="poly" title=" " alt="" coords="875,73,954,114,951,119,873,77"/>
+<area shape="rect" href="scGenComp__PU__Abstract_8h.html" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="523,211,722,236"/>
+<area shape="poly" title=" " alt="" coords="625,156,625,197,620,197,620,156"/>
+<area shape="rect" title=" " alt="" coords="5,284,64,309"/>
+<area shape="poly" title=" " alt="" coords="523,233,322,251,201,267,78,287,77,281,200,261,321,246,523,228"/>
+<area shape="rect" title=" " alt="" coords="88,284,171,309"/>
+<area shape="poly" title=" " alt="" coords="524,239,368,258,185,286,184,281,368,253,523,233"/>
+<area shape="rect" title=" " alt="" coords="195,284,259,309"/>
+<area shape="poly" title=" " alt="" coords="544,239,421,258,273,286,272,281,420,253,543,233"/>
+<area shape="rect" href="Constants_8h.html" title="Constants used in the neuronal computations Header only." alt="" coords="283,284,381,309"/>
+<area shape="poly" title=" " alt="" coords="577,239,393,283,391,278,575,233"/>
+<area shape="rect" href="scGenComp__Config_8h_source.html" title=" " alt="" coords="651,284,811,309"/>
+<area shape="poly" title=" " alt="" coords="641,234,703,274,700,279,639,238"/>
+<area shape="rect" href="EventGencomp_8h_source.html" title=" " alt="" coords="835,284,968,309"/>
+<area shape="poly" title=" " alt="" coords="668,233,844,278,842,283,667,239"/>
+<area shape="rect" href="GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="406,284,626,309"/>
+<area shape="poly" title=" " alt="" coords="607,238,546,279,543,274,604,234"/>
+<area shape="rect" title=" " alt="" coords="993,284,1175,309"/>
+<area shape="poly" title=" " alt="" coords="697,233,997,279,996,285,696,239"/>
+<area shape="rect" href="scMacroTimeBenchmarking_8h.html" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="1199,284,1414,309"/>
+<area shape="poly" title=" " alt="" coords="722,232,1186,280,1186,286,722,238"/>
+<area shape="rect" href="MacroTimeBenchmarking_8h.html" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="1438,284,1639,309"/>
+<area shape="poly" title=" " alt="" coords="722,231,748,233,1085,257,1425,281,1424,286,1084,262,748,239,722,237"/>
+<area shape="rect" title=" " alt="" coords="301,357,363,383"/>
+<area shape="poly" title=" " alt="" coords="335,310,335,344,329,344,329,310"/>
+<area shape="rect" title=" " alt="" coords="391,357,457,383"/>
+<area shape="poly" title=" " alt="" coords="348,307,400,347,397,351,345,311"/>
+<area shape="rect" title=" " alt="" coords="483,357,541,383"/>
+<area shape="poly" title=" " alt="" coords="362,307,471,350,469,355,360,312"/>
+<area shape="rect" title=" " alt="" coords="863,357,940,383"/>
+<area shape="poly" title=" " alt="" coords="904,310,904,344,899,344,899,310"/>
+<area shape="poly" title=" " alt="" coords="503,311,451,351,448,347,500,307"/>
+<area shape="poly" title=" " alt="" coords="518,310,516,344,511,344,513,310"/>
+<area shape="rect" title=" " alt="" coords="854,211,917,236"/>
+<area shape="poly" title=" " alt="" coords="824,154,867,199,863,203,820,157"/>
+<area shape="rect" title=" " alt="" coords="760,211,829,236"/>
+<area shape="poly" title=" " alt="" coords="811,156,802,198,797,197,806,155"/>
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="NeuronPhysical_8h__dep__incl.png" border="0" usemap="#a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2NeuronPhysical_8hdep" alt=""/></div>
+<map name="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2NeuronPhysical_8hdep" id="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2NeuronPhysical_8hdep">
+<area shape="rect" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="225,5,438,75"/>
+<area shape="rect" href="NeuronInputCurrent_8cpp.html" title="The physics&#45;based abstract neuron&#39;s input current." alt="" coords="5,123,327,177"/>
+<area shape="poly" title=" " alt="" coords="270,84,208,125,205,120,267,80"/>
+<area shape="rect" href="NeuronPhysical_8cpp.html" title="The physics&#45;based abstract neuron." alt="" coords="351,123,645,177"/>
+<area shape="poly" title=" " alt="" coords="396,80,459,120,456,125,393,84"/>
 </map>
 </div>
 </div>
@@ -175,10 +190,34 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronPhysical.html">NeuronPhysical</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a general physical-type neuron.  <a href="classNeuronPhysical.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a52f5b47517c42b0790dd0acb83c8ceea" id="r_a52f5b47517c42b0790dd0acb83c8ceea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8h.html#a52f5b47517c42b0790dd0acb83c8ceea">MakeDebugPrint</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a52f5b47517c42b0790dd0acb83c8ceea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function prototypes for the physics-based neuron module. </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a52f5b47517c42b0790dd0acb83c8ceea" name="a52f5b47517c42b0790dd0acb83c8ceea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f5b47517c42b0790dd0acb83c8ceea">&#9670;&#160;</a></span>MakeDebugPrint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MakeDebugPrint&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00017">17</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

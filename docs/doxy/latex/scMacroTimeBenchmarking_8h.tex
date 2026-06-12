@@ -1,18 +1,26 @@
-\doxysection{sc\+Macro\+Time\+Benchmarking.\+h File Reference}
-\label{scMacroTimeBenchmarking_8h}\index{scMacroTimeBenchmarking.h@{scMacroTimeBenchmarking.h}}
+\doxysection{/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/include/sc\+Macro\+Time\+Benchmarking.h File Reference}
+\hypertarget{scMacroTimeBenchmarking_8h}{}\label{scMacroTimeBenchmarking_8h}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/scMacroTimeBenchmarking.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/scMacroTimeBenchmarking.h}}
 
 
 Macros for SystemC (SIMULATED) time span passing between using the expanded codes.  
 
 
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{scMacroTimeBenchmarking_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \textbf{ SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN}(x,  t)
+\#define \mbox{\hyperlink{scMacroTimeBenchmarking_8h_a348733f3aae1e7c59596cbc968bab795}{SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+RESET}}(t,  x,  s)
 \item 
-\#define \textbf{ SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+END}(t,  x,  s)
+\#define \mbox{\hyperlink{scMacroTimeBenchmarking_8h_a9505c415d787a771a7296b5e52651ebd}{SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN}}(x,  t)
 \item 
-\#define \textbf{ SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+RESET}(t,  x,  s)
+\#define \mbox{\hyperlink{scMacroTimeBenchmarking_8h_ab63514bbc63b1f2134799fd35f8f846d}{SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+END}}(t,  x,  s)
 \end{DoxyCompactItemize}
 
 
@@ -74,23 +82,35 @@ sc_time_String_Get(SC_x, SC_TIME_UNIT_DEFAULT)
 \end{DoxyVerb}
  In an object, you can RESET in the constructor, in the member functions between BEGIN and END measure the one-\/time utilization, and in the destructor to read out the total benchmarked time. Or to benchmark (in multiple variables) SIMULATED execution time about critical sections of your code 
 
+Definition in file \mbox{\hyperlink{scMacroTimeBenchmarking_8h_source}{sc\+Macro\+Time\+Benchmarking.\+h}}.
+
+
+
 \doxysubsection{Macro Definition Documentation}
-\label{scMacroTimeBenchmarking_8h_a9505c415d787a771a7296b5e52651ebd} 
+\Hypertarget{scMacroTimeBenchmarking_8h_a9505c415d787a771a7296b5e52651ebd}\label{scMacroTimeBenchmarking_8h_a9505c415d787a771a7296b5e52651ebd} 
 \index{scMacroTimeBenchmarking.h@{scMacroTimeBenchmarking.h}!SC\_BENCHMARK\_TIME\_BEGIN@{SC\_BENCHMARK\_TIME\_BEGIN}}
 \index{SC\_BENCHMARK\_TIME\_BEGIN@{SC\_BENCHMARK\_TIME\_BEGIN}!scMacroTimeBenchmarking.h@{scMacroTimeBenchmarking.h}}
-\doxysubsubsection{SC\_BENCHMARK\_TIME\_BEGIN}
+\doxysubsubsection{\texorpdfstring{SC\_BENCHMARK\_TIME\_BEGIN}{SC\_BENCHMARK\_TIME\_BEGIN}}
 {\footnotesize\ttfamily \#define SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{t }\end{DoxyParamCaption})}
 
-Changes the user-\/provided {\itshape t} timepoint Sets the user-\/provided {\itshape x} to the last TIME\+\_\+\+BEGIN {\itshape t} value \label{scMacroTimeBenchmarking_8h_ab63514bbc63b1f2134799fd35f8f846d} 
+Changes the user-\/provided {\itshape t} timepoint Sets the user-\/provided {\itshape x} to the last TIME\+\_\+\+BEGIN {\itshape t} value 
+
+Definition at line \mbox{\hyperlink{scMacroTimeBenchmarking_8h_source_l00117}{117}} of file \mbox{\hyperlink{scMacroTimeBenchmarking_8h_source}{sc\+Macro\+Time\+Benchmarking.\+h}}.
+
+\Hypertarget{scMacroTimeBenchmarking_8h_ab63514bbc63b1f2134799fd35f8f846d}\label{scMacroTimeBenchmarking_8h_ab63514bbc63b1f2134799fd35f8f846d} 
 \index{scMacroTimeBenchmarking.h@{scMacroTimeBenchmarking.h}!SC\_BENCHMARK\_TIME\_END@{SC\_BENCHMARK\_TIME\_END}}
 \index{SC\_BENCHMARK\_TIME\_END@{SC\_BENCHMARK\_TIME\_END}!scMacroTimeBenchmarking.h@{scMacroTimeBenchmarking.h}}
-\doxysubsubsection{SC\_BENCHMARK\_TIME\_END}
+\doxysubsubsection{\texorpdfstring{SC\_BENCHMARK\_TIME\_END}{SC\_BENCHMARK\_TIME\_END}}
 {\footnotesize\ttfamily \#define SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+END(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{s }\end{DoxyParamCaption})}
 
-Changes the user-\/provided {\itshape t} timepoint. Sets the user-\/provided {\itshape x} to the duration since the last TIME\+\_\+\+BEGIN {\itshape t} value. Sets the user-\/provided {\itshape s} to the duration since the last TIME\+\_\+\+RESET {\itshape t} value. Multiple uses can deliver multiple results since the same SC\+\_\+\+ENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN (\textquotesingle{}t\textquotesingle{} is a don\textquotesingle{}t care, BUT DON\textquotesingle{}T CHANGE, value). Variables must be passed by reference \label{scMacroTimeBenchmarking_8h_a348733f3aae1e7c59596cbc968bab795} 
+Changes the user-\/provided {\itshape t} timepoint. Sets the user-\/provided {\itshape x} to the duration since the last TIME\+\_\+\+BEGIN {\itshape t} value. Sets the user-\/provided {\itshape s} to the duration since the last TIME\+\_\+\+RESET {\itshape t} value. Multiple uses can deliver multiple results since the same SC\+\_\+\+ENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN (\textquotesingle{}t\textquotesingle{} is a don\textquotesingle{}t care, BUT DON\textquotesingle{}T CHANGE, value). Variables must be passed by reference 
+
+Definition at line \mbox{\hyperlink{scMacroTimeBenchmarking_8h_source_l00118}{118}} of file \mbox{\hyperlink{scMacroTimeBenchmarking_8h_source}{sc\+Macro\+Time\+Benchmarking.\+h}}.
+
+\Hypertarget{scMacroTimeBenchmarking_8h_a348733f3aae1e7c59596cbc968bab795}\label{scMacroTimeBenchmarking_8h_a348733f3aae1e7c59596cbc968bab795} 
 \index{scMacroTimeBenchmarking.h@{scMacroTimeBenchmarking.h}!SC\_BENCHMARK\_TIME\_RESET@{SC\_BENCHMARK\_TIME\_RESET}}
 \index{SC\_BENCHMARK\_TIME\_RESET@{SC\_BENCHMARK\_TIME\_RESET}!scMacroTimeBenchmarking.h@{scMacroTimeBenchmarking.h}}
-\doxysubsubsection{SC\_BENCHMARK\_TIME\_RESET}
+\doxysubsubsection{\texorpdfstring{SC\_BENCHMARK\_TIME\_RESET}{SC\_BENCHMARK\_TIME\_RESET}}
 {\footnotesize\ttfamily \#define SC\+\_\+\+BENCHMARK\+\_\+\+TIME\+\_\+\+RESET(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{s }\end{DoxyParamCaption})}
 
 Clears the user-\/provided {\itshape x} and {\itshape s} duration values. Sets the user-\/provided {\itshape x} to the duration since the last TIME\+\_\+\+BEGIN {\itshape t} value. Sets the user-\/provided {\itshape s} to the duration since the last TIME\+\_\+\+RESET {\itshape t} value. 
@@ -102,3 +122,7 @@ Clears the user-\/provided {\itshape x} and {\itshape s} duration values. Sets t
 {\em s} & deliver clock duration since TIME\+\_\+\+RESET (only read) \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{scMacroTimeBenchmarking_8h_source_l00116}{116}} of file \mbox{\hyperlink{scMacroTimeBenchmarking_8h_source}{sc\+Macro\+Time\+Benchmarking.\+h}}.
+

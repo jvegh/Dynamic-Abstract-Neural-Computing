@@ -1,5 +1,9 @@
 \doxysection{Neuron\+Input\+Current Class Reference}
-\label{classNeuronInputCurrent}\index{NeuronInputCurrent@{NeuronInputCurrent}}
+\hypertarget{classNeuronInputCurrent}{}\label{classNeuronInputCurrent}\index{NeuronInputCurrent@{NeuronInputCurrent}}
+
+
+{\ttfamily \#include $<$Neuron\+Input\+Current.\+h$>$}
+
 
 
 \doxysubsection{Detailed Description}
@@ -9,45 +13,64 @@ In rush-\/in and synaptic input types, currents are descibed by a current contri
 
 The input currents produce a gradient on the condenser. The input current is $I=dQ/dt$, that produces a gradient $ dV/dt = d(Q/C)/dt = I/C $
 
-The $I_i$ current is provided in pA (i.\+e. in $10^-{12}\frac{Cb}{s}$, so it causes on a capacitor $C$ (given in [pF]) and on a resistor $R$ $I_i*R$ [mV] voltage.
+The $I_i$ current is provided in pA (i.\+e. in $10^-{12}\frac{Cb}{s}$, so it causes on a capacitor $C$ (given in \mbox{[}pF\mbox{]}) and on a resistor $R$ $I_i*R$ \mbox{[}mV\mbox{]} voltage.
 
-A current gradient $\frac{I_i}{dt} \quad [\frac{pA}{s}]$ causes on a capacitor $C$ (given in [pF]) a voltage gradient $\frac{1}{C}\frac{dI_i}{dt}$ increase $I_i/C$ [V/s],
+A current gradient $\frac{I_i}{dt} \quad [\frac{pA}{s}]$ causes on a capacitor $C$ (given in \mbox{[}pF\mbox{]}) a voltage gradient $\frac{1}{C}\frac{dI_i}{dt}$ increase $I_i/C$ \mbox{[}V/s\mbox{]},
 
 \begin{DoxySeeAlso}{See also}
-\doxyref{Neuron\+Constants}{p.}{classNeuronConstants}
+\doxylink{classNeuronConstants}{Neuron\+Constants}
 \end{DoxySeeAlso}
 The input currents are created by the Parent\+Neuron.
 \begin{DoxyItemize}
 \item The Rush-\/in current is created when the stage "{}\+Delivering"{} begins
 \item The synaptic currents are created when synaptic inputs received from the upstream neurons
 \item The artificial current begins when the experimenter switches it on 
-\end{DoxyItemize}\doxysubsubsection*{Public Member Functions}
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8h_source_l00064}{64}} of file \mbox{\hyperlink{NeuronInputCurrent_8h_source}{Neuron\+Input\+Current.\+h}}.
+
+
+
+Collaboration diagram for Neuron\+Input\+Current\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classNeuronInputCurrent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \textbf{ Current\+Gradient\+\_\+\+Get} (double TT)
-\begin{DoxyCompactList}\small\item\em Current\+Gradient\+\_\+\+Get. \end{DoxyCompactList}\item 
-double \textbf{ Current\+Value\+\_\+\+Get} (double TT)
-\begin{DoxyCompactList}\small\item\em Current\+Value\+\_\+\+Get. \end{DoxyCompactList}\item 
-\textbf{ Neuron\+Input\+Current} (\textbf{ Neuron\+Physical} $\ast$Parent\+Neuron, \textbf{ Neuron\+Input\+Current\+\_\+t} t, double Begin\+Time, std\+::vector$<$ double $>$ \&Parameters)
+\mbox{\hyperlink{classNeuronInputCurrent_af41bf336678c16b9b38e922e8bc43d16}{Neuron\+Input\+Current}} (\mbox{\hyperlink{classNeuronPhysical}{Neuron\+Physical}} \texorpdfstring{$\ast$}{*}Parent\+Neuron, \mbox{\hyperlink{group__GENCOMP__MODULE__BIOLOGY_ga22e6c711bd2718618f135dad9211ea5f}{Neuron\+Input\+Current\+\_\+t}} t, double Begin\+Time, std\+::vector$<$ double $>$ \&Parameters)
 \begin{DoxyCompactList}\small\item\em Creates an input current for a physics-\/based neuron unit. \end{DoxyCompactList}\item 
-double \textbf{ Voltage\+Gradient\+\_\+\+Get} (double TT)
-\begin{DoxyCompactList}\small\item\em Voltage\+Gradient\+\_\+\+Get. \end{DoxyCompactList}\item 
-double \textbf{ Voltage\+Value\+\_\+\+Get} (double TT)
-\begin{DoxyCompactList}\small\item\em Voltage\+Value\+\_\+\+Get. \end{DoxyCompactList}\end{DoxyCompactItemize}
+double \mbox{\hyperlink{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6}{Current\+Value\+\_\+\+Get}} (double TT)
+\begin{DoxyCompactList}\small\item\em Current\+Value\+\_\+\+Get. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4}{Current\+Gradient\+\_\+\+Get}} (double TT)
+\begin{DoxyCompactList}\small\item\em Current\+Gradient\+\_\+\+Get. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classNeuronInputCurrent_a8aa256d1c56c4e9f767e34798bbf92b4}{Voltage\+Value\+\_\+\+Get}} (double TT)
+\begin{DoxyCompactList}\small\item\em Voltage\+Value\+\_\+\+Get. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classNeuronInputCurrent_a20106e15037c3b5a409ee87793d0f2fb}{Voltage\+Gradient\+\_\+\+Get}} (double TT)
+\begin{DoxyCompactList}\small\item\em Voltage\+Gradient\+\_\+\+Get. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\label{classNeuronInputCurrent_a3e30bc25fc344e685064ba2b16ee0d30} 
-double {\bfseries m\+\_\+\+Begin\+Time}
-\begin{DoxyCompactList}\small\item\em The beginning of the current, local time, [ms]. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classNeuronPhysical}{Neuron\+Physical}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classNeuronInputCurrent_a79beaf16f2a3b4dd54697046ad120dfb}{m\+\_\+\+Parent\+Neuron}}
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{classNeuronInputCurrent_a6490b92cebd06fd5d0ced1e41133c44c}{m\+\_\+\+Parameters}}
+\item 
+\mbox{\hyperlink{group__GENCOMP__MODULE__BIOLOGY_ga22e6c711bd2718618f135dad9211ea5f}{Neuron\+Input\+Current\+\_\+t}} \mbox{\hyperlink{classNeuronInputCurrent_afe5f399ff299f3f36aaf207e4ddd9f4c}{m\+\_\+\+Current\+Type}}
+\item 
+double \mbox{\hyperlink{classNeuronInputCurrent_a3e30bc25fc344e685064ba2b16ee0d30}{m\+\_\+\+Begin\+Time}}
+\begin{DoxyCompactList}\small\item\em The beginning of the current, local time, \mbox{[}ms\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\label{classNeuronInputCurrent_af41bf336678c16b9b38e922e8bc43d16} 
+\Hypertarget{classNeuronInputCurrent_af41bf336678c16b9b38e922e8bc43d16}\label{classNeuronInputCurrent_af41bf336678c16b9b38e922e8bc43d16} 
 \index{NeuronInputCurrent@{NeuronInputCurrent}!NeuronInputCurrent@{NeuronInputCurrent}}
 \index{NeuronInputCurrent@{NeuronInputCurrent}!NeuronInputCurrent@{NeuronInputCurrent}}
-\doxysubsubsection{NeuronInputCurrent()}
-{\footnotesize\ttfamily Neuron\+Input\+Current\+::\+Neuron\+Input\+Current (\begin{DoxyParamCaption}\item[{\textbf{ Neuron\+Physical} $\ast$}]{Parent\+Neuron,  }\item[{\textbf{ Neuron\+Input\+Current\+\_\+t}}]{t,  }\item[{double}]{Begin\+Time,  }\item[{std\+::vector$<$ double $>$ \&}]{Parameters }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{NeuronInputCurrent()}{NeuronInputCurrent()}}
+{\footnotesize\ttfamily Neuron\+Input\+Current\+::\+Neuron\+Input\+Current (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNeuronPhysical}{Neuron\+Physical}} \texorpdfstring{$\ast$}{*}}]{Parent\+Neuron,  }\item[{\mbox{\hyperlink{group__GENCOMP__MODULE__BIOLOGY_ga22e6c711bd2718618f135dad9211ea5f}{Neuron\+Input\+Current\+\_\+t}}}]{t,  }\item[{double}]{Begin\+Time,  }\item[{std\+::vector$<$ double $>$ \&}]{Parameters }\end{DoxyParamCaption})}
 
 
 
@@ -59,18 +82,32 @@ Creates an input current for a physics-\/based neuron unit.
 \hline
 \mbox{\texttt{ in}}  & {\em t} & type of the input current \\
 \hline
-\mbox{\texttt{ in}}  & {\em Begin\+Time} & the beginning of the current\textquotesingle{}s time scale [msec] \\
+\mbox{\texttt{ in}}  & {\em Begin\+Time} & the beginning of the current\textquotesingle{}s time scale \mbox{[}msec\mbox{]} \\
 \hline
 \mbox{\texttt{ in}}  & {\em Parameters} & the parameters of the current \\
 \hline
 \end{DoxyParams}
 
 
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{NeuronInputCurrent_8cpp_source}{Neuron\+Input\+Current.\+cpp}}.
+
+\Hypertarget{classNeuronInputCurrent_a2be5d7165f5b2cfbe639ae611192c276}\label{classNeuronInputCurrent_a2be5d7165f5b2cfbe639ae611192c276} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!````~NeuronInputCurrent@{\texorpdfstring{$\sim$}{\string~}NeuronInputCurrent}}
+\index{````~NeuronInputCurrent@{\texorpdfstring{$\sim$}{\string~}NeuronInputCurrent}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NeuronInputCurrent()}{\string~NeuronInputCurrent()}}
+{\footnotesize\ttfamily Neuron\+Input\+Current\+::\texorpdfstring{$\sim$}{\string~}\+Neuron\+Input\+Current (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{NeuronInputCurrent_8cpp_source}{Neuron\+Input\+Current.\+cpp}}.
+
+
+
 \doxysubsection{Member Function Documentation}
-\label{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4} 
+\Hypertarget{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4}\label{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4} 
 \index{NeuronInputCurrent@{NeuronInputCurrent}!CurrentGradient\_Get@{CurrentGradient\_Get}}
 \index{CurrentGradient\_Get@{CurrentGradient\_Get}!NeuronInputCurrent@{NeuronInputCurrent}}
-\doxysubsubsection{CurrentGradient\_Get()}
+\doxysubsubsection{\texorpdfstring{CurrentGradient\_Get()}{CurrentGradient\_Get()}}
 {\footnotesize\ttfamily double Neuron\+Input\+Current\+::\+Current\+Gradient\+\_\+\+Get (\begin{DoxyParamCaption}\item[{double}]{TT }\end{DoxyParamCaption})}
 
 
@@ -79,16 +116,20 @@ Current\+Gradient\+\_\+\+Get.
 
 
 \begin{DoxyParams}{Parameters}
-{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at [msec] \\
+{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at \mbox{[}msec\mbox{]} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-value of current gradient at the value TT, in [p\+A/s] 
+value of current gradient at the value TT, in \mbox{[}p\+A/s\mbox{]} 
 \end{DoxyReturn}
-\label{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6} 
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{NeuronInputCurrent_8cpp_source}{Neuron\+Input\+Current.\+cpp}}.
+
+\Hypertarget{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6}\label{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6} 
 \index{NeuronInputCurrent@{NeuronInputCurrent}!CurrentValue\_Get@{CurrentValue\_Get}}
 \index{CurrentValue\_Get@{CurrentValue\_Get}!NeuronInputCurrent@{NeuronInputCurrent}}
-\doxysubsubsection{CurrentValue\_Get()}
+\doxysubsubsection{\texorpdfstring{CurrentValue\_Get()}{CurrentValue\_Get()}}
 {\footnotesize\ttfamily double Neuron\+Input\+Current\+::\+Current\+Value\+\_\+\+Get (\begin{DoxyParamCaption}\item[{double}]{TT }\end{DoxyParamCaption})}
 
 
@@ -97,16 +138,20 @@ Current\+Value\+\_\+\+Get.
 
 
 \begin{DoxyParams}{Parameters}
-{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at [msec] \\
+{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at \mbox{[}msec\mbox{]} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-value of current at the value TT, in [pA] 
+value of current at the value TT, in \mbox{[}pA\mbox{]} 
 \end{DoxyReturn}
-\label{classNeuronInputCurrent_a20106e15037c3b5a409ee87793d0f2fb} 
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{NeuronInputCurrent_8cpp_source}{Neuron\+Input\+Current.\+cpp}}.
+
+\Hypertarget{classNeuronInputCurrent_a20106e15037c3b5a409ee87793d0f2fb}\label{classNeuronInputCurrent_a20106e15037c3b5a409ee87793d0f2fb} 
 \index{NeuronInputCurrent@{NeuronInputCurrent}!VoltageGradient\_Get@{VoltageGradient\_Get}}
 \index{VoltageGradient\_Get@{VoltageGradient\_Get}!NeuronInputCurrent@{NeuronInputCurrent}}
-\doxysubsubsection{VoltageGradient\_Get()}
+\doxysubsubsection{\texorpdfstring{VoltageGradient\_Get()}{VoltageGradient\_Get()}}
 {\footnotesize\ttfamily double Neuron\+Input\+Current\+::\+Voltage\+Gradient\+\_\+\+Get (\begin{DoxyParamCaption}\item[{double}]{TT }\end{DoxyParamCaption})}
 
 
@@ -119,12 +164,16 @@ Voltage\+Gradient\+\_\+\+Get.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the value of the voltage gradient the current causes of the parent neuron\textquotesingle{}s membrane, in [V/s] 
+the value of the voltage gradient the current causes of the parent neuron\textquotesingle{}s membrane, in \mbox{[}V/s\mbox{]} 
 \end{DoxyReturn}
-\label{classNeuronInputCurrent_a8aa256d1c56c4e9f767e34798bbf92b4} 
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{NeuronInputCurrent_8cpp_source}{Neuron\+Input\+Current.\+cpp}}.
+
+\Hypertarget{classNeuronInputCurrent_a8aa256d1c56c4e9f767e34798bbf92b4}\label{classNeuronInputCurrent_a8aa256d1c56c4e9f767e34798bbf92b4} 
 \index{NeuronInputCurrent@{NeuronInputCurrent}!VoltageValue\_Get@{VoltageValue\_Get}}
 \index{VoltageValue\_Get@{VoltageValue\_Get}!NeuronInputCurrent@{NeuronInputCurrent}}
-\doxysubsubsection{VoltageValue\_Get()}
+\doxysubsubsection{\texorpdfstring{VoltageValue\_Get()}{VoltageValue\_Get()}}
 {\footnotesize\ttfamily double Neuron\+Input\+Current\+::\+Voltage\+Value\+\_\+\+Get (\begin{DoxyParamCaption}\item[{double}]{TT }\end{DoxyParamCaption})}
 
 
@@ -133,15 +182,66 @@ Voltage\+Value\+\_\+\+Get.
 
 
 \begin{DoxyParams}{Parameters}
-{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at [msec] \\
+{\em TT} & time of the current on the current\textquotesingle{}s time scale to be calculated at \mbox{[}msec\mbox{]} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-value of voltage at the value TT, the current causes of the parent neuron\textquotesingle{}s membrane, in [V] 
+value of voltage at the value TT, the current causes of the parent neuron\textquotesingle{}s membrane, in \mbox{[}V\mbox{]} 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{NeuronInputCurrent_8cpp_source}{Neuron\+Input\+Current.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classNeuronInputCurrent_a3e30bc25fc344e685064ba2b16ee0d30}\label{classNeuronInputCurrent_a3e30bc25fc344e685064ba2b16ee0d30} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!m\_BeginTime@{m\_BeginTime}}
+\index{m\_BeginTime@{m\_BeginTime}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{\texorpdfstring{m\_BeginTime}{m\_BeginTime}}
+{\footnotesize\ttfamily double Neuron\+Input\+Current\+::m\+\_\+\+Begin\+Time\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The beginning of the current, local time, \mbox{[}ms\mbox{]}. 
+
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8h_source_l00109}{109}} of file \mbox{\hyperlink{NeuronInputCurrent_8h_source}{Neuron\+Input\+Current.\+h}}.
+
+\Hypertarget{classNeuronInputCurrent_afe5f399ff299f3f36aaf207e4ddd9f4c}\label{classNeuronInputCurrent_afe5f399ff299f3f36aaf207e4ddd9f4c} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!m\_CurrentType@{m\_CurrentType}}
+\index{m\_CurrentType@{m\_CurrentType}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{\texorpdfstring{m\_CurrentType}{m\_CurrentType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__GENCOMP__MODULE__BIOLOGY_ga22e6c711bd2718618f135dad9211ea5f}{Neuron\+Input\+Current\+\_\+t}} Neuron\+Input\+Current\+::m\+\_\+\+Current\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8h_source_l00107}{107}} of file \mbox{\hyperlink{NeuronInputCurrent_8h_source}{Neuron\+Input\+Current.\+h}}.
+
+\Hypertarget{classNeuronInputCurrent_a6490b92cebd06fd5d0ced1e41133c44c}\label{classNeuronInputCurrent_a6490b92cebd06fd5d0ced1e41133c44c} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!m\_Parameters@{m\_Parameters}}
+\index{m\_Parameters@{m\_Parameters}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{\texorpdfstring{m\_Parameters}{m\_Parameters}}
+{\footnotesize\ttfamily vector$<$double$>$ Neuron\+Input\+Current\+::m\+\_\+\+Parameters\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8h_source_l00106}{106}} of file \mbox{\hyperlink{NeuronInputCurrent_8h_source}{Neuron\+Input\+Current.\+h}}.
+
+\Hypertarget{classNeuronInputCurrent_a79beaf16f2a3b4dd54697046ad120dfb}\label{classNeuronInputCurrent_a79beaf16f2a3b4dd54697046ad120dfb} 
+\index{NeuronInputCurrent@{NeuronInputCurrent}!m\_ParentNeuron@{m\_ParentNeuron}}
+\index{m\_ParentNeuron@{m\_ParentNeuron}!NeuronInputCurrent@{NeuronInputCurrent}}
+\doxysubsubsection{\texorpdfstring{m\_ParentNeuron}{m\_ParentNeuron}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNeuronPhysical}{Neuron\+Physical}}\texorpdfstring{$\ast$}{*} Neuron\+Input\+Current\+::m\+\_\+\+Parent\+Neuron\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{NeuronInputCurrent_8h_source_l00105}{105}} of file \mbox{\hyperlink{NeuronInputCurrent_8h_source}{Neuron\+Input\+Current.\+h}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\textbf{ Neuron\+Input\+Current.\+h}\item 
-\textbf{ Neuron\+Input\+Current.\+cpp}\end{DoxyCompactItemize}
+/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/neurons/include/\mbox{\hyperlink{NeuronInputCurrent_8h}{Neuron\+Input\+Current.\+h}}\item 
+/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/neurons/\mbox{\hyperlink{NeuronInputCurrent_8cpp}{Neuron\+Input\+Current.\+cpp}}\end{DoxyCompactItemize}

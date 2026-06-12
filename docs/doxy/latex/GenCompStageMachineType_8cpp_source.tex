@@ -1,0 +1,36 @@
+\doxysection{Gen\+Comp\+Stage\+Machine\+Type.\+cpp}
+\hypertarget{GenCompStageMachineType_8cpp_source}{}\label{GenCompStageMachineType_8cpp_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/GenCompStageMachineType.cpp@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/GenCompStageMachineType.cpp}}
+\mbox{\hyperlink{GenCompStageMachineType_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00005}00005\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00008}00008\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GenCompStageMachineType_8h}{GenCompStageMachineType.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00012}00012\ \textcolor{comment}{//\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00017}00017\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GenCompStageMachineType2String(\mbox{\hyperlink{classGenCompStageMachine__t}{GenCompStageMachine\_t}}\ e)}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{using\ }MapType\ =\ std::map<GenCompStageMachine\_t,\ const\ char*>;}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ MapType\ SMap\ =}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \{GenCompStageMachine\_t::gcsm\_Sleeping,\ \textcolor{stringliteral}{"{}Sleeping"{}}\},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{GenCompStageMachine\_t::gcsm\_Relaxing,\ \textcolor{stringliteral}{"{}Relaxing"{}}\},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \{GenCompStageMachine\_t::gcsm\_Computing,\ \textcolor{stringliteral}{"{}Computing"{}}\},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{GenCompStageMachine\_t::gcsm\_Delivering,\ \textcolor{stringliteral}{"{}Delivering"{}}\},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{GenCompStageMachine\_t::gcsm\_Initializing,\textcolor{stringliteral}{"{}Initializing"{}}\},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{GenCompStageMachine\_t::gcsm\_InputReceived,\textcolor{stringliteral}{"{}InputReceived"{}}\},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{GenCompStageMachine\_t::gcsm\_Synchronizing,\ \textcolor{stringliteral}{"{}Synchronizing"{}}\},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \{GenCompStageMachine\_t::gcsm\_Failed,\ \textcolor{stringliteral}{"{}Failed"{}}\}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00031}00031\ \ \ \ \ assert(SMap.size()\ ==\ (\textcolor{keywordtype}{int})GenCompStageMachine\_t::gcsm\_SIZE);}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ SMap.at(e);}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8cpp_source_l00033}00033\ \}}
+
+\end{DoxyCode}

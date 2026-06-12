@@ -1,9 +1,9 @@
-<map id="Constants.h" name="Constants.h">
-<area shape="rect" id="Node000001" title="Constants used in the neuronal computations Header only." alt="" coords="77,5,175,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,68,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,33,64,72,60,68,110,29"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="93,79,159,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,31,129,65,123,65,123,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="183,79,242,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,29,190,68,186,72,138,33"/>
+<map id="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/include/Constants.h" name="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/include/Constants.h">
+<area shape="rect" id="Node000001" title="Constants used in the neuronal computations Header only." alt="" coords="7,5,245,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,108,68,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,62,60,100,57,96,97,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="93,108,159,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,60,129,94,123,94,123,60"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="183,108,242,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,58,193,96,189,100,151,62"/>
 </map>

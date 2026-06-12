@@ -1,0 +1,100 @@
+\doxysection{Sc\+Qt\+Simulator.\+cpp}
+\hypertarget{ScQtSimulator_8cpp_source}{}\label{ScQtSimulator_8cpp_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/ScQtSimulator.cpp@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/ScQtSimulator.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00007}00007\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ Last\ edited\ 2026.04.19}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00011}00011\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00013}00013\ \textcolor{comment}{//\#include\ <systemc>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00014}00014\ \textcolor{comment}{//\ Maybe\ a\ timer\ is\ not\ needed}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00015}00015\ \textcolor{comment}{//\#include\ <QTimer>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <QEventLoop>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ScQtSimulator_8h}{ScQtSimulator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00023}00023\ ScQtSimulator::ScQtSimulator(QObject\ *parent)\ :}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00024}00024\ \ \ \ \ QObject(parent)}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00026}00026\ \ \ \ \ \_abort\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00027}00027\ \ \ \ \ \_interrupt\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00028}00028\ \ \ \ \ sc\_start(\ sc\_core::SC\_ZERO\_TIME);}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00029}00029\ \ \ \ \ TimesReset();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00033}\mbox{\hyperlink{classScQtSimulator_a9df78766e1ac67f2f75e3079929c777f}{00033}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScQtSimulator_a9df78766e1ac67f2f75e3079929c777f}{ScQtSimulator::requestMethod}}(\mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{ScQtSimulator::Method}}\ method)}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00035}00035\ \textcolor{comment}{//\ \ \ \ qDebug()<<"{}Request\ ScQtSimulator\ Method"{}<<method<<"{}\ in\ Thread\ "{}<<thread()-\/>currentThreadId();}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00036}00036\ \ \ \ \ QMutexLocker\ locker(\&mutex);}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00037}00037\ \ \ \ \ \_abort\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00038}00038\ \textcolor{comment}{//\ \ \ \ \_interrupt\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00039}00039\ \ \ \ \ \_method\ =\ method;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00040}00040\ \ \ \ \ condition.wakeOne();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00043}\mbox{\hyperlink{classScQtSimulator_a71216dee8b765d42936a4dd22937d9b1}{00043}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScQtSimulator_a71216dee8b765d42936a4dd22937d9b1}{ScQtSimulator::abort}}()}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00045}00045\ \ \ \ \ qDebug()<<\textcolor{stringliteral}{"{}Request\ ScQtSimulator\ aborting\ in\ Thread\ "{}}<<thread()-\/>currentThreadId();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00046}00046\ \ \ \ \ QMutexLocker\ locker(\&mutex);}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00047}00047\ \ \ \ \ \_abort\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00048}00048\ \ \ \ \ condition.wakeOne();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00051}00051\ \textcolor{keywordtype}{void}\ ScQtSimulator::doSimulationSteps()}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00052}00052\ \{\ \ \ \ \ \ \ \mbox{\hyperlink{MacroTimeBenchmarking_8h_abe3e52aa6169ad16fa9bf59bbeb2e267}{BENCHMARK\_TIME\_BEGIN}}(\&m\_system\_t,\&m\_system\_x);\ \ \ \ \textcolor{comment}{//\ Begin\ benchmarking\ here}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00053}00053\ \ \ \ \ sc\_core::sc\_time\ ThisTime\ =\ sc\_core::sc\_time\_to\_pending\_activity();\ \textcolor{comment}{//\ Make\ a\ single\ simulation\ step}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00054}00054\ \ \ \ \ sc\_core::sc\_start(\ ThisTime);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Measure\ processor\ time\ of\ simulating\ step}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MacroTimeBenchmarking_8h_abd7dae08760afc678f2119375ad5be47}{BENCHMARK\_TIME\_END}}(\&m\_system\_t,\&m\_system\_x,\&m\_system\_s);\ \ \ \textcolor{comment}{//\ End\ benchmarking\ here}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{classScQtSimulator_ad627b2a89dba90051ab0bc8ac42a1590}{eventHappened}}();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_abort\ ||\ \_interrupt)\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ qDebug()<<\textcolor{stringliteral}{"{}Interrupted\ doSimulationSteps\ in\ Thread\ "{}}<<thread()-\/>currentThreadId();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00064}\mbox{\hyperlink{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e}{ScQtSimulator::mainLoop}}()}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00065}00065\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00066}00066\ \ \textcolor{comment}{//\ \ \ qDebug()<<"{}Starting\ ScQtSimulator\ mainLoop\ in\ Thread\ "{}<<thread()-\/>currentThreadId();}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00068}00068\ \ \ \ \ forever\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ mutex.lock();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_interrupt\ \&\&\ !\_abort)\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ condition.wait(\&mutex);}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \_interrupt\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_abort)\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()<<\textcolor{stringliteral}{"{}Aborting\ ScQtSimulator\ mainLoop\ in\ Thread\ "{}}<<thread()-\/>currentThreadId();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ mutex.unlock();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{classScQtSimulator_ae2b46f78af8f0678d6012c0ef607a205}{finished}}();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{Method}}\ method\ =\ \_method;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ mutex.unlock();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(method)\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Method\_SingleSteps:}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ doSimulationSteps();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00089}00089\ \textcolor{preprocessor}{\#if\ 0}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ Method\_SimulatedTime:}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ doSimulatedTime();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00094}00094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00098}00098\ \textcolor{comment}{//\ Just\ to\ avoid\ undefined\_reference\_to\_vtable}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8cpp_source_l00099}00099\ \textcolor{preprocessor}{\#include\ "{}moc\_ScQtSimulator.cpp"{}}}
+
+\end{DoxyCode}

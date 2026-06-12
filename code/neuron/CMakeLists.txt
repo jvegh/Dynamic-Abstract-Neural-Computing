@@ -36,6 +36,7 @@ function(create_neuron_lib NAME)
         ../src
         include
         neurons/include
+        ../3rdParty/ode/include/ode
         )
 
     target_link_libraries(${LIB_NAME} PUBLIC Qt6::Gui)
@@ -76,6 +77,7 @@ target_sources(${NEURON_LIB}
 
 # Also link Qt and VSRTL libraries.
 target_link_libraries(${NEURON_LIB} PUBLIC
+    ode::ode
     fancytabbar_lib
  #   ${VSRTL_GRAPHICS_LIB}
 #    Qt6::Charts

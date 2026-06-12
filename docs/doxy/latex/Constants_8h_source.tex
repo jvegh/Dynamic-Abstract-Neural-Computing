@@ -1,142 +1,142 @@
 \doxysection{Constants.\+h}
-\label{Constants_8h_source}\index{Constants.h@{Constants.h}}
-\textbf{ Go to the documentation of this file.}
+\hypertarget{Constants_8h_source}{}\label{Constants_8h_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/Constants.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/Constants.h}}
+\mbox{\hyperlink{Constants_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00005\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
-\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
-\DoxyCodeLine{00008\ \textcolor{comment}{*/}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <cmath>}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ CONSTANTS\_H}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ CONSTANTS\_H}}
-\DoxyCodeLine{00016\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }NeuronConstants}
-\DoxyCodeLine{00044\ \{}
-\DoxyCodeLine{00045\ \textcolor{comment}{//\ \ \ \ friend\ class\ NeuronPhysical;}}
-\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00050\ \ \ \ \ NeuronConstants(\textcolor{keywordtype}{void}):}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ m\_CurrentResolutionExponent(-\/9)}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ ,m\_ResistanceResolutionExponent(+3)}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ ,m\_TimeResolutionExponent(-\/3)}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ ,m\_VoltageResolutionExponent(-\/6)}
-\DoxyCodeLine{00055\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ ,m\_Membrane\_R(0.1*1E9)\ //\ Value\ of\ membrane\ resistance,\ stored\ in\ GOhm\ (100\ MOhm)}}
-\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ ,m\_Membrane\_C(100.*1E-\/12)\ //\ Value\ of\ membrane\ capacitance,\ stored\ in\ pF\ (100\ pF)}}
-\DoxyCodeLine{00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ ,m\_Membrane\_Tau(10.*1E-\/3)\ //\ The\ membrane's\ time\ constant,\ stored\ in\ msec\ (10\ ms)}}
-\DoxyCodeLine{00058\ \textcolor{comment}{*/}}
-\DoxyCodeLine{00059\ \ \ \ \ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Use\_JohnstonSet();}
-\DoxyCodeLine{00061\ \textcolor{comment}{//\ \ \ \ \ \ \ \ Use\_KochSet();}}
-\DoxyCodeLine{00062\ \ \ \ \ \}}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~NeuronConstants(\textcolor{keywordtype}{void})\{\}\textcolor{comment}{//\ Must\ be\ overridden}}
-\DoxyCodeLine{00065\ \ \ \ \ int8\_t\ CurrentResolutionExponent\_Get(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ m\_CurrentResolutionExponent;\}}
-\DoxyCodeLine{00067\ \ \ \ \ int8\_t\ VoltageResolutionExponent\_Get(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ m\_CurrentResolutionExponent;\}}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ CurrentResolution\_Set(int8\_t\ E)}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{\ \ \ m\_CurrentResolutionExponent\ =\ E;\ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{string}\ CurrentResolutionUnit\_Get(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{switch}(m\_CurrentResolutionExponent)}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad"{}};}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/9:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}pA"{}};}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/6:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}uA"{}};}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/3:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}mA"{}};}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ VoltageResolutionUnit\_Get(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{switch}(m\_CurrentResolutionExponent)}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad"{}};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/9:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}pV"{}};}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/6:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}uV"{}};}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/3:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}mV"{}};}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Use\_KochSet()}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneResistanceGOhm\_Set(0.1);}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneCapacityPF\_Set(100.);}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tau\ =\ 10\ ms}}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Use\_JohnstonSet()}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1\ uF/cm\string^2,\ 7.85*10\string^\{-\/5\}\ cm\string^2}}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneResistanceGOhm\_Set(0.385);}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneCapacityPF\_Set(78.);}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tau\ =\ 30\ ms}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MembraneResistanceOhm\_Get()}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Membrane\_R*1e9;\}}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MembraneResistanceGOhm\_Get()}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Membrane\_R;\ \}}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneResistanceOhm\_Set(\textcolor{keywordtype}{double}\ R)}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \{\ \ \ MembraneResistanceGOhm\_Set(R*1E9);\ \}}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneResistanceGOhm\_Set(\textcolor{keywordtype}{double}\ R)}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \{\ \ \ m\_Membrane\_R\ =\ R;}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneTauMSec\_Set();}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MembraneCapacityPF\_Get(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Membrane\_C;\ \}}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneCapacityPF\_Set(\textcolor{keywordtype}{double}\ C)}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \{\ \ \ m\_Membrane\_C\ =\ C;}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneTauMSec\_Set();}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneCapacityF\_Set(\textcolor{keywordtype}{double}\ C)}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{\ \ \ m\_Membrane\_C\ =\ C*1E-\/12;}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneTauMSec\_Set();}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MembraneTauMSec\_Get(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Membrane\_Tau;\}}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneFromRGOhm\_TauMSec\_Set(\textcolor{keywordtype}{double}\ R,\ \textcolor{keywordtype}{double}\ T)}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneResistanceGOhm\_Set(R);}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ m\_Membrane\_C\ =\ T/R;}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneFromCPF\_TauMSec\_Set(\textcolor{keywordtype}{double}\ C,\ \textcolor{keywordtype}{double}\ T)}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneCapacityPF\_Set(C);}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ m\_Membrane\_R\ =\ T/C;}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneTauMSec\_Set(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \{\ \ \ m\_Membrane\_Tau\ =\ m\_Membrane\_C*\ m\_Membrane\_R;\}}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneFromRC\_TauMSec\_Set(\textcolor{keywordtype}{double}\ R,\ \textcolor{keywordtype}{double}\ C)}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneCapacityPF\_Set(C);}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneResistanceGOhm\_Set(R);}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00166\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00167\ \ \ \ \ int8\_t}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ m\_CurrentResolutionExponent}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ ,m\_ResistanceResolutionExponent}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ ,m\_TimeResolutionExponent}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ ,m\_VoltageResolutionExponent;}
-\DoxyCodeLine{00172\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_R;\ \textcolor{comment}{//<\ Value\ of\ membrane\ resistance,\ stored\ in\ Ohm\ (100\ MOhm)}}
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_C;\ \textcolor{comment}{//<\ Value\ of\ membrane\ capacitance,\ stored\ in\ F\ (100\ pF)}}
-\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_Tau;\ \textcolor{comment}{//<\ The\ membrane's\ time\ constant,\ stored\ in\ sec\ (10\ ms)}}
-\DoxyCodeLine{00176\ \ \};\textcolor{comment}{//\ of\ class\ NeuronConstants}}
-\DoxyCodeLine{00177\ }
-\DoxyCodeLine{00178\ }
-\DoxyCodeLine{00179\ \textcolor{keyword}{class\ }UniversalConstants}
-\DoxyCodeLine{00180\ \{}
-\DoxyCodeLine{00181\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00186\ \ \ \ \ UniversalConstants(\textcolor{keywordtype}{void})\{\}}
-\DoxyCodeLine{00187\ }
-\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~UniversalConstants(\textcolor{keywordtype}{void})\ \ \ \ \{\}\textcolor{comment}{//\ Must\ be\ overridden}}
-\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{float}\ Value\_Get(\textcolor{keywordtype}{double}\ TT);}
-\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{float}\ Gradient\_Get(\textcolor{keywordtype}{double}\ TT);}
-\DoxyCodeLine{00191\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00192\ \};\textcolor{comment}{//\ of\ class\ NeuronConstants}}
-\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONSTANTS\_H}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00005}00005\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00006}00006\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00007}00007\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00008}00008\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00014}00014\ \textcolor{preprocessor}{\#ifndef\ CONSTANTS\_H}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00015}00015\ \textcolor{preprocessor}{\#define\ CONSTANTS\_H}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00043}\mbox{\hyperlink{classNeuronConstants}{00043}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNeuronConstants}{NeuronConstants}}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00045}00045\ \textcolor{comment}{//\ \ \ \ friend\ class\ NeuronPhysical;}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00046}00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00050}\mbox{\hyperlink{classNeuronConstants_a1c970c7d514554aebeef16015f59e9ec}{00050}}\ \ \ \ \ \mbox{\hyperlink{classNeuronConstants_a1c970c7d514554aebeef16015f59e9ec}{NeuronConstants}}(\textcolor{keywordtype}{void}):}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ m\_CurrentResolutionExponent(-\/9)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ ,m\_ResistanceResolutionExponent(+3)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ ,m\_TimeResolutionExponent(-\/3)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ ,m\_VoltageResolutionExponent(-\/6)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00055}00055\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ ,m\_Membrane\_R(0.1*1E9)\ //\ Value\ of\ membrane\ resistance,\ stored\ in\ GOhm\ (100\ MOhm)}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00056}00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ ,m\_Membrane\_C(100.*1E-\/12)\ //\ Value\ of\ membrane\ capacitance,\ stored\ in\ pF\ (100\ pF)}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00057}00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ ,m\_Membrane\_Tau(10.*1E-\/3)\ //\ The\ membrane's\ time\ constant,\ stored\ in\ msec\ (10\ ms)}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00058}00058\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNeuronConstants_a76590051e62bccca9243db8caa5b7045}{Use\_JohnstonSet}}();}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00061}00061\ \textcolor{comment}{//\ \ \ \ \ \ \ \ Use\_KochSet();}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classNeuronConstants}{\string~NeuronConstants}}(\textcolor{keywordtype}{void})\{\}\textcolor{comment}{//\ Must\ be\ overridden}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00065}00065\ \ \ \ \ int8\_t\ CurrentResolutionExponent\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ m\_CurrentResolutionExponent;\}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00067}00067\ \ \ \ \ int8\_t\ VoltageResolutionExponent\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \{\textcolor{keywordflow}{return}\ m\_CurrentResolutionExponent;\}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{void}\ CurrentResolution\_Set(int8\_t\ E)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \{\ \ \ m\_CurrentResolutionExponent\ =\ E;\ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{string}\ CurrentResolutionUnit\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{switch}(m\_CurrentResolutionExponent)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad"{}};}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/9:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}pA"{}};}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/6:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}uA"{}};}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/3:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}mA"{}};}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00081}00081\ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ VoltageResolutionUnit\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{switch}(m\_CurrentResolutionExponent)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bad"{}};}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/9:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}pV"{}};}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/6:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}uV"{}};}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ -\/3:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}mV"{}};}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00093}\mbox{\hyperlink{classNeuronConstants_ade89b36f04b23f25d37ce414f5116cf1}{00093}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNeuronConstants_ade89b36f04b23f25d37ce414f5116cf1}{Use\_KochSet}}()}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNeuronConstants_a6b479758b3f19d6293916922765e3683}{MembraneResistanceGOhm\_Set}}(0.1);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneCapacityPF\_Set(100.);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tau\ =\ 10\ ms}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00102}\mbox{\hyperlink{classNeuronConstants_a76590051e62bccca9243db8caa5b7045}{00102}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNeuronConstants_a76590051e62bccca9243db8caa5b7045}{Use\_JohnstonSet}}()}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1\ uF/cm\string^2,\ 7.85*10\string^\{-\/5\}\ cm\string^2}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNeuronConstants_a6b479758b3f19d6293916922765e3683}{MembraneResistanceGOhm\_Set}}(0.385);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneCapacityPF\_Set(78.);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tau\ =\ 30\ ms}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00113}\mbox{\hyperlink{classNeuronConstants_aff28872c0f260e8d6c5d7d7b64fbca53}{00113}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classNeuronConstants_aff28872c0f260e8d6c5d7d7b64fbca53}{MembraneResistanceOhm\_Get}}()}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Membrane\_R*1e9;\}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00119}\mbox{\hyperlink{classNeuronConstants_a4ca417130372cb0b5c78e1b03131cc84}{00119}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classNeuronConstants_a4ca417130372cb0b5c78e1b03131cc84}{MembraneResistanceGOhm\_Get}}()}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00120}00120\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Membrane\_R;\ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneResistanceOhm\_Set(\textcolor{keywordtype}{double}\ R)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \{\ \ \ \mbox{\hyperlink{classNeuronConstants_a6b479758b3f19d6293916922765e3683}{MembraneResistanceGOhm\_Set}}(R*1E9);\ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00127}\mbox{\hyperlink{classNeuronConstants_a6b479758b3f19d6293916922765e3683}{00127}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNeuronConstants_a6b479758b3f19d6293916922765e3683}{MembraneResistanceGOhm\_Set}}(\textcolor{keywordtype}{double}\ R)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00128}00128\ \ \ \ \ \ \ \ \ \{\ \ \ m\_Membrane\_R\ =\ R;}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneTauMSec\_Set();}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00134}\mbox{\hyperlink{classNeuronConstants_a4e9fbceab7f6ae1a1d7351491c922154}{00134}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classNeuronConstants_a4e9fbceab7f6ae1a1d7351491c922154}{MembraneCapacityPF\_Get}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00135}00135\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Membrane\_C;\ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneCapacityPF\_Set(\textcolor{keywordtype}{double}\ C)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \{\ \ \ m\_Membrane\_C\ =\ C;}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneTauMSec\_Set();}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneCapacityF\_Set(\textcolor{keywordtype}{double}\ C)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \{\ \ \ m\_Membrane\_C\ =\ C*1E-\/12;}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneTauMSec\_Set();}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ MembraneTauMSec\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00146}00146\ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ m\_Membrane\_Tau;\}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneFromRGOhm\_TauMSec\_Set(\textcolor{keywordtype}{double}\ R,\ \textcolor{keywordtype}{double}\ T)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00148}00148\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNeuronConstants_a6b479758b3f19d6293916922765e3683}{MembraneResistanceGOhm\_Set}}(R);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ m\_Membrane\_C\ =\ T/R;}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneFromCPF\_TauMSec\_Set(\textcolor{keywordtype}{double}\ C,\ \textcolor{keywordtype}{double}\ T)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneCapacityPF\_Set(C);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ m\_Membrane\_R\ =\ T/C;}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MembraneTauMSec\_Set(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00158}00158\ \ \ \ \ \ \ \ \ \{\ \ \ m\_Membrane\_Tau\ =\ m\_Membrane\_C*\ m\_Membrane\_R;\}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00160}\mbox{\hyperlink{classNeuronConstants_ac9be591eec52ce7f58522ff1de58464f}{00160}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNeuronConstants_ac9be591eec52ce7f58522ff1de58464f}{MembraneFromRC\_TauMSec\_Set}}(\textcolor{keywordtype}{double}\ R,\ \textcolor{keywordtype}{double}\ C)}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00161}00161\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ MembraneCapacityPF\_Set(C);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNeuronConstants_a6b479758b3f19d6293916922765e3683}{MembraneResistanceGOhm\_Set}}(R);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00166}00166\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00167}00167\ \ \ \ \ int8\_t}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ \ m\_CurrentResolutionExponent}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00169}00169\ \ \ \ \ \ \ \ \ ,m\_ResistanceResolutionExponent}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ ,m\_TimeResolutionExponent}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ ,m\_VoltageResolutionExponent;}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00172}00172\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00173}00173\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_R;\ \textcolor{comment}{//<\ Value\ of\ membrane\ resistance,\ stored\ in\ Ohm\ (100\ MOhm)}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00174}00174\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_C;\ \textcolor{comment}{//<\ Value\ of\ membrane\ capacitance,\ stored\ in\ F\ (100\ pF)}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00175}00175\ \ \ \ \ \textcolor{keywordtype}{double}\ m\_Membrane\_Tau;\ \textcolor{comment}{//<\ The\ membrane's\ time\ constant,\ stored\ in\ sec\ (10\ ms)}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00176}00176\ \ \};\textcolor{comment}{//\ of\ class\ NeuronConstants}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00179}\mbox{\hyperlink{classUniversalConstants}{00179}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUniversalConstants}{UniversalConstants}}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00180}00180\ \{}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00181}00181\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00186}\mbox{\hyperlink{classUniversalConstants_a37feaf100fcd3b4ee0611a2dba9dba9b}{00186}}\ \ \ \ \ \mbox{\hyperlink{classUniversalConstants_a37feaf100fcd3b4ee0611a2dba9dba9b}{UniversalConstants}}(\textcolor{keywordtype}{void})\{\}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00188}00188\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classUniversalConstants}{\string~UniversalConstants}}(\textcolor{keywordtype}{void})\ \ \ \ \{\}\textcolor{comment}{//\ Must\ be\ overridden}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00189}00189\ \ \ \ \ \textcolor{keywordtype}{float}\ Value\_Get(\textcolor{keywordtype}{double}\ TT);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00190}00190\ \ \ \ \ \textcolor{keywordtype}{float}\ Gradient\_Get(\textcolor{keywordtype}{double}\ TT);}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00191}00191\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00192}00192\ \};\textcolor{comment}{//\ of\ class\ NeuronConstants}}
+\DoxyCodeLine{\Hypertarget{Constants_8h_source_l00194}00194\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONSTANTS\_H}}
 
 \end{DoxyCode}

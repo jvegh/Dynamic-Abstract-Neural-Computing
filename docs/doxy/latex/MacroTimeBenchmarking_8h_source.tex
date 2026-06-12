@@ -1,38 +1,38 @@
 \doxysection{Macro\+Time\+Benchmarking.\+h}
-\label{MacroTimeBenchmarking_8h_source}\index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
-\textbf{ Go to the documentation of this file.}
+\hypertarget{MacroTimeBenchmarking_8h_source}{}\label{MacroTimeBenchmarking_8h_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/MacroTimeBenchmarking.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/MacroTimeBenchmarking.h}}
+\mbox{\hyperlink{MacroTimeBenchmarking_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00072\ \textcolor{comment}{/*\ \ @author\ János\ Végh\ (jvegh)}}
-\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
-\DoxyCodeLine{00074\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#undef\ BENCHMARK\_TIME\_ACTIVE}}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#ifdef\ MAKE\_TIME\_BENCHMARKING}}
-\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_ACTIVE\ \ \ }\textcolor{comment}{//\ Time\ benchmarking\ required}}
-\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#include\ <ctime>}}
-\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#include\ <ratio>}}
-\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#include\ <chrono>}}
-\DoxyCodeLine{00115\ \textcolor{comment}{//\ Return\ the\ time\ since\ the\ last\ call\ TIME\_BEGIN\ in\ x,\ and\ sums\ the\ elapsed\ time\ in\ s}}
-\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_END(t,x,s)\(\backslash\)}}
-\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ *x\ =\ std::chrono::duration<\ int64\_t,\ nano>(std::chrono::steady\_clock::now()\ -\/\ *t);\ \(\backslash\)}}
-\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ std::chrono::steady\_clock::now();\ *s\ +=\ *x;}}
-\DoxyCodeLine{00119\ \textcolor{comment}{//\ Initializes\ measurement\ summary}}
-\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_RESET(t,x,s)\(\backslash\)}}
-\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ BENCHMARK\_TIME\_BEGIN(t,x);\ *s=*x;}}
-\DoxyCodeLine{00122\ \textcolor{comment}{//\ Remembers\ beginning\ of\ time}}
-\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_BEGIN(t,x)\(\backslash\)}}
-\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ std::chrono::steady\_clock::now();\ *x=*t-\/*t;}}
-\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ Time\ benchmarking\ not\ needed,\ do\ nothing}}
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\ The\ macros\ with\ empty\ functionality}}
-\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_RESET(t,x,s)}}
-\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_BEGIN(x,t)}}
-\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_END(t,x,s)}}
-\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MAKE\_TIME\_BENCHMARKING}}
-\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#undef\ MAKE\_TIME\_BENCHMARKING\ }\textcolor{comment}{//\ Make\ macro\ definition\ file-\/scope\ wide}}
-\DoxyCodeLine{00132\ }
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00072}00072\ \textcolor{comment}{/*\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00073}00073\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00074}00074\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00108}00108\ \textcolor{preprocessor}{\#undef\ BENCHMARK\_TIME\_ACTIVE}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00110}00110\ \textcolor{preprocessor}{\#ifdef\ MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00111}00111\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_ACTIVE\ \ \ }\textcolor{comment}{//\ Time\ benchmarking\ required}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00112}00112\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00113}00113\ \textcolor{preprocessor}{\#include\ <ratio>}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00114}00114\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00115}00115\ \textcolor{comment}{//\ Return\ the\ time\ since\ the\ last\ call\ TIME\_BEGIN\ in\ x,\ and\ sums\ the\ elapsed\ time\ in\ s}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00116}00116\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_END(t,x,s)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00117}00117\ \textcolor{preprocessor}{\ \ \ \ *x\ =\ std::chrono::duration<\ int64\_t,\ nano>(std::chrono::steady\_clock::now()\ -\/\ *t);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00118}00118\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ std::chrono::steady\_clock::now();\ *s\ +=\ *x;}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00119}00119\ \textcolor{comment}{//\ Initializes\ measurement\ summary}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00120}00120\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_RESET(t,x,s)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00121}00121\ \textcolor{preprocessor}{\ \ \ \ BENCHMARK\_TIME\_BEGIN(t,x);\ *s=*x;}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00122}00122\ \textcolor{comment}{//\ Remembers\ beginning\ of\ time}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00123}00123\ \textcolor{preprocessor}{\#define\ BENCHMARK\_TIME\_BEGIN(t,x)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00124}00124\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ std::chrono::steady\_clock::now();\ *x=*t-\/*t;}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00125}00125\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ Time\ benchmarking\ not\ needed,\ do\ nothing}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00126}00126\ \ \ \ \ \textcolor{comment}{//\ The\ macros\ with\ empty\ functionality}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00127}\mbox{\hyperlink{MacroTimeBenchmarking_8h_ac7d4ee4fbe53b2c3f74d3c7fe5e37976}{00127}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_RESET(t,x,s)}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00128}\mbox{\hyperlink{MacroTimeBenchmarking_8h_abe3e52aa6169ad16fa9bf59bbeb2e267}{00128}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_BEGIN(x,t)}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00129}\mbox{\hyperlink{MacroTimeBenchmarking_8h_abd7dae08760afc678f2119375ad5be47}{00129}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ BENCHMARK\_TIME\_END(t,x,s)}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00130}00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00131}00131\ \textcolor{preprocessor}{\#undef\ MAKE\_TIME\_BENCHMARKING\ }\textcolor{comment}{//\ Make\ macro\ definition\ file-\/scope\ wide}}
+\DoxyCodeLine{\Hypertarget{MacroTimeBenchmarking_8h_source_l00132}00132\ }
 
 \end{DoxyCode}

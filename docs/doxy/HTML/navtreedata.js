@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13", "index.html", [
+  [ "DANCES", "index.html", [
     [ "Overview", "index.html", null ],
     [ "Class List", "annotated.html", "annotated" ],
     [ "Cited references", "citelist.html", null ],

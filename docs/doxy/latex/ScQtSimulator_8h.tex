@@ -1,10 +1,17 @@
-\doxysection{Sc\+Qt\+Simulator.\+h File Reference}
-\label{ScQtSimulator_8h}\index{ScQtSimulator.h@{ScQtSimulator.h}}
+\doxysection{/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/include/\+Sc\+Qt\+Simulator.h File Reference}
+\hypertarget{ScQtSimulator_8h}{}\label{ScQtSimulator_8h}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/ScQtSimulator.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/ScQtSimulator.h}}
 
 
-A semi general purpose simulator for SystemC task, using Qt\textquotesingle{}s stuff Ideas taken from {\texttt{ http\+://fabienpn.\+wordpress.\+com/qt-\/thread-\/multiple-\/methods-\/with-\/sources/}} {\texttt{ https\+://www.\+researchgate.\+net/publication/228972213\+\_\+g\+Sys\+C\+\_\+\+A\+\_\+graphical\+\_\+front\+\_\+end\+\_\+for\+\_\+\+SystemC}} and {\texttt{ https\+://github.\+com/mortbopet/\+Ripes}}.  
+A semi general purpose simulator for SystemC task, using Qt\textquotesingle{}s stuff Ideas taken from \href{http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/}{\texttt{ http\+://fabienpn.\+wordpress.\+com/qt-\/thread-\/multiple-\/methods-\/with-\/sources/}} \href{https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC}{\texttt{ https\+://www.\+researchgate.\+net/publication/228972213\+\_\+g\+Sys\+C\+\_\+\+A\+\_\+graphical\+\_\+front\+\_\+end\+\_\+for\+\_\+\+SystemC}} and \href{https://github.com/mortbopet/Ripes}{\texttt{ https\+://github.\+com/mortbopet/\+Ripes}}.  
 
 
+{\ttfamily \#include "{}sysc/kernel/sc\+\_\+simcontext.\+h"{}}\newline
+{\ttfamily \#include "{}sysc/kernel/sc\+\_\+time.\+h"{}}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QMutex$>$}\newline
+{\ttfamily \#include $<$QTime$>$}\newline
+{\ttfamily \#include $<$QWait\+Condition$>$}\newline
+{\ttfamily \#include "{}Macro\+Time\+Benchmarking.\+h"{}}\newline
 Include dependency graph for Sc\+Qt\+Simulator.\+h\+:
 \nopagebreak
 \begin{figure}[H]
@@ -13,14 +20,38 @@ Include dependency graph for Sc\+Qt\+Simulator.\+h\+:
 \includegraphics[width=350pt]{ScQtSimulator_8h__incl}
 \end{center}
 \end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{ScQtSimulator_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \textbf{ Sc\+Qt\+Simulator}
+class \mbox{\hyperlink{classScQtSimulator}{Sc\+Qt\+Simulator}}
 \begin{DoxyCompactList}\small\item\em Implements a semi-\/general SystemC simulator, based on Qt technology. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A semi general purpose simulator for SystemC task, using Qt\textquotesingle{}s stuff Ideas taken from {\texttt{ http\+://fabienpn.\+wordpress.\+com/qt-\/thread-\/multiple-\/methods-\/with-\/sources/}} {\texttt{ https\+://www.\+researchgate.\+net/publication/228972213\+\_\+g\+Sys\+C\+\_\+\+A\+\_\+graphical\+\_\+front\+\_\+end\+\_\+for\+\_\+\+SystemC}} and {\texttt{ https\+://github.\+com/mortbopet/\+Ripes}}. 
+A semi general purpose simulator for SystemC task, using Qt\textquotesingle{}s stuff Ideas taken from \href{http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/}{\texttt{ http\+://fabienpn.\+wordpress.\+com/qt-\/thread-\/multiple-\/methods-\/with-\/sources/}} \href{https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC}{\texttt{ https\+://www.\+researchgate.\+net/publication/228972213\+\_\+g\+Sys\+C\+\_\+\+A\+\_\+graphical\+\_\+front\+\_\+end\+\_\+for\+\_\+\+SystemC}} and \href{https://github.com/mortbopet/Ripes}{\texttt{ https\+://github.\+com/mortbopet/\+Ripes}}. 
 
-A semi-\/general purpose simulator for SystemC task, using Qt\textquotesingle{}s stuff Ideas taken from {\texttt{ http\+://fabienpn.\+wordpress.\+com/qt-\/thread-\/multiple-\/methods-\/with-\/sources/}} {\texttt{ https\+://www.\+researchgate.\+net/publication/228972213\+\_\+g\+Sys\+C\+\_\+\+A\+\_\+graphical\+\_\+front\+\_\+end\+\_\+for\+\_\+\+SystemC}} and {\texttt{ https\+://github.\+com/mortbopet/\+Ripes}}.
+A semi-\/general purpose simulator for SystemC task, using Qt\textquotesingle{}s stuff Ideas taken from \href{http://fabienpn.wordpress.com/qt-thread-multiple-methods-with-sources/}{\texttt{ http\+://fabienpn.\+wordpress.\+com/qt-\/thread-\/multiple-\/methods-\/with-\/sources/}} \href{https://www.researchgate.net/publication/228972213_gSysC_A_graphical_front_end_for_SystemC}{\texttt{ https\+://www.\+researchgate.\+net/publication/228972213\+\_\+g\+Sys\+C\+\_\+\+A\+\_\+graphical\+\_\+front\+\_\+end\+\_\+for\+\_\+\+SystemC}} and \href{https://github.com/mortbopet/Ripes}{\texttt{ https\+://github.\+com/mortbopet/\+Ripes}}.
+
+Definition in file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ScQtSimulator_8h_a31ccaab9818325d0300a933482d37150}\label{ScQtSimulator_8h_a31ccaab9818325d0300a933482d37150} 
+\index{ScQtSimulator.h@{ScQtSimulator.h}!MAKE\_TIME\_BENCHMARKING@{MAKE\_TIME\_BENCHMARKING}}
+\index{MAKE\_TIME\_BENCHMARKING@{MAKE\_TIME\_BENCHMARKING}!ScQtSimulator.h@{ScQtSimulator.h}}
+\doxysubsubsection{\texorpdfstring{MAKE\_TIME\_BENCHMARKING}{MAKE\_TIME\_BENCHMARKING}}
+{\footnotesize\ttfamily \#define MAKE\+\_\+\+TIME\+\_\+\+BENCHMARKING}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00027}{27}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+

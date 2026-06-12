@@ -1,10 +1,12 @@
-\doxysection{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+cpp File Reference}
-\label{scGenComp__PU__Abstract_8cpp}\index{scGenComp\_PU\_Abstract.cpp@{scGenComp\_PU\_Abstract.cpp}}
+\doxysection{/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/neurons/sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.cpp File Reference}
+\hypertarget{scGenComp__PU__Abstract_8cpp}{}\label{scGenComp__PU__Abstract_8cpp}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/scGenComp\_PU\_Abstract.cpp@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/scGenComp\_PU\_Abstract.cpp}}
 
 
 The abstract processing unit for generalized computing.  
 
 
+{\ttfamily \#include "{}sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+h"{}}\newline
+{\ttfamily \#include "{}Debug\+Macros.\+h"{}}\newline
 Include dependency graph for sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -13,8 +15,62 @@ Include dependency graph for sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+cpp\+:
 \includegraphics[width=350pt]{scGenComp__PU__Abstract_8cpp__incl}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{scGenComp__PU__Abstract_8cpp_a711080a630744286bbe1657781ec51c2}{Gen\+Comp\+Observe\+Strings}} \mbox{[}$\,$\mbox{]}
+\item 
+string \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_ga96ab420a858f55a5aaced7821fd232c0}{Gen\+Comp\+Stages\+String}} \mbox{[}$\,$\mbox{]} \{"{}Sleeping"{}, "{}Relaxing"{}, "{}Computing"{}, "{}Delivering"{}\}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 The abstract processing unit for generalized computing. 
+
+
+
+Definition in file \mbox{\hyperlink{scGenComp__PU__Abstract_8cpp_source}{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{scGenComp__PU__Abstract_8cpp_a31ccaab9818325d0300a933482d37150}\label{scGenComp__PU__Abstract_8cpp_a31ccaab9818325d0300a933482d37150} 
+\index{scGenComp\_PU\_Abstract.cpp@{scGenComp\_PU\_Abstract.cpp}!MAKE\_TIME\_BENCHMARKING@{MAKE\_TIME\_BENCHMARKING}}
+\index{MAKE\_TIME\_BENCHMARKING@{MAKE\_TIME\_BENCHMARKING}!scGenComp\_PU\_Abstract.cpp@{scGenComp\_PU\_Abstract.cpp}}
+\doxysubsubsection{\texorpdfstring{MAKE\_TIME\_BENCHMARKING}{MAKE\_TIME\_BENCHMARKING}}
+{\footnotesize\ttfamily \#define MAKE\+\_\+\+TIME\+\_\+\+BENCHMARKING}
+
+
+
+Definition at line \mbox{\hyperlink{scGenComp__PU__Abstract_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{scGenComp__PU__Abstract_8cpp_source}{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+cpp}}.
+
+\Hypertarget{scGenComp__PU__Abstract_8cpp_a1c98a41a26f2bc5193956299ea0b1aed}\label{scGenComp__PU__Abstract_8cpp_a1c98a41a26f2bc5193956299ea0b1aed} 
+\index{scGenComp\_PU\_Abstract.cpp@{scGenComp\_PU\_Abstract.cpp}!SC\_MAKE\_TIME\_BENCHMARKING@{SC\_MAKE\_TIME\_BENCHMARKING}}
+\index{SC\_MAKE\_TIME\_BENCHMARKING@{SC\_MAKE\_TIME\_BENCHMARKING}!scGenComp\_PU\_Abstract.cpp@{scGenComp\_PU\_Abstract.cpp}}
+\doxysubsubsection{\texorpdfstring{SC\_MAKE\_TIME\_BENCHMARKING}{SC\_MAKE\_TIME\_BENCHMARKING}}
+{\footnotesize\ttfamily \#define SC\+\_\+\+MAKE\+\_\+\+TIME\+\_\+\+BENCHMARKING}
+
+
+
+Definition at line \mbox{\hyperlink{scGenComp__PU__Abstract_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{scGenComp__PU__Abstract_8cpp_source}{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{scGenComp__PU__Abstract_8cpp_a711080a630744286bbe1657781ec51c2}\label{scGenComp__PU__Abstract_8cpp_a711080a630744286bbe1657781ec51c2} 
+\index{scGenComp\_PU\_Abstract.cpp@{scGenComp\_PU\_Abstract.cpp}!GenCompObserveStrings@{GenCompObserveStrings}}
+\index{GenCompObserveStrings@{GenCompObserveStrings}!scGenComp\_PU\_Abstract.cpp@{scGenComp\_PU\_Abstract.cpp}}
+\doxysubsubsection{\texorpdfstring{GenCompObserveStrings}{GenCompObserveStrings}}
+{\footnotesize\ttfamily string Gen\+Comp\+Observe\+Strings\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"{}Group"{}},\textcolor{stringliteral}{"{}Module"{}},\textcolor{stringliteral}{"{}ComputingBegin"{}},\textcolor{stringliteral}{"{}ComputingEnd"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DeliveringBegin"{}},\textcolor{stringliteral}{"{}DeliveringEnd"{}},\textcolor{stringliteral}{"{}Failed"{}},\textcolor{stringliteral}{"{}Heartbeat"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Input"{}},\textcolor{stringliteral}{"{}Initialize"{}},\textcolor{stringliteral}{"{}RelaxingBegin"{}},\textcolor{stringliteral}{"{}RelaxingEnd"{}},\textcolor{stringliteral}{"{}Synchronize"{}},\textcolor{stringliteral}{"{}ValueChanged"{}}\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{scGenComp__PU__Abstract_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{scGenComp__PU__Abstract_8cpp_source}{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract.\+cpp}}.
 

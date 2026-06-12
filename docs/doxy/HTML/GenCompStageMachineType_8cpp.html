@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13: GenCompStageMachineType.cpp File Reference</title>
+<title>DANCES: /home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/GenCompStageMachineType.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
@@ -44,21 +39,10 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TAC_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</a>
+   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">DANCES</a>
    </div>
+   <div id="projectbrief">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +54,17 @@ MathJax.Hub.Config({
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -109,34 +104,49 @@ $(document).ready(function(){initNavTree('GenCompStageMachineType_8cpp.html','')
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">GenCompStageMachineType.cpp File Reference<div class="ingroups"><a class="el" href="group__GENCOMP__MODULE__PROCESS.html">Background modules</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>The abstract processing unit for generalized computing.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div class="textblock"><code>#include &quot;<a class="el" href="GenCompStageMachineType_8h_source.html">GenCompStageMachineType.h</a>&quot;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GenCompStageMachineType.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="GenCompStageMachineType_8cpp__incl.png" border="0" usemap="#aGenCompStageMachineType_8cpp" alt=""/></div>
-<map name="aGenCompStageMachineType_8cpp" id="aGenCompStageMachineType_8cpp">
-<area shape="rect" title="The abstract processing unit for generalized computing." alt="" coords="158,5,393,31"/>
-<area shape="rect" href="GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="5,79,225,104"/>
-<area shape="poly" title=" " alt="" coords="251,33,155,75,153,71,249,28"/>
-<area shape="rect" title=" " alt="" coords="250,79,301,104"/>
-<area shape="poly" title=" " alt="" coords="278,31,278,65,273,65,273,31"/>
-<area shape="rect" title=" " alt="" coords="325,79,394,104"/>
-<area shape="poly" title=" " alt="" coords="291,29,337,67,333,72,287,33"/>
-<area shape="rect" title=" " alt="" coords="39,152,106,177"/>
-<area shape="poly" title=" " alt="" coords="111,106,89,142,84,139,106,103"/>
-<area shape="rect" title=" " alt="" coords="130,152,189,177"/>
-<area shape="poly" title=" " alt="" coords="125,103,147,139,143,142,120,106"/>
+<div class="center"><img src="GenCompStageMachineType_8cpp__incl.png" border="0" usemap="#a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2GenCompStageMachineType_8cpp" alt=""/></div>
+<map name="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2GenCompStageMachineType_8cpp" id="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2GenCompStageMachineType_8cpp">
+<area shape="rect" title="The abstract processing unit for generalized computing." alt="" coords="114,5,437,75"/>
+<area shape="rect" href="GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="5,123,225,148"/>
+<area shape="poly" title=" " alt="" coords="219,77,148,118,145,113,216,72"/>
+<area shape="rect" title=" " alt="" coords="250,123,301,148"/>
+<area shape="poly" title=" " alt="" coords="278,75,278,109,273,109,273,75"/>
+<area shape="rect" title=" " alt="" coords="325,123,394,148"/>
+<area shape="poly" title=" " alt="" coords="308,73,342,110,338,114,304,77"/>
+<area shape="rect" title=" " alt="" coords="39,196,106,221"/>
+<area shape="poly" title=" " alt="" coords="111,150,89,186,84,183,106,147"/>
+<area shape="rect" title=" " alt="" coords="130,196,189,221"/>
+<area shape="poly" title=" " alt="" coords="125,147,147,183,143,186,120,150"/>
 </map>
 </div>
-</div><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+</div>
+<p><a href="GenCompStageMachineType_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga5d872c0f4d2e18eb29b9b6cd286e1a55" id="r_ga5d872c0f4d2e18eb29b9b6cd286e1a55"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__GENCOMP__MODULE__DEMO.html#ga5d872c0f4d2e18eb29b9b6cd286e1a55">GenCompStageMachineType2String</a> (<a class="el" href="classGenCompStageMachine__t.html">GenCompStageMachine_t</a> e)</td></tr>
+<tr class="separator:ga5d872c0f4d2e18eb29b9b6cd286e1a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The abstract processing unit for generalized computing. </p>
+
+<p class="definition">Definition in file <a class="el" href="GenCompStageMachineType_8cpp_source.html">GenCompStageMachineType.cpp</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,10 +1,21 @@
 var searchData=
 [
-  ['background_20modules_0',['Background modules',['../group__GENCOMP__MODULE__PROCESS.html',1,'']]],
-  ['base_1',['BASE',['../GLOSSARY.html#GLOSSARY_BASE',1,'']]],
-  ['benchmark_5ftime_5fbegin_2',['BENCHMARK_TIME_BEGIN',['../MacroTimeBenchmarking_8h.html#abe3e52aa6169ad16fa9bf59bbeb2e267',1,'MacroTimeBenchmarking.h']]],
-  ['benchmark_5ftime_5fend_3',['BENCHMARK_TIME_END',['../MacroTimeBenchmarking_8h.html#abd7dae08760afc678f2119375ad5be47',1,'MacroTimeBenchmarking.h']]],
-  ['benchmark_5ftime_5freset_4',['BENCHMARK_TIME_RESET',['../MacroTimeBenchmarking_8h.html#ac7d4ee4fbe53b2c3f74d3c7fe5e37976',1,'MacroTimeBenchmarking.h']]],
-  ['bibliography_5',['Bibliography',['../citelist.html',1,'']]],
-  ['biological_20processing_6',['Biological processing',['../group__GENCOMP__MODULE__BIOLOGY.html',1,'']]]
+  ['calculate_5fdo_0',['Calculate_Do',['../classNeuronPhysical.html#a3e6514fed4b7c3bee8d54e64ecfbb736',1,'NeuronPhysical']]],
+  ['cancelevents_1',['CancelEvents',['../classscGenComp__PU__Abstract.html#a4f7411cdb012cb30acfda4001c29e158',1,'scGenComp_PU_Abstract']]],
+  ['centralclockmode_5fget_2',['CentralClockMode_Get',['../classscGenComp__PU__Abstract.html#af41be214b51f9800604d9e5264c15d04',1,'scGenComp_PU_Abstract']]],
+  ['cli_3',['CLI',['../GLOSSARY.html#GLOSSARY_CLI',1,'']]],
+  ['clockdown_4',['ClockDown',['../group__GENCOMP__MODULE__PROCESS.html#ga2eacf6e83bc2e58bbb8c129f37cfef6b',1,'EVENT_GenComp_t']]],
+  ['clockup_5',['ClockUp',['../group__GENCOMP__MODULE__PROCESS.html#ga1921d9556bde590a1a2d0e6683ccba52',1,'EVENT_GenComp_t']]],
+  ['cnn_6',['CNN',['../GLOSSARY.html#GLOSSARY_CNN',1,'']]],
+  ['cns_7',['CNS',['../GLOSSARY.html#GLOSSARY_CNS',1,'']]],
+  ['computingbegin_8',['ComputingBegin',['../group__GENCOMP__MODULE__PROCESS.html#ga00d333d4187fe9a0c845773e5c1f0d1d',1,'EVENT_GenComp_t']]],
+  ['computingbegin_5fdo_9',['computingbegin_do',['../classNeuronPhysical.html#a495940008fb8aeb29f8db55d40aa111f',1,'NeuronPhysical::ComputingBegin_Do()'],['../classscGenComp__PU__Abstract.html#a0b20c8e983988e41e0219d1795e7f544',1,'scGenComp_PU_Abstract::ComputingBegin_Do()'],['../classscGenComp__PU__Bio.html#a3e3d739688705d444a8c08af0c7ac80f',1,'scGenComp_PU_Bio::ComputingBegin_Do()']]],
+  ['computingend_10',['ComputingEnd',['../group__GENCOMP__MODULE__PROCESS.html#ga41c695eb2b328f1ef437085d687824c0',1,'EVENT_GenComp_t']]],
+  ['computingend_5fdo_11',['ComputingEnd_Do',['../classscGenComp__PU__Abstract.html#a1bd632a9e6a3bf7ae006ac5f7c509e66',1,'scGenComp_PU_Abstract']]],
+  ['constants_2eh_12',['Constants.h',['../Constants_8h.html',1,'']]],
+  ['cpu_13',['CPU',['../GLOSSARY.html#GLOSSARY_CPU',1,'']]],
+  ['create_5frushin_14',['Create_Rushin',['../classNeuronPhysical.html#a7d5f3d382d2e8ffd1887005bc4950490',1,'NeuronPhysical']]],
+  ['currentgradient_5fget_15',['CurrentGradient_Get',['../classNeuronInputCurrent.html#a1602ae1bc2798f26d7e0076ed8ebc5a4',1,'NeuronInputCurrent']]],
+  ['currentvalue_5fget_16',['CurrentValue_Get',['../classNeuronInputCurrent.html#a289e64a7cd77aa81b9b2d7deafea0ef6',1,'NeuronInputCurrent']]],
+  ['cw_17',['CW',['../GLOSSARY.html#GLOSSARY_CW',1,'']]]
 ];

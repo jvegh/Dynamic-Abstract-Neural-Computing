@@ -166,6 +166,179 @@ G.~Buzs\'aki, {Neural syntax: cell assemblies, synapsembles, and readers},
 P.~Miller, {An Introductory Course in Computational Neuroscience}, {The MIT
   Press}, {Cambridge, Massachusets, London, England}, 2018.
 
+\bibitem{ModernRelativity:1993}
+A.~Das, {The special theory of relativity: a mathematical exposition}, 1st
+  Edition, Springer-Verlag New York, 1993.
+
+\bibitem{Minkowski:1908}
+{Hermann Minkowski}, {Die Grundgleichungen f\"ur die electromagnetischen
+  Vorg\"ange in bewegten K\"orpern}, Nachrichten von der K\"oniglichen
+  Gesellschaft der Wissenschaften zu G\"ottingen (in German) (1908) 53--111.
+
+\bibitem{VeghRevisingClassicComputing:2021}
+J.~V\'egh, Revising the classic computing paradigm and its technological
+  implementations, Informatics 8~(4) (2021).
+\newblock \href {https://doi.org/10.3390/informatics8040071}
+  {\path{doi:10.3390/informatics8040071}}.
+
+\bibitem{RoleOfInformationTransferSpeed:2022}
+J.~V{\'e}gh, {\'A}.~J. Berki,
+  \href{https://link.springer.com/article/10.1007/s10441-022-09450-6}{{On the
+  Role of Speed in Technological and Biological Information Transfer for
+  Computations}}, Acta Biotheoretica 70~(4) (2022) 26.
+\newblock \href {https://doi.org/10.1007/s10441-022-09450-6}
+  {\path{doi:10.1007/s10441-022-09450-6}}.
+\newline\urlprefix\url{https://link.springer.com/article/10.1007/s10441-022-09450-6}
+
+\bibitem{HodgkinConduction:1964}
+A.~L. Hodgkin, The conduction of the nervous impulse, Liverpool University
+  Press, Liverpool, UK, 1964, 1964.
+
+\bibitem{ThermalBiophysics:2007}
+T.~Heimburg, Thermal Biophysics of Membranes, 1st Edition, 2007 WILEY-VCH
+  Verlag GmbH \& Co. KGaA, Weinheim, 2007.
+
+\bibitem{EnergyNeuralCommunication:2021}
+W.~B. Levy, V.~G. Calvert, {Communication consumes 35 times more energy than
+  computation in the human cortex, but both costs are needed to predict synapse
+  number}, Proceedings of the National Academy of Sciences 118~(18) (2021)
+  e2008173118.
+\newblock \href {https://doi.org/10.1073/pnas.2008173118}
+  {\path{doi:10.1073/pnas.2008173118}}.
+
+\bibitem{MechanicalWaves:2015}
+A.~El~Hady, B.~B. Machta, {Mechanical surface waves accompany action potential
+  propagation}, Nature Communications 6 (2019) 6697.
+\newblock \href {https://doi.org/10.1038/ncomms7697}
+  {\path{doi:10.1038/ncomms7697}}.
+
+\bibitem{OnsagerExperimental:1959}
+D.~G. Miller, {THERMODINAMICS OF IRREVERSIBLE PROCESSES THE EXPERIMENTAL
+  VERIFICATION OF THE ONSAGER RECIPROCAL RELATIONS }, Tech. Rep. Contract No.
+  W-7405-eng-48, UNIVERSITY OF CALIFORNIA, Lawrence Radiation Laboratory,
+  Livermore, California (1959).
+\newblock \href {https://doi.org/10.1021/cr60203a003}
+  {\path{doi:10.1021/cr60203a003}}.
+
+\bibitem{RetardedTimePotential:2011}
+H.~A. Ulku, A.~A. Ergin, Application of analytical retarded-time potential
+  expressions to the solution of time domain integral equations, IEEE
+  Transactions on Antennas and Propagation 59~(11) (2011) 4123--4131.
+\newblock \href {https://doi.org/10.1109/TAP.2011.2164180}
+  {\path{doi:10.1109/TAP.2011.2164180}}.
+
+\bibitem{WiringDominance:2019}
+R.~Ho, M.~Horowitz, {More about wires and wire models},
+  \url{https://web.stanford.edu/class/archive/ee/ee371/ee371.1066/lectures/lect_09_1up.pdf}
+  (accessed on 29 April 2025) (2007).
+
+\bibitem{Roemer:1676}
+Wikipedia, Roemer's determination of the speed of light,
+  \url{https://en.wikipedia.org/wiki/R%C3%B8mer%27s_determination_of_the_speed_of_light}
+  (2024).
+
+\bibitem{NewtonPrincipia:1687}
+I.~Newton, \href{https://www.britannica.com/topic/Principia}{Philosophiae
+  naturalis principia mathematica} (1687).
+\newline\urlprefix\url{https://www.britannica.com/topic/Principia}
+
+\bibitem{EinsteinSpecial:1905}
+A.~Einstein, {On the Electrodynamics of Moving Bodies}, Annalen der Physik (in
+  German) 10~(17) (1905) 891--921.
+\newblock \href {https://doi.org/10.1002/andp.19053221004}
+  {\path{doi:10.1002/andp.19053221004}}.
+
+\bibitem{Minkowski100:2008}
+S.~Walter, {Hermann Minkowski and the scandal of spacetime}, ESI News 1~(3)
+  (2008) 6--8.
+
+\bibitem{HelmholtzReport:1850}
+H.~Schmidgen, \href{https://epub.uni-regensburg.de/27126/1/schmidgen.pdf}{{Of
+  frogs and men: the origins of psychophysiological time experiments,
+  1850-1865}} (1850).
+\newline\urlprefix\url{https://epub.uni-regensburg.de/27126/1/schmidgen.pdf}
+
+\bibitem{HelmoltzHistory:1851}
+E.~Phsychology, \href{https://ebrary.net/269412/psychology/helmholtz}{The rise
+  of experimental psychology} (1850).
+\newline\urlprefix\url{https://ebrary.net/269412/psychology/helmholtz}
+
+\bibitem{LogicalCalculusMcCulloch:1943}
+W.~S. McCulloch, W.~Pitts,
+  \href{http://link.springer.com/article/10.1007/BF02478259}{A logical calculus
+  of the ideas immanent in nervous activity}, j-BULL-MATH-BIOPHYS 5~(4) (1943)
+  115--133.
+\newblock \href {https://doi.org/https://doi.org/10.1007/BF02478259}
+  {\path{doi:https://doi.org/10.1007/BF02478259}}.
+\newline\urlprefix\url{http://link.springer.com/article/10.1007/BF02478259}
+
+\bibitem{MolecularBiology:2002}
+B.~Alberts, A.~Johnson, J.~Lewis, et~al.,
+  \href{https://www.ncbi.nlm.nih.gov/books/NBK26910/}{Molecular biology of the
+  cell} (2002).
+\newline\urlprefix\url{https://www.ncbi.nlm.nih.gov/books/NBK26910/}
+
+\bibitem{MathNeuroscience:2010}
+B.~Ermentrout, T.~H. David, Mathematical Foundations of Neuroscience, Springer,
+  New York, 2010.
+
+\bibitem{ActionPotentialGenerationNatrium:2008}
+M.~H.~P. Kole, S.~U. Ilschner, B.~M. Kampa, S.~R. Williams, P.~C. Ruben, G.~J.
+  Stuart, \href{https://www.nature.com/articles/nn2040}{Action potential
+  generation requires a high sodium channel density in the axon initial
+  segment}, Nature Neuroscience 11 (2008) 178--186.
+\newblock \href {https://doi.org/10.1038/nn2040} {\path{doi:10.1038/nn2040}}.
+\newline\urlprefix\url{https://www.nature.com/articles/nn2040}
+
+\bibitem{GrotthussMechanism:2023}
+I.~Popov, Z.~Zhu, A.~e.~a. Young-Gonzales, {Search for a Grotthuss mechanism
+  through the observation of proton transfer.}, Commun Chem 6 (2023).
+\newblock \href {https://doi.org/10.1038/s42004-023-00878-6}
+  {\path{doi:10.1038/s42004-023-00878-6}}.
+
+\bibitem{ElectromagneticNeuron:2018}
+J.~Isakovic, I.~Dobbs-Dixon, D.~Chaudhury, et~al., Modeling of inhomogeneous
+  electromagnetic fields in the nervous system: a novel paradigm in
+  understanding cell interactions, disease etiology and therapy, Sci Rep 8
+  (2018).
+\newblock \href {https://doi.org/10.1038/s41598-018-31054-9}
+  {\path{doi:10.1038/s41598-018-31054-9}}.
+
+\bibitem{SpatiotemporalPrut:1998}
+Y.~Prut, E.~Vaadia, H.~Bergman, I.~Haalman, H.~Slovin, M.~Abeles,
+  {Spatiotemporal Structure of Cortical Activity: Properties and Behavioral
+  Relevance}, {J. Neurophysiol} 79 (1998).
+
+\bibitem{SpatiotemporalPlenz:1996}
+D.~Plenz, A.~Aertsen, {Neural dynamics in cortex-striatum ci-cultures -- II.
+  Spatiotemporal Characteristics of Neural Activity}, {Neuroscience} 70/4
+  (1996) 893--924.
+
+\bibitem{VeghNeuralShannon:2022}
+J.~V{\'e}gh, {\'A}.~J. Berki, {Towards generalizing the information theory for
+  neural communication}, Entropy 24~(8) (2022) 1086--.
+\newblock \href {https://doi.org/10.3390/e24081086}
+  {\path{doi:10.3390/e24081086}}.
+
+\bibitem{VeghIntroducingTemporalBehaviorScience:2020}
+J.~V{\'{e}}gh, \href{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}{{Why do we
+  need to Introduce Temporal Behavior in both Modern Science and Modern
+  Computing}}, Global Journal of Computer Science and Technology: Hardware \&
+  Computation 20/1 (2020) 13--29.
+\newline\urlprefix\url{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}
+
+\bibitem{BuzsakiVeghSpaceTime:2023}
+G.~Buzs\'aki, J.~V\'egh,
+  \href{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}{Space,
+  time and memory}, 1st Edition, Oxford University Press, 2025.
+\newline\urlprefix\url{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}
+
+\bibitem{EinsteinMinkowskiRelativity:1977}
+L.~Pyenson, {Hermann Minkowski and Einstein's special theory of relativity},
+  {Archive for History of Exact Sciences} 17 (1977) 71--95.
+\newblock \href {https://doi.org/10.1007/BF00348403}
+  {\path{doi:10.1007/BF00348403}}.
+
 \bibitem{UpdateHodgkinHuxley:1990}
 J.~Rinzel,
   \href{https://www.sciencedirect.com/science/article/pii/S0092824005800035}{{Discussion:
@@ -266,12 +439,6 @@ A.~Baumgart, J.~R. Clarke, G.~C. Cranfield, R.~Zerlotti, F.~T. Buoninsegni,
 {Oshima, Hiroyuki and Ohki, Shinpei}, {Donnan potential and surface potential
   of a charged membrane}, Biophysical Journal 47 (1985) 673--678.
 
-\bibitem{MolecularBiology:2002}
-B.~Alberts, A.~Johnson, J.~Lewis, et~al.,
-  \href{https://www.ncbi.nlm.nih.gov/books/NBK26910/}{Molecular biology of the
-  cell} (2002).
-\newline\urlprefix\url{https://www.ncbi.nlm.nih.gov/books/NBK26910/}
-
 \bibitem{DonnanPotentialExperiental:2022}
 {Gokturk, Pinar Aydogan and Sujanani, Rahul and Qian, Jin and Wang, Ye and
   Katz, Lynn E. and Freeman, Benny D. and Crumlin, Ethan J}, {The Donnan
@@ -317,14 +484,6 @@ M.~Rasband, The axon initial segment and the maintenance of neuronal polarity,
   Nat Rev Neurosci 11 (2010) 552--562.
 \newblock \href {https://doi.org/10.1038/nrn2852} {\path{doi:10.1038/nrn2852}}.
 
-\bibitem{ActionPotentialGenerationNatrium:2008}
-M.~H.~P. Kole, S.~U. Ilschner, B.~M. Kampa, S.~R. Williams, P.~C. Ruben, G.~J.
-  Stuart, \href{https://www.nature.com/articles/nn2040}{Action potential
-  generation requires a high sodium channel density in the axon initial
-  segment}, Nature Neuroscience 11 (2008) 178--186.
-\newblock \href {https://doi.org/10.1038/nn2040} {\path{doi:10.1038/nn2040}}.
-\newline\urlprefix\url{https://www.nature.com/articles/nn2040}
-
 \bibitem{BackpropagationAP:2012}
 M.~Kole, G.~Stuart,
   \href{https://www.sciencedirect.com/science/article/pii/S0896627312000505}{Signal
@@ -344,14 +503,6 @@ C.~Y.-M. Huang, M.~N. Rasband, Axon initial segments: structure, function, and
   disease, Annals of the New York Academy of Sciences 1420 (2018).
 \newblock \href {https://doi.org/10.1111/nyas.13718}
   {\path{doi:10.1111/nyas.13718}}.
-
-\bibitem{EnergyNeuralCommunication:2021}
-W.~B. Levy, V.~G. Calvert, {Communication consumes 35 times more energy than
-  computation in the human cortex, but both costs are needed to predict synapse
-  number}, Proceedings of the National Academy of Sciences 118~(18) (2021)
-  e2008173118.
-\newblock \href {https://doi.org/10.1073/pnas.2008173118}
-  {\path{doi:10.1073/pnas.2008173118}}.
 
 \bibitem{NeuralEnergyConsumption:2017}
 Y.~Wang, R.~Wang, X.~Xu,

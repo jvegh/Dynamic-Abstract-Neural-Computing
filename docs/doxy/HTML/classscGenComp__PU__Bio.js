@@ -9,5 +9,6 @@ var classscGenComp__PU__Bio =
     [ "Heartbeat_Delivering_Do", "classscGenComp__PU__Bio.html#a57c784b5bc8f20f1e849b432d45566c0", null ],
     [ "Heartbeat_Relaxing_Do", "classscGenComp__PU__Bio.html#af018b6c96d882c6173f0966d104b3898", null ],
     [ "Initialize_Do", "classscGenComp__PU__Bio.html#a3eca6a3c95df8c10b2948dc8b849fee8", null ],
-    [ "InputReceived_Do", "classscGenComp__PU__Bio.html#a2785b5f064ffbcf7c16d657394120111", null ]
+    [ "InputReceived_Do", "classscGenComp__PU__Bio.html#a2785b5f064ffbcf7c16d657394120111", null ],
+    [ "MembraneAbsolutePotential_Get", "classscGenComp__PU__Bio.html#a392d20f4c0e717d77d597ea91709032e", null ]
 ];

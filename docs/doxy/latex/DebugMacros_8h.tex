@@ -1,38 +1,152 @@
-\doxysection{Debug\+Macros.\+h File Reference}
-\label{DebugMacros_8h}\index{DebugMacros.h@{DebugMacros.h}}
+\doxysection{/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/include/\+Debug\+Macros.h File Reference}
+\hypertarget{DebugMacros_8h}{}\label{DebugMacros_8h}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/DebugMacros.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/DebugMacros.h}}
 
 
 Macros for debugging both normal and SystemC (simulated) functionality.  
 
 
+{\ttfamily \#include "{}Utils.\+h"{}}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
 Include dependency graph for Debug\+Macros.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=166pt]{DebugMacros_8h__incl}
+\includegraphics[width=277pt]{DebugMacros_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DebugMacros_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+EVENT}(x)
+\#define \mbox{\hyperlink{DebugMacros_8h_a27e58b8cbcaf9fca27756dfea5fc07ce}{DEBUG\+\_\+\+EVENT\+\_\+\+STRING}}~"{}EVT-\/$>$"{}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+EVENT}(n,  X)
+\#define \mbox{\hyperlink{DebugMacros_8h_a763edf53eac950eb5f06b2a883b69932}{DEBUG\+\_\+\+LOG\+\_\+\+STRING}}~"{}LOG\#$>$"{}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+EVENT\+\_\+\+LOCAL}(t,  n,  X)
+\#define \mbox{\hyperlink{DebugMacros_8h_a25e9709f77056931b06ce7cad2d6d0e0}{DEBUG\+\_\+\+PRINT\+\_\+\+STRING}}~"{}DBG-\/$>$"{}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+LOG}(X)
+\#define \mbox{\hyperlink{DebugMacros_8h_a1396e1ec7081ef2892839a67f31260cc}{DEBUG\+\_\+\+WARNING\+\_\+\+STRING}}~"{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}WNG"{}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+LOG\+\_\+\+LOCAL}(t,  n,  X)
+\#define \mbox{\hyperlink{DebugMacros_8h_af8a5b735a282da87e33a73d28be68bd9}{DEBUG\+\_\+\+EVENT\+\_\+\+STRING\+\_\+\+LOCAL}}~"{}EVT-\/$>$"{}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+PRINT}(n,  X)
+\#define \mbox{\hyperlink{DebugMacros_8h_acc7d92f796c2eefab0f7d5fff4688cb7}{DEBUG\+\_\+\+LOG\+\_\+\+STRING\+\_\+\+LOCAL}}~"{}LOG\+:."{}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+PRINT\+\_\+\+LOCAL}(t,  n,  X)
+\#define \mbox{\hyperlink{DebugMacros_8h_a485691d7be5e124d2c19869cce1177a3}{DEBUG\+\_\+\+PRINT\+\_\+\+STRING\+\_\+\+LOCAL}}~"{}DBG\texorpdfstring{$\ast$}{*}$>$"{}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+WARNING}(t,  X)
+\#define \mbox{\hyperlink{DebugMacros_8h_a745789a4efe6fa5c4c70906ccc14a78d}{DEBUG\+\_\+\+WARNING\+\_\+\+STRING\+\_\+\+LOCAL}}~"{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}WNG"{}
 \item 
-\#define \textbf{ DEBUG\+\_\+\+SC\+\_\+\+WARNING\+\_\+\+LOCAL}(t,  n,  X)
+\#define \mbox{\hyperlink{DebugMacros_8h_a88b52b60d7e4e0ddd9f33079a78a0523}{DEBUG\+\_\+\+SC\+\_\+\+TIME}}~sc\+\_\+time\+\_\+\+String\+\_\+\+Get(sc\+\_\+time\+\_\+stamp(),SC\+\_\+\+TIME\+\_\+\+UNIT\+\_\+\+DEFAULT)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a34fba9a8879341f5e8b182ffa4c05a10}{DEBUG\+\_\+\+SC\+\_\+\+TIME\+\_\+\+LOCAL}}(t)~sc\+\_\+time\+\_\+\+String\+\_\+\+Get(t,SC\+\_\+\+TIME\+\_\+\+UNIT\+\_\+\+DEFAULT)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a287b57d7cf8a3a20f97c91893d2ebace}{DEBUG\+\_\+\+LOCATION}}~"{}\textbackslash{}"{} //"{} $<$$<$ string(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+).substr(string(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+).find\+\_\+last\+\_\+of("{}/"{}) + 1) $<$$<$ "{}\+::"{} $<$$<$ \+\_\+\+\_\+func\+\_\+\+\_\+ $<$$<$ dec $<$$<$ "{}, line "{} $<$$<$ \+\_\+\+\_\+\+LINE\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_afc37cc0ae24d63a7e6496a99212e6e5d}{DEBUG\+\_\+\+LOCATION\+\_\+\+SHORT}}~"{}\textbackslash{}"{} //"{} $<$$<$ string(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+).substr(string(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+).find\+\_\+last\+\_\+of("{}/"{}) + 1)  $<$$<$ dec $<$$<$ "{}, line "{} $<$$<$ \+\_\+\+\_\+\+LINE\+\_\+\+\_\+
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a801c6c1024367a8b415188fa39edde91}{DEBUG\+\_\+\+SC\+\_\+\+PROLOG\+\_\+\+LOCAL}}(t,  n)~"{}."{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME\+\_\+\+LOCAL(t) $<$$<$ "{},"{} $<$$<$ n $<$$<$ "{}\+::"{} $<$$<$ \+\_\+\+\_\+func\+\_\+\+\_\+ $<$$<$ "{}\+: \textbackslash{}"{}"{}
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a1c3a6258af6ccbabb2577d7c5bd163dc}{DEBUG\+\_\+\+SC\+\_\+\+PROLOG}}(n)~"{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{},"{} $<$$<$ n $<$$<$ "{}\+::"{} $<$$<$ \+\_\+\+\_\+func\+\_\+\+\_\+ $<$$<$ "{}\+: \textbackslash{}"{}"{}
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a180b5f1c340da4355428351536d5168a}{DEBUG\+\_\+\+SC\+\_\+\+EVENT}}(n,  X)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ab4c5152964fb0fcb545c4a718740e5a9}{DEBUG\+\_\+\+SC\+\_\+\+EVENT\+\_\+\+LOCAL}}(t,  n,  X)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a89867447deb509c1aa2d3a75cfa504b9}{DEBUG\+\_\+\+SC\+\_\+\+LOG}}(X)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_af3bf8a6b559fdacc5fc5daed500e8baa}{DEBUG\+\_\+\+SC\+\_\+\+LOG\+\_\+\+LOCAL}}(t,  n,  X)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a482d39395419c71fa4dc02f5253f0266}{DEBUG\+\_\+\+SC\+\_\+\+PRINT}}(n,  X)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ab3cc6d2ebf39943c0813d51a4b9a9f2d}{DEBUG\+\_\+\+SC\+\_\+\+PRINT\+\_\+\+LOCAL}}(t,  n,  X)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ae8f1aef89c230038d125b1a1293916ed}{DEBUG\+\_\+\+SC\+\_\+\+WARNING}}(t,  X)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a66216e3529ab1782966f5243c3a3cc31}{DEBUG\+\_\+\+SC\+\_\+\+WARNING\+\_\+\+LOCAL}}(t,  n,  X)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a3771f3f9678b989a7d2062818a41247f}{LOG\+\_\+\+CRITICAL}}(x)~IF\+\_\+\+TO\+\_\+\+LOG q\+Critical().noquote().nospace() $<$$<$ x
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a4cac45cb284ff3cb61992bde9d30e69c}{LOG\+\_\+\+WARNING}}(x)~IF\+\_\+\+TO\+\_\+\+LOG q\+Warning().noquote().nospace() $<$$<$ x
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a95b822db99654ff59a565023b8faa7d7}{LOG\+\_\+\+SC\+\_\+\+WARNING}}(x)~IF\+\_\+\+TO\+\_\+\+LOG q\+Warning().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ name() $<$$<$ x
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a90a763585c9c531e1ddbe2ab0ac827e6}{LOG\+\_\+\+INFO}}(x)~IF\+\_\+\+TO\+\_\+\+LOG q\+Info().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ name() $<$$<$ x
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_aee73d27d705c7ed7b732251040aa2d61}{LOG\+\_\+\+SC\+\_\+\+INFO}}(x)~IF\+\_\+\+TO\+\_\+\+LOG q\+Info().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ name() $<$$<$ "{}\+: "{} $<$$<$ x
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a08e1dfdde999ec201cc00f4beeff259d}{LOG\+\_\+\+INFO\+\_\+\+OBJECT}}(x)~IF\+\_\+\+TO\+\_\+\+LOG q\+Info().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ name() $<$$<$ Prolog\+String\+\_\+\+Get().c\+\_\+str() $<$$<$ "{}\texorpdfstring{$\vert$}{|} "{} $<$$<$ x
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a47127564d888b42c4b5afc0daa5564c0}{LOG\+\_\+\+SC\+\_\+\+INFO\+\_\+\+LOCAL}}(t,  n,  x)~IF\+\_\+\+TO\+\_\+\+LOG q\+Info().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME\+\_\+\+LOCAL(t) $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ n $<$$<$ "{}\+: "{} $<$$<$ x
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_aedadbe1d1e8747e24fe9fff1891d66c2}{LOG\+\_\+\+ONLY}}(x)~x
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ab95c36ab790573cb2650c41b3ff784a7}{LOG\+\_\+\+TRACE\+\_\+\+SIGNAL}}(TX,  VALUE)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a732f923cb05f349d3bbc159b7f5aed1b}{LOG\+\_\+\+LINENO}}(PC)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a44871b3454be65a89d0fa98a2545d29f}{LOG\+\_\+\+SOURCELINE}}(PC)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a8da49bf7c7f5b5e5c8743d0576733364}{LOG\+\_\+\+TRACE}}(TX)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_aa902ab0b8cb123176cf8f30eb1f4ee3a}{LOG\+\_\+\+TRACE\+\_\+\+SOURCE}}(TX)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a09cfffb8919bf0b6b3292ef123780f9e}{LOG\+\_\+\+TRACE\+\_\+\+SOURCE\+\_\+\+CONDITIONAL}}(B,  TX)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a2b746b0dbedcfea6241ca2d8f2e2c008}{LOG\+\_\+\+VALUE}}(TX,  VALUE)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ad5a58a8ded12fe3dbd334ea4a695dcce}{LOG\+\_\+\+HEXA}}(TX,  VALUE)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a2033c51c27ea858a7d0b0e443e1e441c}{LOG\+\_\+\+TRACE\+\_\+\+VALUE}}(TX,  VALUE)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a7cf242fc54a7513ed2239d615a76f102}{LOG\+\_\+\+TRACE\+\_\+\+HEXA}}(TX,  VALUE)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a9d3562f6279fff16e6ca83049c5d28f0}{LOG\+\_\+\+HEXA\+\_\+\+CONDITIONAL}}(B,  TX,  VALUE)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_adff217654ff6939137519fb37f272794}{LOG\+\_\+\+VALUE\+\_\+\+CONDITIONAL}}(B,  TX,  VALUE)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a92f4b6487af27a216d97f6fe98e80ebd}{DEBUG\+\_\+\+EVENT}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ad5b60cb6637908a415543894ad76a646}{DEBUG\+\_\+\+EVENT\+\_\+\+PROC}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_af639e34a8e67da705d282e84d66a6fcb}{DEBUG\+\_\+\+EVENT\+\_\+\+GRID}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_aefbac482931c8b33859d7d2267011051}{DEBUG\+\_\+\+EVENT\+\_\+\+THREAD}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a933ad1ae5914fdb3f7dbd176263ad9d3}{DEBUG\+\_\+\+EVENT\+\_\+\+MEMORY}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_aea9382ad23789131995eb71df0dbe4d2}{DEBUG\+\_\+\+EVENT\+\_\+\+SYNAPTIC}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a835e39206dcca6a2f7d91bf11cdb4514}{DEBUG\+\_\+\+EVENT\+\_\+\+SC}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a62befecc75f88dc6f648669c64987d1b}{DEBUG\+\_\+\+ONLY}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a53c6808a7f8a25848d153bc2dd9c5651}{PRINT\+\_\+\+MESSAGE}}(M)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ad3f6125304a22335e6f0b73e7d79982a}{DEBUG\+\_\+\+PRINT\+\_\+\+WITH\+\_\+\+SOURCE}}(TX)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_af6551f0b4c3964c3128f808e7bf987c7}{DEBUG\+\_\+\+PRINT}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ae0260ae3c9d59e01c79e32054b1cc468}{DEBUG\+\_\+\+PRINT\+\_\+\+OBJECT}}(x)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a8b2abbb74776ae00b9a619d6ed7c1822}{DEBUG\+\_\+\+PRINT\+\_\+\+MESSAGE}}(x,  M)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ada17b5a471652632bf302d52f7779486}{DEBUG\+\_\+\+PRINT\+\_\+\+IF\+\_\+\+DIFFERENT}}(x,  A,  B)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_ad0ef66e060e7b19224e1832a440265ea}{PLOT\+\_\+\+ALLOCATON\+\_\+\+BEGIN\+\_\+\+SET}}(CORE)
+\item 
+\#define \mbox{\hyperlink{DebugMacros_8h_a78d8b0eb557af444452d5f9dd9da5bb6}{WAIT\+\_\+\+GATE}}~\{wait(SCTIME\+\_\+\+GATE); \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{DebugMacros_8h_a9205ef3b1931d2e4859d3e76d8505dc3}\label{DebugMacros_8h_a9205ef3b1931d2e4859d3e76d8505dc3} 
+string {\bfseries SC\+\_\+\+TIME\+\_\+\+UNIT} \mbox{[}$\,$\mbox{]}
 \end{DoxyCompactItemize}
 
 
@@ -47,17 +161,225 @@ Use the macros as \begin{DoxyVerb}* #define DEBUG_EVENTS    ///< Print event deb
 \end{DoxyVerb}
  
 
+Definition in file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+
+
 \doxysubsection{Macro Definition Documentation}
-\label{DebugMacros_8h_a92f4b6487af27a216d97f6fe98e80ebd} 
+\Hypertarget{DebugMacros_8h_a92f4b6487af27a216d97f6fe98e80ebd}\label{DebugMacros_8h_a92f4b6487af27a216d97f6fe98e80ebd} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT@{DEBUG\_EVENT}}
 \index{DEBUG\_EVENT@{DEBUG\_EVENT}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_EVENT}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT}{DEBUG\_EVENT}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
 
-Prints non-\/object event {\itshape x} to the standard err output \label{DebugMacros_8h_a180b5f1c340da4355428351536d5168a} 
+Prints non-\/object event {\itshape x} to the standard err output 
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00249}{249}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_af639e34a8e67da705d282e84d66a6fcb}\label{DebugMacros_8h_af639e34a8e67da705d282e84d66a6fcb} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT\_GRID@{DEBUG\_EVENT\_GRID}}
+\index{DEBUG\_EVENT\_GRID@{DEBUG\_EVENT\_GRID}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT\_GRID}{DEBUG\_EVENT\_GRID}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT\+\_\+\+GRID(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00252}{252}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a933ad1ae5914fdb3f7dbd176263ad9d3}\label{DebugMacros_8h_a933ad1ae5914fdb3f7dbd176263ad9d3} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT\_MEMORY@{DEBUG\_EVENT\_MEMORY}}
+\index{DEBUG\_EVENT\_MEMORY@{DEBUG\_EVENT\_MEMORY}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT\_MEMORY}{DEBUG\_EVENT\_MEMORY}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT\+\_\+\+MEMORY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00254}{254}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ad5b60cb6637908a415543894ad76a646}\label{DebugMacros_8h_ad5b60cb6637908a415543894ad76a646} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT\_PROC@{DEBUG\_EVENT\_PROC}}
+\index{DEBUG\_EVENT\_PROC@{DEBUG\_EVENT\_PROC}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT\_PROC}{DEBUG\_EVENT\_PROC}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT\+\_\+\+PROC(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00251}{251}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a835e39206dcca6a2f7d91bf11cdb4514}\label{DebugMacros_8h_a835e39206dcca6a2f7d91bf11cdb4514} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT\_SC@{DEBUG\_EVENT\_SC}}
+\index{DEBUG\_EVENT\_SC@{DEBUG\_EVENT\_SC}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT\_SC}{DEBUG\_EVENT\_SC}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT\+\_\+\+SC(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00257}{257}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a27e58b8cbcaf9fca27756dfea5fc07ce}\label{DebugMacros_8h_a27e58b8cbcaf9fca27756dfea5fc07ce} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT\_STRING@{DEBUG\_EVENT\_STRING}}
+\index{DEBUG\_EVENT\_STRING@{DEBUG\_EVENT\_STRING}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT\_STRING}{DEBUG\_EVENT\_STRING}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT\+\_\+\+STRING~"{}EVT-\/$>$"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00023}{23}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_af8a5b735a282da87e33a73d28be68bd9}\label{DebugMacros_8h_af8a5b735a282da87e33a73d28be68bd9} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT\_STRING\_LOCAL@{DEBUG\_EVENT\_STRING\_LOCAL}}
+\index{DEBUG\_EVENT\_STRING\_LOCAL@{DEBUG\_EVENT\_STRING\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT\_STRING\_LOCAL}{DEBUG\_EVENT\_STRING\_LOCAL}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT\+\_\+\+STRING\+\_\+\+LOCAL~"{}EVT-\/$>$"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00027}{27}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_aea9382ad23789131995eb71df0dbe4d2}\label{DebugMacros_8h_aea9382ad23789131995eb71df0dbe4d2} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT\_SYNAPTIC@{DEBUG\_EVENT\_SYNAPTIC}}
+\index{DEBUG\_EVENT\_SYNAPTIC@{DEBUG\_EVENT\_SYNAPTIC}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT\_SYNAPTIC}{DEBUG\_EVENT\_SYNAPTIC}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT\+\_\+\+SYNAPTIC(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00255}{255}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_aefbac482931c8b33859d7d2267011051}\label{DebugMacros_8h_aefbac482931c8b33859d7d2267011051} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_EVENT\_THREAD@{DEBUG\_EVENT\_THREAD}}
+\index{DEBUG\_EVENT\_THREAD@{DEBUG\_EVENT\_THREAD}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_EVENT\_THREAD}{DEBUG\_EVENT\_THREAD}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+EVENT\+\_\+\+THREAD(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00253}{253}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a287b57d7cf8a3a20f97c91893d2ebace}\label{DebugMacros_8h_a287b57d7cf8a3a20f97c91893d2ebace} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_LOCATION@{DEBUG\_LOCATION}}
+\index{DEBUG\_LOCATION@{DEBUG\_LOCATION}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_LOCATION}{DEBUG\_LOCATION}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+LOCATION~"{}\textbackslash{}"{} //"{} $<$$<$ string(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+).substr(string(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+).find\+\_\+last\+\_\+of("{}/"{}) + 1) $<$$<$ "{}\+::"{} $<$$<$ \+\_\+\+\_\+func\+\_\+\+\_\+ $<$$<$ dec $<$$<$ "{}, line "{} $<$$<$ \+\_\+\+\_\+\+LINE\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00039}{39}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_afc37cc0ae24d63a7e6496a99212e6e5d}\label{DebugMacros_8h_afc37cc0ae24d63a7e6496a99212e6e5d} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_LOCATION\_SHORT@{DEBUG\_LOCATION\_SHORT}}
+\index{DEBUG\_LOCATION\_SHORT@{DEBUG\_LOCATION\_SHORT}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_LOCATION\_SHORT}{DEBUG\_LOCATION\_SHORT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+LOCATION\+\_\+\+SHORT~"{}\textbackslash{}"{} //"{} $<$$<$ string(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+).substr(string(\+\_\+\+\_\+\+FILE\+\_\+\+\_\+).find\+\_\+last\+\_\+of("{}/"{}) + 1)  $<$$<$ dec $<$$<$ "{}, line "{} $<$$<$ \+\_\+\+\_\+\+LINE\+\_\+\+\_\+}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00040}{40}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a763edf53eac950eb5f06b2a883b69932}\label{DebugMacros_8h_a763edf53eac950eb5f06b2a883b69932} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_LOG\_STRING@{DEBUG\_LOG\_STRING}}
+\index{DEBUG\_LOG\_STRING@{DEBUG\_LOG\_STRING}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_LOG\_STRING}{DEBUG\_LOG\_STRING}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+LOG\+\_\+\+STRING~"{}LOG\#$>$"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00024}{24}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_acc7d92f796c2eefab0f7d5fff4688cb7}\label{DebugMacros_8h_acc7d92f796c2eefab0f7d5fff4688cb7} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_LOG\_STRING\_LOCAL@{DEBUG\_LOG\_STRING\_LOCAL}}
+\index{DEBUG\_LOG\_STRING\_LOCAL@{DEBUG\_LOG\_STRING\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_LOG\_STRING\_LOCAL}{DEBUG\_LOG\_STRING\_LOCAL}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+LOG\+\_\+\+STRING\+\_\+\+LOCAL~"{}LOG\+:."{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00028}{28}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a62befecc75f88dc6f648669c64987d1b}\label{DebugMacros_8h_a62befecc75f88dc6f648669c64987d1b} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_ONLY@{DEBUG\_ONLY}}
+\index{DEBUG\_ONLY@{DEBUG\_ONLY}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_ONLY}{DEBUG\_ONLY}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+ONLY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00295}{295}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_af6551f0b4c3964c3128f808e7bf987c7}\label{DebugMacros_8h_af6551f0b4c3964c3128f808e7bf987c7} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_PRINT@{DEBUG\_PRINT}}
+\index{DEBUG\_PRINT@{DEBUG\_PRINT}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT}{DEBUG\_PRINT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00301}{301}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ada17b5a471652632bf302d52f7779486}\label{DebugMacros_8h_ada17b5a471652632bf302d52f7779486} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_PRINT\_IF\_DIFFERENT@{DEBUG\_PRINT\_IF\_DIFFERENT}}
+\index{DEBUG\_PRINT\_IF\_DIFFERENT@{DEBUG\_PRINT\_IF\_DIFFERENT}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT\_IF\_DIFFERENT}{DEBUG\_PRINT\_IF\_DIFFERENT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT\+\_\+\+IF\+\_\+\+DIFFERENT(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{A,  }\item[{}]{B }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00304}{304}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a8b2abbb74776ae00b9a619d6ed7c1822}\label{DebugMacros_8h_a8b2abbb74776ae00b9a619d6ed7c1822} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_PRINT\_MESSAGE@{DEBUG\_PRINT\_MESSAGE}}
+\index{DEBUG\_PRINT\_MESSAGE@{DEBUG\_PRINT\_MESSAGE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT\_MESSAGE}{DEBUG\_PRINT\_MESSAGE}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT\+\_\+\+MESSAGE(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{M }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00303}{303}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ae0260ae3c9d59e01c79e32054b1cc468}\label{DebugMacros_8h_ae0260ae3c9d59e01c79e32054b1cc468} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_PRINT\_OBJECT@{DEBUG\_PRINT\_OBJECT}}
+\index{DEBUG\_PRINT\_OBJECT@{DEBUG\_PRINT\_OBJECT}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT\_OBJECT}{DEBUG\_PRINT\_OBJECT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT\+\_\+\+OBJECT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00302}{302}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a25e9709f77056931b06ce7cad2d6d0e0}\label{DebugMacros_8h_a25e9709f77056931b06ce7cad2d6d0e0} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_PRINT\_STRING@{DEBUG\_PRINT\_STRING}}
+\index{DEBUG\_PRINT\_STRING@{DEBUG\_PRINT\_STRING}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT\_STRING}{DEBUG\_PRINT\_STRING}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT\+\_\+\+STRING~"{}DBG-\/$>$"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00025}{25}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a485691d7be5e124d2c19869cce1177a3}\label{DebugMacros_8h_a485691d7be5e124d2c19869cce1177a3} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_PRINT\_STRING\_LOCAL@{DEBUG\_PRINT\_STRING\_LOCAL}}
+\index{DEBUG\_PRINT\_STRING\_LOCAL@{DEBUG\_PRINT\_STRING\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT\_STRING\_LOCAL}{DEBUG\_PRINT\_STRING\_LOCAL}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT\+\_\+\+STRING\+\_\+\+LOCAL~"{}DBG\texorpdfstring{$\ast$}{*}$>$"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00029}{29}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ad3f6125304a22335e6f0b73e7d79982a}\label{DebugMacros_8h_ad3f6125304a22335e6f0b73e7d79982a} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_PRINT\_WITH\_SOURCE@{DEBUG\_PRINT\_WITH\_SOURCE}}
+\index{DEBUG\_PRINT\_WITH\_SOURCE@{DEBUG\_PRINT\_WITH\_SOURCE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_PRINT\_WITH\_SOURCE}{DEBUG\_PRINT\_WITH\_SOURCE}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+PRINT\+\_\+\+WITH\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{TX }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00300}{300}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a180b5f1c340da4355428351536d5168a}\label{DebugMacros_8h_a180b5f1c340da4355428351536d5168a} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_EVENT@{DEBUG\_SC\_EVENT}}
 \index{DEBUG\_SC\_EVENT@{DEBUG\_SC\_EVENT}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_SC\_EVENT}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_EVENT}{DEBUG\_SC\_EVENT}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+EVENT(\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
 
 Prints a message type and time, message {\itshape X}, and the location (file, function and lineno) of the event 
@@ -67,13 +389,17 @@ Prints a message type and time, message {\itshape X}, and the location (file, fu
 \mbox{\texttt{ in}}  & {\em n} & the name of the object \\
 \hline
 \end{DoxyParams}
-\label{DebugMacros_8h_ab4c5152964fb0fcb545c4a718740e5a9} 
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00085}{85}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ab4c5152964fb0fcb545c4a718740e5a9}\label{DebugMacros_8h_ab4c5152964fb0fcb545c4a718740e5a9} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_EVENT\_LOCAL@{DEBUG\_SC\_EVENT\_LOCAL}}
 \index{DEBUG\_SC\_EVENT\_LOCAL@{DEBUG\_SC\_EVENT\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_SC\_EVENT\_LOCAL}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_EVENT\_LOCAL}{DEBUG\_SC\_EVENT\_LOCAL}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+EVENT\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
 
-Prints a message type and \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}\textquotesingle{}s LOCAL time {\itshape t}, message {\itshape X}, and the location of the event at object named {\itshape n}. The same as DEBUG\+\_\+\+SC\+\_\+\+EVENT, but uses local time 
+Prints a message type and \doxylink{classscGenComp__PU__Abstract}{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}\textquotesingle{}s LOCAL time {\itshape t}, message {\itshape X}, and the location of the event at object named {\itshape n}. The same as DEBUG\+\_\+\+SC\+\_\+\+EVENT, but uses local time 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em t} & the local time of the event \\
 \hline
@@ -82,10 +408,14 @@ Prints a message type and \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{
 \mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
 \hline
 \end{DoxyParams}
-\label{DebugMacros_8h_a89867447deb509c1aa2d3a75cfa504b9} 
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00086}{86}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a89867447deb509c1aa2d3a75cfa504b9}\label{DebugMacros_8h_a89867447deb509c1aa2d3a75cfa504b9} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_LOG@{DEBUG\_SC\_LOG}}
 \index{DEBUG\_SC\_LOG@{DEBUG\_SC\_LOG}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_SC\_LOG}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_LOG}{DEBUG\_SC\_LOG}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+LOG(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})}
 
 Prints a log message X with name of unit and time 
@@ -93,13 +423,17 @@ Prints a log message X with name of unit and time
 \mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
 \hline
 \end{DoxyParams}
-\label{DebugMacros_8h_af3bf8a6b559fdacc5fc5daed500e8baa} 
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00087}{87}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_af3bf8a6b559fdacc5fc5daed500e8baa}\label{DebugMacros_8h_af3bf8a6b559fdacc5fc5daed500e8baa} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_LOG\_LOCAL@{DEBUG\_SC\_LOG\_LOCAL}}
 \index{DEBUG\_SC\_LOG\_LOCAL@{DEBUG\_SC\_LOG\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_SC\_LOG\_LOCAL}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_LOG\_LOCAL}{DEBUG\_SC\_LOG\_LOCAL}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+LOG\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
 
-Prints a message type and \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{classscGenComp__PU__Abstract}\textquotesingle{}s LOCAL time {\itshape t}, message {\itshape X}, and the location of the event at object named {\itshape n}. The same as DEBUG\+\_\+\+SC\+\_\+\+LOG, but uses local time 
+Prints a message type and \doxylink{classscGenComp__PU__Abstract}{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}\textquotesingle{}s LOCAL time {\itshape t}, message {\itshape X}, and the location of the event at object named {\itshape n}. The same as DEBUG\+\_\+\+SC\+\_\+\+LOG, but uses local time 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em t} & the local time of the event \\
 \hline
@@ -108,10 +442,14 @@ Prints a message type and \doxyref{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Abstract}{p.}{
 \mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
 \hline
 \end{DoxyParams}
-\label{DebugMacros_8h_a482d39395419c71fa4dc02f5253f0266} 
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00088}{88}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a482d39395419c71fa4dc02f5253f0266}\label{DebugMacros_8h_a482d39395419c71fa4dc02f5253f0266} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_PRINT@{DEBUG\_SC\_PRINT}}
 \index{DEBUG\_SC\_PRINT@{DEBUG\_SC\_PRINT}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_SC\_PRINT}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_PRINT}{DEBUG\_SC\_PRINT}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+PRINT(\begin{DoxyParamCaption}\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
 
 Prints a message type and time, message {\itshape X}, and the location (file name and lineno) 
@@ -121,10 +459,14 @@ Prints a message type and time, message {\itshape X}, and the location (file nam
 \mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
 \hline
 \end{DoxyParams}
-\label{DebugMacros_8h_ab3cc6d2ebf39943c0813d51a4b9a9f2d} 
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00135}{135}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ab3cc6d2ebf39943c0813d51a4b9a9f2d}\label{DebugMacros_8h_ab3cc6d2ebf39943c0813d51a4b9a9f2d} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_PRINT\_LOCAL@{DEBUG\_SC\_PRINT\_LOCAL}}
 \index{DEBUG\_SC\_PRINT\_LOCAL@{DEBUG\_SC\_PRINT\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_SC\_PRINT\_LOCAL}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_PRINT\_LOCAL}{DEBUG\_SC\_PRINT\_LOCAL}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+PRINT\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
 
 Prints a message type and time {\itshape t}, message {\itshape X} at object named {\itshape n}., and the location (file name and lineno)
@@ -138,10 +480,54 @@ The same as DEBUG\+\_\+\+SC\+\_\+\+PRINT, but uses local time
 \mbox{\texttt{ in}}  & {\em X} & the message describing the event \\
 \hline
 \end{DoxyParams}
-\label{DebugMacros_8h_ae8f1aef89c230038d125b1a1293916ed} 
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00136}{136}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a1c3a6258af6ccbabb2577d7c5bd163dc}\label{DebugMacros_8h_a1c3a6258af6ccbabb2577d7c5bd163dc} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_PROLOG@{DEBUG\_SC\_PROLOG}}
+\index{DEBUG\_SC\_PROLOG@{DEBUG\_SC\_PROLOG}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_PROLOG}{DEBUG\_SC\_PROLOG}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+PROLOG(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~"{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{},"{} $<$$<$ n $<$$<$ "{}\+::"{} $<$$<$ \+\_\+\+\_\+func\+\_\+\+\_\+ $<$$<$ "{}\+: \textbackslash{}"{}"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00043}{43}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a801c6c1024367a8b415188fa39edde91}\label{DebugMacros_8h_a801c6c1024367a8b415188fa39edde91} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_PROLOG\_LOCAL@{DEBUG\_SC\_PROLOG\_LOCAL}}
+\index{DEBUG\_SC\_PROLOG\_LOCAL@{DEBUG\_SC\_PROLOG\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_PROLOG\_LOCAL}{DEBUG\_SC\_PROLOG\_LOCAL}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+PROLOG\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n }\end{DoxyParamCaption})~"{}."{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME\+\_\+\+LOCAL(t) $<$$<$ "{},"{} $<$$<$ n $<$$<$ "{}\+::"{} $<$$<$ \+\_\+\+\_\+func\+\_\+\+\_\+ $<$$<$ "{}\+: \textbackslash{}"{}"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00042}{42}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a88b52b60d7e4e0ddd9f33079a78a0523}\label{DebugMacros_8h_a88b52b60d7e4e0ddd9f33079a78a0523} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_TIME@{DEBUG\_SC\_TIME}}
+\index{DEBUG\_SC\_TIME@{DEBUG\_SC\_TIME}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_TIME}{DEBUG\_SC\_TIME}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+TIME~sc\+\_\+time\+\_\+\+String\+\_\+\+Get(sc\+\_\+time\+\_\+stamp(),SC\+\_\+\+TIME\+\_\+\+UNIT\+\_\+\+DEFAULT)}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00034}{34}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a34fba9a8879341f5e8b182ffa4c05a10}\label{DebugMacros_8h_a34fba9a8879341f5e8b182ffa4c05a10} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_TIME\_LOCAL@{DEBUG\_SC\_TIME\_LOCAL}}
+\index{DEBUG\_SC\_TIME\_LOCAL@{DEBUG\_SC\_TIME\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_TIME\_LOCAL}{DEBUG\_SC\_TIME\_LOCAL}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+TIME\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t }\end{DoxyParamCaption})~sc\+\_\+time\+\_\+\+String\+\_\+\+Get(t,SC\+\_\+\+TIME\+\_\+\+UNIT\+\_\+\+DEFAULT)}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00036}{36}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ae8f1aef89c230038d125b1a1293916ed}\label{DebugMacros_8h_ae8f1aef89c230038d125b1a1293916ed} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_WARNING@{DEBUG\_SC\_WARNING}}
 \index{DEBUG\_SC\_WARNING@{DEBUG\_SC\_WARNING}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_SC\_WARNING}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_WARNING}{DEBUG\_SC\_WARNING}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{X }\end{DoxyParamCaption})}
 
 Prints a warning message type and time, message {\itshape X}, and the location (file name and lineno) The same as DEBUG\+\_\+\+SC\+\_\+\+PRINT, but uses different prolog 
@@ -151,10 +537,14 @@ Prints a warning message type and time, message {\itshape X}, and the location (
 \mbox{\texttt{ in}}  & {\em X} & the message describing the warning \\
 \hline
 \end{DoxyParams}
-\label{DebugMacros_8h_a66216e3529ab1782966f5243c3a3cc31} 
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00137}{137}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a66216e3529ab1782966f5243c3a3cc31}\label{DebugMacros_8h_a66216e3529ab1782966f5243c3a3cc31} 
 \index{DebugMacros.h@{DebugMacros.h}!DEBUG\_SC\_WARNING\_LOCAL@{DEBUG\_SC\_WARNING\_LOCAL}}
 \index{DEBUG\_SC\_WARNING\_LOCAL@{DEBUG\_SC\_WARNING\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
-\doxysubsubsection{DEBUG\_SC\_WARNING\_LOCAL}
+\doxysubsubsection{\texorpdfstring{DEBUG\_SC\_WARNING\_LOCAL}{DEBUG\_SC\_WARNING\_LOCAL}}
 {\footnotesize\ttfamily \#define DEBUG\+\_\+\+SC\+\_\+\+WARNING\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{X }\end{DoxyParamCaption})}
 
 Prints a message type and time {\itshape t}, message {\itshape X} at object named {\itshape n}, and the location (file name and lineno) The same as DEBUG\+\_\+\+SC\+\_\+\+WARNING, but uses local time 
@@ -166,3 +556,257 @@ Prints a message type and time {\itshape t}, message {\itshape X} at object name
 \mbox{\texttt{ in}}  & {\em X} & the message describing the warning \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00138}{138}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a1396e1ec7081ef2892839a67f31260cc}\label{DebugMacros_8h_a1396e1ec7081ef2892839a67f31260cc} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_WARNING\_STRING@{DEBUG\_WARNING\_STRING}}
+\index{DEBUG\_WARNING\_STRING@{DEBUG\_WARNING\_STRING}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_WARNING\_STRING}{DEBUG\_WARNING\_STRING}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+WARNING\+\_\+\+STRING~"{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}WNG"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00026}{26}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a745789a4efe6fa5c4c70906ccc14a78d}\label{DebugMacros_8h_a745789a4efe6fa5c4c70906ccc14a78d} 
+\index{DebugMacros.h@{DebugMacros.h}!DEBUG\_WARNING\_STRING\_LOCAL@{DEBUG\_WARNING\_STRING\_LOCAL}}
+\index{DEBUG\_WARNING\_STRING\_LOCAL@{DEBUG\_WARNING\_STRING\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_WARNING\_STRING\_LOCAL}{DEBUG\_WARNING\_STRING\_LOCAL}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+WARNING\+\_\+\+STRING\+\_\+\+LOCAL~"{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}WNG"{}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00030}{30}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a3771f3f9678b989a7d2062818a41247f}\label{DebugMacros_8h_a3771f3f9678b989a7d2062818a41247f} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_CRITICAL@{LOG\_CRITICAL}}
+\index{LOG\_CRITICAL@{LOG\_CRITICAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_CRITICAL}{LOG\_CRITICAL}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+CRITICAL(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~IF\+\_\+\+TO\+\_\+\+LOG q\+Critical().noquote().nospace() $<$$<$ x}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00159}{159}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ad5a58a8ded12fe3dbd334ea4a695dcce}\label{DebugMacros_8h_ad5a58a8ded12fe3dbd334ea4a695dcce} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_HEXA@{LOG\_HEXA}}
+\index{LOG\_HEXA@{LOG\_HEXA}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_HEXA}{LOG\_HEXA}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+HEXA(\begin{DoxyParamCaption}\item[{}]{TX,  }\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00220}{220}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a9d3562f6279fff16e6ca83049c5d28f0}\label{DebugMacros_8h_a9d3562f6279fff16e6ca83049c5d28f0} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_HEXA\_CONDITIONAL@{LOG\_HEXA\_CONDITIONAL}}
+\index{LOG\_HEXA\_CONDITIONAL@{LOG\_HEXA\_CONDITIONAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_HEXA\_CONDITIONAL}{LOG\_HEXA\_CONDITIONAL}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+HEXA\+\_\+\+CONDITIONAL(\begin{DoxyParamCaption}\item[{}]{B,  }\item[{}]{TX,  }\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00223}{223}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a90a763585c9c531e1ddbe2ab0ac827e6}\label{DebugMacros_8h_a90a763585c9c531e1ddbe2ab0ac827e6} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_INFO@{LOG\_INFO}}
+\index{LOG\_INFO@{LOG\_INFO}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_INFO}{LOG\_INFO}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+INFO(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~IF\+\_\+\+TO\+\_\+\+LOG q\+Info().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ name() $<$$<$ x}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00162}{162}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a08e1dfdde999ec201cc00f4beeff259d}\label{DebugMacros_8h_a08e1dfdde999ec201cc00f4beeff259d} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_INFO\_OBJECT@{LOG\_INFO\_OBJECT}}
+\index{LOG\_INFO\_OBJECT@{LOG\_INFO\_OBJECT}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_INFO\_OBJECT}{LOG\_INFO\_OBJECT}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+INFO\+\_\+\+OBJECT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~IF\+\_\+\+TO\+\_\+\+LOG q\+Info().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ name() $<$$<$ Prolog\+String\+\_\+\+Get().c\+\_\+str() $<$$<$ "{}\texorpdfstring{$\vert$}{|} "{} $<$$<$ x}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00164}{164}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a732f923cb05f349d3bbc159b7f5aed1b}\label{DebugMacros_8h_a732f923cb05f349d3bbc159b7f5aed1b} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_LINENO@{LOG\_LINENO}}
+\index{LOG\_LINENO@{LOG\_LINENO}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_LINENO}{LOG\_LINENO}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+LINENO(\begin{DoxyParamCaption}\item[{}]{PC }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00214}{214}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_aedadbe1d1e8747e24fe9fff1891d66c2}\label{DebugMacros_8h_aedadbe1d1e8747e24fe9fff1891d66c2} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_ONLY@{LOG\_ONLY}}
+\index{LOG\_ONLY@{LOG\_ONLY}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_ONLY}{LOG\_ONLY}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+ONLY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00166}{166}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_aee73d27d705c7ed7b732251040aa2d61}\label{DebugMacros_8h_aee73d27d705c7ed7b732251040aa2d61} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_SC\_INFO@{LOG\_SC\_INFO}}
+\index{LOG\_SC\_INFO@{LOG\_SC\_INFO}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_SC\_INFO}{LOG\_SC\_INFO}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+SC\+\_\+\+INFO(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~IF\+\_\+\+TO\+\_\+\+LOG q\+Info().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ name() $<$$<$ "{}\+: "{} $<$$<$ x}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00163}{163}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a47127564d888b42c4b5afc0daa5564c0}\label{DebugMacros_8h_a47127564d888b42c4b5afc0daa5564c0} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_SC\_INFO\_LOCAL@{LOG\_SC\_INFO\_LOCAL}}
+\index{LOG\_SC\_INFO\_LOCAL@{LOG\_SC\_INFO\_LOCAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_SC\_INFO\_LOCAL}{LOG\_SC\_INFO\_LOCAL}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+SC\+\_\+\+INFO\+\_\+\+LOCAL(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{n,  }\item[{}]{x }\end{DoxyParamCaption})~IF\+\_\+\+TO\+\_\+\+LOG q\+Info().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME\+\_\+\+LOCAL(t) $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ n $<$$<$ "{}\+: "{} $<$$<$ x}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00165}{165}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a95b822db99654ff59a565023b8faa7d7}\label{DebugMacros_8h_a95b822db99654ff59a565023b8faa7d7} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_SC\_WARNING@{LOG\_SC\_WARNING}}
+\index{LOG\_SC\_WARNING@{LOG\_SC\_WARNING}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_SC\_WARNING}{LOG\_SC\_WARNING}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+SC\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~IF\+\_\+\+TO\+\_\+\+LOG q\+Warning().noquote().nospace() $<$$<$ "{}@"{} $<$$<$ DEBUG\+\_\+\+SC\+\_\+\+TIME $<$$<$ "{}\texorpdfstring{$\vert$}{|}"{} $<$$<$ name() $<$$<$ x}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00161}{161}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a44871b3454be65a89d0fa98a2545d29f}\label{DebugMacros_8h_a44871b3454be65a89d0fa98a2545d29f} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_SOURCELINE@{LOG\_SOURCELINE}}
+\index{LOG\_SOURCELINE@{LOG\_SOURCELINE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_SOURCELINE}{LOG\_SOURCELINE}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+SOURCELINE(\begin{DoxyParamCaption}\item[{}]{PC }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00215}{215}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a8da49bf7c7f5b5e5c8743d0576733364}\label{DebugMacros_8h_a8da49bf7c7f5b5e5c8743d0576733364} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_TRACE@{LOG\_TRACE}}
+\index{LOG\_TRACE@{LOG\_TRACE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_TRACE}{LOG\_TRACE}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+TRACE(\begin{DoxyParamCaption}\item[{}]{TX }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00216}{216}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a7cf242fc54a7513ed2239d615a76f102}\label{DebugMacros_8h_a7cf242fc54a7513ed2239d615a76f102} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_TRACE\_HEXA@{LOG\_TRACE\_HEXA}}
+\index{LOG\_TRACE\_HEXA@{LOG\_TRACE\_HEXA}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_TRACE\_HEXA}{LOG\_TRACE\_HEXA}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+TRACE\+\_\+\+HEXA(\begin{DoxyParamCaption}\item[{}]{TX,  }\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00222}{222}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ab95c36ab790573cb2650c41b3ff784a7}\label{DebugMacros_8h_ab95c36ab790573cb2650c41b3ff784a7} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_TRACE\_SIGNAL@{LOG\_TRACE\_SIGNAL}}
+\index{LOG\_TRACE\_SIGNAL@{LOG\_TRACE\_SIGNAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_TRACE\_SIGNAL}{LOG\_TRACE\_SIGNAL}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+TRACE\+\_\+\+SIGNAL(\begin{DoxyParamCaption}\item[{}]{TX,  }\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00179}{179}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_aa902ab0b8cb123176cf8f30eb1f4ee3a}\label{DebugMacros_8h_aa902ab0b8cb123176cf8f30eb1f4ee3a} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_TRACE\_SOURCE@{LOG\_TRACE\_SOURCE}}
+\index{LOG\_TRACE\_SOURCE@{LOG\_TRACE\_SOURCE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_TRACE\_SOURCE}{LOG\_TRACE\_SOURCE}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+TRACE\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{TX }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00217}{217}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a09cfffb8919bf0b6b3292ef123780f9e}\label{DebugMacros_8h_a09cfffb8919bf0b6b3292ef123780f9e} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_TRACE\_SOURCE\_CONDITIONAL@{LOG\_TRACE\_SOURCE\_CONDITIONAL}}
+\index{LOG\_TRACE\_SOURCE\_CONDITIONAL@{LOG\_TRACE\_SOURCE\_CONDITIONAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_TRACE\_SOURCE\_CONDITIONAL}{LOG\_TRACE\_SOURCE\_CONDITIONAL}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+TRACE\+\_\+\+SOURCE\+\_\+\+CONDITIONAL(\begin{DoxyParamCaption}\item[{}]{B,  }\item[{}]{TX }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00218}{218}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a2033c51c27ea858a7d0b0e443e1e441c}\label{DebugMacros_8h_a2033c51c27ea858a7d0b0e443e1e441c} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_TRACE\_VALUE@{LOG\_TRACE\_VALUE}}
+\index{LOG\_TRACE\_VALUE@{LOG\_TRACE\_VALUE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_TRACE\_VALUE}{LOG\_TRACE\_VALUE}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+TRACE\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{TX,  }\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00221}{221}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a2b746b0dbedcfea6241ca2d8f2e2c008}\label{DebugMacros_8h_a2b746b0dbedcfea6241ca2d8f2e2c008} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_VALUE@{LOG\_VALUE}}
+\index{LOG\_VALUE@{LOG\_VALUE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_VALUE}{LOG\_VALUE}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{TX,  }\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00219}{219}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_adff217654ff6939137519fb37f272794}\label{DebugMacros_8h_adff217654ff6939137519fb37f272794} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_VALUE\_CONDITIONAL@{LOG\_VALUE\_CONDITIONAL}}
+\index{LOG\_VALUE\_CONDITIONAL@{LOG\_VALUE\_CONDITIONAL}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_VALUE\_CONDITIONAL}{LOG\_VALUE\_CONDITIONAL}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+VALUE\+\_\+\+CONDITIONAL(\begin{DoxyParamCaption}\item[{}]{B,  }\item[{}]{TX,  }\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00224}{224}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a4cac45cb284ff3cb61992bde9d30e69c}\label{DebugMacros_8h_a4cac45cb284ff3cb61992bde9d30e69c} 
+\index{DebugMacros.h@{DebugMacros.h}!LOG\_WARNING@{LOG\_WARNING}}
+\index{LOG\_WARNING@{LOG\_WARNING}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{LOG\_WARNING}{LOG\_WARNING}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~IF\+\_\+\+TO\+\_\+\+LOG q\+Warning().noquote().nospace() $<$$<$ x}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00160}{160}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_ad0ef66e060e7b19224e1832a440265ea}\label{DebugMacros_8h_ad0ef66e060e7b19224e1832a440265ea} 
+\index{DebugMacros.h@{DebugMacros.h}!PLOT\_ALLOCATON\_BEGIN\_SET@{PLOT\_ALLOCATON\_BEGIN\_SET}}
+\index{PLOT\_ALLOCATON\_BEGIN\_SET@{PLOT\_ALLOCATON\_BEGIN\_SET}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{PLOT\_ALLOCATON\_BEGIN\_SET}{PLOT\_ALLOCATON\_BEGIN\_SET}}
+{\footnotesize\ttfamily \#define PLOT\+\_\+\+ALLOCATON\+\_\+\+BEGIN\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{CORE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00347}{347}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a53c6808a7f8a25848d153bc2dd9c5651}\label{DebugMacros_8h_a53c6808a7f8a25848d153bc2dd9c5651} 
+\index{DebugMacros.h@{DebugMacros.h}!PRINT\_MESSAGE@{PRINT\_MESSAGE}}
+\index{PRINT\_MESSAGE@{PRINT\_MESSAGE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{PRINT\_MESSAGE}{PRINT\_MESSAGE}}
+{\footnotesize\ttfamily \#define PRINT\+\_\+\+MESSAGE(\begin{DoxyParamCaption}\item[{}]{M }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00296}{296}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+
+\Hypertarget{DebugMacros_8h_a78d8b0eb557af444452d5f9dd9da5bb6}\label{DebugMacros_8h_a78d8b0eb557af444452d5f9dd9da5bb6} 
+\index{DebugMacros.h@{DebugMacros.h}!WAIT\_GATE@{WAIT\_GATE}}
+\index{WAIT\_GATE@{WAIT\_GATE}!DebugMacros.h@{DebugMacros.h}}
+\doxysubsubsection{\texorpdfstring{WAIT\_GATE}{WAIT\_GATE}}
+{\footnotesize\ttfamily \#define WAIT\+\_\+\+GATE~\{wait(SCTIME\+\_\+\+GATE); \}}
+
+
+
+Definition at line \mbox{\hyperlink{DebugMacros_8h_source_l00357}{357}} of file \mbox{\hyperlink{DebugMacros_8h_source}{Debug\+Macros.\+h}}.
+

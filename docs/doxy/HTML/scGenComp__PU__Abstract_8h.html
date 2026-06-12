@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13: scGenComp_PU_Abstract.h File Reference</title>
+<title>DANCES: /home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/include/scGenComp_PU_Abstract.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
@@ -44,21 +39,10 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TAC_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</a>
+   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">DANCES</a>
    </div>
+   <div id="projectbrief">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +54,17 @@ MathJax.Hub.Config({
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -110,51 +105,84 @@ $(document).ready(function(){initNavTree('scGenComp__PU__Abstract_8h.html',''); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">scGenComp_PU_Abstract.h File Reference<div class="ingroups"><a class="el" href="group__GENCOMP__MODULE__PROCESS.html">Background modules</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Function prototypes for the general processing unit. Just event and stage handling, no real activity.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div class="textblock"><code>#include &lt;bitset&gt;</code><br />
+<code>#include &lt;qobject.h&gt;</code><br />
+<code>#include &quot;Utils.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">Constants.h</a>&quot;</code><br />
+<code>#include &quot;scGenComp_Config.h&quot;</code><br />
+<code>#include &quot;EventGencomp.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="GenCompStageMachineType_8h_source.html">GenCompStageMachineType.h</a>&quot;</code><br />
+<code>#include &quot;GenCompObserveType.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="scMacroTimeBenchmarking_8h_source.html">scMacroTimeBenchmarking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MacroTimeBenchmarking_8h_source.html">MacroTimeBenchmarking.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for scGenComp_PU_Abstract.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="scGenComp__PU__Abstract_8h__incl.png" border="0" usemap="#ascGenComp__PU__Abstract_8h" alt=""/></div>
-<map name="ascGenComp__PU__Abstract_8h" id="ascGenComp__PU__Abstract_8h">
-<area shape="rect" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="523,5,722,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,64,104"/>
-<area shape="poly" title=" " alt="" coords="523,28,322,46,201,61,78,81,77,76,200,56,321,41,523,23"/>
-<area shape="rect" title=" " alt="" coords="88,79,171,104"/>
-<area shape="poly" title=" " alt="" coords="524,33,368,53,185,81,184,76,368,48,523,28"/>
-<area shape="rect" title=" " alt="" coords="195,79,259,104"/>
-<area shape="poly" title=" " alt="" coords="544,33,421,53,273,81,272,76,420,48,543,28"/>
-<area shape="rect" href="Constants_8h.html" title="Constants used in the neuronal computations Header only." alt="" coords="283,79,381,104"/>
-<area shape="poly" title=" " alt="" coords="577,33,393,78,391,73,575,28"/>
-<area shape="rect" href="scGenComp__Config_8h_source.html" title=" " alt="" coords="651,79,811,104"/>
-<area shape="poly" title=" " alt="" coords="641,28,703,69,700,73,639,33"/>
-<area shape="rect" href="EventGencomp_8h_source.html" title=" " alt="" coords="835,79,968,104"/>
-<area shape="poly" title=" " alt="" coords="668,28,844,73,842,78,667,33"/>
-<area shape="rect" href="GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="406,79,626,104"/>
-<area shape="poly" title=" " alt="" coords="607,33,546,73,543,69,604,28"/>
-<area shape="rect" title=" " alt="" coords="993,79,1175,104"/>
-<area shape="poly" title=" " alt="" coords="697,28,997,74,996,79,696,33"/>
-<area shape="rect" href="scMacroTimeBenchmarking_8h.html" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="1199,79,1414,104"/>
-<area shape="poly" title=" " alt="" coords="722,27,1186,75,1186,80,722,32"/>
-<area shape="rect" href="MacroTimeBenchmarking_8h.html" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="1438,79,1639,104"/>
-<area shape="poly" title=" " alt="" coords="723,23,1032,45,1425,76,1424,81,1031,50,722,28"/>
-<area shape="rect" title=" " alt="" coords="301,152,363,177"/>
-<area shape="poly" title=" " alt="" coords="335,104,335,138,329,138,329,104"/>
-<area shape="rect" title=" " alt="" coords="391,152,457,177"/>
-<area shape="poly" title=" " alt="" coords="348,102,400,141,397,146,345,106"/>
-<area shape="rect" title=" " alt="" coords="483,152,541,177"/>
-<area shape="poly" title=" " alt="" coords="362,102,471,144,469,149,360,107"/>
-<area shape="rect" title=" " alt="" coords="863,152,940,177"/>
-<area shape="poly" title=" " alt="" coords="904,104,904,138,899,138,899,104"/>
-<area shape="poly" title=" " alt="" coords="503,106,451,146,448,141,500,102"/>
-<area shape="poly" title=" " alt="" coords="518,104,516,139,511,138,513,104"/>
+<div class="center"><img src="scGenComp__PU__Abstract_8h__incl.png" border="0" usemap="#a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2scGenComp__PU__Abstract_8h" alt=""/></div>
+<map name="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2scGenComp__PU__Abstract_8h" id="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2scGenComp__PU__Abstract_8h">
+<area shape="rect" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="516,5,729,75"/>
+<area shape="rect" title=" " alt="" coords="5,123,64,148"/>
+<area shape="poly" title=" " alt="" coords="516,56,316,83,78,125,77,120,316,78,515,51"/>
+<area shape="rect" title=" " alt="" coords="88,123,171,148"/>
+<area shape="poly" title=" " alt="" coords="516,63,185,125,184,120,515,58"/>
+<area shape="rect" title=" " alt="" coords="195,123,259,148"/>
+<area shape="poly" title=" " alt="" coords="516,68,273,125,271,120,515,63"/>
+<area shape="rect" href="Constants_8h.html" title="Constants used in the neuronal computations Header only." alt="" coords="283,123,381,148"/>
+<area shape="poly" title=" " alt="" coords="519,77,382,121,380,116,517,72"/>
+<area shape="rect" href="scGenComp__Config_8h_source.html" title=" " alt="" coords="651,123,811,148"/>
+<area shape="poly" title=" " alt="" coords="663,73,709,112,705,116,660,77"/>
+<area shape="rect" href="EventGencomp_8h_source.html" title=" " alt="" coords="835,123,968,148"/>
+<area shape="poly" title=" " alt="" coords="724,72,855,116,853,121,722,77"/>
+<area shape="rect" href="GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="406,123,626,148"/>
+<area shape="poly" title=" " alt="" coords="586,77,542,115,538,111,582,73"/>
+<area shape="rect" title=" " alt="" coords="993,123,1175,148"/>
+<area shape="poly" title=" " alt="" coords="730,60,1015,117,1014,123,729,65"/>
+<area shape="rect" href="scMacroTimeBenchmarking_8h.html" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="1199,123,1414,148"/>
+<area shape="poly" title=" " alt="" coords="730,53,1209,118,1209,123,729,58"/>
+<area shape="rect" href="MacroTimeBenchmarking_8h.html" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="1438,123,1639,148"/>
+<area shape="poly" title=" " alt="" coords="730,49,1424,120,1424,125,729,55"/>
+<area shape="rect" title=" " alt="" coords="301,196,363,221"/>
+<area shape="poly" title=" " alt="" coords="335,148,335,182,329,182,329,148"/>
+<area shape="rect" title=" " alt="" coords="391,196,457,221"/>
+<area shape="poly" title=" " alt="" coords="348,146,400,185,397,190,345,150"/>
+<area shape="rect" title=" " alt="" coords="483,196,541,221"/>
+<area shape="poly" title=" " alt="" coords="362,146,471,188,469,193,360,151"/>
+<area shape="rect" title=" " alt="" coords="863,196,940,221"/>
+<area shape="poly" title=" " alt="" coords="904,148,904,182,899,182,899,148"/>
+<area shape="poly" title=" " alt="" coords="503,150,451,190,448,185,500,146"/>
+<area shape="poly" title=" " alt="" coords="518,148,516,183,511,182,513,148"/>
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="scGenComp__PU__Abstract_8h__dep__incl.png" border="0" usemap="#a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2scGenComp__PU__Abstract_8hdep" alt=""/></div>
+<map name="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2scGenComp__PU__Abstract_8hdep" id="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2include_2scGenComp__PU__Abstract_8hdep">
+<area shape="rect" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="478,5,691,75"/>
+<area shape="rect" href="scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="351,123,565,192"/>
+<area shape="poly" title=" " alt="" coords="540,86,497,124,493,120,536,82"/>
+<area shape="rect" href="scGenComp__PU__Abstract_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="589,123,833,192"/>
+<area shape="poly" title=" " alt="" coords="633,82,676,120,672,124,630,86"/>
+<area shape="rect" href="NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="225,240,438,309"/>
+<area shape="poly" title=" " alt="" coords="413,203,370,242,367,238,409,199"/>
+<area shape="rect" href="scGenComp__PU__Bio_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="463,240,707,309"/>
+<area shape="poly" title=" " alt="" coords="507,199,549,238,546,242,503,203"/>
+<area shape="rect" href="NeuronInputCurrent_8cpp.html" title="The physics&#45;based abstract neuron&#39;s input current." alt="" coords="5,357,327,412"/>
+<area shape="poly" title=" " alt="" coords="270,319,208,359,205,355,267,315"/>
+<area shape="rect" href="NeuronPhysical_8cpp.html" title="The physics&#45;based abstract neuron." alt="" coords="351,357,645,412"/>
+<area shape="poly" title=" " alt="" coords="396,315,459,355,456,359,393,319"/>
 </map>
 </div>
 </div>
@@ -163,12 +191,50 @@ $(document).ready(function(){initNavTree('scGenComp__PU__Abstract_8h.html',''); 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classscGenComp__PU__Abstract.html">scGenComp_PU_Abstract</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to deal with operations of an abstract processing unit (<a class="el" href="GLOSSARY.html#GLOSSARY_PU">PU</a>), implementing a single-shot elementary computation in the sense of the General Computing Paradigm <a class="el" href="citelist.html#CITEREF_VeghRevisingClassicComputing:2021">[7]</a>. The stages of operation are marked by event pairs (or single events) in the sense as the SystemC <a class="el" href="citelist.html#CITEREF_SystemCBook:2010">[2]</a> programming engine uses that notion. Using those events and SystemC's internal time scale, <em>the class isolates the simulated time and the clock time the <a class="el" href="GLOSSARY.html#GLOSSARY_PU">PU</a> needs to simulate the processing</em>. The code of this base class is a bit complex, in order to enable simple derived <a class="el" href="GLOSSARY.html#GLOSSARY_PU">PU</a>s: the complex event handling mechanism is confined in this class; the derived classes are free from any SystemC specific programming (for an example see <a class="el" href="classNeuronPhysical.html" title="Implements a general physical-type neuron.">NeuronPhysical</a>). The <a class="el" href="GLOSSARY.html#GLOSSARY_PU">PU</a> has correspondingly the stages 'Computing', 'Delivering' and 'Relaxing' as the minimum necessary basic stages. The module implements a single-shot normal operating mode, that is, the operation is automatic between the corresponding xxxBegin and xxxEnd events, and at the end of the xxxEnd events the corresponding next xxxBegin event is issued. A distinguished (compared to other simulators) feature of the class is handling time faithfully.  <a href="classscGenComp__PU__Abstract.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to deal with operations of an abstract processing unit (\gls{PU}), implementing a single-shot elementary computation in the sense of the General Computing Paradigm <a class="el" href="citelist.html#CITEREF_VeghRevisingClassicComputing:2021">[7]</a>. The stages of operation are marked by event pairs (or single events) in the sense as the SystemC <a class="el" href="citelist.html#CITEREF_SystemCBook:2010">[2]</a> programming engine uses that notion. Using those events and SystemC's internal time scale, <em>the class isolates the simulated time and the clock time the \gls{PU} needs to simulate the processing</em>. The code of this base class is a bit complex, in order to enable simple derived \gls{PU}s: the complex event handling mechanism is confined in this class; the derived classes are free from any SystemC specific programming (for an example see <a class="el" href="classNeuronPhysical.html" title="Implements a general physical-type neuron.">NeuronPhysical</a>). The \gls{PU} has correspondingly the stages 'Computing', 'Delivering' and 'Relaxing' as the minimum necessary basic stages. The module implements a single-shot normal operating mode, that is, the operation is automatic between the corresponding xxxBegin and xxxEnd events, and at the end of the xxxEnd events the corresponding next xxxBegin event is issued. A distinguished (compared to other simulators) feature of the class is handling time faithfully.  <a href="classscGenComp__PU__Abstract.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function prototypes for the general processing unit. Just event and stage handling, no real activity. </p>
-</div></div><!-- contents -->
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">Implement TransmittingBegin </p>
+<p class="enddd">Implement TransmittingEnd </p>
+</dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="scGenComp__PU__Abstract_8h_source.html">scGenComp_PU_Abstract.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a31ccaab9818325d0300a933482d37150" name="a31ccaab9818325d0300a933482d37150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ccaab9818325d0300a933482d37150">&#9670;&#160;</a></span>MAKE_TIME_BENCHMARKING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAKE_TIME_BENCHMARKING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="scGenComp__PU__Abstract_8h_source.html#l00028">28</a> of file <a class="el" href="scGenComp__PU__Abstract_8h_source.html">scGenComp_PU_Abstract.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c98a41a26f2bc5193956299ea0b1aed" name="a1c98a41a26f2bc5193956299ea0b1aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c98a41a26f2bc5193956299ea0b1aed">&#9670;&#160;</a></span>SC_MAKE_TIME_BENCHMARKING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SC_MAKE_TIME_BENCHMARKING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="scGenComp__PU__Abstract_8h_source.html#l00027">27</a> of file <a class="el" href="scGenComp__PU__Abstract_8h_source.html">scGenComp_PU_Abstract.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

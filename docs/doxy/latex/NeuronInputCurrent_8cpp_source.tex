@@ -1,0 +1,128 @@
+\doxysection{Neuron\+Input\+Current.\+cpp}
+\hypertarget{NeuronInputCurrent_8cpp_source}{}\label{NeuronInputCurrent_8cpp_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/NeuronInputCurrent.cpp@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/NeuronInputCurrent.cpp}}
+\mbox{\hyperlink{NeuronInputCurrent_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00005}00005\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00008}00008\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00010}00010\ \textcolor{comment}{//\#define\ MAKE\_TIME\_BENCHMARKING\ \ //\ uncomment\ to\ measure\ the\ time\ with\ benchmarking\ macros}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00011}00011\ \textcolor{comment}{//\#define\ SC\_MAKE\_TIME\_BENCHMARKING\ \ //\ uncomment\ to\ measure\ the\ time\ with\ benchmarking\ macros}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NeuronInputCurrent_8h}{NeuronInputCurrent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00014}00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00015}00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00016}00016\ \textcolor{comment}{//\ Define\ parameters\ for\ calculating\ membrane\ voltage's\ time\ derivative}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00017}00017\ \textcolor{comment}{\#define\ Membrane\_Amplitude\ 350.}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00018}00018\ \textcolor{comment}{\#define\ Rushin\_A\ 4}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00019}00019\ \textcolor{comment}{//\#define\ Rushin\_B\ 0.2}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00020}00020\ \textcolor{comment}{\#define\ Rushin\_B\ .01}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00021}00021\ \textcolor{comment}{//\ Define\ parameters\ for\ calculating\ axon's\ voltage's\ time\ derivative}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00022}00022\ \textcolor{comment}{\#define\ Axon\_Amplitude\ 40.}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00023}00023\ \textcolor{comment}{\#define\ Axon\_A\ 6.3}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00024}00024\ \textcolor{comment}{\#define\ Axon\_B\ 0.2}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00025}00025\ \textcolor{comment}{//\ RC\ parameters\ of\ the\ membrane}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00026}00026\ \textcolor{comment}{\#define\ Membrane\_tau\ .22}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00027}00027\ \textcolor{comment}{//\ Saved\ value\ =\ 2}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00028}00028\ \textcolor{comment}{\#define\ Membrane\_R\ \ .20}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00029}00029\ \textcolor{comment}{\#define\ Membrane\_C\ tau/\ m\_R\_membrane}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00030}00030\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00032}00032\ \textcolor{comment}{//\ This\ section\ configures\ debug\ and\ log\ printing;\ must\ be\ located\ AFTER\ the\ other\ includes}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00033}00033\ \textcolor{comment}{//\#define\ SUPPRESS\_LOGGING\ //\ Suppress\ all\ log\ messages}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00034}\mbox{\hyperlink{NeuronInputCurrent_8cpp_a133d8993848d3fa2c41270511f133eb7}{00034}}\ \textcolor{preprocessor}{\#define\ DEBUG\_EVENTS\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00035}00035\ \textcolor{comment}{//\#define\ DEBUG\_PRINTS\ \ \ \ ///<\ Print\ general\ debug\ messages\ for\ this\ module}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00036}00036\ \textcolor{comment}{//\ Those\ defines\ must\ be\ located\ before\ 'DebugMacros.h"{},\ and\ are\ undefined\ in\ that\ file}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DebugMacros_8h}{DebugMacros.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NeuronInputCurrent_8h}{NeuronInputCurrent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{NeuronPhysical_8h}{NeuronPhysical.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00043}\mbox{\hyperlink{classNeuronInputCurrent_af41bf336678c16b9b38e922e8bc43d16}{00043}}\ \mbox{\hyperlink{classNeuronInputCurrent_af41bf336678c16b9b38e922e8bc43d16}{NeuronInputCurrent::}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00044}00044\ \mbox{\hyperlink{classNeuronInputCurrent_af41bf336678c16b9b38e922e8bc43d16}{\ \ \ \ NeuronInputCurrent}}(\mbox{\hyperlink{classNeuronPhysical}{NeuronPhysical}}*\ ParentNeuron}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\ \mbox{\hyperlink{group__GENCOMP__MODULE__BIOLOGY_ga22e6c711bd2718618f135dad9211ea5f}{NeuronInputCurrent\_t}}\ CurrentType}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\ \textcolor{keywordtype}{double}\ BeginTime}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\ std::vector<double>\ \&Parameters}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ):}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00049}00049\ \ \ \ \ m\_ParentNeuron(\ ParentNeuron)\ \ \textcolor{comment}{//\ Remember\ owner\ neuron}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00050}00050\ \ \ \ \ ,m\_Parameters(Parameters)\ \ \ \ \ \ \textcolor{comment}{//\ Input\ current's\ parameters}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00051}00051\ \ \ \ \ ,m\_CurrentType(CurrentType)\ \ \ \ \ \textcolor{comment}{//\ and\ the\ type\ of\ current}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00052}00052\ \ \ \ \ ,m\_BeginTime(BeginTime)\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Beginning\ of\ the\ time\ scale}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00053}00053\ \{}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ code\ is\ temporary,\ for\ handling\ "{}double\ exponential"{}\ type}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{switch}(m\_CurrentType)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{case}\ NeuronInputCurrent\_t::nict\_RushIn:}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{case}\ NeuronInputCurrent\_t::nict\_PSP:}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ assert(3\ ==\ Parameters.size());}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{default}:\ assert(0);\ \textcolor{comment}{//\ Unknown\ current\ type}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{DebugMacros_8h_a180b5f1c340da4355428351536d5168a}{DEBUG\_SC\_EVENT}}(m\_ParentNeuron-\/>name(),\textcolor{stringliteral}{"{}Current\#\ "{}}\ <<\ m\_ParentNeuron-\/>m\_SynapticCurrents.size()}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ in\ stage\ '"{}}\ <<\ GenCompStageMachineType2String(m\_ParentNeuron-\/>mStageFlag)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ opened"{}});}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00069}00069\ NeuronInputCurrent::\string~NeuronInputCurrent(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00070}00070\ \{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{DebugMacros_8h_a180b5f1c340da4355428351536d5168a}{DEBUG\_SC\_EVENT}}(m\_ParentNeuron-\/>name(),\textcolor{stringliteral}{"{}Current\#\ "{}}\ <<\ m\_ParentNeuron-\/>m\_SynapticCurrents.size()}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ in\ stage\ '"{}}\ <<\ GenCompStageMachineType2String(m\_ParentNeuron-\/>mStageFlag)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}'\ closed"{}});}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00073}00073\ \ \ \ \ m\_Parameters.clear();}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00077}00077\ \textcolor{comment}{//\ The\ time\ must\ be\ in\ milliseconds}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00078}\mbox{\hyperlink{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6}{00078}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6}{NeuronInputCurrent::}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00079}00079\ \mbox{\hyperlink{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6}{\ \ \ \ CurrentValue\_Get}}(\textcolor{keywordtype}{double}\ TT)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00080}00080\ \{}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{double}\ T\ =\ TT\ -\/\ \mbox{\hyperlink{classNeuronInputCurrent_a3e30bc25fc344e685064ba2b16ee0d30}{m\_BeginTime}};}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{if}(T<0)\textcolor{keywordflow}{return}\ 0.;}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{switch}(m\_CurrentType)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00084}00084\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{case}\ NeuronInputCurrent\_t::nict\_RushIn:}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{case}\ NeuronInputCurrent\_t::nict\_PSP:}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_Parameters[0]*(1-\/exp(-\/T/m\_Parameters[1]))*exp(-\/T/m\_Parameters[2]);}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ need\ to\ check\ current's\ type}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{default}:\ assert(0);}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00094}\mbox{\hyperlink{classNeuronInputCurrent_a20106e15037c3b5a409ee87793d0f2fb}{00094}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classNeuronInputCurrent_a20106e15037c3b5a409ee87793d0f2fb}{NeuronInputCurrent::}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00095}00095\ \mbox{\hyperlink{classNeuronInputCurrent_a20106e15037c3b5a409ee87793d0f2fb}{\ \ \ \ VoltageGradient\_Get}}(\textcolor{keywordtype}{double}\ TT)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00096}00096\ \{}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4}{CurrentGradient\_Get}}(TT)/m\_ParentNeuron-\/>MembraneCapacityPF\_Get();}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00100}\mbox{\hyperlink{classNeuronInputCurrent_a8aa256d1c56c4e9f767e34798bbf92b4}{00100}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classNeuronInputCurrent_a8aa256d1c56c4e9f767e34798bbf92b4}{NeuronInputCurrent::}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00101}00101\ \mbox{\hyperlink{classNeuronInputCurrent_a8aa256d1c56c4e9f767e34798bbf92b4}{\ \ \ \ VoltageValue\_Get}}(\textcolor{keywordtype}{double}\ TT)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00102}00102\ \{}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classNeuronInputCurrent_a289e64a7cd77aa81b9b2d7deafea0ef6}{CurrentValue\_Get}}(TT)/m\_ParentNeuron-\/>MembraneCapacityPF\_Get();}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00106}00106\ \textcolor{comment}{//\ The\ time\ must\ be\ in\ milliseconds}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00107}\mbox{\hyperlink{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4}{00107}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4}{NeuronInputCurrent::}}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00108}00108\ \mbox{\hyperlink{classNeuronInputCurrent_a1602ae1bc2798f26d7e0076ed8ebc5a4}{\ \ \ \ CurrentGradient\_Get}}(\textcolor{keywordtype}{double}\ TT)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00109}00109\ \{}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{double}\ T\ =\ TT\ -\/\ \mbox{\hyperlink{classNeuronInputCurrent_a3e30bc25fc344e685064ba2b16ee0d30}{m\_BeginTime}};}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{if}(T<0)\textcolor{keywordflow}{return}\ 0.;}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{switch}(m\_CurrentType)}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00113}00113\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{case}\ NeuronInputCurrent\_t::nict\_RushIn:}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{case}\ NeuronInputCurrent\_t::nict\_PSP:}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_Parameters[0]*(}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exp(-\/T/m\_Parameters[1]-\/T/m\_Parameters[2])/m\_Parameters[1]}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/exp(-\/T/m\_Parameters[2])*exp(1-\/exp(-\/T/m\_Parameters[1]))/m\_Parameters[2]}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ No\ need\ to\ check\ current's\ type}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{default}:\ assert(0);}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{NeuronInputCurrent_8cpp_source_l00125}00125\ \}}
+
+\end{DoxyCode}

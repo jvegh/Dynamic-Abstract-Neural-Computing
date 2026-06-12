@@ -1,5 +1,9 @@
 \doxysection{Sc\+Qt\+Simulator Class Reference}
-\label{classScQtSimulator}\index{ScQtSimulator@{ScQtSimulator}}
+\hypertarget{classScQtSimulator}{}\label{classScQtSimulator}\index{ScQtSimulator@{ScQtSimulator}}
+
+
+{\ttfamily \#include $<$Sc\+Qt\+Simulator.\+h$>$}
+
 
 
 \doxysubsection{Detailed Description}
@@ -9,101 +13,228 @@ The idea is that the simulator repeatedly starts the SystemC engine (internally 
 
 It benchmarks three types of execution times\+: the simulated (biological) time, the simulated time (the processor time to process the algorithms) and the user time (the typically interactive user needs to browse the simulation). The times can be reset. 
 
-Inherits QObject.
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00050}{50}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
 
+
+
+Inheritance diagram for Sc\+Qt\+Simulator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classScQtSimulator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sc\+Qt\+Simulator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classScQtSimulator__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\label{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb} 
-enum \textbf{ Method} 
+enum \mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{Method}} \{ {\bfseries Method\+\_\+\+Single\+Steps} = 1
+ \}
 \begin{DoxyCompactList}\small\item\em This enum describes the various available methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-\label{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e} 
-void {\bfseries main\+Loop} ()
+void \mbox{\hyperlink{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e}{main\+Loop}} ()
 \begin{DoxyCompactList}\small\item\em Waits for a method to be requested then executes it, then waits again. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ event\+Happened} (void)
+void \mbox{\hyperlink{classScQtSimulator_ad627b2a89dba90051ab0bc8ac42a1590}{event\+Happened}} (void)
 \begin{DoxyCompactList}\small\item\em This signal is emitted when counted value is changed (every sec) \end{DoxyCompactList}\item 
-\label{classScQtSimulator_ae2b46f78af8f0678d6012c0ef607a205} 
+\Hypertarget{classScQtSimulator_ae2b46f78af8f0678d6012c0ef607a205}\label{classScQtSimulator_ae2b46f78af8f0678d6012c0ef607a205} 
 void {\bfseries finished} ()
 \begin{DoxyCompactList}\small\item\em This signal is emitted when process is finished. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ abort} ()
+\mbox{\hyperlink{classScQtSimulator_a57693582295c70952369fe8d4c41109c}{Sc\+Qt\+Simulator}} (QObject \texorpdfstring{$\ast$}{*}parent=0)
+\item 
+void \mbox{\hyperlink{classScQtSimulator_a9df78766e1ac67f2f75e3079929c777f}{request\+Method}} (\mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{Method}} method)
+\begin{DoxyCompactList}\small\item\em Requests for the method {\itshape method} to be executed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScQtSimulator_a71216dee8b765d42936a4dd22937d9b1}{abort}} ()
 \begin{DoxyCompactList}\small\item\em Requests the process to abort (an emergency stop) \end{DoxyCompactList}\item 
-void \textbf{ request\+Method} (\textbf{ Method} method)
-\begin{DoxyCompactList}\small\item\em Requests for the method {\itshape method} to be executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
+double \mbox{\hyperlink{classScQtSimulator_a77ab564cfa1047dfa8889a668f3a198e}{user\+Time\+\_\+\+Get}} (void)
 \item 
-void \textbf{ do\+Simulation\+Steps} ()
-\begin{DoxyCompactList}\small\item\em Single event stepping mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Attributes}
-\begin{DoxyCompactItemize}
+void \mbox{\hyperlink{classScQtSimulator_abbdd8d1ed3648a0d5b4bb7a80911b22f}{user\+Time\+\_\+\+Reset}} (void)
 \item 
-\label{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} 
-bool {\bfseries \+\_\+abort}
-\begin{DoxyCompactList}\small\item\em Process is aborted when {\itshape true}. \end{DoxyCompactList}\item 
-\label{classScQtSimulator_aeaf13a6dc2a53cd9dcf18f93a219082a} 
-bool {\bfseries \+\_\+interrupt}
-\begin{DoxyCompactList}\small\item\em Current method is interrupted when {\itshape true}. \end{DoxyCompactList}\item 
-\label{classScQtSimulator_a07d40dcc3267dadeb5304490a331fb07} 
-QWait\+Condition {\bfseries condition}
-\begin{DoxyCompactList}\small\item\em Condition used to wait for a new request to be called in the \doxyref{main\+Loop()}{p.}{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e} \end{DoxyCompactList}\item 
-\label{classScQtSimulator_ae743f9d3392e1467c66d96e723208a00} 
-QMutex {\bfseries mutex}
-\begin{DoxyCompactList}\small\item\em Protects access to \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classScQtSimulator_affee395c8aeaf50739b68876a97cac3e}{sc\+Time\+\_\+\+Reset}} (void)
+\item 
+sc\+\_\+core\+::sc\+\_\+time \mbox{\hyperlink{classScQtSimulator_a003097e6d9fb715dfcb3dde3457cc049}{sc\+Time\+\_\+\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classScQtSimulator_ad730131d77c9de315b380219d28bf8f7}{Times\+Reset}} ()
+\item 
+double \mbox{\hyperlink{classScQtSimulator_a9dec65113a18578e3b534f6561fb5945}{system\+Time\+\_\+\+Get}} ()
+\item 
+void \mbox{\hyperlink{classScQtSimulator_a6f5db2d5b52f53705e38c0969212df71}{system\+Time\+\_\+\+Reset}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}\label{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb} 
+\index{ScQtSimulator@{ScQtSimulator}!Method@{Method}}
+\index{Method@{Method}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{Method}{Method}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{Sc\+Qt\+Simulator\+::\+Method}}}
+
+
+
+This enum describes the various available methods. 
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00059}{59}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classScQtSimulator_a57693582295c70952369fe8d4c41109c}\label{classScQtSimulator_a57693582295c70952369fe8d4c41109c} 
+\index{ScQtSimulator@{ScQtSimulator}!ScQtSimulator@{ScQtSimulator}}
+\index{ScQtSimulator@{ScQtSimulator}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{ScQtSimulator()}{ScQtSimulator()}}
+{\footnotesize\ttfamily Sc\+Qt\+Simulator\+::\+Sc\+Qt\+Simulator (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{ScQtSimulator_8cpp_source}{Sc\+Qt\+Simulator.\+cpp}}.
+
 
 
 \doxysubsection{Member Function Documentation}
-\label{classScQtSimulator_a71216dee8b765d42936a4dd22937d9b1} 
+\Hypertarget{classScQtSimulator_a71216dee8b765d42936a4dd22937d9b1}\label{classScQtSimulator_a71216dee8b765d42936a4dd22937d9b1} 
 \index{ScQtSimulator@{ScQtSimulator}!abort@{abort}}
 \index{abort@{abort}!ScQtSimulator@{ScQtSimulator}}
-\doxysubsubsection{abort()}
+\doxysubsubsection{\texorpdfstring{abort()}{abort()}}
 {\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Requests the process to abort (an emergency stop) 
 
-It is thread safe as it uses \doxyref{mutex}{p.}{classScQtSimulator_ae743f9d3392e1467c66d96e723208a00} to protect access to \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} variable. \label{classScQtSimulator_a751f096a1b0bd65668db49a79058dc3a} 
-\index{ScQtSimulator@{ScQtSimulator}!doSimulationSteps@{doSimulationSteps}}
-\index{doSimulationSteps@{doSimulationSteps}!ScQtSimulator@{ScQtSimulator}}
-\doxysubsubsection{doSimulationSteps()}
-{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::do\+Simulation\+Steps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+It is thread safe as it uses mutex to protect access to \+\_\+abort variable. 
 
+Definition at line \mbox{\hyperlink{ScQtSimulator_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{ScQtSimulator_8cpp_source}{Sc\+Qt\+Simulator.\+cpp}}.
 
-
-Single event stepping mode. 
-
-Simulating is interrupted if \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} or \doxyref{\+\_\+interrupt}{p.}{classScQtSimulator_aeaf13a6dc2a53cd9dcf18f93a219082a} is set to true. \label{classScQtSimulator_ad627b2a89dba90051ab0bc8ac42a1590} 
+\Hypertarget{classScQtSimulator_ad627b2a89dba90051ab0bc8ac42a1590}\label{classScQtSimulator_ad627b2a89dba90051ab0bc8ac42a1590} 
 \index{ScQtSimulator@{ScQtSimulator}!eventHappened@{eventHappened}}
 \index{eventHappened@{eventHappened}!ScQtSimulator@{ScQtSimulator}}
-\doxysubsubsection{eventHappened}
+\doxysubsubsection{\texorpdfstring{eventHappened}{eventHappened}}
 {\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::event\+Happened (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
 
 
 This signal is emitted when counted value is changed (every sec) 
 
-This signal is emitted when simulator returns from SystemC \label{classScQtSimulator_a9df78766e1ac67f2f75e3079929c777f} 
+This signal is emitted when simulator returns from SystemC \Hypertarget{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e}\label{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e} 
+\index{ScQtSimulator@{ScQtSimulator}!mainLoop@{mainLoop}}
+\index{mainLoop@{mainLoop}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{mainLoop}{mainLoop}}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::main\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Waits for a method to be requested then executes it, then waits again. 
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{ScQtSimulator_8cpp_source}{Sc\+Qt\+Simulator.\+cpp}}.
+
+\Hypertarget{classScQtSimulator_a9df78766e1ac67f2f75e3079929c777f}\label{classScQtSimulator_a9df78766e1ac67f2f75e3079929c777f} 
 \index{ScQtSimulator@{ScQtSimulator}!requestMethod@{requestMethod}}
 \index{requestMethod@{requestMethod}!ScQtSimulator@{ScQtSimulator}}
-\doxysubsubsection{requestMethod()}
-{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::request\+Method (\begin{DoxyParamCaption}\item[{\textbf{ Sc\+Qt\+Simulator\+::\+Method}}]{method }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{requestMethod()}{requestMethod()}}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::request\+Method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{Sc\+Qt\+Simulator\+::\+Method}}}]{method }\end{DoxyParamCaption})}
 
 
 
 Requests for the method {\itshape method} to be executed. 
 
-This method defines \+\_\+method and set \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} to interrupt current method. It is thread safe as it uses \doxyref{mutex}{p.}{classScQtSimulator_ae743f9d3392e1467c66d96e723208a00} to protect access to \+\_\+method and \doxyref{\+\_\+abort}{p.}{classScQtSimulator_aa44f214811ea57d3dd26bd1f78062356} variable. 
+This method defines \+\_\+method and set \+\_\+abort to interrupt current method. It is thread safe as it uses mutex to protect access to \+\_\+method and \+\_\+abort variable. 
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{ScQtSimulator_8cpp_source}{Sc\+Qt\+Simulator.\+cpp}}.
+
+\Hypertarget{classScQtSimulator_a003097e6d9fb715dfcb3dde3457cc049}\label{classScQtSimulator_a003097e6d9fb715dfcb3dde3457cc049} 
+\index{ScQtSimulator@{ScQtSimulator}!scTime\_Get@{scTime\_Get}}
+\index{scTime\_Get@{scTime\_Get}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{scTime\_Get()}{scTime\_Get()}}
+{\footnotesize\ttfamily sc\+\_\+core\+::sc\+\_\+time Sc\+Qt\+Simulator\+::sc\+Time\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00092}{92}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+\Hypertarget{classScQtSimulator_affee395c8aeaf50739b68876a97cac3e}\label{classScQtSimulator_affee395c8aeaf50739b68876a97cac3e} 
+\index{ScQtSimulator@{ScQtSimulator}!scTime\_Reset@{scTime\_Reset}}
+\index{scTime\_Reset@{scTime\_Reset}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{scTime\_Reset()}{scTime\_Reset()}}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::sc\+Time\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00088}{88}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+\Hypertarget{classScQtSimulator_a9dec65113a18578e3b534f6561fb5945}\label{classScQtSimulator_a9dec65113a18578e3b534f6561fb5945} 
+\index{ScQtSimulator@{ScQtSimulator}!systemTime\_Get@{systemTime\_Get}}
+\index{systemTime\_Get@{systemTime\_Get}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{systemTime\_Get()}{systemTime\_Get()}}
+{\footnotesize\ttfamily double Sc\+Qt\+Simulator\+::system\+Time\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00103}{103}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+\Hypertarget{classScQtSimulator_a6f5db2d5b52f53705e38c0969212df71}\label{classScQtSimulator_a6f5db2d5b52f53705e38c0969212df71} 
+\index{ScQtSimulator@{ScQtSimulator}!systemTime\_Reset@{systemTime\_Reset}}
+\index{systemTime\_Reset@{systemTime\_Reset}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{systemTime\_Reset()}{systemTime\_Reset()}}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::system\+Time\+\_\+\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00108}{108}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+\Hypertarget{classScQtSimulator_ad730131d77c9de315b380219d28bf8f7}\label{classScQtSimulator_ad730131d77c9de315b380219d28bf8f7} 
+\index{ScQtSimulator@{ScQtSimulator}!TimesReset@{TimesReset}}
+\index{TimesReset@{TimesReset}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{TimesReset()}{TimesReset()}}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::\+Times\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00096}{96}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+\Hypertarget{classScQtSimulator_a77ab564cfa1047dfa8889a668f3a198e}\label{classScQtSimulator_a77ab564cfa1047dfa8889a668f3a198e} 
+\index{ScQtSimulator@{ScQtSimulator}!userTime\_Get@{userTime\_Get}}
+\index{userTime\_Get@{userTime\_Get}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{userTime\_Get()}{userTime\_Get()}}
+{\footnotesize\ttfamily double Sc\+Qt\+Simulator\+::user\+Time\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00077}{77}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+\Hypertarget{classScQtSimulator_abbdd8d1ed3648a0d5b4bb7a80911b22f}\label{classScQtSimulator_abbdd8d1ed3648a0d5b4bb7a80911b22f} 
+\index{ScQtSimulator@{ScQtSimulator}!userTime\_Reset@{userTime\_Reset}}
+\index{userTime\_Reset@{userTime\_Reset}!ScQtSimulator@{ScQtSimulator}}
+\doxysubsubsection{\texorpdfstring{userTime\_Reset()}{userTime\_Reset()}}
+{\footnotesize\ttfamily void Sc\+Qt\+Simulator\+::user\+Time\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ScQtSimulator_8h_source_l00084}{84}} of file \mbox{\hyperlink{ScQtSimulator_8h_source}{Sc\+Qt\+Simulator.\+h}}.
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\textbf{ Sc\+Qt\+Simulator.\+h}\item 
-Sc\+Qt\+Simulator.\+cpp\end{DoxyCompactItemize}
+/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/include/\mbox{\hyperlink{ScQtSimulator_8h}{Sc\+Qt\+Simulator.\+h}}\item 
+/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/Sc\+Qt\+Simulator.\+cpp\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13: NeuronPhysical.cpp File Reference</title>
+<title>DANCES: /home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/NeuronPhysical.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
@@ -44,21 +39,10 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TAC_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</a>
+   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">DANCES</a>
    </div>
+   <div id="projectbrief">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +54,17 @@ MathJax.Hub.Config({
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -110,81 +105,385 @@ $(document).ready(function(){initNavTree('NeuronPhysical_8cpp.html',''); initRes
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">NeuronPhysical.cpp File Reference<div class="ingroups"><a class="el" href="group__GENCOMP__MODULE__PROCESS.html">Background modules</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>The physics-based abstract neuron.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div class="textblock"><code>#include &quot;<a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DebugMacros_8h_source.html">DebugMacros.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for NeuronPhysical.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="NeuronPhysical_8cpp__incl.png" border="0" usemap="#aNeuronPhysical_8cpp" alt=""/></div>
-<map name="aNeuronPhysical_8cpp" id="aNeuronPhysical_8cpp">
-<area shape="rect" title="The physics&#45;based abstract neuron." alt="" coords="1038,5,1189,31"/>
-<area shape="rect" href="NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="970,79,1105,104"/>
-<area shape="poly" title=" " alt="" coords="1103,33,1062,71,1058,67,1099,29"/>
-<area shape="rect" href="DebugMacros_8h.html" title="Macros for debugging both normal and SystemC (simulated) functionality." alt="" coords="1341,79,1464,104"/>
-<area shape="poly" title=" " alt="" coords="1160,28,1343,73,1342,78,1159,33"/>
-<area shape="rect" href="scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="955,152,1120,177"/>
-<area shape="poly" title=" " alt="" coords="1040,104,1040,138,1035,138,1035,104"/>
-<area shape="rect" href="NeuronInputCurrent_8h.html" title="Function prototypes for the physics&#45;based neuron module&#39;s input current." alt="" coords="768,152,931,177"/>
-<area shape="poly" title=" " alt="" coords="1008,107,894,149,892,144,1006,102"/>
-<area shape="rect" href="scGenComp__PU__Abstract_8h.html" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="930,225,1129,251"/>
-<area shape="poly" title=" " alt="" coords="1039,178,1035,212,1029,212,1033,177"/>
-<area shape="rect" title=" " alt="" coords="1387,299,1445,324"/>
-<area shape="poly" title=" " alt="" coords="1109,248,1230,268,1374,296,1373,301,1229,273,1108,253"/>
-<area shape="rect" title=" " alt="" coords="1469,299,1552,324"/>
-<area shape="poly" title=" " alt="" coords="1126,248,1277,268,1456,296,1455,301,1276,273,1125,253"/>
-<area shape="rect" title=" " alt="" coords="1576,299,1640,324"/>
-<area shape="poly" title=" " alt="" coords="1129,243,1326,262,1443,277,1563,296,1562,301,1442,282,1325,267,1129,249"/>
-<area shape="rect" href="Constants_8h.html" title="Constants used in the neuronal computations Header only." alt="" coords="5,299,104,324"/>
-<area shape="poly" title=" " alt="" coords="930,251,904,253,685,266,512,271,339,280,118,301,117,296,339,274,512,266,684,261,904,248,930,246"/>
-<area shape="rect" href="scGenComp__Config_8h_source.html" title=" " alt="" coords="373,299,533,324"/>
-<area shape="poly" title=" " alt="" coords="937,253,547,301,547,296,936,248"/>
-<area shape="rect" href="EventGencomp_8h_source.html" title=" " alt="" coords="557,299,691,324"/>
-<area shape="poly" title=" " alt="" coords="965,253,703,299,702,294,964,248"/>
-<area shape="rect" href="GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="129,299,349,324"/>
-<area shape="poly" title=" " alt="" coords="930,251,904,253,363,301,362,296,904,248,930,246"/>
-<area shape="rect" title=" " alt="" coords="715,299,898,324"/>
-<area shape="poly" title=" " alt="" coords="994,253,856,297,855,292,993,248"/>
-<area shape="rect" href="scMacroTimeBenchmarking_8h.html" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="922,299,1137,324"/>
-<area shape="poly" title=" " alt="" coords="1032,251,1032,285,1027,285,1027,251"/>
-<area shape="rect" href="MacroTimeBenchmarking_8h.html" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="1161,299,1362,324"/>
-<area shape="poly" title=" " alt="" coords="1067,248,1212,292,1210,297,1066,253"/>
-<area shape="rect" title=" " alt="" coords="23,372,86,397"/>
-<area shape="poly" title=" " alt="" coords="57,324,57,358,52,358,52,324"/>
-<area shape="rect" title=" " alt="" coords="113,372,180,397"/>
-<area shape="poly" title=" " alt="" coords="71,322,123,361,119,366,68,326"/>
-<area shape="rect" title=" " alt="" coords="205,372,264,397"/>
-<area shape="poly" title=" " alt="" coords="85,322,194,364,192,369,83,327"/>
-<area shape="rect" title=" " alt="" coords="585,372,663,397"/>
-<area shape="poly" title=" " alt="" coords="627,324,627,358,621,358,621,324"/>
-<area shape="poly" title=" " alt="" coords="226,326,174,366,171,361,222,322"/>
-<area shape="poly" title=" " alt="" coords="241,324,239,359,233,358,235,324"/>
-<area shape="rect" title=" " alt="" coords="735,225,798,251"/>
-<area shape="poly" title=" " alt="" coords="838,179,792,218,789,214,834,175"/>
-<area shape="rect" title=" " alt="" coords="823,225,892,251"/>
-<area shape="poly" title=" " alt="" coords="853,177,857,212,852,212,848,178"/>
-<area shape="poly" title=" " alt="" coords="1406,104,1413,138,1430,176,1462,213,1500,244,1573,290,1570,295,1497,249,1459,217,1426,179,1408,139,1401,105"/>
-<area shape="rect" title=" " alt="" coords="1440,152,1515,177"/>
-<area shape="poly" title=" " alt="" coords="1416,102,1457,141,1453,144,1413,106"/>
+<div class="center"><img src="NeuronPhysical_8cpp__incl.png" border="0" usemap="#a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2NeuronPhysical_8cpp" alt=""/></div>
+<map name="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2NeuronPhysical_8cpp" id="a_2home_2jvegh_2REPO_2Dynamic-Abstract-Neural-Computing_2code_2neuron_2neurons_2NeuronPhysical_8cpp">
+<area shape="rect" title="The physics&#45;based abstract neuron." alt="" coords="342,5,637,60"/>
+<area shape="rect" href="NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="789,108,923,133"/>
+<area shape="poly" title=" " alt="" coords="602,57,795,102,793,108,601,63"/>
+<area shape="rect" href="DebugMacros_8h.html" title="Macros for debugging both normal and SystemC (simulated) functionality." alt="" coords="352,108,475,133"/>
+<area shape="poly" title=" " alt="" coords="468,62,435,99,431,96,464,58"/>
+<area shape="rect" href="scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="680,189,845,214"/>
+<area shape="poly" title=" " alt="" coords="844,136,789,182,785,178,841,131"/>
+<area shape="rect" href="NeuronInputCurrent_8h.html" title="Function prototypes for the physics&#45;based neuron module&#39;s input current." alt="" coords="869,189,1032,214"/>
+<area shape="poly" title=" " alt="" coords="872,131,928,178,924,182,868,136"/>
+<area shape="rect" title=" " alt="" coords="1057,181,1223,221"/>
+<area shape="poly" title=" " alt="" coords="898,131,1059,175,1058,180,897,136"/>
+<area shape="rect" href="scGenComp__PU__Abstract_8h.html" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="671,269,870,295"/>
+<area shape="poly" title=" " alt="" coords="766,214,771,255,765,256,761,214"/>
+<area shape="rect" title=" " alt="" coords="1351,343,1409,368"/>
+<area shape="poly" title=" " alt="" coords="870,290,1128,316,1337,340,1337,346,1127,321,870,295"/>
+<area shape="rect" title=" " alt="" coords="1433,343,1516,368"/>
+<area shape="poly" title=" " alt="" coords="870,290,1420,340,1419,346,870,295"/>
+<area shape="rect" title=" " alt="" coords="5,343,69,368"/>
+<area shape="poly" title=" " alt="" coords="671,289,409,306,248,322,83,345,83,340,247,317,409,301,671,284"/>
+<area shape="rect" href="Constants_8h.html" title="Constants used in the neuronal computations Header only." alt="" coords="1540,343,1639,368"/>
+<area shape="poly" title=" " alt="" coords="870,290,896,292,1072,304,1210,311,1349,321,1527,340,1526,345,1348,326,1210,316,1072,309,896,297,870,295"/>
+<area shape="rect" href="scGenComp__Config_8h_source.html" title=" " alt="" coords="251,343,411,368"/>
+<area shape="poly" title=" " alt="" coords="700,297,415,343,415,338,700,292"/>
+<area shape="rect" href="EventGencomp_8h_source.html" title=" " alt="" coords="93,343,227,368"/>
+<area shape="poly" title=" " alt="" coords="671,296,241,345,240,340,671,291"/>
+<area shape="rect" href="GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="435,343,655,368"/>
+<area shape="poly" title=" " alt="" coords="735,297,596,341,594,336,734,292"/>
+<area shape="rect" title=" " alt="" coords="679,343,862,368"/>
+<area shape="poly" title=" " alt="" coords="773,295,773,329,768,329,768,295"/>
+<area shape="rect" href="scMacroTimeBenchmarking_8h.html" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="886,343,1101,368"/>
+<area shape="poly" title=" " alt="" coords="807,292,945,336,944,341,806,297"/>
+<area shape="rect" href="MacroTimeBenchmarking_8h.html" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="1125,343,1326,368"/>
+<area shape="poly" title=" " alt="" coords="844,292,1139,338,1138,343,843,297"/>
+<area shape="rect" title=" " alt="" coords="1558,416,1621,441"/>
+<area shape="poly" title=" " alt="" coords="1592,368,1592,402,1587,402,1587,368"/>
+<area shape="rect" title=" " alt="" coords="1033,416,1100,441"/>
+<area shape="poly" title=" " alt="" coords="1540,369,1528,371,1296,403,1114,425,1114,419,1295,398,1528,365,1539,363"/>
+<area shape="rect" title=" " alt="" coords="733,416,792,441"/>
+<area shape="poly" title=" " alt="" coords="1540,369,1528,371,1316,394,1108,411,806,428,806,423,1108,406,1316,389,1528,365,1539,364"/>
+<area shape="rect" title=" " alt="" coords="121,416,199,441"/>
+<area shape="poly" title=" " alt="" coords="163,368,163,402,157,402,157,368"/>
+<area shape="poly" title=" " alt="" coords="629,365,1020,418,1020,424,629,371"/>
+<area shape="poly" title=" " alt="" coords="581,365,721,411,719,416,579,371"/>
+<area shape="rect" title=" " alt="" coords="1002,269,1065,295"/>
+<area shape="poly" title=" " alt="" coords="965,212,1013,258,1009,262,961,216"/>
+<area shape="rect" title=" " alt="" coords="908,269,977,295"/>
+<area shape="poly" title=" " alt="" coords="952,214,948,256,943,255,947,214"/>
+<area shape="poly" title=" " alt="" coords="416,134,412,176,404,201,390,223,345,248,262,281,84,342,82,337,260,276,343,243,386,219,399,199,407,175,411,133"/>
+<area shape="rect" title=" " alt="" coords="301,189,376,214"/>
+<area shape="poly" title=" " alt="" coords="404,135,361,181,357,177,400,132"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="NeuronPhysical_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a133d8993848d3fa2c41270511f133eb7" id="r_a133d8993848d3fa2c41270511f133eb7"><td class="memItemLeft" align="right" valign="top"><a id="a133d8993848d3fa2c41270511f133eb7" name="a133d8993848d3fa2c41270511f133eb7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DEBUG_EVENTS</b></td></tr>
-<tr class="memdesc:a133d8993848d3fa2c41270511f133eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print event debug messages for this module. <br /></td></tr>
+<tr class="memitem:a31ccaab9818325d0300a933482d37150" id="r_a31ccaab9818325d0300a933482d37150"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a31ccaab9818325d0300a933482d37150">MAKE_TIME_BENCHMARKING</a></td></tr>
+<tr class="separator:a31ccaab9818325d0300a933482d37150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c98a41a26f2bc5193956299ea0b1aed" id="r_a1c98a41a26f2bc5193956299ea0b1aed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a1c98a41a26f2bc5193956299ea0b1aed">SC_MAKE_TIME_BENCHMARKING</a></td></tr>
+<tr class="separator:a1c98a41a26f2bc5193956299ea0b1aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af050edf82f5529367a0257b027ff6229" id="r_af050edf82f5529367a0257b027ff6229"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#af050edf82f5529367a0257b027ff6229">Rushin_Amplitude</a>&#160;&#160;&#160;40000.</td></tr>
+<tr class="separator:af050edf82f5529367a0257b027ff6229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7ed55271991733a48eb0923c130aa9" id="r_a5a7ed55271991733a48eb0923c130aa9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a5a7ed55271991733a48eb0923c130aa9">Rushin_A</a>&#160;&#160;&#160;0.1</td></tr>
+<tr class="separator:a5a7ed55271991733a48eb0923c130aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2db22fd0f403aca70c4d2e6068a35ac" id="r_ac2db22fd0f403aca70c4d2e6068a35ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#ac2db22fd0f403aca70c4d2e6068a35ac">Rushin_B</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ac2db22fd0f403aca70c4d2e6068a35ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d9f2e5a2851e8ee76c6038dff1b320" id="r_a39d9f2e5a2851e8ee76c6038dff1b320"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a39d9f2e5a2851e8ee76c6038dff1b320">Synaptic_Amplitude</a>&#160;&#160;&#160;12000.</td></tr>
+<tr class="separator:a39d9f2e5a2851e8ee76c6038dff1b320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b39bc23dda3d6282f179bc0e9d5f41c" id="r_a7b39bc23dda3d6282f179bc0e9d5f41c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a7b39bc23dda3d6282f179bc0e9d5f41c">Synaptic_A</a>&#160;&#160;&#160;0.15</td></tr>
+<tr class="separator:a7b39bc23dda3d6282f179bc0e9d5f41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23daea6d7b4fa46427a5563ed39efab3" id="r_a23daea6d7b4fa46427a5563ed39efab3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a23daea6d7b4fa46427a5563ed39efab3">Synaptic_B</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a23daea6d7b4fa46427a5563ed39efab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7260846a21fa5b597a90923bec6fcf" id="r_a0a7260846a21fa5b597a90923bec6fcf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a0a7260846a21fa5b597a90923bec6fcf">Membrane_Tau</a>&#160;&#160;&#160;.22</td></tr>
+<tr class="separator:a0a7260846a21fa5b597a90923bec6fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e62d53754952cefc0a5496778fafac" id="r_af0e62d53754952cefc0a5496778fafac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#af0e62d53754952cefc0a5496778fafac">Membrane_R</a>&#160;&#160;&#160;.20</td></tr>
+<tr class="separator:af0e62d53754952cefc0a5496778fafac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab506eaceba6810e575bc326bd811b683" id="r_ab506eaceba6810e575bc326bd811b683"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#ab506eaceba6810e575bc326bd811b683">Membrane_C</a>&#160;&#160;&#160;Membrane_Tau/ Membrane_R</td></tr>
+<tr class="separator:ab506eaceba6810e575bc326bd811b683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a133d8993848d3fa2c41270511f133eb7" id="r_a133d8993848d3fa2c41270511f133eb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a133d8993848d3fa2c41270511f133eb7">DEBUG_EVENTS</a></td></tr>
+<tr class="memdesc:a133d8993848d3fa2c41270511f133eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print event debug messages for this module.  <br /></td></tr>
 <tr class="separator:a133d8993848d3fa2c41270511f133eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a45f2000e0ffbab4dbd1efc35bf0e6bc5" id="r_a45f2000e0ffbab4dbd1efc35bf0e6bc5"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a45f2000e0ffbab4dbd1efc35bf0e6bc5">Default_RushinParameters</a> = {Rushin_Amplitude, Rushin_A, Rushin_B}</td></tr>
+<tr class="separator:a45f2000e0ffbab4dbd1efc35bf0e6bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58872dc746d7e65d5f2f214f5d48c3e" id="r_ab58872dc746d7e65d5f2f214f5d48c3e"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#ab58872dc746d7e65d5f2f214f5d48c3e">Default_SynapticParameters</a> = {Synaptic_Amplitude, Synaptic_A, Synaptic_B}</td></tr>
+<tr class="separator:ab58872dc746d7e65d5f2f214f5d48c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7338781db14a314727e2a1d919e678b2" id="r_a7338781db14a314727e2a1d919e678b2"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a7338781db14a314727e2a1d919e678b2">Default_MembraneParameters</a> = {Membrane_R, Membrane_C, Membrane_Tau}</td></tr>
+<tr class="separator:a7338781db14a314727e2a1d919e678b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3850fb0c8428b187d291f79dd5bf1fbe" id="r_a3850fb0c8428b187d291f79dd5bf1fbe"><td class="memItemLeft" align="right" valign="top"><a id="a3850fb0c8428b187d291f79dd5bf1fbe" name="a3850fb0c8428b187d291f79dd5bf1fbe"></a>
+sc_core::sc_time&#160;</td><td class="memItemRight" valign="bottom"><b>Heartbeat_time_default</b></td></tr>
+<tr class="separator:a3850fb0c8428b187d291f79dd5bf1fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17884a662525d073d79b223b2a709a2a" id="r_a17884a662525d073d79b223b2a709a2a"><td class="memItemLeft" align="right" valign="top">sc_core::sc_time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="NeuronPhysical_8cpp.html#a17884a662525d073d79b223b2a709a2a">Heartbeat_time_resolution</a></td></tr>
+<tr class="separator:a17884a662525d073d79b223b2a709a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The physics-based abstract neuron. </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a133d8993848d3fa2c41270511f133eb7" name="a133d8993848d3fa2c41270511f133eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133d8993848d3fa2c41270511f133eb7">&#9670;&#160;</a></span>DEBUG_EVENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG_EVENTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print event debug messages for this module. </p>
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00039">39</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a31ccaab9818325d0300a933482d37150" name="a31ccaab9818325d0300a933482d37150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ccaab9818325d0300a933482d37150">&#9670;&#160;</a></span>MAKE_TIME_BENCHMARKING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAKE_TIME_BENCHMARKING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00010">10</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab506eaceba6810e575bc326bd811b683" name="ab506eaceba6810e575bc326bd811b683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab506eaceba6810e575bc326bd811b683">&#9670;&#160;</a></span>Membrane_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Membrane_C&#160;&#160;&#160;Membrane_Tau/ Membrane_R</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00035">35</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af0e62d53754952cefc0a5496778fafac" name="af0e62d53754952cefc0a5496778fafac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e62d53754952cefc0a5496778fafac">&#9670;&#160;</a></span>Membrane_R</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Membrane_R&#160;&#160;&#160;.20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00034">34</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0a7260846a21fa5b597a90923bec6fcf" name="a0a7260846a21fa5b597a90923bec6fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7260846a21fa5b597a90923bec6fcf">&#9670;&#160;</a></span>Membrane_Tau</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Membrane_Tau&#160;&#160;&#160;.22</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00032">32</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5a7ed55271991733a48eb0923c130aa9" name="a5a7ed55271991733a48eb0923c130aa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a7ed55271991733a48eb0923c130aa9">&#9670;&#160;</a></span>Rushin_A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Rushin_A&#160;&#160;&#160;0.1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00018">18</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af050edf82f5529367a0257b027ff6229" name="af050edf82f5529367a0257b027ff6229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af050edf82f5529367a0257b027ff6229">&#9670;&#160;</a></span>Rushin_Amplitude</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Rushin_Amplitude&#160;&#160;&#160;40000.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00016">16</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac2db22fd0f403aca70c4d2e6068a35ac" name="ac2db22fd0f403aca70c4d2e6068a35ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2db22fd0f403aca70c4d2e6068a35ac">&#9670;&#160;</a></span>Rushin_B</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Rushin_B&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00020">20</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1c98a41a26f2bc5193956299ea0b1aed" name="a1c98a41a26f2bc5193956299ea0b1aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c98a41a26f2bc5193956299ea0b1aed">&#9670;&#160;</a></span>SC_MAKE_TIME_BENCHMARKING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SC_MAKE_TIME_BENCHMARKING</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00011">11</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7b39bc23dda3d6282f179bc0e9d5f41c" name="a7b39bc23dda3d6282f179bc0e9d5f41c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b39bc23dda3d6282f179bc0e9d5f41c">&#9670;&#160;</a></span>Synaptic_A</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Synaptic_A&#160;&#160;&#160;0.15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00029">29</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a39d9f2e5a2851e8ee76c6038dff1b320" name="a39d9f2e5a2851e8ee76c6038dff1b320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d9f2e5a2851e8ee76c6038dff1b320">&#9670;&#160;</a></span>Synaptic_Amplitude</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Synaptic_Amplitude&#160;&#160;&#160;12000.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00028">28</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a23daea6d7b4fa46427a5563ed39efab3" name="a23daea6d7b4fa46427a5563ed39efab3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23daea6d7b4fa46427a5563ed39efab3">&#9670;&#160;</a></span>Synaptic_B</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define Synaptic_B&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00030">30</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a7338781db14a314727e2a1d919e678b2" name="a7338781db14a314727e2a1d919e678b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7338781db14a314727e2a1d919e678b2">&#9670;&#160;</a></span>Default_MembraneParameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;double&gt; Default_MembraneParameters = {Membrane_R, Membrane_C, Membrane_Tau}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00046">46</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a45f2000e0ffbab4dbd1efc35bf0e6bc5" name="a45f2000e0ffbab4dbd1efc35bf0e6bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f2000e0ffbab4dbd1efc35bf0e6bc5">&#9670;&#160;</a></span>Default_RushinParameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;double&gt; Default_RushinParameters = {Rushin_Amplitude, Rushin_A, Rushin_B}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00044">44</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab58872dc746d7e65d5f2f214f5d48c3e" name="ab58872dc746d7e65d5f2f214f5d48c3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58872dc746d7e65d5f2f214f5d48c3e">&#9670;&#160;</a></span>Default_SynapticParameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;double&gt; Default_SynapticParameters = {Synaptic_Amplitude, Synaptic_A, Synaptic_B}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00045">45</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a17884a662525d073d79b223b2a709a2a" name="a17884a662525d073d79b223b2a709a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17884a662525d073d79b223b2a709a2a">&#9670;&#160;</a></span>Heartbeat_time_resolution</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sc_core::sc_time Heartbeat_time_resolution</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00051">51</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -7,5 +7,6 @@ var annotated =
     [ "NeuronPhysical", "classNeuronPhysical.html", "classNeuronPhysical" ],
     [ "scGenComp_PU_Abstract", "classscGenComp__PU__Abstract.html", "classscGenComp__PU__Abstract" ],
     [ "scGenComp_PU_Bio", "classscGenComp__PU__Bio.html", "classscGenComp__PU__Bio" ],
-    [ "ScQtSimulator", "classScQtSimulator.html", "classScQtSimulator" ]
+    [ "ScQtSimulator", "classScQtSimulator.html", "classScQtSimulator" ],
+    [ "UniversalConstants", "classUniversalConstants.html", "classUniversalConstants" ]
 ];

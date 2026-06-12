@@ -1,9 +1,13 @@
 <map id="NeuronPhysical" name="NeuronPhysical">
-<area shape="rect" id="Node000001" title="Implements a general physical&#45;type neuron." alt="" coords="128,1339,335,1708"/>
-<area shape="rect" id="Node000002" href="$classscGenComp__PU__Bio.html" title="Implements a general biological&#45;type computing PU. Defaults to variable (that is, biologically define..." alt="" coords="11,1029,217,1274"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,1286,176,1338,171,1339,154,1288"/>
-<area shape="rect" id="Node000003" href="$classscGenComp__PU__Abstract.html" title="A class to deal with operations of an abstract processing unit (PU), implementing a single&#45;shot eleme..." alt="" coords="5,5,223,964"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,978,117,1029,111,1029,111,978"/>
-<area shape="rect" id="Node000004" href="$classNeuronConstants.html" title="Sources:" alt="" coords="242,1012,455,1291"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="303,1304,292,1339,287,1338,298,1303"/>
+<area shape="rect" id="Node000001" title="Implements a general physical&#45;type neuron." alt="" coords="228,225,351,251"/>
+<area shape="rect" id="Node000002" href="$classscGenComp__PU__Bio.html" title="Implements a general biological&#45;type computing PU. Defaults to variable (that is, biologically define..." alt="" coords="22,152,175,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,180,259,223,257,228,141,185"/>
+<area shape="rect" id="Node000003" href="$classscGenComp__PU__Abstract.html" title="A class to deal with operations of an abstract processing unit (\gls{PU}), implementing a single&#45;shot..." alt="" coords="5,79,192,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,118,101,152,96,152,96,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="24,5,173,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="101,44,101,79,96,79,96,44"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="199,152,379,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="292,191,292,225,287,225,287,191"/>
+<area shape="rect" id="Node000006" href="$classNeuronConstants.html" title="Sources:" alt="" coords="403,152,538,177"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="430,185,320,228,318,223,428,180"/>
 </map>

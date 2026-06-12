@@ -1,5 +1,9 @@
 \doxysection{Neuron\+Constants Class Reference}
-\label{classNeuronConstants}\index{NeuronConstants@{NeuronConstants}}
+\hypertarget{classNeuronConstants}{}\label{classNeuronConstants}\index{NeuronConstants@{NeuronConstants}}
+
+
+{\ttfamily \#include $<$Constants.\+h$>$}
+
 
 
 \doxysubsection{Detailed Description}
@@ -11,92 +15,414 @@ Define neuron\textquotesingle{}s constants Provides access functions to the para
 
 The system uses numbers in units\+:
 \begin{DoxyItemize}
-\item resistivity GOhm so [R] ( $10^9$ Ohm)
-\item capacity pF so [C] ( $10^{-12}$ Farad
-\item time ms so [t] ( $10^{-3}$), so [R$\ast$C] is ( $10^9*10^{-12}=10^{-3}$)
-\item voltage mV so [V] is ( $10^{-3}$)
+\item resistivity GOhm so \mbox{[}R\mbox{]} ( $10^9$ Ohm)
+\item capacity pF so \mbox{[}C\mbox{]} ( $10^{-12}$ Farad
+\item time ms so \mbox{[}t\mbox{]} ( $10^{-3}$), so \mbox{[}R\texorpdfstring{$\ast$}{*}C\mbox{]} is ( $10^9*10^{-12}=10^{-3}$)
+\item voltage mV so \mbox{[}V\mbox{]} is ( $10^{-3}$)
 \item current pA ( $10^{-12}$)
 \item so current from V/R $ 10^{-3}/10^{9}=10^{-12} $ pA
-\item so [I/C] ( $10^{-12}/10^{-12}$ V/s)
+\item so \mbox{[}I/C\mbox{]} ( $10^{-12}/10^{-12}$ V/s)
 \item so $ \frac{1}{C}\frac{dI}{dt} = [A/s/(As)*V] = [Cb/s^2] $
-\item so [I$\ast$R] ( $ 10^{-12}*10^9$ = mV)
-\item so [V/C] ( $10^{-3}/10^{-12} = 10^9 V/m$) 
+\item so \mbox{[}I\texorpdfstring{$\ast$}{*}R\mbox{]} ( $ 10^{-12}*10^9$ = mV)
+\item so \mbox{[}V/C\mbox{]} ( $10^{-3}/10^{-12} = 10^9 V/m$) 
 \end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00043}{43}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+
 
 Inheritance diagram for Neuron\+Constants\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{classNeuronConstants__inherit__graph}
+\includegraphics[width=181pt]{classNeuronConstants__inherit__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-double \textbf{ Membrane\+Capacity\+PF\+\_\+\+Get} (void)
-\item 
-\label{classNeuronConstants_ac9be591eec52ce7f58522ff1de58464f} 
-void {\bfseries Membrane\+From\+RC\+\_\+\+Tau\+MSec\+\_\+\+Set} (double R, double C)
-\begin{DoxyCompactList}\small\item\em Set the membrane\textquotesingle{}s time constant. \end{DoxyCompactList}\item 
-double \textbf{ Membrane\+Resistance\+GOhm\+\_\+\+Get} ()
-\item 
-void \textbf{ Membrane\+Resistance\+GOhm\+\_\+\+Set} (double R)
-\item 
-double \textbf{ Membrane\+Resistance\+Ohm\+\_\+\+Get} ()
-\item 
-\label{classNeuronConstants_a1c970c7d514554aebeef16015f59e9ec} 
-{\bfseries Neuron\+Constants} (void)
+\mbox{\hyperlink{classNeuronConstants_a1c970c7d514554aebeef16015f59e9ec}{Neuron\+Constants}} (void)
 \begin{DoxyCompactList}\small\item\em Creates a physics-\/based neuron unit. \end{DoxyCompactList}\item 
-\label{classNeuronConstants_a76590051e62bccca9243db8caa5b7045} 
-void {\bfseries Use\+\_\+\+Johnston\+Set} ()
+int8\+\_\+t \mbox{\hyperlink{classNeuronConstants_aaf482d6b4bb6abd8567060d7ec57bec3}{Current\+Resolution\+Exponent\+\_\+\+Get}} (void)
+\item 
+int8\+\_\+t \mbox{\hyperlink{classNeuronConstants_aed14d65accd80299e495446a38d74bb8}{Voltage\+Resolution\+Exponent\+\_\+\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_aacbe7e03e9783c7c2638c23bb0907a65}{Current\+Resolution\+\_\+\+Set}} (int8\+\_\+t E)
+\item 
+string \mbox{\hyperlink{classNeuronConstants_a91b62d64a6343f73175e792c2dbdcc0a}{Current\+Resolution\+Unit\+\_\+\+Get}} (void)
+\item 
+string \mbox{\hyperlink{classNeuronConstants_a2dfbead05ac86a2198a0118b5541078c}{Voltage\+Resolution\+Unit\+\_\+\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_ade89b36f04b23f25d37ce414f5116cf1}{Use\+\_\+\+Koch\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Use data set from \cite{KochBiophysics:1999}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNeuronConstants_a76590051e62bccca9243db8caa5b7045}{Use\+\_\+\+Johnston\+Set}} ()
 \begin{DoxyCompactList}\small\item\em Use data set from \cite{JohnstonWuNeurophysiology:1995}, page 12. \end{DoxyCompactList}\item 
-\label{classNeuronConstants_ade89b36f04b23f25d37ce414f5116cf1} 
-void {\bfseries Use\+\_\+\+Koch\+Set} ()
-\begin{DoxyCompactList}\small\item\em Use data set from \cite{KochBiophysics:1999}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+double \mbox{\hyperlink{classNeuronConstants_aff28872c0f260e8d6c5d7d7b64fbca53}{Membrane\+Resistance\+Ohm\+\_\+\+Get}} ()
+\item 
+double \mbox{\hyperlink{classNeuronConstants_a4ca417130372cb0b5c78e1b03131cc84}{Membrane\+Resistance\+GOhm\+\_\+\+Get}} ()
+\item 
+void \mbox{\hyperlink{classNeuronConstants_ac14a3587aadebf28ccedfbc6eb1b628f}{Membrane\+Resistance\+Ohm\+\_\+\+Set}} (double R)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_a6b479758b3f19d6293916922765e3683}{Membrane\+Resistance\+GOhm\+\_\+\+Set}} (double R)
+\item 
+double \mbox{\hyperlink{classNeuronConstants_a4e9fbceab7f6ae1a1d7351491c922154}{Membrane\+Capacity\+PF\+\_\+\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_a01d38606d03f06c35c10d316a69846a7}{Membrane\+Capacity\+PF\+\_\+\+Set}} (double C)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_afa28147c8181c75392d70be132800d83}{Membrane\+Capacity\+F\+\_\+\+Set}} (double C)
+\item 
+double \mbox{\hyperlink{classNeuronConstants_afac7f770b14d986bf9ac665cb2e8e949}{Membrane\+Tau\+MSec\+\_\+\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_a65beb29a367cc5ddc021907e60f85f72}{Membrane\+From\+RGOhm\+\_\+\+Tau\+MSec\+\_\+\+Set}} (double R, double T)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_a54048b4a93d2bcb69be0ea5236839efd}{Membrane\+From\+CPF\+\_\+\+Tau\+MSec\+\_\+\+Set}} (double C, double T)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_a152f8e04ed9a57e44dad148f644788dc}{Membrane\+Tau\+MSec\+\_\+\+Set}} (void)
+\item 
+void \mbox{\hyperlink{classNeuronConstants_ac9be591eec52ce7f58522ff1de58464f}{Membrane\+From\+RC\+\_\+\+Tau\+MSec\+\_\+\+Set}} (double R, double C)
+\begin{DoxyCompactList}\small\item\em Set the membrane\textquotesingle{}s time constant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int8\+\_\+t \mbox{\hyperlink{classNeuronConstants_a4624303c049de2ecd5b1239004ab2af9}{m\+\_\+\+Current\+Resolution\+Exponent}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{classNeuronConstants_af4a1eefc06a9cea975ad789dfb5df83c}{m\+\_\+\+Resistance\+Resolution\+Exponent}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{classNeuronConstants_ae1a471b2403b3eea6bc97767f3285187}{m\+\_\+\+Time\+Resolution\+Exponent}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{classNeuronConstants_a20c05ba5041e9ffeda8fc4487cc0d33d}{m\+\_\+\+Voltage\+Resolution\+Exponent}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classNeuronConstants_a0e44a8f1640c25f6c6d7c4e65066b658}{m\+\_\+\+Membrane\+\_\+R}}
+\item 
+double \mbox{\hyperlink{classNeuronConstants_a9a7c4248cc89c55e7d982298915a73d0}{m\+\_\+\+Membrane\+\_\+C}}
+\item 
+double \mbox{\hyperlink{classNeuronConstants_aed3349deb5567a6f4aec07daba4725e9}{m\+\_\+\+Membrane\+\_\+\+Tau}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classNeuronConstants_a1c970c7d514554aebeef16015f59e9ec}\label{classNeuronConstants_a1c970c7d514554aebeef16015f59e9ec} 
+\index{NeuronConstants@{NeuronConstants}!NeuronConstants@{NeuronConstants}}
+\index{NeuronConstants@{NeuronConstants}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{NeuronConstants()}{NeuronConstants()}}
+{\footnotesize\ttfamily Neuron\+Constants\+::\+Neuron\+Constants (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a physics-\/based neuron unit. 
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00050}{50}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a1cd44260f57e0efa514ee70fce242148}\label{classNeuronConstants_a1cd44260f57e0efa514ee70fce242148} 
+\index{NeuronConstants@{NeuronConstants}!````~NeuronConstants@{\texorpdfstring{$\sim$}{\string~}NeuronConstants}}
+\index{````~NeuronConstants@{\texorpdfstring{$\sim$}{\string~}NeuronConstants}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NeuronConstants()}{\string~NeuronConstants()}}
+{\footnotesize\ttfamily virtual Neuron\+Constants\+::\texorpdfstring{$\sim$}{\string~}\+Neuron\+Constants (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00064}{64}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
 
 
 \doxysubsection{Member Function Documentation}
-\label{classNeuronConstants_a4e9fbceab7f6ae1a1d7351491c922154} 
+\Hypertarget{classNeuronConstants_aacbe7e03e9783c7c2638c23bb0907a65}\label{classNeuronConstants_aacbe7e03e9783c7c2638c23bb0907a65} 
+\index{NeuronConstants@{NeuronConstants}!CurrentResolution\_Set@{CurrentResolution\_Set}}
+\index{CurrentResolution\_Set@{CurrentResolution\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{CurrentResolution\_Set()}{CurrentResolution\_Set()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Current\+Resolution\+\_\+\+Set (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{E }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00070}{70}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_aaf482d6b4bb6abd8567060d7ec57bec3}\label{classNeuronConstants_aaf482d6b4bb6abd8567060d7ec57bec3} 
+\index{NeuronConstants@{NeuronConstants}!CurrentResolutionExponent\_Get@{CurrentResolutionExponent\_Get}}
+\index{CurrentResolutionExponent\_Get@{CurrentResolutionExponent\_Get}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{CurrentResolutionExponent\_Get()}{CurrentResolutionExponent\_Get()}}
+{\footnotesize\ttfamily int8\+\_\+t Neuron\+Constants\+::\+Current\+Resolution\+Exponent\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00065}{65}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a91b62d64a6343f73175e792c2dbdcc0a}\label{classNeuronConstants_a91b62d64a6343f73175e792c2dbdcc0a} 
+\index{NeuronConstants@{NeuronConstants}!CurrentResolutionUnit\_Get@{CurrentResolutionUnit\_Get}}
+\index{CurrentResolutionUnit\_Get@{CurrentResolutionUnit\_Get}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{CurrentResolutionUnit\_Get()}{CurrentResolutionUnit\_Get()}}
+{\footnotesize\ttfamily string Neuron\+Constants\+::\+Current\+Resolution\+Unit\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00072}{72}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_afa28147c8181c75392d70be132800d83}\label{classNeuronConstants_afa28147c8181c75392d70be132800d83} 
+\index{NeuronConstants@{NeuronConstants}!MembraneCapacityF\_Set@{MembraneCapacityF\_Set}}
+\index{MembraneCapacityF\_Set@{MembraneCapacityF\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{MembraneCapacityF\_Set()}{MembraneCapacityF\_Set()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+Capacity\+F\+\_\+\+Set (\begin{DoxyParamCaption}\item[{double}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00141}{141}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a4e9fbceab7f6ae1a1d7351491c922154}\label{classNeuronConstants_a4e9fbceab7f6ae1a1d7351491c922154} 
 \index{NeuronConstants@{NeuronConstants}!MembraneCapacityPF\_Get@{MembraneCapacityPF\_Get}}
 \index{MembraneCapacityPF\_Get@{MembraneCapacityPF\_Get}!NeuronConstants@{NeuronConstants}}
-\doxysubsubsection{MembraneCapacityPF\_Get()}
+\doxysubsubsection{\texorpdfstring{MembraneCapacityPF\_Get()}{MembraneCapacityPF\_Get()}}
 {\footnotesize\ttfamily double Neuron\+Constants\+::\+Membrane\+Capacity\+PF\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
-mebrane\textquotesingle{}s capacitance [pF] 
+mebrane\textquotesingle{}s capacitance \mbox{[}pF\mbox{]} 
 \end{DoxyReturn}
-\label{classNeuronConstants_a4ca417130372cb0b5c78e1b03131cc84} 
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00134}{134}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a01d38606d03f06c35c10d316a69846a7}\label{classNeuronConstants_a01d38606d03f06c35c10d316a69846a7} 
+\index{NeuronConstants@{NeuronConstants}!MembraneCapacityPF\_Set@{MembraneCapacityPF\_Set}}
+\index{MembraneCapacityPF\_Set@{MembraneCapacityPF\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{MembraneCapacityPF\_Set()}{MembraneCapacityPF\_Set()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+Capacity\+PF\+\_\+\+Set (\begin{DoxyParamCaption}\item[{double}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00137}{137}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a54048b4a93d2bcb69be0ea5236839efd}\label{classNeuronConstants_a54048b4a93d2bcb69be0ea5236839efd} 
+\index{NeuronConstants@{NeuronConstants}!MembraneFromCPF\_TauMSec\_Set@{MembraneFromCPF\_TauMSec\_Set}}
+\index{MembraneFromCPF\_TauMSec\_Set@{MembraneFromCPF\_TauMSec\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{MembraneFromCPF\_TauMSec\_Set()}{MembraneFromCPF\_TauMSec\_Set()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+From\+CPF\+\_\+\+Tau\+MSec\+\_\+\+Set (\begin{DoxyParamCaption}\item[{double}]{C,  }\item[{double}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00152}{152}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_ac9be591eec52ce7f58522ff1de58464f}\label{classNeuronConstants_ac9be591eec52ce7f58522ff1de58464f} 
+\index{NeuronConstants@{NeuronConstants}!MembraneFromRC\_TauMSec\_Set@{MembraneFromRC\_TauMSec\_Set}}
+\index{MembraneFromRC\_TauMSec\_Set@{MembraneFromRC\_TauMSec\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{MembraneFromRC\_TauMSec\_Set()}{MembraneFromRC\_TauMSec\_Set()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+From\+RC\+\_\+\+Tau\+MSec\+\_\+\+Set (\begin{DoxyParamCaption}\item[{double}]{R,  }\item[{double}]{C }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the membrane\textquotesingle{}s time constant. 
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00160}{160}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a65beb29a367cc5ddc021907e60f85f72}\label{classNeuronConstants_a65beb29a367cc5ddc021907e60f85f72} 
+\index{NeuronConstants@{NeuronConstants}!MembraneFromRGOhm\_TauMSec\_Set@{MembraneFromRGOhm\_TauMSec\_Set}}
+\index{MembraneFromRGOhm\_TauMSec\_Set@{MembraneFromRGOhm\_TauMSec\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{MembraneFromRGOhm\_TauMSec\_Set()}{MembraneFromRGOhm\_TauMSec\_Set()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+From\+RGOhm\+\_\+\+Tau\+MSec\+\_\+\+Set (\begin{DoxyParamCaption}\item[{double}]{R,  }\item[{double}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00147}{147}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a4ca417130372cb0b5c78e1b03131cc84}\label{classNeuronConstants_a4ca417130372cb0b5c78e1b03131cc84} 
 \index{NeuronConstants@{NeuronConstants}!MembraneResistanceGOhm\_Get@{MembraneResistanceGOhm\_Get}}
 \index{MembraneResistanceGOhm\_Get@{MembraneResistanceGOhm\_Get}!NeuronConstants@{NeuronConstants}}
-\doxysubsubsection{MembraneResistanceGOhm\_Get()}
+\doxysubsubsection{\texorpdfstring{MembraneResistanceGOhm\_Get()}{MembraneResistanceGOhm\_Get()}}
 {\footnotesize\ttfamily double Neuron\+Constants\+::\+Membrane\+Resistance\+GOhm\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
-membrane\textquotesingle{}s resistance [GOhm] 
+membrane\textquotesingle{}s resistance \mbox{[}GOhm\mbox{]} 
 \end{DoxyReturn}
-\label{classNeuronConstants_a6b479758b3f19d6293916922765e3683} 
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00119}{119}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a6b479758b3f19d6293916922765e3683}\label{classNeuronConstants_a6b479758b3f19d6293916922765e3683} 
 \index{NeuronConstants@{NeuronConstants}!MembraneResistanceGOhm\_Set@{MembraneResistanceGOhm\_Set}}
 \index{MembraneResistanceGOhm\_Set@{MembraneResistanceGOhm\_Set}!NeuronConstants@{NeuronConstants}}
-\doxysubsubsection{MembraneResistanceGOhm\_Set()}
+\doxysubsubsection{\texorpdfstring{MembraneResistanceGOhm\_Set()}{MembraneResistanceGOhm\_Set()}}
 {\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+Resistance\+GOhm\+\_\+\+Set (\begin{DoxyParamCaption}\item[{double}]{R }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Set membrane\textquotesingle{}s resistance 
 \begin{DoxyParams}{Parameters}
-{\em R} & resistance [GOhm] \\
+{\em R} & resistance \mbox{[}GOhm\mbox{]} \\
 \hline
 \end{DoxyParams}
-\label{classNeuronConstants_aff28872c0f260e8d6c5d7d7b64fbca53} 
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00127}{127}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_aff28872c0f260e8d6c5d7d7b64fbca53}\label{classNeuronConstants_aff28872c0f260e8d6c5d7d7b64fbca53} 
 \index{NeuronConstants@{NeuronConstants}!MembraneResistanceOhm\_Get@{MembraneResistanceOhm\_Get}}
 \index{MembraneResistanceOhm\_Get@{MembraneResistanceOhm\_Get}!NeuronConstants@{NeuronConstants}}
-\doxysubsubsection{MembraneResistanceOhm\_Get()}
+\doxysubsubsection{\texorpdfstring{MembraneResistanceOhm\_Get()}{MembraneResistanceOhm\_Get()}}
 {\footnotesize\ttfamily double Neuron\+Constants\+::\+Membrane\+Resistance\+Ohm\+\_\+\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyReturn}{Returns}
-membrane\textquotesingle{}s resistance [Ohm] 
+membrane\textquotesingle{}s resistance \mbox{[}Ohm\mbox{]} 
 \end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00113}{113}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_ac14a3587aadebf28ccedfbc6eb1b628f}\label{classNeuronConstants_ac14a3587aadebf28ccedfbc6eb1b628f} 
+\index{NeuronConstants@{NeuronConstants}!MembraneResistanceOhm\_Set@{MembraneResistanceOhm\_Set}}
+\index{MembraneResistanceOhm\_Set@{MembraneResistanceOhm\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{MembraneResistanceOhm\_Set()}{MembraneResistanceOhm\_Set()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+Resistance\+Ohm\+\_\+\+Set (\begin{DoxyParamCaption}\item[{double}]{R }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00121}{121}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_afac7f770b14d986bf9ac665cb2e8e949}\label{classNeuronConstants_afac7f770b14d986bf9ac665cb2e8e949} 
+\index{NeuronConstants@{NeuronConstants}!MembraneTauMSec\_Get@{MembraneTauMSec\_Get}}
+\index{MembraneTauMSec\_Get@{MembraneTauMSec\_Get}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{MembraneTauMSec\_Get()}{MembraneTauMSec\_Get()}}
+{\footnotesize\ttfamily double Neuron\+Constants\+::\+Membrane\+Tau\+MSec\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00145}{145}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a152f8e04ed9a57e44dad148f644788dc}\label{classNeuronConstants_a152f8e04ed9a57e44dad148f644788dc} 
+\index{NeuronConstants@{NeuronConstants}!MembraneTauMSec\_Set@{MembraneTauMSec\_Set}}
+\index{MembraneTauMSec\_Set@{MembraneTauMSec\_Set}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{MembraneTauMSec\_Set()}{MembraneTauMSec\_Set()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Membrane\+Tau\+MSec\+\_\+\+Set (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00157}{157}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a76590051e62bccca9243db8caa5b7045}\label{classNeuronConstants_a76590051e62bccca9243db8caa5b7045} 
+\index{NeuronConstants@{NeuronConstants}!Use\_JohnstonSet@{Use\_JohnstonSet}}
+\index{Use\_JohnstonSet@{Use\_JohnstonSet}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{Use\_JohnstonSet()}{Use\_JohnstonSet()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Use\+\_\+\+Johnston\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Use data set from \cite{JohnstonWuNeurophysiology:1995}, page 12. 
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00102}{102}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_ade89b36f04b23f25d37ce414f5116cf1}\label{classNeuronConstants_ade89b36f04b23f25d37ce414f5116cf1} 
+\index{NeuronConstants@{NeuronConstants}!Use\_KochSet@{Use\_KochSet}}
+\index{Use\_KochSet@{Use\_KochSet}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{Use\_KochSet()}{Use\_KochSet()}}
+{\footnotesize\ttfamily void Neuron\+Constants\+::\+Use\+\_\+\+Koch\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Use data set from \cite{KochBiophysics:1999}. 
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00093}{93}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_aed14d65accd80299e495446a38d74bb8}\label{classNeuronConstants_aed14d65accd80299e495446a38d74bb8} 
+\index{NeuronConstants@{NeuronConstants}!VoltageResolutionExponent\_Get@{VoltageResolutionExponent\_Get}}
+\index{VoltageResolutionExponent\_Get@{VoltageResolutionExponent\_Get}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{VoltageResolutionExponent\_Get()}{VoltageResolutionExponent\_Get()}}
+{\footnotesize\ttfamily int8\+\_\+t Neuron\+Constants\+::\+Voltage\+Resolution\+Exponent\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00067}{67}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a2dfbead05ac86a2198a0118b5541078c}\label{classNeuronConstants_a2dfbead05ac86a2198a0118b5541078c} 
+\index{NeuronConstants@{NeuronConstants}!VoltageResolutionUnit\_Get@{VoltageResolutionUnit\_Get}}
+\index{VoltageResolutionUnit\_Get@{VoltageResolutionUnit\_Get}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{VoltageResolutionUnit\_Get()}{VoltageResolutionUnit\_Get()}}
+{\footnotesize\ttfamily string Neuron\+Constants\+::\+Voltage\+Resolution\+Unit\+\_\+\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00081}{81}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classNeuronConstants_a4624303c049de2ecd5b1239004ab2af9}\label{classNeuronConstants_a4624303c049de2ecd5b1239004ab2af9} 
+\index{NeuronConstants@{NeuronConstants}!m\_CurrentResolutionExponent@{m\_CurrentResolutionExponent}}
+\index{m\_CurrentResolutionExponent@{m\_CurrentResolutionExponent}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{m\_CurrentResolutionExponent}{m\_CurrentResolutionExponent}}
+{\footnotesize\ttfamily int8\+\_\+t Neuron\+Constants\+::m\+\_\+\+Current\+Resolution\+Exponent}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00168}{168}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a9a7c4248cc89c55e7d982298915a73d0}\label{classNeuronConstants_a9a7c4248cc89c55e7d982298915a73d0} 
+\index{NeuronConstants@{NeuronConstants}!m\_Membrane\_C@{m\_Membrane\_C}}
+\index{m\_Membrane\_C@{m\_Membrane\_C}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{m\_Membrane\_C}{m\_Membrane\_C}}
+{\footnotesize\ttfamily double Neuron\+Constants\+::m\+\_\+\+Membrane\+\_\+C\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00174}{174}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a0e44a8f1640c25f6c6d7c4e65066b658}\label{classNeuronConstants_a0e44a8f1640c25f6c6d7c4e65066b658} 
+\index{NeuronConstants@{NeuronConstants}!m\_Membrane\_R@{m\_Membrane\_R}}
+\index{m\_Membrane\_R@{m\_Membrane\_R}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{m\_Membrane\_R}{m\_Membrane\_R}}
+{\footnotesize\ttfamily double Neuron\+Constants\+::m\+\_\+\+Membrane\+\_\+R\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00173}{173}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_aed3349deb5567a6f4aec07daba4725e9}\label{classNeuronConstants_aed3349deb5567a6f4aec07daba4725e9} 
+\index{NeuronConstants@{NeuronConstants}!m\_Membrane\_Tau@{m\_Membrane\_Tau}}
+\index{m\_Membrane\_Tau@{m\_Membrane\_Tau}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{m\_Membrane\_Tau}{m\_Membrane\_Tau}}
+{\footnotesize\ttfamily double Neuron\+Constants\+::m\+\_\+\+Membrane\+\_\+\+Tau\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00175}{175}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_af4a1eefc06a9cea975ad789dfb5df83c}\label{classNeuronConstants_af4a1eefc06a9cea975ad789dfb5df83c} 
+\index{NeuronConstants@{NeuronConstants}!m\_ResistanceResolutionExponent@{m\_ResistanceResolutionExponent}}
+\index{m\_ResistanceResolutionExponent@{m\_ResistanceResolutionExponent}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{m\_ResistanceResolutionExponent}{m\_ResistanceResolutionExponent}}
+{\footnotesize\ttfamily int8\+\_\+t Neuron\+Constants\+::m\+\_\+\+Resistance\+Resolution\+Exponent}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00169}{169}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_ae1a471b2403b3eea6bc97767f3285187}\label{classNeuronConstants_ae1a471b2403b3eea6bc97767f3285187} 
+\index{NeuronConstants@{NeuronConstants}!m\_TimeResolutionExponent@{m\_TimeResolutionExponent}}
+\index{m\_TimeResolutionExponent@{m\_TimeResolutionExponent}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{m\_TimeResolutionExponent}{m\_TimeResolutionExponent}}
+{\footnotesize\ttfamily int8\+\_\+t Neuron\+Constants\+::m\+\_\+\+Time\+Resolution\+Exponent}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00170}{170}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
+\Hypertarget{classNeuronConstants_a20c05ba5041e9ffeda8fc4487cc0d33d}\label{classNeuronConstants_a20c05ba5041e9ffeda8fc4487cc0d33d} 
+\index{NeuronConstants@{NeuronConstants}!m\_VoltageResolutionExponent@{m\_VoltageResolutionExponent}}
+\index{m\_VoltageResolutionExponent@{m\_VoltageResolutionExponent}!NeuronConstants@{NeuronConstants}}
+\doxysubsubsection{\texorpdfstring{m\_VoltageResolutionExponent}{m\_VoltageResolutionExponent}}
+{\footnotesize\ttfamily int8\+\_\+t Neuron\+Constants\+::m\+\_\+\+Voltage\+Resolution\+Exponent}
+
+
+
+Definition at line \mbox{\hyperlink{Constants_8h_source_l00171}{171}} of file \mbox{\hyperlink{Constants_8h_source}{Constants.\+h}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\textbf{ Constants.\+h}\end{DoxyCompactItemize}
+/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/include/\mbox{\hyperlink{Constants_8h}{Constants.\+h}}\end{DoxyCompactItemize}

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['initialize_0',['Initialize',['../group__GENCOMP__MODULE__PROCESS.html#ga9137cac9eee63c9906ca7460e120d4a9',1,'EVENT_GenComp_t']]],
-  ['inputreceived_1',['InputReceived',['../group__GENCOMP__MODULE__PROCESS.html#gac3b2539141ff323aa7ddcac9f945f4bf',1,'EVENT_GenComp_t']]]
+  ['m_5fbegintime_0',['m_BeginTime',['../classNeuronInputCurrent.html#a3e30bc25fc344e685064ba2b16ee0d30',1,'NeuronInputCurrent']]],
+  ['mcentralclockmode_1',['mCentralClockMode',['../classscGenComp__PU__Abstract.html#ad186e82d86f339001ff9db119ab93296',1,'scGenComp_PU_Abstract']]],
+  ['mlocaltimebase_2',['mLocalTimeBase',['../classscGenComp__PU__Abstract.html#ac6bd366a8a5948db90a51fe7ee010be3',1,'scGenComp_PU_Abstract']]]
 ];

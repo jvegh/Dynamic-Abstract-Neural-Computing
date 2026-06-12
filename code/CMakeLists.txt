@@ -66,8 +66,7 @@ find_package(Qt6 CONFIG REQUIRED COMPONENTS Core Widgets Concurrent PrintSupport
 # Error flags on everything but MSVC
 if(NOT MSVC)
     set(CMAKE_CXX_FLAGS "-Wextra -Wall \
-        -Wno-dev \
-        -Werror=switch -Werror=return-type \
+         -Werror=switch -Werror=return-type \
         -Werror=unreachable-code")
 endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt6Widgets_EXECUTABLE_COMPILE_FLAGS}  -std=c++17 -Wall")
@@ -96,8 +95,10 @@ qt6_add_resources(FONTS_SRC resources/fonts/fonts.qrc)
 
 message(HIGHLIGHTED "Configuring 'NeuronScQt' libraries")
 
-add_subdirectory(3rdParty/qcustomplot)
-add_subdirectory(3rdParty/fancytabbar)
+add_subdirectory(3rdParty)
+# add_subdirectory(3rdParty/qcustomplot)
+# add_subdirectory(3rdParty/fancytabbar)
+# add_subdirectory(3rdParty/ode)
 
 set(NEURON_LIB neuron_lib)
 set(QTGUI_LIB qtgui_lib)
@@ -129,7 +130,7 @@ endif(BUILD_DOCS)
 
 # We need to add .h files (at least those that define a custom Qt class), see https://stackoverflow.com/a/14011060
 qt_add_executable(${PROJECT_NAME}  ${SYSTEM_FLAGS} ${ICONS_SRC} ${FONTS_SRC} #${EXAMPLES_SRC} ${LAYOUTS_SRC}
-  src/main.cpp #src/MyWindow.cpp include/MyWindow.h
+  src/main.cpp
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
@@ -137,6 +138,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC include ${SYSTEMC_INCLUDE_DIR}
 
 target_link_directories(${PROJECT_NAME} PUBLIC
       3rdParty/qcustomplot
+      3rdParty/ode
       neuron
       QtGUI
       src/version
@@ -145,6 +147,7 @@ target_link_directories(${PROJECT_NAME} PUBLIC
 target_link_libraries(${PROJECT_NAME} PUBLIC
                       ${QTGUI_LIB}
                       QCustomPlot
+                      ode
                       version_lib
                       ${NEURON_LIB}
                       ${SYSTEMC_LIBRARY_DIR}/libsystemc.so

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['voltagegradient_5fget_0',['VoltageGradient_Get',['../classNeuronInputCurrent.html#a20106e15037c3b5a409ee87793d0f2fb',1,'NeuronInputCurrent']]],
-  ['voltagevalue_5fget_1',['VoltageValue_Get',['../classNeuronInputCurrent.html#a8aa256d1c56c4e9f767e34798bbf92b4',1,'NeuronInputCurrent']]]
+  ['universalconstants_0',['UniversalConstants',['../classUniversalConstants.html#a37feaf100fcd3b4ee0611a2dba9dba9b',1,'UniversalConstants']]],
+  ['use_5fjohnstonset_1',['Use_JohnstonSet',['../classNeuronConstants.html#a76590051e62bccca9243db8caa5b7045',1,'NeuronConstants']]],
+  ['use_5fkochset_2',['Use_KochSet',['../classNeuronConstants.html#ade89b36f04b23f25d37ce414f5116cf1',1,'NeuronConstants']]]
 ];

@@ -1,0 +1,11 @@
+<map id="scGenComp_PU_Bio" name="scGenComp_PU_Bio">
+<area shape="rect" id="Node000001" title="Implements a general biological&#45;type computing PU. Defaults to variable (that is, biologically define..." alt="" coords="177,168,330,193"/>
+<area shape="rect" id="Node000002" href="$classscGenComp__PU__Abstract.html" title="A class to deal with operations of an abstract processing unit (\gls{PU}), implementing a single&#45;shot..." alt="" coords="160,93,347,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,133,256,168,251,168,251,133"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,155,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,34,231,91,229,95,114,39"/>
+<area shape="rect" id="Node000004" href="$classEVENT__GenComp__t.html" title="The events used by scGenComp_PU_Abstract (and all derived classes, including scGenComp_PU_Bio and Neu..." alt="" coords="179,5,327,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="256,45,256,93,251,93,251,45"/>
+<area shape="rect" id="Node000005" href="$classGenCompStageMachine__t.html" title=" " alt="" coords="351,5,542,31"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="425,42,379,72,344,86,309,96,308,91,342,81,376,67,422,37"/>
+</map>

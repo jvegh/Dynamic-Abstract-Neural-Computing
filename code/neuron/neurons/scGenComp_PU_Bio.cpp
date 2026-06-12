@@ -101,17 +101,17 @@ void scGenComp_PU_Bio::
 }
 
 void scGenComp_PU_Bio::
-    Heartbeat_Relaxing_Do()
-{
-}
-
-void scGenComp_PU_Bio::
     Heartbeat_Computing_Do()
 {
 }
 
 void scGenComp_PU_Bio::
     Heartbeat_Delivering_Do()
+{
+}
+
+void scGenComp_PU_Bio::
+    Heartbeat_Relaxing_Do()
 {
 }
 

@@ -105,6 +105,16 @@ class scGenComp_PU_Bio : public scGenComp_PU_Abstract
     void DeliveringEnd_Do();
 
     /**
+     * @brief Adjust integration step size, to keep accuracy and computing time tolerable
+     */
+    virtual void Heartbeat_Adjust(void);
+    //! Heartbeat activity for computing
+    virtual void Heartbeat_Computing_Do();
+    //! Heartbeat activity for delivering
+    virtual void Heartbeat_Delivering_Do();
+    //! Heartbeat activity for relaxing
+    virtual void Heartbeat_Relaxing_Do();
+    /**
      * @brief A new spike (or clamping) received; only in 'Relaxing' and 'Computing' states,
      * furthermore in "XXXRelaxing" state during the "relative refractory" period
      *
@@ -128,16 +138,6 @@ class scGenComp_PU_Bio : public scGenComp_PU_Abstract
      * - In 'Relaxing' mode, re-calculates membrane's decay potential
      * - In 'Delivering' mode, re-calculates membrane's decay potential
      */
-    /**
-     * @brief Adjust integration step size, to keep accuracy and computing time tolerable
-     */
-    virtual void Heartbeat_Adjust(void);
-    //! Heartbeat activity for relaxing
-    virtual void Heartbeat_Relaxing_Do();
-    //! Heartbeat activity for computing
-    virtual void Heartbeat_Computing_Do();
-    //! Heartbeat activity for delivering
-    virtual void Heartbeat_Delivering_Do();
 
     float MembraneAbsolutePotential_Get(){return m_Membrane_V+RestingMembranePotential;}
     float MembraneRelativePotential_Get(){return m_Membrane_V;}

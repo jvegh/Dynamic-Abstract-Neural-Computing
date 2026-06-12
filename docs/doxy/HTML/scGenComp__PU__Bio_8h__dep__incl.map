@@ -1,0 +1,11 @@
+<map id="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/neurons/include/scGenComp_PU_Bio.h" name="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/neurons/include/scGenComp_PU_Bio.h">
+<area shape="rect" id="Node000001" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="351,5,565,75"/>
+<area shape="rect" id="Node000002" href="$NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="225,123,438,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,86,370,124,367,120,409,82"/>
+<area shape="rect" id="Node000005" href="$scGenComp__PU__Bio_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="463,123,707,192"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="507,82,549,120,546,124,503,86"/>
+<area shape="rect" id="Node000003" href="$NeuronInputCurrent_8cpp.html" title="The physics&#45;based abstract neuron&#39;s input current." alt="" coords="5,240,327,295"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="270,202,208,242,205,238,267,197"/>
+<area shape="rect" id="Node000004" href="$NeuronPhysical_8cpp.html" title="The physics&#45;based abstract neuron." alt="" coords="351,240,645,295"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="396,197,459,238,456,242,393,202"/>
+</map>

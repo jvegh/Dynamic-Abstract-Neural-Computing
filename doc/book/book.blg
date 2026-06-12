@@ -8,45 +8,45 @@ Database file #3: ../../../LaTeX/CommonNeuronalBibliography.bib
 Database file #4: ../../../LaTeX/CommonAIBibliography.bib
 Warning--empty chapter and pages in Schrodinger:1992
 Warning--can't use both author and editor fields in OriginMembranePotential:2017
-You've used 67 entries,
+You've used 93 entries,
             2952 wiz_defined-function locations,
-            1196 strings with 21550 characters,
-and the built_in function-call counts, 20289 in all, are:
-= -- 2053
-> -- 557
-< -- 9
-+ -- 228
-- -- 161
-* -- 1517
-:= -- 2768
-add.period$ -- 112
-call.type$ -- 67
-change.case$ -- 67
-chr.to.int$ -- 15
-cite$ -- 69
-duplicate$ -- 586
-empty$ -- 2319
-format.name$ -- 201
-if$ -- 5369
+            1373 strings with 26957 characters,
+and the built_in function-call counts, 27028 in all, are:
+= -- 2714
+> -- 721
+< -- 13
++ -- 299
+- -- 206
+* -- 1946
+:= -- 3673
+add.period$ -- 149
+call.type$ -- 93
+change.case$ -- 94
+chr.to.int$ -- 24
+cite$ -- 95
+duplicate$ -- 799
+empty$ -- 3157
+format.name$ -- 258
+if$ -- 7198
 int.to.chr$ -- 0
-int.to.str$ -- 67
-missing$ -- 70
-newline$ -- 271
-num.names$ -- 71
-pop$ -- 377
+int.to.str$ -- 93
+missing$ -- 95
+newline$ -- 367
+num.names$ -- 97
+pop$ -- 556
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1337
+skip$ -- 1812
 stack$ -- 0
-substring$ -- 930
-swap$ -- 205
-text.length$ -- 4
+substring$ -- 1136
+swap$ -- 262
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 123
-width$ -- 69
-write$ -- 664
+while$ -- 168
+width$ -- 95
+write$ -- 900
 (There were 2 warnings)

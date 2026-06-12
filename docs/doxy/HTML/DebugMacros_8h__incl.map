@@ -1,7 +1,7 @@
-<map id="DebugMacros.h" name="DebugMacros.h">
-<area shape="rect" id="Node000001" title="Macros for debugging both normal and SystemC (simulated) functionality." alt="" coords="23,5,145,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,69,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,32,55,69,50,66,74,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="93,79,168,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="94,30,118,66,113,69,89,32"/>
+<map id="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/include/DebugMacros.h" name="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/include/DebugMacros.h">
+<area shape="rect" id="Node000001" title="Macros for debugging both normal and SystemC (simulated) functionality." alt="" coords="5,5,268,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="58,108,122,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,61,105,97,100,95,120,59"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="146,108,221,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,59,173,95,168,97,149,61"/>
 </map>

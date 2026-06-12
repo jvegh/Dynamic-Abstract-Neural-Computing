@@ -1,0 +1,21 @@
+<map id="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/include/MacroTimeBenchmarking.h" name="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/include/MacroTimeBenchmarking.h">
+<area shape="rect" id="Node000001" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="165,5,505,60"/>
+<area shape="rect" id="Node000002" href="$ScQtSimulator_8h.html" title="A semi general purpose simulator for SystemC task, using Qt&#39;s stuff Ideas taken from http://fabienpn...." alt="" coords="71,115,336,170"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="294,71,237,117,234,113,291,67"/>
+<area shape="rect" id="Node000004" href="$scGenComp__PU__Abstract_8h.html" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="361,108,574,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="380,67,428,106,424,110,377,71"/>
+<area shape="rect" id="Node000003" href="$ScQtSimulator_8cpp_source.html" title=" " alt="" coords="89,233,318,287"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,184,206,232,201,232,201,184"/>
+<area shape="rect" id="Node000005" href="$scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="351,225,565,295"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="466,191,463,225,458,225,461,191"/>
+<area shape="rect" id="Node000010" href="$scGenComp__PU__Abstract_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="589,225,833,295"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="552,181,641,223,639,228,550,186"/>
+<area shape="rect" id="Node000006" href="$NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="225,343,438,412"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="413,306,370,344,367,340,409,302"/>
+<area shape="rect" id="Node000009" href="$scGenComp__PU__Bio_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="463,343,707,412"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="507,302,549,340,546,344,503,306"/>
+<area shape="rect" id="Node000007" href="$NeuronInputCurrent_8cpp.html" title="The physics&#45;based abstract neuron&#39;s input current." alt="" coords="5,460,327,515"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="270,422,208,462,205,458,267,417"/>
+<area shape="rect" id="Node000008" href="$NeuronPhysical_8cpp.html" title="The physics&#45;based abstract neuron." alt="" coords="351,460,645,515"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="396,417,459,458,456,462,393,422"/>
+</map>

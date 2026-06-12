@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13: NeuronConstants Class Reference</title>
+<title>DANCES: NeuronConstants Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
@@ -44,21 +39,10 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TAC_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</a>
+   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">DANCES</a>
    </div>
+   <div id="projectbrief">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +54,17 @@ MathJax.Hub.Config({
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -111,10 +106,14 @@ $(document).ready(function(){initNavTree('classNeuronConstants.html',''); initRe
 <div class="header">
   <div class="summary">
 <a href="classNeuronConstants-members.html">List of all members</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle"><div class="title">NeuronConstants Class Reference<div class="ingroups"><a class="el" href="group__GENCOMP__MODULE__BIOLOGY.html">Biological processing</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Constants_8h_source.html">Constants.h</a>&gt;</code></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sources: </p>
 <p>Provide neuron-related constants in various relations for neural computing</p>
@@ -131,6 +130,8 @@ $(document).ready(function(){initNavTree('classNeuronConstants.html',''); initRe
 <li>so [I*R] ( \( 10^{-12}*10^9\) = mV)</li>
 <li>so [V/C] ( \(10^{-3}/10^{-12} = 10^9 V/m\)) </li>
 </ul>
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00043">43</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for NeuronConstants:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -138,40 +139,251 @@ $(document).ready(function(){initNavTree('classNeuronConstants.html',''); initRe
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classNeuronConstants__inherit__graph.png" border="0" usemap="#aNeuronConstants_inherit__map" alt="Inheritance graph"/></div>
 <map name="aNeuronConstants_inherit__map" id="aNeuronConstants_inherit__map">
-<area shape="rect" title="Sources:" alt="" coords="5,5,219,284"/>
-<area shape="rect" href="classNeuronPhysical.html" title="Implements a general physical&#45;type neuron." alt="" coords="9,332,215,701"/>
-<area shape="poly" title=" " alt="" coords="115,298,115,332,109,332,109,298"/>
+<area shape="rect" title="Sources:" alt="" coords="5,5,140,31"/>
+<area shape="rect" href="classNeuronPhysical.html" title="Implements a general physical&#45;type neuron." alt="" coords="11,79,134,104"/>
+<area shape="poly" title=" " alt="" coords="75,44,75,79,70,79,70,44"/>
 </map>
-</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4e9fbceab7f6ae1a1d7351491c922154" id="r_a4e9fbceab7f6ae1a1d7351491c922154"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a4e9fbceab7f6ae1a1d7351491c922154">MembraneCapacityPF_Get</a> (void)</td></tr>
-<tr class="separator:a4e9fbceab7f6ae1a1d7351491c922154"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9be591eec52ce7f58522ff1de58464f" id="r_ac9be591eec52ce7f58522ff1de58464f"><td class="memItemLeft" align="right" valign="top"><a id="ac9be591eec52ce7f58522ff1de58464f" name="ac9be591eec52ce7f58522ff1de58464f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MembraneFromRC_TauMSec_Set</b> (double R, double C)</td></tr>
-<tr class="memdesc:ac9be591eec52ce7f58522ff1de58464f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the membrane's time constant. <br /></td></tr>
-<tr class="separator:ac9be591eec52ce7f58522ff1de58464f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ca417130372cb0b5c78e1b03131cc84" id="r_a4ca417130372cb0b5c78e1b03131cc84"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a4ca417130372cb0b5c78e1b03131cc84">MembraneResistanceGOhm_Get</a> ()</td></tr>
-<tr class="separator:a4ca417130372cb0b5c78e1b03131cc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b479758b3f19d6293916922765e3683" id="r_a6b479758b3f19d6293916922765e3683"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a6b479758b3f19d6293916922765e3683">MembraneResistanceGOhm_Set</a> (double R)</td></tr>
-<tr class="separator:a6b479758b3f19d6293916922765e3683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c970c7d514554aebeef16015f59e9ec" id="r_a1c970c7d514554aebeef16015f59e9ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a1c970c7d514554aebeef16015f59e9ec">NeuronConstants</a> (void)</td></tr>
+<tr class="memdesc:a1c970c7d514554aebeef16015f59e9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a physics-based neuron unit.  <br /></td></tr>
+<tr class="separator:a1c970c7d514554aebeef16015f59e9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf482d6b4bb6abd8567060d7ec57bec3" id="r_aaf482d6b4bb6abd8567060d7ec57bec3"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#aaf482d6b4bb6abd8567060d7ec57bec3">CurrentResolutionExponent_Get</a> (void)</td></tr>
+<tr class="separator:aaf482d6b4bb6abd8567060d7ec57bec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed14d65accd80299e495446a38d74bb8" id="r_aed14d65accd80299e495446a38d74bb8"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#aed14d65accd80299e495446a38d74bb8">VoltageResolutionExponent_Get</a> (void)</td></tr>
+<tr class="separator:aed14d65accd80299e495446a38d74bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacbe7e03e9783c7c2638c23bb0907a65" id="r_aacbe7e03e9783c7c2638c23bb0907a65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#aacbe7e03e9783c7c2638c23bb0907a65">CurrentResolution_Set</a> (int8_t E)</td></tr>
+<tr class="separator:aacbe7e03e9783c7c2638c23bb0907a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b62d64a6343f73175e792c2dbdcc0a" id="r_a91b62d64a6343f73175e792c2dbdcc0a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a91b62d64a6343f73175e792c2dbdcc0a">CurrentResolutionUnit_Get</a> (void)</td></tr>
+<tr class="separator:a91b62d64a6343f73175e792c2dbdcc0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dfbead05ac86a2198a0118b5541078c" id="r_a2dfbead05ac86a2198a0118b5541078c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a2dfbead05ac86a2198a0118b5541078c">VoltageResolutionUnit_Get</a> (void)</td></tr>
+<tr class="separator:a2dfbead05ac86a2198a0118b5541078c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade89b36f04b23f25d37ce414f5116cf1" id="r_ade89b36f04b23f25d37ce414f5116cf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#ade89b36f04b23f25d37ce414f5116cf1">Use_KochSet</a> ()</td></tr>
+<tr class="memdesc:ade89b36f04b23f25d37ce414f5116cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use data set from <a class="el" href="citelist.html#CITEREF_KochBiophysics:1999">[6]</a>.  <br /></td></tr>
+<tr class="separator:ade89b36f04b23f25d37ce414f5116cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76590051e62bccca9243db8caa5b7045" id="r_a76590051e62bccca9243db8caa5b7045"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a76590051e62bccca9243db8caa5b7045">Use_JohnstonSet</a> ()</td></tr>
+<tr class="memdesc:a76590051e62bccca9243db8caa5b7045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use data set from <a class="el" href="citelist.html#CITEREF_JohnstonWuNeurophysiology:1995">[5]</a>, page 12.  <br /></td></tr>
+<tr class="separator:a76590051e62bccca9243db8caa5b7045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff28872c0f260e8d6c5d7d7b64fbca53" id="r_aff28872c0f260e8d6c5d7d7b64fbca53"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#aff28872c0f260e8d6c5d7d7b64fbca53">MembraneResistanceOhm_Get</a> ()</td></tr>
 <tr class="separator:aff28872c0f260e8d6c5d7d7b64fbca53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c970c7d514554aebeef16015f59e9ec" id="r_a1c970c7d514554aebeef16015f59e9ec"><td class="memItemLeft" align="right" valign="top"><a id="a1c970c7d514554aebeef16015f59e9ec" name="a1c970c7d514554aebeef16015f59e9ec"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>NeuronConstants</b> (void)</td></tr>
-<tr class="memdesc:a1c970c7d514554aebeef16015f59e9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a physics-based neuron unit. <br /></td></tr>
-<tr class="separator:a1c970c7d514554aebeef16015f59e9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76590051e62bccca9243db8caa5b7045" id="r_a76590051e62bccca9243db8caa5b7045"><td class="memItemLeft" align="right" valign="top"><a id="a76590051e62bccca9243db8caa5b7045" name="a76590051e62bccca9243db8caa5b7045"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Use_JohnstonSet</b> ()</td></tr>
-<tr class="memdesc:a76590051e62bccca9243db8caa5b7045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use data set from <a class="el" href="citelist.html#CITEREF_JohnstonWuNeurophysiology:1995">[5]</a>, page 12. <br /></td></tr>
-<tr class="separator:a76590051e62bccca9243db8caa5b7045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade89b36f04b23f25d37ce414f5116cf1" id="r_ade89b36f04b23f25d37ce414f5116cf1"><td class="memItemLeft" align="right" valign="top"><a id="ade89b36f04b23f25d37ce414f5116cf1" name="ade89b36f04b23f25d37ce414f5116cf1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Use_KochSet</b> ()</td></tr>
-<tr class="memdesc:ade89b36f04b23f25d37ce414f5116cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use data set from <a class="el" href="citelist.html#CITEREF_KochBiophysics:1999">[6]</a>. <br /></td></tr>
-<tr class="separator:ade89b36f04b23f25d37ce414f5116cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca417130372cb0b5c78e1b03131cc84" id="r_a4ca417130372cb0b5c78e1b03131cc84"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a4ca417130372cb0b5c78e1b03131cc84">MembraneResistanceGOhm_Get</a> ()</td></tr>
+<tr class="separator:a4ca417130372cb0b5c78e1b03131cc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14a3587aadebf28ccedfbc6eb1b628f" id="r_ac14a3587aadebf28ccedfbc6eb1b628f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#ac14a3587aadebf28ccedfbc6eb1b628f">MembraneResistanceOhm_Set</a> (double R)</td></tr>
+<tr class="separator:ac14a3587aadebf28ccedfbc6eb1b628f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b479758b3f19d6293916922765e3683" id="r_a6b479758b3f19d6293916922765e3683"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a6b479758b3f19d6293916922765e3683">MembraneResistanceGOhm_Set</a> (double R)</td></tr>
+<tr class="separator:a6b479758b3f19d6293916922765e3683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e9fbceab7f6ae1a1d7351491c922154" id="r_a4e9fbceab7f6ae1a1d7351491c922154"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a4e9fbceab7f6ae1a1d7351491c922154">MembraneCapacityPF_Get</a> (void)</td></tr>
+<tr class="separator:a4e9fbceab7f6ae1a1d7351491c922154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d38606d03f06c35c10d316a69846a7" id="r_a01d38606d03f06c35c10d316a69846a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a01d38606d03f06c35c10d316a69846a7">MembraneCapacityPF_Set</a> (double C)</td></tr>
+<tr class="separator:a01d38606d03f06c35c10d316a69846a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa28147c8181c75392d70be132800d83" id="r_afa28147c8181c75392d70be132800d83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#afa28147c8181c75392d70be132800d83">MembraneCapacityF_Set</a> (double C)</td></tr>
+<tr class="separator:afa28147c8181c75392d70be132800d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac7f770b14d986bf9ac665cb2e8e949" id="r_afac7f770b14d986bf9ac665cb2e8e949"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#afac7f770b14d986bf9ac665cb2e8e949">MembraneTauMSec_Get</a> (void)</td></tr>
+<tr class="separator:afac7f770b14d986bf9ac665cb2e8e949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65beb29a367cc5ddc021907e60f85f72" id="r_a65beb29a367cc5ddc021907e60f85f72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a65beb29a367cc5ddc021907e60f85f72">MembraneFromRGOhm_TauMSec_Set</a> (double R, double T)</td></tr>
+<tr class="separator:a65beb29a367cc5ddc021907e60f85f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54048b4a93d2bcb69be0ea5236839efd" id="r_a54048b4a93d2bcb69be0ea5236839efd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a54048b4a93d2bcb69be0ea5236839efd">MembraneFromCPF_TauMSec_Set</a> (double C, double T)</td></tr>
+<tr class="separator:a54048b4a93d2bcb69be0ea5236839efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152f8e04ed9a57e44dad148f644788dc" id="r_a152f8e04ed9a57e44dad148f644788dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a152f8e04ed9a57e44dad148f644788dc">MembraneTauMSec_Set</a> (void)</td></tr>
+<tr class="separator:a152f8e04ed9a57e44dad148f644788dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9be591eec52ce7f58522ff1de58464f" id="r_ac9be591eec52ce7f58522ff1de58464f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#ac9be591eec52ce7f58522ff1de58464f">MembraneFromRC_TauMSec_Set</a> (double R, double C)</td></tr>
+<tr class="memdesc:ac9be591eec52ce7f58522ff1de58464f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the membrane's time constant.  <br /></td></tr>
+<tr class="separator:ac9be591eec52ce7f58522ff1de58464f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4624303c049de2ecd5b1239004ab2af9" id="r_a4624303c049de2ecd5b1239004ab2af9"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a4624303c049de2ecd5b1239004ab2af9">m_CurrentResolutionExponent</a></td></tr>
+<tr class="separator:a4624303c049de2ecd5b1239004ab2af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a1eefc06a9cea975ad789dfb5df83c" id="r_af4a1eefc06a9cea975ad789dfb5df83c"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#af4a1eefc06a9cea975ad789dfb5df83c">m_ResistanceResolutionExponent</a></td></tr>
+<tr class="separator:af4a1eefc06a9cea975ad789dfb5df83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1a471b2403b3eea6bc97767f3285187" id="r_ae1a471b2403b3eea6bc97767f3285187"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#ae1a471b2403b3eea6bc97767f3285187">m_TimeResolutionExponent</a></td></tr>
+<tr class="separator:ae1a471b2403b3eea6bc97767f3285187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20c05ba5041e9ffeda8fc4487cc0d33d" id="r_a20c05ba5041e9ffeda8fc4487cc0d33d"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a20c05ba5041e9ffeda8fc4487cc0d33d">m_VoltageResolutionExponent</a></td></tr>
+<tr class="separator:a20c05ba5041e9ffeda8fc4487cc0d33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a0e44a8f1640c25f6c6d7c4e65066b658" id="r_a0e44a8f1640c25f6c6d7c4e65066b658"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a0e44a8f1640c25f6c6d7c4e65066b658">m_Membrane_R</a></td></tr>
+<tr class="separator:a0e44a8f1640c25f6c6d7c4e65066b658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7c4248cc89c55e7d982298915a73d0" id="r_a9a7c4248cc89c55e7d982298915a73d0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#a9a7c4248cc89c55e7d982298915a73d0">m_Membrane_C</a></td></tr>
+<tr class="separator:a9a7c4248cc89c55e7d982298915a73d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3349deb5567a6f4aec07daba4725e9" id="r_aed3349deb5567a6f4aec07daba4725e9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNeuronConstants.html#aed3349deb5567a6f4aec07daba4725e9">m_Membrane_Tau</a></td></tr>
+<tr class="separator:aed3349deb5567a6f4aec07daba4725e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1c970c7d514554aebeef16015f59e9ec" name="a1c970c7d514554aebeef16015f59e9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c970c7d514554aebeef16015f59e9ec">&#9670;&#160;</a></span>NeuronConstants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NeuronConstants::NeuronConstants </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a physics-based neuron unit. </p>
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00050">50</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a1cd44260f57e0efa514ee70fce242148" name="a1cd44260f57e0efa514ee70fce242148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cd44260f57e0efa514ee70fce242148">&#9670;&#160;</a></span>~NeuronConstants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual NeuronConstants::~NeuronConstants </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00064">64</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aacbe7e03e9783c7c2638c23bb0907a65" name="aacbe7e03e9783c7c2638c23bb0907a65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacbe7e03e9783c7c2638c23bb0907a65">&#9670;&#160;</a></span>CurrentResolution_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::CurrentResolution_Set </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00070">70</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf482d6b4bb6abd8567060d7ec57bec3" name="aaf482d6b4bb6abd8567060d7ec57bec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf482d6b4bb6abd8567060d7ec57bec3">&#9670;&#160;</a></span>CurrentResolutionExponent_Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t NeuronConstants::CurrentResolutionExponent_Get </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00065">65</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a91b62d64a6343f73175e792c2dbdcc0a" name="a91b62d64a6343f73175e792c2dbdcc0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b62d64a6343f73175e792c2dbdcc0a">&#9670;&#160;</a></span>CurrentResolutionUnit_Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string NeuronConstants::CurrentResolutionUnit_Get </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00072">72</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="afa28147c8181c75392d70be132800d83" name="afa28147c8181c75392d70be132800d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa28147c8181c75392d70be132800d83">&#9670;&#160;</a></span>MembraneCapacityF_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::MembraneCapacityF_Set </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00141">141</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
 <a id="a4e9fbceab7f6ae1a1d7351491c922154" name="a4e9fbceab7f6ae1a1d7351491c922154"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e9fbceab7f6ae1a1d7351491c922154">&#9670;&#160;</a></span>MembraneCapacityPF_Get()</h2>
 
@@ -196,6 +408,152 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Use_KochSet</b> ()</t
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>mebrane's capacitance [pF] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00134">134</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a01d38606d03f06c35c10d316a69846a7" name="a01d38606d03f06c35c10d316a69846a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01d38606d03f06c35c10d316a69846a7">&#9670;&#160;</a></span>MembraneCapacityPF_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::MembraneCapacityPF_Set </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00137">137</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a54048b4a93d2bcb69be0ea5236839efd" name="a54048b4a93d2bcb69be0ea5236839efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54048b4a93d2bcb69be0ea5236839efd">&#9670;&#160;</a></span>MembraneFromCPF_TauMSec_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::MembraneFromCPF_TauMSec_Set </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00152">152</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="ac9be591eec52ce7f58522ff1de58464f" name="ac9be591eec52ce7f58522ff1de58464f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9be591eec52ce7f58522ff1de58464f">&#9670;&#160;</a></span>MembraneFromRC_TauMSec_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::MembraneFromRC_TauMSec_Set </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>C</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the membrane's time constant. </p>
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00160">160</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a65beb29a367cc5ddc021907e60f85f72" name="a65beb29a367cc5ddc021907e60f85f72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65beb29a367cc5ddc021907e60f85f72">&#9670;&#160;</a></span>MembraneFromRGOhm_TauMSec_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::MembraneFromRGOhm_TauMSec_Set </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>T</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00147">147</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
 
 </div>
 </div>
@@ -222,6 +580,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Use_KochSet</b> ()</t
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>membrane's resistance [GOhm] </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00119">119</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
 
 </div>
 </div>
@@ -255,6 +615,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Use_KochSet</b> ()</t
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00127">127</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
 </div>
 </div>
 <a id="aff28872c0f260e8d6c5d7d7b64fbca53" name="aff28872c0f260e8d6c5d7d7b64fbca53"></a>
@@ -281,10 +643,347 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Use_KochSet</b> ()</t
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>membrane's resistance [Ohm] </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00113">113</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="ac14a3587aadebf28ccedfbc6eb1b628f" name="ac14a3587aadebf28ccedfbc6eb1b628f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14a3587aadebf28ccedfbc6eb1b628f">&#9670;&#160;</a></span>MembraneResistanceOhm_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::MembraneResistanceOhm_Set </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>R</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00121">121</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="afac7f770b14d986bf9ac665cb2e8e949" name="afac7f770b14d986bf9ac665cb2e8e949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afac7f770b14d986bf9ac665cb2e8e949">&#9670;&#160;</a></span>MembraneTauMSec_Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double NeuronConstants::MembraneTauMSec_Get </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00145">145</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a152f8e04ed9a57e44dad148f644788dc" name="a152f8e04ed9a57e44dad148f644788dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152f8e04ed9a57e44dad148f644788dc">&#9670;&#160;</a></span>MembraneTauMSec_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::MembraneTauMSec_Set </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00157">157</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a76590051e62bccca9243db8caa5b7045" name="a76590051e62bccca9243db8caa5b7045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76590051e62bccca9243db8caa5b7045">&#9670;&#160;</a></span>Use_JohnstonSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::Use_JohnstonSet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Use data set from <a class="el" href="citelist.html#CITEREF_JohnstonWuNeurophysiology:1995">[5]</a>, page 12. </p>
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00102">102</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="ade89b36f04b23f25d37ce414f5116cf1" name="ade89b36f04b23f25d37ce414f5116cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade89b36f04b23f25d37ce414f5116cf1">&#9670;&#160;</a></span>Use_KochSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuronConstants::Use_KochSet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Use data set from <a class="el" href="citelist.html#CITEREF_KochBiophysics:1999">[6]</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00093">93</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="aed14d65accd80299e495446a38d74bb8" name="aed14d65accd80299e495446a38d74bb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed14d65accd80299e495446a38d74bb8">&#9670;&#160;</a></span>VoltageResolutionExponent_Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t NeuronConstants::VoltageResolutionExponent_Get </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00067">67</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a2dfbead05ac86a2198a0118b5541078c" name="a2dfbead05ac86a2198a0118b5541078c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dfbead05ac86a2198a0118b5541078c">&#9670;&#160;</a></span>VoltageResolutionUnit_Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string NeuronConstants::VoltageResolutionUnit_Get </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00081">81</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4624303c049de2ecd5b1239004ab2af9" name="a4624303c049de2ecd5b1239004ab2af9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4624303c049de2ecd5b1239004ab2af9">&#9670;&#160;</a></span>m_CurrentResolutionExponent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t NeuronConstants::m_CurrentResolutionExponent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00168">168</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a9a7c4248cc89c55e7d982298915a73d0" name="a9a7c4248cc89c55e7d982298915a73d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7c4248cc89c55e7d982298915a73d0">&#9670;&#160;</a></span>m_Membrane_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double NeuronConstants::m_Membrane_C</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00174">174</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a0e44a8f1640c25f6c6d7c4e65066b658" name="a0e44a8f1640c25f6c6d7c4e65066b658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e44a8f1640c25f6c6d7c4e65066b658">&#9670;&#160;</a></span>m_Membrane_R</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double NeuronConstants::m_Membrane_R</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00173">173</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="aed3349deb5567a6f4aec07daba4725e9" name="aed3349deb5567a6f4aec07daba4725e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3349deb5567a6f4aec07daba4725e9">&#9670;&#160;</a></span>m_Membrane_Tau</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double NeuronConstants::m_Membrane_Tau</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00175">175</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="af4a1eefc06a9cea975ad789dfb5df83c" name="af4a1eefc06a9cea975ad789dfb5df83c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a1eefc06a9cea975ad789dfb5df83c">&#9670;&#160;</a></span>m_ResistanceResolutionExponent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t NeuronConstants::m_ResistanceResolutionExponent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00169">169</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="ae1a471b2403b3eea6bc97767f3285187" name="ae1a471b2403b3eea6bc97767f3285187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1a471b2403b3eea6bc97767f3285187">&#9670;&#160;</a></span>m_TimeResolutionExponent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t NeuronConstants::m_TimeResolutionExponent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00170">170</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
+</div>
+</div>
+<a id="a20c05ba5041e9ffeda8fc4487cc0d33d" name="a20c05ba5041e9ffeda8fc4487cc0d33d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20c05ba5041e9ffeda8fc4487cc0d33d">&#9670;&#160;</a></span>m_VoltageResolutionExponent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t NeuronConstants::m_VoltageResolutionExponent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Constants_8h_source.html#l00171">171</a> of file <a class="el" href="Constants_8h_source.html">Constants.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="Constants_8h_source.html">Constants.h</a></li>
+<li>/home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/include/<a class="el" href="Constants_8h_source.html">Constants.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

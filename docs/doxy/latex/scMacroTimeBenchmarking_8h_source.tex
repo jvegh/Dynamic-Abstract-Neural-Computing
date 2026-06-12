@@ -1,31 +1,31 @@
 \doxysection{sc\+Macro\+Time\+Benchmarking.\+h}
-\label{scMacroTimeBenchmarking_8h_source}\index{scMacroTimeBenchmarking.h@{scMacroTimeBenchmarking.h}}
-\textbf{ Go to the documentation of this file.}
+\hypertarget{scMacroTimeBenchmarking_8h_source}{}\label{scMacroTimeBenchmarking_8h_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/scMacroTimeBenchmarking.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/scMacroTimeBenchmarking.h}}
+\mbox{\hyperlink{scMacroTimeBenchmarking_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00072\ \textcolor{comment}{/*\ \ @author\ János\ Végh\ (jvegh)}}
-\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
-\DoxyCodeLine{00074\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#ifdef\ SC\_MAKE\_TIME\_BENCHMARKING}}
-\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ \#define\ SC\_BENCHMARK\_TIME\_ACTIVE\ \ \ }\textcolor{comment}{//\ Time\ benchmarking\ required}}
-\DoxyCodeLine{00104\ \textcolor{comment}{//\#include\ <systemc>}}
-\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ SC\_BENCHMARK\_TIME\_END(t,x,s)\(\backslash\)}}
-\DoxyCodeLine{00106\ \textcolor{preprocessor}{*x\ =\ sc\_time\_stamp()\ -\/\ *t;\ \(\backslash\)}}
-\DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ sc\_time\_stamp();\ *s\ +=\ *x;}}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ SC\_BENCHMARK\_TIME\_RESET(t,x,s)\(\backslash\)}}
-\DoxyCodeLine{00110\ \textcolor{preprocessor}{SC\_BENCHMARK\_TIME\_BEGIN(t,x);\ *s=*x;}}
-\DoxyCodeLine{00111\ }
-\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ SC\_BENCHMARK\_TIME\_BEGIN(t,x)\(\backslash\)}}
-\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ sc\_time\_stamp();\ *x=sc\_time(SC\_ZERO\_TIME);}}
-\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ The\ time\ measurement\ not\ needed,\ do\ nothing}}
-\DoxyCodeLine{00115\ \textcolor{comment}{//\ The\ macros\ with\ empty\ functionality\ will\ be\ optimized\ out\ by\ the\ compiler}}
-\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ \#define\ SC\_BENCHMARK\_TIME\_RESET(t,x,s)}}
-\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ \#define\ SC\_BENCHMARK\_TIME\_BEGIN(x,t)}}
-\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \#define\ SC\_BENCHMARK\_TIME\_END(t,x,s)}}
-\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \#undef\ SC\_BENCHMARK\_TIME\_ACTIVE\ \ \ }\textcolor{comment}{//\ Time\ benchmarking\ required}}
-\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SC\_MAKE\_TIME\_BENCHMARKING}}
-\DoxyCodeLine{00121\ \textcolor{comment}{//\#undef\ SC\_BENCHMARK\_TIME\_ACTIVE}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00072}00072\ \textcolor{comment}{/*\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00073}00073\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00074}00074\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00102}00102\ \textcolor{preprocessor}{\#ifdef\ SC\_MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00103}00103\ \textcolor{preprocessor}{\ \ \ \ \#define\ SC\_BENCHMARK\_TIME\_ACTIVE\ \ \ }\textcolor{comment}{//\ Time\ benchmarking\ required}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00104}00104\ \textcolor{comment}{//\#include\ <systemc>}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00105}00105\ \textcolor{preprocessor}{\#define\ SC\_BENCHMARK\_TIME\_END(t,x,s)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00106}00106\ \textcolor{preprocessor}{*x\ =\ sc\_time\_stamp()\ -\/\ *t;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00107}00107\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ sc\_time\_stamp();\ *s\ +=\ *x;}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00109}00109\ \textcolor{preprocessor}{\#define\ SC\_BENCHMARK\_TIME\_RESET(t,x,s)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00110}00110\ \textcolor{preprocessor}{SC\_BENCHMARK\_TIME\_BEGIN(t,x);\ *s=*x;}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00112}00112\ \textcolor{preprocessor}{\#define\ SC\_BENCHMARK\_TIME\_BEGIN(t,x)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00113}00113\ \textcolor{preprocessor}{\ \ \ \ *t\ =\ sc\_time\_stamp();\ *x=sc\_time(SC\_ZERO\_TIME);}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00114}00114\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ The\ time\ measurement\ not\ needed,\ do\ nothing}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00115}00115\ \textcolor{comment}{//\ The\ macros\ with\ empty\ functionality\ will\ be\ optimized\ out\ by\ the\ compiler}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00116}\mbox{\hyperlink{scMacroTimeBenchmarking_8h_a348733f3aae1e7c59596cbc968bab795}{00116}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SC\_BENCHMARK\_TIME\_RESET(t,x,s)}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00117}\mbox{\hyperlink{scMacroTimeBenchmarking_8h_a9505c415d787a771a7296b5e52651ebd}{00117}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SC\_BENCHMARK\_TIME\_BEGIN(x,t)}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00118}\mbox{\hyperlink{scMacroTimeBenchmarking_8h_ab63514bbc63b1f2134799fd35f8f846d}{00118}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ SC\_BENCHMARK\_TIME\_END(t,x,s)}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00119}00119\ \textcolor{preprocessor}{\ \ \ \ \#undef\ SC\_BENCHMARK\_TIME\_ACTIVE\ \ \ }\textcolor{comment}{//\ Time\ benchmarking\ required}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00120}00120\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SC\_MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{\Hypertarget{scMacroTimeBenchmarking_8h_source_l00121}00121\ \textcolor{comment}{//\#undef\ SC\_BENCHMARK\_TIME\_ACTIVE}}
 
 \end{DoxyCode}

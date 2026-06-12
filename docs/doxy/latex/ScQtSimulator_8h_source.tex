@@ -1,115 +1,110 @@
 \doxysection{Sc\+Qt\+Simulator.\+h}
-\label{ScQtSimulator_8h_source}\index{ScQtSimulator.h@{ScQtSimulator.h}}
-\textbf{ Go to the documentation of this file.}
+\hypertarget{ScQtSimulator_8h_source}{}\label{ScQtSimulator_8h_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/ScQtSimulator.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/ScQtSimulator.h}}
+\mbox{\hyperlink{ScQtSimulator_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00007\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
-\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
-\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ \ Last\ edited\ 2026.04.19}}
-\DoxyCodeLine{00012\ \textcolor{comment}{*/}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ SCQTSIMULATOR\_H}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ SCQTSIMULATOR\_H}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}sysc/kernel/sc\_simcontext.h"{}}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}sysc/kernel/sc\_time.h"{}}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QObject>}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QMutex>}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QTime>}}
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QWaitCondition>}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{comment}{//\ Benchmarking\ is\ sligthly\ abused\ here;\ to\ not\ repeat\ the\ code,\ it\ is\ used\ unconditionally}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ MAKE\_TIME\_BENCHMARKING\ \ }\textcolor{comment}{//\ Do\ not\ remove;\ used\ to\ measure\ processor\ time}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifdef\ MAKE\_TIME\_BENCHMARKING}}
-\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}MacroTimeBenchmarking.h"{}}\ \ \ \ \textcolor{comment}{//\ Must\ be\ after\ the\ '\#define\ MAKE\_TIME\_BENCHMARKING'\ to\ have\ its\ effect}}
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }ScQtSimulator\ :\ \textcolor{keyword}{public}\ QObject}
-\DoxyCodeLine{00051\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{explicit}\ ScQtSimulator(QObject\ *parent\ =\ 0);}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{enum}\ Method\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Method\_SingleSteps\ =\ 1,}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ \ \ \ Method\_SimulatedTime\ =\ 2,}}
-\DoxyCodeLine{00062\ \ \ \ \ \};}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ requestMethod(Method\ method);}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ abort();}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ Return\ user\ time\ of\ simulation,\ in\ seconds}}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ userTime\_Get(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00078\ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ int64\_t\ TimeDiff\ =\ m\_clock\_time\_begin.secsTo(QTime::currentTime());}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//\ \ \ \ if(clock\_time\ <0)\ \ //\ we\ are\ overnight}}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ clock\_time\ +=\ 24*60*60*1000;}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TimeDiff;}
-\DoxyCodeLine{00083\ \ \ \ \ \}}
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ userTime\_Reset(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00085\ \ \ \ \ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ m\_clock\_time\_begin\ =\ QTime::currentTime();}
-\DoxyCodeLine{00087\ \ \ \ \ \}}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ scTime\_Reset(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00089\ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ m\_sc\_time\_begin\ =\ sc\_core::sc\_time\_stamp();}
-\DoxyCodeLine{00091\ \ \ \ \ \}}
-\DoxyCodeLine{00092\ \ \ \ \ sc\_core::sc\_time\ scTime\_Get(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{00093\ \ \ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sc\_core::sc\_time\_stamp()\ -\/\ m\_sc\_time\_begin;}
-\DoxyCodeLine{00095\ \ \ \ \ \}}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ TimesReset()}
-\DoxyCodeLine{00097\ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ scTime\_Reset();}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ systemTime\_Reset();}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ userTime\_Reset();}
-\DoxyCodeLine{00101\ \ \ \ \ \}}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ Return\ processor\ time\ from\ the\ benchmark,\ [us]}}
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{double}\ systemTime\_Get()}
-\DoxyCodeLine{00104\ \ \ \ \ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration\_cast<std::chrono::microseconds>(m\_system\_s).count();}
-\DoxyCodeLine{00106\ \ \ \ \ \}}
-\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ Return\ processor\ time\ from\ the\ benchmark,\ [us]}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ systemTime\_Reset()}
-\DoxyCodeLine{00109\ \ \ \ \ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ m\_system\_t\ =chrono::steady\_clock::now();}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ m\_system\_x\ =\ m\_system\_s\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ BENCHMARK\_TIME\_RESET(\&m\_system\_t,\&m\_system\_x,\&m\_system\_s);\ \textcolor{comment}{//\ Reset\ at\ the\ very\ beginning,\ say\ in\ the\ constructor}}
-\DoxyCodeLine{00113\ \ \ \ \ \}}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ Define\ time\ benchmarking\ variables\ and\ utility\ functions}}
-\DoxyCodeLine{00117\ \ \ \ \ chrono::steady\_clock::time\_point\ m\_system\_t\ =chrono::steady\_clock::now();}
-\DoxyCodeLine{00118\ \ \ \ \ std::chrono::duration<\ int64\_t,\ nano>\ m\_system\_x,m\_system\_s\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
-\DoxyCodeLine{00119\ \ \ \ \ sc\_core::sc\_time\ m\_sc\_time\_begin;}
-\DoxyCodeLine{00120\ \ \ \ \ QTime\ m\_clock\_time\_begin;\ \ \ \textcolor{comment}{//\ The\ beginning\ of\ this\ simulation,\ [ms]}}
-\DoxyCodeLine{00121\ \ \ \ \ sc\_core::sc\_time\ m\_CurrentTime;\ \ \ \textcolor{comment}{//\ The\ actual\ simulated\ time}}
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00123\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Currently\ requested\ method}}
-\DoxyCodeLine{00124\ \textcolor{comment}{\ \ \ \ \ */}}
-\DoxyCodeLine{00125\ \ \ \ \ Method\ \_method;}
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_abort;}
-\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_interrupt;}
-\DoxyCodeLine{00137\ \ \ \ \ QMutex\ mutex;}
-\DoxyCodeLine{00141\ \ \ \ \ QWaitCondition\ condition;}
-\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ doSimulationSteps();}
-\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#if\ 0}}
-\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ doSimulatedTime();}
-\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00156\ signals:}
-\DoxyCodeLine{00160\ \textcolor{comment}{//\ \ \ \ void\ valueChanged(const\ QString\ \&value);}}
-\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ eventHappened(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{00165\ }
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ finished();}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ inputReceivedSignal();}
-\DoxyCodeLine{00172\ }
-\DoxyCodeLine{00173\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ mainLoop();}
-\DoxyCodeLine{00180\ \};}
-\DoxyCodeLine{00181\ }
-\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCQTSIMULATOR\_H}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00007}00007\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00010}00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00011}00011\ \textcolor{comment}{\ *\ \ Last\ edited\ 2026.04.19}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00012}00012\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00014}00014\ \textcolor{preprocessor}{\#ifndef\ SCQTSIMULATOR\_H}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00015}00015\ \textcolor{preprocessor}{\#define\ SCQTSIMULATOR\_H}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}sysc/kernel/sc\_simcontext.h"{}}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}sysc/kernel/sc\_time.h"{}}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <QTime>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <QWaitCondition>}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00024}00024\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00026}00026\ \textcolor{comment}{//\ Benchmarking\ is\ sligthly\ abused\ here;\ to\ not\ repeat\ the\ code,\ it\ is\ used\ unconditionally}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00027}00027\ \textcolor{preprocessor}{\#define\ MAKE\_TIME\_BENCHMARKING\ \ }\textcolor{comment}{//\ Do\ not\ remove;\ used\ to\ measure\ processor\ time}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00028}00028\ \textcolor{preprocessor}{\#ifdef\ MAKE\_TIME\_BENCHMARKING}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MacroTimeBenchmarking_8h}{MacroTimeBenchmarking.h}}"{}}\ \ \ \ \textcolor{comment}{//\ Must\ be\ after\ the\ '\#define\ MAKE\_TIME\_BENCHMARKING'\ to\ have\ its\ effect}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00030}00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00050}\mbox{\hyperlink{classScQtSimulator}{00050}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classScQtSimulator}{ScQtSimulator}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00052}00052\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00054}00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classScQtSimulator}{ScQtSimulator}}(QObject\ *parent\ =\ 0);}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00059}\mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{00059}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{Method}}\ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ Method\_SingleSteps\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ \ \ \ Method\_SimulatedTime\ =\ 2,}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00062}00062\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScQtSimulator_a9df78766e1ac67f2f75e3079929c777f}{requestMethod}}(\mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{Method}}\ method);}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScQtSimulator_a71216dee8b765d42936a4dd22937d9b1}{abort}}();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ Return\ user\ time\ of\ simulation,\ in\ seconds}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00077}00077\ \ \ \ \ \textcolor{keywordtype}{double}\ userTime\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ int64\_t\ TimeDiff\ =\ m\_clock\_time\_begin.secsTo(QTime::currentTime());}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//\ \ \ \ if(clock\_time\ <0)\ \ //\ we\ are\ overnight}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ clock\_time\ +=\ 24*60*60*1000;}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TimeDiff;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{void}\ userTime\_Reset(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ m\_clock\_time\_begin\ =\ QTime::currentTime();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ scTime\_Reset(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ m\_sc\_time\_begin\ =\ sc\_core::sc\_time\_stamp();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00092}00092\ \ \ \ \ sc\_core::sc\_time\ scTime\_Get(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00093}00093\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sc\_core::sc\_time\_stamp()\ -\/\ m\_sc\_time\_begin;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{void}\ TimesReset()}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ scTime\_Reset();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ systemTime\_Reset();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ userTime\_Reset();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//\ Return\ processor\ time\ from\ the\ benchmark,\ [us]}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{double}\ systemTime\_Get()}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::chrono::duration\_cast<std::chrono::microseconds>(m\_system\_s).count();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00107}00107\ \ \ \ \ \textcolor{comment}{//\ Return\ processor\ time\ from\ the\ benchmark,\ [us]}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00108}00108\ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ systemTime\_Reset()}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ m\_system\_t\ =chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ m\_system\_x\ =\ m\_system\_s\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MacroTimeBenchmarking_8h_ac7d4ee4fbe53b2c3f74d3c7fe5e37976}{BENCHMARK\_TIME\_RESET}}(\&m\_system\_t,\&m\_system\_x,\&m\_system\_s);\ \textcolor{comment}{//\ Reset\ at\ the\ very\ beginning,\ say\ in\ the\ constructor}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00115}00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00116}00116\ \ \ \ \ \textcolor{comment}{//\ Define\ time\ benchmarking\ variables\ and\ utility\ functions}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00117}00117\ \ \ \ \ chrono::steady\_clock::time\_point\ m\_system\_t\ =chrono::steady\_clock::now();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00118}00118\ \ \ \ \ std::chrono::duration<\ int64\_t,\ nano>\ m\_system\_x,m\_system\_s\ =\ (std::chrono::duration<\ int64\_t,\ nano>)0;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00119}00119\ \ \ \ \ sc\_core::sc\_time\ m\_sc\_time\_begin;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00120}00120\ \ \ \ \ QTime\ m\_clock\_time\_begin;\ \ \ \textcolor{comment}{//\ The\ beginning\ of\ this\ simulation,\ [ms]}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00121}00121\ \ \ \ \ sc\_core::sc\_time\ m\_CurrentTime;\ \ \ \textcolor{comment}{//\ The\ actual\ simulated\ time}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00122}00122\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00123}00123\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Currently\ requested\ method}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00124}00124\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{classScQtSimulator_a89913da0ebb6b78a2b29299859c54bdb}{Method}}\ \_method;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_abort;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_interrupt;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00137}00137\ \ \ \ \ QMutex\ mutex;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00141}00141\ \ \ \ \ QWaitCondition\ condition;}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00147}00147\ \ \ \ \ \textcolor{keywordtype}{void}\ doSimulationSteps();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00148}00148\ signals:}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00152}00152\ \textcolor{comment}{//\ \ \ \ void\ valueChanged(const\ QString\ \&value);}}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00156}\mbox{\hyperlink{classScQtSimulator_ad627b2a89dba90051ab0bc8ac42a1590}{00156}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScQtSimulator_ad627b2a89dba90051ab0bc8ac42a1590}{eventHappened}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00161}\mbox{\hyperlink{classScQtSimulator_ae2b46f78af8f0678d6012c0ef607a205}{00161}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScQtSimulator_ae2b46f78af8f0678d6012c0ef607a205}{finished}}();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00163}00163\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScQtSimulator_ab535fc17c35002ad931132c768ac1e9e}{mainLoop}}();}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00170}00170\ \};}
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{ScQtSimulator_8h_source_l00172}00172\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCQTSIMULATOR\_H}}
 
 \end{DoxyCode}

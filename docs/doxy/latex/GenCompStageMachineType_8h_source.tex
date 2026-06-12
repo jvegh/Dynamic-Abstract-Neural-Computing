@@ -1,40 +1,40 @@
 \doxysection{Gen\+Comp\+Stage\+Machine\+Type.\+h}
-\label{GenCompStageMachineType_8h_source}\index{GenCompStageMachineType.h@{GenCompStageMachineType.h}}
-\textbf{ Go to the documentation of this file.}
+\hypertarget{GenCompStageMachineType_8h_source}{}\label{GenCompStageMachineType_8h_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/GenCompStageMachineType.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/GenCompStageMachineType.h}}
+\mbox{\hyperlink{GenCompStageMachineType_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ }
-\DoxyCodeLine{00007\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
-\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
-\DoxyCodeLine{00010\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ GENCOMPSTAGEMACHINETYPE\_H}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ GENCOMPSTAGEMACHINE\_H}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <cstdint>}}
-\DoxyCodeLine{00020\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00021\ \textcolor{comment}{//\#include\ <bitset>}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00137\ \textcolor{keyword}{enum\ class}\ \ GenCompStageMachine\_t\ :int8\_t\ \{}
-\DoxyCodeLine{00138\ \ \ \ \ gcsm\_Sleeping=0,\ \textcolor{comment}{//\ *!<\ same\ as\ gcsm\_Relaxing,\ but\ no\ Heartbeats\ *\ /}}
-\DoxyCodeLine{00139\ \ \ \ \ gcsm\_Relaxing,\textcolor{comment}{//\ *!<\ Relaxing\ *\ /}}
-\DoxyCodeLine{00140\ \ \ \ \ gcsm\_Computing,}
-\DoxyCodeLine{00141\ \ \ \ \ gcsm\_Delivering,}
-\DoxyCodeLine{00142\ \ \ \ \ gcsm\_Initializing,}
-\DoxyCodeLine{00143\ \ \ \ \ gcsm\_InputReceived,}
-\DoxyCodeLine{00144\ \ \ \ \ gcsm\_Synchronizing,}
-\DoxyCodeLine{00145\ \ \ \ \ gcsm\_Failed,}
-\DoxyCodeLine{00146\ \ \ \ \ gcsm\_SIZE}
-\DoxyCodeLine{00147\ \};}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00152\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ GenCompStagesString[];}
-\DoxyCodeLine{00155\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GenCompStageMachineType2String(GenCompStageMachine\_t\ e);}
-\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCGENCOMPSTAGEMACHINE\_H}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00007}00007\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00009}00009\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00010}00010\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00012}00012\ \textcolor{preprocessor}{\#ifndef\ GENCOMPSTAGEMACHINETYPE\_H}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00013}00013\ \textcolor{preprocessor}{\#define\ GENCOMPSTAGEMACHINE\_H}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00020}00020\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00021}00021\ \textcolor{comment}{//\#include\ <bitset>}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00137}\mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_ga081db2c407b8542a0012596012f2423b}{00137}}\ \textcolor{keyword}{enum\ class}\ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_ga081db2c407b8542a0012596012f2423b}{GenCompStageMachine\_t}}\ :int8\_t\ \{}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00138}00138\ \ \ \ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba3d4e3d8d0c94a9cfe5892f70d5499dd6}{gcsm\_Sleeping}}=0,\ \textcolor{comment}{//\ *!<\ same\ as\ gcsm\_Relaxing,\ but\ no\ Heartbeats\ *\ /}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00139}00139\ \ \ \ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba6aef06c7b547ff8191fd2d179245e3cc}{gcsm\_Relaxing}},\textcolor{comment}{//\ *!<\ Relaxing\ *\ /}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00140}00140\ \ \ \ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baa4c9774958a12ea2cb7076e7cf666c65}{gcsm\_Computing}},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00141}00141\ \ \ \ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423bac00feaed46a015f1cf21d6ce2bab1cd0}{gcsm\_Delivering}},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00142}00142\ \ \ \ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baf73f71fa2407aec1df06b67ce2a4fa51}{gcsm\_Initializing}},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00143}00143\ \ \ \ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baeac662a419441c6037d7c813d920b07a}{gcsm\_InputReceived}},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00144}00144\ \ \ \ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba07d34ef7d1ba61756025517c1f728416}{gcsm\_Synchronizing}},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00145}00145\ \ \ \ \ \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba07e87526bf1e1b0e4b23fe2c0b5cff25}{gcsm\_Failed}},}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00146}00146\ \ \ \ \ gcsm\_SIZE}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00147}00147\ \};}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00150}00150\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00152}00152\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00154}00154\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{string}\ GenCompStagesString[];}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00155}00155\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GenCompStageMachineType2String(\mbox{\hyperlink{classGenCompStageMachine__t}{GenCompStageMachine\_t}}\ e);}
+\DoxyCodeLine{\Hypertarget{GenCompStageMachineType_8h_source_l00158}00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCGENCOMPSTAGEMACHINE\_H}}
 
 \end{DoxyCode}

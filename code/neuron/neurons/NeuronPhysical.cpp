@@ -57,7 +57,9 @@ extern sc_core::sc_time
 // \brief Implement handling the states of computing
     NeuronPhysical::
 NeuronPhysical(sc_core::sc_module_name nm):
-    scGenComp_PU_Bio(nm), NeuronConstants(),
+    scGenComp_PU_Bio(nm),
+    ode::OdeEuler::OdeEuler(1),
+    NeuronConstants(),
     m_RushinCurrent((NeuronInputCurrent *)NULL),
     m_RushinParameters(Default_RushinParameters),    // Parameters for the rushin
     m_SynapticParameters(Default_SynapticParameters),            // Parameters for the axonal input
@@ -68,10 +70,51 @@ NeuronPhysical(sc_core::sc_module_name nm):
 //    Use_JohnstonSet();
 //   MembraneFromRGOhm_TauMSec_Set(Membrane_R, Membrane_Tau/Membrane_R);
 
-    Initialize_Do();
+//    Initialize_Do();
        Tracing_Initialize();
 }
 
+//-----------------------------------
+//essential virtual function wrappers
+
+/*void NeuronPhysical::ode_fun_ (double *solin, double *fout) {
+
+    //call the system of equations
+    ode_fun(solin, fout);
+    //increment the counter
+    neval_++;
+}*/
+
+void  NeuronPhysical::step_ (double dt)
+{
+
+}
+
+void NeuronPhysical::step (double dt, bool extra) {
+
+    //store the time step for access in derived classes
+    dt_ = dt;
+    //call the bare stepper
+    step_(dt);
+    //increment the time, a convenience variable
+    t_ += dt;
+    //increment the counter
+    nstep_++;
+    //check for nans and infs
+    if (nstep_ % icheck_ == 0) check_sol_integrity();
+    //do any extra stuff
+    if (extra) after_step(t_);
+}
+
+//------
+//extras
+
+void NeuronPhysical::before_solve () { /* virtual, left to derived class */ }
+
+void NeuronPhysical::after_step (double t) {
+    /* virtual, left to derived class, can only be used with solve_fixed() */
+    (void)t;
+}
 
 //    m_Neuron->MembraneFromRGOhm_TauMSec_Set(0.0028,28);
 //    m_Neuron->MembraneFromRGOhm_TauMSec_Set(APParameters[3],APParameters[2]);
@@ -90,15 +133,6 @@ Create_Rushin()
 {
         if(m_RushinCurrent) // The old current must be too small; neglect it
             delete m_RushinCurrent;
-/*        m_RushinParameters.push_back(Rushin_Amplitude);
-        m_RushinParameters.push_back(Rushin_A);
-        m_RushinParameters.push_back(Rushin_B);*/
-#if 0
-        vector<double> Par;
-        Par.push_back(Rushin_Amplitude);
-        Par.push_back(Rushin_A);
-        Par.push_back(Rushin_B);
-#endif // 0
         // From this point on, we do have a rush-in current
         m_RushinCurrent = new NeuronInputCurrent(this,NeuronInputCurrent_t::nict_RushIn,
                                                  scLocalTimeMS_Get(),

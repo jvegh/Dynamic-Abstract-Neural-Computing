@@ -1,0 +1,17 @@
+<map id="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/include/scMacroTimeBenchmarking.h" name="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/include/scMacroTimeBenchmarking.h">
+<area shape="rect" id="Node000001" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="407,5,762,60"/>
+<area shape="rect" id="Node000002" href="$scGenComp__PU__Abstract_8h.html" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="478,108,691,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="587,74,587,108,582,108,582,74"/>
+<area shape="rect" id="Node000003" href="$scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="351,225,565,295"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="540,188,497,227,493,223,536,185"/>
+<area shape="rect" id="Node000008" href="$scGenComp__PU__Abstract_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="589,225,833,295"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="633,185,676,223,672,227,630,188"/>
+<area shape="rect" id="Node000004" href="$NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="225,343,438,412"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="413,306,370,344,367,340,409,302"/>
+<area shape="rect" id="Node000007" href="$scGenComp__PU__Bio_8cpp.html" title="The abstract processing unit for generalized computing." alt="" coords="463,343,707,412"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="507,302,549,340,546,344,503,306"/>
+<area shape="rect" id="Node000005" href="$NeuronInputCurrent_8cpp.html" title="The physics&#45;based abstract neuron&#39;s input current." alt="" coords="5,460,327,515"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="270,422,208,462,205,458,267,417"/>
+<area shape="rect" id="Node000006" href="$NeuronPhysical_8cpp.html" title="The physics&#45;based abstract neuron." alt="" coords="351,460,645,515"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="396,417,459,458,456,462,393,422"/>
+</map>

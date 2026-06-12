@@ -1,18 +1,26 @@
-\doxysection{Macro\+Time\+Benchmarking.\+h File Reference}
-\label{MacroTimeBenchmarking_8h}\index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
+\doxysection{/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/include/\+Macro\+Time\+Benchmarking.h File Reference}
+\hypertarget{MacroTimeBenchmarking_8h}{}\label{MacroTimeBenchmarking_8h}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/MacroTimeBenchmarking.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/MacroTimeBenchmarking.h}}
 
 
 Macros for processor (CLOCK) time span passing between using the expanded codes.  
 
 
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MacroTimeBenchmarking_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \textbf{ BENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN}(x,  t)
+\#define \mbox{\hyperlink{MacroTimeBenchmarking_8h_ac7d4ee4fbe53b2c3f74d3c7fe5e37976}{BENCHMARK\+\_\+\+TIME\+\_\+\+RESET}}(t,  x,  s)
 \item 
-\#define \textbf{ BENCHMARK\+\_\+\+TIME\+\_\+\+END}(t,  x,  s)
+\#define \mbox{\hyperlink{MacroTimeBenchmarking_8h_abe3e52aa6169ad16fa9bf59bbeb2e267}{BENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN}}(x,  t)
 \item 
-\#define \textbf{ BENCHMARK\+\_\+\+TIME\+\_\+\+RESET}(t,  x,  s)
+\#define \mbox{\hyperlink{MacroTimeBenchmarking_8h_abd7dae08760afc678f2119375ad5be47}{BENCHMARK\+\_\+\+TIME\+\_\+\+END}}(t,  x,  s)
 \end{DoxyCompactItemize}
 
 
@@ -70,11 +78,15 @@ std::cerr  << "Simulation took " << s.count()/1000/1000. << " msec CLOCK time" <
 \end{DoxyVerb}
  In an object, you can RESET in the constructor, in the member functions between BEGIN and END measure the one-\/time utilization, and in the destructor to read out the total benchmarked time. Or to benchmark (in multiple variables) execution CLOCK time about critical sections of your code. Take care\+: control printing takes a along time. 
 
+Definition in file \mbox{\hyperlink{MacroTimeBenchmarking_8h_source}{Macro\+Time\+Benchmarking.\+h}}.
+
+
+
 \doxysubsection{Macro Definition Documentation}
-\label{MacroTimeBenchmarking_8h_abe3e52aa6169ad16fa9bf59bbeb2e267} 
+\Hypertarget{MacroTimeBenchmarking_8h_abe3e52aa6169ad16fa9bf59bbeb2e267}\label{MacroTimeBenchmarking_8h_abe3e52aa6169ad16fa9bf59bbeb2e267} 
 \index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}!BENCHMARK\_TIME\_BEGIN@{BENCHMARK\_TIME\_BEGIN}}
 \index{BENCHMARK\_TIME\_BEGIN@{BENCHMARK\_TIME\_BEGIN}!MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
-\doxysubsubsection{BENCHMARK\_TIME\_BEGIN}
+\doxysubsubsection{\texorpdfstring{BENCHMARK\_TIME\_BEGIN}{BENCHMARK\_TIME\_BEGIN}}
 {\footnotesize\ttfamily \#define BENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{t }\end{DoxyParamCaption})}
 
 Changes the user-\/provided {\itshape t} timepoint to the recent time. Sets the user-\/provided {\itshape x} to the last TIME\+\_\+\+BEGIN {\itshape t} value 
@@ -84,10 +96,14 @@ Changes the user-\/provided {\itshape t} timepoint to the recent time. Sets the 
 {\em x} & deliver clock time of the beginning \\
 \hline
 \end{DoxyParams}
-\label{MacroTimeBenchmarking_8h_abd7dae08760afc678f2119375ad5be47} 
+
+
+Definition at line \mbox{\hyperlink{MacroTimeBenchmarking_8h_source_l00128}{128}} of file \mbox{\hyperlink{MacroTimeBenchmarking_8h_source}{Macro\+Time\+Benchmarking.\+h}}.
+
+\Hypertarget{MacroTimeBenchmarking_8h_abd7dae08760afc678f2119375ad5be47}\label{MacroTimeBenchmarking_8h_abd7dae08760afc678f2119375ad5be47} 
 \index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}!BENCHMARK\_TIME\_END@{BENCHMARK\_TIME\_END}}
 \index{BENCHMARK\_TIME\_END@{BENCHMARK\_TIME\_END}!MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
-\doxysubsubsection{BENCHMARK\_TIME\_END}
+\doxysubsubsection{\texorpdfstring{BENCHMARK\_TIME\_END}{BENCHMARK\_TIME\_END}}
 {\footnotesize\ttfamily \#define BENCHMARK\+\_\+\+TIME\+\_\+\+END(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{s }\end{DoxyParamCaption})}
 
 Changes the user-\/provided {\itshape t} timepoint. Sets the user-\/provided {\itshape x} to the duration since the last TIME\+\_\+\+BEGIN {\itshape t} value. Sets the user-\/provided time of the beginning {\itshape s} to the duration since the last TIME\+\_\+\+RESET {\itshape t} value. Multiple uses can deliver multiple results since the same ENCHMARK\+\_\+\+TIME\+\_\+\+BEGIN 
@@ -99,10 +115,14 @@ Changes the user-\/provided {\itshape t} timepoint. Sets the user-\/provided {\i
 {\em s} & deliver clock duration since \+\_\+\+RESET (only read) \\
 \hline
 \end{DoxyParams}
-\label{MacroTimeBenchmarking_8h_ac7d4ee4fbe53b2c3f74d3c7fe5e37976} 
+
+
+Definition at line \mbox{\hyperlink{MacroTimeBenchmarking_8h_source_l00129}{129}} of file \mbox{\hyperlink{MacroTimeBenchmarking_8h_source}{Macro\+Time\+Benchmarking.\+h}}.
+
+\Hypertarget{MacroTimeBenchmarking_8h_ac7d4ee4fbe53b2c3f74d3c7fe5e37976}\label{MacroTimeBenchmarking_8h_ac7d4ee4fbe53b2c3f74d3c7fe5e37976} 
 \index{MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}!BENCHMARK\_TIME\_RESET@{BENCHMARK\_TIME\_RESET}}
 \index{BENCHMARK\_TIME\_RESET@{BENCHMARK\_TIME\_RESET}!MacroTimeBenchmarking.h@{MacroTimeBenchmarking.h}}
-\doxysubsubsection{BENCHMARK\_TIME\_RESET}
+\doxysubsubsection{\texorpdfstring{BENCHMARK\_TIME\_RESET}{BENCHMARK\_TIME\_RESET}}
 {\footnotesize\ttfamily \#define BENCHMARK\+\_\+\+TIME\+\_\+\+RESET(\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{s }\end{DoxyParamCaption})}
 
 Clears the user-\/provided {\itshape x} and {\itshape s} duration values. Sets the user-\/provided {\itshape x} to the duration since the last TIME\+\_\+\+BEGIN {\itshape t} value. Sets the user-\/provided {\itshape s} to the duration since the last TIME\+\_\+\+RESET {\itshape t} value. 
@@ -114,3 +134,7 @@ Clears the user-\/provided {\itshape x} and {\itshape s} duration values. Sets t
 {\em s} & deliver clock duration since \+\_\+\+RESET (only read) \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{MacroTimeBenchmarking_8h_source_l00127}{127}} of file \mbox{\hyperlink{MacroTimeBenchmarking_8h_source}{Macro\+Time\+Benchmarking.\+h}}.
+

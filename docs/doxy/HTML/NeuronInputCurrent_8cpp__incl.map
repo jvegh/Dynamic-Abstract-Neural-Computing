@@ -1,51 +1,53 @@
-<map id="NeuronInputCurrent.cpp" name="NeuronInputCurrent.cpp">
-<area shape="rect" id="Node000001" title="The physics&#45;based abstract neuron&#39;s input current." alt="" coords="915,5,1093,31"/>
-<area shape="rect" id="Node000002" href="$NeuronInputCurrent_8h.html" title="Function prototypes for the physics&#45;based neuron module&#39;s input current." alt="" coords="771,152,933,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="988,33,927,81,871,142,867,139,924,77,985,29"/>
-<area shape="rect" id="Node000005" href="$DebugMacros_8h.html" title="Macros for debugging both normal and SystemC (simulated) functionality." alt="" coords="1108,79,1231,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1032,28,1131,71,1129,76,1030,33"/>
-<area shape="rect" id="Node000008" href="$NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="937,79,1071,104"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1007,31,1007,65,1001,65,1001,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="743,225,806,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="841,179,799,218,796,214,838,175"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="831,225,900,251"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="857,177,863,211,858,212,852,178"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="1576,299,1640,324"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1172,104,1178,139,1185,159,1196,175,1215,187,1250,201,1351,235,1563,295,1561,300,1349,240,1248,206,1213,192,1193,179,1180,161,1172,141,1167,105"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="1207,152,1281,177"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1183,102,1224,141,1220,144,1179,106"/>
-<area shape="poly" id="edge26_Node000008_Node000002" title=" " alt="" coords="981,106,890,149,888,144,978,102"/>
-<area shape="rect" id="Node000009" href="$scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="957,152,1123,177"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1012,103,1030,138,1026,141,1008,106"/>
-<area shape="rect" id="Node000010" href="$scGenComp__PU__Abstract_8h.html" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="930,225,1129,251"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1041,178,1036,212,1030,211,1036,177"/>
-<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="1129,246,1356,269,1563,296,1562,301,1355,275,1129,251"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="1387,299,1445,324"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1109,248,1230,268,1374,296,1373,301,1229,273,1108,253"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="1469,299,1552,324"/>
-<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="1126,248,1277,268,1456,296,1455,301,1276,273,1125,253"/>
-<area shape="rect" id="Node000013" href="$Constants_8h.html" title="Constants used in the neuronal computations Header only." alt="" coords="5,299,104,324"/>
-<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="930,252,912,253,690,266,516,272,342,280,118,301,118,296,341,274,516,266,690,261,912,248,929,247"/>
-<area shape="rect" id="Node000017" href="$scGenComp__Config_8h_source.html" title=" " alt="" coords="373,299,533,324"/>
-<area shape="poly" id="edge17_Node000010_Node000017" title=" " alt="" coords="937,253,547,301,547,296,936,248"/>
-<area shape="rect" id="Node000018" href="$EventGencomp_8h_source.html" title=" " alt="" coords="557,299,691,324"/>
-<area shape="poly" id="edge18_Node000010_Node000018" title=" " alt="" coords="965,253,703,299,702,294,964,248"/>
-<area shape="rect" id="Node000020" href="$GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="129,299,349,324"/>
-<area shape="poly" id="edge20_Node000010_Node000020" title=" " alt="" coords="930,252,912,253,363,301,362,296,912,248,929,246"/>
-<area shape="rect" id="Node000021" title=" " alt="" coords="715,299,898,324"/>
-<area shape="poly" id="edge23_Node000010_Node000021" title=" " alt="" coords="994,253,856,297,855,292,993,248"/>
-<area shape="rect" id="Node000022" href="$scMacroTimeBenchmarking_8h.html" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="922,299,1137,324"/>
-<area shape="poly" id="edge24_Node000010_Node000022" title=" " alt="" coords="1032,251,1032,285,1027,285,1027,251"/>
-<area shape="rect" id="Node000023" href="$MacroTimeBenchmarking_8h.html" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="1161,299,1362,324"/>
-<area shape="poly" id="edge25_Node000010_Node000023" title=" " alt="" coords="1067,248,1212,292,1210,297,1066,253"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="23,372,86,397"/>
-<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="57,324,57,358,52,358,52,324"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="113,372,180,397"/>
-<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="71,322,123,361,119,366,68,326"/>
-<area shape="rect" id="Node000016" title=" " alt="" coords="205,372,264,397"/>
-<area shape="poly" id="edge16_Node000013_Node000016" title=" " alt="" coords="85,322,194,364,192,369,83,327"/>
-<area shape="rect" id="Node000019" title=" " alt="" coords="585,372,663,397"/>
-<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="627,324,627,358,621,358,621,324"/>
-<area shape="poly" id="edge21_Node000020_Node000015" title=" " alt="" coords="226,326,174,366,171,361,222,322"/>
-<area shape="poly" id="edge22_Node000020_Node000016" title=" " alt="" coords="241,324,239,359,233,358,235,324"/>
+<map id="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/neurons/NeuronInputCurrent.cpp" name="/home/jvegh/REPO/Dynamic&#45;Abstract&#45;Neural&#45;Computing/code/neuron/neurons/NeuronInputCurrent.cpp">
+<area shape="rect" id="Node000001" title="The physics&#45;based abstract neuron&#39;s input current." alt="" coords="877,5,1198,60"/>
+<area shape="rect" id="Node000002" href="$NeuronInputCurrent_8h.html" title="Function prototypes for the physics&#45;based neuron module&#39;s input current." alt="" coords="768,189,931,214"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1009,62,874,181,871,177,1006,58"/>
+<area shape="rect" id="Node000005" href="$DebugMacros_8h.html" title="Macros for debugging both normal and SystemC (simulated) functionality." alt="" coords="1396,108,1519,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1166,57,1389,103,1388,108,1165,63"/>
+<area shape="rect" id="Node000008" href="$NeuronPhysical_8h.html" title="Function prototypes for the physics&#45;based neuron module." alt="" coords="970,108,1105,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1040,60,1040,94,1035,94,1035,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="735,269,798,295"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="839,216,791,262,787,258,835,212"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="823,269,892,295"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="853,214,857,255,852,256,848,214"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="1576,343,1640,368"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1470,132,1509,180,1560,261,1598,329,1593,332,1556,264,1505,183,1466,135"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="1420,189,1495,214"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1460,134,1460,175,1455,175,1455,134"/>
+<area shape="poly" id="edge26_Node000008_Node000002" title=" " alt="" coords="1011,136,890,186,888,181,1009,131"/>
+<area shape="rect" id="Node000009" href="$scGenComp__PU__Bio_8h.html" title="Function prototypes for the bio computing module It is just event handling, no modules." alt="" coords="955,189,1120,214"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1040,134,1040,175,1035,175,1035,134"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="1145,181,1311,221"/>
+<area shape="poly" id="edge27_Node000008_Node000024" title=" " alt="" coords="1066,131,1171,174,1169,179,1064,136"/>
+<area shape="rect" id="Node000010" href="$scGenComp__PU__Abstract_8h.html" title="Function prototypes for the general processing unit. Just event and stage handling,..." alt="" coords="930,269,1129,295"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1039,214,1035,256,1029,255,1034,214"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="1129,287,1326,306,1443,321,1563,340,1562,345,1442,326,1325,311,1129,293"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="1387,343,1445,368"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1109,292,1230,312,1374,340,1373,345,1229,317,1108,297"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1469,343,1552,368"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="1126,292,1277,312,1456,340,1455,345,1276,317,1125,297"/>
+<area shape="rect" id="Node000013" href="$Constants_8h.html" title="Constants used in the neuronal computations Header only." alt="" coords="5,343,104,368"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="930,295,904,297,685,310,512,315,339,324,118,345,117,340,339,318,512,310,684,305,904,292,930,290"/>
+<area shape="rect" id="Node000017" href="$scGenComp__Config_8h_source.html" title=" " alt="" coords="373,343,533,368"/>
+<area shape="poly" id="edge17_Node000010_Node000017" title=" " alt="" coords="937,297,547,345,547,340,936,292"/>
+<area shape="rect" id="Node000018" href="$EventGencomp_8h_source.html" title=" " alt="" coords="557,343,691,368"/>
+<area shape="poly" id="edge18_Node000010_Node000018" title=" " alt="" coords="965,297,703,343,702,338,964,292"/>
+<area shape="rect" id="Node000020" href="$GenCompStageMachineType_8h.html" title="Descriptive enums for the stage machine Just event and stage handling, no real activity." alt="" coords="129,343,349,368"/>
+<area shape="poly" id="edge20_Node000010_Node000020" title=" " alt="" coords="930,295,904,297,363,345,362,340,904,292,930,290"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="715,343,898,368"/>
+<area shape="poly" id="edge23_Node000010_Node000021" title=" " alt="" coords="994,297,856,341,855,336,993,292"/>
+<area shape="rect" id="Node000022" href="$scMacroTimeBenchmarking_8h.html" title="Macros for SystemC (SIMULATED) time span passing between using the expanded codes." alt="" coords="922,343,1137,368"/>
+<area shape="poly" id="edge24_Node000010_Node000022" title=" " alt="" coords="1032,295,1032,329,1027,329,1027,295"/>
+<area shape="rect" id="Node000023" href="$MacroTimeBenchmarking_8h.html" title="Macros for processor (CLOCK) time span passing between using the expanded codes." alt="" coords="1161,343,1362,368"/>
+<area shape="poly" id="edge25_Node000010_Node000023" title=" " alt="" coords="1067,292,1212,336,1210,341,1066,297"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="23,416,86,441"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="57,368,57,402,52,402,52,368"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="113,416,180,441"/>
+<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="71,366,123,405,119,410,68,370"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="205,416,264,441"/>
+<area shape="poly" id="edge16_Node000013_Node000016" title=" " alt="" coords="85,366,194,408,192,413,83,371"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="585,416,663,441"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="627,368,627,402,621,402,621,368"/>
+<area shape="poly" id="edge21_Node000020_Node000015" title=" " alt="" coords="226,370,174,410,171,405,222,366"/>
+<area shape="poly" id="edge22_Node000020_Node000016" title=" " alt="" coords="241,368,239,403,233,402,235,368"/>
 </map>

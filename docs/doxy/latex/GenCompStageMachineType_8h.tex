@@ -1,37 +1,74 @@
-\doxysection{Gen\+Comp\+Stage\+Machine\+Type.\+h File Reference}
-\label{GenCompStageMachineType_8h}\index{GenCompStageMachineType.h@{GenCompStageMachineType.h}}
+\doxysection{/home/jvegh/\+REPO/\+Dynamic-\/\+Abstract-\/\+Neural-\/\+Computing/code/neuron/include/\+Gen\+Comp\+Stage\+Machine\+Type.h File Reference}
+\hypertarget{GenCompStageMachineType_8h}{}\label{GenCompStageMachineType_8h}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/GenCompStageMachineType.h@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/include/GenCompStageMachineType.h}}
 
 
 Descriptive enums for the stage machine Just event and stage handling, no real activity.  
 
 
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
 Include dependency graph for Gen\+Comp\+Stage\+Machine\+Type.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=209pt]{GenCompStageMachineType_8h__incl}
+\includegraphics[width=349pt]{GenCompStageMachineType_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{GenCompStageMachineType_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t} \+: int8\+\_\+t \{ \newline
-\textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Sleeping}
-, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing}
-, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing}
-, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering}
+enum class \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_ga081db2c407b8542a0012596012f2423b}{Gen\+Comp\+Stage\+Machine\+\_\+t}} \+: int8\+\_\+t \{ \newline
+\mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba3d4e3d8d0c94a9cfe5892f70d5499dd6}{Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Sleeping}} =0
+, \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba6aef06c7b547ff8191fd2d179245e3cc}{Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Relaxing}}
+, \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baa4c9774958a12ea2cb7076e7cf666c65}{Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Computing}}
+, \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423bac00feaed46a015f1cf21d6ce2bab1cd0}{Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Delivering}}
 , \newline
-\textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Initializing}
-, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Input\+Received}
-, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Synchronizing}
-, \textbf{ Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Failed}
+\mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baf73f71fa2407aec1df06b67ce2a4fa51}{Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Initializing}}
+, \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423baeac662a419441c6037d7c813d920b07a}{Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Input\+Received}}
+, \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba07d34ef7d1ba61756025517c1f728416}{Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Synchronizing}}
+, \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_gga081db2c407b8542a0012596012f2423ba07e87526bf1e1b0e4b23fe2c0b5cff25}{Gen\+Comp\+Stage\+Machine\+\_\+t\+::gcsm\+\_\+\+Failed}}
 , \newline
 {\bfseries gcsm\+\_\+\+SIZE}
  \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_ga5d872c0f4d2e18eb29b9b6cd286e1a55}{Gen\+Comp\+Stage\+Machine\+Type2\+String}} (\mbox{\hyperlink{classGenCompStageMachine__t}{Gen\+Comp\+Stage\+Machine\+\_\+t}} e)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{group__GENCOMP__MODULE__DEMO_ga96ab420a858f55a5aaced7821fd232c0}{Gen\+Comp\+Stages\+String}} \mbox{[}$\,$\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Descriptive enums for the stage machine Just event and stage handling, no real activity. 
+
+
+
+Definition in file \mbox{\hyperlink{GenCompStageMachineType_8h_source}{Gen\+Comp\+Stage\+Machine\+Type.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{GenCompStageMachineType_8h_a9434a8f078b7c6fdb577abad69caf21c}\label{GenCompStageMachineType_8h_a9434a8f078b7c6fdb577abad69caf21c} 
+\index{GenCompStageMachineType.h@{GenCompStageMachineType.h}!GENCOMPSTAGEMACHINE\_H@{GENCOMPSTAGEMACHINE\_H}}
+\index{GENCOMPSTAGEMACHINE\_H@{GENCOMPSTAGEMACHINE\_H}!GenCompStageMachineType.h@{GenCompStageMachineType.h}}
+\doxysubsubsection{\texorpdfstring{GENCOMPSTAGEMACHINE\_H}{GENCOMPSTAGEMACHINE\_H}}
+{\footnotesize\ttfamily \#define GENCOMPSTAGEMACHINE\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{GenCompStageMachineType_8h_source_l00013}{13}} of file \mbox{\hyperlink{GenCompStageMachineType_8h_source}{Gen\+Comp\+Stage\+Machine\+Type.\+h}}.
 

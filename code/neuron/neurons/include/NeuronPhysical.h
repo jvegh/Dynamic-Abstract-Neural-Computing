@@ -12,6 +12,7 @@
 
 #include "scGenComp_PU_Bio.h"
 #include "NeuronInputCurrent.h"
+#include "../3rdParty/ode/include/ode/ode_euler.h"
 
 #define MakeDebugPrint 0
 
@@ -55,7 +56,9 @@
 //static  NeuronConstants DefaultNeuron;
 class ScQtNeuron_MainWindow;
 
-class NeuronPhysical : public scGenComp_PU_Bio,NeuronConstants
+class NeuronPhysical : public scGenComp_PU_Bio,
+                       ode::OdeEuler::OdeEuler,
+                       NeuronConstants
 {
     friend class NeuronInputCurrent; friend class ScQtNeuron_MainWindow;
 public:
@@ -70,11 +73,64 @@ public:
     //    m_RushinCurrent = (NeuronInputCurrent*)NULL;
     }// Must be overridden
 
+    //!evaluates the system of ODEs in autonomous form and must be defined by a derived class
+    /* !
+        The incoming `solin` vector contains the current values of all solution variables and has length `neq`. The output vector should be filled with the time derivatives for each variable in `solin`. All elements of `fout` should be set, even if they're zero, because the `fout` array isn't cleared before it's reused.
+            \param[in] solin current solution array
+            \param[out] fout evaluation of system of ordinary differential equations
+        */
+
+    virtual void ode_fun (double *solin, double *fout)
+    {
+
+    }
+
+    virtual void adapt()
+    {
+
+    }
+
+    //------
+    //extras
+
+    //!does any extra stuff before starting a solve
+    virtual void before_solve ();
+    //!does any extra stuff after each step
+    /*!
+        \param[in] t current value of ODE system's independent variable
+        */
+    virtual void after_step (double t);
+    //!does any extra stuff only when a step is captured
+
+    virtual void after_solve ()
+    {
+
+    }
+    /*!
+        This is a virtual function overridden by the class which implements the stepping algorightm. It should never be used outside of the wrapper step() function, and this wrapper should always be used instead.
+            \param[in] dt time step size
+        */
+    virtual void step_ (double dt);
+
+    //----------------
+    //solver functions
+
+    //!increments the step counter and the time, checks the solution integrity if needed, stores the time step in the object, and executes after_step() if extra is true
+    //! neval_must be incremented in step() when defined
+    void step (double dt, bool extra=true);
+
+    //!advances a single time step (without changing counters or the time) and must be defined in the derived class implementing the solver/method
+    /* !
+        This is a virtual function overridden by the class which implements the stepping algorightm. It should never be used outside of the wrapper step() function, and this wrapper should always be used instead.
+            \param[in] dt time step size
+        */
+
     virtual void Tracing_Initialize(); // Initialize tracing: voltage vs time
     /**
      * @brief Calculate the membrane's new potential by solving a PDE at
      * the new time after advancing time by the Heartbeat value
      */
+
     virtual void Calculate_Do();
     /**
      * @brief Create a new rush-in current for the neuron

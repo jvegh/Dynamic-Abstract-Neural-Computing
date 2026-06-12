@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13: NeuronPhysical.h Source File</title>
+<title>DANCES: /home/jvegh/REPO/Dynamic-Abstract-Neural-Computing/code/neuron/neurons/include/NeuronPhysical.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -16,11 +16,6 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js"],
@@ -44,21 +39,10 @@ MathJax.Hub.Config({
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="TAC_Logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</a>
+   <div id="projectname"><a href="https://github.com/jvegh/AbstractNeuronDynamics">DANCES</a>
    </div>
+   <div id="projectbrief">Dynamic Abstract Neural Computing V0.1.0 @ 2026.04.13</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -68,6 +52,22 @@ MathJax.Hub.Config({
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
 </div><!-- top -->
@@ -124,105 +124,161 @@ $(document).ready(function(){initNavTree('NeuronPhysical_8h_source.html',''); in
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="scGenComp__PU__Bio_8h.html">scGenComp_PU_Bio.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="NeuronInputCurrent_8h.html">NeuronInputCurrent.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define MakeDebugPrint 0</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//static  NeuronConstants DefaultNeuron;</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">class </span>ScQtNeuron_MainWindow;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classNeuronPhysical.html">   58</a></span><span class="keyword">class </span><a class="code hl_class" href="classNeuronPhysical.html">NeuronPhysical</a> : <span class="keyword">public</span> <a class="code hl_class" href="classscGenComp__PU__Bio.html">scGenComp_PU_Bio</a>,<a class="code hl_class" href="classNeuronConstants.html">NeuronConstants</a></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classNeuronInputCurrent.html">NeuronInputCurrent</a>; <span class="keyword">friend</span> <span class="keyword">class </span>ScQtNeuron_MainWindow;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_class" href="classNeuronPhysical.html">NeuronPhysical</a>(sc_core::sc_module_name nm<span class="comment">//, NeuronConstants* Neuron=&amp;DefaultNeuron</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                   );</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classNeuronPhysical.html">~NeuronPhysical</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">//    m_RushinCurrent = (NeuronInputCurrent*)NULL;</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }<span class="comment">// Must be overridden</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Tracing_Initialize(); <span class="comment">// Initialize tracing: voltage vs time</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a3e6514fed4b7c3bee8d54e64ecfbb736">Calculate_Do</a>();</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a7d5f3d382d2e8ffd1887005bc4950490">Create_Rushin</a>();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a546c874d86adeecd7168ea2949c5151e">Heartbeat_Computing_Do</a>();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a6b75d51f0ae9f7504dbfde9cd506f5bf">Heartbeat_Delivering_Do</a>();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#add2a625c928b7503299669aaae09d3b5">Heartbeat_Relaxing_Do</a>();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#af37da71258b9c0b3812373d3cd16daf0">Initialize_Do</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;../3rdParty/ode/include/ode/ode_euler.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define MakeDebugPrint 0</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//static  NeuronConstants DefaultNeuron;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">class </span>ScQtNeuron_MainWindow;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="};">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classNeuronPhysical.html">   59</a></span><span class="keyword">class </span><a class="code hl_class" href="classNeuronPhysical.html">NeuronPhysical</a> : <span class="keyword">public</span> <a class="code hl_class" href="classscGenComp__PU__Bio.html">scGenComp_PU_Bio</a>,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                       ode::OdeEuler::OdeEuler,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                       <a class="code hl_class" href="classNeuronConstants.html">NeuronConstants</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classNeuronInputCurrent.html">NeuronInputCurrent</a>; <span class="keyword">friend</span> <span class="keyword">class </span>ScQtNeuron_MainWindow;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_class" href="classNeuronPhysical.html">NeuronPhysical</a>(sc_core::sc_module_name nm</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                   );</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classNeuronPhysical.html">~NeuronPhysical</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">//    m_RushinCurrent = (NeuronInputCurrent*)NULL;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }<span class="comment">// Must be overridden</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">/* !</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">        The incoming `solin` vector contains the current values of all solution variables and has length `neq`. The output vector should be filled with the time derivatives for each variable in `solin`. All elements of `fout` should be set, even if they&#39;re zero, because the `fout` array isn&#39;t cleared before it&#39;s reused.</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">            \param[in] solin current solution array</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">            \param[out] fout evaluation of system of ordinary differential equations</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">        */</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classNeuronPhysical.html#aeddf4cfd85372dbd1d7f192a56ee09d1">   83</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#aeddf4cfd85372dbd1d7f192a56ee09d1">ode_fun</a> (<span class="keywordtype">double</span> *solin, <span class="keywordtype">double</span> *fout)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> adapt()</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">//------</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">//extras</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a89ade46a5e9af10bbcde5d36bfe5acfb">before_solve</a> ();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a495940008fb8aeb29f8db55d40aa111f">ComputingBegin_Do</a>();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classNeuronPhysical.html#a4b91867e55ccc2a44acb7e25feda7ce5">Heartbeat_Computing_Stop</a>();</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classNeuronPhysical.html#acb5ff8fd98f3fa440f0f96361c988950">Heartbeat_Delivering_Stop</a>();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classNeuronPhysical.html#aa6d1dcabef0773544cbce238082f097f">Heartbeat_Relaxing_Stop</a>();</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a45c960e911518e4318d247e2c318ca8e">InputCurrentDelete</a>(<a class="code hl_class" href="classNeuronInputCurrent.html">NeuronInputCurrent</a>* IC);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#af9836d8a9c965e55ba7becf545d6fc1a">InputReceived_Do</a>();</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classNeuronPhysical.html#ab219ea4418f8a25467269614daa22c3c">  164</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classNeuronPhysical.html#ab219ea4418f8a25467269614daa22c3c">InputIsLegal</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordtype">bool</span> Legal =  GenCompStageMachine_t::gcsm_Delivering != <a class="code hl_function" href="classscGenComp__PU__Abstract.html#a8095d54f9badd96495332b43779b3b4f">StageFlag_Get</a>();</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">if</span>(!Legal) <a class="code hl_variable" href="classscGenComp__PU__Abstract.html#a7735d6170868443fd4cd6904f7f28c3e">EVENT_GenComp</a>.InputIllegal.notify(SC_ZERO_TIME); <span class="comment">// Inform the possible observers</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordflow">return</span> Legal;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a4faca4bf2811975cbf79dbe0ef8093bb">after_step</a> (<span class="keywordtype">double</span> t);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classNeuronPhysical.html#a4992bb65c76e84cb245075384aea5a88">  105</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a4992bb65c76e84cb245075384aea5a88">after_solve</a> ()</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
 </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#if MakeDebugPrint</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span>  OutputItem(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    vector &lt;NeuronInputCurrent*&gt; m_SynapticCurrents;    <span class="comment">// Stores pointers to the currents</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <a class="code hl_class" href="classNeuronInputCurrent.html">NeuronInputCurrent</a> *m_RushinCurrent;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">double</span> dVdtResulting_Get(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_Membrane_dVdt_Resulting;}</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordtype">double</span> dVdtResultingLast_Get(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_Membrane_Last_dVdt;}</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordtype">double</span> dVdtAIS_Get(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_Membrane_dVdt_AIS;}</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">double</span> dVdtInput_Get(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_Input_dVdt + m_Membrane_dVdt_Rushin;}</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordtype">double</span> I_AIS_Get(<span class="keywordtype">void</span>){<span class="keywordflow">return</span> m_AIS_I;}</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordtype">double</span> I_Na_Get(<span class="keywordtype">void</span>){<span class="keywordflow">return</span> m_Na_I;}</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordtype">double</span> I_Resulting_Get(<span class="keywordtype">void</span>){<span class="keywordflow">return</span> m_Resulting_I;}</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">//    NeuronInputCurrent* m_RushinCurrent;</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="comment">// Just for tracing</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">//    double m_dV_dt_membrane;    // The actual time derivative</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">double</span> m_Membrane_V_Rushin;    <span class="comment">// Only for tracing</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordtype">double</span> m_Input_dVdt;            <span class="comment">// The sum of the input gradients</span></div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordtype">double</span> m_Membrane_dVdt_AIS;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">double</span> m_Membrane_dVdt_Resulting;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">double</span> m_Membrane_dVdt_Rushin; <span class="comment">// The rushin-only current</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">double</span> m_Membrane_Last_dVdt;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">double</span> m_AIS_I; <span class="comment">// Current through the AIS</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">double</span> m_Na_I;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">double</span> m_Resulting_I;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    vector&lt;double&gt; m_RushinParameters;    <span class="comment">// Parameters for the rushin current</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    vector&lt;double&gt; m_SynapticParameters;            <span class="comment">// Parameters for the axonal input current</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    vector&lt;double&gt; m_MembraneParameters;  <span class="comment">// Parameters for the membrane</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>};<span class="comment">// of class NeuronPhysical</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a7b53645edccdd254ab4f524a5e7f34c7">step_</a> (<span class="keywordtype">double</span> dt);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">//----------------</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">//solver functions</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#ada25ba247571299d9accf6638018b3d0">step</a> (<span class="keywordtype">double</span> dt, <span class="keywordtype">bool</span> extra=<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">/* !</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">        This is a virtual function overridden by the class which implements the stepping algorightm. It should never be used outside of the wrapper step() function, and this wrapper should always be used instead.</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">            \param[in] dt time step size</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">        */</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a158518fcf12fa66641f1b13707c4db29">Tracing_Initialize</a>(); <span class="comment">// Initialize tracing: voltage vs time</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a3e6514fed4b7c3bee8d54e64ecfbb736">Calculate_Do</a>();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a7d5f3d382d2e8ffd1887005bc4950490">Create_Rushin</a>();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a546c874d86adeecd7168ea2949c5151e">Heartbeat_Computing_Do</a>();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a6b75d51f0ae9f7504dbfde9cd506f5bf">Heartbeat_Delivering_Do</a>();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#add2a625c928b7503299669aaae09d3b5">Heartbeat_Relaxing_Do</a>();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#af37da71258b9c0b3812373d3cd16daf0">Initialize_Do</a>();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a495940008fb8aeb29f8db55d40aa111f">ComputingBegin_Do</a>();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classNeuronPhysical.html#a4b91867e55ccc2a44acb7e25feda7ce5">Heartbeat_Computing_Stop</a>();</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classNeuronPhysical.html#acb5ff8fd98f3fa440f0f96361c988950">Heartbeat_Delivering_Stop</a>();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classNeuronPhysical.html#aa6d1dcabef0773544cbce238082f097f">Heartbeat_Relaxing_Stop</a>();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#a45c960e911518e4318d247e2c318ca8e">InputCurrentDelete</a>(<a class="code hl_class" href="classNeuronInputCurrent.html">NeuronInputCurrent</a>* IC);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classNeuronPhysical.html#af9836d8a9c965e55ba7becf545d6fc1a">InputReceived_Do</a>();</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="foldopen" id="foldopen00219" data-start="{" data-end="}">
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="classNeuronPhysical.html#ab219ea4418f8a25467269614daa22c3c">  219</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classNeuronPhysical.html#ab219ea4418f8a25467269614daa22c3c">InputIsLegal</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keywordtype">bool</span> Legal =  GenCompStageMachine_t::gcsm_Delivering != <a class="code hl_function" href="classscGenComp__PU__Abstract.html#a8095d54f9badd96495332b43779b3b4f">StageFlag_Get</a>();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <span class="keywordflow">if</span>(!Legal) <a class="code hl_variable" href="classscGenComp__PU__Abstract.html#a7735d6170868443fd4cd6904f7f28c3e">EVENT_GenComp</a>.InputIllegal.notify(SC_ZERO_TIME); <span class="comment">// Inform the possible observers</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keywordflow">return</span> Legal;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    }</div>
 </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">#endif </span><span class="comment">// NEURONPHYSICS_H</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">#if MakeDebugPrint</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span>  OutputItem(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    vector &lt;NeuronInputCurrent*&gt; m_SynapticCurrents;    <span class="comment">// Stores pointers to the currents</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_class" href="classNeuronInputCurrent.html">NeuronInputCurrent</a> *m_RushinCurrent;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordtype">double</span> dVdtResulting_Get(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_Membrane_dVdt_Resulting;}</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordtype">double</span> dVdtResultingLast_Get(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_Membrane_Last_dVdt;}</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordtype">double</span> dVdtAIS_Get(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_Membrane_dVdt_AIS;}</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordtype">double</span> dVdtInput_Get(<span class="keywordtype">void</span>) {<span class="keywordflow">return</span> m_Input_dVdt + m_Membrane_dVdt_Rushin;}</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordtype">double</span> I_AIS_Get(<span class="keywordtype">void</span>){<span class="keywordflow">return</span> m_AIS_I;}</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordtype">double</span> I_Na_Get(<span class="keywordtype">void</span>){<span class="keywordflow">return</span> m_Na_I;}</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordtype">double</span> I_Resulting_Get(<span class="keywordtype">void</span>){<span class="keywordflow">return</span> m_Resulting_I;}</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    vector&lt;double&gt; *MembraneParameters_Get() {<span class="keywordflow">return</span> &amp;m_MembraneParameters;}</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    vector&lt;double&gt; *RushinParameters_Get() {<span class="keywordflow">return</span> &amp;m_RushinParameters;}</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordtype">void</span> RushinParameters_Set(uint32_t index, <span class="keywordtype">double</span> value) {m_RushinParameters[index] = value;}</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordtype">void</span> MembraneParameters_Set(uint32_t index, <span class="keywordtype">double</span> value) {m_MembraneParameters[index] = value;}</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="comment">//    NeuronInputCurrent* m_RushinCurrent;</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="comment">// Just for tracing</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">//    double m_dV_dt_membrane;    // The actual time derivative</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordtype">double</span> m_Membrane_V_Rushin;    <span class="comment">// Only for tracing</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordtype">double</span> m_Input_dVdt;            <span class="comment">// The sum of the input gradients</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keywordtype">double</span> m_Membrane_dVdt_AIS;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordtype">double</span> m_Membrane_dVdt_Resulting;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordtype">double</span> m_Membrane_dVdt_Rushin; <span class="comment">// The rushin-only current</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="keywordtype">double</span> m_Membrane_Last_dVdt;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordtype">double</span> m_AIS_I; <span class="comment">// Current through the AIS</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keywordtype">double</span> m_Na_I;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordtype">double</span> m_Resulting_I;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    vector&lt;double&gt; m_RushinParameters;    <span class="comment">// Parameters for the rushin current</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    vector&lt;double&gt; m_SynapticParameters;            <span class="comment">// Parameters for the axonal input current</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    vector&lt;double&gt; m_MembraneParameters;  <span class="comment">// Parameters for the membrane</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>};<span class="comment">// of class NeuronPhysical</span></div>
+</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="preprocessor">#endif </span><span class="comment">// NEURONPHYSICS_H</span></div>
 <div class="ttc" id="aNeuronInputCurrent_8h_html"><div class="ttname"><a href="NeuronInputCurrent_8h.html">NeuronInputCurrent.h</a></div><div class="ttdoc">Function prototypes for the physics-based neuron module's input current.</div></div>
-<div class="ttc" id="aclassNeuronConstants_html"><div class="ttname"><a href="classNeuronConstants.html">NeuronConstants</a></div><div class="ttdoc">Sources:</div><div class="ttdef"><b>Definition</b> Constants.h:44</div></div>
-<div class="ttc" id="aclassNeuronInputCurrent_html"><div class="ttname"><a href="classNeuronInputCurrent.html">NeuronInputCurrent</a></div><div class="ttdoc">Implements a general input current for physical-type neuron.</div><div class="ttdef"><b>Definition</b> NeuronInputCurrent.h:65</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html"><div class="ttname"><a href="classNeuronPhysical.html">NeuronPhysical</a></div><div class="ttdoc">Implements a general physical-type neuron.</div><div class="ttdef"><b>Definition</b> NeuronPhysical.h:59</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_a3e6514fed4b7c3bee8d54e64ecfbb736"><div class="ttname"><a href="classNeuronPhysical.html#a3e6514fed4b7c3bee8d54e64ecfbb736">NeuronPhysical::Calculate_Do</a></div><div class="ttdeci">virtual void Calculate_Do()</div><div class="ttdoc">Calculate the membrane's new potential by solving a PDE at the new time after advancing time by the H...</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:185</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_a45c960e911518e4318d247e2c318ca8e"><div class="ttname"><a href="classNeuronPhysical.html#a45c960e911518e4318d247e2c318ca8e">NeuronPhysical::InputCurrentDelete</a></div><div class="ttdeci">void InputCurrentDelete(NeuronInputCurrent *IC)</div><div class="ttdoc">InputCurrentDelete.</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:146</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_a495940008fb8aeb29f8db55d40aa111f"><div class="ttname"><a href="classNeuronPhysical.html#a495940008fb8aeb29f8db55d40aa111f">NeuronPhysical::ComputingBegin_Do</a></div><div class="ttdeci">virtual void ComputingBegin_Do()</div><div class="ttdoc">Activity for initializing computing stage.</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:249</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_a4b91867e55ccc2a44acb7e25feda7ce5"><div class="ttname"><a href="classNeuronPhysical.html#a4b91867e55ccc2a44acb7e25feda7ce5">NeuronPhysical::Heartbeat_Computing_Stop</a></div><div class="ttdeci">virtual bool Heartbeat_Computing_Stop()</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:278</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_a546c874d86adeecd7168ea2949c5151e"><div class="ttname"><a href="classNeuronPhysical.html#a546c874d86adeecd7168ea2949c5151e">NeuronPhysical::Heartbeat_Computing_Do</a></div><div class="ttdeci">virtual void Heartbeat_Computing_Do()</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:257</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_a6b75d51f0ae9f7504dbfde9cd506f5bf"><div class="ttname"><a href="classNeuronPhysical.html#a6b75d51f0ae9f7504dbfde9cd506f5bf">NeuronPhysical::Heartbeat_Delivering_Do</a></div><div class="ttdeci">virtual void Heartbeat_Delivering_Do()</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:264</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_a7d5f3d382d2e8ffd1887005bc4950490"><div class="ttname"><a href="classNeuronPhysical.html#a7d5f3d382d2e8ffd1887005bc4950490">NeuronPhysical::Create_Rushin</a></div><div class="ttdeci">virtual void Create_Rushin()</div><div class="ttdoc">Create a new rush-in current for the neuron.</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:89</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_aa6d1dcabef0773544cbce238082f097f"><div class="ttname"><a href="classNeuronPhysical.html#aa6d1dcabef0773544cbce238082f097f">NeuronPhysical::Heartbeat_Relaxing_Stop</a></div><div class="ttdeci">virtual bool Heartbeat_Relaxing_Stop()</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:305</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_ab219ea4418f8a25467269614daa22c3c"><div class="ttname"><a href="classNeuronPhysical.html#ab219ea4418f8a25467269614daa22c3c">NeuronPhysical::InputIsLegal</a></div><div class="ttdeci">virtual bool InputIsLegal(void)</div><div class="ttdoc">Check the legacy of receiving input.</div><div class="ttdef"><b>Definition</b> NeuronPhysical.h:164</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_acb5ff8fd98f3fa440f0f96361c988950"><div class="ttname"><a href="classNeuronPhysical.html#acb5ff8fd98f3fa440f0f96361c988950">NeuronPhysical::Heartbeat_Delivering_Stop</a></div><div class="ttdeci">virtual bool Heartbeat_Delivering_Stop()</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:295</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_add2a625c928b7503299669aaae09d3b5"><div class="ttname"><a href="classNeuronPhysical.html#add2a625c928b7503299669aaae09d3b5">NeuronPhysical::Heartbeat_Relaxing_Do</a></div><div class="ttdeci">virtual void Heartbeat_Relaxing_Do()</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:271</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_af37da71258b9c0b3812373d3cd16daf0"><div class="ttname"><a href="classNeuronPhysical.html#af37da71258b9c0b3812373d3cd16daf0">NeuronPhysical::Initialize_Do</a></div><div class="ttdeci">virtual void Initialize_Do()</div><div class="ttdoc">Activity for intializing the unit.</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:128</div></div>
-<div class="ttc" id="aclassNeuronPhysical_html_af9836d8a9c965e55ba7becf545d6fc1a"><div class="ttname"><a href="classNeuronPhysical.html#af9836d8a9c965e55ba7becf545d6fc1a">NeuronPhysical::InputReceived_Do</a></div><div class="ttdeci">virtual void InputReceived_Do()</div><div class="ttdoc">A new synaptic input (spike or clamping) received; only in 'Relaxing' and 'Computing' states,...</div><div class="ttdef"><b>Definition</b> NeuronPhysical.cpp:160</div></div>
-<div class="ttc" id="aclassscGenComp__PU__Abstract_html_a7735d6170868443fd4cd6904f7f28c3e"><div class="ttname"><a href="classscGenComp__PU__Abstract.html#a7735d6170868443fd4cd6904f7f28c3e">scGenComp_PU_Abstract::EVENT_GenComp</a></div><div class="ttdeci">EVENT_GenComp_t EVENT_GenComp</div><div class="ttdoc">The event specific to this class.</div><div class="ttdef"><b>Definition</b> scGenComp_PU_Abstract.h:231</div></div>
-<div class="ttc" id="aclassscGenComp__PU__Abstract_html_a8095d54f9badd96495332b43779b3b4f"><div class="ttname"><a href="classscGenComp__PU__Abstract.html#a8095d54f9badd96495332b43779b3b4f">scGenComp_PU_Abstract::StageFlag_Get</a></div><div class="ttdeci">GenCompStageMachine_t StageFlag_Get(void)</div><div class="ttdoc">The flag describing the stage of the unit.</div><div class="ttdef"><b>Definition</b> scGenComp_PU_Abstract.h:233</div></div>
-<div class="ttc" id="aclassscGenComp__PU__Bio_html"><div class="ttname"><a href="classscGenComp__PU__Bio.html">scGenComp_PU_Bio</a></div><div class="ttdoc">Implements a general biological-type computing PU. Defaults to variable (that is, biologically define...</div><div class="ttdef"><b>Definition</b> scGenComp_PU_Bio.h:88</div></div>
+<div class="ttc" id="aclassNeuronConstants_html"><div class="ttname"><a href="classNeuronConstants.html">NeuronConstants</a></div><div class="ttdoc">Sources:</div><div class="ttdef"><b>Definition</b> <a href="Constants_8h_source.html#l00043">Constants.h:44</a></div></div>
+<div class="ttc" id="aclassNeuronInputCurrent_html"><div class="ttname"><a href="classNeuronInputCurrent.html">NeuronInputCurrent</a></div><div class="ttdoc">Implements a general input current for physical-type neuron.</div><div class="ttdef"><b>Definition</b> <a href="NeuronInputCurrent_8h_source.html#l00064">NeuronInputCurrent.h:65</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html"><div class="ttname"><a href="classNeuronPhysical.html">NeuronPhysical</a></div><div class="ttdoc">Implements a general physical-type neuron.</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8h_source.html#l00059">NeuronPhysical.h:62</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a158518fcf12fa66641f1b13707c4db29"><div class="ttname"><a href="classNeuronPhysical.html#a158518fcf12fa66641f1b13707c4db29">NeuronPhysical::Tracing_Initialize</a></div><div class="ttdeci">virtual void Tracing_Initialize()</div><div class="ttdoc">advances a single time step (without changing counters or the time) and must be defined in the derive...</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00146">NeuronPhysical.cpp:147</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a3e6514fed4b7c3bee8d54e64ecfbb736"><div class="ttname"><a href="classNeuronPhysical.html#a3e6514fed4b7c3bee8d54e64ecfbb736">NeuronPhysical::Calculate_Do</a></div><div class="ttdeci">virtual void Calculate_Do()</div><div class="ttdoc">Calculate the membrane's new potential by solving a PDE at the new time after advancing time by the H...</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00218">NeuronPhysical.cpp:219</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a45c960e911518e4318d247e2c318ca8e"><div class="ttname"><a href="classNeuronPhysical.html#a45c960e911518e4318d247e2c318ca8e">NeuronPhysical::InputCurrentDelete</a></div><div class="ttdeci">void InputCurrentDelete(NeuronInputCurrent *IC)</div><div class="ttdoc">InputCurrentDelete.</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00179">NeuronPhysical.cpp:180</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a495940008fb8aeb29f8db55d40aa111f"><div class="ttname"><a href="classNeuronPhysical.html#a495940008fb8aeb29f8db55d40aa111f">NeuronPhysical::ComputingBegin_Do</a></div><div class="ttdeci">virtual void ComputingBegin_Do()</div><div class="ttdoc">Activity for initializing computing stage.</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00282">NeuronPhysical.cpp:283</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a4992bb65c76e84cb245075384aea5a88"><div class="ttname"><a href="classNeuronPhysical.html#a4992bb65c76e84cb245075384aea5a88">NeuronPhysical::after_solve</a></div><div class="ttdeci">virtual void after_solve()</div><div class="ttdoc">does any extra stuff only when a step is captured</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8h_source.html#l00105">NeuronPhysical.h:105</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a4b91867e55ccc2a44acb7e25feda7ce5"><div class="ttname"><a href="classNeuronPhysical.html#a4b91867e55ccc2a44acb7e25feda7ce5">NeuronPhysical::Heartbeat_Computing_Stop</a></div><div class="ttdeci">virtual bool Heartbeat_Computing_Stop()</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00311">NeuronPhysical.cpp:312</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a4faca4bf2811975cbf79dbe0ef8093bb"><div class="ttname"><a href="classNeuronPhysical.html#a4faca4bf2811975cbf79dbe0ef8093bb">NeuronPhysical::after_step</a></div><div class="ttdeci">virtual void after_step(double t)</div><div class="ttdoc">does any extra stuff after each step</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00114">NeuronPhysical.cpp:114</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a546c874d86adeecd7168ea2949c5151e"><div class="ttname"><a href="classNeuronPhysical.html#a546c874d86adeecd7168ea2949c5151e">NeuronPhysical::Heartbeat_Computing_Do</a></div><div class="ttdeci">virtual void Heartbeat_Computing_Do()</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00290">NeuronPhysical.cpp:291</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a6b75d51f0ae9f7504dbfde9cd506f5bf"><div class="ttname"><a href="classNeuronPhysical.html#a6b75d51f0ae9f7504dbfde9cd506f5bf">NeuronPhysical::Heartbeat_Delivering_Do</a></div><div class="ttdeci">virtual void Heartbeat_Delivering_Do()</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00297">NeuronPhysical.cpp:298</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a7b53645edccdd254ab4f524a5e7f34c7"><div class="ttname"><a href="classNeuronPhysical.html#a7b53645edccdd254ab4f524a5e7f34c7">NeuronPhysical::step_</a></div><div class="ttdeci">virtual void step_(double dt)</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00088">NeuronPhysical.cpp:88</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a7d5f3d382d2e8ffd1887005bc4950490"><div class="ttname"><a href="classNeuronPhysical.html#a7d5f3d382d2e8ffd1887005bc4950490">NeuronPhysical::Create_Rushin</a></div><div class="ttdeci">virtual void Create_Rushin()</div><div class="ttdoc">Create a new rush-in current for the neuron.</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00131">NeuronPhysical.cpp:132</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_a89ade46a5e9af10bbcde5d36bfe5acfb"><div class="ttname"><a href="classNeuronPhysical.html#a89ade46a5e9af10bbcde5d36bfe5acfb">NeuronPhysical::before_solve</a></div><div class="ttdeci">virtual void before_solve()</div><div class="ttdoc">does any extra stuff before starting a solve</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00112">NeuronPhysical.cpp:112</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_aa6d1dcabef0773544cbce238082f097f"><div class="ttname"><a href="classNeuronPhysical.html#aa6d1dcabef0773544cbce238082f097f">NeuronPhysical::Heartbeat_Relaxing_Stop</a></div><div class="ttdeci">virtual bool Heartbeat_Relaxing_Stop()</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00338">NeuronPhysical.cpp:339</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_ab219ea4418f8a25467269614daa22c3c"><div class="ttname"><a href="classNeuronPhysical.html#ab219ea4418f8a25467269614daa22c3c">NeuronPhysical::InputIsLegal</a></div><div class="ttdeci">virtual bool InputIsLegal(void)</div><div class="ttdoc">Check the legacy of receiving input.</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8h_source.html#l00219">NeuronPhysical.h:219</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_acb5ff8fd98f3fa440f0f96361c988950"><div class="ttname"><a href="classNeuronPhysical.html#acb5ff8fd98f3fa440f0f96361c988950">NeuronPhysical::Heartbeat_Delivering_Stop</a></div><div class="ttdeci">virtual bool Heartbeat_Delivering_Stop()</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00328">NeuronPhysical.cpp:329</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_ada25ba247571299d9accf6638018b3d0"><div class="ttname"><a href="classNeuronPhysical.html#ada25ba247571299d9accf6638018b3d0">NeuronPhysical::step</a></div><div class="ttdeci">void step(double dt, bool extra=true)</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00093">NeuronPhysical.cpp:93</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_add2a625c928b7503299669aaae09d3b5"><div class="ttname"><a href="classNeuronPhysical.html#add2a625c928b7503299669aaae09d3b5">NeuronPhysical::Heartbeat_Relaxing_Do</a></div><div class="ttdeci">virtual void Heartbeat_Relaxing_Do()</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00304">NeuronPhysical.cpp:305</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_aeddf4cfd85372dbd1d7f192a56ee09d1"><div class="ttname"><a href="classNeuronPhysical.html#aeddf4cfd85372dbd1d7f192a56ee09d1">NeuronPhysical::ode_fun</a></div><div class="ttdeci">virtual void ode_fun(double *solin, double *fout)</div><div class="ttdoc">evaluates the system of ODEs in autonomous form and must be defined by a derived class</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8h_source.html#l00083">NeuronPhysical.h:83</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_af37da71258b9c0b3812373d3cd16daf0"><div class="ttname"><a href="classNeuronPhysical.html#af37da71258b9c0b3812373d3cd16daf0">NeuronPhysical::Initialize_Do</a></div><div class="ttdeci">virtual void Initialize_Do()</div><div class="ttdoc">Activity for intializing the unit.</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00161">NeuronPhysical.cpp:162</a></div></div>
+<div class="ttc" id="aclassNeuronPhysical_html_af9836d8a9c965e55ba7becf545d6fc1a"><div class="ttname"><a href="classNeuronPhysical.html#af9836d8a9c965e55ba7becf545d6fc1a">NeuronPhysical::InputReceived_Do</a></div><div class="ttdeci">virtual void InputReceived_Do()</div><div class="ttdoc">A new synaptic input (spike or clamping) received; only in 'Relaxing' and 'Computing' states,...</div><div class="ttdef"><b>Definition</b> <a href="NeuronPhysical_8cpp_source.html#l00193">NeuronPhysical.cpp:194</a></div></div>
+<div class="ttc" id="aclassscGenComp__PU__Abstract_html_a7735d6170868443fd4cd6904f7f28c3e"><div class="ttname"><a href="classscGenComp__PU__Abstract.html#a7735d6170868443fd4cd6904f7f28c3e">scGenComp_PU_Abstract::EVENT_GenComp</a></div><div class="ttdeci">EVENT_GenComp_t EVENT_GenComp</div><div class="ttdoc">The event specific to this class.</div><div class="ttdef"><b>Definition</b> <a href="scGenComp__PU__Abstract_8h_source.html#l00231">scGenComp_PU_Abstract.h:231</a></div></div>
+<div class="ttc" id="aclassscGenComp__PU__Abstract_html_a8095d54f9badd96495332b43779b3b4f"><div class="ttname"><a href="classscGenComp__PU__Abstract.html#a8095d54f9badd96495332b43779b3b4f">scGenComp_PU_Abstract::StageFlag_Get</a></div><div class="ttdeci">GenCompStageMachine_t StageFlag_Get(void)</div><div class="ttdoc">The flag describing the stage of the unit.</div><div class="ttdef"><b>Definition</b> <a href="scGenComp__PU__Abstract_8h_source.html#l00233">scGenComp_PU_Abstract.h:233</a></div></div>
+<div class="ttc" id="aclassscGenComp__PU__Bio_html"><div class="ttname"><a href="classscGenComp__PU__Bio.html">scGenComp_PU_Bio</a></div><div class="ttdoc">Implements a general biological-type computing PU. Defaults to variable (that is, biologically define...</div><div class="ttdef"><b>Definition</b> <a href="scGenComp__PU__Bio_8h_source.html#l00087">scGenComp_PU_Bio.h:88</a></div></div>
 <div class="ttc" id="ascGenComp__PU__Bio_8h_html"><div class="ttname"><a href="scGenComp__PU__Bio_8h.html">scGenComp_PU_Bio.h</a></div><div class="ttdoc">Function prototypes for the bio computing module It is just event handling, no modules.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

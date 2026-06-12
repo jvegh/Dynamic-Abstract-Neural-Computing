@@ -1,0 +1,164 @@
+\doxysection{sc\+Gen\+Comp\+\_\+\+PU\+\_\+\+Bio.\+cpp}
+\hypertarget{scGenComp__PU__Bio_8cpp_source}{}\label{scGenComp__PU__Bio_8cpp_source}\index{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/scGenComp\_PU\_Bio.cpp@{/home/jvegh/REPO/Dynamic-\/Abstract-\/Neural-\/Computing/code/neuron/neurons/scGenComp\_PU\_Bio.cpp}}
+\mbox{\hyperlink{scGenComp__PU__Bio_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00005}00005\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ @author\ János\ Végh\ (jvegh)}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ @bug\ No\ known\ bugs.}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00008}00008\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scGenComp__PU__Bio_8h}{scGenComp\_PU\_Bio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00011}00011\ \textcolor{comment}{//\ This\ section\ configures\ debug\ and\ log\ printing;\ must\ be\ located\ AFTER\ the\ other\ includes}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00012}00012\ \textcolor{comment}{//\#define\ SUPPRESS\_LOGGING\ //\ Suppress\ all\ log\ messages}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00013}00013\ \textcolor{comment}{//\#define\ DEBUG\_EVENTS\ \ \ \ ///<\ Print\ event\ debug\ messages\ \ for\ this\ module}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00014}00014\ \textcolor{comment}{//\#define\ DEBUG\_PRINTS\ \ \ \ ///<\ Print\ general\ debug\ messages\ for\ this\ module}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00015}00015\ \textcolor{comment}{//\ Those\ defines\ must\ be\ located\ before\ 'DebugMacros.h"{},\ and\ are\ undefined\ in\ that\ file}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DebugMacros_8h}{DebugMacros.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00018}00018\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classNeuronConstants}{NeuronConstants}}\ NeuronData\_Default;}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00019}00019\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classUniversalConstants}{UniversalConstants}}\ UniversalData;}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00021}00021\ \textcolor{comment}{/*extern\ sc\_core::sc\_time}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00022}00022\ \textcolor{comment}{\ \ \ \ Heartbeat\_time\_default\ \ \ \ //<\ The\ reset\ value\ of\ heartbeat\ time}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00023}00023\ \textcolor{comment}{\ \ \ \ ,Heartbeat\_time\_resolution;\ \ \ \ //<\ The\ time\ tolerance}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00024}00024\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00025}00025\ \textcolor{preprocessor}{\#define\ VOLTAGE\_CHANGE\_ALLOWED\ 2.\ \ \ }\textcolor{comment}{//\ Max\ 2\ mV\ change\ enabled\ during\ integration}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00027}00027\ \textcolor{comment}{//\ The\ units\ of\ general\ computing\ work\ in\ the\ same\ way,\ using\ general\ events}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00028}00028\ \textcolor{comment}{//\ \(\backslash\)brief\ Implement\ handling\ the\ states\ of\ computing}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00029}\mbox{\hyperlink{classscGenComp__PU__Bio_adfc554b0e22d4fec1a3dd64e3349d2ec}{00029}}\ \ \ \ \ \mbox{\hyperlink{classscGenComp__PU__Bio_adfc554b0e22d4fec1a3dd64e3349d2ec}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00030}00030\ \mbox{\hyperlink{classscGenComp__PU__Bio_adfc554b0e22d4fec1a3dd64e3349d2ec}{scGenComp\_PU\_Bio}}(sc\_core::sc\_module\_name\ nm}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ):\ \ \textcolor{comment}{//\ Heartbeat\ time}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{classscGenComp__PU__Abstract}{scGenComp\_PU\_Abstract}}(nm}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \textcolor{comment}{//\ Defaults\ to\ variable\ execution\ time,\ no\ central\ clock}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00034}00034\ \ \ \ \ ,m\_NeuronData(\&NeuronData\_Default)}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Those\ above\ set\ \$\(\backslash\)tau=10\(\backslash\)\ ms\$}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00038}00038\ \ \ \ \ m\_Membrane\_V\ =\ 0;\ \ \ \textcolor{comment}{//\ Working\ with\ relative\ potentials}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00039}00039\ \ \ \ \ m\_Membrane\_dV\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00040}00040\ \ \ \ \ m\_MembraneGradientPositive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00041}00041\ \ \ \ \ s\_Heartbeat\_time\_default\ =\ HEARTBEAT\_TIME\_DEFAULT\_BIO;\ \ \ \ \textcolor{comment}{//\ Overload\ the\ static\ value}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00042}00042\ \ \ \ \ s\_Heartbeat\_time\_resolution\ =\ HEARTBEAT\_TIME\_RESOLUTION\_BIO;}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00043}00043\ \ \ \ \ m\_Heartbeat\_time\ =\ s\_Heartbeat\_time\_default;}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00046}\mbox{\hyperlink{classscGenComp__PU__Bio_a077027e13a678e6c052ec546ff6fab6f}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscGenComp__PU__Bio_a077027e13a678e6c052ec546ff6fab6f}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00047}00047\ \mbox{\hyperlink{classscGenComp__PU__Bio_a077027e13a678e6c052ec546ff6fab6f}{\ \ \ \ DeliveringBegin\_Do}}()}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{classscGenComp__PU__Abstract_a93d28411e469803ab8e7f69750055eca}{scGenComp\_PU\_Abstract::DeliveringBegin\_Do}}();}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00050}00050\ \ \ \ \ m\_SynapsesEnabled\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00052}\mbox{\hyperlink{classscGenComp__PU__Bio_aca6ec8124f2e6af9414d9205444fa12b}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscGenComp__PU__Bio_aca6ec8124f2e6af9414d9205444fa12b}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00053}00053\ \mbox{\hyperlink{classscGenComp__PU__Bio_aca6ec8124f2e6af9414d9205444fa12b}{\ \ \ \ DeliveringEnd\_Do}}()}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{classscGenComp__PU__Abstract_abfe1d3c9db30b5c838548011560db983}{scGenComp\_PU\_Abstract::DeliveringEnd\_Do}}();}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00056}00056\ \ \ \ \ m\_MembraneGradientPositive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00057}00057\ \ \textcolor{comment}{//\ \ \ m\_PeakReached\ =\ true;\ //\ If\ the\ AP\ overpassed\ the\ depolarized\ state}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00058}00058\ \ \ \ \ m\_SynapsesEnabled\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00060}00060\ \textcolor{comment}{//\ Adjusts\ the\ heartbeat\ time\ (integration\ step\ size)}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00061}\mbox{\hyperlink{classscGenComp__PU__Bio_ab27eaed4e0d664daa25e37d09f348dc3}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscGenComp__PU__Bio_ab27eaed4e0d664daa25e37d09f348dc3}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00062}00062\ \mbox{\hyperlink{classscGenComp__PU__Bio_ab27eaed4e0d664daa25e37d09f348dc3}{\ \ \ \ Heartbeat\_Adjust}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{/*\ This\ works\ with\ voltage\ step\ limitation}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00065}00065\ \textcolor{comment}{\ \ \ \ float\ diff\_V\ =\ abs(m\_Membrane\_V-\/m\_Membrane\_V\_last);}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00066}00066\ \textcolor{comment}{\ \ \ \ if(diff\_V<0.5)}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00067}00067\ \textcolor{comment}{\ \ \ \ \{\ //\ The\ membrane's\ voltage\ changed\ less\ than\ 0.5\ mV;\ can\ increase}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00068}00068\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_Heartbeat\_time\ *=2;}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00069}00069\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_dt\ =\ m\_Heartbeat\_time.to\_seconds()*1000.;}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00070}00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ DEBUG\_SC\_EVENT(name(),"{}Heartbeat\ set\ to\ "{}\ <<\ m\_dt\ );}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00072}00072\ \textcolor{comment}{\ \ \ \ else\ if(diff\_V>2.0)}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \{\ //\ The\ membrane's\ voltage\ changed\ more\ than\ 2\ mV;\ must\ decrease}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_Heartbeat\_time\ /=2;}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00075}00075\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_dt\ =\ m\_Heartbeat\_time.to\_seconds()*1000.;}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00076}00076\ \textcolor{comment}{\ \ \ \ \ \ \ \ DEBUG\_SC\_EVENT(name(),"{}Heartbeat\ set\ to\ "{}\ <<\ m\_dt\ );}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00077}00077\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00078}00078\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00079}00079\ \textcolor{comment}{\ \ \ \ m\_Membrane\_V\_last\ =\ m\_Membrane\_V;\ \ \ //\ Preserve\ the\ 'new\ last'\ potential}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00080}00080\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//\ This\ works\ with\ dV/dt\ limitation}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{float}\ diff\_V\ =\ abs(m\_Membrane\_dV);}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00084}00084\ \ \ \ \ \ \textcolor{keywordflow}{if}(diff\_V<VOLTAGE\_CHANGE\_ALLOWED*2)}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00085}00085\ \ \ \ \ \{\ \textcolor{comment}{//\ The\ membrane's\ voltage\ changed\ less\ than\ 0.5\ mV;\ can\ increase}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(m\_Heartbeat\_time\ <s\_Heartbeat\_time\_default*5)}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ HeartbeatTime\_Set(m\_Heartbeat\_time\ *2);}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{DebugMacros_8h_a180b5f1c340da4355428351536d5168a}{DEBUG\_SC\_EVENT}}(name(),\textcolor{stringliteral}{"{}Heartbeat\ set\ to\ "{}}\ <<\ m\_dt\ );}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}(diff\_V>VOLTAGE\_CHANGE\_ALLOWED)}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00093}00093\ \ \ \ \ \{\ \textcolor{comment}{//\ The\ membrane's\ voltage\ changed\ more\ than\ allowed;\ must\ decrease\ if\ above\ resolution}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((m\_Heartbeat\_time\ >\ s\_Heartbeat\_time\_resolution))}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ HeartbeatTime\_Set(m\_Heartbeat\_time\ /2);}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{DebugMacros_8h_a180b5f1c340da4355428351536d5168a}{DEBUG\_SC\_EVENT}}(name(),\textcolor{stringliteral}{"{}Heartbeat\ set\ to\ "{}}\ <<\ m\_dt\ );}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00103}\mbox{\hyperlink{classscGenComp__PU__Bio_ac8c250cd7656b266b3782410d8a12c12}{00103}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscGenComp__PU__Bio_ac8c250cd7656b266b3782410d8a12c12}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00104}00104\ \mbox{\hyperlink{classscGenComp__PU__Bio_ac8c250cd7656b266b3782410d8a12c12}{\ \ \ \ Heartbeat\_Computing\_Do}}()}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00105}00105\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00108}\mbox{\hyperlink{classscGenComp__PU__Bio_a57c784b5bc8f20f1e849b432d45566c0}{00108}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscGenComp__PU__Bio_a57c784b5bc8f20f1e849b432d45566c0}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00109}00109\ \mbox{\hyperlink{classscGenComp__PU__Bio_a57c784b5bc8f20f1e849b432d45566c0}{\ \ \ \ Heartbeat\_Delivering\_Do}}()}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00110}00110\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00113}\mbox{\hyperlink{classscGenComp__PU__Bio_af018b6c96d882c6173f0966d104b3898}{00113}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscGenComp__PU__Bio_af018b6c96d882c6173f0966d104b3898}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00114}00114\ \mbox{\hyperlink{classscGenComp__PU__Bio_af018b6c96d882c6173f0966d104b3898}{\ \ \ \ Heartbeat\_Relaxing\_Do}}()}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00115}00115\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00118}00118\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00119}00119\ \textcolor{comment}{\ *\ Initialize\ the\ GenComp\ unit.}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00120}00120\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00121}\mbox{\hyperlink{classscGenComp__PU__Bio_a3eca6a3c95df8c10b2948dc8b849fee8}{00121}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscGenComp__PU__Bio_a3eca6a3c95df8c10b2948dc8b849fee8}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00122}00122\ \mbox{\hyperlink{classscGenComp__PU__Bio_a3eca6a3c95df8c10b2948dc8b849fee8}{\ \ \ \ Initialize\_Do}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{classscGenComp__PU__Abstract_ab2c49d8195b1e4310575eeac6b125ed6}{scGenComp\_PU\_Abstract::Initialize\_Do}}();}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{DebugMacros_8h_a180b5f1c340da4355428351536d5168a}{DEBUG\_SC\_EVENT}}(name(),\textcolor{stringliteral}{"{}Initialized\ for\ BIO\ mode"{}});}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{comment}{//\ Reset\ synaptic\ input\ handling}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00127}00127\ \ \ \ \ m\_MembraneGradientPositive\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00128}00128\ \ \ \ \ m\_SynapsesEnabled\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00129}00129\ \ \ \ \ m\_Heartbeat\_time\ =\ s\_Heartbeat\_time\_default;}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00130}00130\ \textcolor{comment}{//\ \ \ \ m\_dt\ =\ m\_Heartbeat\_time.to\_seconds();\ //\ Calculating\ in\ usec}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00131}00131\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00133}00133\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00134}00134\ \textcolor{comment}{\ *\ This\ routine\ makes\ actual\ input\ processing,\ although\ most\ of\ the\ job\ is\ done\ in\ Process()\ and\ Heartbeat()}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00135}00135\ \textcolor{comment}{\ *\ It\ can\ be\ called\ in\ state\ 'Processing'\ (if\ not\ first\ input),}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00136}00136\ \textcolor{comment}{\ *\ in\ state\ 'Ready'\ if\ first\ input,}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00137}00137\ \textcolor{comment}{\ *\ or\ in\ state\ GenCompStateMachineType\_t::gcsm\_XXXRelaxing\ in\ the\ relative\ refractory\ period}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00138}00138\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00139}00139\ \textcolor{comment}{\ *\ If\ it\ was\ the\ first\ spike,\ issue\ 'ComputingBegin'\ and\ re-\/issue}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00140}00140\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00142}\mbox{\hyperlink{classscGenComp__PU__Bio_a2785b5f064ffbcf7c16d657394120111}{00142}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classscGenComp__PU__Bio_a2785b5f064ffbcf7c16d657394120111}{scGenComp\_PU\_Bio::}}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00143}00143\ \mbox{\hyperlink{classscGenComp__PU__Bio_a2785b5f064ffbcf7c16d657394120111}{\ \ \ InputReceived\_Do}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00144}00144\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00145}00145\ \ \ \ \ \mbox{\hyperlink{classscGenComp__PU__Abstract_aa07e11068b0fcafd28d6ffae522a3bf8}{scGenComp\_PU\_Abstract::InputReceived\_Do}}();}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00146}00146\ \ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00148}00148\ \textcolor{preprocessor}{\#if\ 0}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00149}00149\ \textcolor{keywordtype}{void}\ scGenComp\_PU\_Bio::}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00150}00150\ \ \ \ \ \ OutputItem()}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00151}00151\ \{}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00152}00152\ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ sc\_time\_String\_Get(sc\_time\_stamp())\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ MembraneRelativePotential\_Get()\ <<\ \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00153}00153\ \}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00155}00155\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{scGenComp__PU__Bio_8cpp_source_l00161}00161\ }
+
+\end{DoxyCode}

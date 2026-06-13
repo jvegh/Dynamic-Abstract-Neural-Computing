@@ -58,7 +58,9 @@ extern sc_core::sc_time
     NeuronPhysical::
 NeuronPhysical(sc_core::sc_module_name nm):
     scGenComp_PU_Bio(nm),
+#if 0
     ode::OdeEuler::OdeEuler(1),
+#endif 0
     NeuronConstants(),
     m_RushinCurrent((NeuronInputCurrent *)NULL),
     m_RushinParameters(Default_RushinParameters),    // Parameters for the rushin
@@ -74,6 +76,10 @@ NeuronPhysical(sc_core::sc_module_name nm):
        Tracing_Initialize();
 }
 
+#if 0
+// adding the ODE solver prepared, but with the simple Euler method it would be obsolete offset
+// However, the funtion names and function are used
+//
 //-----------------------------------
 //essential virtual function wrappers
 
@@ -115,6 +121,7 @@ void NeuronPhysical::after_step (double t) {
     /* virtual, left to derived class, can only be used with solve_fixed() */
     (void)t;
 }
+#endif // 0
 
 //    m_Neuron->MembraneFromRGOhm_TauMSec_Set(0.0028,28);
 //    m_Neuron->MembraneFromRGOhm_TauMSec_Set(APParameters[3],APParameters[2]);
@@ -206,24 +213,8 @@ void NeuronPhysical::
 }
 
 
-/**
-     * @brief Calculate the membrane's new potential by solving a DE at
-     * the simulated time
-     *
-     * The input currents are provided in units of [pA], the gradients in [pA/s]
-     * The voltage is provided in units of [V], the gradients at [V/s]
-     * @see NeuronConstants
-     */
-
-void NeuronPhysical::
-    Calculate_Do()
+void NeuronPhysical::CalculateGradient()
 {
-    m_Input_dVdt = 0; // Maybe several input gradient contributions exist
-    m_dt = m_Heartbeat_time.to_seconds()*1000; // We calculate in msec
-    m_Membrane_V_Rushin = 0;
-    // From  the previous iteration
-    m_Membrane_Last_dVdt = m_Membrane_dVdt_Resulting;
-    m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get()/1000; // The AIS current, in pA
     m_Membrane_dVdt_AIS = m_Membrane_V/MembraneTauMSec_Get()*1000;  // The AIS gradient, in [V/s]
     // Independently from the stage, the rush-in current contributes
     if(m_RushinCurrent)
@@ -242,40 +233,61 @@ void NeuronPhysical::
     // No synaptic current is assumed
     switch(StageFlag_Get())
     {
-        case GenCompStageMachine_t::gcsm_Relaxing:
-        {
-            break;
-        }
-        case GenCompStageMachine_t::gcsm_Computing:
-        {
-            // Previous membrane!
-             // Question: if the synaptic charge conserves
-            for(uint32_t i = 0; i< m_SynapticCurrents.size(); i++)
-                 m_Input_dVdt += m_SynapticCurrents[i]->VoltageGradient_Get(m_t); // [V/s]
-            break;
-        }
-        case GenCompStageMachine_t::gcsm_Delivering:
-        {
-            break;
-        }
-        default: assert(0); break;
+    case GenCompStageMachine_t::gcsm_Relaxing:
+    {
+        break;
+    }
+    case GenCompStageMachine_t::gcsm_Computing:
+    {
+        // Previous membrane!
+        // Question: if the synaptic charge conserves
+        for(uint32_t i = 0; i< m_SynapticCurrents.size(); i++)
+            m_Input_dVdt += m_SynapticCurrents[i]->VoltageGradient_Get(m_t); // [V/s]
+        break;
+    }
+    case GenCompStageMachine_t::gcsm_Delivering:
+    {
+        break;
+    }
+    default: assert(0); break;
     }
 
     // The resulting gradient, in [mV/s]
     m_Membrane_dVdt_Resulting = m_Membrane_dVdt_Rushin
-                               + m_Input_dVdt
-                               - m_Membrane_dVdt_AIS; // in [V/s]
+                                + m_Input_dVdt
+                                - m_Membrane_dVdt_AIS; // in [V/s]
+    m_MembraneGradientPositive =
+        (m_Membrane_dVdt_Resulting>0);
+}
+
+/**
+     * @brief Calculate the membrane's new potential by solving a DE at
+     * the simulated time
+     *
+     * The input currents are provided in units of [pA], the gradients in [pA/s]
+     * The voltage is provided in units of [V], the gradients at [V/s]
+     * @see NeuronConstants
+     */
+
+void NeuronPhysical::
+    Calculate_Do()
+{
+    m_Input_dVdt = 0; // Maybe several input gradient contributions exist
+    m_dt = m_Heartbeat_time.to_seconds()*1000; // We calculate in msec
+    m_Membrane_V_Rushin = 0;
+    // From  the previous iteration
+    m_Membrane_Last_dVdt = m_Membrane_dVdt_Resulting;
+    m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get()/1000; // The AIS current, in pA
+
+    CalculateGradient();
     // The Na+ current
     m_Na_I += m_Membrane_dVdt_Rushin/MembraneResistanceGOhm_Get()/1000/1000;
-
-    m_MembraneGradientPositive =
-            (m_Membrane_dVdt_Resulting>0);
+    m_Resulting_I = - m_AIS_I + m_Na_I;
 
     m_Membrane_dV = m_Membrane_dVdt_Resulting * m_dt;  // The voltage  change, in [mV], m_dt in [sec]
-
     m_Membrane_V +=  m_Membrane_dV; // in [mV]
-    m_Resulting_I = - m_AIS_I + m_Na_I;
-    // Now we know all changed quantities; adjust the step size
+     // Now we know all changed quantities; adjust the step size
+    // both membrane voltage change and gradient charge must be between the predefined limits
     Heartbeat_Adjust();
 }
 

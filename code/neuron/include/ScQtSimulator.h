@@ -40,9 +40,13 @@ using namespace std;
  * an the time adapts to the actual situation.
  * After the steps, the simulator simulator performs a delay, 
  * allowing to slow down the apparent execution.
+ * In addition, the system-under-test generates also other events, specific for the
+ * actual simulation. In order to provide maximum performance, the simulator left analyzing
+ * the kind of event to the caller; typically a graphical display unit.
  * 
- * It benchmarks three types of execution times: the simulated (biological) time,
- * the simulated time (the processor time to process the algorithms)
+ * The simulator benchmarks three types of execution times: the simulated (biological) time,
+ * the computing time (the processor time needed to process the algorithms),
+ * separated from the graphical activity used to display the data,
  * and the user time (the typically interactive user needs to browse the simulation).
  * The times can be reset.
  */
@@ -54,7 +58,7 @@ class ScQtSimulator : public QObject
 public:
     explicit ScQtSimulator(QObject *parent = 0);
     /**
-     * @brief This enum describes the various available methods
+     * @brief This enum describes the various available methods the simulator offers
      */
     enum Method {
         Method_SingleSteps = 1,
@@ -81,30 +85,34 @@ public:
     //        clock_time += 24*60*60*1000;
         return TimeDiff;
     }
+    /*! Reset the 'beginnint of the clock time' to the current time */
     void userTime_Reset(void)
     {
         m_clock_time_begin = QTime::currentTime();
     }
+    /*! Sets the simulated time scale origin to the current simulated time */
     void scTime_Reset(void)
     {
         m_sc_time_begin = sc_core::sc_time_stamp();
     }
+    /*! Returns the actual simulated time since the last scTime_Reset() */
     sc_core::sc_time scTime_Get(void)
     {
         return sc_core::sc_time_stamp() - m_sc_time_begin;
     }
+    /* Reset all bechmarked times */
     void TimesReset()
     {
         scTime_Reset();
         systemTime_Reset();
         userTime_Reset();
     }
-    // Return processor time from the benchmark, [us]
+    // Return processor time period since the last reset from the benchmark, [us]
     double systemTime_Get()
     {
         return std::chrono::duration_cast<std::chrono::microseconds>(m_system_s).count();
     }
-    // Return processor time from the benchmark, [us]
+    // Resets processor's benchmarking time
        void systemTime_Reset()
     {
         m_system_t =chrono::steady_clock::now();

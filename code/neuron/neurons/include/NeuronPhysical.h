@@ -52,12 +52,18 @@
  *
  *  - NeuronPhysical::Synchronize_method(): deliver immediate spike, anyhow ;  (a momentary state)
  *   Passes to GenCompStageMachine_t::gcsm_Relaxing (after issuing 'DeliveringEnd')
- */
+ *
+ *   For solving the Ordinary Differential Equation, the package\\
+ *   and its Euler method is used.\\
+ *   https://en.wikipedia.org/wiki/Euler_method
+  */
 //static  NeuronConstants DefaultNeuron;
 class ScQtNeuron_MainWindow;
 
 class NeuronPhysical : public scGenComp_PU_Bio,
+#if 0
                        ode::OdeEuler::OdeEuler,
+#endif // 0
                        NeuronConstants
 {
     friend class NeuronInputCurrent; friend class ScQtNeuron_MainWindow;
@@ -72,7 +78,7 @@ public:
     {
     //    m_RushinCurrent = (NeuronInputCurrent*)NULL;
     }// Must be overridden
-
+#if 0
     //!evaluates the system of ODEs in autonomous form and must be defined by a derived class
     /* !
         The incoming `solin` vector contains the current values of all solution variables and has length `neq`. The output vector should be filled with the time derivatives for each variable in `solin`. All elements of `fout` should be set, even if they're zero, because the `fout` array isn't cleared before it's reused.
@@ -117,6 +123,21 @@ public:
 
     //!increments the step counter and the time, checks the solution integrity if needed, stores the time step in the object, and executes after_step() if extra is true
     //! neval_must be incremented in step() when defined
+    //!
+    //! In the first-order process, the formula
+    //!
+    //! \f$y_{n+1} = y_{n} + h\times f\bigl(t_{n},y_{n}\bigr)\f$
+    //!
+    //! in the second-order one (the midpoint method), the formula
+    //!
+    //! \f$y_{n+1} =  y_{n} + h\times f\bigl(t_n+\frac{1}{2},  y_{n} + \frac{1}{2} f(t_{n},y_{n}) \bigr)\f$
+    //!
+    //! is used.
+    //!  \f$ y^\prime = f\bigl(t,y(t)\bigr)\f$
+    //!
+    //! Recently, only the 1st order formula is used.
+    //! The time is pre-set (i.e., no direct way to set the time to another value)
+    //!
     void step (double dt, bool extra=true);
 
     //!advances a single time step (without changing counters or the time) and must be defined in the derived class implementing the solver/method
@@ -124,13 +145,18 @@ public:
         This is a virtual function overridden by the class which implements the stepping algorightm. It should never be used outside of the wrapper step() function, and this wrapper should always be used instead.
             \param[in] dt time step size
         */
+#endif // 0
 
     virtual void Tracing_Initialize(); // Initialize tracing: voltage vs time
+    /**
+     * @brief Calculate the actual potential gradient
+     * The strictly needed calculations only
+     */
+    void CalculateGradient();
     /**
      * @brief Calculate the membrane's new potential by solving a PDE at
      * the new time after advancing time by the Heartbeat value
      */
-
     virtual void Calculate_Do();
     /**
      * @brief Create a new rush-in current for the neuron

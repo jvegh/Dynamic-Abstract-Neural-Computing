@@ -114,8 +114,10 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 */
     m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
+#if 0
     m_CurrentWindow = new CurrentWindow(m_Simulator, MyNeuron);
     m_CurrentWindow->show();
+#endif
     m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
     m_GradientWindow->show();
     m_PhasePlotWindow = new PhasePlotWindow(m_Simulator, MyNeuron);
@@ -140,7 +142,7 @@ void ScQtNeuron_MainWindow::replot()
 {
     m_PhasePlotWindow->replot();
     m_VoltageWindow->replot();
-    m_CurrentWindow->replot();
+ //   m_CurrentWindow->replot();
     m_GradientWindow->replot();
 }
 
@@ -211,7 +213,7 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
 
 //    m_PhasePlotWindow->Reset();
     m_VoltageWindow->Reset();
-    m_CurrentWindow->Reset();
+//    m_CurrentWindow->Reset();
 //    m_GradientWindow->Reset();
     delete m_GradientWindow;
     m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
@@ -234,7 +236,7 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     // Display the time values
             BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here
     // The functionality moved to here to benchmark the display time
-    m_CurrentWindow->displayDataSlot();
+ //   m_CurrentWindow->displayDataSlot();
     m_PhasePlotWindow->displayDataSlot();
     m_VoltageWindow->displayDataSlot();
     m_GradientWindow->displayDataSlot();

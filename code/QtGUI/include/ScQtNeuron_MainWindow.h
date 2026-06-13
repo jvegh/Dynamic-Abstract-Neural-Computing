@@ -20,7 +20,7 @@
 #include "PhasePlotWindow.h"
 #include "ScQtAbout.h"
 #include "ScQtSimulator.h"
-#include "CurrentWindow.h"
+//#include "CurrentWindow.h"
 #include "VoltageWindow.h"
 #include "GradientWindow.h"
 #include "neurontab.h"
@@ -146,7 +146,7 @@ private:
      */
     QThread *m_thread;
     VoltageWindow *m_VoltageWindow;
-    CurrentWindow *m_CurrentWindow;
+//    CurrentWindow *m_CurrentWindow;
     GradientWindow *m_GradientWindow;
     PhasePlotWindow *m_PhasePlotWindow;
     int32_t m_StepNumber;

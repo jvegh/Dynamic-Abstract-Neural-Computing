@@ -12,7 +12,9 @@
 
 #include "scGenComp_PU_Bio.h"
 #include "NeuronInputCurrent.h"
+#if 0
 #include "../3rdParty/ode/include/ode/ode_euler.h"
+#endif
 
 #define MakeDebugPrint 0
 
@@ -76,7 +78,6 @@ public:
                    );
     virtual ~NeuronPhysical(void)
     {
-    //    m_RushinCurrent = (NeuronInputCurrent*)NULL;
     }// Must be overridden
 #if 0
     //!evaluates the system of ODEs in autonomous form and must be defined by a derived class
@@ -253,6 +254,7 @@ public:
 #endif
     vector <NeuronInputCurrent*> m_SynapticCurrents;    // Stores pointers to the currents
     NeuronInputCurrent *m_RushinCurrent;
+    NeuronInputCurrent *m_NaCurrent;
     double dVdtResulting_Get(void) {return m_Membrane_dVdt_Resulting;}
     double dVdtResultingLast_Get(void) {return m_Membrane_Last_dVdt;}
     double dVdtAIS_Get(void) {return m_Membrane_dVdt_AIS;}
@@ -280,6 +282,7 @@ protected:
     double m_Resulting_I;
 
     vector<double> m_RushinParameters;    // Parameters for the rushin current
+    vector<double> m_NaParameters;
     vector<double> m_SynapticParameters;            // Parameters for the axonal input current
     vector<double> m_MembraneParameters;  // Parameters for the membrane
 };// of class NeuronPhysical

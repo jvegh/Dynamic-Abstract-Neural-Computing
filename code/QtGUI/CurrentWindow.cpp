@@ -126,7 +126,7 @@ void CurrentWindow::setupDataPlot()
     ui->customPlot->yAxis->setLabel("Membrane currents (pA)");
     // set axes ranges, so we see all data:
     ui->customPlot->xAxis->setRange(0,1);
-    ui->customPlot->yAxis->setRange(-50,100);
+    ui->customPlot->yAxis->setRange(-500,1000);
     // set some basic customPlot config:
     ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
     ui->customPlot->axisRect()->setupFullAxesBox();

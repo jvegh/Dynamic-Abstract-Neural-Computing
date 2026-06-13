@@ -42,6 +42,7 @@
 #include "DebugMacros.h"
 
 vector<double> Default_RushinParameters = {Rushin_Amplitude, Rushin_A, Rushin_B};    // Parameters for the rushin current
+vector<double> Default_NaParameters = {Rushin_Amplitude, Rushin_A, 20};    // Parameters for the rushin current
 vector<double> Default_SynapticParameters = {Synaptic_Amplitude, Synaptic_A, Synaptic_B};            // Parameters for the axonal input
 vector<double> Default_MembraneParameters = {Membrane_R, Membrane_C, Membrane_Tau};  // Parameters for the membrane
 
@@ -64,6 +65,7 @@ NeuronPhysical(sc_core::sc_module_name nm):
     NeuronConstants(),
     m_RushinCurrent((NeuronInputCurrent *)NULL),
     m_RushinParameters(Default_RushinParameters),    // Parameters for the rushin
+    m_NaParameters(Default_NaParameters),
     m_SynapticParameters(Default_SynapticParameters),            // Parameters for the axonal input
     m_MembraneParameters(Default_MembraneParameters)  // Parameters for the membrane
 {
@@ -145,6 +147,11 @@ Create_Rushin()
                                                  scLocalTimeMS_Get(),
                                                  m_RushinParameters
                                                  );
+        m_NaCurrent = new NeuronInputCurrent(this,NeuronInputCurrent_t::nict_RushIn,
+                                                 scLocalTimeMS_Get(),
+                                                 m_NaParameters
+                                                 );
+
                 DEBUG_SC_EVENT(name(),"Rush-in Current "
                                                            << " in stage '" << GenCompStageMachineType2String(mStageFlag)
                                                            << "' opened");
@@ -179,6 +186,7 @@ void NeuronPhysical::
     m_Membrane_dVdt_AIS = 0;
     m_Membrane_dVdt_Rushin = 0;
     m_RushinCurrent = (NeuronInputCurrent*) NULL;
+    m_NaCurrent = (NeuronInputCurrent*) NULL;
     m_SynapticCurrents.clear();
     m_MembraneGradientPositive = true;
 }
@@ -277,11 +285,14 @@ void NeuronPhysical::
     m_Membrane_V_Rushin = 0;
     // From  the previous iteration
     m_Membrane_Last_dVdt = m_Membrane_dVdt_Resulting;
-    m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get()/1000; // The AIS current, in pA
+    m_AIS_I = m_Membrane_V/MembraneResistanceGOhm_Get(); // The AIS current, in pA
 
     CalculateGradient();
     // The Na+ current
-    m_Na_I += m_Membrane_dVdt_Rushin/MembraneResistanceGOhm_Get()/1000/1000;
+    if ((StageFlag_Get()!=GenCompStageMachine_t::gcsm_Computing))
+        m_Na_I +=  m_NaCurrent->CurrentValue_Get(m_t);
+
+//        m_Membrane_dVdt_Rushin/MembraneResistanceGOhm_Get()/1000;
     m_Resulting_I = - m_AIS_I + m_Na_I;
 
     m_Membrane_dV = m_Membrane_dVdt_Resulting * m_dt;  // The voltage  change, in [mV], m_dt in [sec]

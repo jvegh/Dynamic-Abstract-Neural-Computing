@@ -22,7 +22,7 @@ static UniversalConstants UniversalData;
     Heartbeat_time_default    //< The reset value of heartbeat time
     ,Heartbeat_time_resolution;    //< The time tolerance
 */
-#define VOLTAGE_CHANGE_ALLOWED 2.   // Max 2 mV change enabled during integration
+#define VOLTAGE_CHANGE_ALLOWED 1.   // Max 2 mV change enabled during integration
 
 // The units of general computing work in the same way, using general events
 // \brief Implement handling the states of computing
@@ -83,7 +83,7 @@ void scGenComp_PU_Bio::
     float diff_V = abs(m_Membrane_dV);
      if(diff_V<VOLTAGE_CHANGE_ALLOWED*2)
     { // The membrane's voltage changed less than 0.5 mV; can increase
-        if(m_Heartbeat_time <s_Heartbeat_time_default*5)
+        if(m_Heartbeat_time <s_Heartbeat_time_default*2)
         {
             HeartbeatTime_Set(m_Heartbeat_time *2);
                 DEBUG_SC_EVENT(name(),"Heartbeat set to " << m_dt );

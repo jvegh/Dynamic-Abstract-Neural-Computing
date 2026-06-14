@@ -362,8 +362,6 @@ void scGenComp_PU_Abstract::
 void scGenComp_PU_Abstract::
     Heartbeat_Adjust(void)
 {   // By default, make nothing. See the bio case
-//    m_t = scLocalTime_Get().to_seconds()*1000.; // Set the time for the calculation, in usec
-
 }
 
 // Called when the state 'processing' ends

@@ -25,7 +25,7 @@
 #define Axon_A 0.15
 #define Axon_B 3
 */
-#define Synaptic_Amplitude 12000.
+#define Synaptic_Amplitude 6000.
 #define Synaptic_A 0.15
 #define Synaptic_B 3
 // RC parameters of the membrane

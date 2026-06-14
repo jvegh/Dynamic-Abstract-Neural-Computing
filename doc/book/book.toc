@@ -56,9 +56,9 @@
 \contentsline {subsection}{\numberline {6.1.8}Ionic currents in a cell}{67}{subsection.6.1.8}%
 \contentsline {subsection}{\numberline {6.1.9}Imitating slow currents}{71}{subsection.6.1.9}%
 \contentsline {section}{\numberline {6.2}Forming membrane's potential}{74}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}States}{75}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.1}States}{74}{subsection.6.2.1}%
 \contentsline {subsubsection}{Resting state}{77}{section*.20}%
-\contentsline {subsubsection}{Transient state}{82}{section*.21}%
+\contentsline {subsubsection}{Transient state}{80}{section*.21}%
 \contentsline {subsection}{\numberline {6.2.2}Controlling states}{84}{subsection.6.2.2}%
 \contentsline {subsubsection}{Neuron as a PID controller}{84}{section*.22}%
 \contentsline {subsubsection}{Robustness of the control circle}{88}{section*.23}%
@@ -66,7 +66,7 @@
 \contentsline {section}{\numberline {6.3}The Action Potential}{90}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}The physical process}{90}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}The oscillator model}{92}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Mathematics of the ActionPotential}{97}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.3}Mathematics of the ActionPotential}{95}{subsection.6.3.3}%
 \contentsline {chapter}{\numberline {7}Thermodynamics for neurons}{99}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Transmission}{101}{chapter.8}%
 \contentsline {chapter}{List of tables}{103}{chapter.8}%

@@ -131,10 +131,12 @@ Signal transmission happens in parallel with the further processing. Inputs disa
 </ul>
 <p>&ndash;These stages below are momentary states: need some action and passes to one of the above stages</p><ul>
 <li>NeuronPhysical::InputReceived_method(): the unit received new input. Only administrative action; the received input is handled in Heartbeat_XXX_Do(), as described in <a class="el" href="classNeuronPhysical.html#a3e6514fed4b7c3bee8d54e64ecfbb736" title="Calculate the membrane&#39;s new potential by solving a PDE at the new time after advancing time by the H...">Calculate_Do()</a>. Disabled in mode GenCompStageMachine_t::gcsm_Delivering.</li>
-<li>NeuronPhysical::Synchronize_method(): deliver immediate spike, anyhow ; (a momentary state) Passes to GenCompStageMachine_t::gcsm_Relaxing (after issuing 'DeliveringEnd') </li>
+<li><p class="startli">NeuronPhysical::Synchronize_method(): deliver immediate spike, anyhow ; (a momentary state) Passes to GenCompStageMachine_t::gcsm_Relaxing (after issuing 'DeliveringEnd')</p>
+<p class="startli">For solving the Ordinary Differential Equation, the package\ and its Euler method is used.\ <a href="https://en.wikipedia.org/wiki/Euler_method">https://en.wikipedia.org/wiki/Euler_method</a> </p>
+</li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00059">59</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00063">63</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 </div><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for NeuronPhysical:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -513,7 +515,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00071">71</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00075">75</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -541,7 +543,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00088">88</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00092">92</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -570,7 +572,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>does any extra stuff only when a step is captured </p>
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00105">105</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00109">109</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -754,7 +756,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00232">232</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00246">246</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -782,7 +784,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00233">233</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00247">247</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -810,7 +812,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00230">230</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00244">244</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -838,7 +840,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00231">231</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00245">245</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1047,7 +1049,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00234">234</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00248">248</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1075,7 +1077,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00235">235</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00249">249</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1103,7 +1105,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00236">236</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00250">250</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1197,7 +1199,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classscGenComp__PU__Abstract.html#a730d8f605eee318a927baaf063594edb">scGenComp_PU_Abstract</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00219">219</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00233">233</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1261,7 +1263,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00237">237</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00251">251</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1299,7 +1301,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00240">240</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00254">254</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1339,7 +1341,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>evaluates the system of ODEs in autonomous form and must be defined by a derived class </p>
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00083">83</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00087">87</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1366,7 +1368,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00238">238</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00252">252</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1404,7 +1406,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00239">239</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00253">253</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1433,7 +1435,12 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>increments the step counter and the time, checks the solution integrity if needed, stores the time step in the object, and executes <a class="el" href="classNeuronPhysical.html#a4faca4bf2811975cbf79dbe0ef8093bb" title="does any extra stuff after each step">after_step()</a> if extra is true neval_must be incremented in <a class="el" href="classNeuronPhysical.html#ada25ba247571299d9accf6638018b3d0">step()</a> when defined </p>
+<p>increments the step counter and the time, checks the solution integrity if needed, stores the time step in the object, and executes <a class="el" href="classNeuronPhysical.html#a4faca4bf2811975cbf79dbe0ef8093bb" title="does any extra stuff after each step">after_step()</a> if extra is true neval_must be incremented in <a class="el" href="classNeuronPhysical.html#ada25ba247571299d9accf6638018b3d0">step()</a> when defined</p>
+<p>In the first-order process, the formula</p>
+<p>\(y_{n+1} = y_{n} + h\times f\bigl(t_{n},y_{n}\bigr)\)</p>
+<p>in the second-order one (the midpoint method), the formula</p>
+<p>\(y_{n+1} =  y_{n} + h\times f\bigl(t_n+\frac{1}{2},  y_{n} + frac{1}{2} f(t_{n},y_{n}) \bigr)\)</p>
+<p>is used. </p>
 
 <p class="definition">Definition at line <a class="el" href="NeuronPhysical_8cpp_source.html#l00093">93</a> of file <a class="el" href="NeuronPhysical_8cpp_source.html">NeuronPhysical.cpp</a>.</p>
 
@@ -1525,7 +1532,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00063">63</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00067">67</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1549,7 +1556,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00063">63</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00067">67</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1574,7 +1581,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00252">252</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00266">266</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1598,7 +1605,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00247">247</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00261">261</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1622,7 +1629,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00248">248</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00262">262</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1646,7 +1653,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00249">249</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00263">263</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1670,7 +1677,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00250">250</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00264">264</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1694,7 +1701,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00251">251</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00265">265</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1718,7 +1725,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00246">246</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00260">260</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1742,7 +1749,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00258">258</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00272">272</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1766,7 +1773,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00253">253</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00267">267</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1790,7 +1797,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00254">254</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00268">268</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1806,7 +1813,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00229">229</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00243">243</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1830,7 +1837,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00256">256</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00270">270</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1846,7 +1853,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00228">228</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00242">242</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>
@@ -1870,7 +1877,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00257">257</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NeuronPhysical_8h_source.html#l00271">271</a> of file <a class="el" href="NeuronPhysical_8h_source.html">NeuronPhysical.h</a>.</p>
 
 </div>
 </div>

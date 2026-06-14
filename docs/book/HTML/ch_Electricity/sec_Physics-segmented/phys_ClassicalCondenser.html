@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>6.1.6 Two segments ‣ 6.1 Membrane’s electricity ‣ Chapter 6 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0</title>
-<!--Generated on Sat Jun  6 12:22:43 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on June 6, 2026.-->
+<!--Generated on Sun Jun 14 13:01:07 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on June 14, 2026.-->
 
 <link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
 <link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
@@ -50,7 +50,7 @@
 <p class="ltx_p"><span class="ltx_text" style="color:#000000;">The Hodgkin-Huxley neuron model V2.0
 <br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
 <br class="ltx_break">behind neuronal operation
-<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.0.1</em>
+<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.2</em>
 <br class="ltx_break"></span></span></p>
 </div>
 <nav class="ltx_TOC">
@@ -123,17 +123,17 @@ the issues with the ill-defined biological boundaries.</span></p>
 <span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:390.3pt;background-color:#FFFFE6;">
 <span class="ltx_p"><span class="ltx_text ltx_font_bold">Physics panel 6.1.4:
 <br class="ltx_break">The classical condenser
-</span>
-
+</span><a name="phys..ClassicalCondenser" id="phys..ClassicalCondenser" class="ltx_anchor">
+</a>
 In classical electricity, the charge remains on the surface of the conducting layer, and the distribution is homogeneous (although the charge is concentrated on the surface and the electrical field is zero inside the conducting layer). Hence, the electrical field contributions cancel each other.
 In electrolyte segments, (a tiny fraction of) the molecules decompose into an ionized state (dissociate), and the created ions interact with a bounding
-membrane using a not entirely understood mechanism <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib40" title="" class="ltx_ref">40</a>]</cite>. The rest of the dipole molecules become polarized but do not dissociate, forming virtual charges that allow the electrolytes to contain electrical fields. Although not explicitly stated, we assume that electrical double layers are present near the membrane, and ions from the dispersion medium are adsorbed onto the particle’s surface, depending on the medium’s chemical properties.</span>
-<span class="ltx_p">Correspondingly, the theory non-equivocally explains the potential near the membrane surface; see the discussion and review in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib41" title="" class="ltx_ref">41</a>]</cite><a name="phys..ClassicalCondenser" id="phys..ClassicalCondenser" class="ltx_anchor">, mainly their Figure 1.
+membrane using a not entirely understood mechanism <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib69" title="" class="ltx_ref">69</a>]</cite>. The rest of the dipole molecules become polarized but do not dissociate, forming virtual charges that allow the electrolytes to contain electrical fields. Although not explicitly stated, we assume that electrical double layers are present near the membrane, and ions from the dispersion medium are adsorbed onto the particle’s surface, depending on the medium’s chemical properties.</span>
+<span class="ltx_p">Correspondingly, the theory non-equivocally explains the potential near the membrane surface; see the discussion and review in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib70" title="" class="ltx_ref">70</a>]</cite>, mainly their Figure 1.
 That model considers a symmetrical condenser, that is, both plates
 contain charges of the same sign.
 The Donnan function is a (discontinuous) step-like potential.
 Its continuous version introduces a mathematically smooth, non-physical function at the boundary of the charged layer.
-One must describe a physically discontinuous layer (electrolyte, ion layer on the membrane’s surface, and isolating membrane) with a single continuous function and gradients (potential and concentration) with physical meaning.</a></span>
+One must describe a physically discontinuous layer (electrolyte, ion layer on the membrane’s surface, and isolating membrane) with a single continuous function and gradients (potential and concentration) with physical meaning.</span>
 </span><span class="ltx_text" style="background-color:#FFFFE6;">
 </span></span><span class="ltx_text" style="color:#00FF00;">
 </span><span class="ltx_text" style="color:#000000;"></span></p>
@@ -147,8 +147,8 @@ One must describe a physically discontinuous layer (electrolyte, ion layer on th
 <span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:390.3pt;background-color:#FFFFE6;">
 <span class="ltx_p"><span class="ltx_text ltx_font_bold">Physics panel 6.1.5:
 <br class="ltx_break">The boundary problem of a physics condenser
-</span>
-
+</span><a name="phys..CondenserBoundaryProblem" id="phys..CondenserBoundaryProblem" class="ltx_anchor">
+</a>
 The behavior near the boundary layers is problematic, primarily because
 the layers themselves are ill-defined.
 Physically, they are not ideally plain and well-defined surfaces; the layer thicknesses are limited by the size of the ions/molecules and their associated ions; the layers do not necessarily
@@ -158,14 +158,14 @@ all regions surely cannot accurately describe the behavior
 of the physical model. So, we chose a piecewise
 description where the pieces seamlessly fit at the boundaries. We assume that between the surfaces of the membrane, classical
 electricity describes the electrical field; the charged layer and the electrolyte jointly produce the electrical field; we have a uniformly charged layer from separated charges on the surface and a polarized electrolyte outside them.</span>
-<span class="ltx_p"><a name="phys..CondenserBoundaryProblem" id="phys..CondenserBoundaryProblem" class="ltx_anchor">Unlike in the classical theory, the electrolyte segment next to the surface layer contains dipole molecules
+<span class="ltx_p">Unlike in the classical theory, the electrolyte segment next to the surface layer contains dipole molecules
 that have more or less balanced charges (the polarization also depends on the external electrical field), so they have much less mobility than the dissociated ions: their size and mass are bigger, and their charge is a fraction of that of the ions. Their virtual charge becomes apparent only in the appropriate environment, yet it generates an electrical field similar to that of a real charge. The final reasons for creating virtual charges are real charges and/or external fields, so an electrical field due to virtual charges can also exist
 inside dielectric matter.
 We assume the membrane is transparent
 for the electrical interaction (the electrical field affects the ions
 in the other segment on the other side of the membrane) but not for
 their masses (mechanically separate the segments).
-The membrane does not need to generate any counterforce (except for collisions).</a></span>
+The membrane does not need to generate any counterforce (except for collisions).</span>
 </span><span class="ltx_text" style="background-color:#FFFFE6;">
 </span></span><span class="ltx_text" style="color:#00FF00;">
 </span><span class="ltx_text" style="color:#000000;"></span></p>
@@ -202,7 +202,7 @@ the laws of classical electricity and has
 the geometrical size of a biological neuron.
 We apply the physics terms to that pseudo-biological object
 and test whether the values we derive are consistent with physiological phenomena. A tiny (according to </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib6" title="" class="ltx_ref">6</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">, page 12, about </span><math id="SSSx2.p1.m1" class="ltx_Math" alttext="2*10^{-3}" display="inline"><mrow><mn mathcolor="#000000">2</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msup><mn mathcolor="#000000">10</mn><mrow><mo mathcolor="#000000">−</mo><mn mathcolor="#000000">3</mn></mrow></msup></mrow></math><span class="ltx_text" style="color:#000000;">) portion of the positive ions leaves their negative
-counterions behind and forms a thin positively charged ion layer on the surface of the membrane (of course, the same happens on the opposite side with negative ions). Experience shows that – also in biology – two skinny layers of ions are formed on the two sides of the membrane of finite width, see the caption of figure (Fig. 11.22 in </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib42" title="" class="ltx_ref">42</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">):
+counterions behind and forms a thin positively charged ion layer on the surface of the membrane (of course, the same happens on the opposite side with negative ions). Experience shows that – also in biology – two skinny layers of ions are formed on the two sides of the membrane of finite width, see the caption of figure (Fig. 11.22 in </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib45" title="" class="ltx_ref">45</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">):
 ”The ions that give rise to the membrane potential lie
 in a thin (</span><math id="SSSx2.p1.m2" class="ltx_Math" alttext="&lt;1\ nm" display="inline"><mrow><mi></mi><mo mathcolor="#000000">&lt;</mo><mrow><mn mathcolor="#000000">1</mn><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></mrow></math><span class="ltx_text" style="color:#000000;">) surface layer close to the membrane”
 (As shown below, these ions give rise only to part of the
@@ -219,7 +219,7 @@ So, we must assume
 a physical ’uniformly charged sheet’ with an average thickness </span><math id="SSSx2.p2.m2" class="ltx_Math" alttext="\Delta z=0.5~{}nm" display="inline"><mrow><mrow><mi mathcolor="#000000" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow><mo mathcolor="#000000">=</mo><mrow><mn mathcolor="#000000">0.5</mn><mo lspace="0.330em">⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi></mrow></mrow></math><span class="ltx_text" style="color:#000000;"> on the surface.
 For the sake of simplicity, we assume a step-like function
 for the electrical field. It is zero in the segment outside
-the ”conducting sheets” (the ’bulk’ portions) and inside the sheets. Between the sheets, it jumps to the value of the electrical field of a charged sheet with surface density </span><math id="SSSx2.p2.m3" class="ltx_Math" alttext="\sigma_{A}" display="inline"><msub><mi mathcolor="#000000">σ</mi><mi mathcolor="#000000">A</mi></msub></math><span class="ltx_text" style="color:#000000;"> (see Eq.(</span><a href="sec_Physics-OneSegment.html#eq:Physics-SurfaceChargeDensity" title="In Numerics panel 6.1.2: The electric field of a physical charged sheet In the calculations below, we require the ’surface charge density’ (interpreted as an ’infinitely thin layer’ in physics, expressed in 𝐶∗𝑚⁻²). We can derive (assuming singly-charged ions) the volume charge density (6.8) Equation 6.8 6.8 𝜎_𝑉⁢(𝑐)=𝑐∗𝑁_𝐴∗𝑒_{𝑒⁢𝑙}=𝑐∗6.023∗10²⁰∗1.602∗10⁻¹⁹=96.5∗𝑐[𝐶/𝑚⁢𝑀∗𝑚³] where 𝑁_𝐴 is the number of ions in a 𝑚⁢𝑖⁢𝑙⁢𝑙⁢𝑖⁢𝑚⁢𝑜⁢𝑙 and 𝑒_{𝑒⁢𝑙} is the elementary charge. Notice that all ions contribute to the charge density, so simply 𝑐=∑_𝑘{𝐶_𝑘}. Here, we run into a conflict between the ’infinitely thin’ layer of physics and the biologically implemented (finitely) ’thin physical layer’, so we use a thickness parameter Δ⁢𝑧. By assuming an arbitrary ’physical layer thickness’ Δ⁢𝑧, we can calculate the surface charge density (6.9) Equation 6.9 6.9 𝜎_𝐴⁢(𝑐,Δ⁢𝑧)={96.5∗𝑐∗Δ⁢𝑧[{𝐶/𝑚²}⁢{1/𝑚⁢𝑀∗𝑛⁢𝑚}]} We interpreted classical physics’ notions from the theory of ’continuous’ electricity, interpreted for ’infinite’ cases, for the finite world of biological objects and the quantized atomic world. Our idea is similar to Boltzmann’s for connecting the continuous medium to particles. When ions are present in an electrolyte having concentration 𝑐 in a ’conducting layer’ of thickness Δ⁢𝑧 on an isolating surface, they produce a field (6.10) Equation 6.10 6.10 𝐸_𝑧⁢(𝑐,Δ⁢𝑧)=𝜎_𝐴⁢(𝑐,Δ⁢𝑧)/ϵ_𝑜=10.89∗10³∗𝑐∗Δ⁢𝑧[{𝑉/𝑚}⁢{1/𝑛⁢𝑚∗𝑚⁢𝑀}] ‣ 6.1.5 One segment ‣ 6.1 Membrane’s electricity ‣ Chapter 6 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag"><span class="ltx_text" style="color:#000000;">6.9</span></span></a><span class="ltx_text" style="color:#000000;">)).
+the ”conducting sheets” (the ’bulk’ portions) and inside the sheets. Between the sheets, it jumps to the value of the electrical field of a charged sheet with surface density </span><math id="SSSx2.p2.m3" class="ltx_Math" alttext="\sigma_{A}" display="inline"><msub><mi mathcolor="#000000">σ</mi><mi mathcolor="#000000">A</mi></msub></math><span class="ltx_text" style="color:#000000;"> (see Eq.(</span><a href="sec_Physics-OneSegment.html#eq:Physics-SurfaceChargeDensity" title="In 6.1.5 One segment ‣ 6.1 Membrane’s electricity ‣ Chapter 6 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag"><span class="ltx_text" style="color:#000000;">6.9</span></span></a><span class="ltx_text" style="color:#000000;">)).
 (In this picture, we see a jump in the value of the electrical field
 on the two sides of the physical layer. The physical layer emulates the well-defined boundary
 on the side opposite to that proximal to the membrane. Here, we still assume that a mechanical counterforce due to the surface’s roughness keeps the charges inside the charged layer.)</span></p>
@@ -229,13 +229,13 @@ on the side opposite to that proximal to the membrane. Here, we still assume tha
 <span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:390.3pt;background-color:#E6FFE6;">
 <span class="ltx_p"><span class="ltx_text ltx_font_bold">Numerics panel 6.1.3:
 <br class="ltx_break">The voltage in a classical neuronal condenser
-</span>
-
+</span><a name="num..ClassicalField" id="num..ClassicalField" class="ltx_anchor">
+ </a>
 We assume that all unbalanced (dissociated) ions are in the layer,
 and the rest contains no dissociated ions; furthermore,
 the ion concentration is unchanged in the segment.
 In the case of a <math id="SSSx2.p4.m1" class="ltx_Math" alttext="400~{}mM" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">400</mn><mo lspace="0.330em">⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">M</mi></mrow></math> solution and a <math id="SSSx2.p4.m2" class="ltx_Math" alttext="0.5~{}nm" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">0.5</mn><mo lspace="0.330em">⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">n</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mrow></math> ’thin physical layer’
-Eq.(<a href="sec_Physics-OneSegment.html#eq:Physics-ElectricFieldFromSigma" title="In Numerics panel 6.1.2: The electric field of a physical charged sheet In the calculations below, we require the ’surface charge density’ (interpreted as an ’infinitely thin layer’ in physics, expressed in 𝐶∗𝑚⁻²). We can derive (assuming singly-charged ions) the volume charge density (6.8) Equation 6.8 6.8 𝜎_𝑉⁢(𝑐)=𝑐∗𝑁_𝐴∗𝑒_{𝑒⁢𝑙}=𝑐∗6.023∗10²⁰∗1.602∗10⁻¹⁹=96.5∗𝑐[𝐶/𝑚⁢𝑀∗𝑚³] where 𝑁_𝐴 is the number of ions in a 𝑚⁢𝑖⁢𝑙⁢𝑙⁢𝑖⁢𝑚⁢𝑜⁢𝑙 and 𝑒_{𝑒⁢𝑙} is the elementary charge. Notice that all ions contribute to the charge density, so simply 𝑐=∑_𝑘{𝐶_𝑘}. Here, we run into a conflict between the ’infinitely thin’ layer of physics and the biologically implemented (finitely) ’thin physical layer’, so we use a thickness parameter Δ⁢𝑧. By assuming an arbitrary ’physical layer thickness’ Δ⁢𝑧, we can calculate the surface charge density (6.9) Equation 6.9 6.9 𝜎_𝐴⁢(𝑐,Δ⁢𝑧)={96.5∗𝑐∗Δ⁢𝑧[{𝐶/𝑚²}⁢{1/𝑚⁢𝑀∗𝑛⁢𝑚}]} We interpreted classical physics’ notions from the theory of ’continuous’ electricity, interpreted for ’infinite’ cases, for the finite world of biological objects and the quantized atomic world. Our idea is similar to Boltzmann’s for connecting the continuous medium to particles. When ions are present in an electrolyte having concentration 𝑐 in a ’conducting layer’ of thickness Δ⁢𝑧 on an isolating surface, they produce a field (6.10) Equation 6.10 6.10 𝐸_𝑧⁢(𝑐,Δ⁢𝑧)=𝜎_𝐴⁢(𝑐,Δ⁢𝑧)/ϵ_𝑜=10.89∗10³∗𝑐∗Δ⁢𝑧[{𝑉/𝑚}⁢{1/𝑛⁢𝑚∗𝑚⁢𝑀}] ‣ 6.1.5 One segment ‣ 6.1 Membrane’s electricity ‣ Chapter 6 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag"><span class="ltx_text" style="color:#000000;">6.10</span></span></a>) evaluates to an electrical field</span>
+Eq.(<a href="sec_Physics-OneSegment.html#eq:Physics-ElectricFieldFromSigma" title="In 6.1.5 One segment ‣ 6.1 Membrane’s electricity ‣ Chapter 6 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag"><span class="ltx_text" style="color:#000000;">6.10</span></span></a>) evaluates to an electrical field</span>
 <span id="Ch6.Ex2" class="ltx_equation ltx_eqn_table">
 
 <span><span class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -258,7 +258,7 @@ The calculated values are about a factor of <math id="SSSx2.p4.m5" class="ltx_Ma
 ”An
 electrical potential difference about <math id="SSSx2.p4.m6" class="ltx_Math" alttext="50-100\ mV" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">50</mn><mo mathbackground="#E6FFE6" mathcolor="#0000FF">−</mo><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">100</mn><mo lspace="0.500em">⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">V</mi></mrow></mrow></math> … exists across
 a plasma membrane only about <math id="SSSx2.p4.m7" class="ltx_Math" alttext="5\ nm" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">5</mn><mo lspace="0.500em">⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">n</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mrow></math> thick, so that the resulting
-voltage gradient is about <math id="SSSx2.p4.m8" class="ltx_Math" alttext="100,000\ V/cm" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">100</mn><mo mathbackground="#E6FFE6" mathcolor="#0000FF">,</mo><mrow><mrow><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">000</mn><mo lspace="0.500em">⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">V</mi></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">/</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi></mrow><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mrow></mrow></math>” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib42" title="" class="ltx_ref">42</a>]</cite>. ”The number of uncompensated ions needed for the cell is <math id="SSSx2.p4.m9" class="ltx_Math" alttext="4.7*10^{7}" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">4.7</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mn mathbackground="#E6FFE6" mathcolor="#0000FF">10</mn><mn mathbackground="#E6FFE6" mathcolor="#0000FF">7</mn></msup></mrow></math>” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib6" title="" class="ltx_ref">6</a>]</cite><a name="num..ClassicalField" id="num..ClassicalField" class="ltx_anchor">.</a></span>
+voltage gradient is about <math id="SSSx2.p4.m8" class="ltx_Math" alttext="100,000\ V/cm" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">100</mn><mo mathbackground="#E6FFE6" mathcolor="#0000FF">,</mo><mrow><mrow><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">000</mn><mo lspace="0.500em">⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">V</mi></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">/</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi></mrow><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mrow></mrow></math>” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib45" title="" class="ltx_ref">45</a>]</cite>. ”The number of uncompensated ions needed for the cell is <math id="SSSx2.p4.m9" class="ltx_Math" alttext="4.7*10^{7}" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">4.7</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mn mathbackground="#E6FFE6" mathcolor="#0000FF">10</mn><mn mathbackground="#E6FFE6" mathcolor="#0000FF">7</mn></msup></mrow></math>” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib6" title="" class="ltx_ref">6</a>]</cite>.</span>
 </span><span class="ltx_text" style="background-color:#E6FFE6;">
 </span></span><span class="ltx_text" style="color:#0000FF;">
 </span><span class="ltx_text" style="color:#000000;"></span></p>
@@ -410,7 +410,7 @@ and we arrive at that</span></p>
 </tr></tbody>
 </table>
 <p class="ltx_p"><span class="ltx_text" style="color:#000000;">describes the potential across the plates; that is,
-the classical potential shall be multiplied by the result of the integral. It was experimentally confirmed </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib43" title="" class="ltx_ref">43</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> that the potential
+the classical potential shall be multiplied by the result of the integral. It was experimentally confirmed </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib71" title="" class="ltx_ref">71</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> that the potential
 of the membrane is proportional to the logarithm of the distance from the membrane.</span></p>
 </div>
 <div id="SSSx3.p7" class="ltx_para">
@@ -435,7 +435,7 @@ red diagram line. An electrolyte (instead of an insulator) outside the condenser
 <div class="ltx_align_center">
 <a href="sec_Physics-OneSegment.html" title="In 6.1 Membrane’s electricity ‣ Chapter 6 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.1.5 </span>One segment</span></a><a href="../../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physics-BridgingElectricity.html" title="In 6.1 Membrane’s electricity ‣ Chapter 6 Electricity for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.1.7 </span>Bridging the micro- and macro views</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Sat Jun  6 12:22:43 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Sun Jun 14 13:01:07 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>

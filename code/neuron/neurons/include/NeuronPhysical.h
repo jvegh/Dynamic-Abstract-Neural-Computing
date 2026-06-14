@@ -23,12 +23,27 @@
  */
 /*!
  * \class NeuronPhysical
- * \brief  Implements a general physical-type neuron
- *
+ * \brief  Implements a general physical-type neuron.
  * The neuron collects membrane's, synaptic and artificial currents,
  * for details see NeuronInputCurrent.
  *
- * In the corresponding states, the neuron is in one of its GenCompStageMachine_t states
+ * \todo Implement the prepared midpoint Euler integration method
+ */
+//static  NeuronConstants DefaultNeuron;
+class ScQtNeuron_MainWindow;
+
+class NeuronPhysical : public scGenComp_PU_Bio,
+#if 0
+                       ode::OdeEuler::OdeEuler,
+#endif // 0
+                       NeuronConstants
+{
+    friend class NeuronInputCurrent; friend class ScQtNeuron_MainWindow;
+public:
+    /*!
+     * \brief Creates a physics-based neuron unit
+     *
+     *  * In the corresponding states, the neuron is in one of its GenCompStageMachine_t states
  *  - GenCompStageMachine_t::gcsm_Computing computing (collects charge)
  *  - GenCompStageMachine_t::gcsm_Delivering: delivers action potential
  *  - GenCompStageMachine_t::gcsm_Relaxing: restores resting potential
@@ -58,20 +73,6 @@
  *   For solving the Ordinary Differential Equation, the package\\
  *   and its Euler method is used.\\
  *   https://en.wikipedia.org/wiki/Euler_method
-  */
-//static  NeuronConstants DefaultNeuron;
-class ScQtNeuron_MainWindow;
-
-class NeuronPhysical : public scGenComp_PU_Bio,
-#if 0
-                       ode::OdeEuler::OdeEuler,
-#endif // 0
-                       NeuronConstants
-{
-    friend class NeuronInputCurrent; friend class ScQtNeuron_MainWindow;
-public:
-    /*!
-     * \brief Creates a physics-based neuron unit
      * @param nm the SystemC name of the module
      */
     NeuronPhysical(sc_core::sc_module_name nm

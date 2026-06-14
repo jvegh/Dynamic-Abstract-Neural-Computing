@@ -42,7 +42,6 @@ using namespace std;
 
 class NeuronConstants
 {
-//    friend class NeuronPhysical;
 public:
     /*!
      * \brief Creates a physics-based neuron unit

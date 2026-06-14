@@ -83,7 +83,7 @@ void VoltageWindow::setupPlot()
     ui->customPlot->xAxis->setLabel("Time (ms)");
     ui->customPlot->yAxis->setLabel("Membrane voltage (mV)");
     // set axes ranges, so we see all data:
-    ui->customPlot->xAxis->setRange(0,2);
+    ui->customPlot->xAxis->setRange(0,1);
     ui->customPlot->yAxis->setRange(-30,130);
     // set some basic customPlot config:
     ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);

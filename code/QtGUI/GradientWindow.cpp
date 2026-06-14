@@ -103,7 +103,7 @@ void GradientWindow::setupPlot( )
     ui->customPlot->xAxis->setLabel("Time (ms)");
     ui->customPlot->yAxis->setLabel("Membrane gradient (V/s)");
     // set axes ranges, so we see all data:
-    ui->customPlot->xAxis->setRange(0,.3);
+    ui->customPlot->xAxis->setRange(0,1.);
     ui->customPlot->yAxis->setRange(-2500,5000);
     // set some basic customPlot config:
     ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);

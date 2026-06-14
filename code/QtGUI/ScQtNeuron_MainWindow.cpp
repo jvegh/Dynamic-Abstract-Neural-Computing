@@ -245,8 +245,7 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,3,7).c_str()));
     m_neuronTab->ui->DisplayTimeValue->setText(QString(time_String_Get(displayTime_Get()/1000/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
     if ( MyNeuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
-        QMessageBox::StandardButton ret;
-        ret = QMessageBox::warning(this, tr("ScQtSimulator"),
+        QMessageBox::warning(this, tr("ScQtSimulator"),
                                    tr("Simulation of a single AP successfully terminated\n"
                                       "Maybe you want to make screenshots"),
                                    QMessageBox::Yes );

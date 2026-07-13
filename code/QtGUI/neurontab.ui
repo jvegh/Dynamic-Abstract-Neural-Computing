@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>553</width>
-    <height>405</height>
+    <width>588</width>
+    <height>566</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -469,118 +469,6 @@
                    <property name="text">
                     <string>Simulated time</string>
                    </property>
-                  </widget>
-                  <widget class="QGroupBox" name="groupBox_6">
-                   <property name="geometry">
-                    <rect>
-                     <x>200</x>
-                     <y>350</y>
-                     <width>501</width>
-                     <height>91</height>
-                    </rect>
-                   </property>
-                   <property name="title">
-                    <string>Synaptic current parameters</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget_12">
-                    <property name="geometry">
-                     <rect>
-                      <x>140</x>
-                      <y>18</y>
-                      <width>281</width>
-                      <height>71</height>
-                     </rect>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_9">
-                     <item>
-                      <widget class="QSlider" name="SynapticAmplitudeSlider_3">
-                       <property name="orientation">
-                        <enum>Qt::Orientation::Horizontal</enum>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSlider" name="SynapticASlider_3">
-                       <property name="orientation">
-                        <enum>Qt::Orientation::Horizontal</enum>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSlider" name="SynapticBSlider_3">
-                       <property name="orientation">
-                        <enum>Qt::Orientation::Horizontal</enum>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="layoutWidget_13">
-                    <property name="geometry">
-                     <rect>
-                      <x>430</x>
-                      <y>20</y>
-                      <width>68</width>
-                      <height>68</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_14">
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="SynapticAmplitudeSliderValue_3">
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="0">
-                      <widget class="QLabel" name="SynapticASliderValue_3">
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="0">
-                      <widget class="QLabel" name="SynapricBSliderValue_3">
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="layoutWidget_14">
-                    <property name="geometry">
-                     <rect>
-                      <x>0</x>
-                      <y>20</y>
-                      <width>131</width>
-                      <height>68</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_15">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="Slider3Label_5">
-                       <property name="text">
-                        <string>Synaptic ampl. (pA)</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="Slider2Label_5">
-                       <property name="text">
-                        <string>Synaptic A (s)</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="0">
-                      <widget class="QLabel" name="SynapricBSliderLabel_3">
-                       <property name="text">
-                        <string>Synaptic B (s)</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
                   </widget>
                   <widget class="QGroupBox" name="NeuronParametersBox">
                    <property name="geometry">

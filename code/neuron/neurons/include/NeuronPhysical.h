@@ -269,23 +269,20 @@ public:
     void MembraneParameters_Set(uint32_t index, double value) {m_MembraneParameters[index] = value;}
 protected:
 
-//    NeuronInputCurrent* m_RushinCurrent;
-    // Just for tracing
-//    double m_dV_dt_membrane;    // The actual time derivative
-    double m_Membrane_V_Rushin;    // Only for tracing
-    double m_Input_dVdt;            // The sum of the input gradients
+    double m_Membrane_V_Rushin;             // Only for tracing
+    double m_Input_dVdt;                    // The sum of the input gradients
     double m_Membrane_dVdt_AIS;
     double m_Membrane_dVdt_Resulting;
-    double m_Membrane_dVdt_Rushin; // The rushin-only current
+    double m_Membrane_dVdt_Rushin;          // The rushin-only current
     double m_Membrane_Last_dVdt;
-    double m_AIS_I; // Current through the AIS
+    double m_AIS_I;                         // Current through the AIS
     double m_Na_I;
     double m_Resulting_I;
 
-    vector<double> m_RushinParameters;    // Parameters for the rushin current
+    vector<double> m_RushinParameters;      // Parameters for the rushin current
     vector<double> m_NaParameters;
-    vector<double> m_SynapticParameters;            // Parameters for the axonal input current
-    vector<double> m_MembraneParameters;  // Parameters for the membrane
+    vector<double> m_SynapticParameters;    // Parameters for the axonal input current
+    vector<double> m_MembraneParameters;    // Parameters for the membrane
 };// of class NeuronPhysical
 /** @}*/
 #endif // NEURONPHYSICS_H

@@ -96,7 +96,6 @@ void VoltageWindow::setupPlot()
     RunningPointPosition_Set(key2,Volt2);
     m_FirstRelax = true;
 
-//    connect(m_Simulator, SIGNAL(eventHappened()),this,  SLOT(displayDataSlot()));
     ui->customPlot->axisRect()->setupFullAxesBox();
     // set some basic customPlot config:
     ui->customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);

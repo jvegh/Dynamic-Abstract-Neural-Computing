@@ -74,10 +74,25 @@
      <string>View</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuExamples">
+    <property name="title">
+     <string>Examples</string>
+    </property>
+    <widget class="QMenu" name="menuSingle">
+     <property name="title">
+      <string>Single</string>
+     </property>
+     <addaction name="actionSimple_AP"/>
+     <addaction name="actionFailed_AP"/>
+    </widget>
+    <addaction name="menuSingle"/>
+    <addaction name="actionMultiple"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuView"/>
    <addaction name="menuHelp"/>
+   <addaction name="menuExamples"/>
   </widget>
   <action name="actionOpen_wiki">
    <property name="text">
@@ -97,6 +112,21 @@
   <action name="actionView">
    <property name="text">
     <string>View</string>
+   </property>
+  </action>
+  <action name="actionMultiple">
+   <property name="text">
+    <string>Multiple</string>
+   </property>
+  </action>
+  <action name="actionSimple_AP">
+   <property name="text">
+    <string>Simple AP</string>
+   </property>
+  </action>
+  <action name="actionFailed_AP">
+   <property name="text">
+    <string>Failed AP</string>
    </property>
   </action>
  </widget>

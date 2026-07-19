@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3.3.5 One segment ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0</title>
+<!--Generated on Sun Jul 19 00:27:29 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on July 19, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="up up" href="../index.html" title="Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="up up up" href="../../index.html" title="A Hodgkin-Huxley neuron modell V2.0">
+<link rel="start" href="../../index.html" title="A Hodgkin-Huxley neuron modell V2.0">
+<link rel="prev" href="sec_Physics-MembraneForces.html" title="3.3.4 Force analyzis ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="next" href="phys_ClassicalCondenser.html" title="3.3.6 Two segments ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Physics-Electrolitok.html" title="3.3.1 Elektrolitok ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="Physics-MembraneInElectrolytes.html" title="3.3.2 Membrán elektrolitban ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Physics-ElectrolyteInhomogeneity.html" title="3.3.3 Inhomogeneities in the solution ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Physics-MembraneForces.html" title="3.3.4 Force analyzis ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="phys_ClassicalCondenser.html" title="3.3.6 Two segments ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Physics-LayersInSegment.html" title="3.3.7 Charge layers in segments ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Physics-BridgingElectricity.html" title="3.3.8 Bridging the micro- and macro views ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="section" href="../sec_PHYSICS_ElectricWhyDifferent/index.html" title="3.1 Miért más az ionok elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="section" href="../sec_PHYSICS_ELECTRICFundamental/index.html" title="3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="section" href="index.html" title="3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="section" href="../sec_Physics-FormingPotential/index.html" title="3.4 Forming membrane’s potential ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_Thermodynamics/index.html" title="Chapter 1 A neuronok termodinamikája ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_Speculations/index.html" title="Chapter 2 Speculations ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../index.html" title="Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_Fallacies/index.html" title="Chapter 4 Tévhitek a neuronokról ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_RestingPotential/index.html" title="Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_ActionPotential/index.html" title="Chapter 6 Action Potential ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="appendix" href="../../ch_Dichotomies.html" title="Dichotomies ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ A Hodgkin-Huxley neuron modell V2.0">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The Hodgkin-Huxley neuron model V2.0
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.3</em>
+<br class="ltx_break"></span></span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Thermodynamics/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">1</span> </span><span class="ltx_text" style="color:#000000;">A neuronok termodinamikája</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Speculations/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Speculations</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3</span> </span><span class="ltx_text" style="color:#000000;">A neuronok elektromosságtana</span></span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_PHYSICS_ElectricWhyDifferent/index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3.1</span> </span><span class="ltx_text" style="color:#000000;">Miért más</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_PHYSICS_ELECTRICFundamental/index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3.2</span> </span><span class="ltx_text" style="color:#000000;">Concepts</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>A membrán elektromosságtana</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Electrolitok.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.1 </span>Elektrolitok</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="Physics-MembraneInElectrolytes.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.2 </span>Membrán elektrolitban</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-ElectrolyteInhomogeneity.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3.3.3</span> </span><span class="ltx_text" style="color:#000000;">Inhomogeneities</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-MembraneForces.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.4 </span>Force analyzis</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.5 </span>One segment</span></span></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="phys_ClassicalCondenser.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.6 </span>Two segments</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-LayersInSegment.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.7 </span>Charge layers in segments</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-BridgingElectricity.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.8 </span>Bridging the micro- and macro views</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-FormingPotential/index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Forming membrane’s potential</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Fallacies/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">4</span> </span><span class="ltx_text" style="color:#000000;">Tévhitek a neuronokról</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_RestingPotential/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5</span> </span><span class="ltx_text" style="color:#000000;">Nyugalmi potenciál</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_ActionPotential/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">6</span> </span><span class="ltx_text" style="color:#000000;">Action Potential</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Dichotomies.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Dichotomies</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>A membrán elektromosságtana</span></a><a href="sec_Physics-MembraneForces.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.4 </span>Force analyzis</span></a><a href="phys_ClassicalCondenser.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.6 </span>Two segments</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_pruned_first ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection" style="color:#000000;">
+<span class="ltx_tag ltx_tag_subsection">3.3.5 </span>One segment</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We prepare a tiny electrolyte volume filled with a solution containing
+ions (such as </span><math id="p1.m1" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi mathcolor="#000000">N</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mo mathcolor="#000000">+</mo></msup></mrow></math><span class="ltx_text" style="color:#000000;">, </span><math id="p1.m2" class="ltx_Math" alttext="K^{+}" display="inline"><msup><mi mathcolor="#000000">K</mi><mo mathcolor="#000000">+</mo></msup></math><span class="ltx_text" style="color:#000000;"> and </span><math id="p1.m3" class="ltx_Math" alttext="Ca^{+}" display="inline"><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mo mathcolor="#000000">+</mo></msup></mrow></math><span class="ltx_text" style="color:#000000;">; furthermore, of course </span><math id="p1.m4" class="ltx_Math" alttext="Cl^{-}" display="inline"><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><msup><mi mathcolor="#000000">l</mi><mo mathcolor="#000000">−</mo></msup></mrow></math><span class="ltx_text" style="color:#000000;"> or similar). The overwhelming majority of those ions
+is chemically bound, but a minority might exist separately from each other; especially under external macroscopic changes applied to the volume.
+For the discussion below, we assume that the segment has a two-dimensional surface boundary (see Fig. </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:fig:Physics-MembranePotential_Kandel6-1</span><span class="ltx_text" style="color:#000000;">) and we discuss the gradients along a line, perpendicular
+to that plane surface.
+We compose the segments from such layers (sheets), </span><math id="p1.m5" class="ltx_Math" alttext="(x,y)" display="inline"><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">x</mi><mo mathcolor="#000000">,</mo><mi mathcolor="#000000">y</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></math><span class="ltx_text" style="color:#000000;">
+parallel plates, and describe the gradients in direction of </span><math id="p1.m6" class="ltx_Math" alttext="z" display="inline"><mi mathcolor="#000000">z</mi></math><span class="ltx_text" style="color:#000000;">.
+Having the membrane’s shape in mind, we introduce the idea of ’thin physical layer’, that is parallel with the membrane and has a finite width.
+We compose the segments from such layers having different potentials.</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We assume that when ions are present in an electrolyte having concentration </span><math id="p2.m1" class="ltx_Math" alttext="c" display="inline"><mi mathcolor="#000000">c</mi></math><span class="ltx_text" style="color:#000000;">
+in a ’conducting layer’ of thickness </span><math id="p2.m2" class="ltx_Math" alttext="\Delta z" display="inline"><mrow><mi mathcolor="#000000" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow></math><span class="ltx_text" style="color:#000000;"> on an isolating surface, they produce such an electrical field. Furthermore, we assume
+that the electrical field is formed (after integrating the contributions of the rings over the surface) as shown in Fig. </span><a href="#fig:Physics-PointCharge" title="Figure 3.3 ‣ 3.3.5 One segment ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.3</span></a><span class="ltx_text" style="color:#000000;">
+(for deriving that equation, see section </span><a href="../../ch_RestingPotential/sec_Physics-LayersInSegment.html" title="5.0.2 Charge layers in segment ‣ Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">5.0.2</span></a><span class="ltx_text" style="color:#000000;">).
+Notice that here we run into conflict between the ’infinitely thin’
+layer of physics and the biologically implemented
+(finitely) ’thin physical layer’, so we use a thickness parameter </span><math id="p2.m3" class="ltx_Math" alttext="\Delta z" display="inline"><mrow><mi mathcolor="#000000" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow></math><span class="ltx_text" style="color:#000000;">.</span></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">For the discussion below, we assume that the segment has a two-dimensional surface boundary, and we discuss the gradients along a line perpendicular
+to that plane’s surface.
+We neglect the electrokinetic and surface-related electrical effects connected to membranes and nanopores </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib20" title="" class="ltx_ref">20</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> and focus
+on the balanced state of membranes in ionic solutions.
+We compose the segments from such layers (sheets), </span><math id="p3.m1" class="ltx_Math" alttext="(x,y)" display="inline"><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">x</mi><mo mathcolor="#000000">,</mo><mi mathcolor="#000000">y</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></math><span class="ltx_text" style="color:#000000;">
+parallel plates, and describe the gradients in the direction of </span><math id="p3.m2" class="ltx_Math" alttext="z" display="inline"><mi mathcolor="#000000">z</mi></math><span class="ltx_text" style="color:#000000;">.
+We introduce the concept of a ’thin physical layer’ parallel to the membrane, characterized by a finite width. The detailed calculations are shown in </span><span class="ltx_text ltx_font_bold" style="color:#000000;">Numeric panel <a href="#eq:Physics-ElectricFieldFromSigma" title="In 3.3.5 One segment ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag"><span class="ltx_text" style="color:#000000;">3.21</span></span></a></span><span class="ltx_text" style="color:#000000;">.</span></p>
+</div>
+<figure id="fig:Physics-PointCharge" class="ltx_figure"><img src="fig/eled.png" id="Ch3.F3.g1" class="ltx_graphics ltx_img_landscape" width="509" height="290" alt="Refer to caption">
+<figcaption class="ltx_caption" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 3.3: </span><a href="http://hyperphysics.phy-astr.gsu.edu/hbase/electric/imgel2/eled.png" title="" class="ltx_ref ltx_href">The electrical field of a disc of charge</a> can be found by superposing the point charge fields of infinitesimal charge elements. This can be facilitated by summing the fields of charged rings.</figcaption>
+</figure>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="color:#0000FF;border-color: #4D4DFF;"><span class="ltx_inline-logical-block ltx_parbox ltx_align_middle" style="width:390.3pt;background-color:#E6FFE6;">
+<span id="p5.p2" class="ltx_para">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Numerics panel 3.3.1:
+<br class="ltx_break">The electric field of a physical charged sheet
+</span><a name="num..MembraneOneSegment" id="num..MembraneOneSegment" class="ltx_anchor">
+ </a>
+In the calculations below, we require the ’surface charge density’ (interpreted as an ’infinitely thin layer’ in physics, expressed in <math id="p5.m1" class="ltx_Math" alttext="C*m^{-2}" display="inline"><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">C</mi><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">−</mo><mn mathbackground="#E6FFE6" mathcolor="#0000FF">2</mn></mrow></msup></mrow></math>).
+We can derive (assuming singly-charged ions) the <span class="ltx_text ltx_font_italic" style="background-color:#E6FFE6;">volume charge density</span></span>
+<span id="eq:Physics-VolumetricChargeDensity" class="ltx_equation ltx_eqn_table">
+
+<span><span class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<span class="ltx_eqn_cell ltx_eqn_center_padleft"></span>
+<span class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E19.m1" class="ltx_Math" alttext="\sigma_{V}(c)=c*N_{A}*e_{el}=c*6.023*10^{20}*1.602*10^{-19}=96.5*c\quad\biggl{%
+[}\frac{C}{mM*m^{3}}\biggr{]}" display="block"><mrow><mrow><mrow><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">σ</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">V</mi></msub><mo>⁢</mo><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">(</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">N</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">A</mi></msub><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">e</mi><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">e</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">l</mi></mrow></msub></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mn mathbackground="#E6FFE6" mathcolor="#0000FF">6.023</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mn mathbackground="#E6FFE6" mathcolor="#0000FF">10</mn><mn mathbackground="#E6FFE6" mathcolor="#0000FF">20</mn></msup><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mn mathbackground="#E6FFE6" mathcolor="#0000FF">1.602</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mn mathbackground="#E6FFE6" mathcolor="#0000FF">10</mn><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">−</mo><mn mathbackground="#E6FFE6" mathcolor="#0000FF">19</mn></mrow></msup></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">96.5</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi></mrow></mrow><mspace width="1em"></mspace><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">[</mo><mfrac mathcolor="#0000FF"><mi mathbackground="#E6FFE6" mathcolor="#0000FF">C</mi><mrow><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">M</mi></mrow><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mn mathbackground="#E6FFE6" mathcolor="#0000FF">3</mn></msup></mrow></mfrac><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">]</mo></mrow></mrow></math></span>
+<span class="ltx_eqn_cell ltx_eqn_center_padright"></span>
+<span rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right"><span class="ltx_text" style="color:#000000;">(3.19)</span></span></span></span></span>
+</span>
+</span>
+<span id="p5.p1" class="ltx_para ltx_noindent">
+<span class="ltx_p">where <math id="p5.p1.m1" class="ltx_Math" alttext="N_{A}" display="inline"><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">N</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">A</mi></msub></math> is the number of ions in a <math id="p5.p1.m2" class="ltx_Math" alttext="millimol" display="inline"><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">i</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">l</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">l</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">i</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">o</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">l</mi></mrow></math>
+and <math id="p5.p1.m3" class="ltx_Math" alttext="e_{el}" display="inline"><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">e</mi><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">e</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">l</mi></mrow></msub></math> is the elementary charge. Notice that all ions contribute
+to the charge density, so simply <math id="p5.p1.m4" class="ltx_Math" alttext="c=\sum_{k}C_{k}" display="inline"><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.111em">=</mo><mrow><msub><mo mathbackground="#E6FFE6" mathcolor="#0000FF">∑</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">k</mi></msub><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">C</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">k</mi></msub></mrow></mrow></math>.</span>
+</span>
+<span id="p5.p3" class="ltx_para">
+<span class="ltx_p">Here, we run into a conflict between the ’infinitely thin’
+layer of physics and the biologically implemented
+(finitely) ’thin physical layer’, so we use a thickness parameter <math id="p5.m2" class="ltx_Math" alttext="\Delta z" display="inline"><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></mrow></math>.
+By assuming an arbitrary ’physical layer thickness’ <math id="p5.m3" class="ltx_Math" alttext="\Delta z" display="inline"><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></mrow></math>, we can calculate the <span class="ltx_text ltx_font_italic" style="background-color:#E6FFE6;">surface charge density</span></span>
+<span id="eq:Physics-SurfaceChargeDensity" class="ltx_equation ltx_eqn_table">
+
+<span><span class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<span class="ltx_eqn_cell ltx_eqn_center_padleft"></span>
+<span class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E20.m1" class="ltx_Math" alttext="\sigma_{A}(c,\Delta z)=96.5*c*\Delta z\quad\biggl{[}\frac{C}{m^{2}}\frac{1}{mM%
+*nm}\biggr{]}" display="block"><mrow><mrow><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">σ</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">A</mi></msub><mo>⁢</mo><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">(</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo mathbackground="#E6FFE6" mathcolor="#0000FF">,</mo><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mrow><mrow><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">96.5</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF" mathvariant="normal">Δ</mi></mrow><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></mrow><mspace width="1em"></mspace><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">[</mo><mrow><mfrac mathcolor="#0000FF"><mi mathbackground="#E6FFE6" mathcolor="#0000FF">C</mi><msup><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mn mathbackground="#E6FFE6" mathcolor="#0000FF">2</mn></msup></mfrac><mo>⁢</mo><mfrac mathcolor="#0000FF"><mn mathbackground="#E6FFE6" mathcolor="#0000FF">1</mn><mrow><mrow><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">M</mi></mrow><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">n</mi></mrow><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mrow></mfrac></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">]</mo></mrow></mrow></mrow></math></span>
+<span class="ltx_eqn_cell ltx_eqn_center_padright"></span>
+<span rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right"><span class="ltx_text" style="color:#000000;">(3.20)</span></span></span></span></span>
+</span>
+<span class="ltx_p">We interpreted classical physics’ notions from the theory of ’continuous’ electricity,
+interpreted for ’infinite’ cases, for the finite world of biological objects
+and the quantized atomic world. Our idea is similar to Boltzmann’s for connecting the continuous medium to particles.
+When ions are present in an electrolyte having concentration <math id="p5.m4" class="ltx_Math" alttext="c" display="inline"><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi></math>
+in a ’conducting layer’ of thickness <math id="p5.m5" class="ltx_Math" alttext="\Delta z" display="inline"><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></mrow></math> on an isolating surface, they produce a field</span>
+<span id="eq:Physics-ElectricFieldFromSigma" class="ltx_equation ltx_eqn_table">
+
+<span><span class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<span class="ltx_eqn_cell ltx_eqn_center_padleft"></span>
+<span class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E21.m1" class="ltx_Math" alttext="E_{z}(c,\Delta z)=\frac{\sigma_{A}(c,\Delta z)}{\epsilon_{o}}=10.89*10^{3}*c*%
+\Delta z\quad\biggl{[}\frac{V}{m}\frac{1}{nm*mM}\biggr{]}" display="block"><mrow><mrow><mrow><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">E</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></msub><mo>⁢</mo><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">(</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo mathbackground="#E6FFE6" mathcolor="#0000FF">,</mo><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mfrac mathcolor="#0000FF"><mrow><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">σ</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">A</mi></msub><mo>⁢</mo><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">(</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo mathbackground="#E6FFE6" mathcolor="#0000FF">,</mo><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">ϵ</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">o</mi></msub></mfrac><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mrow><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">10.89</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mn mathbackground="#E6FFE6" mathcolor="#0000FF">10</mn><mn mathbackground="#E6FFE6" mathcolor="#0000FF">3</mn></msup><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">c</mi><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF" mathvariant="normal">Δ</mi></mrow><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">z</mi></mrow></mrow><mspace width="1em"></mspace><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">[</mo><mrow><mfrac mathcolor="#0000FF"><mi mathbackground="#E6FFE6" mathcolor="#0000FF">V</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mfrac><mo>⁢</mo><mfrac mathcolor="#0000FF"><mn mathbackground="#E6FFE6" mathcolor="#0000FF">1</mn><mrow><mrow><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">n</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mrow><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mrow><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">M</mi></mrow></mfrac></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">]</mo></mrow></mrow></math></span>
+<span class="ltx_eqn_cell ltx_eqn_center_padright"></span>
+<span rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right"><span class="ltx_text" style="color:#000000;">(3.21)</span></span></span></span></span>
+</span>
+</span></span><span class="ltx_text" style="background-color:#E6FFE6;">
+</span></span><span class="ltx_text" style="color:#0000FF;">
+</span><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="sec_Physics-MembraneForces.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.4 </span>Force analyzis</span></a><a href="../../bib.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="phys_ClassicalCondenser.html" title="In 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3.6 </span>Two segments</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Jul 19 00:27:29 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

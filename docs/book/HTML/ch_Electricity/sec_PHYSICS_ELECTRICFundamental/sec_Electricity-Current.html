@@ -1,0 +1,502 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0</title>
+<!--Generated on Sun Jul 19 00:27:29 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on July 19, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="index.html" title="3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="up up" href="../index.html" title="Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="up up up" href="../../index.html" title="A Hodgkin-Huxley neuron modell V2.0">
+<link rel="start" href="../../index.html" title="A Hodgkin-Huxley neuron modell V2.0">
+<link rel="prev" href="sec_Electricity-Voltage.html" title="3.2.3 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="next" href="sec_Physics-Condenser.html" title="3.2.5 Condenser ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Electricity-Charge.html" title="3.2.1 Töltés ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Electricity-Field.html" title="3.2.2 Elektromos erőtér ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Electricity-Voltage.html" title="3.2.3 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Physics-Condenser.html" title="3.2.5 Condenser ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="subsection" href="sec_Physics-Resistor.html" title="3.2.6 Resistor ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="section" href="../sec_PHYSICS_ElectricWhyDifferent/index.html" title="3.1 Miért más az ionok elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="section" href="index.html" title="3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="section" href="../sec_Electricity-Membrane/index.html" title="3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="section" href="../sec_Physics-FormingPotential/index.html" title="3.4 Forming membrane’s potential ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_Thermodynamics/index.html" title="Chapter 1 A neuronok termodinamikája ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_Speculations/index.html" title="Chapter 2 Speculations ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../index.html" title="Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_Fallacies/index.html" title="Chapter 4 Tévhitek a neuronokról ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_RestingPotential/index.html" title="Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../ch_ActionPotential/index.html" title="Chapter 6 Action Potential ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="appendix" href="../../ch_Dichotomies.html" title="Dichotomies ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ A Hodgkin-Huxley neuron modell V2.0">
+<meta name="keywords" lang="en" content="Stokes-Einstein relation">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The Hodgkin-Huxley neuron model V2.0
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.3</em>
+<br class="ltx_break"></span></span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Thermodynamics/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">1</span> </span><span class="ltx_text" style="color:#000000;">A neuronok termodinamikája</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Speculations/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Speculations</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3</span> </span><span class="ltx_text" style="color:#000000;">A neuronok elektromosságtana</span></span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_PHYSICS_ElectricWhyDifferent/index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3.1</span> </span><span class="ltx_text" style="color:#000000;">Miért más</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3.2</span> </span><span class="ltx_text" style="color:#000000;">Concepts</span></span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Electricity-Charge.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.1 </span>Töltés</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Electricity-Field.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3.2.2</span> </span><span class="ltx_text" style="color:#000000;">Erőtér</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Electricity-Voltage.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.3 </span>Feszültség</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3.2.4</span> </span><span class="ltx_text" style="color:#000000;">Áram</span></span></span>
+<ol class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Electricity-IonicCurrent" title="In 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Ionic currents in a cell</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Electricity-ion's-speed" title="In 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_text" style="color:#000000;">Speed</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:SlowCurrent" title="In 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Imitating slow currents</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Condenser.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.5 </span>Condenser</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Resistor.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.6 </span>Resistor</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Electricity-Membrane/index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>A membrán elektromosságtana</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-FormingPotential/index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Forming membrane’s potential</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Fallacies/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">4</span> </span><span class="ltx_text" style="color:#000000;">Tévhitek a neuronokról</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_RestingPotential/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5</span> </span><span class="ltx_text" style="color:#000000;">Nyugalmi potenciál</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_ActionPotential/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">6</span> </span><span class="ltx_text" style="color:#000000;">Action Potential</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Dichotomies.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Dichotomies</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="index.html" title="In Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3.2</span> </span><span class="ltx_text" style="color:#000000;">Concepts</span></span></a><a href="sec_Electricity-Voltage.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.3 </span>Feszültség</span></a><a href="sec_Physics-Condenser.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.5 </span>Condenser</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_subsection ltx_authors_1line">
+<h1 class="ltx_title ltx_title_subsection" style="color:#000000;">
+<span class="ltx_tag ltx_tag_subsection">3.2.4 </span>Feszültség</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Az ion tovább már nem egyszerűsíthető tulajdonsága, hogy
+töltést hordoz</span></p>
+</div>
+<section id="sec:Electricity-IonicCurrent" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection" style="color:#000000;">Ionic currents in a cell</h2>
+
+<div id="SSSx1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">On a microscopic scale, a charge generates a potential field that acts on other charges. It is a common fallacy in physiology that a ”potential field travels”: neither potential nor current changes without a physical movement of charges. In a conducting wire filled with ions (the solids have a different current transfer mechanism), there are free charges; their
+number per unit volume is given by </span><math id="SSSx1.p1.m1" class="ltx_Math" alttext="n" display="inline"><mi mathcolor="#000000">n</mi></math><span class="ltx_text" style="color:#000000;">, and </span><math id="SSSx1.p1.m2" class="ltx_Math" alttext="q" display="inline"><mi mathcolor="#000000">q</mi></math><span class="ltx_text" style="color:#000000;"> is the amount of
+charge on each carrier. If the conductor has a cross-section of </span><math id="SSSx1.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi mathcolor="#000000">A</mi></math><span class="ltx_text" style="color:#000000;">,
+in the length </span><math id="SSSx1.p1.m4" class="ltx_Math" alttext="dx" display="inline"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">x</mi></mrow></math><span class="ltx_text" style="color:#000000;"> of the wire, we have charge </span><math id="SSSx1.p1.m5" class="ltx_Math" alttext="dQ=q*n*A*dz" display="inline"><mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">Q</mi></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><mi mathcolor="#000000">q</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">n</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">A</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">d</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow></mrow></math><span class="ltx_text" style="color:#000000;">. If the charges move with a macroscopic speed </span><math id="SSSx1.p1.m6" class="ltx_Math" alttext="v=\frac{dz}{dt}" display="inline"><mrow><mi mathcolor="#000000">v</mi><mo mathcolor="#000000">=</mo><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></mfrac></mrow></math><span class="ltx_text" style="color:#000000;">,
+at the macroscopic level, we define the current </span><math id="SSSx1.p1.m7" class="ltx_Math" alttext="I" display="inline"><mi mathcolor="#000000">I</mi></math><span class="ltx_text" style="color:#000000;"> as the charge moved per unit of time as</span></p>
+<table id="eq:DriftCurrent" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E1.m1" class="ltx_Math" alttext="I=\frac{dQ}{dt}=q*n*A*v" display="block"><mrow><mi mathcolor="#000000">I</mi><mo mathcolor="#000000">=</mo><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">Q</mi></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></mfrac><mo mathcolor="#000000">=</mo><mrow><mi mathcolor="#000000">q</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">n</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">A</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">v</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The effect was hypothesized at the very beginning: ”it seems difficult to escape the conclusion that the changes
+in ionic permeability depend on the movement of some component of the
+membrane which behaves as though it had a large charge or dipole moment.”
+”it is necessary to suppose
+that there are more carriers and that they react or move more slowly” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib5" title="" class="ltx_ref">5</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">. The charged ions, attracted by the opposite charges on the other plate and repelled toward the single exit point </span><a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref" style="color:#000000;">AIS</span></a><span class="ltx_text" style="color:#000000;">, really move slowly and behave as if they were a component of the membrane.</span></p>
+</div>
+<div id="SSSx1.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Notice that if any of the factors is zero, the macroscopic current
+</span><math id="SSSx1.p2.m1" class="ltx_Math" alttext="I" display="inline"><mi mathcolor="#000000">I</mi></math><span class="ltx_text" style="color:#000000;"> is zero. </span><span class="ltx_text ltx_font_italic" style="color:#000000;">Microscopic carriers must be present in the volume</span><span class="ltx_text" style="color:#000000;">,
+and have charge, the cross section must not be zero, and the charge
+carriers must move with a potential-assisted speed, which needs an
+electrical field generated by the system, see Eq.(</span><a href="../sec_Electricity-Membrane/sec_Physics-MembraneForces.html#eq:IonicForces" title="In 3.3.4 Force analyzis ‣ 3.3 A membrán elektromosságtana ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.18</span></a><span class="ltx_text" style="color:#000000;">).
+When there is no constraint force, the thermodynamic and electrical forces will produce an effective force that moves the ions.
+That is, the ions can move without an external electrical field, as experienced
+in biological systems.
+One of the fundamental mistakes by </span><a href="../../Ch_Glossary/index.html#glo.main.HH"><span href="../../Ch_Glossary/index.html#glo.main.HH" title="Hodgkin and Huxley" class="ltx_glossaryref" style="color:#000000;">HH</span></a><span class="ltx_text" style="color:#000000;"> was neglecting the Coulomb force in ion-electrical interactions and assuming that diffusion processes or ideal electrical batteries create the electrical potential.</span></p>
+</div>
+<div id="SSSx1.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">In biological systems, where ions represent the ”current”, it is either a native current (without an external potential) or an artificially injected current or potential generating a current.
+This way, the current is consistently accompanied by a change in concentration gradient, as the moving ions represent both mass and charge transfer simultaneously (also, the repulsion leads to a ”skin effect”: in electrical wires and axons, the charge travels near
+the outer surface).
+The potential and current are
+connected through the features of the medium (material) that hosts
+our measurement.</span></p>
+</div>
+</section>
+<section id="sec:Electricity-ion's-speed" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection" style="color:#000000;">Current’s speed</h2>
+
+<div id="SSSx2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">According to Stokes’ Law, to move a spherical object
+with radius </span><math id="SSSx2.p1.m1" class="ltx_Math" alttext="a" display="inline"><mi mathcolor="#000000">a</mi></math><span class="ltx_text" style="color:#000000;"> in a fluid having dynamic viscosity </span><math id="SSSx2.p1.m2" class="ltx_Math" alttext="\eta" display="inline"><mi mathcolor="#000000">η</mi></math><span class="ltx_text" style="color:#000000;">, we need
+a force</span></p>
+<table id="eq:StokesForceOnIon" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E2.m1" class="ltx_Math" alttext="F_{d}=6*\pi*\eta*a*v" display="block"><mrow><msub><mi mathcolor="#000000">F</mi><mi mathcolor="#000000">d</mi></msub><mo mathcolor="#000000">=</mo><mrow><mn mathcolor="#000000">6</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">π</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">η</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">a</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">v</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.2)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SSSx2.p2" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">(drag force) acting on it. A (microscopical) electrical force
+field </span><math id="SSSx2.p2.m1" class="ltx_Math" alttext="\frac{dV}{dz}" display="inline"><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">V</mi></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow></mfrac></math><span class="ltx_text" style="color:#000000;"> inside the wire would accelerate the charge
+carriers continuously</span></p>
+<table id="Ch3.E3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E3.m1" class="ltx_Math" alttext="F_{electric}=k*E(z)*q" display="block"><mrow><msub><mi mathcolor="#000000">F</mi><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi></mrow></msub><mo mathcolor="#000000">=</mo><mrow><mrow><mrow><mi mathcolor="#000000">k</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">E</mi></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">q</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.3)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">with a constant speed </span><math id="SSSx2.p2.m2" class="ltx_Math" alttext="v" display="inline"><mi mathcolor="#000000">v</mi></math><span class="ltx_text" style="color:#000000;">. It is not the </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">drift</em><span class="ltx_text" style="color:#000000;"> speed because of the
+electrical repulsion, it is a </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">potential-assisted</em><span class="ltx_text" style="color:#000000;"> or </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">potential-accelerated</em><span class="ltx_text" style="color:#000000;"> speed that can
+be by orders of magnitude higher.
+The medium in which the charge moves shows a (macroscopic,
+speed-dependent) counterforce </span><math id="SSSx2.p2.m3" class="ltx_Math" alttext="F_{d}" display="inline"><msub><mi mathcolor="#000000">F</mi><mi mathcolor="#000000">d</mi></msub></math><span class="ltx_text" style="color:#000000;">, which in steady state equals
+</span><math id="SSSx2.p2.m4" class="ltx_Math" alttext="F_{electric}" display="inline"><msub><mi mathcolor="#000000">F</mi><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi></mrow></msub></math><span class="ltx_text" style="color:#000000;">, that is :</span></p>
+<table id="eq:StokesCurrent" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E4.m1" class="ltx_Math" alttext="I=\frac{k*q^{2}*A}{6*\pi*\eta*a}*n*E(z)" display="block"><mrow><mi mathcolor="#000000">I</mi><mo mathcolor="#000000">=</mo><mrow><mrow><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">k</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msup><mi mathcolor="#000000">q</mi><mn mathcolor="#000000">2</mn></msup><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">A</mi></mrow><mrow><mn mathcolor="#000000">6</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">π</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">η</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">a</mi></mrow></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">n</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">E</mi></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.4)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SSSx2.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We extend the original idea by using</span></p>
+<table id="Ch3.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex1.m1" class="ltx_Math" alttext="E(z)=E_{electric}+E_{thermal}+E_{external}\quad in\ electrolytes" display="block"><mrow><mrow><mi mathcolor="#000000">E</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><msub><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi></mrow></msub><mo mathcolor="#000000">+</mo><msub><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">h</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msub><mo mathcolor="#000000">+</mo><msub><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msub></mrow><mspace width="1em"></mspace><mrow><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">y</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">that is, for living matter</span></p>
+<table id="Chx5.S3.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E5.m1" class="ltx_Math" alttext="\displaystyle E(z)" display="inline"><mrow><mi mathcolor="#000000">E</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E5.m2" class="ltx_Math" alttext="\displaystyle=\frac{\Delta V}{\Delta z}" display="inline"><mrow><mi></mi><mo mathcolor="#000000">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#000000">V</mi></mrow><mrow><mi mathcolor="#000000" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E5.m3" class="ltx_Math" alttext="\displaystyle in\ linear\ potential" display="inline"><mrow><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">p</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.5)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E6.m1" class="ltx_Math" alttext="\displaystyle=\frac{dV}{dz}" display="inline"><mrow><mi></mi><mo mathcolor="#000000">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">V</mi></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E6.m2" class="ltx_Math" alttext="\displaystyle in\ graded\ potential" display="inline"><mrow><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">g</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">d</mi><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">p</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.6)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E7.m1" class="ltx_Math" alttext="\displaystyle=E_{electric}+E_{(thermal)}(+E_{(external)})" display="inline"><mrow><mi></mi><mo mathcolor="#000000">=</mo><mrow><msub><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi></mrow></msub><mo mathcolor="#000000">+</mo><mrow><msub><mi mathcolor="#000000">E</mi><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">h</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mo mathcolor="#000000">+</mo><msub><mi mathcolor="#000000">E</mi><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></msub></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E7.m2" class="ltx_Math" alttext="\displaystyle in\ electrolytes" display="inline"><mrow><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">y</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.7)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SSSx2.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic" style="color:#000000;">The amount of current in a wire is not only influenced by the electric
+force field (specific resistance) but also by the number of charge
+carriers <math id="SSSx2.p4.m1" class="ltx_Math" alttext="n" display="inline"><mi mathcolor="#000000">n</mi></math>.</span><span class="ltx_text" style="color:#000000;"> While the latter is commonly considered constant and
+part of the former, this is not necessarily the case for biological
+systems with electrically active structures inside. The medium’s internal
+structure (”the construction) introduces significant modifications. </span><span class="ltx_text ltx_font_italic" style="color:#000000;">Applying an electric
+field to a biological wire can generate varying amounts of current as the number
+of charge carriers changes due to biological effects.</span><span class="ltx_text" style="color:#000000;"> For axons, we use a single-degree-of-freedom
+system, a viscous damping model, so the </span><span class="ltx_text ltx_font_italic" style="color:#000000;">ions will move with
+a field-dependent constant velocity in the electrical field</span><span class="ltx_text" style="color:#000000;">; so it takes time while they appear on the membrane.
+The activity of potential-controlled ion channels in its wall may
+change </span><math id="SSSx2.p4.m2" class="ltx_Math" alttext="n" display="inline"><mi mathcolor="#000000">n</mi></math><span class="ltx_text" style="color:#000000;"> in various ways; furthermore, that change can result in
+’delayed’ currents during measurement, for example, in clamping, as physiological measurements witness.</span></p>
+</div>
+<div id="SSSx2.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">If we have a concentration
+</span><math id="SSSx2.p5.m1" class="ltx_Math" alttext="C(z)" display="inline"><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></math><span class="ltx_text" style="color:#000000;">, in the volume </span><math id="SSSx2.p5.m2" class="ltx_Math" alttext="A*dz" display="inline"><mrow><mrow><mi mathcolor="#000000">A</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">d</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow></math><span class="ltx_text" style="color:#000000;">, we have </span><math id="SSSx2.p5.m3" class="ltx_Math" alttext="dQ=C(z)*A*dx*q" display="inline"><mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">Q</mi></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><mrow><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">A</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">d</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">x</mi></mrow><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">q</mi></mrow></mrow></math><span class="ltx_text" style="color:#000000;">
+charge, resulting in another expression for the current</span></p>
+</div>
+<div id="SSSx2.p6" class="ltx_para">
+<table id="eq:ConcentrationCurrent" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E8.m1" class="ltx_Math" alttext="I=\frac{C_{k}(z)*A*dz*q}{dt}=C_{k}(z)*A*q*v" display="block"><mrow><mi mathcolor="#000000">I</mi><mo mathcolor="#000000">=</mo><mfrac mathcolor="#000000"><mrow><mrow><mrow><mrow><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">k</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">A</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">d</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">q</mi></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></mfrac><mo mathcolor="#000000">=</mo><mrow><mrow><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">k</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">A</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">q</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">v</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.8)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">By combining equations (</span><a href="#eq:StokesCurrent" title="In Current’s speed ‣ 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.4</span></a><span class="ltx_text" style="color:#000000;">) and (</span><a href="#eq:ConcentrationCurrent" title="In Current’s speed ‣ 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.8</span></a><a name="eq..StokesLawSpeed" id="eq..StokesLawSpeed" class="ltx_anchor"><span class="ltx_text" style="color:#000000;">):
+ </span></a><span class="ltx_text" style="color:#000000;"></span></p>
+<table id="eq:StokesSpeed" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E9.m1" class="ltx_Math" alttext="v(z)=\frac{k*q}{C_{k}(z)*\eta*6*\pi*a}*E(z)" display="block"><mrow><mrow><mi mathcolor="#000000">v</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">k</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">q</mi></mrow><mrow><mrow><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">k</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">η</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mn mathcolor="#000000">6</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">π</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">a</mi></mrow></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">E</mi></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.9)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SSSx2.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The higher the resulting space derivative (gradient) and the fewer ions that
+can share the task of providing a current, the higher the speed. We hypothesized (it needs
+a detailed simulation) that in the case of this charged fluid, the
+electrical repulsion plays the role of ’viscosity’ </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib6" title="" class="ltx_ref">6</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">. The higher the charge
+density, the stronger the force equalizing the potential; so </span><math id="SSSx2.p7.m1" class="ltx_Math" alttext="\eta" display="inline"><mi mathcolor="#000000">η</mi></math><span class="ltx_text" style="color:#000000;">
+is the lower, the higher the charge density (proportional to </span><math id="SSSx2.p7.m2" class="ltx_Math" alttext="C_{k}" display="inline"><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">k</mi></msub></math><span class="ltx_text" style="color:#000000;">).
+For the sake of simplicity, we assume that the speed is proportional
+to the space gradient of the local concentration and potential. Recall that </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">our equations
+refer to local gradients only. The electrical gradient can propagate
+only with the speed of the concentration gradient</em><span class="ltx_text" style="color:#000000;">, given that only
+the chemically moved ions can mediate the electrical field </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib6" title="" class="ltx_ref">6</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">. </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">The
+lower interaction speed limits the other interaction speed if the
+interactions generate each other.</em><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+<div id="SSSx2.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The dependence of the diffusion coefficient on the viscosity can be modeled by the Stokes-Einstein relation:
+</span><span class="ltx_text" style="color:#000000;"></span></p>
+<table id="eq:StokesEinstein" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E10.m1" class="ltx_Math" alttext="D=\frac{k*T}{6*\pi*\eta*a}" display="block"><mrow><mi mathcolor="#000000">D</mi><mo mathcolor="#000000">=</mo><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">k</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">T</mi></mrow><mrow><mn mathcolor="#000000">6</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">π</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">η</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">a</mi></mrow></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.10)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">so we can express the speed with the diffusion coefficient </span><math id="SSSx2.p8.m1" class="ltx_Math" alttext="D" display="inline"><mi mathcolor="#000000">D</mi></math><span class="ltx_text" style="color:#000000;"> and temperature </span><math id="SSSx2.p8.m2" class="ltx_Math" alttext="T" display="inline"><mi mathcolor="#000000">T</mi></math><span class="ltx_text" style="color:#000000;"></span></p>
+<table id="eq:StokesEinsteinSpeeddV" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E11.m1" class="ltx_Math" alttext="v(z)=\frac{D}{T}*\frac{q}{C_{k}(z)}*E(z)" display="block"><mrow><mrow><mi mathcolor="#000000">v</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><mrow><mfrac mathcolor="#000000"><mi mathcolor="#000000">D</mi><mi mathcolor="#000000">T</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mfrac mathcolor="#000000"><mi mathcolor="#000000">q</mi><mrow><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">k</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">E</mi></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.11)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We introduce </span><span class="ltx_text ltx_font_italic" style="color:#000000;">a time-dependent speed gradient
+<math id="SSSx2.p8.m3" class="ltx_Math" alttext="v(z,t)" display="inline"><mrow><mi mathcolor="#000000">v</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000">,</mo><mi mathcolor="#000000">t</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></math>
+which plays a vital role in the processes that occur in living matter</span><span class="ltx_text" style="color:#000000;">.</span></p>
+</div>
+<div id="SSSx2.p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">It is important to remember for alternating current experiments:
+the different ions will move at different speeds
+under the effect of the same </span><math id="SSSx2.p9.m1" class="ltx_Math" alttext="E(z,t)" display="inline"><mrow><mi mathcolor="#000000">E</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000">,</mo><mi mathcolor="#000000">t</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></math><span class="ltx_text" style="color:#000000;">, which is the function of
+the local concentrations and the frequency of the alternating current.
+The conduction speed sensitively depends
+on the temperature, and through it, the shape parameters </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib7" title="" class="ltx_ref">7</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> of the </span><a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref" style="color:#000000;">AP</span></a><span class="ltx_text" style="color:#000000;"> and especially the length of the ”relative refractory” period </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib8" title="" class="ltx_ref">8</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.</span></p>
+</div>
+</section>
+<section id="sec:SlowCurrent" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection" style="color:#000000;">Imitating slow currents</h2>
+
+<div id="SSSx3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">At the dawn of finding methods for describing neuronal operation,
+</span><a href="../../Ch_Glossary/index.html#glo.main.HH"><span href="../../Ch_Glossary/index.html#glo.main.HH" title="Hodgkin and Huxley" class="ltx_glossaryref" style="color:#000000;">HH</span></a><span class="ltx_text" style="color:#000000;"> published high-precision measurements </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib5" title="" class="ltx_ref">5</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">
+enabling detailed testing of theories explaining the observed physiological
+behavior. </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">Their good physical model that </em><span class="ltx_text" style="color:#000000;">“movement
+of any charged particle in the membrane should contribute to the total
+current” </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">lacked considering the mutual repulsion and finite speed</em><span class="ltx_text" style="color:#000000;"> of those particles (they are about 50,000 times heavier and a million times slower than the electrons, and they move in a closed space segment). Furthermore,
+they have started from the commonly used wrong assumption that conductance
+is a primary electrical entity.
+They could ”find equations which describe the conductances with
+reasonable accuracy and are sufficiently simple for theoretical calculation of the </span><a href="../../Ch_Glossary/index.html#glo.main.AP"><span href="../../Ch_Glossary/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref" style="color:#000000;">AP</span></a><span class="ltx_text" style="color:#000000;"> and refractory period”.
+The ”reasonable accuracy” and the need for a simple calculation method (performed on a mechanical calculator) obscured
+the fact that the laws for electrons are not the same as the laws derived for ions.</span></p>
+</div>
+<div id="SSSx3.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">As discussed in connection with Eq. (</span><a href="#eq:DriftCurrent" title="In Ionic currents in a cell ‣ 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.1</span></a><span class="ltx_text" style="color:#000000;">),
+the current depends linearly on the number of charge carriers </span><math id="SSSx3.p2.m1" class="ltx_Math" alttext="n" display="inline"><mi mathcolor="#000000">n</mi></math><span class="ltx_text" style="color:#000000;">.
+The physical processes changing the number of charge carriers
+also define the intensity of the currents, providing a way to imitate
+slow currents by fast currents (by using current generators using special function shapes), where the spatiotemporal time course of the physical process of producing ions in the system modulates the number of charge carriers.</span></p>
+</div>
+<div id="SSSx3.p3" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">As an example, we discuss the case of slow current
+traveling in an axon.
+The ions travel a finite distance with
+a finite speed, so there must be a delay between their entry and exit times. The case of switching a clamping voltage
+on, to some measure, is analogous to the arrival of a spike. Initially, the axon contains
+no ions.
+In the classical picture, the axonal current flows into the membrane with
+capacity </span><math id="SSSx3.p3.m1" class="ltx_Math" alttext="C_{m}" display="inline"><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">m</mi></msub></math><span class="ltx_text" style="color:#000000;"> and increases the membrane’s voltage </span><math id="SSSx3.p3.m2" class="ltx_Math" alttext="V_{m}" display="inline"><msub><mi mathcolor="#000000">V</mi><mi mathcolor="#000000">m</mi></msub></math><span class="ltx_text" style="color:#000000;">
+with a time constant</span></p>
+<table id="eq:MembraneCurrent" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E12.m1" class="ltx_Math" alttext="\frac{dV_{m}}{dt}=-\frac{1}{C_{m}}I_{axon};\ V_{m}(t)=\frac{I_{wall}*(1-e^{-%
+\alpha*t})}{C_{m}}" display="block"><mrow><mrow><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><msub><mi mathcolor="#000000">V</mi><mi mathcolor="#000000">m</mi></msub></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></mfrac><mo mathcolor="#000000">=</mo><mrow><mo mathcolor="#000000">−</mo><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">m</mi></msub></mfrac><mo>⁢</mo><msub><mi mathcolor="#000000">I</mi><mrow><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi></mrow></msub></mrow></mrow></mrow><mo mathcolor="#000000" rspace="0.667em">;</mo><mrow><mrow><msub><mi mathcolor="#000000">V</mi><mi mathcolor="#000000">m</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">t</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mfrac mathcolor="#000000"><mrow><msub><mi mathcolor="#000000">I</mi><mrow><mi mathcolor="#000000">w</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msub><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mn mathcolor="#000000">1</mn><mo mathcolor="#000000">−</mo><msup><mi mathcolor="#000000">e</mi><mrow><mo mathcolor="#000000">−</mo><mrow><mi mathcolor="#000000">α</mi><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">t</mi></mrow></mrow></msup></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">m</mi></msub></mfrac></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.12)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">that generates a change in the membrane current</span></p>
+<table id="eq:TimeDependentConductance" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E13.m1" class="ltx_Math" alttext="\frac{dI_{m}}{dt}=\frac{1}{R_{m}}\frac{dV_{m}}{dt};\ I_{m}^{on}(t)=g_{m}(V)V_{%
+m}(t)" display="block"><mrow><mrow><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><msub><mi mathcolor="#000000">I</mi><mi mathcolor="#000000">m</mi></msub></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></mfrac><mo mathcolor="#000000">=</mo><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><msub><mi mathcolor="#000000">R</mi><mi mathcolor="#000000">m</mi></msub></mfrac><mo>⁢</mo><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><msub><mi mathcolor="#000000">V</mi><mi mathcolor="#000000">m</mi></msub></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></mfrac></mrow></mrow><mo mathcolor="#000000" rspace="0.667em">;</mo><mrow><mrow><msubsup><mi mathcolor="#000000">I</mi><mi mathcolor="#000000">m</mi><mrow><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi></mrow></msubsup><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">t</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">=</mo><mrow><msub><mi mathcolor="#000000">g</mi><mi mathcolor="#000000">m</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">V</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi mathcolor="#000000">V</mi><mi mathcolor="#000000">m</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">t</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.13)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">where </span><math id="SSSx3.p3.m3" class="ltx_Math" alttext="g_{m}=\frac{1}{R_{m}}" display="inline"><mrow><msub><mi mathcolor="#000000">g</mi><mi mathcolor="#000000">m</mi></msub><mo mathcolor="#000000">=</mo><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><msub><mi mathcolor="#000000">R</mi><mi mathcolor="#000000">m</mi></msub></mfrac></mrow></math><span class="ltx_text" style="color:#000000;"> is the conductance of the
+membrane. That is, the measurable current equals the product of the conductance
+and the clamping voltage. Equs.</span><em class="ltx_emph ltx_font_italic" style="color:#000000;">(3)-(5) in <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib5" title="" class="ltx_ref">5</a>]</cite></em><span class="ltx_text" style="color:#000000;">
+express this relation</span><em class="ltx_emph ltx_font_italic" style="color:#000000;">. If we assume that the axonal current
+is “fast”, we arrive at the wrong conclusion that the conductance
+is voltage- or time-dependent.</em><span class="ltx_text" style="color:#000000;">
+In contrast, if we assume that the axonal current is “slow”,
+we naturally conclude that Ohm’s Law is correct and valid also for
+biology: </span><span class="ltx_text ltx_font_italic" style="color:#000000;">the conductance/resistance is constant, but the number of charge carriers changes</span><span class="ltx_text" style="color:#000000;">, see section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:IonicCurrent</span><span class="ltx_text" style="color:#000000;">.</span></p>
+</div>
+<div id="SSSx3.p4" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic" style="color:#000000;">There is no voltage-dependent conductance</em><span class="ltx_text" style="color:#000000;"> </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib9" title="" class="ltx_ref">9</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+Instead, the finite speed of ions and the wrong assumption that conductance
+is a primary entity mislead physiological research.</span><em class="ltx_emph ltx_font_italic" style="color:#000000;"> With wording
+that ”conductance changes”, one states that charge carriers
+appear/disappear/reappear; that is, the charge and mass conservation are not
+fulfilled</em><span class="ltx_text" style="color:#000000;">. Claims such as ”the current cannot disappear, it has to go somewhere” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib1" title="" class="ltx_ref">1</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">, page 9, are wrong: </span><span class="ltx_text ltx_font_italic" style="color:#000000;">there is no conservation law for current, which is the derivative of charge with respect to time</span><span class="ltx_text" style="color:#000000;">.
+The correct physics background behind the early phenomenon </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib10" title="" class="ltx_ref">10</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> is that the number of charge carriers, at the cross section where the measurement is carried out, changes as a wave of ions with variable intensity moves slowly along the axon (they are apparently “created” for the static measurement arrangement). The changing conductance is a fallacy stemming from the idea of ”fast current”, which is valid for electrons but not for slow ions.</span></p>
+</div>
+<div id="SSSx3.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">In contrast, when the clamping voltage is switched off, the axon is still
+filled with charge carriers. The resting potential reaches the end
+at the membrane “instantly” (in this situation, the conduction mechanism is similar to that in metals). The driving force disappears, the
+ion stream stops, and the ions discharge into the membrane. The lack and
+the presence of ions in the axon when switching clamping on and off, respectively, produce the difference that “</span><em class="ltx_emph ltx_font_italic" style="color:#000000;">conductances [actually, currents]
+increase with a delay when the axon is depolarized but fall with no
+appreciable inflexion when it is repolarized</em><span class="ltx_text" style="color:#000000;">” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib5" title="" class="ltx_ref">5</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+The potential is equalized by the </span><a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref" style="color:#000000;">AIS</span></a><span class="ltx_text" style="color:#000000;"> current, producing a net exponential decay:</span></p>
+<table id="eq:I_Membrane_Off" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E14.m1" class="ltx_Math" alttext="I_{m}^{off}=I_{Wall}*e^{(-\frac{\alpha}{R_{m}C_{m}}*t)}" display="block"><mrow><msubsup><mi mathcolor="#000000">I</mi><mi mathcolor="#000000">m</mi><mrow><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">f</mi><mo>⁢</mo><mi mathcolor="#000000">f</mi></mrow></msubsup><mo mathcolor="#000000">=</mo><mrow><msub><mi mathcolor="#000000">I</mi><mrow><mi mathcolor="#000000">W</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msub><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msup><mi mathcolor="#000000">e</mi><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mo mathcolor="#000000">−</mo><mrow><mfrac mathcolor="#000000"><mi mathcolor="#000000">α</mi><mrow><msub><mi mathcolor="#000000">R</mi><mi mathcolor="#000000">m</mi></msub><mo>⁢</mo><msub><mi mathcolor="#000000">C</mi><mi mathcolor="#000000">m</mi></msub></mrow></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">t</mi></mrow></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.14)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SSSx3.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">During the regular operation of a neuronal membrane, after opening
+the ion channels, a vast amount of ions flows into the intracellular
+space from the extracellular space, somewhat similar to the effect of switching
+a clamping voltage. The essential difference is that
+the ions arrive through the axon to the joining point in clamping. In contrast, through the membrane’s ion channels, they directly contribute to the current on the membrane’s entire surface. The membrane’s size is finite, so with a finite
+current speed, it takes time until the charges on the membrane’s surface
+arrive at the </span><a href="../../Ch_Glossary/index.html#glo.main.AIS"><span href="../../Ch_Glossary/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref" style="color:#000000;">AIS</span></a><span class="ltx_text" style="color:#000000;">, as discussed for the
+axonal current.
+Fig. </span><a href="#fig:HHFig2Simple" title="Figure 3.1 ‣ Imitating slow currents ‣ 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.1</span></a><span class="ltx_text" style="color:#000000;"> shows the measured rising and falling edges
+of the clamping experiment performed by </span><a href="../../Ch_Glossary/index.html#glo.main.HH"><span href="../../Ch_Glossary/index.html#glo.main.HH" title="Hodgkin and Huxley" class="ltx_glossaryref" style="color:#000000;">HH</span></a><span class="ltx_text" style="color:#000000;"> </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib5" title="" class="ltx_ref">5</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+The continuous lines show the
+diagram lines fitted to the experimental data (notice again that the fitted polynomial significantly differs from the correct exponential function around the time 0.5 msec); the dashed line shows the expected result of the rising edge, calculated with the time constant of the falling edge. The number of charge carriers follows a saturating curve, which decreases the current in the axon.
+</span><a href="../../Ch_Glossary/index.html#glo.main.HH"><span href="../../Ch_Glossary/index.html#glo.main.HH" title="Hodgkin and Huxley" class="ltx_glossaryref" style="color:#000000;">HH</span></a><span class="ltx_text" style="color:#000000;"> measured that their time constants differ far outside
+their experimental error, which would not be possible if they were
+the result of the charge-up and discharge of the same oscillator circuit.
+The measured rising edge corresponds to a charge-up process where the
+charge-up current is a saturating curve due to the change in the number of
+charge carriers in the axon; see Eq.(</span><a href="#eq:StokesCurrent" title="In Current’s speed ‣ 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.4</span></a><span class="ltx_text" style="color:#000000;">).</span></p>
+</div>
+<figure id="fig:HHFig2Simple" class="ltx_figure"><img src="x1.png" id="Ch3.F1.g1" class="ltx_graphics ltx_img_landscape" width="789" height="538" alt="Refer to caption">
+<figcaption class="ltx_caption" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 3.1: </span>The measured current, instead of conductance, (Fig. 2 from <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib5" title="" class="ltx_ref">5</a>]</cite>), demonstrating that two different physical effects result in the rising and falling edge of the measured current.
+ </figcaption>
+</figure>
+<div id="SSSx3.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The </span><span class="ltx_text ltx_font_italic" style="color:#000000;">slow</span><span class="ltx_text" style="color:#000000;"> input
+currents (although due to slightly differing
+physical reasons for the different current types) are described by
+the following analytic form valid for </span><span class="ltx_text ltx_font_italic" style="color:#000000;">fast</span><span class="ltx_text" style="color:#000000;"> currents:</span></p>
+<table id="eq:BioCurrentForm" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E15.m1" class="ltx_Math" alttext="I_{in}=I_{o}*(1-\exp(-\frac{1}{\alpha}*t))*exp(-\frac{1}{\beta}*t)" display="block"><mrow><msub><mi mathcolor="#000000">I</mi><mrow><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi></mrow></msub><mo mathcolor="#000000">=</mo><mrow><mrow><msub><mi mathcolor="#000000">I</mi><mi mathcolor="#000000">o</mi></msub><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mn mathcolor="#000000">1</mn><mo mathcolor="#000000">−</mo><mrow><mi mathcolor="#000000">exp</mi><mo>⁡</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mo mathcolor="#000000">−</mo><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mi mathcolor="#000000">α</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">t</mi></mrow></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#000000" rspace="0.055em" stretchy="false">)</mo></mrow><mo mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">e</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mo mathcolor="#000000">−</mo><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mi mathcolor="#000000">β</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">t</mi></mrow></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.15)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:MasonPSP" class="ltx_figure"><img src="x2.png" id="Ch3.F2.g1" class="ltx_graphics ltx_img_landscape" width="788" height="496" alt="Refer to caption">
+<figcaption class="ltx_caption" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 3.2: </span>The <a href="../../Ch_Glossary/index.html#glo.main.PSP"><span href="../../Ch_Glossary/index.html#glo.main.PSP" title="Post-Synaptic Potential" class="ltx_glossaryref">PSP</span></a> shape measured by <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib11" title="" class="ltx_ref">11</a>]</cite> and fitted by function forms
+given by Eq.(<a href="#eq:BioCurrentForm" title="In Imitating slow currents ‣ 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.15</span></a>).
+ </figcaption>
+</figure>
+<div id="SSSx3.p8" class="ltx_para ltx_noindent">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">where </span><math id="SSSx3.p8.m1" class="ltx_Math" alttext="I_{o}" display="inline"><msub><mi mathcolor="#000000">I</mi><mi mathcolor="#000000">o</mi></msub></math><span class="ltx_text" style="color:#000000;"> is the current amplitude per input, and </span><math id="SSSx3.p8.m2" class="ltx_Math" alttext="\alpha" display="inline"><mi mathcolor="#000000">α</mi></math><span class="ltx_text" style="color:#000000;">
+and </span><math id="SSSx3.p8.m3" class="ltx_Math" alttext="\beta" display="inline"><mi mathcolor="#000000">β</mi></math><span class="ltx_text" style="color:#000000;"> are timing constants for current in- and outflow, respectively.
+They are (due to geometrical reasons) approximately similar for the
+synaptic inputs and differ from the constants valid for the rush-in
+current. To implement such an analog circuit with a conventional electronic
+circuit, voltage-gated current injectors (with time constants around
+1 msec) are needed.
+For example, see in Fig </span><a href="#fig:MasonPSP" title="Figure 3.2 ‣ Imitating slow currents ‣ 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.2</span></a><span class="ltx_text" style="color:#000000;"> the </span><a href="../../Ch_Glossary/index.html#glo.main.PSP"><span href="../../Ch_Glossary/index.html#glo.main.PSP" title="Post-Synaptic Potential" class="ltx_glossaryref" style="color:#000000;">PSP</span></a><span class="ltx_text" style="color:#000000;"> measured function shape published in </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib11" title="" class="ltx_ref">11</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">, fitted with our theoretical function Eq.(</span><a href="#eq:BioCurrentForm" title="In Imitating slow currents ‣ 3.2.4 Feszültség ‣ 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.15</span></a><span class="ltx_text" style="color:#000000;">). The corresponding voltage derivative is as follows:</span></p>
+</div>
+<div id="SSSx3.p9" class="ltx_para">
+<table id="eq:PSPderivative" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E16.m1" class="ltx_Math" alttext="\frac{dV_{in}}{dt}=\frac{I_{o}}{C}*\biggl{(}\frac{1}{\alpha}*exp(-\frac{1}{%
+\alpha}*t-\frac{1}{\beta}*t)-\frac{1}{\beta}*exp(-\frac{1}{\beta}*t)*exp(1-exp%
+(-\frac{1}{\alpha}*t))\biggr{)}" display="block"><mrow><mfrac mathcolor="#000000"><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><msub><mi mathcolor="#000000">V</mi><mrow><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi></mrow></msub></mrow><mrow><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></mfrac><mo mathcolor="#000000">=</mo><mrow><mfrac mathcolor="#000000"><msub><mi mathcolor="#000000">I</mi><mi mathcolor="#000000">o</mi></msub><mi mathcolor="#000000">C</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mrow><mo mathcolor="#000000" maxsize="210%" minsize="210%">(</mo><mrow><mrow><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mi mathcolor="#000000">α</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">e</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mrow><mo mathcolor="#000000">−</mo><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mi mathcolor="#000000">α</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">t</mi></mrow></mrow><mo mathcolor="#000000">−</mo><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mi mathcolor="#000000">β</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">t</mi></mrow></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">−</mo><mrow><mrow><mrow><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mi mathcolor="#000000">β</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">e</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mo mathcolor="#000000">−</mo><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mi mathcolor="#000000">β</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">t</mi></mrow></mrow><mo mathcolor="#000000" rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">e</mi></mrow><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mn mathcolor="#000000">1</mn><mo mathcolor="#000000">−</mo><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mrow><mo mathcolor="#000000">−</mo><mrow><mfrac mathcolor="#000000"><mn mathcolor="#000000">1</mn><mi mathcolor="#000000">α</mi></mfrac><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">t</mi></mrow></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#000000" maxsize="210%" minsize="210%">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.16)</span></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="sec_Electricity-Voltage.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.3 </span>Feszültség</span></a><a href="../../bib.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physics-Condenser.html" title="In 3.2 Fundamental concepts ‣ Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2.5 </span>Condenser</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Jul 19 00:27:29 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,52 +1,114 @@
 % This is the Foreword to the Hodgkin-Huxley neuron model V2.0 book
+% Last edited 2026.06.15
 
+\ifx\magyar\undefined
 \chapter*{Foreword\label{ch:Foreword}}
 \addcontentsline{toc}{chapter}{Foreword} 
+\else
+\chapter*{Előszó\label{ch:Foreword}}
+\addcontentsline{toc}{chapter}{Előszó} 
+\fi
 
-
+\ifx\magyar\undefined 
 The importance of Hodgkin and Huxley's classic (V1.0) "model", which fundamentally changed our ideas about the physiology of neurons and which has served as the solid fundamentum for describing the functioning of neurons for several decades, can hardly be overestimated; it is truly the crown jewel of neuroscience. However, its authors, quite realistically, assessed that the physical picture behind their observations they mathematically formulated could be partially incomplete and incorrect. Already in their original communication, they drew attention to the fact that their equations did not fully describe their observations. Later they added that there exists observed (thermodynamical) evidence
 that does not fit into their picture at all.
 When making the first (and really enormous) step on terra incognita, lacking most of the required structural and operational knowledge,
 they were forced to formulate ad hoc assumptions and they also admitted that the formalism of the equations could describe more than one physical process.
-Some of the assumptions proved to be a brilliant vision, but in quite a few cases it turned out that they did not always put the right physical background behind their observations
+Most of their assumptions proved to be a brilliant vision, but in quite a few cases it turned out that they did not always put the right physical background behind their observations
 which were generally correctly described mathematically, and that their model designed for mechanical computers had obvious limitations.
-Already at the time of the introduction of the model, doubts arose as to whether the purely electrical model could fully describe the observations known up to that time, and later, as the accuracy, directionality and detailedness of the dedicated observations increased, it became necessary to introduce more and more ad hoc assumptions in order to maintain the consistency of the model assuming purely electrical operation.
+Already at the time of the introduction of the model, doubts arose as to whether the purely electrical model could fully describe the observations known up to that time, and later, as the accuracy, directionality and detailedness of the dedicated observations increased, it became necessary to introduce more and more ad hoc assumptions in order to maintain the consistency of the model assuming purely electrical operation,
+although in quite a few cases the original hypothesis had to be corrected.
+
+\else % 2026.06.15
+
+Hodgkin and Huxley klasszikus (V1.0) "modell"-jének jelentőségét,
+ami alapvetően megváltoztatta elképzeléseinket a neuronok 
+fiziológiájáról és évtizedekig szolgált a neuronok működési leírásának szilárd alapjául,  aligha becsülhetjük túl; az valóban a neuroscience koronaékszere.
+Ennek ellenére, amint szerzői reálisan értékelték, lehetséges, hogy
+a méréseiket leíró mate\-matikai formulák mögé képzelt
+fizikai kép nem teljes és részleteiben vagy egészében hibás.
+Már eredeti közleményükben felhívták a figyelmet arra, hogy
+egyenleteik nem teljes mértékben írják le megfigyeléseiket.
+Később hozzátették, hogy van olyan (termodinamikai) bizonyíték, amely egyáltalán nem illik ebbe a képbe.
+Amikor ezt a (valóban hatalmas) lépést megtették ebben az
+ismeretlen világban, nem rendelkeztek a szükséges 
+szerkezeti és működési ismeretekkel, ezért arra kényszerültek, 
+hogy ad-hoc feltevéseket vezessenek be, de tisztán látták,
+hogy egyenleteik nem csak egyféle folymatot írhatnak le. 
+Feltevéseik nagy része brilliáns megsejtésnek bizonyult,
+de néhány esetben fokozatosan kiderült, hogy 
+nem mindig a megfelelő fizikai hátteret helyezték matematikailag helyesen leírt megfigyeléseik mögé,
+továbbá a kézi mechanikus számológépekre tervezett modelljüknek nyilvánvaló korlátai vannak.
+Már a modell bevezetésekor kétségek merültek fel, hogy 
+tisztán elektromos modelljük teljeskörűen le tudja-e írni
+az addig megfigyelt jelenségeket. Később pedig, ahogyan
+a célzatos mérések pontossága és részletessége növekedett, mind több
+ad-hoc feltevést kellett bevezetni, hogy a tisztán elektromos
+modell konzisztens maradjon, pedig jónéhány esetben
+az eredeti hipotézist kellett volna korrigálni.
+\fi 
 
 
-
-%Az elmúlt évtizedekben számos (V1.0x) modell jött létre, több-kevesebb sikerrel módosítva és kiegészítve ezt a tisztán elektromos, diszciplináris, őseredeti modellt (ami végső soron \gls{HH} követőinek 
-%tevékenysége nyomán vált modellé). Születtek olyan (V1.y) modellek is, amelyek 
-%teljesen más diszciplina keretében próbálják a neuront modellezni,
-%főként annak termodinamikai, mechanikai, optikai, stb. jelenségeit értelmezni.
-%Mindezen modellek közös sajátsága, hogy nem tudnak teljes körű
-%(valamennyi megfigyelést ellentmondásmentesen leíró) modellt nyújtani.
-%Vannak olyan modellek is, amelyek nem is törekszenek arra, hogy
-%egy fizikai működési mechanizmust próbáljanak meg leírni;
-%megelégszenek egy olyan matematikai formalismussal, amelyik
-%a tapasztalattal megegyező viselkedést mutat; anélkül, hogy
-%a 'miért', 'milyen mechanizmussal' kérdésekre akár csak megpróbálnának
-%választ adni. 
-
+\ifx\magyar\undefined %2026.06.15
 In the past decades, numerous (V1.0x) models have been created, modifying and supplementing this purely electrical, disciplinary, original model with more or less success (which ultimately became a model due to the activities of \gls{HH}'s followers).
 There have also been (V1.y) models that try to model the neuron within the framework of an entirely different discipline, mainly interpreting its thermodynamic, mechanical, optical, etc. phenomena.
 The common feature of all these models is that they cannot provide a complete model (describing all observations without contradiction).
 There are also models that do not even strive to describe a physical operating mechanism; they are satisfied with providing a mathematical formalism that shows a behavior that is consistent with experience in some context;
 without even trying to answer the questions 'why' and 'by what mechanism'.
+\else %2026.06.15
+Az elmúlt évtizedekben számos (V1.0x) modell jött létre, több-kevesebb si\-kerrel módosítva és kiegészítve ezt a tisztán elektromos, diszciplináris, őseredeti modellt (ami végső soron \gls{HH} követőinek 
+tevékenysége nyomán vált modellé). Születtek olyan (V1.y) modellek is, amelyek 
+teljesen más diszciplina keretében próbálják a neuront modellezni,
+főként annak termodinamikai, mechanikai, optikai, stb. jelenségeit értelmezni.
+Mindezen modellek közös sajátsága, hogy nem tudnak teljes körű
+(valamennyi megfigyelést ellentmondásmentesen leíró) modellt nyújtani.
+Vannak olyan modellek is, amelyek 
+megelégszenek egy olyan matematikai formalizmussal, amelyik
+a tapasztalattal megegyező viselkedést mutat; anélkül, hogy
+a 'miért', 'milyen mechanizmussal' kérdésekre akár csak megpróbálnának
+választ adni. 
+\fi
 
+\ifx\magyar\undefined %2026.06.15
 Due to the lack of the needed expertize in physics,
 biophysics introduced the idea of the "whatnot"~\cite{Schrodinger:1992} protein mechanisms 
 for the unexplainable forces that totally misguided physiology and neuroscience.
-%Biophysics (and consequently, biology) has no laws of motion in the sense as physics has Newton's laws.
 The speculative hypotheses hyde that science can describe
 living matter, but needs a different approach.
+Biophysics (and consequently, biology) has no laws of motion in the sense as physics has Newton's laws.
 Claims such as "pumps [by using protein mechanisms] \dots transport ions \textit{against their
 electrical and chemical gradients}"~\cite{PrinciplesNeuralScience:2013}, page 101, 
 or "the flux of ions through ion channels is passive,
 requiring \textit{no expenditure of metabolic energy} by the
 channels."~\cite{PrinciplesNeuralScience:2013}, page 107, are as scientific as in the pre-Newtonian age,
-there was a notion related to Aristotelian philosophy. That concept gave credence to the “theory” that the celestial spheres and, later on, the planets were pushed or moved by celestial movers, celestial intelligences, or angels against physical forces, without investing energy. Inventing the universal 
+there was a notion related to Aristotelian philosophy about the celectial mechanics. That concept gave credence to the “theory” that the celestial spheres and, later on, the planets were pushed or moved by celestial movers, celestial intelligences, or angels against physical forces, without investing energy. Inventing the universal 
 gravitational law made the complex interplay of those spheres obsolete,
 although, for the first look, it seemed to be unrelated.
+\else
+A szükséges mélységű fizikai ismeretek híján, a biofizika
+olyan "mit tudom én" ("whatnot"~\cite{Schrodinger:1992})
+protein mechanizmusokal helyettesítette a tapasztalatok magyarázásához szükséges erőket, amelyek teljesen félrevitték
+a fiziológia és a neuroscience fejlődését.
+A spekulatív hipotézisok elrejtik, hogy az élettelen tudomány 
+törvényei le tudják írni a az élő anyagot, de eltérő megközelítésre van szükség.
+A biofizika (és ebből következően, a biológia) nem rendelkezik 
+a fizika Newton törvényeihez hasonló mozgástörvényekkel.
+\index{mozgástörvények}
+\index{Newton törvények}
+Az olyan állítások, mint hogy "pumps [by using protein mechanisms] \dots transport ions \textit{against their
+electrical and chemical gradients}"~\cite{PrinciplesNeuralScience:2013}, 101. oldal, 
+vagy "the flux of ions through ion channels is passive,
+requiring \textit{no expenditure of metabolic energy} by the
+channels."~\cite{PrinciplesNeuralScience:2013}, 107. oldal,
+éppannyira tudományosak, mint a Newton előtti korszakban 
+az Arisztotelészi filozófia bolygómozgást magyarázó nézetei.
+Ezen "elmélet" szerint az égi szférákat és a bolygókat
+égi létezők és angyalok mozgatják a fizikai erők ellenében, és természetesen energia befektetés nélkül. 
+Az egyetemes tömegvonzás törvényének felismerése
+feleslegessé tette a szférák bonyolult együttműködésének
+feltételezését, bár első pillanatra  úgy tűnt, nem sok
+közük van egymáshoz.
+\fi
 
 \quotationbox
 {
@@ -57,9 +119,10 @@ although, for the first look, it seemed to be unrelated.
 \index{Brain Initiative}
 }
 
-Describing life science is still in the pre-Newtonian age: it has a lot of "spheres"
+\ifx\magyar\undefined
+Describing life science, from many points of view, is still in the state similar to the pre-Newtonian stae of physics: it has a lot of "spheres"
 described by complicated theories that contradict each other,
-and does not have its laws of motion, in the sense as Newton's Laws in physics. What is worse, it did not invent and test the laws describing
+and does not have its laws of motion, in the sense as Newton's Laws in physics. What is worse, in some fields it did not invent and test the laws describing
 living matter. Instead, it borrowed the disciplinary laws of physics,
 without recognizing that its different discipline has different
 conditions and requires different approximations; that is, similar, but differently used laws. 
@@ -70,35 +133,101 @@ and synthesizes the rigth ones.
 The change in the major version number
 symbolizes that it is a leap-like development (a drastic change in the physics concepts) instead of an
 incremental one (a slight improvement by introducing a new ad-hoc hypothesis).
+\else
+Az élettudomány leírása, sok szempontból, még a fizika Newton előtti állapotához hasonló állapotban van: sok "szférája" van, amelyeket egymásnak ellentmondó elméletek írnak le. Részben nem alkotta meg és 
+nem tesztelte saját törvényeit.
+Helyette, átvette a fizika diszciplináris törvényeit, 
+annak felismerése nélkül, hogy a diszciplináris különbözőség
+különböző körülményeket jelent és különböző közelítéseket igényel; azaz ennek következtében a hasonló törvényeket kell használni, de másképpen.
+\index{Mozgástörvény}
+A (V1.0) modell értékének megkérdőjelezése nélkül, 
+de annak nyilvánvalóvá vált hibáit kijavítva,
+az elmúlt évtizedekben összegyűlt kísérleti anyag,
+a kísérleti technológia szédítő ütemű fejlődése,
+továbbá a neuroscience eredményei iránt folyamatosan  
+növekvő igény tette szükségessé a (V2.0) modell kifejlesztését.
+Ez a modell egyesíti a korábbi (V1.x) modellek 
+elképzeléseit és eredményeit, kiszűri a hibás 
+koncepciókat és egyesíti a helyeseket.
+A fő verziószám változása azt jelzi, hogy
+a modell ugrás-szerű előrelépést jelent (a fizikai koncepciók
+drasztikus változását) azt eddigi  inkrementális
+előrelépések (jellemzően a diszkrepancia csökkentése új ad-hoc feltevés bevezetésével) helyett.
+\fi
 
 
+\ifx\magyar\undefined
 The V2.0 model is necessarily cross-disciplinary; no single physical discipline alone allows for a complete and consistent interpretation of the phenomena of the living organism.
-The audience educated in the 'old school' will find the
-concepts strange. In physics is is not strange at all
+The reader who grew up on the 'old school' doctrines will find our approach strange: the professors' professors also grew up on the old school doctrines.
+ In physics it is not strange at all
 that the concepts that are valid for the observations 
-made in everyfay life became invalid in the world
+made in everyday life became invalid in the world
 of too small or too large masses, too small or too large
 distances, and so on. Up to now, invalid scientific concepts
 have been applied to the living matter, and because of the wrong concepts, many wrong conclusions have been made. 
-To fix those mistakes, on must strictly define the concepts,
+To fix those mistakes, one must strictly define the concepts,
 borrowed from science, for the case of living matter, 
 because for today the wrong concepts have grown into
 major obstacles toward understanding the extremely complex
 operation of the brain, from its elementary physical processes
 up to its information processing and higher-level functionality.
+\else
+A (V2.0) modell szükségszerűen átíveli a létező diszciplinákat: egyedül, egyetlen klasszikus fizikai diszciplina sem képes teljes és konzisztens módon értelmezni az élő szervezet jelenségeit. 
+A 'régi iskola' tanain felnőtt olvasó megközelítésünket 
+furcsának fogja találni: a professzorok professzorai 
+is a régi iskola (részben hibás) tanain nőttek fel.
+A fizikában nem szokatlan, hogy a mindennapi életünkben
+helyesnek bizonyuló fogalmak helytelenné válnak például a
+túlságosan kis vagy túlságosan nagy méretek vagy tömegek esetén.
+Eddig oda nem illő tudományos fogalmakat alkalmaztak 
+az élő anyagra, aminek következtében hibás eredményekre jutottak.
+Ezen hibák kiküszöbölésére pontosítani kell az élettelen tudományból kölcsönzött fogalmainkat az élő anyag körülményeire, mivel mára ezek a hibásan alkalmazott fogalmak
+váltak annak legfőbb akadályává, hogy megértsük a kivételesen
+bonyolult agy működését, annak elemi fizikai folyamataitól
+az magas szintű információfeldolgozásig.
+\fi
 
-%Nem vonva kétségbe a V1.0 modell érdemeit, az elmúlt évtizedekben 
-%felhalmozott kísérleti tapasztalatok, a technika és a műszeres mérésések  
-%szédítő mértékű fejlődése, az idegtudomány eredményei iránti igény
-%mind erősebb növekedése szükségessé teszi (V2.0) modell kidolgozását.
-%A modell cross-disciplináris; egyedül egyik fizikai disciplina sem teszi
-%lehetővé az élő szervezet jelenségeinek teljes körű és 
-%ellentmondásmentes értelmezését.
-%
 
+\ifx\magyar\undefined
 
+For the same reasons, we follow von Neumann's method when he described principles of technical computing~\cite{EDVACreport1945}. "The ideal procedure would be, to take up the specific parts in some definite order, to treat
+each one of them exhaustively, and go on to the next one only after the predecessor is completely
+disposed of. However, this seems hardly feasible. The desirable features of the various parts, and
+the decisions based on them, emerge only after a somewhat \hypertarget{zigzagdiscussion}
+{zigzagging discussion}. It is, therefore,
+necessary to take up one part first, pass after an incomplete discussion to a second part, return after
+an equally incomplete discussion of the latter with the combined results to the first part, extend
+the discussion of the first part without yet concluding it, then possibly go on to a third part, etc.
+Furthermore, these discussions of specific parts will be mixed with discussions of general principles, of the elements to be used, etc."
+\index{von Neumann!'zigzag' way}
+For example, basic concepts such as the membrane potential and its regulation in resting and transiens states, belong to chapter Physics,
+and their detailed scientific, physics-based, discussion is given there, 
+but their corresponding aspects must be discussed in chapters 'Abstract neuron' and less abstract 'Physiology' as well.
+The contents are inherently intertwinned, and the form must follow the contents.
+We make this zigzag reading more accessible by using hyperlinks and cross-references throughout the document. 
 
+\else
 
-
+Ugyanazon okból, azt a módszert követjük, amit Neumann János
+használt a technikai számítás elveinek leírásakor~\cite{EDVACreport1945}. "The ideal procedure would be, to take up the specific parts in some definite order, to treat
+each one of them exhaustively, and go on to the next one only after the predecessor is completely
+disposed of. However, this seems hardly feasible. The desirable features of the various parts, and
+the decisions based on them, emerge only after a somewhat \hypertarget{zigzagdiscussion}
+{zigzagging discussion}. It is, therefore,
+necessary to take up one part first, pass after an incomplete discussion to a second part, return after
+an equally incomplete discussion of the latter with the combined results to the first part, extend
+the discussion of the first part without yet concluding it, then possibly go on to a third part, etc.
+Furthermore, these discussions of specific parts will be mixed with discussions of general principles, of the elements to be used, etc."
+\index{von Neumann!'zigzag' way}
+Például, az olyan alapelvek, mint a membrán potenciál és annak
+szabályozása, valamint a nyugalmi és a tranziens állapotok szabályozása,  a fizika fejezethez tartozik, ezért azoknak a tdományos, fizika-alapú 
+tárgyalását ott adjuk. Azonban a megfelelő absztrakt vonatkozásokat 
+az 'abstrakt neuron' és a 'Fiziológia' fejezetekben is tárgyaljuk.
+A tartalmak szükségszerűen átfednek, és a formának alkalmazkodnia
+kell a tartalomhoz.
+A cikcakkos olvasást igyekszünk a dokumentumon belüli
+kereszthivatkozásokkal és hiperhivatkozásokkal könnyíteni,
+de a dokumentumon kívüli hiperhivatkozásokat is használunk.
+\fi
 
 

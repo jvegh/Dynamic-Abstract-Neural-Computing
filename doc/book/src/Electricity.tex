@@ -1,12 +1,17 @@
 % This is the chapter 'Electricity' to the "Hodgkin-Huxley  neuron model V2.0 book"
-% Last edited 2026.06.02
+% Last edited 2026.06.23
 
 \iflatexml
 \else
 \minitoc
 \fi
+\ifx\magyar\undefined
 \chapter[Electricity for neurons]{Electricity for neurons\label{ch:Electricity}}
+\else
+\chapter[A neuronok elektromosságtana]{A neuronok elektromosságtana\label{ch:Electricity}}
+\fi
 
+\ifx\magyar\undefined %2026.06.15
 The excellent textbook~\cite{PrinciplesNeuralScience:2013} (of course, having \gls{HH} V1.0 in mind) separates the neuron membrane's states into resting and transient states. The statement that "the resting membrane potential results
 from the separation of charge across the
 cell membrane" is only half the truth; we tell the second half in section~\ref{sec:Physics-segmented}. 
@@ -15,20 +20,104 @@ establish and maintain the resting potential"~\cite{PrinciplesNeuralScience:2013
 As we show in section~\ref{sec:Physics-FormingPotential}, two different physical mechanisms
 operate in the resting and the transient states. A primary reason for misguiding neurophysiology was projecting the mechanism of the resting state to the transient state.
 
+\else %2026.06.15
 
+A kiváló tankönyv~\cite{PrinciplesNeuralScience:2013}
+(természetesen \gls{HH} (V1.0) szellemében) a neuron membrán
+állapotára a nyugalmi és az átmeneti állapotokat vezeti be.
+Az az állítása, hogy "the resting membrane potential results
+from the separation of charge across the
+cell membrane" csak az igazság egyik fele; mi elmondjuk a
+másik felét is a~\ref{sec:Physics-segmented} szakaszban. 
+Finomítjuk "by discussing how resting ion channels
+establish and maintain the resting potential"~\cite{PrinciplesNeuralScience:2013}, 126. oldal,
+állításukat: az ioncsatornáknak csak a nyugalmi potenciál 
+fenntartásában van szerepük, a létrehozásában nincs. 
+Amint a~\ref{sec:Physics-FormingPotential} szakaszban tárgyaljuk, 
+két különböző fizikai mechanizmus működik a két említett állapotban. A neurofiziológia tévútra kerülésének egyik oka 
+az volt, hogy a nyugalmi állapotban (lényegében helyesen leírt) állapotot az átmeneti állapotra próbálták alkalmazni.
+\fi
+
+
+\ifx\magyar\undefined %2026.06.15
 The book~\cite{PrinciplesNeuralScience:2013} asks the central questions, "How do ionic [i.e., electrical and chemical] gradients contribute to the resting membrane potential? What prevents
 the ionic gradients from dissipating by diffusion of
 ions across the membrane through the resting channels?"
 However, it leaves them essentially open by giving only a qualitative answer, discussing only membrane permeability without explaining how the resting potential is created and regulated through charging and polarization.
 %
-We demonstrate in section~\ref{sec:Physics-FormingPotential} that classical methods of electricity enable us to calculate the membrane's potential.
+We demonstrate in section~\ref{sec:Physics-FormingPotential} that classical methods of electricity enable us to calculate the membrane's potential; although we must consider the special contribution due to thedielectricity in electrolytes.
 Our results underpin that "the crucial system in biology isn't a molecule or a molecular class whatsoever, but the interface created by biomolecules in water"~\cite{LivingSystemPhysics:2021}. However, we add that mainly
 physical processes and speed gradients control the processes.
 More precisely, inseparable thermodynamic and electrical processes keep the potential set by the inseparable electrical and thermodynamic backbone defined by the lipid/protein structure of the cell. It is one of the frequent cases when 
 one effect implements a functionality (the backbone closely defines the frames of the operation), and the other (in this case, combined thermodynamics and electricity) corrects it when it implements a complex operational (dynamical) functionality:
 "stimulated phase transitions enable the phase-dependent processes to replace each other ... one process to build and the other
 to correct"~\cite{BiologicalConservationLaw:2017}.
+\else
+A ~\cite{PrinciplesNeuralScience:2013} könyv felteszi ugyan 
+a a központi kérdéseket  "How do ionic [i.e., electrical and chemical] gradients contribute to the resting membrane potential? What prevents
+the ionic gradients from dissipating by diffusion of
+ions across the membrane through the resting channels?",
+de lényegében megválaszolatlanul hagyja azokat, mivel csak
+a membrán átjárhatóságát tárgyalja, a nyugalmi potenciál 
+létrejöttének oka és szabályozásának mechanizmusa,
+a feltöltődés és  polarizáció szerepének figyelembe vétele nélkül.
+%
+A~\ref{sec:Physics-FormingPotential} szakaszban bemutatjuk,
+hogy a klasszikus elektromosságtan módszereivel
+ki tudjuk számítania membrán potenciált, bár a teljes
+körű leíráshoz az elektrolitok speciális járulékát is
+figyelembe kell vennünk.
+Eredményeink alátámasztják, hogy "the crucial system in biology isn't a molecule or a molecular class whatsoever, but the interface created by biomolecules in water"~\cite{LivingSystemPhysics:2021}. 
+Hozzátesszük azonban, hogy főként fizikai folyamatok és 
+sebesség gradiensek vezérlik a folyamatokat.
+Pontosabban, elválaszthatatlan termodynamikus és elektromos
+folyamatok tartják a potenciált azon az értéken, amelyet
+a sejt lipid/protein szerkezete által meghatározott
+elektromos és termodynamikus gerinc definiál. 
+Ez a folyamat egyike azoknak a gyakori eseteknek, 
+amikor az egyik hatás megvalósítja a funkcionalitást 
+(a gerinc szorosan meghatározza a működés kereteit)
+a másik pedig (ez esetben egy kombinált termodinamikai 
+és elektromos hatás) korrigálja azt, miközben megvalósítja a
+komplex (dinamikus) funkcionalitást.
+"stimulated phase transitions enable the phase-dependent processes to replace each other ... one process to build and the other
+to correct"~\cite{BiologicalConservationLaw:2017}.
+\fi
 
+
+\ifx\magyar\undefined
+%\section[Electricity for neurons]{Foundations of electricity for neurons\label{sec:Electricity-Foundations}}
+%
+\href{http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elecur.html#c2}
+{electric page}
+
+\else
+
+%\section[Neuronális elektromoságtan]{A neuronális elektromoságtan alapfogalmai\label{sec:Electricity-Foundations}}
+
+
+To avoid "reinventing the wheel", we heavily rely on the excellent site \href{http://hyperphysics.phy-astr.gsu.edu/hbase/}{HyperPhysics},
+hosted by the Department of Physics and Astronomy of University of Georgia.
+Their material is excellent for discussing engineering electricity, where the charge carriers are electrons. However, they extended their material with \href{http://hyperphysics.phy-astr.gsu.edu/hbase/electric/bioelcon.html#c1}{bioelectric phenomena},
+tacitly agreeing with some fallacies created by biophysics. They do not scrutinize the differences caused in the electric phenomena by the structure of 
+living matter, the effects of the limited volume of a cell, using slow positive ions in electrolytic solutions instead of fast free electron clouds in solids,
+\index{electron cloud}
+the interaction with thermodynamics, among others. So, 
+we must discuss the deviations in detail, which originate from the same reasons as discussed in section~\ref{sec:Physics-ThermodynamicsWhyDifferent}. 
+
+One of the famous dichotomies (see section~\ref{sec:Physics-Atomicity}) is that there exist laws, separately,
+for continuous and discrete electricity, without providing
+a transition between them.
+The fundamental concepts are the same, but we must rethink several approximations. Furthermore, sometimes we must consider the classical continuous electricity, sometimes particle-based electricity; sometimes the mixture of the two, or a transition
+between them. In biological cells, the usual "infinite" conditions (infinitely far, infinitely small, etc.)
+of the classical electronics are not fullfilled: it depends on the context what can be omitted with respect to some other quantity or size.
+Say, the charge in the intracellular volume is "infinitely smaller" than that in the extracellular volume, but "infinitely larger" than the charge handled in an ion-channel-related operations.
+The biological organization prevents discussing living matter 
+as homogeneous and isotropic medium, the active "charge production" in some biological constructions needs a precise interpretation of the conservation laws, and the charge carriers' speed needs revisiting the interpretation of the fundamental physical laws.
+
+\fi
+
+
+\input{src/ElectricityFoundations}
 \input{src/MembraneElectricity}
-\input{src/MembraneActionPotential}
 

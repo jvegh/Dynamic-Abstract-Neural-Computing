@@ -1,12 +1,13 @@
-% This is the chapter 'Electricity, Action Potential' to the "Hodgkin-Huxley  neuron model V2.0 book"
-% Last edited 2026.06.02
+% This is the chapter 'Action Potential' to the "Hodgkin-Huxley  neuron model V2.0 book"
+% Last edited 2026.06.24
 
-\section{The Action Potential\label{sec:ActionPotential}}
+\chapter{Action Potential\label{ch:ActionPotential}}
+
 
 As discussed, a smaller number of ion channels is distributed over the surface of the membrane, and the overwhelming majority of ion channels is concentrated in the \gls{AIS}.
 
 
-\subsection{The physical process\label{sec:AP-PhysicalProcess}}
+\section{The physical process\label{sec:AP-PhysicalProcess}}
 
 In the resting state, we have a condenser that has some low-conductance resistors (the resting ion channels) and a very low intensity (nearly constant) distributed current flows, under the effect of a slightly varying (nearly constant) membrane voltage. Due to the membrane potential, a current through the always-open channels flows on the dendritic surface
 and the resting channels' conductivity represents a drain with 
@@ -74,7 +75,7 @@ changed chemical concentration (or the negative amplitude of the damped elastic 
 
 \begin{figure}
 	\includegraphics[,trim={.5cm -0.cm 0cm 0cm},
-	scale=2.5]{fig/dVdt_vs_V_3d}
+	scale=1.5]{fig/dVdt_vs_V_3d}
 	\caption{A summary of producing neuronal \gls{AP} as a 3-D figure. The thick, solid 3-D line shows how the color-coded voltage gradient drives the membrane potential over time.
 		The three dashed diagram lines are the projections of the 
 		spatial curve to the boundary planes of the cube. The physiology delivers them as 2-D plots; the figure explains how those parameters are interrelated. 
@@ -93,7 +94,7 @@ Fig.~\ref{fig:SummaryPicture}. The three dashed diagram lines are drawn in
 three perpendicular planes; see the figure's caption and the discussion below for the details.
 
 
-\subsection{The oscillator model\label{sec:OscillatorModel}}
+\section{The oscillator model\label{sec:OscillatorModel}}
 
 Despite the early warning that '\textit{it was not possible to separate the change into
 	resistance and capacity components}' \cite{COLE_CURTIS_IMPEDANCE:1939},
@@ -232,7 +233,7 @@ the output current flows through the membrane instead of the axon). Some $K^+$ c
 The shape of the output waveform depends on the ratio of the pulse width to the $RC$ time constant. When $RC$ is much larger than the pulse width, the output waveform resembles the input signal, even with a square wave input. (In the case of the neuronal oscillator, the shape of the front side of the spike is similar to the one derived for the rush-in current, while the back side is very prolonged.)
 
 
-\subsection{Mathematics of the ActionPotential\label{sec:MathematicsAP}}
+\section{Mathematics of the ActionPotential\label{sec:MathematicsAP}}
 
 Although the implementation of a neuronal circuit works with ionic
 currents and has a charge transmission mechanism drastically different

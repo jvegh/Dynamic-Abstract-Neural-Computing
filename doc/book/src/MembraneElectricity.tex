@@ -1,8 +1,14 @@
-% This is the chapter 'Electricity of membrane' to the "Hodgkin-Huxley  neuron model V2.0 book"
-% Last edited 2026.06.05
+% This is the chapter 'Electricity-Membrane' to the "Hodgkin-Huxley neuron model V2.0 book"
+% Last edited 2026.06.23
+\ifx\magyar\undefined
+	\section[Membrane's electricity]{Membrane's electricity\label{sec:Electricity-Membrane}}
+	
+\else
 
-\section{Membrane's electricity\label{sec:Physics-segmented}}
+	\section[A membrán elektromosságtana]{A membrán elektromosságtana\label{sec:Electricity-Membrane}}
+\fi
 
+\ifx\magyar\undefined
 The importance of the subject was correctly estimated decades ago~\cite{UpdateHodgkinHuxley:1990}:
 "For the past forty years, our understanding and our methods
 of studying the biophysics of excitable membranes have been significantly
@@ -15,140 +21,31 @@ To fix the flawed and incomplete hypotheses has a similar importance. Recall tha
 voltage and current, and nothing more (no other quantity). 
 This way the accompanied other changes can remain hidden.
 
-Concerning the origin of the membrane's resting potential, we disagree that "the resting membrane potential is the result of the [low intensity]
-passive flux of individual ion species through several
-classes of resting channels"~\cite{PrinciplesNeuralScience:2013}.
-This claim cannot be true: the flux is not passive
-(to move the ions, energy required), furthermore,
-no setpoint is defined, so some (low) current flows
-due to the interplay of the electrostatically set setpoint
-and the reversal potential of the ions inside and outside. 
-The claim was already question-marked whether the membrane permeability is a primary property for the 
-membrane potential generation, for a review, see~\cite{MembranePotentialPermeability:2024}.
-That interpretation leads to causality issues~\cite{HH_Potential_Controversies_2017}. 
+\else
 
-
-It was already stated that the membrane's resting potential is, of course, of electrostatic origin~\cite{MembranePotentialAbsorption:2014, OriginMembranePotential:2018,Hodgkin-HuxleyAdsorption:2021, MembranePotentialPermeability:2024, MembranePotentialKeyFunction:2023}.
-Paper~\cite{OriginMembranePotential:2017} stated correctly "that separation of charges produces a potential" and derived the thermodynamic part in two different ways, but did not account for the electrical potential. 
-However, the classical electrical potential is only a small part of the actual potential; the rest is contributed by the polarization of the electrolyte's dipoles. Moreover, \textit{the closed volume of the neurons drastically differs from the infinite space.
-The charges attract and repel each other, but since they experience the counterforce 
-of the limiting surface (the membrane), a static mechanical pressure (furthermore, a shock wave, if the amount of charge on the membrane suddenly changes) are also created, which 
-	naturally connect the electrical and mechanical effects, as well as the electrical, mechanical, and thermodynamic theories of operation.}
-That is, \textit{the 'net electrical' model implies the 
-effects from other disciplines, but does not provide
-a way to calculate them}.
-We must discuss them in a cross-disciplinary way; furthermore, we must cross the borderline between particle-based and continuous points of view 
-of nature.
-%~\cite{VeghNonOrdinaryLawsForLife:2025}.
-Moreover, we must be aware of that the features of living matter may change while being measured 
-in physics laboratories as usual:
-"the construction is different from anything we have yet tested in the physical laboratory"~\cite{Schrodinger:1992}.
-
-
-When the balanced state is perturbed, the system attempts to find a 
-new balanced state, using temporal processes.
-In this scenario, the 'carrier' - the ion - can be influenced by two interactions.
-We discussed elsewhere that those phenomena in living matter 
-need deriving and applying 'non-ordinary' laws of science~\cite{VeghNonOrdinaryLawsForLife:2025}, and the time course of those processes can be described by the laws of motion of biology. Fundamentally, due to the mixing of interaction speeds, \textit{considering only one of the interactions (the disciplinary way) leads to incorrect conclusions and theoretical interpretations}.
-\index{laws of motion}
-
-
-\subsection{Condenser\label{sec:Physics-Condenser}}
-
-
-Cell biochemistry sufficiently well describes the lipid bilayers that constitute the membrane~\cite{OriginOfLifeMicelles:2021,ReproductionLife:2023}.
-The negative and positive ends of the lipids that constitute the membrane, in an electrolyte solution, attract and bind ions, forming a charged layer on the membrane surfaces. In this way, the membrane in electrolytes acts as a condenser, comprising two charged sheets on its surfaces, with ill-defined parameters. Their boundaries, thicknesses, and compositions depend on the operating state (unlike conducting plates with well-defined sizes and boundaries). The condenser is not ideal: the charged sheet comprises ions with attached aqueous constituents from the electrolyte, so its thickness is far from the ideal zero thickness of classical electricity. Furthermore, in its wall, it inseparably comprises ion channels (from an electrical point of view: resistors), and the condenser plates are in polarizable electrolyte solutions. 
-
-Cell science does not establish the membrane's electrical phenomena; instead, it attempts to elucidate complex protein activities that explain charge transfer, resting and transient potentials, and explains the entire \textit{biological operation using mathematical formulas without a realistic physical background}. Electrophysiology combines currents of electrons and ions, and \textit{uses Ohm’s Law for its admittedly non-Ohmic systems}. It introduces foreign (clamping) currents into biological systems, attributing their effects to changes in membrane conductance without explaining how \textit{voltage and current can be independent of charge carriers}.
-
-\subsection{Resistor\label{sec:Physics-Resistor}}	
-
-Ions differ from electrons we used to in physical electricity in many features. Their conduction mechanisms
-are entirely different, and they are not necessarily present 
-in the discussed medium (say, when the medium is surrounded by a charged surface, the field moves free ions out of the volume). They may be produced by biological mechanisms, 
-and they are slow (have a couple of $m/s$ speed, creating the illusion
-of 'delayed current').
-Both disciplines provide an atomic level description, but unfortunately they use the same words for their concepts, although
-their meaning can be entirely different. 
-
-In solids, as the Drude model describes, 
-electrons constantly bounce among heavier, stationary crystal ions, that make up the structure of the material. With each collision, though, the electron is deflected in a random direction \textit{with a speed that is much larger than the speed gained by the electric field}. The net result is that electrons take a zigzag path due to the collisions, but generally drift in a direction along the electric field. Important, that \textit{the collisions are inelastic}, so the electrons lose (most of) their energy. The solid's gridpoints absorb the energy, which later is released in form of heat. The process is irreversible.
-
-In biological matter, ions convey electricity. So called ion channels
-are used for the transfer. Here diffusion and electromigration takes place, by orders of magnitude different speeds. 
-The process is mostly reversible. The resistance 
-is interpreted as the interaction of charge carriers with the particles in the material that are transported by a driving force (that can comprise also a force of chemical origin).
-In solid state, the volume considered is "infinitely large" (that is, the field is homogeneous
-and the propagation is isotropic), and the charge carriers are uniform that is only one type of interaction is present.
-In biological objects, the volume is more or less limited (is finite), there may be charged objects present that make the propagation non-isotropic. Furthermore, the charge carriers are non-uniform
-that introduces thermodynamic interaction in addition to the electrical interaction.
-Ions, under the electrical/thermodynamic field (and maybe mechanical constraints) accelerate to the Stokes-Einstein speed (see Eq.(\ref{eq:StokesSpeed})), move against a friction in the electrolyte.
-The ions suffer (essentially elastic) collisions with neutral molecules and transfer their momentum (and so: energy) to them. 
-From the point of view of ions, the process is energy loss and momentum loss.
-From the point of neutral molecules, the process is energy gain and momentum gain. In a free space, the energy and momentum quickly distribute in the entire volume, so the
-process in finally irreversible.
-
-If the acceleration occurs in a narrow tube 
-such as an ion channel, the wall prevents gaining momentum in the 
-direction perpendicular to the direction of acceleration. 
-Given that the collisions are elastic, no energy dissipates;
-so, in principle, the process is reversible.
-Strangely enough, this way the electrical force
-accelerates also the neutral molecules; furthermore, their momentum (using an elastic membrane) can fully contribute to the operation
-of neuron (forms the \gls{AP}). 
-
-In a narrow tube (such as an ion channel) the momentum exchange
-is limited to one direction.
-If the ions are accelerated through the channel, due  to the
-frequent collisions, they can entirely transfer their 
-energy to a large number of neutral molecules. 
-Those accelerated molecules having the same speed
-may represent a significant "impact force", sufficient
-to cause significant mechanical changes throughout
-biological systems.
-The momentum transfer by collisions
-is a two-way process, it is reversible also in the practice. If a small amount of ionized
-particles is present in the tube, under an external electrical
-field, the charged particles can accelerate the neutral ones.
-Vice versa, if the bulk of the particles are moved mechanically (say, when an ultrasound wave
-presses the neuron or a rush-in process transfers electric energy to the membrane), the one-directionally moving
-neutral molecules transfer momentum to the charged particles,
-this way producing measurable electrical waves (such as an \gls{AP}).
-
-The secondary electric quantities can be derived from
-the primary quantity: the bulk of the undissociated molecules
-'resist' transferring ions under the effect of an electric field (the liquid must be pressed through the tube).
-One can measure potential and current along the ion
-channel (and so, to calculate resistance), but the behavior of the resistance/conductance is 
-drastically different. One has a pneumatic system instead of a voltage generator and the resistance originates in viscosity. Most of the energy is converted to
-mechanical energy instead of heat, making the process (mostly) reversible.
-
-
-The \gls{AP} initially produces an impulse force that compresses the membrane. The compressed membrane, while performing a damped oscillation, pushes and pulls the incompressible electrolyte that contains a small amount of dissociated ions, this way (per defitionem)
-creating an observable current and voltage wave. In the 
-positive and negative half periods of the elastic oscillation,
-due to opposite elastic/pneumatic forces, the current and voltage  change their sign. Given that the charges move at their
-Stokes-Einstein speed, the voltage-, current- and pressure waves are synchronized, as observed. The different 
-experimental observations measure the same effect
-by using their disciplinary measuring devices.
-
-\textit{The energy of the ions cannot dissipate; instead, the neutral and charged 
-particles share it}, and convert between kinetic and elastic energies (the electric energy is much smaller).
-That is, the 
-neuron can produce heat in the positive phase of the
-elastic oscillation (the electrolyte is compressed),
-and can reabsorb heat in the negative phase (decompression), in full accordance with the correctly interpreted laws of physics.
-\index{heat absorption by neuron}
-This way, by introducing the correct interpretation of "resistance" for ion channels, the seven-decades-old
-contradiction~\cite{HeatProductionNeuron:1958}
-between the electrical and thermodynamic observations
-are finally resolved, furthermore, the conflicting theories
-can be naturally unified.
+The importance of the subject was correctly estimated decades ago~\cite{UpdateHodgkinHuxley:1990}:
+"For the past forty years, our understanding and our methods
+of studying the biophysics of excitable membranes have been significantly
+influenced by the landmark work of \gls{HH}. Their work has
+had a far-reaching impact on many different life science sub-disciplines where
+concepts of cell biology have come to be important.
+The ionic currents and electrical signals generated by
+neuronal membranes are of obvious importance in the nervous system."
+To fix the flawed and incomplete hypotheses has a similar importance. Recall that if you have the \gls{HH} model in mind, and measure with a voltmeter, you will surely measure
+voltage and current, and nothing more (no other quantity). 
+This way the accompanied other changes can remain hidden.
+\fi
 
 
 
+\ifx\magyar\undefined
+\subsection{Electrolytes\label{sec:Physics-Electrolytes}}	
+\else
+\subsection{Elektrolitok\label{sec:Physics-Electrolitok}}	
+\fi
 
-\subsection{Electrolytes\label{sec:Physics-ElectrolytesConductivity}}	
+
+\ifx\magyar\undefined
 Specific chemical substances can naturally hold either a positive or negative electrical charge and react to their micro-, macro-, and electrical/mechanical/thermodynamic environments.
 A molecule has internal electrical forces that keep its ions in place, so it has two charge centers (dipoles).
 When another dipole or a macroscopic external electrical field (which can be of electrical, magnetic, mechanical, or chemical origin) appears near the molecule, its perturbing effect can affect the relation of the ions to each other.
@@ -157,114 +54,157 @@ The two charge centers initially increase their distance (the molecule polarizes
 "condenser plates", thereby accumulating "potential energy". (The claim that the ions pass through ion channels by using the "downhill method"
 does not use energy, is wrong: they are accelerated by the condenser's field and consume energy in that way.) Depending on their environment, substances can exist in base, ionized, and polarized states (and exhibit corresponding behaviors).
 
+\else
+
+Specific chemical substances can naturally hold either a positive or negative electrical charge and react to their micro-, macro-, and electrical/mechanical/thermodynamic environments.
+A molecule has internal electrical forces that keep its ions in place, so it has two charge centers (dipoles).
+When another dipole or a macroscopic external electrical field (which can be of electrical, magnetic, mechanical, or chemical origin) appears near the molecule, its perturbing effect can affect the relation of the ions to each other.
+The two charge centers initially increase their distance (the molecule polarizes). When that disturbance is strong enough, the ions can entirely separate (the molecule ionizes). The local electrical field fluctuates, so their state is dynamic: molecules dissociate, and free ions recombine. Furthermore, the process also plays an important role in the energy supply of neurons: the strong electric field near the membrane hydrolyzes \gls{ATP} molecules, and moves ions to the
+\index{ATP hydrolysis}
+"condenser plates", thereby accumulating "potential energy". (The claim that the ions pass through ion channels by using the "downhill method"
+does not use energy, is wrong: they are accelerated by the condenser's field and consume energy in that way.) Depending on their environment, substances can exist in base, ionized, and polarized states (and exhibit corresponding behaviors).
+
+\fi
+
 (In physics,
 the term 'polarization' is reserved for the redistribution of charges in multiply charged systems without generating an external current. Changes in the membrane's potential difference are a consequence of complete charge separation (and the movement of slow charges), even though, unfortunately, physiology refers to it as polarization. As discussed below, true polarization is also present, which confuses the description. External currents contribute to the changes of potential.) 
 
 In biological cells, in a resting state, a small (approximately $10^{-3}$) fraction of the molecules dissociates (i.e., ions separate from their counterparts with opposite charges) and moves freely within the volume.
 In other words, an electrolyte liquid can conduct electricity (under the effect of an electrical or thermodynamic field) because the positive and negative ions are mobile. 
-The remaining molecules can be more or less polarized, allowing for the possibility of generating an internal electrical field in the solution. 
+Notice, however, that, unlike the electrons in solids, the ions do not form a "free electron cloud": they must move "in person", that is
+they deliver charge with the speed of the carrier.
+The rest of the molecules can be more or less polarized, allowing for the possibility of producing an internal electrical field in the solution. 
 In a transition state, all components (including ions, molecules, and \gls{ATP}) have gradients, and they move towards their balanced state.
-
-\subsection[Thermodynamic field]{Deriving the "thermodynamic electrical field"\label{sec:Physics-ElectrolyteInhomogeneity}}
-
-In a segmented electrolyte, electrical charges are typically globally balanced; however, they may become locally unbalanced due to physical factors. \textbf{Physics panel~\ref{phys:Nernst-Planck}} describes how the chemical and
-electrical spatial gradients depend on each other,
-\textbf{Physics panel~\ref{phys:EquivalentField_Membrane}}
-shows a practical approximation for calculating it, with 
-the calculated figures in \textbf{Numerics panel~\ref{num:EquivalentField_Membrane}}. 
-
-\physicspanel{phys:Nernst-Planck}{The Nernst-Plack law}
-{
-The Nernst-Planck electrodiffusion equation in a balanced state
-\begin{equation}
-	\frac{d}{dz}V_{m}(z)=-\frac{RT}{q*F}\frac{1}{C_{k}(z)}\frac{d}{dz}C_{k}(z)\label{eq:NernstPlanck}
-\end{equation}
-describes in one dimension the mutual dependence of the \emph{spatial gradients} of the
-electrical and thermodynamic fields on each other. In good textbooks (see, for example,~\cite{KochBiophysics:1999},
-Eq (11.28)), its derivation is exhaustively detailed. In the
-equation, $z$ is the spatial variable across the direction of the
-changed invasion parameter, $R$ is the gas constant, $F$ is the
-Faraday's constant, $T$ is the temperature, $q$ the valence
-of the ion, ${V_m(z)}$ the potential, and ${C_k(z)}$ the concentration
-of the chemical ion. The two sides are the derivatives of the equation
-\begin{equation}
-	V_{m} =\frac{RT}{q*F}\ln{\biggl(\frac{C_{k}^{ext}}{C_{k}^{int}}\biggr)}\label{eq:Nernst1}
-\end{equation}
-\noindent known as \textit{Nernst equation}.  In other words, \textbf{Eqs.(\ref{eq:NernstPlanck}) and Eq.(\ref{eq:Nernst1}) are the differential and integral formulations of the same knowledge}. The limits of the integration are chosen arbitrarily (by choosing the reference concentration $C_{k}^{int}$).
-}
+Here comes into the picture that in the biological structures, the ions are in a closed space and counterforces
+may exert on them. When a mechanical counterforce does not keep back
+an ion, it moves out from a space where electrical or thermodynamic 
+gradient is present. That is, near biological objects that are charged and inside them, in a balanced state, no freely moving ions can be present. 
 
 
 
-%It is a common fallacy in physiology that the applied potential $U$ generates
-%a current. Instead, its gradient ($E=U/d$) has the effect, where $d$ is the distance, for example, between the clamping point and the membrane or the \gls{AIS}.
 
-\physicspanel{phys:EquivalentField_Membrane}
-{The membrane's eqivalent electrical themodynamic field}
-{
-We assume that, in a balanced state, the concentrations on the two sides of the membrane are $C_{k}^{ext}$ and $C_{k}^{in}$, respectively; furthermore we assume that \[\frac{dC_{k}}{dz}\approx\frac{C_{k}^{ext}-C_{k}^{in}}{d}\]
-To simplify the math writing, we neglect the change caused by considering 
-the difference (maybe we should apply a near-unity factor); we use the larger concentration value instead. Using the constants and $T=300$, we can derive the "equivalent thermodynamic electrical field" across the membrane for the case of a permeable ion channel in the membrane
-
-\begin{equation}
-	E_{thermal}^{C_{k}}=-\frac{RT}{q*F}\frac{1}{C_{k}^{ext}}\frac{C_{k}^{ext}-C_{k}^{in}}{d} \approx -\frac{RT}{q*F}\frac{1}{d}
-	\label{eq:NernstPlanckThermal1}
-\end{equation}
-\noindent
-The equivalent thermodynamic electric field does not depend on concentration, but rather is linear in temperature and inversely proportional to membrane thickness (given in $nm$).
-We provide the numerical values in \textbf{Numerics panel \ref{num:EquivalentField_Membrane}} for the case of ion channels in the membrane's wall.
-}
-
-\numericspanel{num:EquivalentField_Membrane}{Neuron's equivalent 
-thermodynamic electrical field}
-{
-It is valid separately for all $C_k$
-\begin{equation}
-	E_{thermal}^{C_k}(d)=-2.585*10^{-2}\frac{1}{d}\quad \biggl[ \frac{V}{m} \biggr] \label{eq:NernstPlanckThermal2}
-\end{equation}
-Figure~\ref{fig:NernstPlanckThermalWidth} depicts the field's dependence on the membrane's width and how it compares
-to the charge-generated electrical field.
-The figure illustrates the setpoint(see section~\ref{Physics-ControlTheory}), the boundaries of the changes, and the interesting phenomena that occur within the shaded cross-section. The figure is an illustration, but its figures are not far from the true ones. For a $5\ nm$ membrane thickness, it results in $5.17*10^{6}\ \frac{V}{m}$, which compares well to the value provided by Eq.~(\ref{eq:ElectricGradient}).
-(Notice that the membrane's thickness may change 
-during the action potential, see~\cite{HeimburgPhysikOfNerves:2009}: 
-the rush-in extra charge compresses the membrane. Similarly, the concentration of the electrolyte in proximity to the membrane 
-also changes.) Correspondingly, by using that $U=E*d$, 
-\begin{equation}
-	U_{thermal}^{C_k}(5)=-25.85\quad \biggl[ {mV} \biggr] \label{eq:NernstPlanckThermal2A}
-\end{equation}
-}
+In the absence of external influences (that includes the lack of a separating membrane),
+both gradients are balanced and are at zero.
+When something perturbs this state, the system attempts to find a 
+new balanced state, using temporal processes.
+The details of how it reserves and restores its balanced state
+are discussed in section~\ref{sec:Physics-NeuronControlCircle}.
+In this scenario, two interactions can influence the 'carrier' (the ion).
+We discussed in section~\ref{sec:Physics-Thermodynamics} and in~\cite{VeghNon-ordinaryLaws:2025} that those phenomena in living matter 
+need deriving and applying 'non-ordinary' laws of science, and the laws of motion of biology can describe the time course of those processes.
+\index{ordinary laws}
+Fundamentally, due to the mixing of interaction speeds, considering only one of the interactions leads to fundamentally incorrect conclusions.
+\index{non-ordinary laws of science}
+\index{laws of motion!of biology}
 
 
 
-\begin{figure}
-	\includegraphics[width=.8\columnwidth]{fig/NernstPlanckThermal.pdf}
-	\caption{
-		The thermodynamic "equivalent electrical field" depends on the membrane's thickness; see Eq.(\ref{eq:NernstPlanckThermal2}). The electrical gradient depends on the charged layer's concentration and thickness; see Eq.(\ref{eq:ElectricGradient}). The dots mark measured data shown in Table \ref{Tab:SummaryTable}.
-		\label{fig:NernstPlanckThermalWidth}
-	}
-\end{figure}
-\index{equivalent electrical field}
+	
+The cellular thermoelectrical phenomena are very complex, and it is
+not a simple task to choose which physical/chemical effects can be
+omitted so that their omission does not prevent us from explaining
+physiological phenomena. 
+When ions are contained in a closed volume,
+they exist in a state of thermal and electrical equilibrium.
+In the absence of external influences (that includes the lack of a separating membrane),
+both gradients are balanced and are at zero.
+When this state is perturbed, the system attempts to find a 
+new balanced state, using temporal processes.
+In this scenario, the 'carrier' - the ion - can be influenced by two different types of interactions, each represented by a distinct abstraction in these processes.
+%˚
+In this section we  discover some conditions how electrical charges in electrolytes, furthermore, electrical and thermodynamic processes (excluding biochemical details)
+cooperate for concerting processes commonly called 'life'.
+We discuss that those phenomena are not against the laws of science, only against discussing them in terms of a single grasped science discipline. 
+\index{disciplinary discussion}
+Simply, the structures in living matter shall be 
+discussed at another abstraction level, and those structures  need deriving and applying 'non-ordinary' laws of science.
+\index{charge separation}
+\index{non-ordinary laws}
+More precisely, we must discuss them in a non-disciplinary way, due to that the participating ions belong simultaneously to the disciplines electricity and thermodynamics.
+When measuring them, we must consider that "the construction is different from anything we have yet tested in the physical laboratory".
+Actually, ions' behavior is not different; the environment ("the construction") is different; see section~\ref{sec:Physics-ThermoConstraints}. 
+\index{constrains}
+Fundamentally, due to \hyperlink{MixingSpeeds}{mixing interaction speeds}, considering only one of the interactions (the disciplinary discussion) leads to wrong conclusions.
+\index{disciplinary discussion}
 
-\physicspanel{phys:EquivalentField_GHK}{The effect of Nernst-Plack law of the GHK equation}
-{
-\paragraph{Warning}
-The potential derived in \textbf{Physics panel~\ref{phys:Nernst-Planck}} inherently comprises an additive term (a potential difference), so they must not be compared directly if they use a different reference $C_{k}^{int}$
-(furthermore, it is nonsense to combine  quantities from the intracellular and extracellular sides additively,
-whether concentrations, mobilities, or Nernst voltages, as it happens in the \gls{GHK} equation (see section~\ref{sec:Goldman-Hodgkin-Katz}).
+	
+We discover that in segmented electrolytes, the interplay of disciplines, especially if the segments have largely different concentrations, produce \hyperlink{DynamicLayer}
+{very thin but important layers}, which, by using '\hyperlink{Maxwell-demon}
+{Maxwell's-demon}'-like objects, produce self-contained phenomena known as 'signs of life' in biology.
+\index{dynamic layer}
+\index{sign of life}
+\index{Maxwell's-demon}
+Furthermore, the features of living matter may change during measuring 
+them (by their internal laws) in a way usual in physics laboratories.
+Given that, in many cases, inappropriate physical principles, notions, and methods are used in
+measuring and modeling neurons,
+we need to discuss 
+the true physics (the correct approximations, valid in cross-disciplinary approach)
+behind biological phenomena.
 
-The derivatives are spatial derivatives; the temporal derivatives (needed for describing the time course) of the concentration(s) and voltage are derived in~\cite{VeghNonOrdinaryLawsForLife:2025}. 
-In 'ordinary' physics, where the charge and mass are independent,
-changing one side changes the other in the opposite direction.
-In 'non-ordinary' physics~\cite{VeghNon-ordinaryLaws:2025}, valid for electrolytes, the two differentials must change in the same direction,
-given that ions' charge and mass cannot be separated 
-(BTW: this is why Eq.~(\ref{eq:Nernst1}) results in a negative potential difference).
-(The derivation in 'ordinary physics', such as ~\cite{KochBiophysics:1999},
-Eq.(11.30), is wrong, at least because of two reasons: the same speed is assumed for mass and charge transport; furthermore, the used partial derivatives are not independent; the details are discussed throughout the paper.)
-}
 
-In simple words, the Nernst-Planck equation states that the changes in
-concentrations of ions create changes in the electrical field (and
-vice versa), and in a stationary state, they remain unchanged.
-Notice that in the case of an ion mixture, \textit{joint charge-generated electrical fields exist, and they are equal, per ion, to the concentration-generated "electrical fields"}, see section~\ref{sec:PHYSICS_RESTINGSTATE}. 
+
+\ifx\magyar\undefined
+
+\subsection[Membrane in electrolytes]{Membrane in electrolytes\label{Physics-MembraneInElectrolytes}}
+
+'touch of God'
+\else
+
+\subsection[Membrán elektrolitban]{Membrán elektrolitban\label{Physics-MembraneInElectrolytes}}
+
+Az elektrolitokban működő membrán alapvető fontosságú a neuronális
+működés számára, így azt részletesebben tárgyaljuk. Az anyag 
+nagy részének megértéséhez azonban még az egyetemi fizikai végzettség sem elegendő, így szokatlanul sok anyagot helyeztünk el a fizika és matematika panelekbe, és azokat a törzs-anyagban megpróbáljuk
+az említett tárgykörökben kevésbé járatos olvasónak is érthetővé tenni. 
+
+A membrán működése szorosan kötődne az élő anyaghoz. Azzal, hogy
+ezt az anyagot a fizikához kötődő részben tárgyaljuk,
+azt kívánjuk hangsúlyozni, hogy nem szükséges valamiféle 
+'életerő' a (avagy 'isteni érintés') a biológiai anyag működéséhez,
+azt a (megfelelően alkalmazott) fizika le tudja írni; bár az
+lényegesen nagyobb körültekintést és diszciplinákon átívelő szemléletet igényel. 
+\fi
+
+\subsection[Inhomogeneities]{Inhomogeneities in the solution\label{sec:Physics-ElectrolyteInhomogeneity}}
+
+In a segmented electrolyte we experience different forces, furthermore, the electrical fields 
+have different sources. For a closed system, the electrical charges are balanced, but locally they may be unbalanced due to physical reasons. 
+In a steady state, some other force must counterbalance
+the mentioned forces. That force may be a mechanical one:
+the ions sitting on the surface of the membrane press the
+surface due to the attractive force on ions and the membrane mechanically provides the needed counterforce.
+In addition, due to a concentration gradient, a thermodynamic force may act on the ions.
+
+
+When any inhomogeneity is present (an ion is forcefully moved, by investing energy, to a place other than the one which is needed to be in a steady state), the ions may move due to different reasons, which, per definitionem, means current (and means potential energy).
+Notice the important aspect that, at a microscopic level, moving an ion simultaneously
+means redistributing charge and mass. At a macroscopic level, it results in simultaneous changes in the local macroscopic characteristics such as concentration and potential. These observations are expressed by
+Onsager's reciprocal relations~\cite{OnsagerExperimental:1959}.
+
+
+That means when describing an ionic transfer process, \textit{we must not separate the electrical current from the mass transfer}: they happen simultaneously, and mutually trigger each other.
+Notice that \textit{the thermodynamic term is ion specific, while the electrical term is not}. To be entirely balanced, the system must be balanced to all elements.
+In this way, changing one concentration implicitly changes all other concentrations and the electrical field.
+
+It is a huge mistake to introduce \indexit{equivalent electrical circuit}s with their fixed-voltage voltage generators. It forces one to assume that the
+\indexit{conductance}s of the players (membrane, synapses, \gls{AIS}) 
+change 
+without any reason, and prevents understanding how the competition of the thermodynamic and electrical processes govern neuronal operation.
+It leads, among others to attributing conductance change to membranes  which are simple isolators with no charge carriers that could implement
+charge transfer, see section~\ref{sec:IonicCurrent}.
+This assumption neglects the driving force the mentioned forces provide. 
+Instead, it attributes the magic ability to the ion channels that they
+can change their transmission ability as the actual situation requires, without having driving force.
+This approach obscures that biological electricity is of 
+thermodynamic origin, and block understanding neuronal operation,
+that is the brain's understanding.
+%There is no linear combination of fields for the different components as the GHK equation claims; mainly because -- as we discussed --
+%the changed reference concentration changes the voltage offset.
+
+
+\subsection{Force analyzis\label{sec:Physics-MembraneForces}}
+
 
 In the steady state, some other forces also contribute to
 the mentioned forces. To discuss how nature restores the steady state when a microscopic change happens in a
@@ -277,6 +217,7 @@ equation (see Eq.(\ref{eq:NernstPlanck})) in a slightly extended form:
 We multiplied the usual two terms by the elementary charge, so its terms are expressed as forces, plus we added a transport-related external force (its role is discussed below).
 Furthermore, changing one force triggers a corresponding counterforce and/or causes the ion to move in a viscous fluid.
 (An excellent summary of the possible biology-related forces is given in \cite{QuantitativeBiophysicalForces:2014}, with a lot of cited references.) 
+
 This equation, expressing Newton's first law, has no place for effects such as "Pumps that maintain
 ion gradients \dots transport ions \textit{against their
 	electrical and chemical gradients}"~\cite{PrinciplesNeuralScience:2013}, page 101. It implies some \textit{new force} that moves ions,
@@ -299,6 +240,26 @@ The thermodynamic contribution also means a pressure from the colliding particle
 
 \subsection{One segment\label{sec:Physics-OneSegment}}
 
+
+We prepare a tiny electrolyte volume filled with a solution containing
+ions (such as $Na^+$, $K^+$ and $Ca^+$; furthermore, of course $Cl^-$ or similar). The overwhelming majority of those ions 
+is chemically bound, but a minority might exist separately from each other; especially under external macroscopic changes  applied to the volume.  
+For the discussion below, we assume that the segment has a two-dimensional surface boundary (see Fig.~\ref{fig:Physics-MembranePotential_Kandel6-1}) and we discuss the gradients along a line, perpendicular
+to that plane surface.
+We compose the segments from such layers (sheets), $(x,y)$ 
+parallel plates, and describe the gradients in direction of $z$.
+Having the membrane's shape in mind, we introduce the idea of 'thin physical layer', that is parallel with the membrane and has a finite width. 
+We compose the segments from such layers having different potentials.
+
+
+We assume that when ions are present in an electrolyte having concentration $c$ 
+in a 'conducting layer' of thickness $\Delta z$ on an isolating surface, they produce such an electrical field. Furthermore, we assume
+that the electrical field is formed (after integrating the contributions of the rings over the surface) as shown in Fig.~\ref{fig:Physics-PointCharge}
+(for deriving that equation, see section~\ref{sec:Physics-LayersInSegment}).
+Notice that here we run into conflict between the 'infinitely thin'
+layer of physics and the biologically implemented 
+(finitely) 'thin physical layer', so we use a thickness parameter $\Delta z$.
+
 For the discussion below, we assume that the segment has a two-dimensional surface boundary, and we discuss the gradients along a line perpendicular
 to that plane's surface.
 We neglect the electrokinetic and surface-related electrical effects connected to membranes and nanopores~\cite{OriginMembranePotential:2018} and focus
@@ -306,6 +267,13 @@ on the balanced state of membranes in ionic solutions.
 We compose the segments from such layers (sheets), $(x,y)$ 
 parallel plates, and describe the gradients in the direction of $z$.
 We introduce the concept of a 'thin physical layer' parallel to the membrane, characterized by a finite width. The detailed calculations are shown in \textbf{Numeric panel~\ref{num:MembraneOneSegment}}.
+
+\begin{figure}
+	\includegraphics[width=.85\textwidth]{fig/eled.png}
+	
+	\caption{\href{http://hyperphysics.phy-astr.gsu.edu/hbase/electric/imgel2/eled.png}{The electrical field of a disc of charge} can be found by superposing the point charge fields of infinitesimal charge elements. This can be facilitated by summing the fields of charged rings.\label{fig:Physics-PointCharge}}
+\end{figure}
+
 
 \numericspanel{num:MembraneOneSegment}{The electric field of a physical charged sheet}
 {
@@ -343,13 +311,44 @@ in a 'conducting layer' of thickness $\Delta z$ on an isolating surface, they pr
 
 \subsection{Two segments\label{sec:Physics-TwoSegments}}
 
+Now, we split the volume into two segments and compose compose the segments from 'thin physical layers' (sheets) having different concentrations (and such potentials) of ions.
+We assume the membrane is transparent
+for the electrical interaction (the electrical field affects the ions
+in the other segment on the other side of the membrane) but not for
+their masses (mechanically separates the segments). 
+Separating a volume into two segments by a thin membrane has no initial effects: it actually does not affect the electrical and thermal distributions; the
+\emph{bulk} concentration and potential remain the same on the two
+sides of the membrane (even the double layers are electrically neutral).
 
-Now, we split the volume into two segments and compose them from 'thin physical layers' (sheets) with different potentials (and concentrations).
 We consider the immediate environment of the neuron's membrane
 as adjacent parallel $(x,y)$ plates and find the electrical field's $z$ component of those plates in the points
-as shown in Fig.~\ref{fig:Physics-PointCharge}. \textbf{Physics panel~\ref{phys:ClassicalCondenser}} discusses  the difference between the classical and biological condenser.
-Furthermore, \textbf{Physics panel~\ref{phys:CondenserBoundaryProblem}} discusses 
+as shown in Fig.~\ref{fig:Physics-PointCharge}. 
+\hyperlink{phys:ClassicalCondenser}
+{\textbf{Physics panel~\ref{phys:ClassicalCondenser}}}
+discusses  the difference between the classical and biological condenser.
+Furthermore,
+\hyperlink{phys:CondenserBoundaryProblem}
+{\textbf{Physics panel~\ref{phys:CondenserBoundaryProblem}}}
+discusses 
 the issues with the ill-defined biological boundaries.
+
+
+We consider the immediate environment of the neuron's membrane
+as adjacent parallel $(x,y)$ plates and find the electrical field's $z$ component of those plates in the points
+as shown in Fig.~\ref{fig:Physics-PointCharge}.
+%
+In classical electricity, the charge remains on the surface of the conducting layer and the electrical field is zero inside the conducting layer; the electrical 
+field contributions cancel each other.
+In electrolyte segments, (a tiny fraction of) the molecules decompose into an ionized state (dissociate), see Fig.~\ref{fig:Physics-MembranePotential_Kandel6-1}, and the created ions interact with a bounding
+membrane using a not entirely understood mechanism~\cite{MembraneBindingDipole:2025}.  Although not explicitly, we consider \href{https://www.sciencedirect.com/topics/engineering/electric-double-layer}{electrical double layers} to be present proximate to the membrane and ions of the dispersion medium are adsorbed on the particle's surface; depending on the chemical features of the medium.
+
+
+
+Although it is not discussed in the classical textbooks, the rest of the dipole molecules get polarized, but do not dissociate; in this way forming virtual charges. Unlike in the conductors, the electrolyte segment next to the surface layer contains dipole molecules,
+that have more or less balanced charges (the polarization depends also on the external electrical field), so they have much less mobility than the dissociated ions: their size and mass is by orders of magnitude bigger and their electrical force is a fragment of that of the ions. Their charge is virtual: it comes to light only in the appropriate environment, but creates an electrical field in the same way as real charge does. The final reason of creating virtual charges are real charges and/or external fields, so an electrical field due to virtual charges can exist also 
+inside dielectrical matters such as biological cells.
+
+
 
 
 %
@@ -366,14 +365,6 @@ The Donnan function is a (discontinuous) step-like potential.
 Its continuous version introduces a mathematically smooth,  non-physical function at the boundary of the charged layer.
 One must describe a physically discontinuous layer (electrolyte, ion layer on the membrane's surface, and isolating membrane) with a single continuous function and gradients (potential and concentration) with physical meaning.
 }
-
-%
-\begin{figure}
-	\includegraphics[width=.8\columnwidth]{fig/eled.png}
-	
-	\caption{\href{http://hyperphysics.phy-astr.gsu.edu/hbase/}{The electrical field of a disc of charge} can be found by superposing the point charge fields of infinitesimal charge elements. This field can be facilitated by summing the fields of charged rings.\label{fig:Physics-PointCharge} “From Hyperphysics by Rod Nave, Georgia State University". \copyright hyperphysics.phy-astr.gsu.edu/hbase/
-	}
-\end{figure}
 
 \physicspanel{phys:CondenserBoundaryProblem}
 {The boundary problem of a physics condenser}
@@ -399,7 +390,7 @@ The membrane does not need to generate any counterforce (except for collisions).
 }
 
 
-\subsubsection{Charge layers in segments\label{sec:Physics-LayersInSegment}}
+\subsection{Charge layers in segments\label{sec:Physics-LayersInSegment}}
 
 As we show, the finite thickness will result in
 a lack of balance (introducing inhomogeneity and creating a voltage and concentration gradient) proximal to the surfaces of the membrane, even if the concentrations on the two sides are the same. Changing the
@@ -783,277 +774,6 @@ scalable.
 %Our artificial duck looks, quacks, and swims like a duck. 
 
 
-\subsection{Ionic currents in a cell\label{sec:IonicCurrent}}
-
-
-On a microscopic scale, a charge generates a potential field that acts on other charges. It is a common fallacy in physiology that a "potential field travels": neither potential nor current changes without a physical movement of charges. In a conducting wire filled with ions (the solids have a different current transfer mechanism), there are free charges; their
-number per unit volume is given by $n$, and $q$ is the amount of
-charge on each carrier. If the conductor has a cross-section of $A$,
-in the length $dx$ of the wire, we have charge $dQ=q*n*A*dz$. If the charges move with a macroscopic speed $v=\frac{dz}{dt}$, 
-at the macroscopic level, we define the current $I$ as the charge moved per unit of time as
-\begin{equation}
-	I=\frac{dQ}{dt}=q*n*A*v\label{eq:DriftCurrent}
-\end{equation}
-The effect was hypothesized at the very beginning: "it seems difficult to escape the conclusion that the changes
-in ionic permeability depend on the movement of some component of the
-membrane which behaves as though it had a large charge or dipole moment."
-"it is necessary to suppose
-that there are more carriers and that they react or move more slowly"~\cite{HodgkinHuxley:1952}. The charged ions, attracted by the opposite charges on the other plate and repelled toward the single exit point \gls{AIS}, really move slowly and behave as if they were a component of the membrane.
-
-Notice that if any of the factors is zero, the macroscopic current
-$I$ is zero. \textit{Microscopic carriers must be present in the volume},
-and have charge, the cross section must not be zero, and the charge
-carriers must move with a potential-assisted speed, which needs an
-electrical field generated by the system, see Eq.(\ref{eq:IonicForces}).
-When there is no constraint force, the thermodynamic and electrical forces will produce an effective force that moves the ions.
-That is, the ions can move without an external electrical field, as experienced
-in biological systems. 
-One of the fundamental mistakes by \gls{HH} was neglecting the Coulomb force in ion-electrical interactions and assuming that diffusion processes or ideal electrical batteries create the electrical potential.
-
-In biological systems, where ions represent the "current", it is either a native current (without an external potential) or an artificially injected current or potential generating a current.
-This way, the current is consistently accompanied by a change in concentration gradient, as the moving ions represent both mass and charge transfer simultaneously (also, the repulsion leads to a "skin effect": in electrical wires and axons, the charge travels near
-the outer surface).
-The potential and current are
-connected through the features of the medium (material) that hosts
-our measurement. 
-%One must not forget that "Unfortunately, most measuring devices in neurophysiology are precise without being accurate"~\cite{JohnstonWuNeurophysiology:1995}. So are some definitions, too.
-%Definitions and measurements that are not accurate lead to incorrect results.
-%They may be precise, but they are not accurate.
-
-%\subsubsection[Speed]{Current's speed\label{sec:Calculating-ion's-speed}}
-According to Stokes' Law, to move a spherical object
-with radius $a$ in a fluid having dynamic viscosity $\eta$, we need
-a force
-%
-\begin{equation}
-	F_{d}=6*\pi*\eta*a*v\label{eq:StokesForceOnIon}
-\end{equation}
-
-\noindent (drag force) acting on it. A (microscopical) electrical force
-field $\frac{dV}{dz}$ inside the wire would accelerate the charge
-carriers continuously
-%
-\begin{equation}
-	F_{electric}=k* E(z) * q
-\end{equation}
-\noindent with a constant speed $v$. It is not the \emph{drift} speed because of the
-electrical repulsion, it is a \emph{potential-assisted} or \emph{potential-accelerated} speed that can
-be by orders of magnitude higher.  
-The medium in which the charge moves shows a (macroscopic,
-speed-dependent) counterforce $F_{d}$, which in steady state equals
-$F_{electric}$, that is :
-%
-\begin{equation}
-	I=\frac{k*q^{2}*A}{6*\pi*\eta*a}*n*E(z)
-	\label{eq:StokesCurrent}
-\end{equation}
-
-We extend the original idea by using
-\[
-E(z)  = E_{electric} + E_{thermal} + E_{external}\quad in\ electrolytes
-\]
-that is, for living matter
-\begin{align}
-	E(z) & = \frac{\Delta V}{\Delta z} & in\ linear\ potential\\
-	& = \frac{dV}{dz} & in\ graded\ potential\\
-	& = E_{electric} + E_{(thermal)}  (+ E_{(external)}) & in\ electrolytes
-\end{align}
-
-\textit{The amount of current in a wire is not only influenced by the electric
-	force field (specific resistance) but also by the number of charge
-	carriers $n$.} While the latter is commonly considered constant and
-part of the former, this is not necessarily the case for biological
-systems with electrically active structures inside. The medium's internal
-structure ("the construction) introduces significant modifications. \textit{Applying an electric
-	field to a biological wire can generate varying amounts of current as the number
-	of charge carriers changes due to biological effects.} For axons, we use a single-degree-of-freedom
-system, a viscous damping model, so the \textit{ions will move with
-	a field-dependent constant velocity in the electrical field}; so it takes time while they appear on the membrane.
-The activity of potential-controlled ion channels in its wall may
-change $n$ in various ways; furthermore, that change can result in
-'delayed' currents during measurement, for example, in clamping, as physiological measurements witness.
-
-If we have a concentration
-$C(z)$, in the volume $A*dz$, we have $dQ=C(z)*A*dx*q$
-charge, resulting in another expression for the current
-
-\begin{equation}
-	I=\frac{C_k(z)*A*dz*q}{dt}=C_k(z)*A*q*v\label{eq:ConcentrationCurrent}
-\end{equation}
-By combining equations (\ref{eq:StokesCurrent}) and (\ref{eq:ConcentrationCurrent}): 
-\hypertarget{eq:StokesLawSpeed}{ }
-\begin{equation}
-	v(z)=\frac{k*q}{C_k(z)*\eta*6*\pi*a}*E(z)\label{eq:StokesSpeed}
-\end{equation}
-
-The higher the resulting space derivative (gradient) and the fewer ions that
-can share the task of providing a current, the higher the speed. We hypothesized (it needs
-a detailed simulation) that in the case of this charged fluid, the
-electrical repulsion plays the role of 'viscosity'~\cite{VeghNonOrdinaryLawsForLife:2025}. The higher the charge
-density, the stronger the force equalizing the potential; so $\eta$
-is the lower, the higher the charge density (proportional to $C_{k}$).
-For the sake of simplicity, we assume that the speed is proportional
-to the space gradient of the local concentration and potential. Recall that \emph{our equations
-	refer to local gradients only. The electrical gradient can propagate
-	only with the speed of the concentration gradient}, given that only
-the chemically moved ions can mediate the electrical field~\cite{VeghNonOrdinaryLawsForLife:2025}. \emph{The
-	lower interaction speed limits the other interaction speed if the
-	interactions generate each other.}
-
-The dependence of the diffusion coefficient on the viscosity can be modeled by the Stokes-Einstein relation:
-\index{Stokes-Einstein relation}
-\begin{equation}
-	\label{eq:StokesEinstein}
-	D = \frac{k*T}{6*\pi*\eta*a}
-\end{equation}
-so we can express the speed with the diffusion coefficient $D$ and temperature $T$
-\begin{equation}
-	v(z) = \frac{D}{T}*\frac{q}{C_k(z)}*E(z)\label{eq:StokesEinsteinSpeeddV}
-\end{equation}
-We introduce \textit{a time-dependent speed gradient
-	$v(z,t)$
-	which plays a vital role in the processes that occur in living matter}.
-
-
-It is important to remember for alternating current experiments: 
-the different ions will move at different speeds
-under the effect of the same $E(z,t)$, which is the function of
-the local concentrations and the frequency of the alternating current.
-The conduction speed sensitively depends 
-on the temperature, and through it, the shape parameters~\cite{APTemperatureDependence:2012} of the \gls{AP} and especially the length of the "relative refractory" period~\cite{APTemperatureDependenceRefractory:2001}.
-
-\subsection{Imitating slow currents\label{sec:SlowCurrent}}
-At the dawn of finding methods for describing neuronal operation,
-\gls{HH}
-published high-precision measurements~\cite{HodgkinHuxley:1952}
-enabling detailed testing of theories explaining the observed physiological
-behavior. \emph{Their good physical model that }``movement
-of any charged particle in the membrane should contribute to the total
-current'' \emph{lacked considering the mutual repulsion and finite speed} of those particles (they are about 50,000 times heavier and a million times slower than the electrons, and they move in a closed space segment). Furthermore, 
-they have started from the commonly used wrong assumption that conductance
-is a primary electrical entity.
-They could "find equations which describe the conductances with
-reasonable accuracy and are sufficiently simple for theoretical calculation of the \gls{AP} and refractory period".
-The "reasonable accuracy" and the need for a simple calculation method (performed on a mechanical calculator) obscured
-the fact that the laws for electrons are not the same as the laws derived for ions.
-
-As discussed in connection with Eq.~(\ref{eq:DriftCurrent}),
-the current depends linearly on the number of charge carriers $n$.
-The physical processes changing the number of charge carriers
-also define the intensity of the currents, providing a way to imitate
-slow currents by fast currents (by using current generators using special function shapes), where the spatiotemporal time course of the physical process of producing ions in the system modulates the number of charge carriers.
-
-
-As an example, we discuss the case of slow current
-traveling in an axon.
-The ions travel a finite distance with
-a finite speed, so there must be a delay between their entry and exit times. The case of switching a clamping voltage
-on, to some measure, is analogous to the arrival of a spike. Initially, the axon contains
-no ions. 
-%The front evoked by a step function is linear because of
-%the slow current. 
-In the classical picture, the axonal current flows into the membrane with
-capacity $C_{m}$ and increases the membrane's voltage $V_{m}$
-with a time constant 
-\begin{equation}
-	\frac{dV_{m}}{dt}=-\frac{1}{C_{m}}I_{axon};\ V_{m}(t)=\frac{I_{wall}*(1-e^{-\alpha*t})}{C_{m}}\label{eq:MembraneCurrent}
-\end{equation}
-%
-\noindent that generates a change in the membrane current
-\begin{equation}
-	\frac{dI_{m}}{dt}=\frac{1}{R_{m}}\frac{dV_{m}}{dt};\ I_{m}^{on}(t)=g_{m}(V)V_{m}(t)\label{eq:TimeDependentConductance}
-\end{equation}
-\noindent where $g_{m}=\frac{1}{R_{m}}$ is the conductance of the
-membrane. That is, the measurable current equals the product of the conductance
-and the clamping voltage. Equs.\emph{(3)-(5) in~\cite{HodgkinHuxley:1952}}
-express this relation\emph{. If we assume that the axonal current
-	is ``fast'', we arrive at the wrong conclusion that the conductance
-	is voltage- or time-dependent.}
-In contrast, if we assume that the axonal current is ``slow'',
-we naturally conclude that Ohm's Law is correct and valid also for
-biology: \textit{the conductance/resistance is constant, but the number of charge carriers changes}, see section~\ref{sec:IonicCurrent}.
-
-\emph{There is no voltage-dependent conductance}~\cite{KochVoltageDependentConductance:1999}.
-Instead, the finite speed of ions and the wrong assumption that conductance
-is a primary entity mislead physiological research.\emph{ With wording
-	that "conductance changes", one states that charge carriers
-	appear/disappear/reappear; that is, the charge and mass conservation are not
-	fulfilled}. Claims such as "the current cannot disappear, it has to go somewhere"~\cite{KochBiophysics:1999}, page 9, are wrong: \textit{there is no conservation law for current, which is the derivative of charge with respect to time}. 
-%However, there are conservation laws for charge and mass.
-The correct physics background behind the early phenomenon~\cite{COLE_CURTIS_IMPEDANCE:1939} is that the number of charge carriers, at the cross section where the measurement is carried out, changes as a wave of ions with variable intensity moves slowly along the axon (they are apparently ``created'' for the static measurement arrangement). The changing conductance is a fallacy stemming from the idea of "fast current", which is valid for electrons but not for slow ions. 
-
-In contrast, when the clamping voltage is switched off, the axon is still
-filled with charge carriers. The resting potential reaches the end
-at the membrane ``instantly'' (in this situation, the conduction mechanism is similar to that in metals). The driving force disappears, the
-ion stream stops, and the ions discharge into the membrane. The lack and
-the presence of ions in the axon when switching clamping on and off, respectively, produce the difference that ``\emph{conductances [actually, currents]
-	increase with a delay when the axon is depolarized but fall with no
-	appreciable inflexion when it is repolarized}''~\cite{HodgkinHuxley:1952}.
-The potential is equalized by the \gls{AIS}
-current, producing a net exponential decay:
-%
-\begin{equation}
-	I_{m}^{off}=I_{Wall}*e^{(-\frac{\alpha}{R_{m}C_{m}}*t)}\label{eq:I_Membrane_Off}
-\end{equation}
-
-During the regular operation of a neuronal membrane, after opening
-the ion channels, a vast amount of ions flows into the intracellular
-space from the extracellular space, somewhat similar to the effect of switching
-a clamping voltage. The essential difference is that
-the ions arrive through the axon to the joining point in clamping. In contrast, through the membrane's ion channels, they directly contribute to the current on the membrane’s entire surface. The membrane's size is finite, so with a finite
-current speed, it takes time until the charges on the membrane's surface
-arrive at the \gls{AIS}, as discussed for the
-axonal current.
-Fig.~\ref{fig:HHFig2Simple} shows the measured rising and falling edges
-of the clamping experiment performed by \gls{HH}~\cite{HodgkinHuxley:1952}.
-The continuous lines show the 
-diagram lines fitted to the experimental data (notice again that the fitted polynomial significantly differs from  the correct exponential function around the time 0.5~msec); the dashed line shows the expected result of the rising edge, calculated with the time constant of the falling edge. The number of charge carriers follows a saturating curve, which decreases the current in the axon.
-\gls{HH} measured that their time constants differ far outside
-their experimental error, which would not be possible if they were
-the result of the charge-up and discharge of the same oscillator circuit.
-The measured rising edge corresponds to a charge-up process where the 
-charge-up current is a saturating curve due to the change in the number of
-charge carriers in the axon; see Eq.(\ref{eq:StokesCurrent}).
-
-
-\begin{figure}
-	\includegraphics[width=0.95\textwidth]{fig/HodgkinHuxleyFig2Simple.pdf}
-	\caption{The measured current, instead of conductance, (Fig.~2 from~\cite{HodgkinHuxley:1952}), demonstrating that two different physical effects result in the rising and falling edge of the measured current.
-		\label{fig:HHFig2Simple} }	
-\end{figure}
-
-
-
-The \textit{slow} input
-currents (although due to slightly differing
-physical reasons for the different current types) are described by
-the following analytic form valid for \textit{fast} currents:
-\begin{equation}
-	I_{in}=I_{o}*(1-\exp(-\frac{1}{\alpha}*t))*exp(-\frac{1}{\beta}*t)\label{eq:BioCurrentForm}
-\end{equation}
-
-
-\begin{figure}
-	\includegraphics[width=0.95\textwidth]{fig/MasonPSPlin.pdf}
-	\caption{The \gls{PSP} shape measured by~\cite{SynapticTransmissionMason:1991} and fitted by function forms
-		given by  Eq.(\ref{eq:BioCurrentForm}).
-		\label{fig:MasonPSP} }	
-\end{figure}
-
-\noindent where $I_{o}$ is the current amplitude per input, and $\alpha$
-and $\beta$ are timing constants for current in- and outflow, respectively.
-They are (due to geometrical reasons) approximately similar for the
-synaptic inputs and differ from the constants valid for the rush-in
-current. To implement such an analog circuit with a conventional electronic
-circuit, voltage-gated current injectors (with time constants around
-1~msec) are needed.
-For example, see in Fig~\ref{fig:MasonPSP} the \gls{PSP} measured function shape published in~\cite{SynapticTransmissionMason:1991}, fitted with our theoretical function Eq.(\ref{eq:BioCurrentForm}). The corresponding voltage derivative is as follows:
-
-\begin{equation}
-	\frac{dV_{in}}{dt}=\frac{I_{o}}{C}*\biggl(\frac{1}{\alpha}*exp(-\frac{1}{\alpha}*t-\frac{1}{\beta}*t)-\frac{1}{\beta}*exp(-\frac{1}{\beta}*t)*exp(1-exp(-\frac{1}{\alpha}*t))\biggr)\label{eq:PSPderivative}
-\end{equation}
-
-
 
 
 \section{Forming membrane's potential\label{sec:Physics-FormingPotential}}
@@ -1235,7 +955,7 @@ comprises issues (the $Ca^{2+}$ concentration in all cases is inaccurate and had
 \renewcommand{\arraystretch}{1.3}
 \begin{table}
 	\caption{The summary data table for equilibrium (Data from Table 2.1 in\cite{JohnstonWuNeurophysiology:1995} ) \label{Tab:SummaryTable}}
-	\begin{tabular}{ |p{0.6cm}||p{0.7cm}|p{0.9cm}|p{3.0cm}| p{0.85cm}| p{0.85cm}| p{0.85cm}|p{0.6cm}|p{0.85cm}|}
+	\begin{tabular}{ |p{0.6cm}||p{0.7cm}|p{0.9cm}|p{3.0cm}| p{0.85cm}| p{0.85cm}| p{0.95cm}|p{0.65cm}|p{0.90cm}|}
 		\hline
 		\hline
 		Ion& Inside &Outside &  $U_{therm}\frac{RT}{zF} log\bigl( \frac{[C]_{o}}{[C]_{i}}\bigr)$ &$U_{electr}^{theor}$&$U_{electr}^{exper}$&$U_{membr}$&Width&$E_{membr}$\\
@@ -1286,7 +1006,8 @@ Dedicated, complete investigations can reveal the details.
 \begin{figure}
 	\includegraphics[width=.8\columnwidth]{fig/RestingPotential4.pdf}
 	\caption{The mechanism of producing \gls{AP} (using numbers referring to the case of squid shown in Table~\ref{Tab:SummaryTable}). In the resting state, the inside thermal potentials follow the green paths.
-		When the rush-in of $Na^+$ ions suddenly increases the internal concentration to $[200]$, the potential on the internal side of the membrane increases to $+90\ mV$. The neuron must decrease its concentrations to restore the resting potential, mainly by releasing an action potential through the \gls{AIS}.
+		When the rush-in of $Na^+$ ions suddenly increases the internal concentration to $[200]$, the potential on the internal side of the membrane increases to $+90\ mV$. The neuron must decrease its $Na^+$  concentrations to restore the resting potential, mainly by releasing an action potential through the \gls{AIS}.
+If the clamping fixed the mebrane's voltage at the peak voltage of the \gls{AP}, the neuron must release $K^+$ ions until its reaches concentration [Na50,K7].	
 		\label{fig:RestingPotential4}
 	}
 \end{figure}
@@ -1559,3 +1280,211 @@ When adding a new ion to the solution, the sum concentration
 increases, and so the electrical force increases, forcing the previous 
 elements to find new concentrations on both sides.
 The appearance of a new chemical element indirectly changes the concentrations of the others (a good example is the role of the negligible amount of $Ca^{2+}$).
+
+
+\physicspanel{phys:EquivalentField_GHK}{The effect of Nernst-Plack law on the GHK equation}
+{
+\paragraph{Warning}
+
+The potential derived in \hyperlink{phys:Nernst-Planck}
+{\textbf{Physics panel~\ref{phys:Nernst-Planck}}}
+ inherently comprises an additive term (a potential difference), so they must not be compared directly if they use a different reference $C_{k}^{int}$
+(furthermore, it is nonsense to combine  quantities from the intracellular and extracellular sides additively,
+whether concentrations, mobilities, or Nernst voltages, as it happens in the \gls{GHK} equation (see section~\ref{sec:Goldman-Hodgkin-Katz}).
+
+The derivatives are spatial derivatives; the temporal derivatives (needed for describing the time course) of the concentration(s) and voltage are derived in~\cite{VeghNonOrdinaryLawsForLife:2025}. 
+In 'ordinary' physics, where the charge and mass are independent,
+changing one side changes the other in the opposite direction.
+In 'non-ordinary' physics~\cite{VeghNon-ordinaryLaws:2025}, valid for electrolytes, the two differentials must change in the same direction,
+given that ions' charge and mass cannot be separated 
+(BTW: this is why Eq.~(\ref{eq:Nernst1}) results in a negative potential difference).
+(The derivation in 'ordinary physics', such as ~\cite{KochBiophysics:1999},
+Eq.(11.30), is wrong, at least because of two reasons: the same speed is assumed for mass and charge transport; furthermore, the used partial derivatives are not independent; the details are discussed throughout the paper.)
+}
+
+\ifx\magyar\undefined
+\numericspanel{phys:ForceFromElasticMembrane}{The elastic force}
+{
+For this calculation
+we can use the identity that
+\\
+\SI{1}{\volt\per\meter}
+== \SI{1}{\newton\per\coulomb} == \SI{1}{\meter\kg\per\sec^2 \per\coulomb}
+\\
+A $100~mV$ damped oscillation of $1 kHz$ (1 msec period) has the form ($A$ is the amplitude of the motion of an ion
+\\
+$A(t)=A\times e^{-\zeta*t}\times cos(\omega\times t)$
+\\ Here we do not consider the discharge process for the moment.
+\\Dividing with the mass of ion and multiplying with its charge, 
+
+We assume that moving $10^7$ charges with frequency $\omega$ and amplitude $A$ generate the voltage, and calculate the
+time derivative (for a moment we omit the discharge tag)
+
+\[
+\frac{10^{-1}}{10^7} \bigg[\frac{V}{m}\bigg] \bigg[\frac{1}{s}\bigg]
+= A\times \frac{3.86\times 10^{-26}}{1.6\times 10^{-19}} \times \omega \bigg[\frac{1}{s}\bigg] \times sin (\omega\times t) \bigg[\frac{m}{s^2}\bigg]
+\]
+
+that is
+\[
+1\ [V] 
+= A[m] \times 2.4 \times \omega \times sin (\omega\times t) \bigg[\frac{m}{s^2}\bigg]
+\]
+
+and the second derivative
+\[
+1\ [V]
+= A[m] \times 2.4 \times \times \omega^2 \times cos (\omega\times t) \bigg[\frac{m}{s^2}\bigg] \bigg[\frac{1}{s}\bigg]
+\]
+
+
+with frequency $\omega$
+\[
+1[V] 
+= \frac{A}{1.6\times 10^{-11}} \times \omega^2 \times cos (\omega\times t) \bigg[\frac{kg\times m}{s^2}\bigg] \]
+
+Since $\omega=10^{3}$,
+
+\[
+1 [V] 
+= \frac{A\,[m]}{1.6\times 10^{-5}} \times cos (\omega\times t) \bigg[\frac{kg\times m}{s^2}\bigg] 
+\]
+
+That is, the amplitude of the motion of an ion is about $0.2\ \mu m$. Using the second derivative, we can estimate the (maximal) force: 
+\[
+	F [N] = 3.82 \times 10^{-26} [kg]\times 1.6 \times 10^{-5} \times (10^3)^2 \bigg[\frac{m}{s^2}\bigg]
+\]
+The maximum force from the elastic wave is
+\[
+F = 6\times 10^{-25} [N] 
+\]
+
+Compare the value to \textbf{\hyperlink{phys:CellForceinField}{Physics Panel~\ref{phys:CellForceinField}}}
+}
+
+\else
+
+
+
+\numericspanel{phys:ForceFromElasticMembrane}{A rugalmas erő}
+{
+
+Amint a  
+\textbf{\hyperlink{phys:CellForceinField}{Numerics panel~\ref{phys:CellForceinField}}} bemutatta, a rush-in utáni 
+pillanatban egy ion $F_{max} = 1.6*10^{-12}\ [N]$ erőt fejt ki a membránra.
+A membrán ugyanekkora kényszererőt fejt ki az ionra. 
+A membrán mozgását leíró egyenlet által meghatározva, az ionra ható rugalmas erőt a
+\[
+F(t) = F_{max}\times e^{-\zeta*t}\times cos(\omega\times t)
+\]
+\noindent 
+egyenlet adja meg. A \textbf{\hyperlink{phys:RushinSpeed}{Numerics panel~\ref{phys:RushinSpeed}}} szerint a rush-in után az \gls{AIS}-en
+legfeljebb
+%
+\begin{equation}
+	F_{Na^+}= 2*10^3  [N/C] \times 1.602* 10^{-19} [C] = 3.2*10^{-16}\ [N] \label{eq:ElecticForce}
+\end{equation}
+%
+\noindent
+elektromos erő mozgatja az ionokat. A rush-in által generált gradiens és
+erő kb. ugyanilyen nagyságú, hasonlóan a termodinamikai gradiens is.
+Eszerint a maximális rugalmas mozgató erő több mint két nagyságrenddel nagyobb mint a maximális elektromos erő, így a csillapított rugalmas rezgés szinte tökéletesen leírja az \gls{AP}-t. A rugalmas erő oszcillál, ezért annak domináns hatása nem állandó.
+
+%Ehhez a számításhoz felhasználjuk a
+%\\
+%\SI{1}{\volt\per\meter}
+%== \SI{1}{\newton\per\coulomb} == \SI{1}{\meter\kg\per\sec^2 \per\coulomb}
+%\\
+%azonosságát. Egyszerűsített fizikai képünkben $10^7$ ion együttes rezgőmozgása
+%generálja a mérhető, $\omega$ frekvenciájú $V_{max}$  elektromos hullámot, amelyben az ionok $A$ amplitúdóval mozognak. A rezgőmozgásból eredő feszültséghullámot a
+%
+%\[
+%V(t) = V_{max}\times e^{-\zeta*t}\times cos(\omega\times t)
+%\]
+%\noindent
+%formula írja le. A $10^7$ ion $A$ távolságban 
+%\[
+%E \bigg[\frac{V}{m}\biggr]=\frac{e_{el}}{4\times \pi\times \epsilon_\circ \times A^2}
+%= 9\times 10^9 \big[\frac{N\,m^2}{C^2}\big] \times \frac{1.6\times 10^{-19} [C]}{A^2 [{m^2}]}
+%\]
+%\[
+%E \bigg[\frac{V}{m}\biggr] = \frac{14.4\times 10^{-10}}{A^2}\bigg[\frac{N}{C}\biggr] = \frac{14.4\times 10^{-10}}{A^2}\bigg[\frac{V}{m}\biggr]
+%\]
+%\noindent
+%nagyságú teret gerjesztenek. Az $A$ távolságban
+%\[
+%10^{-1} [V]= E\times A [V] = \frac{14.4\times 10^{-10}}{A} 
+%\]
+%\noindent 
+%feszültséget gerjeszt, amiből 
+%\[
+%A= 14.4 [nm]
+%\]
+%
+%A fenti formulából, kétszeres deriválás után a gyorsulás 
+%\[
+%	a_{Na^+} = \frac{d^2 z}{dt^2} = A \omega^2 cos(\omega\times t)
+%	=  14.4 \times 10^{-9}\times 10^6 = 14.4 \times 10^{-3} \bigg[\frac{m}{s^2}\biggr]
+%\]
+%
+%From Newton's 2nd law,
+%\[
+%F_{elastic} = m_{Na^+}\times a_{Na^+} = 10^{-26} \times 14.4 \times 10^{-3} \bigg[\frac{kg\,m}{s^2}\biggr]
+%\]
+%%\[
+%%%	F_{elastic} = m_{Na^+}\times a_{Na^+}
+%%\]
+%
+%% 
+%
+%% (az egyszerűség kedvéért az emponenciális tag nélkül) 
+%%A $100~mV$ damped oscillation of $1 kHz$ (1 msec period) has the form ($A$ is the amplitude of the motion of an ion
+%%\\
+%%\\ Here we do not consider the discharge process for the moment.
+%%\\Dividing with the mass of ion and multiplying with its charge, 
+%%
+%%We assume that moving $10^7$ charges with frequency $\omega$ and amplitude $A$ generate the voltage, and calculate the
+%%time derivative (for a moment we omit the discharge tag)
+%%
+%%\[
+%%\frac{10^{-1}}{10^7} \bigg[\frac{V}{m}\bigg] \bigg[\frac{1}{s}\bigg]
+%%= A\times \frac{3.86\times 10^{-26}}{1.6\times 10^{-19}} \times \omega \bigg[\frac{1}{s}\bigg] \times sin (\omega\times t) \bigg[\frac{m}{s^2}\bigg]
+%%\]
+%%
+%%that is
+%%\[
+%%1\ [V] 
+%%= A[m] \times 2.4 \times \omega \times sin (\omega\times t) \bigg[\frac{m}{s^2}\bigg]
+%%\]
+%%
+%%and the second derivative
+%%\[
+%%1\ [V]
+%%= A[m] \times 2.4 \times \times \omega^2 \times cos (\omega\times t) \bigg[\frac{m}{s^2}\bigg] \bigg[\frac{1}{s}\bigg]
+%%\]
+%%
+%%
+%%with frequency $\omega$
+%%\[
+%%1[V] 
+%%= \frac{A}{1.6\times 10^{-11}} \times \omega^2 \times cos (\omega\times t) \bigg[\frac{kg\times m}{s^2}\bigg] \]
+%%
+%%Since $\omega=10^{3}$,
+%%
+%%\[
+%%1 [V] 
+%%= \frac{A\,[m]}{1.6\times 10^{-5}} \times cos (\omega\times t) \bigg[\frac{kg\times m}{s^2}\bigg] 
+%%\]
+%%
+%%That is, the amplitude of the motion of an ion is about $0.2\ \mu m$. Using the second derivative, we can estimate the (maximal) force: 
+%%\[
+%%	F [N] = 3.82 \times 10^{-26} [kg]\times 1.6 \times 10^{-5} \times (10^3)^2 \bigg[\frac{m}{s^2}\bigg]
+%%\]
+%%The maximum force from the elastic wave is
+%%\[
+%%F = 6\times 10^{-25} [N] 
+%%\]
+%%
+%%Compare the value to \textbf{\hyperlink{phys:CellForceinField}{Physics Panel~\ref{phys:CellForceinField}}}
+}
+\fi

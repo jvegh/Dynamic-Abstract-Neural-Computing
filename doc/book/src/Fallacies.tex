@@ -1,0 +1,406 @@
+% This is the chapter 'Electricity' to the "Hodgkin-Huxley  neuron model V2.0 book"
+% Last edited 2026.06.26
+
+\iflatexml
+\else
+\minitoc
+\fi
+\ifx\magyar\undefined
+\chapter[Fallacies about for neurons]{Fallacies about for neurons\label{ch:Fallacies}}
+\else
+\chapter[Tévhitek a neuronokról]{Tévhitek a neuronokról\label{ch:Fallacies}}
+\fi
+
+
+\ifx\magyar\undefined %2026.06.28
+
+\section[The outward $K^+$ component during the \gls{AP}]
+{The outward $K^+$ component during the \gls{AP}\label{sec:Fallacies-OutwardK}}
+
+One of the big mysteries in the creation of the V1.0  model was why \gls{AP}
+became negative when only
+$Na^+$ influx was seen when \gls{AP} was formed. 
+Given that they found only positive charges nearby, they supposed that
+an outflux of positive charges, namely of $K^+$ ions,  was the reason.
+Since the process is too fast, \gls{HH} used a voltage clamping method for the experimental demonstration~\cite{HodgkinHuxleyCurrent:1952} of the hypothesized  $K^+$ current. The essence of this is that they
+imitated the crossing of the membrane voltage threshold (reaching the "AP" state, see Fig.~\ref{fig:ClampingKCurrent}):
+"(after completion of the quick pulse through the membrane
+capacity)", then raised the intracellular domain of the membrane to a potential higher than the resting potential with a negative feedback circuit:
+"the potential
+difference across the membrane is suddenly changed from its resting
+value, and held at the new level by a feed-back circuit ('voltage clamp' procedure)", and measured the time dependence of the current in this state.
+
+\subsection[The formal description of the process]
+{The formal description of the process\label{sec:Fallacies-OutwardKPhysicsFormal}}
+
+Figure \ref{fig:RestingPotential5} shows the changes that occur in a neuron that is displaced from its equilibrium state.
+These processes are naturally slow, their role in the
+transient process is discussed in the \ref{sec:TransientState} section,
+here we only illustrate our statements regarding the $K^+$ current.
+Our statement is essentially based on Kirchhoff's Voltage Law,
+according to which the sum of the voltages in a closed circuit is zero.
+ In our case, the circuit extends from the inside of the neuron to the external environment.
+If for any reason the external and internal potential levels are not the same, then a current flows until they are equalized (current carries charge and causes a potential change; it is not an ideal voltage generator).
+Of course, the equalization is not
+instantaneous, the current has a time dependence.
+
+On both the left and right sides of the figure, the resting potential level is
+at the zero value of the vertical scale. In the resting state (without invasion),
+in the intracellular segment
+the [Na50,K400] concentrations are present inside the cell. Using these values, we reach the "Rest"
+state along the green arrows (based on the Nernst voltages, see \ref{Tab:SummaryTable}~Table), which is located at a height of \SI{-21}{\milli\volt}.
+On the right side, in the extracellular segment, from the point also at a height of 0, we arrive at a point at a height of \SI{21}{\milli\volt} along the blue arrows in the same way. The potential difference between the two mentioned points is \SI{42.5}{\milli\volt}, which \gls{HH} measured. It is a correct value,
+but it is the result of an electrostatic charging and not of a voltage drop due to the "leakage current" they assumed.
+\index{leakage current}
+The voltage across the membrane (represented by the solid orange arrow) points upwards, preventing positive ions in the intracellular space from moving towards the extracellular space and preventing negative ions in the extracellular space from moving towards the intracellular space. The $Ca^{2+}$ ions in the extracellular segment, however, are permeable, requiring continuous pumping. There is no potential difference between the outside and inside, so no (significant) current flows.
+
+If, for any reason, the membrane voltage suddenly rises above the threshold value, due to the extremely fast $Na^+$ influx,
+the membrane potential increases by about \SI{100}{\milli\volt} (a [Na200,K400] state occurs, see the brown arrows), i.e. the neuron jumps into the AP bubble.
+%After the threshold is exceeded naturally or with a short pulse, the "AP" passes into the "Rest" bubble,
+%this is the same in the case of natural and clamping measurements.
+The orange arrow that was pointing upwards now points downwards as a broken line: the outflow of positive ions (both $K^+$ and $Na^+$) is given a free path, but the sloping path for $Ca^{2+}$ ions is eliminated. However, the free ions in the surface layer of the membrane are the vast majority of the $Na^+$ ions that have just arrived, so the ion current through the \gls{AIS} mainly consists of such ions.
+A significant increase in the membrane voltage leads to a significant increase in the potential of the
+inner space of the neuron.
+A current is initiated that tries to restore the initial voltage and concentration relationships.
+The extracellular environment of the membrane is extremely stable (the concentrations do not change),
+but inside the cell the voltage increases to the same extent, in the direction of "Invasion".
+The membrane potential has changed significantly due to the change in the $Na^+$ concentration, so the cell then moves them towards equilibrium.
+
+\begin{figure}
+\includegraphics[width=.9\columnwidth]{fig/RestingPotential5.pdf}
+\caption{The figure is a modified version of Fig.~\ref{fig:RestingPotential4}. It is supplemented with the unbended black line showing that the clamping condition forces the neuron
+to find a new balanced state by compensating the clamping voltage
+with setting a concentration [Na50,K7].
+For comparison, the case of natural \gls{AP} is also shown.
+The mechanism of producing \gls{AP} (using numbers referring to the case of squid shown in Table~\ref{Tab:SummaryTable}). In the resting state, the inside thermal potentials follow the green paths.
+When the rush-in of $Na^+$ ions suddenly increases the internal concentration to $[200]$, the potential on the internal side of the membrane increases to $+90\ mV$. The neuron must decrease its concentrations to restore the resting potential, mainly by releasing an action potential through the \gls{AIS}.
+The clamping fixes neuron's membrane voltage at \gls{AP},
+so the neuron can operate only with the concentrations.
+\label{fig:RestingPotential5}
+}
+\end{figure}
+
+In the case of natural \gls{AP}, there is no obstacle for the neuron
+to restore its previous state by changing any parameter, so the system concentrations
+start towards the state [Na50,K400]. This can be
+easily achieved by trying to make Na[50] from Na[200], while $K^+$ is still/already at the appropriate concentration.
+That is, it releases (mainly) $Na^+$ ions through the \gls{AIS} until the potential difference drops to zero.
+Reducing the $Na^+$ concentration also reduces the membrane
+voltage, i.e. after the release of the excess ions (admitted during the $Na^+$ rush-in) the neuron returns to its initial state;
+a cycle takes place.
+
+"Clamping" fixes the membrane voltage, meaning that the neuron cannot restore its initial
+resting state. Instead, it has to find a new balance by changing the concentrations.
+After the artificial \gls{AP}, clamping (using a negative feedback) keeps the membrane potential at a fixed value, so the neuron can only produce a new balance by changing the ion concentrations: a current flows until the Nernst voltages of the $Na^+$ and $K^+$ concentrations can balance the clamping voltage.
+From this [Na50,K400] state, the neuron has to adjust the potential so that the sum of the Nernst voltages plus the membrane's voltage plus the clamping voltage is zero (so another balance has to be set!), while the voltage is fixed.
+To do this, it must reduce the $K^+$ concentration, while the $Na^+$ concentration is already at a good value (the opposite of the previous case). And not by a small amount: [K7] only causes a voltage change equal to the clamping 100 mV imposed on the cell.
+This voltage is given by the green curved $Na^+[50]$ and the black dashed straight
+$K^+[7]$ path. The neuron can achieve this [Na50,K7] concentration
+by starting an intensive $K^+$ release.
+
+\begin{figure}
+\includegraphics[width=.9\columnwidth]{fig/ClampingKCurrent.pdf}
+\caption{Artificial and natural degradation of the AP state.
+In the case of natural degradation, the neuron
+has to get rid of the (unnecessary) $Na^+$ ions;
+by releasing them, it returns to the initial state;
+cycle takes place.
+Clamping keeps the membrane voltage fixed,
+so the neuron can only establish a new equilibrium situation by changing the intracellular concentrations
+which, due to the very reduced $K^+$ concentration, is only possible with an intense
+$K^+$ release.
+\label{fig:ClampingKCurrent}
+}
+\end{figure}
+
+Another important difference compared to the natural case is that there is no electrostatic acceleration across the membrane (which is why the $Na^+$ influx stopped),
+only a thermodynamic suction effect outwards due to clamping.
+Indeed, $K^+$ ions attempt flow out through the membrane, but
+they cannot exit until the electric potential drops
+below the equivalent thermodynamic driving force of the concentration.
+Moreover, the nearby $K^+$ ions get there sooner, but they leave a gap (reduced concentration) behind them, where the nearby neighbor $K^+$ electrodiffuses. This is why the physiologist sees a "delayed current".
+It is a strange game of nature that the resultant of the thermodynamic and the electric  (plus the elastic)  gradients moves, simultaneously, the $Na+$ ions parallel to the membrane surface, toward the \gls{AIS}, and
+the $K^+$ ions perpendicular to the surface toward the membrane,
+approximately until the peak of the action potential voltage is reached.
+The $Na^+$ starts to leave through the \gls{AIS}, while the "excessive" $K^+$ ions leave through the membrane.
+\textit{The two currents do not flow in the same path, so they cannot
+interfere as currents in opposite directions and cannot cause hyperpolarization.}
+\index{hyperpolarization}
+Hyperpolarization is caused by the reversal of the $Na^+$ current, which can be interpreted
+in the electrical sense as the capacitive current of the capacitor in the serial $RC$ circuit, and
+in the mechanical sense as the negative period of the elastic membrane oscillation.
+
+\textit{That is, the $K^+$ current is an artifact caused by the clamping, which is caused by the 'clamping' measurement conditions, and does not occur in the neuron under natural conditions.}
+
+
+So, this is where the urban legend "$K^+$ flows out through the membrane in the second phase of \gls{AP}, with a significant delay compared to the $Na^+$ influx" comes from.
+It is really a real measurement, it is really $K^+$ ion, but they did not measure what they thought.
+\gls{HH} and their late descendants did too. So there is no question of specific $Na^+$ and $K^+$ (synchronized with each other) channels: in both cases, the concentration and potential relationships decide what ions flow and in which direction.
+%It doesn't hurt to use a good model for what you want to study.
+\gls{HH} was aware that theirs was not good, but they didn't know any better.
+Unfortunately, they spread the misconception.
+
+
+
+In the classic experiment of \gls{HH}, clamping means that the left-hand "Invasion" suddenly raises the membrane voltage to the peak value measured at \gls{AP}, without the concentrations changing, so the voltage of the left-hand segment will also be higher.
+The current only stops when the difference in the Nernst voltages of the inner segments equalizes
+the clamping voltage. Due to the slowness of charge carriers, the process is not instantaneous.
+
+Fig.~\ref{fig:ClampingKCurrent} shows a pictorial summary of the process. The points on the surface give the Nernst voltage acting on the ions, for different combinations. The points on the surface are in equilibrium. The onset of the \gls{AP} moves the point that was in equilibrium until then well outside the surface. The neuron can find the new equilibrium position without the forcing effect of clamping by restoring the parameters of the previous state. In the case of clamping, it must set new concentrations at which the sum of the Nernst voltages can counteract the clamping voltage. In both cases, a relaxation process takes place, which in the case of the native process is measured by physiology as \gls{AP}.
+
+% Compiled 26.07.10
+\subsection[The physics of the process]
+{The physics of the process\label{sec:Fallacies-OutwardKPhysics}}
+
+The essential functioning of the cell largely takes place in layers of a few nanometers close to the cell membrane, where differences in concentration and voltage gradients (and consequently material flow rates) of up to several orders of magnitude can occur for a few dozen microseconds. Furthermore, the slow material flow creates potential and concentration changes that change from moment to moment, and whose effects can be significantly different in each layer due to the chemical quality of the ions. For this reason, the description of the events is unique in each case, for each layer and for each time period; it is not uncommon for scientific disciplines to be changed when describing individual stages, or for them to be combined in a different way.
+
+The two ends of the ion channels embedded in the membrane have different potentials and concentrations, so that the ions passing through acquire significant energy and speed. However, this gradient disappears when they exit the channel, so that the ions "stop" in frustration. The passage continues until the passing ions increase the electrochemical potential of the other side so much that the gradient disappears. Inside the electrolyte, the other, orders of magnitude smaller gradients continue to operate, of course, but can only create very slow material transport. The changes in the "bulk" part of the electrolyte tend towards slow equalization (different rules remain in effect near the boundary membrane). For this reason, a slow diffusion effect is also associated with all processes.
+
+When $Na^+$ ions penetrate the intracellular segment, they do so under the influence of a significant electrochemical gradient. In this way, immediately after the passage (lasting a few nanoseconds), the ions create a $Na^+$-rich layer, from which the charge of the ions (partly by direct collision) knocks out the ions there, mainly $K^+$.
+Basically, a $Na^+$ layer is formed directly under the intracellular part of the membrane, which increases the voltage on the capacitor plates, and since the \gls{AIS} at the end of the membrane acts as a sink for the ion current, an immediate $Na^+$ current is initiated, as discussed in the electrical model.
+$Na^+$ ions move along the membrane surface due to the high electrical gradient through the high-conductivity \gls{AIS}, but small amounts of $Na^+$ and $K^+$ ions apparently diffuse into the adjacent layer. The ion concentration and potential of the layer decrease with the outflow current. Due to the slowness of the ion current, the ions only reach the \gls{AIS} in tens of microseconds.
+The membrane is initially closed to positive ions (after the $Na^+$ ions have passed through), and the $Na^+$ layer represents an additional potential barrier. However, over time, the decreasing $Na^+$ concentration due to the current in the layer that causes the \gls{AP} increasingly allows $K^+$ ions to move towards the membrane and the experienced $K^+$ current to start, which is only possible after a few dozen microseconds.
+
+"Delayed $K^+$ channels" therefore mean ion channels that structurally do not distinguish between ions, and the delay is caused by transient processes taking place in the ion layers. These channels indeed release $K^+$ ions, which only start when the clamping voltage is switched on to the neuron (i.e., they create a non-equilibrium state of the neuron segment), and only $K^+$ ions because the thermodynamic gradient is only favorable to them.
+
+\gls{HH} found that the \gls{AP} can be decomposed into two currents:
+"the ionic current during a depolarization consists of two more or less independent components in parallel, an early transient phase of current carried by sodium ions, and a delayed long-lasting phase of current carried by potassium ions".
+Their conclusion is more than surprising, that although the current component arising from Na ions appears quickly, the component consisting of $K^+$ ions remains delayed and persistent. According to that "explanation", the neurons are disposable devices: after emitting a single \gls{AP}, the neuron emits a short-lasting $Na^+$ and (according to their figures 5 and 6) an infinitely long-lasting $K^+$ current, contrary to experience.
+In other words, for \SI{100}{\pico\ampere} (that is \SI{1e-10}{\ampere}) saturation current and \SI{1e11}{neuron} it would mean
+10~amper permanent current in the brain.
+Furthermore, it would keep the resting potential above 
+the value of the resting potential. The difference 
+would be the extra voltage of the clamping; that is,
+it would disappear at zero claping voltage.
+In other words, the extra voltage and the  $K^+$ current disappears in the absence of clamping, as observed.
+
+In our reading the current lasts as long as the voltage invasion caused by clamping persists or the $K^+$ content of the intracellular segment of the neuron is depleted.
+
+\else %2026.06.15
+
+\section[A $K^+$ áram az \gls{AP} folyamán]
+{A kifelé irányuló $K^+$ áram az \gls{AP} folyamán\label{sec:Fallacies-OutwardK}}
+
+A V1.0 megalkotása során az egyik nagy rejtély  volt, hogy az \gls{AP}
+miért vált negatívra, amikor az \gls{AP} létrejöttekor csupán
+$Na^+$ beáramlás látható. Mivel csak pozitív töltéseket találtak a környéken, feltételezték, hogy azt
+pozitív töltések, nevezetesen $K^+$ ionok, kiáramlása okozta. A folyamat azonban túl gyors, ezért \gls{HH} egy feszültség rögzítő eljárást (clamping) használt~\cite{HodgkinHuxleyCurrent:1952}
+a feltelezett  $K^+$ áram kimutatására. Ennek lényege, hogy 
+imitálták a membrán feszültségküszöb túllépését (az "AP" állapot elérését, lásd a~\ref{fig:ClampingKCurrent} és \ref{fig:RestingPotential5}~ábrákat):
+ "(after completion of the quick pulse through the membrane
+capacity)", majd egy negatív visszacsatolást használó áramkörrel
+a membrán intracelluláris tartományát a nyugalmi potenciálnál magasabb
+potenciálra emelte:
+"%we gave a general description of the time course of the current which flows through the membrane of the squid giant axon when 
+the potential 
+difference across the membrane is suddenly changed from its resting 
+value, and held at the new level by a feed-back circuit ('voltage clamp' procedure)", és ilyen állapotban mérte az áram időfüggését. 
+
+\subsection[A folyamat formális leírása]
+{A folyamat formális leírása\label{sec:Fallacies-OutwardKPhysicsFormal}}
+
+A \ref{fig:RestingPotential5} ábrán láthatók azok a változások,
+amelyek az egyensúlyi állapotából kimozdított neuronban végbemennek.
+Ezek a folyamatok természetesen lassúak, azok szerepét a 
+tranziens folyamatban a \ref{sec:TransientState} szakaszban tárgyaljuk,
+itt csupán a $K^+$ áramra vonatkozó állításainkat illusztráljuk.
+Állításunkat lényegében a Kirchhoff's Voltage Law-ra alapozzuk,
+ami szerint egy zárt áramkörben a feszültségek összege nulla; esetünkben az áramkör a neuron belsejétől a külső környezetig tart.
+Ha bármilyen okból a külső és a belső potenciálszint nem egyforma, akkor mindaddig áram folyik, amíg az ki nem egyenlítődik (az áram töltést szállít, és potenciálváltozást okoz; nem ideális feszültséggenerátor). Természetesen a kiegyenlítődés nem
+pillanatszerű, az áramnak időfüggése van.
+
+Az ábra bal és jobb oldalán egyaránt a függőleges skála nulla értékénél 
+van a nyugalmi potenciálszint. Nyugalmi állapotban (invázió nélkül)
+az intracelluláris szegmensben
+a [Na50,K400] koncentrációk vannak jelen a sejten belül. Ezeket használva a zöld nyilak mentén (a Nernst feszültségek alapján, lásd a \ref{Tab:SummaryTable}~Táblázatot) a "Rest"
+állapotba jutunk, ami a \SI{-21}{\milli\volt} magasságban található.
+Jobb oldalt az extracelluláris szegmensben a szintén 0 magasságban levő pontból a kék nyilak mentén
+ugyanilyen módon egy, a \SI{21}{\milli\volt} magasságban levő pontba érkezünk. A két említett pont közötti potenciál különbség \SI{42.5}{\milli\volt}, amit \gls{HH} ekkorának mért. Ami ugyan korrekt érték, 
+de elektrosztatikus feltöltődés eredménye és nem pedig az általuk 
+feltételezett "leakage current" következtében fellépő feszültségesés.
+A membrán két oldala közötti feszültség (amit 
+a folya\-matos narancssárga nyíl jelképez) felfelé mutat,
+ami az intracelluláris térben levő pozitív ionokat megakadályozza abban hogy
+az extracelluláris tér felé elinduljanak, és az extracelluláris
+térben levő negatív ionokat abban, hogy az intracelluláris tér felé induljanak. Az extracelluláris szegmensben levő $Ca^{2+}$ ionok számára viszont a membrán átjárható,
+azaz folyamatos pumpálásra van szükség. A külső és a belső oldal között
+nincs potenciálkülönbség, ezért áram nem folyik.
+
+
+Ha bármilyen okból a membrán feszültség a küszöbérték fölé emelkedik, akkor a neuron a rendkívül gyors $Na^+$ beáramlás miatt
+a membrán potenciál kb. \SI{100}{\milli\volt} értékkel megnő (egy [Na200,K400] állapot áll elő, lásd a barna nyilakat), azaz a neuron átugrik az AP buborékba.
+%A természetesen vagy rövid impulzussal előidézett küszöb túllépés után az "AP" átmegy a "Rest" buborékba, 
+%ez a természetes és a clamping mérés esetén megegyezik.
+Az eddig felfelé mutató narancs nyíl most szaggatva lefelé mutat: a pozitív ionok ($K^+$ és $Na^+$ is) kiáramlása szabad utat kap, a $Ca^{2+}$ ionok számára viszont megszűnik a lejtős pálya. A membrán felületi rétegében azonban szabad ionként túlnyomó többségben a most érkezett $Na^+$ ionok vannak, így az ionáram az AIS-en keresztül
+főként ilyen ionokból áll. 
+A membrán feszültség jelentős emelkedése maga után húzza a 
+a neuron belső tere potenciáljának jelentős emelkedését.
+Áram indul, ami igyekszik a kezdeti feszültség és koncentráció viszonyokat visszaállítani.
+A membrán extracelluláris környezete rendkívül stabil (a koncentrációk nem változnak),
+a sejt belsejében viszont a feszültség ugyanilyen mértékben megemelkedik, az "Invasion" irányába. 
+A membrán potenciál a $Na^+$ koncentráció változása miatt változott meg lényegesen, ezért a sejt majd azokat mozgatja az egyensúly irányába.
+
+
+ 
+ 
+\begin{figure}
+	\includegraphics[width=.9\columnwidth]{fig/RestingPotential5.pdf}
+	\caption{The figure is a modified version of Fig.~\ref{fig:RestingPotential4}. It is supplemented with the unbended black line showing that the clamping condition forces the neuron
+to find a new balanced state by compensating the clamping voltage
+with setting a concentration [Na50,K7]. 
+For comparison, the case of natural \gls{AP} is also shown. 
+The mechanism of producing \gls{AP} (using numbers referring to the case of squid shown in Table~\ref{Tab:SummaryTable}). In the resting state, the inside thermal potentials follow the green paths.
+When the rush-in of $Na^+$ ions suddenly increases the internal concentration to $[200]$, the potential on the internal side of the membrane increases to $+90\ mV$. The neuron must decrease its  concentrations to restore the resting potential, mainly by releasing an action potential through the \gls{AIS}.
+The clamping fixes neuron's membrane voltage at \gls{AP},
+so the neuron can operate only with the concentrations.
+		\label{fig:RestingPotential5}
+	}
+\end{figure}
+
+A természetes \gls{AP} esetén nincs akadálya, hogy a neuron
+a korábbi állapotát bármelyik paraméter változtatásával helyreállítsa, ezért a rendszer koncentrációi 
+elindulnak a [Na50,K400] állapot felé. Ezt 
+legegyszerűbben úgy tudja elérni, hogy a  Na[200]-ból igyekszik Na[50]-et csinálni, a $K^+$ még/már megfelelő koncentrációban van.
+Azaz, (főként) $Na^+$ ionokat bocsát ki az \gls{AIS}-en keresztül, amíg a potenciálkülönbség nullára nem csökken.
+A $Na^+$ koncentráció csökkentése egyúttal a membrán 
+feszültséget is csökkenti, azaz a felesleges (a $Na^+$ rush-in során
+beengedett) ionok kibocsátása után a neuron alapállapotba áll vissza;
+egy körfolyamat zajlik le.
+
+A "clamping" rögzíti a membrán feszültségét, azaz a neuron a kiindulási
+nyugalmi állapotot nem tudja helyreállítani; ehelyett a koncentrációk
+változtatásával kell új egyensúlyt találnia, miközben 
+a mesterséges \gls{AP} után a clamping (negative feedback alkalmazásával) a membrán potenciált rögzített értéken tartja.
+%, így a neuron csak az ionkoncentrációk változtatásával tud új egyensúlyi helyzetet
+%előállítani:
+Mindaddig áram folyik, amíg $Na^+$ és $K^+$ koncentrációk
+Nernst-feszültségei ellensúlyozni nem tudják a clamping feszültséget.
+Ebből a [Na50,K400] állapotból kell a neuronnak úgy beállítania a potenciált, hogy a Nernst-feszültségek plusz a membránfeszültség plusz a clamping feszültség összege nulla legyen (tehát egy másik egyensúlyi helyzetet kell beállítani!), miközben a feszültség rögzítve van.
+Ehhez csökkentenie kell a $K^+$  koncentrációt, miközben a $Na^+$  koncentráció már lényegében jó értéken áll (az előzőhöz képest fordított eset). Még pedig nem is kis mértékben: K+[7] idéz elő csak akkora feszültségváltozást, amekkorát a clamping 100 mV rákényszerít a sejtre.
+Ezt a feszültséget a zöld hajlított $Na^+[50]$ és a fekete szaggatott egyenes  
+$K^+[7]$ útvonal adja meg. A neuron ezt a [Na50,K7] koncentrációt 
+úgy tudja elérni, hogy intenzív $K^+$ kibocsátásba kezd.
+
+
+\begin{figure}
+	\includegraphics[width=.9\columnwidth]{fig/ClampingKCurrent.pdf}
+	\caption{Az AP állapot mesterséges és természetes lebomlása.
+	A természetes úton történő lebomlás esetén a neuronnak
+	a (számára felesleges) $Na^+$ ionoktól kell megszabadulnia;
+	azok kibocsátásával a kiindulási állapotba tér vissza; 
+	körfolyamat megy végbe.
+	A clamping rögzítve tartja a membrán feszültségét, 
+	így a neuron csak az intracelluláris koncentrációk
+	változtatásával tud új egyensúlyi helyzetet kialakítani, ami 
+	a nagyon lecsökkent $K^+$ koncentráció miatt csak intenzív
+	$K^+$ kibocsátással lehetséges.
+		\label{fig:ClampingKCurrent}
+	}
+\end{figure}
+
+A $Na^+$ esethez képest további fontos eltérés, hogy most nincs a membránon elektrosztatikus gyorsítás (a $Na^+$ beáramlás is ezért állt le),
+csupán a clamping miatt előállt termodinamikus szívóhatás kifelé. A $K^+$ ionok érzik a hívást, de csak diffundálni tudnak, és ettől a fiziológus "delayed current"-et lát. Valóban $K^+$ ionok áramlanak ki a membránon keresztül, de
+addig nem tudnak kilépni, amíg az elektromos potenciál nem csökken
+a koncentráció ekvivalens termodinamikus hajtóereje alá. 
+%Ráadásul a közelben levő $K^+$ ionok érnek oda hamarabb, de űrt (csökkent koncentrációt) hagynak maguk után, ahova a közeli szomszéd $K^+$ elektrodiffundál.
+A clamping mérés alkalmával először $Na+$ kezd távozni.
+A kibocsátás rövid szakaszon (egyidejűleg) párhuzamosan történik: a $Na^+$ az \gls{AIS}-en kezd távozni, miközben a membránon keresztül a "felesleges" $K^+$ ionok távoznak.
+A természet furcsa játéka, hogy a termodinamikai és elekt\-romos potenciál eredője a $Na+$ ionokat a membrán felülettel párhuzamosan, az \gls{AIS} felé, 
+a $K^+$ ionokat pedig a felületre merőlegesen a membrán felé mozgatja,
+kb. az akciós potenciál feszültség csúcsának eléréséig, egyidejűleg.  
+\textit{A két áram nem ugyanott folyik, így nem is képesek 
+ellentétes irányú áramként interferálni és hiperpolarizációt előidézni.}
+A hiperpolarizációt a $Na^+$ áram irányváltása idézi elő, amit 
+az elektromos szemléletben a kondenzátor kapacitív áramaként,
+a mechanikus szemléletben a rugalmas membrán rezgésének
+negatív periódusaként értelmezhetünk.
+\textit{Azaz, a $K^+$ áram a clamping által előidézett artifact, amit a 'clamping' mérési feltételei okoznak, természetes körülmények között
+a neuronban nem fordul elő.}
+
+Szóval, innét származik a "$K^+$ áramlik ki a membránon keresztül az \gls{AP} második fázisában, a $Na^+$ beáramláshoz képest jelentős késéssel" városi le\-genda. Tényleg valós mérés, tényleg $K^+$ ion, csak éppen nem azt mérték, amit gondoltak. \gls{HH} is meg kései utódaik is. Tehát nincs szó specifikus $Na^+$ és $K^+$ (egymáshoz szinkronizált) csatornákról: mindkét esetben a koncentráció és  potenciálviszonyok döntenek arról, hogy milyen ionok áramlanak és merrefelé. Nem árt, ha jó modellt alkalmaz az ember arra, amit tanulmányozni akar. \gls{HH} tisztában volt azzal, hogy az övék nem jó, de nem tudtak jobbat.
+Sajnos, a tévhitet terjesztették.
+
+
+A \ref{fig:ClampingKCurrent}~ábra a folyamat képszerű összefoglalását mutatja. A felület pont\-jai  az ionokra ható Nernst-feszültséget adják meg, különböző kombinációk esetén. A felületen levő pontok egyensúlyi helyzetben vannak. A \gls{AP} kezdete az addig egyensúlyi helyzetben levő pontot jóval a felületen kívülre mozgatja.
+Az újbóli egyensúlyi helyzetet a clamping kényszerítő hatása nélkül
+a neuron a megelőző állapot paramétereinek visszaállításával tudja
+megtalálni. Clamping esetén olyan új koncentrációkat kell beállítania,
+amelyek mellett a Nernst feszültségek összege ellensúlyozni tudja
+a clamping feszültséget. Mindkét esetben relaxációs folyamat zajlik le,
+ezt a natív folyamat esetén \gls{AP}-ként méri a fiziológia.
+
+ A mechanikus kép szerint a $Na^+$ "robbanás" után a rugalmas membrán relaxál, azaz egy darabig nyom\-ja, aztán meg húzza a $Na^+$ (és kevesebb $K^+$) keveréket az \gls{AIS}-en át, ami oda és vissza folyó áramot eredményez. Ezt méri a fiziológia \gls{AP}-ként. (Ha netán jelzett $K^+$ atomokat tesznek a citoplazmába, akkor tényleg lesz ellenirányban áramló $K^+$ is, de kevés.)
+
+
+\gls{HH} klasszikus kísérletében a clamping  azt jelenti, hogy a bal oldali "Invasion" úgy emeli hirtelen a membránfeszültséget az \gls{AP}-nál mért csúcsértékre, hogy a koncentrációk nem változnak. Az áram csak akkor szűnik meg, ha a belső szegmensek Nernst-feszültségeinek különbsége kiegyenlíti 
+a clamping feszültséget. A töltéshordozók lassúsága miatt a folyamat nem azonnali. 
+
+
+%% Fordítva 26.07.10
+\subsection[A folyamat fizikája]
+{A folyamat fizikája\label{sec:Fallacies-OutwardKPhysics}}
+
+A sejt lényegi működése nagyrészt a sejtmembránhoz közeli néhány nanométeres rétegekben történik, ahol néhány tucat mikroszekundumnyi időre akár több nagyságrendnyi koncentráció, feszültség és elasztikus gradiens (és ebből következően anyagáramlási sebesség) eltérések fordulhatnak elő. Továbbá, a lassú anyagáramlás potenciál- és koncentráció változásokat hoz létre, amik pillanatról pillanatra változnak, és amelyek hatása az ionok kémiai minősége miatt az egyes rétegekben jelentősen eltérő is lehet. Emiatt a történések leírása minden esetben, minden réteg és minden időszakasz esetén egyedi; nem ritkán tudományterületet is kell váltani az egyes szakaszok leírásakor, vagy azokat másféleképpen kombinálni.
+
+A membránba ágyazott ioncsatornák két végén eltérő potenciál és koncentráció van, így az áthaladó ionok jelentős energiára és sebességre tesznek szert.  Ez a gradiens azonban megszűnik, amikor kilépnek a csatornából, így az ionok csalódottan "megállnak". Az áthaladás mindaddig folytatódik, amíg az áthaladó ionok annyira megnövelik a másik oldal elektrokémiai potenciálját, hogy a gradiens megszűnik. Az elektrolit belsejében a többi, nagyságrendekkel kisebb gradiens természetesen tovább működik, de csak igen lassú anyag\-transz\-portot tud létrehozni.  Minden folyamathoz lassú diffúziós hatás is társul, ezért a változások az elektrolit "bulk" részében a lassú kiegyenlítődés felé tartanak (a határoló membrán közelében más szabályok maradnak érvényben). 
+
+Amikor a $Na^+$-ionok behatolnak az intracelluláris szegmensbe, azt jelentős elektrokémiai gradiens hatására teszik. Ilyen módon a közvetlenül az (néhány nanoszekundum ideig tartó) áthaladás után az ionok egy $Na^+$-gazdag réteget hoznak létre, amelyből az ionok töltése (részben közvetlen ütközéssel) kiüti az ott levő, főként $K^+$ ionokat.
+Alapvetően tehát egy  $Na^+$ réteg jön létre közvetlenül a membrán intracelluláris része felett, aminek hatására megnő a kondenzátorlemezeken levő feszültség, és mivel a membrán végében az \gls{AIS} az ionok számára nyelőként viselkedik, így egy azonnali $Na^+$ áram indul, amint azt az elektromos modell tárgyalja.
+A $Na^+$ ionok a membránfelület mentén a nagy elektromos gradiens hatására mozognak a nagy vezetőképességű \gls{AIS}-en keresztül, de kevés mennyiségű $Na^+$ és $K^+$ ion nyilván kölcsönösen be\-diffundál a szomszédos rétegbe.
+A  réteg  ionkoncentrációja és potenciálja a kifolyó árammal csökken.
+Az ionáram lassúsága miatt az ionok csak több tucat mikroszekundumnyi idő alatt érik el az \gls{AIS}-t.
+
+A pozitív ionok számára kezdetben (a $Na^+$ ionok áthaladás után) a membrán is le van zárva, a $Na^+$ réteg pedig egy további potenciálgátat jelent. Az idő múlásával azonban a membránon az utándiffúziós folyamatok és a rétegben az \gls{AP}-t előidéző áram hatására csökkenő $Na^+$ koncentráció egyre inkább lehetővé teszi hogy a $K^+$ ionok is elinduljanak a membrán felé és a tapasztalt $K^+$ áram elinduljon, ami csak néhány tucat mikroszekundum után lehetséges.
+A "késleltetett $K^+$ csatornák" tehát olyan ioncsatornákat jelentenek, amelyek strukturálisan nem tesznek különbséget ionok között, és a késleltetést az ionrétegekben zajló tranziens folyamatok okozzák.
+Ezeken a csatornákon valóban $K^+$ ionok folynak ki, amelyek csak akkor indulnak el, amikor a clamping voltage-t a neuronra kapcsolják (azaz, létrehozzák a neuron szegmens nem-egyensúlyi állapotát), és azért csak $K^+$ ionok, mert a termodinamikai gradiens csak számukra kedvező.
+
+\gls{HH} úgy találta, hogy az \gls{AP}-t keltő áram két áramra bontható:
+"the ionic current during a depolarization consists of two more or less independent components in parallel, an early transient phase of current carried by sodium ions, and a delayed long-lasting phase of current carried by potassium ions".
+Meglepő az a következtetésük, hogy bár a $Na^+$ ionokból származó áram komponens gyorsan megjelenik, a $K^+$ ionokból álló komponens késéssel és tartósan megmarad. Ha magyarázatuk helytálló, egyetlen \gls{AP} kibocsátása után a neuron rövid ideig tartó $Na^+$ és (5. és 6. ábrájuk szerint) végtelen hosszú ideig tartó $K^+$ áramot bocsát ki.
+Más szavakkal, amelyik neuron egyszer \gls{AP}-t bocsátott ki, az mindörökké $K^+$ áramot bocsát ki. Ez neurononként \SI{100}{\pico\ampere} (azaz \SI{1e-10}{\ampere}) telítési áram  és \SI{1e11}{neuron} esetén 
+10~amper állandóan folyó áramot jelentene az agyban, továbbá
+folyamatosan a nyugalmi potenciál értéke alatt tartaná a membrán potenciált. A különbség megegyezne a clamping feszültség értékével;
+azaz eltűnne nulla clamping feszültség esetén.
+Más szavakkal, az extra nyugalmi feszültség és a  $K^+$ áram
+egyaránt eltűnik clamping nélkül, a tapasztalattal megegyezően.
+
+A mi olvasatunkban, a helyes fizika alapján, az áram mindaddig tart, amíg a clamping által okozott  feszültséginvázió fennáll, vagy a neuron intracelluláris szegmensének $K$ tartalma el nem fogy.
+\fi
+
+
+\begin{figure}
+	\includegraphics[width=.9\columnwidth]{fig/HodgkinHuxleyFig2Simple.pdf}
+	\caption{The differing time constants of the rising
+	and falling edge of a neuronal square wave
+		\label{fig:DifferingTimeConstants}
+	}
+\end{figure}
+
+\ifx\magyar\undefined %2026.06.27
+
+\section[The different time constants]
+{The different time constants of neuronal RC circuit\label{sec:Fallacies-TimeConstants}}
+\gls{HH} made the same mistake as when measuring the membrane charging through the axon (see section~\ref{sec:Fallacies-TimeConstants}).
+They noticed that the time constants of the rising and falling edges are not the same; which in itself proves that the membrane charging through the axon cannot be described by the operation of the (parallel) $RC$ circuit.
+They measured it, but they did not understand that the two do not show the same process (see Fig.~\ref{fig:DifferingTimeConstants}).
+ Furthermore, in both cases they gave an "explanation" instead of thinking about what the contradiction is and how what they see could occur.
+
+
+\else %2026.06.27
+
+\section[A neuronális rezgőkör időállandói]
+{A neuronális rezgőkör időállandói\label{sec:Fallacies-TimeConstants}}
+
+\gls{HH} ugyanazt a hibát követték el, mint amikor a membrán axonon át történő feltöltődését mérték (lásd section~\ref{sec:Fallacies-TimeConstants}). Jól észrevették, hogy a felfutó és lefutó él időállandója nem egyforma; ami önmagában bizonyítja, hogy a (párhuzamos) $RC$ kör
+működésével nem lehet leírni az axonon át történő membrán feltöltést. Meg is mérték, csak nem értették, hogy a kettő nem ugyanazt a folyamatot mutatja (lásd Fig.~\ref{fig:DifferingTimeConstants}). Továbbá, mindkét esetben "magyarázatot" adtak, ahelyett, hogy elgondolkodtak volna azon, mi az ellentmondás, és hogyan is állhat elő, amit látnak.
+\fi
+
+\ifx\magyar\undefined %2026.06.15
+
+\section[GHK equation]{GHK equation\label{sec:Fallacies-GHKEquation}}
+
+\else %2026.06.15
+
+\subsection[GHK egyenlet]{A GHK egyenlet\label{sec:Fallacies-GHKEquation}}
+
+\fi

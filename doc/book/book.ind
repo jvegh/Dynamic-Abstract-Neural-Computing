@@ -1,56 +1,125 @@
 \begin{theindex}
 
-  \item ATP hydrolysis, \hyperpage{29}
+  \item Action Potential, \hyperpage{41}
+  \item ATP hydrolysis, \hyperpage{59}
 
   \indexspace
 
-  \item Cherchez la femme, \hyperpage{8}
+  \item Brain Initiative, \hyperpage{2}
 
   \indexspace
 
-  \item equivalent electrical field, \hyperpage{31}
-  \item event, \hyperpage{23}
+  \item clock reset, \hyperpage{40}
+  \item complete measurement, \hyperpage{35}
+  \item Coulomb's law, \hyperpage{34}, \hyperpage{43}, \hyperpage{45}, 
+		\hyperpage{50}
 
   \indexspace
 
-  \item heat absorption by neuron, \hyperpage{29}
+  \item delayed current, \hyperpage{42}
 
   \indexspace
 
-  \item Johnston Daniel, \hyperpage{7}
+  \item equivalent circuit, \hyperpage{50}
+  \item equivalent electrical field, \hyperpage{60}
+  \item event, \hyperpage{26}
 
   \indexspace
 
-  \item law of motion, \hyperpage{4}, \hyperpage{14}
-  \item laws of motion, \hyperpage{5}, \hyperpage{27}
+  \item Feyman R. P, \hyperpage{31}
+  \item force
+    \subitem stochastic, \hyperpage{33}
+  \item force field, \hyperpage{33}
 
   \indexspace
 
+  \item Galilei, Galileo, \hyperpage{45}
+  \item Galillei's relativity principle, \hyperpage{48}
+
+  \indexspace
+
+  \item heat absorption by neuron, \hyperpage{59}
+
+  \indexspace
+
+  \item instant interaction, \hyperpage{40}
+  \item interaction
+    \subitem attributes, \hyperpage{49}
+  \item ion channel, \hyperpage{42}
+
+  \indexspace
+
+  \item Johnston Daniel, \hyperpage{8}
+
+  \indexspace
+
+  \item Kepler's Law, \hyperpage{45}
+  \item Kirchhoff's Laws, \hyperpage{44}
+
+  \indexspace
+
+  \item lassú áram, \hyperpage{10}
+  \item law of motion, \hyperpage{13}
+  \item laws of motion, \hyperpage{34}, \hyperpage{39}, \hyperpage{57}
+  \item Lotka-Volterra differenciálegyenlet, \hyperpage{24}
+
+  \indexspace
+
+  \item mathematics of finite speeds ~\cite{EinsteinMinkowskiRelativity:1977}, 
+		\hyperpage{45}
+  \item Maxwell equations, \hyperpage{42}
   \item melting
-    \subitem lipids, \hyperpage{11}
+    \subitem lipids, \hyperpage{10}
+  \item Minkowski, Herman, \hyperpage{45}
+  \item Mozgástörvény, \hyperpage{2}
+  \item mozgástörvények, \hyperpage{2}
 
   \indexspace
 
-  \item ordinary laws, \hyperpage{7}, \hyperpage{21}
+  \item neuron model
+    \subitem McCulloch-Pitts, \hyperpage{41}
+    \subitem multi-compartment, \hyperpage{42}
+  \item Newton törvények, \hyperpage{2}
+  \item non-ordinary law, \hyperpage{48}
 
   \indexspace
 
-  \item Schrödinger, Erwin, \hyperpage{6}, \hyperpage{21}
-  \item slow current, \hyperpage{11}
-  \item spatiotemporal, \hyperpage{23}
-  \item Stokes-Einstein relation, \hyperpage{45}
+  \item Onsager's relations, \hyperpage{35}
+  \item ordinary laws, \hyperpage{25}, \hyperpage{27}
 
   \indexspace
 
-  \item time-space coordinate, \hyperpage{23}
+  \item partial derivative, \hyperpage{47}
+
+  \indexspace
+
+  \item rendetlen törvények, \hyperpage{8}
+  \item retarded time, \hyperpage{43}
+
+  \indexspace
+
+  \item Schrödinger, Erwin, \hyperpage{25}
+  \item science
+    \subitem disciplinarity, \hyperpage{31}
+  \item slow current, \hyperpage{27}
+  \item spatiotemporal, \hyperpage{26}
+  \item stochastic force, \hyperpage{33}
+  \item Stokes-Einstein relation, \hyperpage{76}
+
+  \indexspace
+
+  \item telegrapher's equations, \hyperpage{40}
+  \item teljes mérés, \hyperpage{24}
+  \item time-space, \hyperpage{45}
+  \item time-space coordinate, \hyperpage{26}
 
   \indexspace
 
   \item von Neumann
-    \subitem 'zigzag' way, \hyperpage{7}
+    \subitem 'zigzag' way, \hyperpage{3}
 
   \indexspace
 
-  \item Wu Samuel Miao-sin , \hyperpage{7}
+  \item Wu Samuel Miao-sin, \hyperpage{8}
 
 \end{theindex}

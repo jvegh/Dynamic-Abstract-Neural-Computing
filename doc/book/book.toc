@@ -1,75 +1,62 @@
-\contentsline {chapter}{Foreword}{1}{chapter*.2}%
-\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Disciplinary layers}{6}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Abstract discussion}{6}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Electrical model }{8}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Modeling}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Methods}{9}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Disciplinarity}{9}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2}The V2.0 model}{10}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Differences to V1.0}{15}{subsection.2.2.1}%
-\contentsline {chapter}{\numberline {3}Resting Potential}{17}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Transient potential}{19}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Physics for neurons}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Schrödinger on life}{22}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Addendum}{22}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Ion movement in excitable cells}{23}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Physical laws that dictate ion movement}{25}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}The Nernst equation}{25}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Ion distribution and gradient maintenance}{26}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Membrane permeability}{26}{subsection.5.3.5}%
-\contentsline {subsection}{\numberline {5.3.6}Space-charge neutrality}{26}{subsection.5.3.6}%
-\contentsline {section}{\numberline {5.4}Science concepts}{26}{section.5.4}%
-\contentsline {subsubsection}{Classical vs modern science concepts}{27}{section*.3}%
-\contentsline {subsubsection}{Disciplinarity}{28}{section*.4}%
-\contentsline {subsubsection}{Locality and finite resources}{29}{section*.5}%
-\contentsline {subsubsection}{Fields}{30}{section*.6}%
-\contentsline {subsection}{\numberline {5.4.1}Dichotomies}{31}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Complete measurement}{31}{subsection.5.4.2}%
-\contentsline {subsubsection}{Electrical vs Mechanical}{33}{section*.7}%
-\contentsline {subsubsection}{Atomicity}{34}{section*.8}%
-\contentsline {subsubsection}{Reversibility}{34}{section*.9}%
-\contentsline {subsection}{\numberline {5.4.3}Speed}{35}{subsection.5.4.3}%
-\contentsline {subsubsection}{Instant Interaction}{35}{section*.10}%
-\contentsline {subsubsection}{In observations}{37}{section*.11}%
-\contentsline {subsubsection}{In neuroscience}{38}{section*.12}%
-\contentsline {subsubsection}{In interactions}{39}{section*.13}%
-\contentsline {subsubsection}{Processes vs states }{40}{section*.14}%
-\contentsline {subsubsection}{In sciences's laws}{40}{section*.15}%
-\contentsline {subsection}{\numberline {5.4.4}Spatiotemporal}{42}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5}Mathematics}{43}{subsection.5.4.5}%
-\contentsline {subsection}{\numberline {5.4.6}Biology}{46}{subsection.5.4.6}%
-\contentsline {chapter}{\numberline {6}Electricity for neurons}{49}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Membrane's electricity}{50}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Condenser}{51}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Resistor}{51}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Electrolytes}{53}{subsection.6.1.3}%
-\contentsline {subsection}{\numberline {6.1.4}Thermodynamic field}{54}{subsection.6.1.4}%
-\contentsline {subsection}{\numberline {6.1.5}One segment}{57}{subsection.6.1.5}%
-\contentsline {subsection}{\numberline {6.1.6}Two segments}{57}{subsection.6.1.6}%
-\contentsline {paragraph}{Warning}{58}{section*.16}%
-\contentsline {subsubsection}{Charge layers in segments}{58}{section*.17}%
-\contentsline {subsubsection}{Simple conducting sheet (a physical condenser)}{61}{section*.18}%
-\contentsline {subsubsection}{Condenser in dielectric material}{64}{section*.19}%
-\contentsline {subsection}{\numberline {6.1.7}Bridging the micro- and macro views}{66}{subsection.6.1.7}%
-\contentsline {subsection}{\numberline {6.1.8}Ionic currents in a cell}{67}{subsection.6.1.8}%
-\contentsline {subsection}{\numberline {6.1.9}Imitating slow currents}{71}{subsection.6.1.9}%
-\contentsline {section}{\numberline {6.2}Forming membrane's potential}{74}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}States}{74}{subsection.6.2.1}%
-\contentsline {subsubsection}{Resting state}{77}{section*.20}%
-\contentsline {subsubsection}{Transient state}{80}{section*.21}%
-\contentsline {subsection}{\numberline {6.2.2}Controlling states}{84}{subsection.6.2.2}%
-\contentsline {subsubsection}{Neuron as a PID controller}{84}{section*.22}%
-\contentsline {subsubsection}{Robustness of the control circle}{88}{section*.23}%
-\contentsline {subsection}{\numberline {6.2.3}Goldman-Hodgkin-Katz potential}{89}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}The Action Potential}{90}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}The physical process}{90}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}The oscillator model}{92}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Mathematics of the ActionPotential}{95}{subsection.6.3.3}%
-\contentsline {chapter}{\numberline {7}Thermodynamics for neurons}{99}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Transmission}{101}{chapter.8}%
-\contentsline {chapter}{List of tables}{103}{chapter.8}%
-\contentsline {chapter}{List of figures}{104}{chapter*.24}%
-\contentsline {chapter}{Index}{108}{chapter*.25}%
-\contentsline {chapter}{Glossary}{109}{chapter*.26}%
+\contentsline {chapter}{\numberline {1}A neuronok termodinamikája}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Termodinamikus tér}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Speculations}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Cell pressure}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}A neuronok elektromosságtana}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Miért más}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Concepts}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Töltés}{12}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Erőtér}{12}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Feszültség}{12}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Áram}{12}{subsection.3.2.4}%
+\contentsline {subsubsection}{Ionic currents in a cell}{12}{section*.16}%
+\contentsline {subsubsection}{Speed}{13}{section*.17}%
+\contentsline {subsubsection}{Imitating slow currents}{15}{section*.18}%
+\contentsline {subsection}{\numberline {3.2.5}Condenser}{18}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.6}Resistor}{19}{subsection.3.2.6}%
+\contentsline {section}{\numberline {3.3}A membrán elektromosságtana}{21}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Elektrolitok}{21}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Membrán elektrolitban}{23}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Inhomogeneities}{23}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Force analyzis}{24}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}One segment}{25}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Two segments}{26}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}Charge layers in segments}{28}{subsection.3.3.7}%
+\contentsline {subsubsection}{Simple conducting sheet (a physical condenser)}{29}{section*.25}%
+\contentsline {subsubsection}{Condenser in dielectric material}{32}{section*.28}%
+\contentsline {subsection}{\numberline {3.3.8}Bridging the micro- and macro views}{34}{subsection.3.3.8}%
+\contentsline {section}{\numberline {3.4}Forming membrane's potential}{35}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}States}{37}{subsection.3.4.1}%
+\contentsline {subsubsection}{Resting state}{39}{section*.31}%
+\contentsline {subsubsection}{Transient state}{42}{section*.34}%
+\contentsline {subsection}{\numberline {3.4.2}Controlling states}{46}{subsection.3.4.2}%
+\contentsline {subsubsection}{Neuron as a PID controller}{46}{section*.36}%
+\contentsline {subsubsection}{Robustness of the control circle}{50}{section*.38}%
+\contentsline {subsection}{\numberline {3.4.3}Goldman-Hodgkin-Katz potential}{51}{subsection.3.4.3}%
+\contentsline {paragraph}{Warning}{53}{section*.39}%
+\contentsline {chapter}{\numberline {4}Tévhitek a neuronokról}{55}{chapter.4}%
+\contentsline {section}{\numberline {4.1}A $K^+$ áram az \gls {AP} folyamán}{55}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}A folyamat formális leírása}{55}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}A folyamat fizikája}{59}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}A neuronális rezgőkör időállandói}{61}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}GHK egyenlet}{61}{subsection.4.2.1}%
+\contentsline {chapter}{\numberline {5}Nyugalmi potenciál}{63}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Thermodynamic field}{63}{subsection.5.0.1}%
+\contentsline {subsection}{\numberline {5.0.2}Charge layers}{67}{subsection.5.0.2}%
+\contentsline {subsubsection}{Classical condenser}{68}{section*.48}%
+\contentsline {subsubsection}{Electrical field}{70}{section*.50}%
+\contentsline {subsubsection}{Membranes with ions channels}{73}{section*.52}%
+\contentsline {subsection}{\numberline {5.0.3}Goldman-Hodgkin-Katz potential}{74}{subsection.5.0.3}%
+\contentsline {subsection}{\numberline {5.0.4}Moving in the membrane's potential}{75}{subsection.5.0.4}%
+\contentsline {subsubsection}{Passing through ion channels}{75}{section*.53}%
+\contentsline {subsubsection}{Moving in the polarized electrolyte}{76}{section*.54}%
+\contentsline {subsubsection}{Ion selectivity}{76}{section*.55}%
+\contentsline {chapter}{\numberline {6}Action Potential}{79}{chapter.6}%
+\contentsline {section}{\numberline {6.1}The physical process}{79}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The oscillator model}{81}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Mathematics of the ActionPotential}{84}{section.6.3}%
+\contentsline {chapter}{Appendices}{87}{section*.59}%
+\contentsline {chapter}{List of Tables}{91}{appendix*.61}%
+\contentsline {chapter}{List of Figures}{95}{appendix*.62}%
+\contentsline {chapter}{Index}{96}{appendix*.62}%
+\contentsline {chapter}{Glossary}{99}{appendix*.63}%

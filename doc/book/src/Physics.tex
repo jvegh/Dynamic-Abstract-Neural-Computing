@@ -6,7 +6,11 @@
 \minitoc
 \fi
 
+\ifx\magyar\undefined
 \chapter[Physics for neurons]{Physics for neurons\label{ch:Physics}}
+\else
+\chapter[A neuronok fizikája]{A neuronok fizikája\label{ch:Physics}}
+\fi
 
 	\input{src/Physics-Introductory}
 	\input{src/Physics-Life}

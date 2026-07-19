@@ -3,10 +3,15 @@
 \maketitle
 \else
 \begin{titlepage}
+\ifx\magyar\undefined 
 \quotationbox{
 \textit"{Though this be madness, yet there is method in't.}"\\
 \hfill{Shakespeare: Hamlet: Act 2 Scene 2}
 }
+\else
+\textit"{Őrület, de van benne rendszer.}"\\
+\hfill{Shakespeare: Hamlet: 2. felvonás 2. szín}
+\fi
 \parindent=0em
 \makeatletter
 \null\vfil

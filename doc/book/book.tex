@@ -1,17 +1,19 @@
 \documentclass{book}
-\def\MyVersion{0.0.2}
+\def\MyVersion{0.0.3}
+\def\magyar{yes}
 \tolerance 500%
-\renewcommand{\topfraction}{.8}
-\renewcommand{\floatpagefraction}{.85}
 \emergencystretch 1em\relax
 \hfuzz .2pt\relax
-
 
 \usepackage{graphicx}
 \usepackage{latexml}
 \iflatexml
 \else
+\renewcommand{\topfraction}{.8}
+\renewcommand{\floatpagefraction}{.85}
+\usepackage[Lenny]{fncychap}
 \usepackage{minitoc}
+\usepackage[font={footnotesize,it}]{caption}
 \usepackage{tcolorbox}
 \tcbuselibrary{breakable}
 \fi
@@ -19,6 +21,8 @@
 \usepackage{xcolor}
 \usepackage[makeroom]{cancel}
 \usepackage{amsmath}
+\usepackage[toc,page]{appendix}
+
 
 \input{src/Macros}
 \setcounter{secnumdepth}{2}
@@ -36,23 +40,30 @@
 %============================================================
 %============================================================
 \begin{document}%\label{top}
-
+\dominitoc % for printing per chapter table of contents
 \frontmatter
     \input{src/Heading}
 \mainmatter
-	\input{src/Foreword}
+%	\input{src/Foreword}
 
-	\input{src/Introduction}
-	\input{src/Modeling}
-	\input{src/RestingPotential}
-	\input{src/TransientPotential}
-	\input{src/Physics}
-	\input{src/Electricity}	
+%	\input{src/Introduction}
+%	\input{src/Modeling}
+%	\input{src/ModelV2-0}
 	\input{src/Thermodynamics}
-	\input{src/Transmission}
+	\input{src/NumericPanels}
+%	\input{src/Physics}
+	\input{src/Electricity}	
+	\input{src/Fallacies}
+	\input{src/RestingPotential}
+	\input{src/ActionPotential}
+%	\input{src/Transmission}
 %%	\input{src/Mathematics}
 %%
 %	\input{src/VersionHistory}	
+
+\begin{appendices}
+\chapter*{Dichotomies\label{ch:Dichotomies}}
+\end{appendices}
 
 \pagebreak
 \backmatter
@@ -62,9 +73,9 @@
 \chapter*{ListOfTables\label{Ch:ListOfTables}}
 \else
 \fi
-\addcontentsline{toc}{chapter}{List of tables} 
 
-\listoftables
+\listoftables \addcontentsline{toc}{chapter}{List of Tables}
+%   \mtcaddchapter                     %new code
 \vfill
 
 \pagebreak
@@ -72,8 +83,8 @@
 \chapter*{ListOfFigures\label{Ch:ListOfFigures}}
 \else
 \fi
-\addcontentsline{toc}{chapter}{List of figures} 
-\listoffigures
+\listoffigures \addcontentsline{toc}{chapter}{List of Figures} 
+%\mtcaddchapter                     %new code
 \vfill
 \pagebreak
 

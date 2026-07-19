@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass{book}    % Last edited 2026.06.23
 \def\MyVersion{0.2.7}
 \tolerance 500%
 \renewcommand{\topfraction}{.8}
@@ -11,16 +11,18 @@
 \iflatexml
 \else
 \usepackage{minitoc}
+\usepackage[font={footnotesize,it}]{caption}
+\usepackage[Lenny]{fncychap}
 \usepackage{tcolorbox}
 \tcbuselibrary{breakable}
 \fi
+
 \usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage[makeroom]{cancel}
 \usepackage{amsmath}
 
 \input{src/Macros}
-
 
 \usepackage{makeidx}
 \makeindex
@@ -33,6 +35,7 @@
 %============================================================
 %============================================================
 \begin{document}%\label{top}
+ \dominitoc % for printing per chapter table of contents
 
 \frontmatter
     \input{src/Heading}
@@ -44,6 +47,7 @@
 	\input{src/Single}
 	\input{src/Physics}
 	\input{src/Physiology}
+	\input{src/Fallacies}
 	\input{src/Computing}
 	\input{src/Information}	
 	\input{src/Multiple}	

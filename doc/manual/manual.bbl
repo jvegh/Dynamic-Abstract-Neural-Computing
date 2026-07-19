@@ -58,6 +58,12 @@ J.~V{\'e}gh, {Algorithm for describing neuronal electric operation}, Algorithms
 J.~V{\'e}gh, {The 'non-ordinary laws' of physics describing life}, {arXiv}, 1
   (2025).
 
+\bibitem{VeghUnifiedCrossdisciplinaryModel:2026}
+J.~V{\'e}gh, \href{https://doi.org/10.48550/arXiv.2507.11448}{The unified
+  cross-disciplinary model of the operation of neurons} (2026).
+\newblock \href {http://arxiv.org/abs/2507.11448} {\path{arXiv:2507.11448}}.
+\newline\urlprefix\url{https://doi.org/10.48550/arXiv.2507.11448}
+
 \bibitem{Schrodinger:1992}
 E.~Schr\"odinger, Is life based on the laws of physics?, Cambridge University
   Press, Canto, 1992, pp. 76--85.
@@ -198,8 +204,8 @@ C.~E. Shannon,
 
 \bibitem{NeuralEnergyConsumption:2017}
 Y.~Wang, R.~Wang, X.~Xu,
-  \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC5337805/}{Neural energy
-  supply-consumption properties based on hodgkin-huxley model.}, Neural Plast.
+  \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC5337805/}{{Neural Energy
+  Supply-Consumption Properties Based on Hodgkin-Huxley Model}}, Neural Plast.
   (2017) 6207141\href {https://doi.org/https://doi.org/10.1155/2017/6207141}
   {\path{doi:https://doi.org/10.1155/2017/6207141}}.
 \newline\urlprefix\url{https://pmc.ncbi.nlm.nih.gov/articles/PMC5337805/}
@@ -245,23 +251,17 @@ E.~R. Kandel, J.~H. Schwartz, T.~M. Jessell, S.~A. Siegelbaum, A.~J. Hudspeth,
   Principles of Neural Science, 5th Edition, The McGraw-Hill Medical, New York
   Chicago etc., 2013.
 
-\bibitem{PerturbationSingleCell:2023}
-C.~Bunne, S.~Stark, G.~Gut, et~al., Learning single-cell perturbation responses
-  using neural optimal transport, Nature Methods 20 (2023) 1759--1768.
-\newblock \href {https://doi.org/https://doi.org/10.1038/s41592-023-01969-x}
-  {\path{doi:https://doi.org/10.1038/s41592-023-01969-x}}.
+\bibitem{MechanisticModelHodgkinHuxleyCraver:2006}
+C.~F. Craver, When mechanistic models explain, Synthese 153~(3) (2006)
+  355--376.
+\newblock \href {https://doi.org/10.1007/s11229-006-9097-x}
+  {\path{doi:10.1007/s11229-006-9097-x}}.
 
 \bibitem{COLE_CURTIS_IMPEDANCE:1939}
 K.~S. Cole, H.~J. Curtis, Electric impedance of the squid giant axon during
   activity, The Journal of General Physiology (1939).
 \newblock \href {https://doi.org/http://doi.org/10.1085/jgp.22.5.649}
   {\path{doi:http://doi.org/10.1085/jgp.22.5.649}}.
-
-\bibitem{MechanisticModelHodgkinHuxleyCraver:2006}
-C.~F. Craver, When mechanistic models explain, Synthese 153~(3) (2006)
-  355--376.
-\newblock \href {https://doi.org/10.1007/s11229-006-9097-x}
-  {\path{doi:10.1007/s11229-006-9097-x}}.
 
 \bibitem{MathNeuroscience:2010}
 B.~Ermentrout, T.~H. David, Mathematical Foundations of Neuroscience, Springer,
@@ -387,6 +387,12 @@ M.~C. Kiernan, K.~Cikurel, H.~Bostock,
   {\path{doi:10.1093/brain/124.4.816}}.
 \newline\urlprefix\url{https://doi.org/10.1093/brain/124.4.816}
 
+\bibitem{PerturbationSingleCell:2023}
+C.~Bunne, S.~Stark, G.~Gut, et~al., Learning single-cell perturbation responses
+  using neural optimal transport, Nature Methods 20 (2023) 1759--1768.
+\newblock \href {https://doi.org/https://doi.org/10.1038/s41592-023-01969-x}
+  {\path{doi:https://doi.org/10.1038/s41592-023-01969-x}}.
+
 \bibitem{HeatProductionNeuron:1958}
 B.~C. Abbott, A.~V. Hill, J.~V. Howarth, The positive and negative heat
   production associated with a nerve impulse., Proc. R. Soc. London. B. 148
@@ -421,12 +427,6 @@ T.~Heimburg, A.~D. Jackson, On soliton propagation in biomembranes and nerves,
   Proceedings of the National Academy of Sciences (2005) 9790--9795\href
   {https://doi.org/10.1073/pnas.0503823102}
   {\path{doi:10.1073/pnas.0503823102}}.
-
-\bibitem{VeghUnifiedCrossdisciplinaryModel:2026}
-J.~V{\'e}gh, \href{https://doi.org/10.48550/arXiv.2507.11448}{The unified
-  cross-disciplinary model of the operation of neurons} (2026).
-\newblock \href {http://arxiv.org/abs/2507.11448} {\path{arXiv:2507.11448}}.
-\newline\urlprefix\url{https://doi.org/10.48550/arXiv.2507.11448}
 
 \bibitem{PerturbationNeuralComputation:2002}
 W.~Maass, T.~Natschl\"ager, H.~Markram, Real-time computing without stable
@@ -558,10 +558,6 @@ S.~I. Walker, \href{https://doi.org/10.1088/1361-6633/aa7804}{Origins of life:
   {\path{doi:10.1088/1361-6633/aa7804}}.
 \newline\urlprefix\url{https://doi.org/10.1088/1361-6633/aa7804}
 
-\bibitem{HodgkinConduction:1964}
-A.~L. Hodgkin, The conduction of the nervous impulse, Liverpool University
-  Press, Liverpool, UK, 1964, 1964.
-
 \bibitem{ModernRelativity:1993}
 A.~Das, {The special theory of relativity: a mathematical exposition}, 1st
   Edition, Springer-Verlag New York, 1993.
@@ -570,6 +566,14 @@ A.~Das, {The special theory of relativity: a mathematical exposition}, 1st
 {Hermann Minkowski}, {Die Grundgleichungen f\"ur die electromagnetischen
   Vorg\"ange in bewegten K\"orpern}, Nachrichten von der K\"oniglichen
   Gesellschaft der Wissenschaften zu G\"ottingen (in German) (1908) 53--111.
+
+\bibitem{HodgkinConduction:1964}
+A.~L. Hodgkin, The conduction of the nervous impulse, Liverpool University
+  Press, Liverpool, UK, 1964, 1964.
+
+\bibitem{ThermalBiophysics:2007}
+T.~Heimburg, Thermal Biophysics of Membranes, 1st Edition, 2007 WILEY-VCH
+  Verlag GmbH \& Co. KGaA, Weinheim, 2007.
 
 \bibitem{MechanicalWaves:2015}
 A.~El~Hady, B.~B. Machta, {Mechanical surface waves accompany action potential
@@ -584,10 +588,6 @@ D.~G. Miller, {THERMODINAMICS OF IRREVERSIBLE PROCESSES THE EXPERIMENTAL
   Livermore, California (1959).
 \newblock \href {https://doi.org/10.1021/cr60203a003}
   {\path{doi:10.1021/cr60203a003}}.
-
-\bibitem{ThermalBiophysics:2007}
-T.~Heimburg, Thermal Biophysics of Membranes, 1st Edition, 2007 WILEY-VCH
-  Verlag GmbH \& Co. KGaA, Weinheim, 2007.
 
 \bibitem{RetardedTimePotential:2011}
 H.~A. Ulku, A.~A. Ergin, Application of analytical retarded-time potential
@@ -690,22 +690,6 @@ L.~Pyenson, {Hermann Minkowski and Einstein's special theory of relativity},
 \newblock \href {https://doi.org/10.1007/BF00348403}
   {\path{doi:10.1007/BF00348403}}.
 
-\bibitem{RejectingMemristor:2018}
-I.~Abraham, {The case for rejecting the memristor as a fundamental circuit
-  element}, Nature Scientific Reports 8 (2018) 10972.
-\newblock \href {https://doi.org/10.1038/s41598-018-29394-7}
-  {\path{doi:10.1038/s41598-018-29394-7}}.
-
-\bibitem{KochVoltageDependentConductance:1999}
-M.~Stemmler, C.~Koch, {How voltage-dependent conductances can adapt to maximize
-  the information encoded by neuronal firing rate}, {Nat Neurosci} 2 (1999)
-  521--527.
-
-\bibitem{TheBoookOfGENESIS:2003}
-J.~M. Bower, D.~Beeman, \href{http://genesis-sim.org/GENESIS/iBoG/iBoGpdf/}{The
-  Book of GENESIS: Exploring Realistic Neural Models}, 2003.
-\newline\urlprefix\url{http://genesis-sim.org/GENESIS/iBoG/iBoGpdf/}
-
 \bibitem{Poisson-Boltzmann-Nernst-Planck:2011}
 Q.~Zheng, W.~G.W., {Poisson-Boltzmann-Nernst-Planck model}, J Chem Phys 19
   (2011).
@@ -736,6 +720,12 @@ B.~Bean, The action potential in mammalian central neurons, Nature Reviews
   Neuroscience 8 (2007).
 \newblock \href {https://doi.org/10.1038/nrn2148} {\path{doi:10.1038/nrn2148}}.
 
+\bibitem{RejectingMemristor:2018}
+I.~Abraham, {The case for rejecting the memristor as a fundamental circuit
+  element}, Nature Scientific Reports 8 (2018) 10972.
+\newblock \href {https://doi.org/10.1038/s41598-018-29394-7}
+  {\path{doi:10.1038/s41598-018-29394-7}}.
+
 \bibitem{BrainNetworkModels:2018}
 D.~S. Bassett, P.~Zurn, J.~I. Gold, On the nature and use of models in network
   neuroscience, Nature Reviews Neuroscience 19 (2018) 566--578.
@@ -760,6 +750,16 @@ J.~V\'egh, A model for storing and processing information in technological and
   biological computing systems, in: 2021 international conference on
   computational science and computational intelligence; foundations of computer
   science, Vol.~21, IEEE Las Vegas, USA; July 26-29, IEEE, 2021, p. FCS4404.
+
+\bibitem{KochVoltageDependentConductance:1999}
+M.~Stemmler, C.~Koch, {How voltage-dependent conductances can adapt to maximize
+  the information encoded by neuronal firing rate}, {Nat Neurosci} 2 (1999)
+  521--527.
+
+\bibitem{TheBoookOfGENESIS:2003}
+J.~M. Bower, D.~Beeman, \href{http://genesis-sim.org/GENESIS/iBoG/iBoGpdf/}{The
+  Book of GENESIS: Exploring Realistic Neural Models}, 2003.
+\newline\urlprefix\url{http://genesis-sim.org/GENESIS/iBoG/iBoGpdf/}
 
 \bibitem{MembranePotentialAbsorption:2014}
 H.~Tamagawa, S.~Morita, \href{https://www.mdpi.com/2077-0375/4/2/257}{Membrane
@@ -850,9 +850,9 @@ T.~Ling, K.~Boyle, V.~Zuckerman, T.~Flores, C.~Ramakrishnan, K.~Deisseroth,
 I.~Tasaki, K.~Iwasa, Rapid mechanical changes in crab nerve and squid axon
   during action potentials, J Physiol (Paris) 77 (1981) 1055--9.
 
-\bibitem{VeghStokesEinstein:2025}
-J.~V{\'e}gh, {How Hodgkin and Huxley measured that the axonal speed obeys the
-  Stokes-Einstein relation}, Biosystems (2025).
+\bibitem{VeghStokesEinstein:2026}
+J.~V{\'e}gh, {On measuring the axonal speed}, Journal of Non-Newtonian Fluid
+  Mechanics (2026).
 
 \bibitem{HEIMBURGReversibleHeatProduction:2021}
 T.~Heimburg,
@@ -873,7 +873,7 @@ D.~Fox, The brain, reimagined. brain cells communicate with mechanical pulses,
 
 \bibitem{VeghDANCES:2026}
 J.~V{\'{e}}gh, {Dynamic Abstract Neural Computing with Electronic Simulation},
-  \url{https://jvegh.github.io/DANCES/} (Accessed on Mar 03, 2026) (2026).
+  \url{https://jvegh.github.io/DANCES/} (Accessed on June 03, 2026) (2026).
 
 \bibitem{HydrostaticWaterColumn:2021}
 Extremtech, {Hydrostatic water column on an elastic plate},
@@ -922,6 +922,10 @@ D.~Bianchi, A.~Marasco, A.~Limongiello, et~al., On the mechanisms underlying
 \newblock \href {https://doi.org/10.1007/s10827-012-0383-y}
   {\path{doi:10.1007/s10827-012-0383-y}}.
 
+\bibitem{BuzsakiTheBrain:2019}
+G.~Buzs\'aki, The Brain from Inside Out, 1st Edition, Oxford University Press,
+  2019.
+
 \bibitem{HodgkinMemoryBook:1992}
 T.~Tansey, Alan Hodgkin, Chance and design: reminiscences of science in peace
   and war, Vol.~37, Cambridge University Press, 1992, 2012.
@@ -941,9 +945,14 @@ M.~Oleksowicz, Physics for neuroscience: the story of hodgkin and huxley before
 \newblock \href {https://doi.org/10.6093/978-88-6887-297-7}
   {\path{doi:10.6093/978-88-6887-297-7}}.
 
-\bibitem{BuzsakiTheBrain:2019}
-G.~Buzs\'aki, The Brain from Inside Out, 1st Edition, Oxford University Press,
-  2019.
+\bibitem{HodgkinHuxleyCurrent:1952}
+A.~L. Hodgkin, A.~F. Huxley,
+  \href{https://doi.org/10.1113/jphysiol.1952.sp004717}{{Currents carried by
+  sodium and potassium ions through the membrane of the giant axon of Loligo}},
+  J. Physiol. 116 (1952) 449--472.
+\newblock \href {https://doi.org/10.1113/jphysiol.1952.sp004717}
+  {\path{doi:10.1113/jphysiol.1952.sp004717}}.
+\newline\urlprefix\url{https://doi.org/10.1113/jphysiol.1952.sp004717}
 
 \bibitem{LowPassFilter_Carandini:1996}
 M.~Carandini, F.~Mechler, C.~Leonard, J.~Movshon, Spike train encoding by

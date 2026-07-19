@@ -33,6 +33,17 @@ doc/manual/*.toc
 doc/manual/*.gz
 doc/manual/*.xml
 doc/manual/*.mt*
+doc/manual/mwe.*
+*.mtc*
+*.bbl
+*.blg
+*.glo
+*.idx
+*.ind
+*.maf
+*.out
+*.synctex.gz
+*.toc
 #docs/doxy/
 #docs/manual/
 code/build/

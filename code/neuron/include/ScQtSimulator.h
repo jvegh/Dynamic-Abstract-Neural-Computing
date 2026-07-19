@@ -112,6 +112,14 @@ public:
     {
         return std::chrono::duration_cast<std::chrono::microseconds>(m_system_s).count();
     }
+    bool isAborted(){return _abort;}
+//    bool isInterrupted(){return _interrupt;}
+    void reset()
+    {
+        _abort = false;
+        TimesReset();
+//        _interrupt = false;
+    }
     // Resets processor's benchmarking time
        void systemTime_Reset()
     {
@@ -135,10 +143,10 @@ private:
      * @brief Process is aborted when @em true
      */
     bool _abort;
-    /**
+    /* *
      * @brief Current method is interrupted when @em true
      */
-    bool _interrupt;
+//    bool _interrupt;
     /**
      * @brief Protects access to #_abort
      */

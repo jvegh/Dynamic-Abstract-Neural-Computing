@@ -34,7 +34,9 @@ QT_FORWARD_DECLARE_CLASS(QToolBar)
 QT_FORWARD_DECLARE_CLASS(QStackedWidget)
 QT_FORWARD_DECLARE_CLASS(QActionGroup)
 
-#include "TestNeuronPhysical.h"
+//#include "TestNeuronPhysical.h"
+#include "DemoNeuronPhysical.h"
+
 namespace Ui {
 class ScQtNeuron_MainWindow;
 }
@@ -87,6 +89,8 @@ public:
 private slots:
      void wiki() ;
      void version();
+     void on_ExamplesSimple_AP();
+     void on_ExamplesFailed_AP();
      void on_MakeSimulationStep();
      void on_startButton_clicked();
      void on_breakButton_clicked();
@@ -100,6 +104,8 @@ private slots:
 */
 private:
     void SetFileMenu(void);
+    void createExamples();
+
     void SetProcessMenu(void);
     void fileOpen(QString name,  QString filter, int flags);
     QString working_directory; //contains working directory
@@ -129,7 +135,7 @@ private:
     int32_t m_StepNumber;
     bool m_terminated;
     sc_core::sc_time m_FinalTime;
-    NeuronPhysicalTEST *MyNeuron;
+    DemoNeuronPhysical *MyNeuron, *DemoNeuronSingleAP, *DemoNeuronFailedAP;
     // Tabs
     QStackedWidget *m_stackedTabs = nullptr;
     std::map<TabIndex, TabWidgets> m_tabWidgets;

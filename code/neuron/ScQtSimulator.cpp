@@ -23,10 +23,8 @@
 ScQtSimulator::ScQtSimulator(QObject *parent) :
     QObject(parent)
 {
-    _abort = false;
-    _interrupt = false;
     sc_start( sc_core::SC_ZERO_TIME);
-    TimesReset();
+    reset();
 }
 
 
@@ -54,7 +52,8 @@ void ScQtSimulator::doSimulationSteps()
     sc_core::sc_start( ThisTime);                      // Measure processor time of simulating step
             BENCHMARK_TIME_END(&m_system_t,&m_system_x,&m_system_s);   // End benchmarking here
         emit eventHappened();
-    if (_abort || _interrupt) {
+    if (_abort //|| _interrupt
+            ) {
         qDebug()<<"Interrupted doSimulationSteps in Thread "<<thread()->currentThreadId();
     }
 }
@@ -67,10 +66,11 @@ void ScQtSimulator::mainLoop()
 
     forever {
         mutex.lock();
-        if (!_interrupt && !_abort) {
+        if (//!_interrupt &&
+            !_abort) {
             condition.wait(&mutex);
         }
-        _interrupt = false;
+ //       _interrupt = false;
 
         if (_abort) {
             qDebug()<<"Aborting ScQtSimulator mainLoop in Thread "<<thread()->currentThreadId();

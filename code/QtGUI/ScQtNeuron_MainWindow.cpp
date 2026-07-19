@@ -23,7 +23,6 @@
 #include "ui_neurontab.h"
 
 extern struct SystemDirectories Directories;
-//extern double APParameters[3];
 
 ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -49,7 +48,11 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     setMaximumSize(800, 600);
     resize(641, 481);
 
-    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
+//    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
+    createExamples();   // Must create a nneuron for the windows
+
+    // Be sure this event remains all the time in the stack
+ //   MyNeuron->EVENT_GenComp.Failed.notify(10000,sc_core::SC_SEC);
 
     // Create tabs
     m_stackedTabs = new QStackedWidget(this);
@@ -69,7 +72,6 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
                                 this);
     m_stackedTabs->insertWidget(NeuronTabID, m_neuronTab);
 
-
     connect(m_neuronTab->ui->startButton, &QPushButton::clicked, this,
             &ScQtNeuron_MainWindow::on_startButton_clicked);
 
@@ -83,7 +85,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
 
     connect(m_neuronTab->ui->DisplayReversedBox, &QCheckBox::clicked, this,
             &ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked);
-    //
+     //
     // The thread and the simulator are created in the constructor so it is always safe to delete them.
     //
     m_thread = new QThread();
@@ -124,6 +126,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_PhasePlotWindow->show();
     m_PhasePlotWindow->DisplayMode_Set(false);
     m_neuronTab->ui->DisplayReversedBox->setCheckState( Qt::CheckState(m_PhasePlotWindow->DisplayMode_Get()));
+    on_ExamplesFailed_AP(); // Must be after creating the windows
 }
 /*
      auto *editToolbar = addToolBar("Edit");
@@ -193,14 +196,14 @@ void ScQtNeuron_MainWindow::on_breakButton_clicked()
 
 void ScQtNeuron_MainWindow::on_restartButton_clicked()
 {
-    m_Simulator->abort(); m_terminated = true;
+    m_Simulator->abort();
+    m_terminated = true;
 }
 
 void ScQtNeuron_MainWindow::on_resetButton_clicked()
 {
-//    m_Simulator->requestMethod(ScQtSimulator::Method_SingleSteps);
 //    m_Simulator->abort();
-    m_Simulator->TimesReset();
+    m_Simulator->reset();
     displayTime_Reset();
     MyNeuron->Initialize_Do();
 
@@ -212,13 +215,17 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
     m_PhasePlotWindow->DisplayMode_Set(false);
 
 //    m_PhasePlotWindow->Reset();
-    m_VoltageWindow->Reset();
+//    m_VoltageWindow->Reset();
+    delete m_VoltageWindow;
+    m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
+    m_VoltageWindow->show();
+
+
 //    m_CurrentWindow->Reset();
 //    m_GradientWindow->Reset();
     delete m_GradientWindow;
     m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
     m_GradientWindow->show();
-//    m_GradientWindow->DisplayMode_Set(false);
 
 //    on_eventHappened();
 }
@@ -230,14 +237,12 @@ void ScQtNeuron_MainWindow::on_ReversedDisplayModeClicked()
     m_StepNumber = m_neuronTab->ui->DisplayReversedBox->isChecked();
     m_PhasePlotWindow->setupDataPlot();
 }
-
+// This routine is executed when after executing an Sc event, the control returns to the display
 void ScQtNeuron_MainWindow::on_eventHappened()
 {
-    // Display the time values
             BENCHMARK_TIME_BEGIN(&m_display_t,&m_display_x);    // Begin display time benchmarking here
     // The functionality moved to here to benchmark the display time
- //   m_CurrentWindow->displayDataSlot();
-    m_PhasePlotWindow->displayDataSlot();
+     m_PhasePlotWindow->displayDataSlot();
     m_VoltageWindow->displayDataSlot();
     m_GradientWindow->displayDataSlot();
     m_neuronTab->ui->SimulatedTimeValue->setText(QString(sc_time_String_Get(m_Simulator->scTime_Get()).c_str()));
@@ -257,15 +262,16 @@ void ScQtNeuron_MainWindow::on_eventHappened()
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
         || (m_neuronTab->ui->continuousMode->isChecked())
         )
-        && !m_terminated //&& (!m_Simulator->_abort) //&& (m_Simulator->_interrupt)
+        && !m_terminated && (!m_Simulator->isAborted()) //&& (m_Simulator->isInterrupted())
         )
     {   // Continue execution by issuing one more request
         // Imitate pressing 'Start'
-        m_neuronTab->ui->DisplaySlider->value();
+        //m_neuronTab->ui->DisplaySlider->value();
         QTimer::singleShot(0    // Zero means continuation with no delay
                            +m_neuronTab->ui->DisplaySlider->value(), this, SLOT(on_MakeSimulationStep()));
     }
-    BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
+//    m_Simulator->reset();
+            BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
 }
 
 
@@ -382,71 +388,37 @@ void ScQtNeuron_MainWindow::setupMenus() {
 */
 
     connect(ui->actionOpen_wiki, &QAction::triggered, this, &ScQtNeuron_MainWindow::wiki);
+    connect(ui->actionSimple_AP, &QAction::triggered, this, &ScQtNeuron_MainWindow::on_ExamplesSimple_AP);
+    connect(ui->actionSimple_AP, &QAction::triggered, this, &ScQtNeuron_MainWindow::on_ExamplesFailed_AP);
     connect(ui->actionVersion, &QAction::triggered, this, &ScQtNeuron_MainWindow::version);
 
 }
 
-#if 0
-void ScQtNeuron_MainWindow::setupExamplesMenu(QMenu *parent) {
-/*    const auto assemblyExamples =
-        QDir(":/examples/assembly/").entryList(QDir::Files);
-    auto *assemblyMenu = parent->addMenu("Assembly");
-    if (!assemblyExamples.isEmpty()) {
-        for (const auto &fileName : assemblyExamples) {
-            assemblyMenu->addAction(fileName, this, [=] {
-                LoadFileParams parms;
-                parms.filepath = QString(":/examples/assembly/") + fileName;
-                parms.type = SourceType::Assembly;
-                static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)
-                    ->loadExternalFile(parms);
-                clearSaveFile();
-            });
-        }
-    }
-
-    const auto cExamples = QDir(":/examples/C/").entryList(QDir::Files);
-    auto *cMenu = parent->addMenu("C");
-    if (!cExamples.isEmpty()) {
-        for (const auto &fileName : cExamples) {
-            cMenu->addAction(fileName, this, [=] {
-                LoadFileParams parms;
-                parms.filepath = QString(":/examples/C/") + fileName;
-                parms.type = SourceType::C;
-                static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)
-                    ->loadExternalFile(parms);
-                clearSaveFile();
-            });
-        }
-    }
-
-    const auto ELFExamples = QDir(":/examples/ELF/").entryList(QDir::Files);
-    auto *elfMenu = parent->addMenu("ELF (precompiled C)");
-    if (!ELFExamples.isEmpty()) {
-        for (const auto &fileName : ELFExamples) {
-            elfMenu->addAction(fileName, this, [=] {
-                // ELFIO Cannot read directly from the bundled resource file, so copy
-                // the ELF file to a temporary file before loading the program.
-                QTemporaryFile *tmpELFFile =
-                    QTemporaryFile::createNativeFile(":/examples/ELF/" + fileName);
-                if (!tmpELFFile->open()) {
-                    QMessageBox::warning(this, "Error",
-                                         "Could not create temporary ELF file");
-                    return;
-                }
-
-                LoadFileParams parms;
-                parms.filepath = tmpELFFile->fileName();
-                parms.type = SourceType::ExternalELF;
-                static_cast<EditTab *>(m_tabWidgets.at(EditTabID).tab)
-                    ->loadExternalFile(parms);
-                clearSaveFile();
-                tmpELFFile->remove();
-            });
-        }
-    }
-*/
+void ScQtNeuron_MainWindow::createExamples()
+{
+    DemoNeuronSingleAP = new DemoSimpleSingleAP("Demo Single AP");
+    DemoNeuronFailedAP = new DemoSimpleFailedAP("Demo Failed AP");
+    MyNeuron = DemoNeuronFailedAP; // Just to test it
 }
-#endif //0
+
+void ScQtNeuron_MainWindow::on_ExamplesSimple_AP()
+{
+    MyNeuron->ClearEvents();
+    MyNeuron = DemoNeuronSingleAP; //("Demo Single AP");
+    m_GradientWindow->setWindowTitle(QString(MyNeuron->name())+QString(" voltage gradients"));
+    std::cerr << MyNeuron->name() << '\n';
+    MyNeuron->EVENT_GenComp.Initialize.notify(SC_ZERO_TIME);
+}
+
+void ScQtNeuron_MainWindow::on_ExamplesFailed_AP()
+{
+    //    delete MyNeuron;
+    MyNeuron->ClearEvents();
+    MyNeuron = DemoNeuronFailedAP; //("Demo Failed AP");
+    m_GradientWindow->setWindowTitle(QString(MyNeuron->name())+QString(" voltage gradients"));
+    MyNeuron->EVENT_GenComp.Initialize.notify(SC_ZERO_TIME);
+}
+
 
 void ScQtNeuron_MainWindow::wiki() {
     QDesktopServices::openUrl(QUrl(QString(

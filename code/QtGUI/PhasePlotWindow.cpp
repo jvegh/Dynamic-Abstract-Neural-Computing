@@ -269,6 +269,7 @@ void PhasePlotWindow::DrawItemText(double xpos, double ypos, QString S, QColor C
     textLabel->setBrush(QBrush(Col)); // show red border around text
 }
 
+#if 0
 void PhasePlotWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
 {
     // add the text label at the top:
@@ -286,7 +287,7 @@ void PhasePlotWindow::DrawArrow(double xpos, double ypos, QString S, double xoff
     arrow->end->setCoords(xpos, ypos); // point to (4, 1.6) in x-y-plot coordinates
     arrow->setHead(QCPLineEnding::esSpikeArrow);
 }
-
+#endif
 void PhasePlotWindow::PlotBracketsV(int32_t key, double x, double coord1, double coord2)
 {
     switch(key)

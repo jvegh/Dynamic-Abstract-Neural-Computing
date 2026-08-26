@@ -260,6 +260,7 @@ void VoltageWindow::DrawItemText(double xpos, double ypos, QString S, QColor Col
     textLabel->setBrush(QBrush(Col)); // show red border around text
 }
 
+#if 0
 void VoltageWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)
 {
     // add the text label at the top:
@@ -277,7 +278,7 @@ void VoltageWindow::DrawArrow(double xpos, double ypos, QString S, double xoffse
     arrow->end->setCoords(xpos, ypos);
     arrow->setHead(QCPLineEnding::esSpikeArrow);
 }
-
+#endif
 VoltageWindow::~VoltageWindow()
 {
   delete ui;

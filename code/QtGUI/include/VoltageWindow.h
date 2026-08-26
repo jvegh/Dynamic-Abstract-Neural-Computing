@@ -31,8 +31,9 @@ public:
   ~VoltageWindow();
   
   void setupPlot(void);
+#if 0
   void DrawArrow(double xpos, double ypos, QString S, double xoffset=0, double yoffset=50);
-
+#endif
   void ProcessLine(QString line);
   void GetData(QString fileName);
   void replot(void);

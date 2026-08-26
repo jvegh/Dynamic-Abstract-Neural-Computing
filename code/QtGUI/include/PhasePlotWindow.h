@@ -41,7 +41,9 @@ public:
   void DisplayMode_Set(bool M);
   bool DisplayMode_Get(void){return m_DisplayMode;}
   void RunningPointPosition_Set(double xpos, double ypos);
+#if 0
   void DrawArrow(double xpos, double ypos, QString S, double xoffset=1000, double yoffset=100);
+#endif
   void DrawItemText(double xpos, double ypos, QString S, QColor Col);
   uint32_t index;
 

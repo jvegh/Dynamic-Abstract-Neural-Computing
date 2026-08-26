@@ -216,7 +216,7 @@ void GradientWindow::displayIllegalInputSlot()
 
         double key2 = m_neuron->LocalTimeInMillisec_Get();
         double DvDt = m_neuron->dVdtResulting_Get();
-        DrawArrow(key2, DvDt, "!",-0.04,-500);
+//       DrawArrow(key2, DvDt, "!",-0.04,-500);
     }
 }
 
@@ -332,6 +332,7 @@ void GradientWindow::DrawItemText(double xpos, double ypos, QString S, QColor Co
     textLabel->setBrush(QBrush(Col)); // show red border around text
 }
 
+#if 0
 void GradientWindow::DrawArrow(double xpos, double ypos, QString S, double xoffset, double yoffset)//, bool RedBackground)
 {
     // add the text label at the top:
@@ -350,5 +351,6 @@ void GradientWindow::DrawArrow(double xpos, double ypos, QString S, double xoffs
     arrow->end->setCoords(xpos, ypos);
     arrow->setHead(QCPLineEnding::esSpikeArrow);
 }
+#endif
 
 #include "moc_GradientWindow.cpp"

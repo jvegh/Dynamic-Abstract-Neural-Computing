@@ -79,6 +79,8 @@ public:
      void writeSettings();
 //     void setupToolBoxes(void);
      void replot();
+     void CreateWindows(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent = 0);
+
      VoltageWindow *VoltageWindow_Get(){return m_VoltageWindow;}
      GradientWindow *GradientWindow_Get(){return m_GradientWindow;}
      PhasePlotWindow *PhasePlotWindow_Get(){return m_PhasePlotWindow;}

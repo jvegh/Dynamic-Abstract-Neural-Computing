@@ -26,6 +26,7 @@ extern struct SystemDirectories Directories;
 
 ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     QMainWindow(parent),
+    MyNeuron(NULL),
     ui(new Ui::ScQtNeuron_MainWindow)
 {
     ui->setupUi(this);
@@ -49,10 +50,7 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     resize(641, 481);
 
 //    MyNeuron = new NeuronPhysicalTEST("NeuronPhysical");
-    createExamples();   // Must create a nneuron for the windows
-
-    // Be sure this event remains all the time in the stack
- //   MyNeuron->EVENT_GenComp.Failed.notify(10000,sc_core::SC_SEC);
+    createExamples();   // Must create a neuron for the windows; without activation
 
     // Create tabs
     m_stackedTabs = new QStackedWidget(this);
@@ -114,6 +112,13 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     readSettings(); // Read window-related settings
     setupToolBoxes();   // Set up the tool box contents
 */
+    m_VoltageWindow = NULL;
+    m_GradientWindow = NULL;
+    m_PhasePlotWindow = NULL;
+}
+
+void ScQtNeuron_MainWindow::CreateWindows(ScQtSimulator *Simulator,  NeuronPhysical *Neuron, QWidget *parent )
+{
     m_VoltageWindow = new VoltageWindow(m_Simulator, MyNeuron);
     m_VoltageWindow->show();
 #if 0
@@ -126,8 +131,8 @@ ScQtNeuron_MainWindow::ScQtNeuron_MainWindow(QWidget *parent) :
     m_PhasePlotWindow->show();
     m_PhasePlotWindow->DisplayMode_Set(false);
     m_neuronTab->ui->DisplayReversedBox->setCheckState( Qt::CheckState(m_PhasePlotWindow->DisplayMode_Get()));
-    on_ExamplesFailed_AP(); // Must be after creating the windows
 }
+
 /*
      auto *editToolbar = addToolBar("Edit");
     editToolbar->setVisible(false);
@@ -226,8 +231,6 @@ void ScQtNeuron_MainWindow::on_resetButton_clicked()
     delete m_GradientWindow;
     m_GradientWindow = new GradientWindow(m_Simulator, MyNeuron);
     m_GradientWindow->show();
-
-//    on_eventHappened();
 }
 
 
@@ -245,18 +248,11 @@ void ScQtNeuron_MainWindow::on_eventHappened()
      m_PhasePlotWindow->displayDataSlot();
     m_VoltageWindow->displayDataSlot();
     m_GradientWindow->displayDataSlot();
+    sc_core::sc_time sct = m_Simulator->scTime_Get();
     m_neuronTab->ui->SimulatedTimeValue->setText(QString(sc_time_String_Get(m_Simulator->scTime_Get()).c_str()));
     m_neuronTab->ui->UserTimeValue->setText(QString(time_String_Get(m_Simulator->userTime_Get(),CLOCK_TIME_UNIT_S,1,7).c_str()));
     m_neuronTab->ui->ProcessorTimeValue->setText(QString(time_String_Get(m_Simulator->systemTime_Get()/1000.,CLOCK_TIME_UNIT_S,3,7).c_str()));
     m_neuronTab->ui->DisplayTimeValue->setText(QString(time_String_Get(displayTime_Get()/1000/1000.,CLOCK_TIME_UNIT_S,2,7).c_str()));
-    if ( MyNeuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
-        QMessageBox::warning(this, tr("ScQtSimulator"),
-                                   tr("Simulation of a single AP successfully terminated\n"
-                                      "Maybe you want to make screenshots"),
-                                   QMessageBox::Yes );
-        m_Simulator->abort();
-        m_terminated = true;
-    }
     if((
         (m_neuronTab->ui->timeMode->isChecked() && (m_FinalTime > sc_core::sc_time_stamp()))
         || (m_neuronTab->ui->stepMode->isChecked() && (m_StepNumber-->0))
@@ -272,6 +268,14 @@ void ScQtNeuron_MainWindow::on_eventHappened()
     }
 //    m_Simulator->reset();
             BENCHMARK_TIME_END(&m_display_t,&m_display_x,&m_display_s);   // End display time benchmarking here
+    if ( MyNeuron->EVENT_GenComp.RelaxingEnd.triggered() ) {
+        QMessageBox::warning(this, tr("ScQtSimulator"),
+                             tr("Simulation terminated\n"
+                                "Maybe you want to make screenshots"),
+                             QMessageBox::Yes );
+        m_Simulator->abort();
+        m_terminated = true;
+    }
 }
 
 
@@ -340,13 +344,6 @@ void ScQtNeuron_MainWindow::setupToolBoxes(void)
 void ScQtNeuron_MainWindow::setupMenus() {
     // Edit actions
 /*
-    const QIcon loadIcon = QIcon(":/icons/loadfile.svg");
-    auto *loadAction = new QAction(loadIcon, "Load Program", this);
-    loadAction->setShortcut(QKeySequence::Open);
-    connect(loadAction, &QAction::triggered, this,
-            [=] { this->loadFileTriggered(); });
-    m_ui->menuFile->addAction(loadAction);
-    m_ui->menuFile->addSeparator();
 
     auto *examplesMenu = ui->menuFile->addMenu("Load Example...");
     setupExamplesMenu(examplesMenu);
@@ -382,39 +379,41 @@ void ScQtNeuron_MainWindow::setupMenus() {
 */
 
     auto *wikiAction = new QAction(QIcon(":/icons/info.svg"), "Wiki", this);
-/*    saveAction->setShortcut(QKeySequence::Save);
-    connect(wikiAction, &QAction::triggered, this,
-            &ScQtNeuron_MainWindow::saveFilesTriggered);
-*/
 
     connect(ui->actionOpen_wiki, &QAction::triggered, this, &ScQtNeuron_MainWindow::wiki);
     connect(ui->actionSimple_AP, &QAction::triggered, this, &ScQtNeuron_MainWindow::on_ExamplesSimple_AP);
-    connect(ui->actionSimple_AP, &QAction::triggered, this, &ScQtNeuron_MainWindow::on_ExamplesFailed_AP);
+    connect(ui->actionFailed_AP, &QAction::triggered, this, &ScQtNeuron_MainWindow::on_ExamplesFailed_AP);
     connect(ui->actionVersion, &QAction::triggered, this, &ScQtNeuron_MainWindow::version);
-
 }
 
+/*
+ * for SystemC, the demo modules must be created in advance
+ */
 void ScQtNeuron_MainWindow::createExamples()
 {
     DemoNeuronSingleAP = new DemoSimpleSingleAP("Demo Single AP");
     DemoNeuronFailedAP = new DemoSimpleFailedAP("Demo Failed AP");
-    MyNeuron = DemoNeuronFailedAP; // Just to test it
+    MyNeuron = DemoNeuronSingleAP; // Just to test it
 }
 
 void ScQtNeuron_MainWindow::on_ExamplesSimple_AP()
 {
+/*    if(MyNeuron)
+        delete MyNeuron;*/
     MyNeuron->ClearEvents();
     MyNeuron = DemoNeuronSingleAP; //("Demo Single AP");
+    CreateWindows(m_Simulator,  MyNeuron);
     m_GradientWindow->setWindowTitle(QString(MyNeuron->name())+QString(" voltage gradients"));
-    std::cerr << MyNeuron->name() << '\n';
     MyNeuron->EVENT_GenComp.Initialize.notify(SC_ZERO_TIME);
 }
 
 void ScQtNeuron_MainWindow::on_ExamplesFailed_AP()
 {
-    //    delete MyNeuron;
+/*    if(MyNeuron)
+        delete MyNeuron;*/
     MyNeuron->ClearEvents();
     MyNeuron = DemoNeuronFailedAP; //("Demo Failed AP");
+    CreateWindows(m_Simulator,  MyNeuron);
     m_GradientWindow->setWindowTitle(QString(MyNeuron->name())+QString(" voltage gradients"));
     MyNeuron->EVENT_GenComp.Initialize.notify(SC_ZERO_TIME);
 }

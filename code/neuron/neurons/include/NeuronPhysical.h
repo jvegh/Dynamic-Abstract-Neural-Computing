@@ -250,6 +250,11 @@ public:
         if(!Legal) EVENT_GenComp.InputIllegal.notify(SC_ZERO_TIME); // Inform the possible observers
         return Legal;
     }
+    /**
+     * @brief Finish operating-related activity
+     */
+    void OperationFinished();
+
 #if MakeDebugPrint
     virtual void  OutputItem(void);
 #endif

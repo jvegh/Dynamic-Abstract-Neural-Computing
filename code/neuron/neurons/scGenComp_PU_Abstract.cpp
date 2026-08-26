@@ -251,6 +251,10 @@ void scGenComp_PU_Abstract::
         StageFlag_Set(GenCompStageMachine_t::gcsm_Delivering); // Imitate normal computing end
         EVENT_GenComp.RelaxingBegin.notify(s_Heartbeat_time_resolution);
                 DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"SENT 'RelaxingBegin' in " << GenCompStagesString[mStageFlag] << "'");
+/*        m_Relaxing_Stopped = true;
+        EVENT_GenComp.RelaxingEnd.notify(SC_ZERO_TIME);
+        DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"SENT 'RelaxingEnd' in stage '" << GenCompStagesString[mStageFlag] << "'");
+*/
     }
     else
     {  // Computing succeeded
@@ -380,9 +384,18 @@ void scGenComp_PU_Abstract::
             if((StopHeartbeating = Heartbeat_Computing_Stop()))
             {
                 // Set the smallest heartbeat for delivering
-//                HeartbeatTime_Set(m_Heartbeat_time_resolution);
-                EVENT_GenComp.ComputingEnd.notify(SC_ZERO_TIME);
+                HeartbeatTime_Set(s_Heartbeat_time_resolution);
+                if(m_Relaxing_Stopped)
+                {
+                    //Computing failed
+                    EVENT_GenComp.RelaxingEnd.notify(SC_ZERO_TIME);
+                    DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"SENT 'RelaxingEnd' in stage '" << GenCompStagesString[mStageFlag] << "'");
+                }
+                else
+                {   //Computing succeeded
+                    EVENT_GenComp.ComputingEnd.notify(SC_ZERO_TIME);
                     DEBUG_SC_EVENT_LOCAL(scLocalTime_Get(),name(),"SENT 'ComputingEnd' in stage '" << GenCompStagesString[mStageFlag] << "'");
+                }
             }
             break;
         }

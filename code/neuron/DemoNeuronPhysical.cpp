@@ -136,8 +136,11 @@ void DemoSimpleFailedAP::GenerateEvents()
     wait(EVENT_GenComp.Initialize);
     //     std::cerr << "Test Initialized\n";
     BaseTime = sc_core::sc_time_stamp();
-    EVENT_GenComp.InputReceived.notify(PU_InputTime1-PU_InitialDelayTime);
 
+    EVENT_GenComp.InputReceived.notify(PU_InputTime1-PU_InitialDelayTime);
+    wait(EVENT_GenComp.InputReceived);
+
+    EVENT_GenComp.InputReceived.notify(PU_InputTime1-PU_InitialDelayTime);
     wait(EVENT_GenComp.InputReceived);
 }
 

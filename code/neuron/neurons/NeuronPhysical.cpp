@@ -289,10 +289,10 @@ void NeuronPhysical::
 
     CalculateGradient();
     // The Na+ current
+    if(m_NaCurrent)
     if ((StageFlag_Get()!=GenCompStageMachine_t::gcsm_Computing))
         m_Na_I +=  m_NaCurrent->CurrentValue_Get(m_t);
 
-//        m_Membrane_dVdt_Rushin/MembraneResistanceGOhm_Get()/1000;
     m_Resulting_I = - m_AIS_I + m_Na_I;
 
     m_Membrane_dV = m_Membrane_dVdt_Resulting * m_dt;  // The voltage  change, in [mV], m_dt in [sec]
@@ -333,18 +333,26 @@ void NeuronPhysical::
 // return true if to stop heartbeating in 'Computing' mode
 bool NeuronPhysical::
     Heartbeat_Computing_Stop()
-{   if(m_Membrane_V < 0)
-    {   // Charging failed
-        ChargeupFailed();
-        return true;
-    }
-    else //No obvious problem, continue computing
+{
+    if(m_Membrane_V >= ThresholdPotential)
     {
-        if(m_Membrane_V < ThresholdPotential) return false;
         // We are over, finish computing and start delivering
         Create_Rushin();
         return true;
-     }
+    }
+    if ((abs(m_Membrane_V)>= AllowedRestingPotentialDifference))
+        return false; // Continue computing
+
+    if(m_MembraneGradientPositive) return false;
+
+    // Computing failed
+    // Set the default heartbeat for the new input
+    m_Relaxing_Stopped = true;
+
+    // Charging failed
+    //    ChargeupFailed();
+//        OperationFinished();
+        return true;
 }
 
 // return true if to stop heartbeating in 'Delivering' mode
@@ -367,6 +375,14 @@ bool NeuronPhysical::
     // We are over the hyperpolarization turning point, check if resting
     if ((abs(m_Membrane_V )>= AllowedRestingPotentialDifference))
         return false; // Continue relaxing
+
+    OperationFinished();
+    return true;
+}
+
+void NeuronPhysical::
+    OperationFinished()
+{
     // Make sure the resting potential really zero
     m_Membrane_V = 0; m_Relaxing_Stopped = true;
     // Cancel the synaptic inputs currents
@@ -375,7 +391,6 @@ bool NeuronPhysical::
     // Cancel rush-in current
     delete m_RushinCurrent;
     m_RushinCurrent = (NeuronInputCurrent*)NULL;
-    return true;
 }
 
 #if MakeDebugPrint

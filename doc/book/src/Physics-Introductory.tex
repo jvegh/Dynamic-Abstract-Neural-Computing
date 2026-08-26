@@ -1,19 +1,10 @@
 % This is the chapter 'Physics-Introductory' to the "Hodgkin-Huxley neuron model V2.0 book"
 % Last edited 2026.06.05
 
-\ifx\magyarundefined
+\ifx\magyar\undefined
 \section{Introduction\label{sec:Physics-Introduction}}
 \else
 \section{Bevezetés\label{sec:Physics-Introduction}}
-\fi
-
-
-\ifx\magyar\undefined
-A complete scientific description of living matter resists all \textit{disciplinary} attempts: the existence of life in many ways contradicts the (misapplied) laws of science that we have tested on objects of inanimate nature. It has its own laws, which are similar to the well-known laws of inanimate science, but are not identical to them. This is a long-known problem, which E. Schrödinger, Nobel Prize-winning physicist, summarized eight decades ago as follows: living matter cannot be described by the \textit{ordinary} laws of physics. He added, however, that \textit{no new forces or interactions occur in living matter}, only new connections (different methods of understanding) must be found, and then the new laws recognized will fit into the fabric of science just as well as the old ones. A similar opinion was expressed by R.P. Feynman, also a Nobel Prize-winning physicist, when he suggested “excursions” to other scientific fields, since the truly interesting phenomena occur beyond the normal boundaries, in “no man’s land”.  That is, in order to establish the discussion of (V2.0), we must also discuss physics, reinterpreting certain of its concepts, approximations, and laws, but always respecting the so-called first principles. This sometimes requires unconventional thinking and occasionally rethinking familiar conclusions.
-\else
-Az élő anyag teljes körű tudományos leírása minden \textit{diszciplináris} próbálkozásnak ellenáll: az élet létezése sok szempontból ellentmond a tudomány (rosszul alkalmazott) törvényeinek, amelyeket az élettelen természet objektumain teszteltünk. Saját törvényei vannak, amelyek ugyan hasonlítanak az élettelen természettudomány jól ismert törvényeire, de nem azonosak velük. Régóta ismert probléma, amit E.Schrödinger, Nobel-díjas fizikus, úgy foglalt össze nyolc évtizeddel ezelőtt, hogy az élő anyagot nem lehet leírni a fizika \textit{rendes} (ordinary) törvényeivel. Hozzátette azonban, hogy semmiféle új erő vagy kölcsönhatás nem lép fel az élő anyagban, csupán új összefüggéseket (más módszerű megértést) kell találni, és ezután a felismert új törvényszerűségek éppúgy illeszkedni fognak a tudomány szövetébe, mint a régiek. Hasonló véleményt mondott R.P.Feynman, szintén Nobel-díjas fizikus, is, amikor “kirándulásokat” javasolt más tudományterületekre, mivel az igazán érdekes jelenségek a rendes határokon túl, a “senki földjén” történnek.
-Azaz, a (V2.0) tárgyalását megalapozandó, fizikát is tárgyalnunk kell,
-bizonyos fogalmait, közelítéseit, törvényeit újraértelmezve, de mindig tiszteletben tartva az ún. első elveit. Ez helyenként nem-hagyományos gondolkodást és esetenként megszokott következtetések újra gondolását igényli.
 \fi
 
 
@@ -22,7 +13,9 @@ bizonyos fogalmait, közelítéseit, törvényeit újraértelmezve, de mindig ti
  Knowledge of the fundamental (physical) functioning of the biological neuron is essential for understanding its electrical processes and the excitation process, information processing based on signal transmission between neurons, and the low-level functioning of the brain. Although the fact that neurons show electrically measurable changes (i.e., belonging to the subject of electrical science) has been known since the beginning of instrumental studies, it was soon demonstrated that changes falling within the subject of thermodynamics and mechanics (i.e., another, separate discipline of physics) can also be measured. In the traditional view of physics, each discipline interprets only a certain range of quantities and can only derive relationships and laws between them. Nature, of course, does not care about the disciplinary nature of science, so science is essentially puzzled by the “miracle” that during the operation of a neuron interpreted as a purely electrical model, quantities falling within the scope of other disciplines (temperature, pressure) also change. The logic of things follows that then one must try to describe the experiences with the tools and laws of each discipline. In this way, it is possible to perform a “complete measurement”,
  \index{complete measurement}
 i.e. to experimentally measure all quantities that are related to the operation of the neuron, but no connection is established between the disciplinary laws and quantities.
+
 \else
+
 A biológiai neuron alapvető (fizikai folyamatokon alapuló) működésének ismerete elengedhetetlen az elektromos folyamatoknak és a gerjesztés folyamatának, a neuronok közötti jelátvitelen alapuló információfeldolgozásnak, és az agy alacsony szintű működésének megértéséhez. Bár az a tény, hogy a neuronok elektromosan mérhető (azaz az elektromosságtan témakörébe tartozó) változásokat mutatnak, a műszeres vizsgálatok kezdete óta ismert, nem sokkal később azt is kimutatták, hogy a termodinamika és a mechanika (azaz a fizika másik, különálló diszciplinája) témakörébe eső változások is mérhetők. A fizika hagyományos szemléletében egy-egy diszciplina csupán bizonyos  mennyi\-ségek körét értelmezi, csak azok közötti összefüggéseket és törvényeket tud származtatni. A természet természetesen nem törődik a tudomány diszciplinaritásával, így a tudomány lényegében értetlenül áll ama “csoda” előtt, hogy a tisztán elektromos modellként értelmezett neuron működése során más diszciplina tárgykörébe eső mennyiségek (hőmérséklet, nyomás) is megváltoznak. A dolgok logikájából következik, hogy akkor mindegyik diszciplina eszközeivel és törvényeivel kell megpróbálni leírni a tapasztalatokat. Ilyen módon lehet ugyan “teljes mérést” végezni, 
 \index{teljes mérés}
 azaz kísérletileg minden olyan mennyiséget mérni, ami a neuron működéséhez kapcsolódik, de a diszciplináris törvények és mennyiségek között így sem jön létre kapcsolat.
@@ -31,10 +24,14 @@ azaz kísérletileg minden olyan mennyiséget mérni, ami a neuron működéséh
 \ifx\magyar\undefined
 Although it is obvious that all phenomena are related to the same physical process, and the quantities are clearly correlated, a qualitative step forward is needed that does not simply put together the disciplinary laws developed for inanimate science, but rather adapts them to the conditions of living matter and creates the necessary connections between them. The infinitely distant, infinitely small change-causing concepts of physics, and disciplinary separation, are certainly not applicable. The amount of electric charges changing their location during operation is of the same order of magnitude as the amount of free charges on the membrane surface, so we can only use Lotka-Volterra type differential equations
 \index{Lotka-Volterra type differential equation}
-to describe electrical changes (the usual use of “equivalent current circuits” is incorrect and misleading), and furthermore, between the closed biological boundary walls of neurons, the interaction of ions on each other creates a counterforce on the wall and the change in the counterforce creates a pressure change in the electrolyte filling the cell. The elastic lipid layer forming the neuron wall undergoes a size change due to the pressure change (although it has a constant modulus of elasticity: during operation, the neuron’s size of about 25 micrometers changes by only about 1 nanometer).
+\index{equivalent electric circuit}
+to describe electrical changes (the usual use of “equivalent electric circuits” is incorrect and misleading), and furthermore, between the closed biological boundary walls of neurons, the interaction of ions on each other creates a counterforce on the wall and the change in the counterforce creates a pressure change in the electrolyte filling the cell. The elastic lipid layer forming the neuron wall undergoes a size change due to the pressure change (although it has a constant modulus of elasticity: during operation, the neuron’s size of about 25 micrometers changes by only about 1 nanometer).
+
 \else
+
 Bár nyilvánvaló, hogy minden jelenség ugyanahhoz a fizikai folyamathoz kapcsolódik, és a mennyiségek jól láthatóan korrelálnak, olyan minőségi továbblépésre van szükség, ami nem egyszerűen egymás mellé teszi az élettelen tudományra kidolgozott diszciplináris törvényeket, hanem az élő anyag körülményeire átdolgozza azokat és megteremti közöttük a szükséges kapcsolódásokat. Biztosan nem alkalmazhatók a fizika végtelen távol levő, végtelen kis változást okozó fogalmai, és a diszciplináris elkülönülés. A működés során helyüket megváltoztató elektromos töltések mennyisége ugyanabba a nagyságrendbe esik, mint a már/még ott levő szabad töltések mennyisége, így az elektromos változások leírására csupán Lotka-Volterra típusú differenciálegyenleteket használhatunk
-\index{Lotka-Volterra differenciálegyenlet} (a szokásos “ekvivalens áramörök” használata hibás és félrevezető), továbbá a neuronok zárt biológiai határfalai között az ionok egymásra gyakorolt hatása a falon ellenerőt kelt és az ellenerő változása a sejtet kitöltő elektrolitban nyomásváltozást hoz létre. A neuron falát alkotó rugalmas lipidréteg a nyomásváltozás hatására méretváltozást szenved (bár órási rugalmassági modulusa van: a működés során a neuron kb 25 mikrométeres mérete csupán kb 1 nanométernyit változik). 
+\index{ekvivalens elektromos áramkör}
+\index{Lotka-Volterra differenciálegyenlet} (a szokásos “ekvivalens elektromos áramkörök” használata hibás és félrevezető), továbbá a neuronok zárt biológiai határfalai között az ionok egymásra gyakorolt hatása a falon ellenerőt kelt és az ellenerő változása a sejtet kitöltő elektrolitban nyomásváltozást hoz létre. A neuron falát alkotó rugalmas lipidréteg a nyomásváltozás hatására méretváltozást szenved (bár órási rugalmassági modulusa van: a működés során a neuron kb 25 mikrométeres mérete csupán kb 1 nanométernyit változik). 
 \fi
 
 \ifx\magyar\undefined
@@ -84,16 +81,15 @@ folytonos mennyiség tulajdonságaként értelmezni.
 Emellett, a tudomány olyan absztrakt fogalmakat alkotott,
 mint a tér és idő, tömeg és töltés, folytonos és diszkrét szemlélet.
 \textit{A klasszikus fizika egyidejűleg csak egyetlen ilyen fogalmat tekint.} 
-A klasszikus diszciplinák az ionnak egy-egy absztrahált tulajdonságát tudják tárgyalni: a mechanika a tömeget, az elektromosságtan a töltést. Egyedül, egyik diszciplina sem tudja az ionokat tartalmazó rendszereket leírni. Lényegében
+A klasszikus diszciplinák az ionnak csupán egy-egy absztrahált tulajdonságát tudják tárgyalni: a mechanika a tömeget, az elektromosságtan a töltést. Egyedül, egyik diszciplina sem tudja az ionokat tartalmazó rendszereket leírni. Lényegében
 az ionok elektromosságtana, termodinamikája és mechanikája
 jobban hasonlít az említett nem-klasszikus disciplinákra,
 mint egy-egy klasszikus diszciplinára. Emiatt az utóbbiak 
 törvényeit átvenni csak nagy körültekintéssel és óvatossággal lehet; különösen akkor, ha azokat az élő anyag speciális struktúráira alkalmazzuk.
-
 \fi
 
 \ifx\magyar\undefined
-The roles of time, space and matter are subjects of endless debates in science.
+The roles and interpretations of time, space and matter are subjects of endless debates in science.
 Considering finite interaction speeds is against using a "nice and classical physics"
 with its nice mathematical formulas, but omitting the different speeds
 misled and may mislead research in several fields.
@@ -101,7 +97,19 @@ Biology produces situations where the complexity of phenomena
 and the needed carefulness meets the ones needed in cosmology.
 The difference is that, in biology, the consequences of phenomena are immediate
 and they can be studied experimentally.
+
 \else
+
+Az idő, a tér és az anyag szerepe és értelmezése
+végeérhetetlen viták forrása a tudományban.
+A véges kölcsönhatási sebességek számbavétele pedig
+a "szép és klasstikus fizika" és annak elegáns matematikai formalizmusa ellen való, de a sebességek különbözőségének 
+elhanyagolása számos területen félrevezette és félrevezetheti 
+a tudományt.
+A biológia olyan helyzeteket teremt, ahol a jelenségek
+összetettsége és a szükséges elővigyázatosság vetekszik
+azzal, amit a kozmológia követel.
+A különbség csupán annyi, hogy a különbségek azonnal jelentkeznek és kísérletileg vizsgálhatók.
 \fi
 
 

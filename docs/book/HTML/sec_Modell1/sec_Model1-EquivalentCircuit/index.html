@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>2.1 Equivalent electrical circuit ‣ Chapter 2 The Hodkin-Huxley model (V1.0) ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Sun Aug 23 12:41:14 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on August 23, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="../index.html" title="Chapter 2 The Hodkin-Huxley model (V1.0) ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up" href="../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="../index.html" title="Chapter 2 The Hodkin-Huxley model (V1.0) ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="../../Ptx1/index.html" title="Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../ch_Introduction/index.html" title="Chapter 1 Introduction ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../index.html" title="Chapter 2 The Hodkin-Huxley model (V1.0) ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="part" href="../../Ptx1/index.html" title="Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<meta name="keywords" lang="en" content="Coulomb’s law">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">The Hodgkin-Huxley neuron model V2.0
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.5</em>
+<br class="ltx_break"></span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Introduction/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">1</span> </span><span class="ltx_text" style="color:#000000;">Introduction</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">The V1.0 model</span></span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Equivalent electrical circuit</span></span></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_part"><a href="../../Ptx1/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Appendices</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href" style="font-size:90%;">Report issue</a><span class="ltx_text" style="font-size:90%;">
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</span></p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">The V1.0 model</span></span></a><a href="../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">The V1.0 model</span></span></a><a href="../../Ptx1/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title">Appendices</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section" style="color:#000000;">
+<span class="ltx_tag ltx_tag_section">2.1 </span>Equivalent electrical circuit</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">”These ionic concentration gradients across the cell membrane
+constitute the driving forces (or chemical potentials)
+for ionic currents flowing through open channels in the membrane.
+In other words, the ionic concentration gradients act like DC batteries
+for cross-membrane currents.” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../Ptx1/bib.html#bib7" title="" class="ltx_ref">7</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Fig. </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:fig:AP_schematic</span><span class="ltx_text" style="color:#000000;"> shows the concept
+of the </span><a href="../../Ptx1/Ch_Index/index.html#glo.main.AP"><span href="../../Ptx1/Ch_Index/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref" style="color:#000000;">Action Potential (AP)</span></a><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+<figure id="fig:HH_EquivalentCircuit" class="ltx_figure"><img src="fig/HHcirdiagm.png" id="Ch2.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="389" height="300" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 2.2: </span>The equivalent circuit for the Hodgkin-Huxley model</figcaption>
+</figure>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The biological ’equivalent circuit’ models assume that the circuits comprise point-like
+ideal </span><span class="ltx_text ltx_font_italic" style="color:#000000;">discrete elements</span><span class="ltx_text" style="color:#000000;">
+such as condensers and resistors, and some hidden power changes their parameters according to some
+mathematical formulas,
+furthermore ideal batteries with voltage that may again be changed by that power.
+All they are connected by conducting (metallic) ideal wires
+and their interaction speed is infinitely high (the Newtonian ’instant interaction’).
+Using that abstract model enables them to use the well-known classic equations, named after
+Ohm, Kirchoff, Coulomb, Maxwell and others. However, those abstractions have severe limitations.
+Biology applies Ohm’s Law to its objects while claims that its objects are non-ohmic;
+understands that neural currents comprise ions while claims that the ions do not feel the Coulomb repulsion;
+measures ions’ propagation speed but in its equations it claims that their effects are instant;
+hypotesizes non-existing physical mechanisms to make their nature. In general,
+biophysics abstracts from the world of the physics-inspired mathematical formulas a fictitious nature
+where biology lives and hypothesises complementary mechanisms to achieve some resemblance with the true biological word.
+The examples include that ions in the ions channels do not repulse each other;
+that charge, potential and current are independent of each other;
+that ion currents do not repulse each other neither when they travel from the presynaptic terminal to the
+</span><span class="ltx_text" style="color:#000000;">
+</span><a href="../../Ptx1/Ch_Index/index.html#glo.main.AIS"><span href="../../Ptx1/Ch_Index/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref" style="color:#000000;">Axon Initial Segment (AIS)</span></a><span class="ltx_text" style="color:#000000;">;
+that some hidden power opens the ion channels to let ions in into the intracellular space,
+that ions with the same charge move in opposite directions when ions rush-in into the intracellular segment of the neuron;
+that the ions pass ion channels without being accelerated by the potential difference accross the membrane;
+the telegraph equations are applied to the case of axons although neither external potential nor current loss exists; and so on.</span></p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Even that unfortunate idea of equivalent circuits leads to analyzing
+”electrotonic (electronic circuit equivalent) modeling of realistic neurons and the interaction of dendritic morphology
+and voltage-dependent membrane properties on the processing of neuronal synaptic input” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../Ptx1/bib.html#bib31" title="" class="ltx_ref">31</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">;
+that is, to study a simulated neuron built from discrete electronic components. However, the idea needs to put together
+many compone ”raises the possibility that the neuron is itself a network”. On the one side, such an idea misguides the neurophysical research (since actually a fake neural system is scrutinized, the validity of the approach is questionalized </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../Ptx1/bib.html#bib32" title="" class="ltx_ref">32</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">), and on the other, since electroengineers understand
+the neuronal operation from the wrong model, it also misguides building neuromorphic architectures.</span></p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The equivalent circuits are a source of misinterpretations. As </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../Ptx1/bib.html#bib7" title="" class="ltx_ref">7</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> formulates,
+”In other words, the ionic concentration gradients act like DC batteries for cross-membrane currents.”
+We call the attention again, that </span><span class="ltx_text ltx_font_italic" style="color:#000000;">ions</span><span class="ltx_text" style="color:#000000;"> represent the current,
+that is </span><span class="ltx_text ltx_font_italic" style="color:#000000;">that current changes changes the concentration, that changes
+the voltage of the DC battery, unlike in the case of the equivalent circuits</span><span class="ltx_text" style="color:#000000;">.
+This difference is significant in understand how the basic neuronal circuit works.
+Introducing equivalent circuits prevents explaining the fundamental
+electric phenomena.</span></p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">One wrong consequence of forgetting that the charge transfer mechanism is entirely different,
+the charge carriers are large and heavy (and as a consequence: slow) ions instead of electron (cloud),
+furthermore they are not necessary present in the
+volume under test and the ’construction’ of biological matter
+enables the tested medium to produce charge carriers,
+using ’equivalent circuits’ for
+neuronal operation. This fallacy
+entirely falsifies the conclusions from the measurements.</span></p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Another wrong consequence of using ’equivalent circuits’ to describe
+the electrical operation of neurons is believing that the currents in
+the biological circuit do not change the concentration, and through
+the concentration, also the potential; see also section </span><a href="../../Ptx1/ch_Physics/sec_Physics-Abstraction/index.html#sec:Physics-Resources" title="Locality and finite resources ‣ B.3 Science concepts ‣ Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">B.3</span></a><span class="ltx_text" style="color:#000000;">. The ’equivalent circuits’,
+of course, use a constant potential (they follow the abstraction used
+in the theory of electricity, although the ’ideal batteries’ also
+may produce their voltage using chemical processes), and unreasonably, some mystic process changes the resistance/conductance of components. This wrong abstraction
+results in numerous misunderstandings, among others, introducing ideas
+such as parallel oscillator equivalent of neuron, input resistance,
+delayed rectifier current, resting current, and time- or voltage-dependent
+conductance. Furthermore, we cannot
+interpret, among others, </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">how neuronal electricity
+works in lack of external potential</em><span class="ltx_text" style="color:#000000;">; </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">how slow currents operate
+neuron’s infrastructure</em><span class="ltx_text" style="color:#000000;">, </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">how and why action potential is generated</em><span class="ltx_text" style="color:#000000;">.
+Deriving the time course of the Nernst-Planck potential opens the
+way to a quantitative understanding of neurophysical electrical processes,
+including their time course.</span></p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Again another wrong consequence is that the two secondary abstractions ’potential’,
+and ’current’, became independent from the primary abstraction ’charge’
+and each other (significantly contributing to the fallacy that ’physics cannot describe life’). Our equations and the underlying discussion point
+to the fact that </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">the potential and the current cannot be separated
+from the charge</em><span class="ltx_text" style="color:#000000;">. No ’delayed rectifying current’ and ’voltage- (or
+time-) dependent conductance’ exist. Those notions originate from
+the wrong interpretation of measured data derived from mismatching
+measured electrical data pairs and the misconception that biological
+structures and materials must behave like metals.</span></p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">As we discussed in section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Physics-TwoSegments</span><span class="ltx_text" style="color:#000000;">,
+the unbalanced charge in neurons and the charge injected
+suddenly into the intracellular segment during a rush-in action
+are in the same order of magnitude. We also discussed that
+the charge injection (the appearance and flow of charge in the proximal layer on the membrane’s surface) causes well measureable mechanical, optical, etc. changes </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../Ptx1/bib.html#bib33" title="" class="ltx_ref">33</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> on the membrane.
+Those changes are well observable on the low-concentration side, in the form of slow currents, and large-scale
+concentration and potential changes.</span></p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Those changes also mean that a large amount of charge
+passes from the high-concentration side
+to the low concentration side of the membrane, and causes a sudden drop
+on the high-concentration side of the membrane. As discussed,
+that change means simultaneously a change in the corresponding
+potentials across the membrane that solves the mystery why the
+</span><a href="../../Ptx1/Ch_Index/index.html#glo.main.AP"><span href="../../Ptx1/Ch_Index/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref" style="color:#000000;">AP</span></a><span class="ltx_text" style="color:#000000;"> AP stops. The potential across the membrane is defined by the difference of the
+potential of the two thin layers (see section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Physics-Membranes</span><span class="ltx_text" style="color:#000000;">) on the membrane’s surface.
+As we discussed, a huge electric field exists across the
+plates of the neuronal condenser, while a moderate one
+in the proximal layers. That means that the ions can quickly
+leave the high concentration when the rush-in injection begins.
+They produce an ’empty’ layer (and a potential gradient)
+whithin that layer and the ions in the neighboring layer
+start to move using the ’downhill’ potential. However, they do have a much slower speed, so they ’stop’ at some distance.</span></p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">The V1.0 model</span></span></a><a href="../../Ptx1/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title">Appendices</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Aug 23 12:41:14 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+% This is the chapter 'Thermodynamics' for the Hodgkin-Huxley neuron model V2.0 book
+% Last edited 2026.06.22
+
+\ifx\magyar\undefined
+\chapter{Thermodynamics for neurons\label{ch:Thermodynamics}}
+\else
+\chapter[A neuronok termodinamikája]{A neuronok termodinamikája\label{ch:Thermodynamics}}
+\fi
+\iflatexml
+\else
+\minitoc
+\fi
+
+A termodinamika szokásos értelmezése izotróp és homogén szabad térben elhelyezkedő, nagy számú olyan részecskére vonatkozik, amelyek csak közvetlen ütközéssel tudnak kölcsönhatásba lépni. Mint másutt részleteztük, a neuronok esetében általában egyik feltétel sem teljesül, ezért a termodinamikai következtetéseket újra kell származtatni és azok érvényességét megvizsgálni. A termodinamika alapvető összefüggései azonban érvényben maradnak. Ebben a fejezetben a termodinamika  olyan vonatkozásait emeljük ki, amelyek általában elektrolitok esetén, de különösen neuronok esetén jelentősen eltérnek a megszokottól.
+
+\section[Termodinamikus tér]{A "termodinamikai elektromos tér" \label{sec:Physics-ThermodynamicField}}
+\fi
+
+
+Szegmensekre osztott elektrolitban az elektromos töltések kiegyensúlyozottak; megfelelő fizikai körülmények között
+azonban kiegyensúlyozatlanná is válhatnak.
+Egy, a biológia számára fontos eset, amikor egy féligáteresztő hártya
+választ el két, nagyon eltérő koncentrációjú ionos oldatokat
+tartalmazó szegmenst. Az eltérő koncentrációk 
+a jól ismert Nernst-Planck összefüggésnek megfelelően feszültséget generálnak, amint azt a 
+\hyperlink{phys:Nernst-Planck}
+{\textbf{Physics panel~\ref{phys:Nernst-Planck}}} tárgyalja.
+A nyugalmi potenciál esetére vonatkozó számítási módot a \hyperlink{phys:EquivalentField_Membrane}
+{\textbf{Physics panel~\ref{phys:EquivalentField_Membrane}}},
+annak eredményét pedig a 
+\hyperlink{num:EquivalentField_Membrane}
+{\textbf{Numerics panel~\ref{num:EquivalentField_Membrane}}} mutatja.
+
+Egyszerűen fogalmazva, a Nernst-Planck egyenlet azt állítja,
+hogy az ionok koncentrációjának változása változást okoz a
+elektromos térerőben (és megfordítva);
+továbbá, hogy stacionárius esetben azok változatlanok maradnak.
+Vegyük észre, hogy ionkeverék esetében közös, töltés-generált,
+elektromos erőtér van, és az minden ionra azonos, míg a közös
+elektromos erőtér az egyes ionoknál eltérő koncentrációkat generál. 
+Megjegyezzük, hogy a neuronon belül a gradiensek élesen változnak,
+így ott csupán a differenciális alak alkalmazható;
+a statikus makroszkopikus integrális alak használata félrevezető.
+
+\physicspanel{phys:Nernst-Planck}{A Nernst-Planck törvény}
+{
+The Nernst-Planck electrodiffusion equation in a balanced state
+\begin{equation}
+	\frac{d}{dz}V_{m}(z)=-\frac{RT}{q*F}\frac{1}{C_{k}(z)}\frac{d}{dz}C_{k}(z)\label{eq:NernstPlanck}
+\end{equation}
+describes in one dimension the mutual dependence of the \emph{spatial gradients} of the
+electrical and thermodynamic fields on each other. In good textbooks (see, for example,~\cite{KochBiophysics:1999},
+Eq (11.28)), its derivation is exhaustively detailed. In the
+equation, $z$ is the spatial variable across the direction of the
+changed invasion parameter, $R$ is the gas constant, $F$ is the
+Faraday's constant, $T$ is the temperature, $q$ the valence
+of the ion, ${V_m(z)}$ the potential, and ${C_k(z)}$ the concentration
+of the chemical ion. The two sides are the derivatives of the equation
+\begin{equation}
+	V_{m} =\frac{RT}{q*F}\ln{\biggl(\frac{C_{k}^{ext}}{C_{k}^{int}}\biggr)}\label{eq:Nernst1}
+\end{equation}
+\noindent known as \textit{Nernst equation}.  In other words, \textbf{Eqs.(\ref{eq:NernstPlanck}) and Eq.(\ref{eq:Nernst1}) are the differential and integral formulations of the same knowledge}. The limits of the integration are chosen arbitrarily (by choosing the reference concentration $C_{k}^{int}$).
+}
+
+
+
+
+

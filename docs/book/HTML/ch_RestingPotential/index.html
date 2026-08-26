@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0</title>
-<!--Generated on Sun Jul 19 00:27:29 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on July 19, 2026.-->
+<title>Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Sun Aug 23 22:43:58 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on August 23, 2026.-->
 
 <link rel="shortcut icon" href="../../favicon.ico" type="image/png">
 <link rel="stylesheet" href="../../LaTeXML.css" type="text/css">
@@ -11,73 +11,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="../../latexmldoc.css" type="text/css">
 <script src="../../LaTeXML-maybeMathjax.js"></script>
-<link rel="up" href="../index.html" title="A Hodgkin-Huxley neuron modell V2.0">
-<link rel="start" href="../index.html" title="A Hodgkin-Huxley neuron modell V2.0">
-<link rel="prev" href="../ch_Fallacies/sec_Fallacies-TimeConstants/sec_Fallacies-GHKEquation.html" title="4.2.1 A GHK egyenlet ‣ 4.2 A neuronális rezgőkör időállandói ‣ Chapter 4 Tévhitek a neuronokról ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="next" href="sec_Physics-ElectrolyteThermalField.html" title="5.0.1 Deriving mebrane’s ”thermodynamic electrical field” ‣ Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../ch_Thermodynamics/index.html" title="Chapter 1 A neuronok termodinamikája ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../ch_Speculations/index.html" title="Chapter 2 Speculations ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../ch_Electricity/index.html" title="Chapter 3 A neuronok elektromosságtana ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../ch_Fallacies/index.html" title="Chapter 4 Tévhitek a neuronokról ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../ch_ActionPotential/index.html" title="Chapter 6 Action Potential ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="appendix" href="../ch_Dichotomies.html" title="Dichotomies ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../Ch_ListOfTables/index.html" title="ListOfTables ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../Ch_Index/index.html" title="Index ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="chapter" href="../Ch_Glossary/index.html" title="Glossary ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="bibliography" href="../bib.html" title="Bibliography ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="subsection" href="sec_Physics-ElectrolyteThermalField.html" title="5.0.1 Deriving mebrane’s ”thermodynamic electrical field” ‣ Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="subsection" href="sec_Physics-LayersInSegment.html" title="5.0.2 Charge layers in segment ‣ Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="subsection" href="sec_Physics-Goldman-Hodgkin-Katz.html" title="5.0.3 Goldman-Hodgkin-Katz potential ‣ Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0">
-<link rel="subsection" href="sec_Physics-MovingPotential.html" title="5.0.4 Moving in the membrane’s potential ‣ Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0">
+<link rel="up" href="../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="../ch_Thermodynamics/phys_Nernst-Planck/index.html" title="C.1 Deriving the ”thermodynamic electrical field” ‣ Appendix C Thermodynamics for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="num_EquivalentField_Membrane/index.html" title="D.1 Deriving mebrane’s ”thermodynamic electrical field” ‣ Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../ch_Foreword/index.html" title="Foreword ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../ch_Modeling/index.html" title="Appendix A Modeling for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../ch_Physics/index.html" title="Appendix B Physics for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../ch_Thermodynamics/index.html" title="Appendix C Thermodynamics for neurons ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../ch_Speculations/index.html" title="Appendix E Speculations ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../Ch_ListOfTables/index.html" title="ListOfTables ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../Ch_Index/index.html" title="Index ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="bibliography" href="../bib.html" title="Bibliography ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="num_EquivalentField_Membrane/index.html" title="D.1 Deriving mebrane’s ”thermodynamic electrical field” ‣ Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="sec_Physics-LayersInSegment/index.html" title="D.2 Charge layers in segment ‣ Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="sec_Physics-Goldman-Hodgkin-Katz/index.html" title="D.3 Goldman-Hodgkin-Katz potential ‣ Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="sec_Physics-MovingPotential/index.html" title="D.4 Moving in the membrane’s potential ‣ Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0">
 <meta name="keywords" lang="en" content="electrical equilibrium, resting potential, thermodynamic equilibrium">
 </head>
 <body>
 <nav class="ltx_page_navbar">
 <div class="ltx_para">
 <img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
-<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The Hodgkin-Huxley neuron model V2.0
+<p class="ltx_p">The Hodgkin-Huxley neuron model V2.0
 <br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
 <br class="ltx_break">behind neuronal operation
-<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.3</em>
-<br class="ltx_break"></span></span></p>
+<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.5</em>
+<br class="ltx_break"></span></p>
 </div>
 <nav class="ltx_TOC">
 <ol class="ltx_toclist">
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_Thermodynamics/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">1</span> </span><span class="ltx_text" style="color:#000000;">A neuronok termodinamikája</span></span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_Speculations/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Speculations</span></span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_Electricity/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3</span> </span><span class="ltx_text" style="color:#000000;">A neuronok elektromosságtana</span></span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_Fallacies/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">4</span> </span><span class="ltx_text" style="color:#000000;">Tévhitek a neuronokról</span></span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
-<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5</span> </span><span class="ltx_text" style="color:#000000;">Nyugalmi potenciál</span></span></span>
-<ol class="ltx_toclist ltx_toclist_chapter">
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-ElectrolyteThermalField.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5.0.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-LayersInSegment.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5.0.2</span> </span><span class="ltx_text" style="color:#000000;">Charge layers</span></span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-Goldman-Hodgkin-Katz.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.0.3 </span>Goldman-Hodgkin-Katz potential</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Physics-MovingPotential.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.0.4 </span>Moving in the membrane’s potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_Foreword/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../ch_Modeling/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">A</span> </span><span class="ltx_text" style="color:#000000;">Modeling</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../ch_Physics/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">B</span> </span><span class="ltx_text" style="color:#000000;">Physics for neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../ch_Thermodynamics/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">C</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamics for neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D</span> </span><span class="ltx_text" style="color:#000000;">Resting Potential</span></span></span>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="num_EquivalentField_Membrane/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="sec_Physics-LayersInSegment/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.2</span> </span><span class="ltx_text" style="color:#000000;">Charge layers</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="sec_Physics-Goldman-Hodgkin-Katz/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D.3 </span>Goldman-Hodgkin-Katz potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="sec_Physics-MovingPotential/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D.4 </span>Moving in the membrane’s potential</span></a></li>
 </ol>
 </li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../ch_ActionPotential/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">6</span> </span><span class="ltx_text" style="color:#000000;">Action Potential</span></span></a></li>
-<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../ch_Dichotomies.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Dichotomies</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../Ch_ListOfTables/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../Ch_ListOfFigures/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../Ch_Index/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../Ch_Glossary/index.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
-<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../bib.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../ch_Speculations/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">E</span> </span><span class="ltx_text" style="color:#000000;">Speculations</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../Ch_ListOfTables/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../Ch_ListOfFigures/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../Ch_Index/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
 </ol></nav>
 <div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href" style="font-size:90%;">Report issue</a><span class="ltx_text" style="font-size:90%;">
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
 <img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</span></p>
 </div></nav>
 <div class="ltx_page_main">
 <header class="ltx_page_header">
 <div class="ltx_align_center">
 <a href="../index.html" title="" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">
-A Hodgkin-Huxley neuron modell V2.0</span></a><a href="../ch_Fallacies/sec_Fallacies-TimeConstants/sec_Fallacies-GHKEquation.html" title="In 4.2 A neuronális rezgőkör időállandói ‣ Chapter 4 Tévhitek a neuronokról ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">4.2.1</span> </span><span class="ltx_text" style="color:#000000;">GHK egyenlet</span></span></a><a href="sec_Physics-ElectrolyteThermalField.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5.0.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a>
+The Hodgkin-Huxley neuron model V2.0</span></a><a href="../ch_Thermodynamics/phys_Nernst-Planck/index.html" title="In Appendix C Thermodynamics for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">C.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a><a href="num_EquivalentField_Membrane/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a>
 </div></header>
 <div class="ltx_page_content">
-<section class="ltx_chapter ltx_authors_1line">
-<h1 class="ltx_title ltx_title_chapter" style="color:#000000;">
-<span class="ltx_tag ltx_tag_chapter">Chapter 5 </span>Nyugalmi potenciál</h1>
+<section class="ltx_appendix ltx_authors_1line">
+<h1 class="ltx_title ltx_title_appendix" style="color:#000000;">
+<span class="ltx_tag ltx_tag_appendix">Appendix D </span>Resting Potential</h1>
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text" style="color:#000000;">Concerning the origin of the membrane’s resting potential, we disagree that ”the resting membrane potential is the result of the [low intensity]
@@ -89,11 +92,11 @@ no setpoint is defined, so some (low) current flows
 due to the interplay of the electrostatically set setpoint
 and the reversal potential of the ions inside and outside.
 The claim was already question-marked whether the membrane permeability is a primary property for the
-membrane potential generation, for a review, see </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib44" title="" class="ltx_ref">44</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
-That interpretation leads to causality issues </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib47" title="" class="ltx_ref">47</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.</span></p>
+membrane potential generation, for a review, see </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><span class="ltx_ref ltx_missing_citation ltx_ref_self">MembranePotentialPermeability:2024</span><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+That interpretation leads to causality issues </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib12" title="" class="ltx_ref">12</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.</span></p>
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text" style="color:#000000;">It was already guessed that the membrane’s resting potential is of electrostatic origin </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib48" title="" class="ltx_ref">48</a>, <a href="../bib.html#bib20" title="" class="ltx_ref">20</a>, <a href="../bib.html#bib45" title="" class="ltx_ref">45</a>, <a href="../bib.html#bib44" title="" class="ltx_ref">44</a>, <a href="../bib.html#bib49" title="" class="ltx_ref">49</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">It was already guessed that the membrane’s resting potential is of electrostatic origin </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><span class="ltx_ref ltx_missing_citation ltx_ref_self">MembranePotentialAbsorption:2014</span>, <a href="../bib.html#bib34" title="" class="ltx_ref">34</a>, <span class="ltx_ref ltx_missing_citation ltx_ref_self">Hodgkin-HuxleyAdsorption:2021</span>, <span class="ltx_ref ltx_missing_citation ltx_ref_self">MembranePotentialPermeability:2024</span>, <span class="ltx_ref ltx_missing_citation ltx_ref_self">MembranePotentialKeyFunction:2023</span><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
 </span><span class="ltx_text" style="color:#000000;">
 When ions are confined in a closed volume,
 they exist in a state of thermodynamic and electrical equilibrium.
@@ -101,34 +104,34 @@ However, those equilibrium states cannot be discussed independently.
 </span><span class="ltx_text" style="color:#000000;">
 </span><span class="ltx_text" style="color:#000000;">
 We must discuss them in a non-disciplinary way because the participating ions belong simultaneously to the disciplines of electricity and thermodynamics; furthermore, we must cross the borderline between discrete and continuous points of view
-of nature </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib16" title="" class="ltx_ref">16</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
+of nature </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib17" title="" class="ltx_ref">17</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.
 Furthermore, the features of living matter may change when measured
 in physics laboratories as usual.
-When measuring them, we must consider that ”the construction is different from anything we have yet tested in the physical laboratory” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib19" title="" class="ltx_ref">19</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.</span></p>
+When measuring them, we must consider that ”the construction is different from anything we have yet tested in the physical laboratory” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../bib.html#bib1" title="" class="ltx_ref">1</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">.</span></p>
 </div>
 <nav class="ltx_TOC">
-<ol class="ltx_toclist ltx_toclist_chapter">
-<li class="ltx_tocentry"><a href="sec_Physics-ElectrolyteThermalField.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5.0.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a></li>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry"><a href="num_EquivalentField_Membrane/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a></li>
 </ol></nav>
 <nav class="ltx_TOC">
-<ol class="ltx_toclist ltx_toclist_chapter">
-<li class="ltx_tocentry"><a href="sec_Physics-LayersInSegment.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5.0.2</span> </span><span class="ltx_text" style="color:#000000;">Charge layers</span></span></a></li>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry"><a href="sec_Physics-LayersInSegment/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.2</span> </span><span class="ltx_text" style="color:#000000;">Charge layers</span></span></a></li>
 </ol></nav>
 <nav class="ltx_TOC">
-<ol class="ltx_toclist ltx_toclist_chapter">
-<li class="ltx_tocentry"><a href="sec_Physics-Goldman-Hodgkin-Katz.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.0.3 </span>Goldman-Hodgkin-Katz potential</span></a></li>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry"><a href="sec_Physics-Goldman-Hodgkin-Katz/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D.3 </span>Goldman-Hodgkin-Katz potential</span></a></li>
 </ol></nav>
 <nav class="ltx_TOC">
-<ol class="ltx_toclist ltx_toclist_chapter">
-<li class="ltx_tocentry"><a href="sec_Physics-MovingPotential.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.0.4 </span>Moving in the membrane’s potential</span></a></li>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry"><a href="sec_Physics-MovingPotential/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D.4 </span>Moving in the membrane’s potential</span></a></li>
 </ol></nav>
 </section>
 </div>
 <footer class="ltx_page_footer">
 <div class="ltx_align_center">
-<a href="../ch_Fallacies/sec_Fallacies-TimeConstants/sec_Fallacies-GHKEquation.html" title="In 4.2 A neuronális rezgőkör időállandói ‣ Chapter 4 Tévhitek a neuronokról ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">4.2.1</span> </span><span class="ltx_text" style="color:#000000;">GHK egyenlet</span></span></a><a href="../bib.html" title="In A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Physics-ElectrolyteThermalField.html" title="In Chapter 5 Nyugalmi potenciál ‣ A Hodgkin-Huxley neuron modell V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5.0.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a>
+<a href="../ch_Thermodynamics/phys_Nernst-Planck/index.html" title="In Appendix C Thermodynamics for neurons ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">C.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a><a href="../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="num_EquivalentField_Membrane/index.html" title="In Appendix D Resting Potential ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Sun Jul 19 00:27:29 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Sun Aug 23 22:43:58 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer>
 </div>
 </body>

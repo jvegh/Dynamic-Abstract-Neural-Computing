@@ -1,5 +1,5 @@
 \documentclass{book}    % Last edited 2026.06.23
-\def\MyVersion{0.2.7}
+\def\MyVersion{0.2.8}
 \tolerance 500%
 \renewcommand{\topfraction}{.8}
 \renewcommand{\floatpagefraction}{.8}
@@ -8,14 +8,6 @@
 
 \usepackage{graphicx}
 \usepackage{latexml}
-\iflatexml
-\else
-\usepackage{minitoc}
-\usepackage[font={footnotesize,it}]{caption}
-\usepackage[Lenny]{fncychap}
-\usepackage{tcolorbox}
-\tcbuselibrary{breakable}
-\fi
 
 \usepackage{siunitx}
 \usepackage{xcolor}
@@ -28,15 +20,27 @@
 \makeindex
 \usepackage{glossaries}
 \makeglossaries
+\iflatexml
+\else
+\usepackage{minitoc}
+\usepackage[font={footnotesize,it}]{caption}
+\usepackage[Lenny]{fncychap}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\fi
+\usepackage{enumitem}
 \usepackage{hyperref}
+
 
 \input{src/Glossary}
 \input{src/TitlePage}
 %============================================================
 %============================================================
 \begin{document}%\label{top}
+\iflatexml
+\else
  \dominitoc % for printing per chapter table of contents
-
+\fi
 \frontmatter
     \input{src/Heading}
 \mainmatter
@@ -55,7 +59,6 @@
 	\input{src/Simulation}	
 %
 	\input{src/VersionHistory}	
-
 
 \pagebreak
 \backmatter
@@ -103,6 +106,7 @@
 \pagebreak
 %\addcontentsline{toc}{chapter}{Bibliography} 
 \bibliographystyle{elsarticle-num}
+\bibliographystyle{src/elsarticle-num}
 
 %\bibliographystyle{spphys}
 

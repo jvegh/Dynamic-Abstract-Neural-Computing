@@ -30,24 +30,19 @@ title=\textbf{Warning:\\
 \newcommand{\quotationbox}[1]
 { 
 \indent\par\smallskip
-   
-\iflatexml
-%Work for .html
+\iflatexml %Work for .html
    \color{violet}
-
- \fcolorbox{violet!20!white}{yellow!10!white}{\parbox{.9\textwidth}{
-   \textbf{Quotation:\\
-    \rmfamily}
-{#1}
-}
+ 	\fcolorbox{violet!20!white}{yellow!10!white}
+ 		{\parbox{%.9
+ 		\textwidth}
+ 		{\textbf{Quotation:\\ \rmfamily}{#1}}
 }
       \color{black}
 \else
 % Work for .PDF
 \begin{tcolorbox}[float,
 colback=violet!2!white, colframe=black!5!blue!25, coltitle=white,
-title=\textbf{Quotation:\\
-    \rmfamily}]
+title=\textbf{Quotation:\\ \rmfamily}]
 	{#1}
 \end{tcolorbox}
 \fi
@@ -65,10 +60,11 @@ title=\textbf{Quotation:\\
 %Work for .html
    \color{blue}
 
- \fcolorbox{blue!70!white}{green!10!white}{\parbox{.9\textwidth}{
-   \textbf{Numerics panel~\thenumericsctr:\\{#2}
-    \rmfamily}
-\hypertarget{#1}{\ }{#3}\label{#1}
+ \fcolorbox{blue!70!white}{green!10!white}{\parbox{%.9
+ \textwidth}{
+   \textbf{\hypertarget{#1}{Numerics panel~\thenumericsctr:\\#2\label{#1}
+    \rmfamily}}
+#3
 }
 }
       \color{black}
@@ -76,9 +72,9 @@ title=\textbf{Quotation:\\
 % Work for .PDF
 \begin{tcolorbox}[float=htp!,breakable,
 colback=blue!5!white, colframe=black!10!blue,coltitle=white,
-title=\textbf{\hypertarget{#1}{Numerics panel~\thenumericsctr:\\{#2}}
+title=\textbf{\hypertarget{#1}{Numerics panel~\thenumericsctr:\\#2\label{#1}}
     \rmfamily}]
-\label{#1}#3
+#3% The main text
 \end{tcolorbox}
 \fi
 }
@@ -95,10 +91,12 @@ title=\textbf{\hypertarget{#1}{Numerics panel~\thenumericsctr:\\{#2}}
 %Work for .html
    \color{green}
 
- \fcolorbox{green!70!black}{yellow!10!white}{\parbox{.9\textwidth}{
-   \textbf{Physics panel~\thephysicsctr:\\{#2}
-    \rmfamily}
-\hypertarget{#1}{\ }{#3}\label{#1}
+ \fcolorbox{green!70!black}{yellow!10!white}{\parbox{
+ %.9
+ \textwidth
+ }{
+   \textbf{\hypertarget{#1}{Physics panel~\thephysicsctr:\\#2\label{#1}}}
+#3
 }
 }
       \color{black}
@@ -107,9 +105,9 @@ title=\textbf{\hypertarget{#1}{Numerics panel~\thenumericsctr:\\{#2}}
 \begin{tcolorbox}
 [float=hbtp!,breakable,
 colback=green!5!white, colframe=yellow!10!green,coltitle=white,
-title=\textbf{\hypertarget{#1}{Physics panel~\thephysicsctr:\\{#2}}
+title=\textbf{\hypertarget{#1}{Physics panel~\thephysicsctr:\\#2\label{#1}}
     \rmfamily}]
-\label{#1}#3
+#3 %The main text
 \end{tcolorbox}
 \fi
 }
@@ -125,23 +123,61 @@ title=\textbf{\hypertarget{#1}{Physics panel~\thephysicsctr:\\{#2}}
 \iflatexml
 %Work for .html
    \color{brown}
- \fcolorbox{brown!70!black}{orange!10!white}{\parbox{.9\textwidth}{
-   \textbf{Mathematics panel~\themathematicsctr:\\{#2}
-    \rmfamily}
-\hypertarget{#1}{\ }{#3}\label{#1}
+ \fcolorbox{brown!70!black}{orange!10!white}{\parbox{%.9
+ \textwidth}{
+   \textbf{\hypertarget{#1}{Mathematics panel~\themathematicsctr:\\#2\label{1}}}
+   #3
 }
 }
       \color{black}
 \else
 % Work for .PDF
-\begin{tcolorbox}[float=htpb!,breakable,
-colback=brown!5!white, colframe=orange!70!brown,coltitle=white,
-title=\textbf{\hypertarget{#1}{Mathematics panel~\themathematicsctr:\\{#2}}
+\begin{tcolorbox}
+[float=hbtp!,breakable,
+colback=brown!5!white, colframe=orange!60!brown,coltitle=white,
+title=\textbf{\hypertarget{#1}{Mathematics panel~\thephysicsctr:\\#2\label{#1}}
     \rmfamily}]
-\label{#1}#3
+#3 %The main text
 \end{tcolorbox}
 \fi
 }
+
+%%% This defines pros vs cons panels
+\newcommand{\proconpanel}[3]
+{ 
+\noindent
+\refstepcounter{mathematicsctr}\par\smallskip
+   
+\iflatexml
+%Work for .html
+   \color{brown}
+ \fcolorbox{brown!70!black}{orange!10!white}{\parbox{%.9
+ \textwidth}{
+   \textbf{\hypertarget{#1}{Pros and cons::\ #1}}
+\textbf{Pros: }#2 %The main text
+\\
+\textbf{Cons: }#3
+}
+}
+      \color{black}
+      
+\else
+
+	% Work for .PDF
+	\begin{tcolorbox}
+		[float=hbtp!,breakable,
+			colback=yellow!5!white,
+			colframe=gray!50!white,
+			coltitle=white,
+		title=\textbf{\hypertarget{#1}{Pros and cons:\ #1}
+    \rmfamily}]
+		\textbf{Pros: }#2 %The main text
+
+		\textbf{Cons: }#3
+	\end{tcolorbox}
+\fi
+}
+
 
 
 %%% This defines quotation box

@@ -1,0 +1,146 @@
+% This is the Introduction to the Hodgkin-Huxley neuron model V2.0 book
+% Last edited 2026.08.09
+
+\ifx\magyar\undefined
+\chapter{Introduction\label{ch:Introduction}}
+\else
+\chapter{Bevezetés\label{ch:Introduction}}
+\fi
+\iflatexml
+\else
+\minitoc
+\fi
+
+
+\quotationbox
+{"The Human Brain Project should lay the technical foundation for a \textbf{new model} of ICT-based brain research, driving \textit{integration between data and knowledge from different disciplines}, and catalysing a community effort to achieve a \textbf{new understanding of the brain}%, new treatments for brain disease 
+\dots and \textit{new brain-like computing technologies}."\\
+{the \href{https://www.humanbrainproject.eu/en/}{Human Brain Project},  summarised its goal @2012}}
+
+Az egyes neuronok \textit{dinamikus} működése, kapcsolataik,
+magasabb szintű szer\-veződéseik és azok kapcsolatai;
+az agy információ feldolgozási képessége; végül 
+a tudat és viselkedés megértése még ma is a tudomány 
+nagy rejtélyei közé tartoznak:
+\hyperlink{LivingMatter}
+{mely ponton kel életre az élettelen anyag}, \textit{\hyperlink{CognitiveMatter}{mitől válik intelligenssé}}; továbbá \hyperlink{PhysicalPictureNeuron}{hogyan tudja ezeket a kérdéseket a tudomány megválaszolni}. 
+Valóban \hyperlink{NewUnderstanding}
+{másfajta megértésre van szükség}; ezt nyújtjuk a könyvben.
+%
+Az újonnan indított projektek iránti várakozás óriási, 
+de úgy tűnik, mintha a szilárd tudományos megalapozás reménye
+elhalványuult volna.
+Például, az újonnan (2025 végén) "\href{https://brainminds.jp/en}{Brain/MINDS 2.0}" Japánban indított program  már csak 
+matematikai modelleket használ, \textit{meg sem próbálja megérteni az alapul szolgáló fizikai folyamatokat}.
+A neuron model\-lekben a 'dinamikus' arra utal, hogy a neuron
+állapotváltozói (elsősorban a membrán potenciál és az ion\-csatornák tulajdonságai) hogyan viselkednek az idő függvényében belső folyamatok és külső körülmények hatására.
+A mi model\-lünktől eltérően, ezek a folyamatok csupán egy 
+idő paramétert használnak, egy empírikus vagy egy matematikai függvényben, lásd pl.~\cite{NeuralDynamicsGertsner:2014}.
+Mi valódi, fizikai alapokon nyugvó dinamikát használunk a neuronok reakciójának leírására, olyan értelemben, ahogyan Newton vezette be mozgástörvényeit.
+
+\index{laws of motion}
+
+\section{Tudományterületi rétegződés\label{sec:Intro-Disciplinary}}
+
+
+
+A könyv több rétegű. A mindenki (azaz elsősorban a megfelelő
+fiziológiai háttérrel rendelkező olvasó)
+által megérthetőnek szánt részek mellett a vonatkozó más jellegű háttérrel rendelkezők számára találhatók 
+a szükséges
+\textbf{\hyperlink{intro:MyMathematicsPanel}{matematikai}} és
+\textbf{\hyperlink{intro:MyPhysicsPanel}{fizikai}}
+ismereteket tartalmazó panelek is, amelyeknek megértéséhez legalább a megfelelő szintű BSc ismeretek, de néha ezt túllépő tudás, esetenként 
+a gondolatok szokatlanságával elmélyülésre késztető 
+ismeretek és magyarázatok találhatók.
+A jelenségkör bonyolultsága sok közelítést tesz szükségessé,
+de a megfelelő közelítések és absztrakciók felhasználásával 
+numerikus eredményeket (néha csupán észszerű becsléseket)
+tartalmaznak a \textbf{\hyperlink{num:MyNumericsPanel}{numerikus}} panelek.
+Törekszünk arra, hogy az anyag ezek nélkül is érthető legyen,
+ezekkel együtt pedig a megfelelő szakképzettségű olvasó
+továbbgondolásra ösztönző tudást meríthessen.
+
+
+
+\physicspanel{intro:MyPhysicsPanel}{Fizikai panel, példa}
+{
+A tudományok specializálódása során a fizika az élettelen természet 
+leírására szakosodott és (az észszerű leírhatóság érdekében)
+korlátozott érvényességű szakterületeket hozott létre.
+Az élő természet tanulmányozása során már természetes módon
+használták eredményeit, módszereit és eszközeit.
+Ennek során abból a helyes nézőpontból indultak ki, hogy
+a természetben található objektumok és kölcsönhatásaik leírására
+ugyanazoknak a törvényeknek kell vonatkozni. Nem vették azonban figyelembe, hogy a természet bonyolultsága miatt,
+a leírhatóság érdekében, közelítéseket és elhanyagolásokat kell tennünk. A diszciplináris törvények egy-egy jelenségköre vonatkozóan
+absztrakt fogalmakat alkotnak és a törvények ezeket az absztrakt
+fogalmakat írják le pontosan, nem pedig azokat a jelenségeket,
+amelyek a természetben előfordulnak. Az esetek jelentős részében
+ezek a törvények teljes egészükben használhatók, 
+az élő és élettelen környezet körülményeinek jelentős eltérései miatt
+sokszor csak jelentős módosítással vagy akár teljes újragondolással alkalmazhatók; lásd Erwin Schrödinger lényeglátó kérdéseinek értelmezését
+\index{Schrödinger, Erwin}
+a \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}} 
+}
+
+
+
+\mathematicspanel{intro:MyMathematicsPanel}{Matematikai panel, példa}
+{
+A matematikai panelek egyenleteket és azok értelmezését tartalmazzák. A fő szöveg ezek nélkül is érthető állításokat tartalmaz, az egyenletek -- a kellő matematikai ismeretekkel
+is rendelkező olvasók számára -- ezeket támasztják alá.
+}
+
+
+\numericspanel{intro:MyNumericsPanel}{Numerikus panel, példa}
+{
+A tapasztalatok összetettsége sok  közelítést tesz szükségessé.
+Megfelelő közelítések és absztrakciók alkalmazásával
+numerikus eredményeket (bár néha csupán észszerű becsléseket)
+tudunk megadni a tárgyalt jelenségekre.
+}
+
+
+\quotationbox
+{
+"Biological laws are much more difficult to find than physical ones"~\cite{VollmerLimitsOfBiology:1995} @1995
+}
+
+
+
+
+\section[Abstract discussion]{Abstract discussion\label{sec:Intro-Abstract}}
+
+Nature uses an infinite variety of implementing neurons. 
+Our goal is not to discuss all
+infinitely complex molecular, biochemical and physiological details
+of neuronal operation
+In the \gls{CNS} 
+they can cooperate
+with each other, 'despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity,
+\textit{the nervous systems adopt \textbf{a number of
+ basic principles}}
+for all neurons and synapses',
+\cite{JohnstonWuNeurophysiology:1995}
+independently from the infinitely complex molecular, biochemical and physiological details.
+\index{Johnston Daniel}
+\index{Wu Samuel Miao-sin }
+We \textit{will base our holistic discussion on those general basic principles 
+and create an 
+\hyperlink{NeuronPhysical}
+{'abstract physical neuron'}; a hypothetical element, which functions
+essentially like a neuron},
+skipping the 'implementation details' nature uses.
+We essentially follow von Neumann's method in describing the foundations of
+computing science~\cite{EDVACreport1945}: "we will base our considerations on a hypothetical element, which functions essentially like a neuron".
+We need \hyperlink{Abstractions}
+{different abstractions and approximations} 
+(furthermore, \hyperlink{NonOrdinaryLaws}{'non-ordinary' laws} of science) for describing biological processes.
+\index{ordinary laws}
+However, an abstraction is usable
+in practice only when paired with a generalization: the more abstract the assumption, the more general and widely applicable the concept or conclusion.
+\textit{By abstractions, we can reduce the unbelievably detailed world into manageable pieces, and we can learn anything general.}
+We must show which approximations are oversimplifications and which phenomena are misunderstood; measured, or interpreted in a wrong approach.
+Abstraction is, in fact, everywhere, including inside each of us. It is a core element of science and cognition. 
+

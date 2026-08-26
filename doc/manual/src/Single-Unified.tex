@@ -33,7 +33,7 @@ The details are described in Chapter~\ref{ch:Physics}, where
 the fundamental differences caused by the charge carrier are discussed. 
 
 We show that, alhough the thermodynamic effects
-are inseparable from the electrical ones, an appropriate combination of the disciplines satisfactorily describe the observations.
+are inseparable from the electrical ones, an appropriate combination of the disciplines satisfactorily describes the observations.
 We consider that \href{https://neuronaldynamics.epfl.ch/online/Ch1.S1.html}{neurotransmitters, receptors and specialized membrane proteins}
 \textit{only implement a kind of (time and energy-consuming)
 	chemical/enzymatic decoupling
@@ -48,9 +48,92 @@ Furthermore, the neurons could not make independent signal processing.
 
 
 
-\section[Thermodynamic model
-]{Thermodynamic neuron model in a nutshell\label{sec:Single-ThermodynamicNutshell}}
+\section[Elastic model
+]{Elastic neuron model in a nutshell\label{sec:Single-ElasticNutshell}}
 
+We can model the neuron as an electrolyte in an elastic
+shell, that gets somehow excited and excites damped vibration
+in the electrolyte it contains.
+The rush-in of $Na^+$ ions results in electric, chemical, and elastic gradients, see~\cite{VeghUnifiedCrossdisciplinaryModel:2026}. The final result (shown in Fig.~\ref{fig:DampedOscillation}) is that the membrane vibrates the 
+electrolyte (with the cca. $10^{-3}$ part ions inside).
+Moreover, the electrostatic repulsion and the concentration gradient of ions provide an offset voltage that triggers an electrical discharge that enables the ions to leave the neuron
+in the form of \gls{AP}.
+The two processes are superimposed.
+
+\begin{figure}
+	\includegraphics[scale=1.2]{fig/DampedOscillation}
+	
+	\caption{Describing the generation of an \gls{AP}
+		as the superposition of an elastic vibration 
+		of the membrane and an electrical discharge process.
+		\label{fig:DampedOscillation}}
+	
+\end{figure}
+
+The sudden rush-in of
+$Na^+$ ions has (at least) a double effect. 
+One effect is that they suddenly press the surface of the membrane that
+elastically increases its diameter~\cite{NeuronalDeformation:2020}.
+The case is practically identical to
+the deformation of an elastic plate induced by the hydrostatic pressure of a water column. Initially, the base plate of a container is suddenly subjected to hydrostatic pressure, and it reaches equilibrium after initial oscillations. The diagram line of the process is shown in the figure
+\cite{HydrostaticWaterColumn:2021}, and the method of simulation is discussed in \cite{Hydrostatic_SPHinXsys:2021}. Compare the diagram line to the
+gradient in Fig.~\ref{fig:PhysicalProcessesMembrane}, middle inset.
+
+The elastic force is described by the  
+\[
+F_{elastic}(t) = F^{max}_{elastic}\times e^{-\zeta*t}\times cos(\omega\times t)
+\]
+\noindent 
+formula. The damped elastic oscillation almost perfectly describes 
+the time course of the \gls{AP}. However, the elastic force oscillates and decays exponentially, so the dominance of 
+the elastic term changes with time.
+
+The other effect is that a large amount of positive charges
+appears in the neuron, significantly increasing the membrane's potential. The axon remains on the resting potential, so the potential gradient drives a current.
+A discharge process takes place where the amount of charge
+inside the neuron exponentially decreases 
+\[
+F_{electric}(t) = F^{max}_{electric}\times e^{-\delta*t}
+\]
+
+The two effects act at the same time, that is
+\[
+F_{resulting}(t) = F^{max}_{resulting}\times e^{-\delta*t}  \times e^{-\zeta*t}  \times cos(\omega\times t)
+\]
+(the two exponential factors have physically different reasons,
+but they can be contracted mathematically), resulting
+an oscillation shown in Fig.~\ref{fig:DampedOscillation}.
+This model combines the effects of two distinct disciplines,
+but may not be perfect, because of the dual role of ions:
+the electric effect changes the oscillating mass and the oscillation changes the amount of charge. However, it 
+suggests a way to synthesize the two effects, and explain 
+a till now unexplained thermodynamical observation.
+
+
+The early experimental observation~\cite{HeatProductionNeuron:1958}, that positive and negative heat production is associated with a nerve impulse, suggested a thermodynamic model. 
+As Hodgkin wrote: "Hill and his colleagues found~\cite{HeatProductionNeuron:1958} that an initial phase of heat liberation [of the action potential] was followed by one of
+heat absorption. [...] a net cooling on open-circuit was totally unexpected
+and has so far received no satisfactory explanation."~\cite{HodgkinConduction:1964}
+"All authors came to similar conclusions: during
+the action potential, no signiﬁcant net heat is produced. Transient heat releases are mostly reabsorbed in the second phase of the action potential. \dots The ﬁnding of a reversible heat release during the action potential of
+nerves is a striking and very fundamental fact. It is inconsistent with the
+\gls{HH} model. The physics underlying the nervous impulse
+must rather be based on reversible processes".~\cite{ThermalBiophysics:2007} 
+At that time it was commonly known that compressing a
+medium produces heating and extending it causes cooling.
+Although modeling neuron as a thermodynamic engine 
+that is heated and cooled, and produced no signiﬁcant net heat, would be trivial, no such model came to light.
+The probable reason is that no reasonable idea
+shined up that could attach the observed heat absorbtion
+with the observed evident signs of the electrical operations.
+
+Furthermore, it explains the experienced constant intensity
+of \gls{AP} (without the ad-hoc hypothesis of cooperating
+ion channels in the axon's wall). The vibrating electrolyte 
+behaves as a 'soliton'~\cite{SolitonPropagation:2005}, that is, transfers the pressure wave with a minimum material transport and intensity loss, and the dissociated ions inside the vibrated electrolyte generate the potential field observed as \gls{AP}.
+
+%No direct way to a thermodynamic model exist,
+%given that 
 
 \section[Unified model
 ]{Our unified model in a nutshell\label{sec:Single-Nutshell}}

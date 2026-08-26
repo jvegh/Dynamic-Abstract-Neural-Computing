@@ -11,6 +11,8 @@
 
 \fi
 
+\ifx\magyar\undefined
+
 This section recalls dichotomies discussed in section~\ref{sec:Physics-Dichotomies} from the viewpoint of electricity.
 Electricity is one of the fundamental disciplines of classical physics. It operates with concepts such as charge, current, voltage; furthermore, their
 spatial or temporal change described by their gradients (spatial or temporal derivatives).
@@ -21,7 +23,11 @@ Of course, the already available concepts, laws, measurement devices and procedu
 The laws of physical electricity, in most cases, describe also biological electricity to some measure. 
 However, in some cases, there are drastic differences between them.
 Not considering those differences leads to misunderstandings and wrong conclusions.
+\else
 
+\fi
+
+\ifx\magyar\undefined
 Physical electricity operates with concepts of ideal (voltage or current) generators, ideal (that is single-substance) charge carriers, and discrete components, connected by ideal conducting wires.
 The wires are passive components, just connect
 the discrete components and the electric phenomena happen in the 
@@ -48,6 +54,11 @@ Fortunately, physiology inherited the ambititon from physics to measure its subj
 as we detail in section~\ref{sec:PHYSICS_MEASURING}, measuring living matter (because of its "special construction") requires at least considerable care,
 sometimes different methodologies and appropriate interpretation; including the understanding of the special kind of electricity it applies.
 
+\else
+
+\fi
+
+\ifx\magyar\undefined
 The different charge transmission mechanism introduces another important difference, the relation to thermodynamics.
 In physical electricity, the medium is a solid, where the electrons heavily interact with the nodes in the solid (forming a kind of 'electron cloud'). In a good approximation, they are not comprising free and independent particles, so their phenomena are not related to thermodynamics. The ions, in contrast,
 are nearly independent, so they would be described by thermodynamics.
@@ -62,10 +73,19 @@ However, it is not a different physics ("or whatnot").
 It is only using different laws for the different environment
 from the same first principles.
 
+\else
 
- 
+\fi
+
+\ifx\magyar\undefined 
 \section[Concepts]{Fundamental concepts\label{sec:PHYSICS_ELECTRICFundamental}}  
+\else
+\section[Fogalmak]{Alapvető fogalmak\label{sec:PHYSICS_ELECTRICFundamental}}  
 
+\fi
+
+
+\ifx\magyar\undefined 
 The disciplinarily separated sience defines \href{http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elefie.html#c1}{electricity's concepts}
 through forces and infinitely small test charge. In living matter,
 neither is valid in an unchanged form: constraints and physical/chemical additional forces are present, furthermore, the charges of the carriers are not
@@ -78,7 +98,9 @@ the charge-mass dichotomy of ions the interpretation of
 \index{differentiability}
 \index{partial derivative}
 \index{simultaneity}
+\else
 
+\fi
 
 \ifx\magyar\undefined
 \subsection[Charge]{Charge\label{sec:Electricity-Charge}}
@@ -126,9 +148,13 @@ Az ion tovább már nem egyszerűsíthető tulajdonsága, hogy
 töltést hordoz
 \fi
 
+\ifx\magyar\undefined
 \subsubsection{Ionic currents in a cell\label{sec:Electricity-IonicCurrent}}
+\else
+\subsubsection{Ionáramok a sejtben\label{sec:Electricity-IonicCurrent}}
+\fi
 
-
+\ifx\magyar\undefined
 On a microscopic scale, a charge generates a potential field that acts on other charges. It is a common fallacy in physiology that a "potential field travels": neither potential nor current changes without a physical movement of charges. In a conducting wire filled with ions (the solids have a different current transfer mechanism), there are free charges; their
 number per unit volume is given by $n$, and $q$ is the amount of
 charge on each carrier. If the conductor has a cross-section of $A$,
@@ -142,7 +168,11 @@ in ionic permeability depend on the movement of some component of the
 membrane which behaves as though it had a large charge or dipole moment."
 "it is necessary to suppose
 that there are more carriers and that they react or move more slowly"~\cite{HodgkinHuxley:1952}. The charged ions, attracted by the opposite charges on the other plate and repelled toward the single exit point \gls{AIS}, really move slowly and behave as if they were a component of the membrane.
+\else
 
+\fi
+
+\ifx\magyar\undefined
 Notice that if any of the factors is zero, the macroscopic current
 $I$ is zero. \textit{Microscopic carriers must be present in the volume},
 and have charge, the cross section must not be zero, and the charge
@@ -152,18 +182,32 @@ When there is no constraint force, the thermodynamic and electrical forces will 
 That is, the ions can move without an external electrical field, as experienced
 in biological systems. 
 One of the fundamental mistakes by \gls{HH} was neglecting the Coulomb force in ion-electrical interactions and assuming that diffusion processes or ideal electrical batteries create the electrical potential.
+\else
 
+\fi
+
+\ifx\magyar\undefined
 In biological systems, where ions represent the "current", it is either a native current (without an external potential) or an artificially injected current or potential generating a current.
 This way, the current is consistently accompanied by a change in concentration gradient, as the moving ions represent both mass and charge transfer simultaneously (also, the repulsion leads to a "skin effect": in electrical wires and axons, the charge travels near
 the outer surface).
 The potential and current are
 connected through the features of the medium (material) that hosts
 our measurement. 
+\else
+
+\fi
 %One must not forget that "Unfortunately, most measuring devices in neurophysiology are precise without being accurate"~\cite{JohnstonWuNeurophysiology:1995}. So are some definitions, too.
 %Definitions and measurements that are not accurate lead to incorrect results.
 %They may be precise, but they are not accurate.
 
+\ifx\magyar\undefined
 \subsubsection[Speed]{Current's speed\label{sec:Electricity-ion's-speed}}
+\else
+\subsubsection[Sebesség]{Az áram sebesége\label{sec:Electricity-ion's-speed}}
+
+\fi
+
+\ifx\magyar\undefined
 According to Stokes' Law, to move a spherical object
 with radius $a$ in a fluid having dynamic viscosity $\eta$, we need
 a force
@@ -190,7 +234,10 @@ $F_{electric}$, that is :
 	I=\frac{k*q^{2}*A}{6*\pi*\eta*a}*n*E(z)
 	\label{eq:StokesCurrent}
 \end{equation}
+\else
+\fi
 
+\ifx\magyar\undefined
 We extend the original idea by using
 \[
 E(z)  = E_{electric} + E_{thermal} + E_{external}\quad in\ electrolytes
@@ -215,7 +262,12 @@ system, a viscous damping model, so the \textit{ions will move with
 The activity of potential-controlled ion channels in its wall may
 change $n$ in various ways; furthermore, that change can result in
 'delayed' currents during measurement, for example, in clamping, as physiological measurements witness.
+\else
 
+\fi
+
+
+\ifx\magyar\undefined
 If we have a concentration
 $C(z)$, in the volume $A*dz$, we have $dQ=C(z)*A*dx*q$
 charge, resulting in another expression for the current
@@ -242,6 +294,11 @@ to the space gradient of the local concentration and potential. Recall that \emp
 the chemically moved ions can mediate the electrical field~\cite{VeghNonOrdinaryLawsForLife:2025}. \emph{The
 	lower interaction speed limits the other interaction speed if the
 	interactions generate each other.}
+\else
+
+\fi
+
+\ifx\magyar\undefined
 
 The dependence of the diffusion coefficient on the viscosity can be modeled by the Stokes-Einstein relation:
 \index{Stokes-Einstein relation}
@@ -265,7 +322,17 @@ the local concentrations and the frequency of the alternating current.
 The conduction speed sensitively depends 
 on the temperature, and through it, the shape parameters~\cite{APTemperatureDependence:2012} of the \gls{AP} and especially the length of the "relative refractory" period~\cite{APTemperatureDependenceRefractory:2001}.
 
+\else
+
+\fi
+
+\ifx\magyar\undefined
 \subsubsection{Imitating slow currents\label{sec:SlowCurrent}}
+\else
+
+\fi
+
+\ifx\magyar\undefined
 At the dawn of finding methods for describing neuronal operation,
 \gls{HH}
 published high-precision measurements~\cite{HodgkinHuxley:1952}
@@ -285,8 +352,12 @@ the current depends linearly on the number of charge carriers $n$.
 The physical processes changing the number of charge carriers
 also define the intensity of the currents, providing a way to imitate
 slow currents by fast currents (by using current generators using special function shapes), where the spatiotemporal time course of the physical process of producing ions in the system modulates the number of charge carriers.
+\else
+
+\fi
 
 
+\ifx\magyar\undefined
 As an example, we discuss the case of slow current
 traveling in an axon.
 The ions travel a finite distance with
@@ -315,7 +386,12 @@ express this relation\emph{. If we assume that the axonal current
 In contrast, if we assume that the axonal current is ``slow'',
 we naturally conclude that Ohm's Law is correct and valid also for
 biology: \textit{the conductance/resistance is constant, but the number of charge carriers changes}, see section~\ref{sec:IonicCurrent}.
+\else
 
+\fi
+
+
+\ifx\magyar\undefined
 \emph{There is no voltage-dependent conductance}~\cite{KochVoltageDependentConductance:1999}.
 Instead, the finite speed of ions and the wrong assumption that conductance
 is a primary entity mislead physiological research.\emph{ With wording
@@ -338,7 +414,11 @@ current, producing a net exponential decay:
 \begin{equation}
 	I_{m}^{off}=I_{Wall}*e^{(-\frac{\alpha}{R_{m}C_{m}}*t)}\label{eq:I_Membrane_Off}
 \end{equation}
+\else
 
+\fi
+
+\ifx\magyar\undefined
 During the regular operation of a neuronal membrane, after opening
 the ion channels, a vast amount of ions flows into the intracellular
 space from the extracellular space, somewhat similar to the effect of switching
@@ -357,7 +437,9 @@ the result of the charge-up and discharge of the same oscillator circuit.
 The measured rising edge corresponds to a charge-up process where the 
 charge-up current is a saturating curve due to the change in the number of
 charge carriers in the axon; see Eq.(\ref{eq:StokesCurrent}).
+\else
 
+\fi
 
 \begin{figure}
 	\includegraphics[width=0.95\textwidth]{fig/HodgkinHuxleyFig2Simple.pdf}
@@ -366,6 +448,7 @@ charge carriers in the axon; see Eq.(\ref{eq:StokesCurrent}).
 \end{figure}
 
 
+\ifx\magyar\undefined
 
 The \textit{slow} input
 currents (although due to slightly differing
@@ -395,21 +478,34 @@ For example, see in Fig~\ref{fig:MasonPSP} the \gls{PSP} measured function shape
 \begin{equation}
 	\frac{dV_{in}}{dt}=\frac{I_{o}}{C}*\biggl(\frac{1}{\alpha}*exp(-\frac{1}{\alpha}*t-\frac{1}{\beta}*t)-\frac{1}{\beta}*exp(-\frac{1}{\beta}*t)*exp(1-exp(-\frac{1}{\alpha}*t))\biggr)\label{eq:PSPderivative}
 \end{equation}
+\else
+
+\fi
 
 
 
-
+\ifx\magyar\undefined
 \subsection{Condenser\label{sec:Physics-Condenser}}
+\else
+\fi
 
 
+\ifx\magyar\undefined
 Cell biochemistry sufficiently well describes the lipid bilayers that constitute the membrane~\cite{OriginOfLifeMicelles:2021,ReproductionLife:2023}.
 The negative and positive ends of the lipids that constitute the membrane, in an electrolyte solution, attract and bind ions, forming a charged layer on the membrane surfaces. In this way, the membrane in electrolytes acts as a condenser, comprising two charged sheets on its surfaces, with ill-defined parameters. Their boundaries, thicknesses, and compositions depend on the operating state (unlike conducting plates with well-defined sizes and boundaries). The condenser is not ideal: the charged sheet comprises ions with attached aqueous constituents from the electrolyte, so its thickness is far from the ideal zero thickness of classical electricity. Furthermore, in its wall, it inseparably comprises ion channels (from an electrical point of view: resistors), and the condenser plates are in polarizable electrolyte solutions. 
 
 Cell science does not establish the membrane's electrical phenomena; instead, it attempts to elucidate complex protein activities that explain charge transfer, resting and transient potentials, and explains the entire \textit{biological operation using mathematical formulas without a realistic physical background}. Electrophysiology combines currents of electrons and ions, and \textit{uses Ohm’s Law for its admittedly non-Ohmic systems}. It introduces foreign (clamping) currents into biological systems, attributing their effects to changes in membrane conductance without explaining how \textit{voltage and current can be independent of charge carriers}.
+\else
 
+\fi
 
+\ifx\magyar\undefined
 \subsection{Resistor\label{sec:Physics-Resistor}}	
+\else
 
+\fi
+
+\ifx\magyar\undefined
 Ions differ from electrons we used to in physical electricity in many features. Their conduction mechanisms
 are entirely different, and they are not necessarily present 
 in the discussed medium (say, when the medium is surrounded by a charged surface, the field moves free ions out of the volume). They may be produced by biological mechanisms, 
@@ -420,7 +516,11 @@ their meaning can be entirely different.
 
 In solids, as the Drude model describes, 
 electrons constantly bounce among heavier, stationary crystal ions, that make up the structure of the material. With each collision, though, the electron is deflected in a random direction \textit{with a speed that is much larger than the speed gained by the electric field}. The net result is that electrons take a zigzag path due to the collisions, but generally drift in a direction along the electric field. Important, that \textit{the collisions are inelastic}, so the electrons lose (most of) their energy. The solid's gridpoints absorb the energy, which later is released in form of heat. The process is irreversible.
+\else
 
+\fi
+
+\ifx\magyar\undefined
 In biological matter, ions convey electricity. So called ion channels
 are used for the transfer. Here diffusion and electromigration takes place, by orders of magnitude different speeds. 
 The process is mostly reversible. The resistance 
@@ -443,7 +543,12 @@ so, in principle, the process is reversible.
 Strangely enough, this way the electrical force
 accelerates also the neutral molecules; furthermore, their momentum (using an elastic membrane) can fully contribute to the operation
 of neuron (forms the \gls{AP}). 
+\else
 
+\fi
+
+
+\ifx\magyar\undefined
 In a narrow tube (such as an ion channel) the momentum exchange
 is limited to one direction.
 If the ions are accelerated through the channel, due  to the
@@ -461,7 +566,13 @@ Vice versa, if the bulk of the particles are moved mechanically (say, when an ul
 presses the neuron or a rush-in process transfers electric energy to the membrane), the one-directionally moving
 neutral molecules transfer momentum to the charged particles,
 this way producing measurable electrical waves (such as an \gls{AP}).
+\else
 
+\fi
+
+
+
+\ifx\magyar\undefined
 The secondary electric quantities can be derived from
 the primary quantity: the bulk of the undissociated molecules
 'resist' transferring ions under the effect of an electric field (the liquid must be pressed through the tube).
@@ -478,7 +589,13 @@ due to opposite elastic/pneumatic forces, the current and voltage  change their 
 Stokes-Einstein speed, the voltage-, current- and pressure waves are synchronized, as observed. The different 
 experimental observations measure the same effect
 by using their disciplinary measuring devices.
+\else
 
+\fi
+
+
+
+\ifx\magyar\undefined
 \textit{The energy of the ions cannot dissipate; instead, the neutral and charged 
 particles share it}, and convert between kinetic and elastic energies (the electric energy is much smaller).
 That is, the 
@@ -491,4 +608,7 @@ contradiction~\cite{HeatProductionNeuron:1958}
 between the electrical and thermodynamic observations
 are finally resolved, furthermore, the conflicting theories
 can be naturally unified.
+\else
+
+\fi
 

@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Sun Aug 23 17:42:45 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on August 23, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="../index.html" title="Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up" href="../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="../index.html" title="Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="sec_Model-Non-disciplinary.html" title="1.1.1 The non-disciplinary behavior ‣ 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_V2-0_AbstractNeuron/index.html" title="1.2 The abstract neuron ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_V2-0_ElectricModel/index.html" title="1.3 Electrical model ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_V2-0_ElasticModel/index.html" title="1.4 Elastic/electric model ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_V2-0_ThermodynamicModel/index.html" title="1.5 Thermodynamic model ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_V2-0_UnifiedModel/index.html" title="1.6 Unified model ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../index.html" title="Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_Model-Non-disciplinary.html" title="1.1.1 The non-disciplinary behavior ‣ 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="subsection" href="sec_Model-History.html" title="1.1.2 History of modeling ‣ 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0">
+<meta name="keywords" lang="en" content="non-disciplinary laws, non-ordinary laws, ordinary laws">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">The Hodgkin-Huxley neuron model V2.0
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.5</em>
+<br class="ltx_break"></span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>The V2.0 model</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Modeling principles</span></span>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Model-Non-disciplinary.html" title="In 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.1 </span>The non-disciplinary behavior</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="sec_Model-History.html" title="In 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.2 </span>History of modeling</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_V2-0_AbstractNeuron/index.html" title="In Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>The abstract neuron</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_V2-0_ElectricModel/index.html" title="In Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Electrical model</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_V2-0_ElasticModel/index.html" title="In Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">1.4</span> </span><span class="ltx_text" style="color:#000000;">Elastic model</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_V2-0_ThermodynamicModel/index.html" title="In Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.5 </span>Thermodynamic model</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_V2-0_UnifiedModel/index.html" title="In Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.6 </span>Unified model</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href" style="font-size:90%;">Report issue</a><span class="ltx_text" style="font-size:90%;">
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</span></p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>The V2.0 model</span></a><a href="../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>The V2.0 model</span></a><a href="sec_Model-Non-disciplinary.html" title="In 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.1 </span>The non-disciplinary behavior</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_pruned_first ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.1 </span>Modeling principles</h1>
+
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="color:#800080;border-color: #E6CCE6;">
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;background-color:#FFFFE6;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Quotation:
+<br class="ltx_break"></span>
+”Everything should be made as simple as possible, but not simpler.” Attributed to Albert Einstein.</span>
+</span><span class="ltx_text" style="background-color:#FFFFE6;">
+</span></span><span class="ltx_text" style="color:#800080;">
+<span class="ltx_text" style="color:#000000;"></span></span></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The principle, suggested by A. Einstein, means that while one should strip away unnecessary clutter, extra features, or overly complex jargon to achieve clarity, one must be careful not to remove so much that the core message or solution becomes meaningless or inaccurate.
+For neurons (living matter), on the one side, it actually means that one should not reject quantities from the set of observed quantities
+(the mass of the charge carrier and the pressure they cause)
+just because they are not present in a classical discipline (electricity) of the science,
+which once upon the time someone hypothesized,
+or decided in advance, or willingly described the first case that some aspect of the functioning of a neuron reminded him of, which he considered suitable for describing neurons.</span></p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">However, one must include the proven new discoveries (effects and structures) made in the past eight decades (<a href="../../Ch_Index/index.html#glo.main.AIS"><span href="../../Ch_Index/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">Axon Initial Segment (AIS)</span></a>) and the
+intentionally omitted
+observations (heat emission and absorption; mechanical changes) which do not fit into the pre-authorized disciplinary theory.
+On the other side, one must remove the foreign and fake ad hoc mechanisms and hypotheses (which contradict fundamental principles of science and elementary logics).
+All those issues were required to obscure that the current understanding does not match the experimental facts.
+The discussion does not include ’whatnot’ interactions (such as protein mechanisms that operate contrary to the laws of physics) or ion-specific ion channels operating under synchronized control (for which there is no structural evidence). These are discussed as hypotheses in physiology and biophysics, but cannot be scientifically substantiated. A detailed and precise description of the correct functioning is usually beyond the typical knowledge level of physiologists, so we give only a popular discussion of them here; the physically correct discussion is placed in the appendices.
+Similarly, additional knowledge about modeling is discussed in the <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:ch:Modeling</span> appendix.</span></p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">In our description, we consider the neuron as a closed surface (ideally: a sphere) made of an insulator (lipid bilayer) (the membrane), to which an identical outlet tube (the axon) is connected.
+Both are filled with saline and are surrounded by a saline solution of a different composition. In the processes related to its functioning,
+a small piece of it is considered a flat surface (see  <a href="#fig:MembraneSurface" title="Figure 1.2 ‣ 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2</span></a> figure), which has a specific structure, but for us only the protein insert openings (the ion channels) connecting the two saline solutions and the axon terminals of other neurons leading to the given neuron (the synapses) are important.
+The neuron is therefore considered an independent biological object,
+which sets and maintains its state with its own regulatory system, and its immediate external environment affects its state through the ion channels. It communicates with other neurons via axons: it sends and receives neural impulses.</span></p>
+</div>
+<figure id="fig:LipidSphere" class="ltx_figure"><img src="fig/phospholipid1.png" id="Ch1.F1.g1" class="ltx_graphics ltx_img_landscape" width="389" height="254" alt="Refer to caption">
+<figcaption class="ltx_caption" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 1.1: </span>
+<a href="https://open.oregonstate.education/aandp/chapter/3-1-the-cell-membrane" title="" class="ltx_ref ltx_href">A simulated picture of the neuron membrane</a>.
+We can consider the membrane as a closed surface (in our idealist view, a sphere), being slightly opened at an attached tube, the axon. For certain processes, we can also consider just a tiny section as a planar piece, see also Figure <a href="#fig:MembraneSurface" title="Figure 1.2 ‣ 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2</span></a>
+</figcaption>
+</figure>
+<figure id="fig:MembraneSurface" class="ltx_figure"><img src="fig/HeimburgMembrane.png" id="Ch1.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="389" height="211" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 1.2: </span>
+A closer look at the simulated picture of the neuron membrane.
+Even the abstract model cannot stick to the flat surface
+and the uniform membrane thickness. In addition, lipids spontaneously form double layers; moreover, smaller biological objects can build up on the membrane.
+Lipids are amphiphilic molecules that like water on one side and repel water
+on the other side due to the hydrocarbon chains. In contact to
+water lipids spontaneously form double layers that are the basic building blocks of biomembranes.
+</figcaption>
+</figure>
+<div id="p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;"><a name="PhysicalPictureNeuron" id="PhysicalPictureNeuron" class="ltx_anchor">We must also have Schrödinger’s comments in mind when constructing the physical picture
+about neurons</a>, that we must be extremely careful. <span class="ltx_text ltx_font_italic">We must not use the
+’ordinary’ laws of physics derived for non-living matter without revisiting them</span> because ”<span class="ltx_text ltx_font_italic">the construction is different from anything we have yet tested in the physical laboratory</span>” <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib1" title="" class="ltx_ref">1</a>]</cite>.
+
+The discussion requires deep knowledge in science but
+has severe consequences for physiology,
+in this chapter the discussion remains on the surface and provides a holistic picture about the model.
+The details and deeper layers are explained in the next chapters
+and in the appendices.
+We hope the essence can be understood with knowing only
+the elements of science and physiology. However, the open mind is required
+already in this section.
+The fundamental principles are the same, but we must use different
+<span class="ltx_ref ltx_ref_self">approximations
+and abstractions</span> for the different disciplines of science and for living matter. For this reason,
+maybe it is more correct to call those laws for living matter ’non-disciplinary’
+instead of ’non-ordinary’ laws.
+
+</span></p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We must also include the discoveries from the past seven decades,
+among others, that a component <a href="../../Ch_Index/index.html#glo.main.AIS"><span href="../../Ch_Index/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> can be found between the neuron’s membrane and the axon. It is observed that <a href="../../Ch_Index/index.html#glo.main.AIS"><span href="../../Ch_Index/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref">AIS</span></a> has a crucial role in creating the <a href="../../Ch_Index/index.html#glo.main.AP"><span href="../../Ch_Index/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref">Action Potential (AP)</span></a>, but
+that role has not been integrated into the existing theories.
+As a consequence, in the transient state, a neuron shall be modeled
+as a serial (i.e., differentiator-type) <span class="ltx_ref ltx_ref_self">electrical oscillator</span>, which has gated current
+inputs (instead of a parallel oscillator
+without gating its inputs, which is a good model only in the static view of the resting state) and provides a timed output. We explicitly add that the charge carriers, the neuron
+works with, are <span class="ltx_text ltx_font_italic">ions</span> (instead of electrons) and that the signal propagation
+mechanism is <span class="ltx_text ltx_font_italic">bioelectric</span> (instead of purely an electrical
+or mechanical wave or ”protein mechanism”), in many cases even without having free carriers in the respective volume. (We do not consider the
+ideas that the associated mechanical, optical, etc. changes cause electric phenomena. They reverse the true causality: they do not have
+a triggering cause; the view inherited from the narrative biology.)
+Electrochemical operation,
+especially that of <span class="ltx_ref ltx_ref_self">semipermeable membranes</span>, requires special attention:
+charge carriers are ”created” inside the biological matter.
+Omitting purposefully the clear physical background results in performing
+<span class="ltx_ref ltx_ref_self">wrong measurements</span> and introducing <span class="ltx_ref ltx_ref_self">wrong concepts</span> into biology.</span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry"><a href="sec_Model-Non-disciplinary.html" title="In 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.1 </span>The non-disciplinary behavior</span></a></li>
+</ol></nav>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry"><a href="sec_Model-History.html" title="In 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.2 </span>History of modeling</span></a></li>
+</ol></nav>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>The V2.0 model</span></a><a href="../../bib.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="sec_Model-Non-disciplinary.html" title="In 1.1 Modeling principles ‣ Chapter 1 The V2.0 model in a nutshell ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1.1 </span>The non-disciplinary behavior</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Aug 23 17:42:45 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

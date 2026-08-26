@@ -74,7 +74,6 @@ if ($dopdf) {
     dependencies => ["$DOCDIR/sty/latexmldoc.sty"],
     indexoptions => [],
     force        => $force);
-#  copy("$MANDIR/manual.pdf", "$LATEXMLDIR/manual.pdf");
    copy("$MANDIR/book.pdf", "$WEBDIR/book.pdf");
    copy("$MANDIR/README.md", "$LATEXMLDIR/README.md");
    copy("$MANDIR/README.md", "$WEBDIR/README.md");

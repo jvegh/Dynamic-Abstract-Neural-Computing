@@ -1,28 +1,17 @@
 \documentclass{book}
-\def\MyVersion{0.0.3}
-\def\magyar{yes}
+\def\MyVersion{0.0.5}
+%\def\magyar{yes}
 \tolerance 500%
 \emergencystretch 1em\relax
 \hfuzz .2pt\relax
 
 \usepackage{graphicx}
 \usepackage{latexml}
-\iflatexml
-\else
-\renewcommand{\topfraction}{.8}
-\renewcommand{\floatpagefraction}{.85}
-\usepackage[Lenny]{fncychap}
-\usepackage{minitoc}
-\usepackage[font={footnotesize,it}]{caption}
-\usepackage{tcolorbox}
-\tcbuselibrary{breakable}
-\fi
 \usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage[makeroom]{cancel}
 \usepackage{amsmath}
 \usepackage[toc,page]{appendix}
-
 
 \input{src/Macros}
 \setcounter{secnumdepth}{2}
@@ -32,38 +21,90 @@
 \makeindex
 \usepackage{glossaries}
 \makeglossaries
-\usepackage{hyperref}
+\usepackage{enumitem}
+\iflatexml
+\else
+	\renewcommand{\topfraction}{.8}
+	\renewcommand{\floatpagefraction}{.85}
+	\usepackage[Lenny]{fncychap}
+	\usepackage[font={footnotesize,it}]{caption}
+	\usepackage{minitoc}
+	\usepackage{tcolorbox}
+	\tcbuselibrary{breakable}
+\fi
+\usepackage[colorlinks=true]{hyperref}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{webyellow}{rgb}{0.98,0.92,0.73}
+\definecolor{webgray}{rgb}{.753,.753,.753}
+\definecolor{webblue}{rgb}{0,0,.8}
+\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green
+\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
 
+\definecolor{burntorange}{rgb}{0.8, 0.33, 0.0}
+
+\hypersetup{
+linkcolor = {webblue},
+%anchorcolor [black]
+citecolor = {webgreen},
+filecolor = {webred},
+menucolor = {burntorange}
+runcolor = {cyan},
+urlcolor = {magenta}
+}
+\renewcommand*{\glstextformat}[1]{\textcolor{burntorange}#1}
 \input{src/Glossary}
 \input{src/TitlePage}
+
 
 %============================================================
 %============================================================
 \begin{document}%\label{top}
-\dominitoc % for printing per chapter table of contents
-\frontmatter
+	\iflatexml
+	\else
+		\dominitoc % for printing per chapter table of contents
+	\fi
+	\frontmatter
     \input{src/Heading}
-\mainmatter
-%	\input{src/Foreword}
+	\mainmatter
+	\input{src/Foreword}
+	\iflatexml
+	\else
+		\adjustmtc % Resets/adjusts the counter for minitoc
+	\fi
+	\input{src/Introduction}
+	\input{src/ModelV2-0}
+	\input{src/ModelV1-0}
+	\input{src/ModelV2-0Electric}
+	\input{src/ModelV2-0Elastic}
+	\input{src/ModelV2-0Thermodynamic}
+	\input{src/ModelV2-0Unified}
+	\input{src/ModelV2-0Components}
 
-%	\input{src/Introduction}
-%	\input{src/Modeling}
-%	\input{src/ModelV2-0}
-	\input{src/Thermodynamics}
-	\input{src/NumericPanels}
-%	\input{src/Physics}
-	\input{src/Electricity}	
-	\input{src/Fallacies}
-	\input{src/RestingPotential}
-	\input{src/ActionPotential}
+
+%	\input{src/Fallacies}
+%	\input{src/ActionPotential}
 %	\input{src/Transmission}
-%%	\input{src/Mathematics}
-%%
-%	\input{src/VersionHistory}	
-
+%%%
+%%	\input{src/VersionHistory}	
+%
+%\part*{Appendices}
+%addcontentsline{toc}{part}{Appendices} 
+%
 \begin{appendices}
-\chapter*{Dichotomies\label{ch:Dichotomies}}
+	\iflatexml
+	\else
+	\adjustmtc % Resets/adjusts the counter for minitoc
+	\fi
+%%\chapter*{Dichotomies\label{ch:Dichotomies}}
+	\input{src/Modeling}
+	\input{src/Physics}
+	\input{src/Thermodynamics}
+%	\input{src/Electricity}	
+	\input{src/RestingPotential}
+%	\input{src/Mathematics}
+	\input{src/NumericPanels}
 \end{appendices}
+
 
 \pagebreak
 \backmatter
@@ -99,7 +140,7 @@
 
 \pagebreak
 %\iflatexml
-\chapter*{Glossary\label{Ch:Glossary}}
+%\chapter*{Glossary\label{Ch:Glossary}}
 %\else
 %\fi
 \addcontentsline{toc}{chapter}{Glossary} 
@@ -110,7 +151,10 @@
 %
 \pagebreak
 %\addcontentsline{toc}{chapter}{Bibliography} 
-\bibliographystyle{elsarticle-num}
+\iflatexml
+\else
+	\bibliographystyle{elsarticle-num}
+\fi
 
  \bibliography{
 	../../../LaTeX/CommonBibliography%

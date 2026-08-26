@@ -1,15 +1,24 @@
 % This is the Introduction to the Hodgkin-Huxley neuron model V2.0 book
-% Last edited 2026.06.06
+% Last edited 2026.07.30
 
-
+\ifx\magyar\undefined
 \chapter{Introduction\label{ch:Introduction}}
+\else
+\chapter{Bevezetés\label{ch:Introduction}}
+\fi
+\iflatexml
+\else
+\minitoc
+\fi
+
 
 \quotationbox
 {"The Human Brain Project should lay the technical foundation for a \textbf{new model} of ICT-based brain research, driving \textit{integration between data and knowledge from different disciplines}, and catalysing a community effort to achieve a \textbf{new understanding of the brain}%, new treatments for brain disease 
 \dots and \textit{new brain-like computing technologies}."\\
 {the \href{https://www.humanbrainproject.eu/en/}{Human Brain Project},  summarised its goal @2012}}
 
-The \textbf{\textit{dynamic}} operation of individual neurons, their connections, higher-level organizations, connections,
+\ifx\magyar\undefined
+The \textit{dynamic} operation of individual neurons, their connections, higher-level organizations, connections,
 the brain with its information processing capability, and finally, the mind with its conscience and behavior,
 are still among the big mysteries of science: \textit{at which point
 \hyperlink{LivingMatter}
@@ -24,79 +33,162 @@ using only mathematical models, \textit{without targeting the understanding of t
 In neuron models, 'dynamics' refers to how the state variables of the neuron (primarily membrane potential and ion channel properties) change and evolve over time in response to internal processes and external inputs. However, unlike in our approach, the usual processes simply use a time parameter in empirical or mathematical functions, see for an example~\cite{NeuralDynamicsGertsner:2014}. We use a real dynamics,
 based on physics, in the sense as Newton introduced his laws of motion to describe
 response of neurons.
+
+\else
+
+Az egyes neuronok \textit{dinamikus} működése, kapcsolataik,
+magasabb szintű szer\-veződéseik és azok kapcsolatai;
+az agy információ feldolgozási képessége; végül 
+a tudat és viselkedés megértése még ma is a tudomány 
+nagy rejtélyei közé tartoznak:
+\hyperlink{LivingMatter}
+{mely ponton kel életre az élettelen anyag}, \textit{\hyperlink{CognitiveMatter}{mitől válik intelligenssé}}; továbbá \hyperlink{PhysicalPictureNeuron}{hogyan tudja ezeket a kérdéseket a tudomány megválaszolni}. 
+Valóban \hyperlink{NewUnderstanding}
+{másfajta megértésre van szükség}; ezt nyújtjuk a könyvben.
+%
+Az újonnan indított projektek iránti várakozás óriási, 
+de úgy tűnik, mintha a szilárd tudományos megalapozás reménye
+elhalványuult volna.
+Például, az újonnan (2025 végén) "\href{https://brainminds.jp/en}{Brain/MINDS 2.0}" Japánban indított program  már csak 
+matematikai modelleket használ, \textit{meg sem próbálja megérteni az alapul szolgáló fizikai folyamatokat}.
+A neuron model\-lekben a 'dinamikus' arra utal, hogy a neuron
+állapotváltozói (elsősorban a membrán potenciál és az ion\-csatornák tulajdonságai) hogyan viselkednek az idő függvényében belső folyamatok és külső körülmények hatására.
+A mi model\-lünktől eltérően, ezek a folyamatok csupán egy 
+idő paramétert használnak, egy empírikus vagy egy matematikai függvényben, lásd pl.~\cite{NeuralDynamicsGertsner:2014}.
+Mi valódi, fizikai alapokon nyugvó dinamikát használunk a neuronok reakciójának leírására, olyan értelemben, ahogyan Newton vezette be mozgástörvényeit.
+
+\fi
 \index{laws of motion}
 
+\ifx\magyar\undefined
+\section{Disciplinary layers\label{sec:Intro-Disciplinary}}
+\else
+\section{Tudományterületi rétegződés\label{sec:Intro-Disciplinary}}
+\fi
 
 
-%Hodgkin and Huxley's classic (V1.0) "model", which fundamentally changed our ideas about the physiology of neurons and which has served as the basis for describing the functioning of neurons for several decades, can hardly be overestimated; it is truly the crown jewel of neuroscience. However, its authors, quite realistically, assessed that the physical picture behind the observations they mathematically formulated could be partially or completely incorrect. Already in their original communication, they drew attention to the fact that their equations did not fully describe their observations, that - due to the lack of certain knowledge - they were forced to formulate ad hoc assumptions and that the formalism of the equations could not describe only one physical process. Some of the assumptions proved to be a brilliant vision, but in quite a few cases it turned out that they did not always put the right physical background behind their observations, which were generally correctly described mathematically, and that their model designed for mechanical computers had obvious limitations. Already at the time of the introduction of the model, doubts arose as to whether the purely electrical model could fully describe the observations known up to that time, and later, as the accuracy, directionality and detail of the observations increased, it became necessary to introduce more and more ad hoc assumptions in order to maintain the consistency of the model assuming purely electrical operation.
-%
+\ifx\magyar\undefined
 
-
-%A könyv több rétegű. A mindenki (azaz elsősorban a megfelelő
-%fiziológiai háttérrel rendelkező olvasó)
-%által megérthetőnek szánt részek mellett a vonatkozó más jellegű háttérrel rendelkezők számára találhatók 
-%a szükséges \textbf{matematikai~\ref{intro:MyMathematicsPanel}} és
-%\textbf{fizikai~\ref{intro:MyPhysicsPanel}} ismereteket tartalmazó panelek is, amelyeknek megértéséhez legalább a megfelelő szintű BSc ismeretek, de néha ezt túllépő tudás, esetenként 
-%a gondolatok szokatlanságával elmélyülésre késztető 
-%ismeretek és magyarázatok találhatók.
-%A jelenségkör bonyolultsága, sok közelítést tesz szükségessé,
-%de a megfelelő közelítések és absztrakciók felhasználásával 
-%numerikus eredményeket (néha csupán észszerű becsléseket)
-%tartalmaznak a \textbf{numerikus \ref{num:MyNumericsPanel}} panelek.
-%Törekszünk arra, hogy az anyag ezek nélkül is érthető legyen,
-%ezekkel együtt pedig a megfelelő szakképzettségű olvasó
-%továbbgondolásra ösztönző tudást meríthessen.
-
-\quotationbox
-{
-"Biological laws are much more difficult to find than physical ones"~\cite{VollmerLimitsOfBiology:1995} @1995
-}
-
-\section{Disciplinary layers\label{sec:Intro-Disciplinar}}
-The material has multiple layers. In addition to the sections intended to be understandable by everyone (i.e. primarily readers with a suitable physiological and neuroscience background), there are also panels (typically in another chapters) for those with the relevant background, containing the necessary \textbf{mathematical~\ref{intro:MyMathematicsPanel}} and \textbf{physical~\ref{intro:MyPhysicsPanel}} knowledge, which require at least the appropriate level of BSc knowledge to understand, but sometimes knowledge that goes beyond this, and sometimes
+The material has multiple layers.
+In addition to the sections intended to be understandable by everyone
+(i.e. primarily readers with a suitable physiological and neuroscience background),
+there are also panels (typically in another chapters) for those with the relevant background,
+containing the necessary \textbf{mathematical~\ref{intro:MyMathematicsPanel}}
+and \textbf{physical~\ref{intro:MyPhysicsPanel}} knowledge,
+which require at least the appropriate level of BSc knowledge to understand,
+but sometimes knowledge that goes beyond this, and sometimes
 knowledge and explanations that make you delve deeper into the unusualness of the ideas. This method naturally leads
 to some redundancy, but enables the audience to read only
 the text his/her background qualifies for.
  We strive to make the material understandable without those supplementary material, and with them, the reader with the appropriate qualifications
 will be able to gain knowledge that encourages further thoughts.
 
+\else
+
+A könyv több rétegű. A mindenki (azaz elsősorban a megfelelő
+fiziológiai háttérrel rendelkező olvasó)
+által megérthetőnek szánt részek mellett a vonatkozó más jellegű háttérrel rendelkezők számára találhatók 
+a szükséges
+\textbf{\hyperlink{intro:MyMathematicsPanel}{matematikai}} és
+\textbf{\hyperlink{intro:MyPhysicsPanel}{fizikai}}
+ismereteket tartalmazó panelek is, amelyeknek megértéséhez legalább a megfelelő szintű BSc ismeretek, de néha ezt túllépő tudás, esetenként 
+a gondolatok szokatlanságával elmélyülésre késztető 
+ismeretek és magyarázatok találhatók.
+A jelenségkör bonyolultsága sok közelítést tesz szükségessé,
+de a megfelelő közelítések és absztrakciók felhasználásával 
+numerikus eredményeket (néha csupán észszerű becsléseket)
+tartalmaznak a \textbf{\hyperlink{num:MyNumericsPanel}{numerikus}} panelek.
+Törekszünk arra, hogy az anyag ezek nélkül is érthető legyen,
+ezekkel együtt pedig a megfelelő szakképzettségű olvasó
+továbbgondolásra ösztönző tudást meríthessen.
+
+\fi
+
+
+
+
+\ifx\magyar\undefined
 
 \physicspanel{intro:MyPhysicsPanel}{An example physics panel}
 {
-%%A tudományok specializálódása során a fizika az élettelen természet 
-%%leírására szakosodott és (az észszerű leírhatóság érdekében)
-%%korlátozott érvényességű szakterületeket hozott létre.
-%%Az élő természet tanulmányozása során már természetes módon
-%%használták eredményeit, módszereit és eszközeit.
-%%Ennek során abból a helyes nézőpontból indultak ki, hogy
-%%a természetben található objektumok és kölcsönhatásaik leírására
-%%ugyanazoknak a törvényeknek kell vonatkozni. Nem vették azonban figyelembe, hogy a természet bonyolultsága miatt,
-%%a leírhatóság érdekében, közelítéseket és elhanyagolásokat kell tennünk. A diszciplináris törvények egy-egy jelenségköre vonatkozóan
-%%absztrakt fogalmakat alkotnak és a törvények ezeket az absztrakt
-%%fogalmakat írják le pontosan, nem pedig azokat a jelenségeket,
-%%amelyek a természetben előfordulnak. Az esetek jelentős részében
-%%ezek a törvények teljes egészükben használhatók, 
-%%az élő és élettelen környezet körülményeinek jelentős eltérései miatt
-%%sokszor csak jelentős módosítással vagy akár teljes újragondolással alkalmazhatók; lásd Erwin Schrödinger lényeglátó kérdéseinek értelmezését
-%%\index{Schrödinger, Erwin}
-%%a \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}} 
-%During the specialization of sciences, physics specialized in the description of inanimate nature and (in the interest of reasonable description) created fields of limited validity. In the study of living nature, its results, methods and tools were already used in a natural way. In doing so, they started from the correct point of view that the description of objects in nature and their interactions should be governed by the same laws. However, they did not take into account that due to the complexity of nature, approximations and neglects must be made in order to be able to describe them. Disciplinary laws create abstract concepts for a certain range of phenomena, and the laws describe these abstract concepts precisely, not the phenomena that occur in nature. In most cases
-%these laws can be used in their entirety,
-%due to the significant differences in the conditions of the living and non-living environment
-%often they can only be used with significant modification or even complete rethinking; see the interpretation of Erwin Schrödinger's insightful questions
-%\index{Schrödinger, Erwin}
-%in \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}}
+
+During the specialization of sciences, physics specialized in the description of inanimate nature and (in the interest of reasonable description) created fields of limited validity. In the study of living nature, its results, methods and tools were already used in a natural way. In doing so, they started from the correct point of view that the description of objects in nature and their interactions should be governed by the same laws. However, they did not take into account that due to the complexity of nature, approximations and neglects must be made in order to be able to describe them. Disciplinary laws create abstract concepts for a certain range of phenomena, and the laws describe these abstract concepts precisely, not the phenomena that occur in nature. In most cases
+these laws can be used in their entirety,
+due to the significant differences in the conditions of the living and non-living environment
+often they can only be used with significant modification or even complete rethinking; see the interpretation of Erwin Schrödinger's insightful questions
+\index{Schrödinger, Erwin}
+in \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}}
 Physics panels contain the strict physical background.
 }
 
-\mathematicspanel{intro:MyMathematicsPanel}{An example mathematics panel}
-{Mathematics panels typically contain equations and 
-their explanations.
+\else
+
+\physicspanel{intro:MyPhysicsPanel}{Fizikai panel, példa}
+{
+A tudományok specializálódása során a fizika az élettelen természet 
+leírására szakosodott és (az észszerű leírhatóság érdekében)
+korlátozott érvényességű szakterületeket hozott létre.
+Az élő természet tanulmányozása során már természetes módon
+használták eredményeit, módszereit és eszközeit.
+Ennek során abból a helyes nézőpontból indultak ki, hogy
+a természetben található objektumok és kölcsönhatásaik leírására
+ugyanazoknak a törvényeknek kell vonatkozni. Nem vették azonban figyelembe, hogy a természet bonyolultsága miatt,
+a leírhatóság érdekében, közelítéseket és elhanyagolásokat kell tennünk. A diszciplináris törvények egy-egy jelenségköre vonatkozóan
+absztrakt fogalmakat alkotnak és a törvények ezeket az absztrakt
+fogalmakat írják le pontosan, nem pedig azokat a jelenségeket,
+amelyek a természetben előfordulnak. Az esetek jelentős részében
+ezek a törvények teljes egészükben használhatók, 
+az élő és élettelen környezet körülményeinek jelentős eltérései miatt
+sokszor csak jelentős módosítással vagy akár teljes újragondolással alkalmazhatók; lásd Erwin Schrödinger lényeglátó kérdéseinek értelmezését
+\index{Schrödinger, Erwin}
+a \textbf{Physics Panel~\ref{phys:SchrödingerNonOrdinaryLaws}} 
 }
+\fi
+
+
+\ifx\magyar\undefined
+
+\mathematicspanel{intro:MyMathematicsPanel}{An example mathematics panel}
+{
+Mathematics panels typically contain equations and 
+their explanations. The statements in the main text 
+are understandable without these panels, they solely underpin
+those statements in the language of mathematics;
+for the audience having the required mathematical background.
+}
+
+\else
+
+\mathematicspanel{intro:MyMathematicsPanel}{Matematikai panel, példa}
+{
+A matematikai panelek egyenleteket és azok értelmezését tartalmazzák. A fő szöveg ezek nélkül is érthető állításokat tartalmaz, az egyenletek -- a kellő matematikai ismeretekkel
+is rendelkező olvasók számára -- ezeket támasztják alá.
+}
+
+\fi
+
+\ifx\magyar\undefined
 
 \numericspanel{intro:MyNumericsPanel}{An example numerics panel}
 {
-The complexity of the phenomena requires many approximations, but by using the appropriate approximations and abstractions,  numerical results (sometimes only reasonable estimates) are provided in the corresponding numeric panels.
+The complexity of the phenomena requires many approximations, but by using the appropriate approximations and abstractions,  numerical results (sometimes only reasonable estimates) are provided for the phanomenon in question in the corresponding numeric panels.
+}
+\else
+
+\numericspanel{intro:MyNumericsPanel}{Numerikus panel, példa}
+{
+A tapasztalatok összetettsége sok  közelítést tesz szükségessé.
+Megfelelő közelítések és absztrakciók alkalmazásával
+numerikus eredményeket (bár néha csupán észszerű becsléseket)
+tudunk megadni a tárgyalt jelenségekre.
+}
+
+\fi
+
+
+\quotationbox
+{
+"Biological laws are much more difficult to find than physical ones"~\cite{VollmerLimitsOfBiology:1995} @1995
 }
 
 
@@ -121,13 +213,12 @@ independently from the infinitely complex molecular, biochemical and physiologic
 We \textit{will base our holistic discussion on those general basic principles 
 and create an 
 \hyperlink{NeuronPhysical}
-{'abstract physical neuron'}; a hypothetical element, which functions
-essentially like a neuron},
+{'abstract physical neuron'}}; a hypothetical element,
 skipping the 'implementation details' nature uses.
 We essentially follow von Neumann's method in describing the foundations of
 computing science~\cite{EDVACreport1945}: "we will base our considerations on a hypothetical element, which functions essentially like a neuron".
-We need \hyperlink{Abstractions}
-{different abstractions and approximations} 
+We need different \hyperlink{Abstractions}
+{abstractions and approximations} 
 (furthermore, \hyperlink{NonOrdinaryLaws}{'non-ordinary' laws} of science) for describing biological processes.
 \index{ordinary laws}
 However, an abstraction is usable
@@ -136,60 +227,23 @@ in practice only when paired with a generalization: the more abstract the assump
 We must show which approximations are oversimplifications and which phenomena are misunderstood; measured, or interpreted in a wrong approach.
 Abstraction is, in fact, everywhere, including inside each of us. It is a core element of science and cognition. 
 
-
-We follow von Neumann's method when he described principles of technical computing~\cite{EDVACreport1945}. "The ideal procedure would be, to take up the specific parts in some definite order, to treat
-each one of them exhaustively, and go on to the next one only after the predecessor is completely
-disposed of. However, this seems hardly feasible. The desirable features of the various parts, and
-the decisions based on them, emerge only after a somewhat \hypertarget{zigzagdiscussion}
-{zigzagging discussion}. It is, therefore,
-necessary to take up one part first, pass after an incomplete discussion to a second part, return after
-an equally incomplete discussion of the latter with the combined results to the first part, extend
-the discussion of the first part without yet concluding it, then possibly go on to a third part, etc.
-Furthermore, these discussions of specific parts will be mixed with discussions of general principles, of the elements to be used, etc."
-\index{von Neumann!'zigzag' way}
-For example, basic concepts such as the membrane potential and its regulation in resting and transiens states, belong to chapter Physics,
-and their detailed scientific, physics-based, discussion is given there, 
-but their corresponding aspects must be discussed in chapters 'Abstract neuron' and less abstract 'Physiology' as well.
-The contents are inherently intertwinned, and the form must follow the contents.
-We make this zigzag reading more accessible by using hyperlinks and cross-references throughout the document. 
-
-
-\section[Electrical model
-]{Electrical neuron model in a nutshell\label{sec:Single-ElectricalNutshell}}
-
-
-Despite that we attach mechanical and other phenomena to the
-electrical ones, our motto is similar to the frequently cited saying \href{https://en.wikipedia.org/wiki/Cherchez_la_femme"}{'Cherchez la femme'}:
-\textit{Look for the charge},
-\index{Cherchez la femme}
-meaning "\textit{no matter what the problem, some charge is often the root cause}" (however, we consider also effects of the thermodynamics 
-on charge, given that the charges are ions instead of electrons. Furthermore, we shortly consider the mechanical, optical, etc. consequences.).
-The expression comes from the novel \textit{The Mohicans of Paris} by Alexandre Dumas and is frequently used
-in detective novels in the sense that there are always complications and unusual
-situations, but "no matter what the problem, a woman is often the root cause". 
-Although, in most cases, the cause is seemingly different.
-
-Similarly, the charge is always the primary quantity when speaking about neural operations. 
-We follow this line and explain how processes, that traditionally
-belong to different classical science disciplines, redistribute charges and create
-electrical currents and voltages, then discuss how the cell handles the electrical charge. We note, however, that the different charge carrier (ions instead of electrons) needs care: the "slow current"
-shows unusual behavior and the needs using known laws in 
-more or less different form.
-Also, we make hints that in most cases, the classical disciplines, alone, are not qualified to describe phenomena of living matter.
-The details are described in Chapter~\ref{ch:Physics}, where
-the fundamental differences caused by the charge carrier are discussed. 
-
-We show that, alhough the thermodynamic effects
-are inseparable from the electrical ones, an appropriate combination of the disciplines satisfactorily describe the observations.
-We consider that \href{https://neuronaldynamics.epfl.ch/online/Ch1.S1.html}{neurotransmitters, receptors and specialized membrane proteins}
-\textit{only implement a kind of (time and energy-consuming)
-	chemical/enzymatic decoupling
-	of the signal transmission mechanism.} The idea resembles opto-coupling in electronics:
-makes \textit{the signal transmission independent from the local potential value}.
-Suppose neurons use galvanic coupling
-when the resting potential of one of the neurons equals the extracellular space. In that case,
-all connected neurons' resting potentials are
-equal to that of the extracellular space. Without this decoupling, the death
-of one neuron would immediately lead to the death of the entire neural network.
-Furthermore, the neurons could not make independent signal processing.
+%\ifx\magyar\undefined
+%\section{Non-ordinary science\label{sec:Intro-Non-Ordinary}}
+%\else
+%\section{Tudományterületi rétegződés\label{sec:Intro-Non-Ordinary}}
+%\fi
+%
+%
+%\ifx\magyar\undefined
+%A complete scientific description of living matter resists all \textit{disciplinary} attempts: the existence of life in many ways contradicts the (misapplied) laws of science that we have tested on objects of \textit{inanimate nature}. It has its own laws, which are similar to the well-known laws of inanimate science, but are not identical to them. This is a long-known problem, which E. Schrödinger, Nobel Prize-winning physicist, summarized eight decades ago as follows: living matter cannot be described by the \textit{ordinary} laws of physics. He added, however, that \textit{no new forces or interactions occur in living matter}, only new connections (different methods of understanding) must be found, and then the new laws recognized will fit into the fabric of science just as well as the old ones. A similar opinion was expressed by R.P. Feynman, also a Nobel Prize-winning physicist, when he suggested “excursions” to other scientific fields, since the truly interesting phenomena occur beyond the normal boundaries, in “no man’s land”.  That is, in order to establish the discussion of (V2.0), we must also discuss physics, reinterpreting certain of its concepts, approximations, and laws, but always respecting the so-called first principles. This sometimes requires unconventional thinking and occasionally rethinking familiar conclusions.
+%The required reinterpretation of some concepts of physcs
+%is discussed in Appendix \ref{ch:Physics}.
+%
+%\else
+%
+%Az élő anyag teljes körű tudományos leírása minden \textit{diszciplináris} próbálkozásnak ellenáll: az élet létezése sok szempontból ellentmond a tudomány (rosszul alkalmazott) törvényeinek, amelyeket az \textit{élettelen természet} objektumain teszteltünk. Saját törvényei vannak, amelyek ugyan hasonlítanak az élettelen természettudomány jól ismert törvényeire, de nem azonosak velük. Régóta ismert probléma, amit E.Schrödinger, Nobel-díjas fizikus, úgy foglalt össze nyolc évtizeddel ezelőtt, hogy az élő anyagot nem lehet leírni a fizika \textit{rendes} (ordinary) törvényeivel. Hozzátette azonban, hogy semmiféle új erő vagy kölcsönhatás nem lép fel az élő anyagban, csupán új összefüggéseket (más módszerű megértést) kell találni, és ezután a felismert új törvényszerűségek éppúgy illeszkedni fognak a tudomány szövetébe, mint a régiek. Hasonló véleményt mondott R.P.Feynman, szintén Nobel-díjas fizikus, is, amikor “kirándulásokat” javasolt más tudományterületekre, mivel az igazán érdekes jelenségek a rendes határokon túl, a “senki földjén” történnek.
+%Azaz, a (V2.0) tárgyalását megalapozandó, fizikát is tárgyalnunk kell,
+%bizonyos fogalmait, közelítéseit, törvényeit újraértelmezve, de mindig tiszteletben tartva az ún. első elveit. Ez helyenként nem-hagyományos gondolkodást és esetenként megszokott következtetések újra gondolását igényli.
+%A fizika bizonyos fogalmainak szükséges újraértelmezését a \ref{ch:Physics} függelékben tárgyaljuk.
+%\fi
 

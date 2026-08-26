@@ -1,0 +1,1540 @@
+% This is the chapter 'Modeling' to the "Hodgkin-Huxley neuron model V2.0 book"
+% Last edited 2026.08.08
+
+
+\ifx\magyar\undefined
+\chapter[The V2.0 model]{The V2.0 model in a nutshell\label{sec:Modell-Nutshell}}
+\else
+\chapter[A V2.0 modell]{A V2.0 modell dióhéjban\label{sec:Modell-Nutshell}}
+\fi
+
+\iflatexml
+\else
+\minitoc
+\fi
+
+
+\quotationbox
+{
+"Everything should be made as simple as possible, but not simpler." Attributed to Albert Einstein.\\
+}
+
+\section[Modeling principles]{Modeling principles\label{sec:V2-0_ModelingPrinciples}}
+
+
+\ifx\magyar\undefined
+The principle, suggested by A.~Einstein, means that while one should strip away unnecessary clutter, extra features, or overly complex jargon to achieve clarity, one must be careful not to remove so much that the core message or solution becomes meaningless or inaccurate.
+For neurons (living matter), on the one side, it actually means that one should not reject quantities from the set of observed quantities
+(the mass of the charge carrier and the pressure they cause) 
+just because they are not present in a classical discipline (electricity) of the 
+science, which once opon the time someone hypothesized (pre-decided?)
+to describe neurons.
+
+Furthermore, one must include the proven new discoveries (effects and structures) made in the past eight decades (\gls{AIS}) and the
+intentionally omitted
+observations (heat emission and absorption; mechanical changes) which do not fit into the pre-authorized disciplinary theory.
+On the other side, one must remove the foreign and fake ad hoc mechanisms and hypotheses (which contradict fundamental principles of science and elementary logics). 
+All those issues were required to obscure that the current understanding does not match the experimental facts.
+The discussion does not include 'whatnot' interactions (such as protein mechanisms that operate contrary to the laws of physics) or ion-specific ion channels operating under synchronized control (for which there is no structural evidence). These are discussed as hypotheses in physiology and biophysics, but cannot be scientifically substantiated. A detailed and precise description of the correct functioning is usually beyond the typical knowledge level of physiologists, so we give only a popular discussion of them here; the physically correct discussion is placed in the appendices.
+Similarly, additional knowledge about modeling is discussed in the \ref{ch:Modeling} appendix.
+
+\else
+
+\section[Modellezési elveink]{Modellezési elveink\label{sec:V2-0_ModelingPrinciples}}
+
+
+A fenti, Albert Einsteintől származó, idézet azt jelenti,
+hogy miközben eltávolítjuk a zavaró részleteket és 
+az extra tulajdonságokat, vagy a megértés elősegítésére/nehezítésére használt komplikált
+szakkifejezéseket, vigyáznunk kell arra, hogy ne hagyjunk el olyasmit,
+aminek következtében az eredeti mondanivaló vagy a megoldás 
+jelentését veszti vagy pontatlan lesz.
+Könyvünkben nem szerepelnek 'whatnot' kölcsönhatások (mint a protein mechanizmusok, amelyek a fizikai törvényekkel ellentétesen működnek) vagy szinkronizált vezérléssel működő ionspecifikus ioncsatornák (amelyeknek nincs szerkezeti bizonyítéka). Ezeket a fiziológia és a biofizika hipotézisekként tárgyalja, de nem tudja tudományos értelemben alátámasztani. A helyes működés részletes és pontos leírása általában
+meghaladja a fiziológusok jellemző ismeretszintjét, ezért itt csak azok népszerűsítő szintű tárgyalását adjuk; a fizikailag helyes tárgyalás a függelékekbe került.
+Hasonlóképpen a \ref{ch:Modeling} függelékben tárgyaljuk a modellezésre vonatkozó további ismereteket.
+
+
+A neuronok (élő anyag) esetén ez azt jelenti, hogy nem hagyhatjuk el a
+megfigyelt mennyiségek közül bármelyiket (a töltéshordozók tömegét és az általuk okozott nyomást), csupán azért, mert 
+az nem szerepel abban a diszciplinában (elektromosságtan), amelyet az idők kezdetén valaki
+a neuronok leírására alkalmasnak vélt (vagy előre elhatározott?).
+Továbbá, figyelembe kell vennünk az utóbbi nyolc évtizedben  megalapozott új felfedezéseket (effektus vagy struktúra) (\gls{AIS}), 
+és az eddigi előítéletes leírásokba nem illő és ezért szándékosan agyonhallgatott tényeket (hőtermelés és elnyelés, mechanikai változások).
+Másrészt el kell távolítani az elméletből az idegen és
+valótlan ad-hoc feltevéseket (amelyek ellentmondanak a tudomány
+alapelveinek és az elemi logikának) (ellenirányban folyó azonos töltések árama, amelyek termelnek és elnyelnek hőt; energia felhasználás nélkül tömegeket mozgató rejtélyes protein erők; kommunikációs lehetőség nélkül kommunikáló szinkronizált ioncsatornák).
+Ez utóbbiak azért kellettek, hogy elfedjék a tényt,
+hogy jelen megértésünk nem felel meg a kísérleti tényeknek.
+\fi
+
+
+
+\begin{figure}
+\includegraphics[width=.65\textwidth]{fig/phospholipid1.png}
+\caption{\label{fig:LipidSphere}
+\href{https://open.oregonstate.education/aandp/chapter/3-1-the-cell-membrane}{A simulated picture of the neuron membrane}.
+We can consider the membrane as a closed surface (in our idealist view, a sphere), being slightly opened at an attached tube, the axon. For certain processes, we can also consider just a tiny section as a planar piece, see also Figure~\ref{fig:MembraneSurface}
+}	
+\end{figure}
+ 
+
+
+%
+%\begin{figure}
+%\includegraphics[width=.65\textwidth]{fig/Lipid_Bilayer_With_Various_Components.jpg}
+%\caption{\label{fig:MembraneComposition}
+%The cell membrane is a phospholipid bilayer containing many different molecular components, including proteins and cholesterol, some with carbohydrate groups attached.
+%Lipids are amphiphilic molecules that like water on one side and repel water
+%on the other side due to the hydrocarbon chains. In contact to
+%water lipids spontaneously form double layers (see Figure \ref{fig:MembraneComposition}) that are the basic building blocks of biomembranes.
+%}	
+%\end{figure}
+
+
+\begin{figure}
+\includegraphics[width=.65\textwidth]{fig/HeimburgMembrane.png}
+\caption{\label{fig:MembraneSurface}
+A closer look at the simulated picture of the neuron membrane.
+Even the abstract model cannot stick to the flat surface
+and the uniform membrane thickness. In addition, lipids spontaneously form double layers; moreover, smaller biological objects can build up on the membrane.
+Lipids are amphiphilic molecules that like water on one side and repel water
+on the other side due to the hydrocarbon chains. In contact to
+water lipids spontaneously form double layers (see Figure \ref{fig:MembraneComposition}) that are the basic building blocks of biomembranes.
+}	
+\end{figure}
+
+
+\ifx\magyar\undefined
+
+We must also have Schrödinger's comments in mind when constructing the \hypertarget{PhysicalPictureNeuron}{physical picture
+about neurons}, that we must be extremely careful. \textit{We must not use the
+'ordinary' laws of physics derived for non-living matter without revisiting them} because "\textit{the construction is different from anything we have yet tested in the physical laboratory}"~\cite{Schrodinger:1992}.
+\index{ordinary laws}
+Although the discussion requires deep knowledge in science,
+in this section the discussion remains on the surface and provides a holistic picture about the model.
+The deeper layers are explained in the next sections. 
+We hope the essence can be understood with knowing only
+the elements of science and physiology. However, the open mind is required
+already in this section.
+The fundamental principles are the same, but we must use different 
+\hyperlink{Abstractions}{approximations
+ and abstractions} for the different disciplines of science and for living matter. For this reason,
+maybe it is more correct to call those laws for living matter 'non-disciplinary'
+instead of 'non-ordinary' laws.
+\index{non-ordinary laws}
+\index{non-disciplinary laws}
+
+We must also include the discoveries from the past seven decades,
+among others, that a component \gls{AIS} can be found between the neuron's membrane and the axon. It is observed that \gls{AIS} has a crucial role in creating the \gls{AP}, but
+that role has not been integrated into the existing theories.
+As a consequence, in the transient state, a neuron shall be modeled
+as a serial (i.e., differentiator-type) \hyperlink{PhysicsOscillator}
+{electrical oscillator}, which has gated current 
+inputs (instead of a parallel oscillator 
+without gating its inputs, which is a good model only in the static view of the resting state) and provides a timed output. We explicitly add that the charge carriers, the neuron 
+works with, are \textit{ions} (instead of electrons) and that the signal propagation
+mechanism is \textit{bioelectric} (instead of purely an electrical
+or mechanical wave or "protein mechanism"), in many cases even without having free carriers in the respective volume. (We do not consider the
+ideas that the associated mechanical, optical, etc. changes cause electric phenomena. They reverse the true causality: they do not have 
+a triggering cause; the view inherited from the narrative biology.)
+Electrochemical operation,
+especially that of \hyperlink{ThermodynamicElectricField}{semipermeable membranes}, requires special attention: 
+charge carriers are "created" inside the biological matter.
+Omitting purposefully the clear physical background results in performing
+\hyperlink{voltage-clamping}{wrong measurements} and introducing \hyperlink{PhysiologyFallacy}{wrong concepts} into biology.
+
+\else
+
+We must also have Schrödinger's comments in mind when constructing the \hypertarget{PhysicalPictureNeuron}{physical picture
+about neurons}, that we must be extremely careful. \textit{We must not use the
+'ordinary' laws of physics derived for non-living matter without revisiting them} because "\textit{the construction is different from anything we have yet tested in the physical laboratory}"~\cite{Schrodinger:1992}.
+\index{ordinary laws}
+Although the discussion requires deep knowledge in science,
+in this section the discussion remains on the surface and provides a holistic picture about the model.
+The deeper layers are explained in the next sections. 
+We hope the essence can be understood with knowing only
+the elements of science and physiology. However, the open mind is required
+already in this section.
+The fundamental principles are the same, but we must use different 
+\hyperlink{Abstractions}{approximations
+ and abstractions} for the different disciplines of science and for living matter. For this reason,
+maybe it is more correct to call those laws for living matter 'non-disciplinary'
+instead of 'non-ordinary' laws.
+\index{non-ordinary laws}
+\index{non-disciplinary laws}
+
+We must also include the discoveries from the past seven decades,
+among others, that a component \gls{AIS} can be found between the neuron's membrane and the axon. It is observed that \gls{AIS} has a crucial role in creating the \gls{AP}, but
+that role has not been integrated into the existing theories.
+As a consequence, in the transient state, a neuron shall be modeled
+as a serial (i.e., differentiator-type) \hyperlink{PhysicsOscillator}
+{electrical oscillator}, which has gated current 
+inputs (instead of a parallel oscillator 
+without gating its inputs, which is a good model only in the static view of the resting state) and provides a timed output. We explicitly add that the charge carriers, the neuron 
+works with, are \textit{ions} (instead of electrons) and that the signal propagation
+mechanism is \textit{bioelectric} (instead of purely an electrical
+or mechanical wave or "protein mechanism"), in many cases even without having free carriers in the respective volume. (We do not consider the
+ideas that the associated mechanical, optical, etc. changes cause electric phenomena. They reverse the true causality: they do not have 
+a triggering cause; the view inherited from the narrative biology.)
+Electrochemical operation,
+especially that of \hyperlink{ThermodynamicElectricField}{semipermeable membranes}, requires special attention: 
+charge carriers are "created" inside the biological matter.
+Omitting purposefully the clear physical background results in performing
+\hyperlink{voltage-clamping}{wrong measurements} and introducing \hyperlink{PhysiologyFallacy}{wrong concepts} into biology.
+
+\fi
+
+\ifx\magyar\undefined
+\subsection[The non-disciplinary behavior]{The non-disciplinary behavior\label{sec:Model-Non-disciplinary}}
+Since \textit{the same physical action generates the voltage gradient and the concentration gradient} (and, consequently, the pressure), they are inseparable and proportional to each other.
+Generating a voltage change (clamping, direct current, magnetic pulse) or a pressure change (ultrasound, mechanical, shock waves) on the membrane mutually cause the other to change. Inputting ions (synaptic input) generates both changes.
+The control circuit tries to restore the resting state, during which the mentioned changes decrease proportionally.
+The transient state of the neuron can, in principle, be described by any of the mentioned quantities, but, as a practical matter, \textit{the effects of changes in the other entities must also be taken into account}: \textit{no single discipline, alone, can describe the changes}.
+The elastic membrane implements an almost critically damped vibration, but the "vibrating mass" and the "spring force" are constantly changing.
+In an electric resonant circuit, the capacitor's voltage and capacitance change due to the finite amount of charge.
+\textit{The pressure wave caused by a force shock and the voltage wave caused by a voltage shock describe the same effect}.
+In both cases, the other effect must be taken into account to some extent: an infinitesimal movement of the ion also changes both the pressure and the voltage.
+Changes in pressure and charge alter the membrane's thickness (and therefore its capacity), and both voltage and pressure can cause a structural change (phase change, "melting") in the lipid chains that make up the membrane.
+\else
+
+\subsection[A nem-diszciplináris viselkedés]{A nem-disciplináris viselkedés\label{sec:Model-Non-disciplinary}}
+Mivel \textit{a feszültség és a koncentráció gradienst is ugyanaz a
+fizikai hatás generálja}, a két gradiens egymással arányos és
+egymástól elválaszthatatlan.
+Feszültség változás (clamping, közvetlen áram bevezetés, mágneses impulzus) vagy nyomás változás (ultrahang, mechanikai, lökéshullám)
+a membránon a másik változást is előidézi.
+Ionok belépése (szinaptikus bemenet) is mindkét változást előidézi.
+A neuron vezérlőegysége megpróbálja helyreállítani a nyugalmi állapotot,
+aminek során az említett változások arányosan csökkennek.
+A neuron tranziens állapota, elvben, a két említett menníiség mindegyikével leírható. Praktrikus szempontból azonban 
+\textit{a másik változó értékében bekövetkezett változás hatása is számításba
+veendő: egyetlen diszciplina, egyedül, nem tudja leírni a változásokat}.
+A rugalmas membrán egy csaknem kritikusan csillapított rezgést valósít meg; de a "regő tömeg" és a "rugóerő" folyamatosan változik.
+Egy elektromos rezgőkörben a kondenzátor feszültsége és kapacitása a
+töltés véges mennyisége miatt változik.
+\textit{Az erőlökés miatti nyomáshullám és a feszültséglökés miatti
+feszültséghullám ugyanazt a fizikai hatást írják le.}
+Mindkét esetben figyelembe kell venni valamilyen mértékben a másik 
+hatást is: az ion egy kis mozgása egyszerre változtatja 
+a nyomást és a feszültséget is.
+A nyomás és a töltés változása a membrán vastagságát (és ezért kapacitását) is változtatja, továbbá a feszültség és a nyomás is 
+okozhat strukturális változást (phase change, "melting")
+a membránt alkotó lipid láncokban.
+\fi
+\index{melting!lipids}
+
+
+\ifx\magyar\undefined
+Here, the difference comes to light: the carrier of the \gls{EM} interaction has no mass, while the thermodynamic one does.
+In the case of the pressure wave, the speed is naturally finite (mass must be moved). For the electric wave, there are laws regarding only instantaneous interaction; so, they must be adapted to \textit{slow ion current}s based on physical assumptions.
+\index{slow current}
+It is simpler to describe the generation of the action potential as an electrical oscillation, and its propagation as a pressure wave (although this only represents the wave front well:
+the \gls{AP} lasts as long as there is a non-equilibrium charge in the neuron: the repulsion between the excess ions pushes the ions out of the closed space, so the intensity of the wave continuously decreases).
+Hyperpolarization is described in the electrical view as a capacitive current in the sequential oscillator circuit, in the thermodynamic view as a suction effect occurring in the opposite phase of the membrane. 
+In both cases, however, it must be taken into account that charge and mass are inseparable in ions, and that their cross-disciplinary effects significantly reduce the applicability of the disciplinary laws.
+Furthermore, as our force analysis suggests, the ions' motion results 
+an interference between the longitudinal thermodynamic oscillation of elastic origin
+and a discharge process of electrical origin. 
+
+\else
+Itt jön napvilágra az a lényegi különbség, hogy az \gls{EM}
+sugárzás hordozójának nincs nyugalmi tömege, míg a termodinamikai kölcsönhatás hordozójának van.
+A nyomáshullám esetén a sebesség magától értetődően véges
+(tömeget kell mozgatni).
+Elektromos hullám esetén, csak az azonnali kölcsönhatásra vonatkozó
+törvények vannak; azokat (fizikai megfontolások alapján) 
+adaptálni kell lassú áramok esetére.\index{lassú áram}
+Az \gls{AP} keltését elektromos rezgőkörként, továbbítását pedig
+nyomáshullámként egyszerűbb leírni.
+Az \gls{AP} mindaddig tart, amíg nem-egyensúlyi töltés van a
+neuronban: a többlet ionok közötti taszítás kitolja az ionokat a
+zárt térfogatból, így az intenzitás folyamatosan csökken.
+A hiperpolarizációt az elektromos szemléletben a szekvenciális rezgőkör
+kapacitív áramaként írhatjuk le, a termodinamikai szemléletben pedig 
+a membrán ellentétes rezgési fázisában fellépő szívóhatásként. 
+Mindkét esetben számításba kell vennünk, hogy az ionok töltése és tömege 
+elválaszthatalanok, és azok diszciplinákon átívelő hatása 
+jelentősen csökkenti a diszciplináris törvények alkalmazhatóságát.
+Amint azt erő-analízisünk mutatja, az ionok mozgása a rugalmas eredetű
+termodinamikus oszcilláció és az elektromos eredetű kisülési folyamat
+eredőjeként áll elő.
+\fi
+
+
+
+\ifx\magyar\undefined
+\subsection[History of modeling]{History of modeling\label{sec:Model-History}}
+
+\else
+\subsection[A modellezés története]{A modellezés története\label{sec:Model-History}}
+Az ionok kölcsönhatásakor mindig kétféle térrel kell dolgoznunk: a determinisztikus 'azonnali' elektromos térből
+és egy sztochasztikus lassú erőtérből származó elsődleges erőkkel,
+amelyek nagyságrendeket változhatnak
+nanométeres távolságokon, továbbá függenek az ionok kémiai természetétől és a biológiai struktúrák változatos 
+irányú és nagyságú ellenerőket is kiválthatnak. 
+Mindezek figyelembe vételéhez nagyon részletes numerikus 
+szimulációk vagy nagyon jó közelítések szükségesek.
+Megközelítésünk olyan tér- és időbeli szakaszokra 
+oszt\-ja fel a biológiai történéseket, amelyekben --jó közelítéssel-- egy domináns és egy korrigáló kölcsönhatás lép fel.
+\fi
+
+ 
+\ifx\magyar\undefined
+Today, two major branches of disciplinary theories compete
+for being applied to describe the neuronal operation \cite{CriticalElectricity:2018,ThermodynamicAPDrukarch:2022,PerspectivesNerveSignalPropagation:2024,ComparisonHHandSoliton:2010,HH_Potential_Controversies_2017,PiezoelectricNeuron:2025}. Those cited references also compare those theories.
+The 2-decade-old Heimburg-Jackson thermodynamic theory is trying to break in alongside or displace the 7-decade-old all-electric Hodgkin-Huxley theory. The two theories apply one of the scientific disciplines developed for inanimate nature, unchanged, to living nature. There are unexplained observations for each of the two theories, and neither can describe the biological neuron's functioning without contradictions. 
+In a disciplinary view, there is no chance of the two theories fusing. Although they can describe a wider range of phenomena together, the conditions under which they are applicable exclude their joint use. Moreover, to conceal contradictions and fill gaps, biophysics assumes (typically unspecified protein) mechanisms that contradict the fundamental principles of physics, and some of them even the disciplinary laws.
+
+\else
+
+Manapság két fő diszciplináris elmélet verseng,
+hogy a neuronális működés leírására használják~\cite{CriticalElectricity:2018,ThermodynamicAPDrukarch:2022, PerspectivesNerveSignalPropagation:2024, ComparisonHHandSoliton:2010, HH_Potential_Controversies_2017, PiezoelectricNeuron:2025}.
+Az idézet közlemények össze is hasonlítják az elméleteket.
+A két évtizedes Heimburg-Jackson termodinamikus elmélet
+próbál betörni a hét évtizededes Hodgkin-Huxley elmélet mellé,
+vagy akár helyettesíteni azt.
+Mindkét elmélet egy, az élettelen természetre kifejlesztett diszciplinát alkalmaz, változatlan formában, az élő természetre. 
+Mindkét elméletben vannak megmagyarázatlan megfigyelések,
+és egyik sem tudja ellentmondásmentesen leírni a biológiai 
+neuron funkcionalitását.
+A diszciplináris szemlélet alapján nincs esély a két elmélet fúziójára.
+Bár együtt a jelenségek egy szélesebb körét tudják leírni,
+alkalmazhatóságuk feltételei kizárják együttes használatukat.
+Továbbá, az ellentmondások feloldására és a magyarázatlan 
+jelenségek kiküszöbölésére, a biofizika olyan,
+(jellemzően meghatározatlan protein), mechanizmusokat 
+tételez fel, amelyek ellentmondanak a fizika alapelveinek és
+néhányuk még a disciplináris törvényeknek is.
+\fi
+
+\ifx\magyar\undefined
+The electrical view essentially stems from the (Nobel Prize-winning) work of Hodgkin and Huxley \cite{HodgkinHuxley:1952}. They could not make a perfect job, mainly due to the lack of
+discoveries made several decades later, including ours, about handling
+the finite speed of the biological ionic currents (and, due to that, the dynamic features), which drastically change
+their conclusions. In contrast with their \textit{empirical description}, which delivered mathematically formulated measured observations, our discussion, although it follows essentially
+the same principles, reinterprets and pinpoints the used fundamental terms, sets up a physical model, and \textit{explains} the physically underpinned processes. ``However, the theory could not explain the physical
+phenomena such as reversible heat changes, density changes,
+and geometrical changes observed in the experiments'' \cite{ComparisonHHandSoliton:2010}.
+The thermodynamic view roots in the (possibly Nobel-prize-winning)
+idea of Heimburg and Jackson \cite{SolitonPropagation:2005}. They proposed that the action potential is essentially a sound wave (a soliton). "However, there are several other questions that this has to answer like ion flow involvement in nerve signal propagation as stated by the \gls{HH} model and also the faster propagation in myelinated nerves than in unmyelinated" \cite{ComparisonHHandSoliton:2010}.
+If we consider that the ion flow means charge propagation in a membrane tube where the specific capacity depends on the thickness (of the myelin sheath) of the wall \cite{VeghUnifiedCrossdisciplinaryModel:2026}, the faster propagation is not mysterious anymore.
+Those apparent contradictions are simply consequences of ions' non-disciplinary features.
+By using the correct (non-disciplinary) discussion of the phenomena,
+we can explain all those observations in more detail in section~\ref{sec:Physics-Unified}.
+Given that
+our model natively connects charge and mass of ions~\cite{VeghNon-ordinaryLaws:2025}, it has a good chance of explaining the missing phenomena.
+
+\else
+
+Az elektromos szemlélet lényegében Hodgkin and Huxley (Nobel-díjas) \cite{HodgkinHuxley:1952} munkájából ered.
+Nem végezhettek tökéletes munkát, főleg a csak évtizedekkel később
+ismertté vált felfedezések hiánya miatt. Az utóbbiak között van
+a mi felfedezésünk, a véges sebességű biológiai áramok kezeléséről (és ennek következtében a dinamikus viselkedésről), ami drasztikusan
+megváltoztatja következtetéseiket.
+Matematikailag megfogalmazott mérési eredményeken alapuló tapasztalati leírásukkal ellentétesen, a mi tárgyalásunk, bár lényegében ugyanazon alpelveket követi, újra értelmezi és pontosítja 
+az alapfogalmakat, valóban fizikai modellt ad, és \textit{megmagyarázza} a fizikailag alátámasztott folyama\-tokat.
+"However, the theory could not explain the physical
+phenomena such as reversible heat changes, density changes,
+and geometrical changes observed in the experiments"\cite{ComparisonHHandSoliton:2010}.
+A termodinamikus szemlélet Heimburg and Jackson \cite{SolitonPropagation:2005} (esetleg Nobel-díjas) ötletén alapszik.
+Javaslatuk szerint az akciós potenciál lényegében hanghullám (soliton).
+"However, there are several other questions that this has to answer like ion flow involvement in nerve signal propagation as stated by the \gls{HH} model and also the faster propagation in myelinated nerves than in unmyelinated" \cite{ComparisonHHandSoliton:2010}.
+Ha azt tekintjük, hogy az ion folyam egy membrán csőben terjedő 
+töltést jelent, ahol a specifikus kapacitás a(z esetleg myelinréteggel borított) fal vastagságától függ~ \cite{VeghUnifiedCrossdisciplinaryModel:2026}, már a gyorsabb terjedés sem misztikus.
+A bemutatott ellentmondások egyszerűen az ionok nem-diszciplináris tulajdonságainak következményei.
+A tapasztalatok helyes (nem-diszciplináris) tárgyalásával
+a tapasztalatok teljes körűen magyarázhatók.
+Mivel modellünk természetes módon összekapcsolja a töltést és a tömeget~\cite{VeghNon-ordinaryLaws:2025}, jó esélye van a még hiányzó tapasztalatok magyarázására is.
+\fi
+
+
+
+The excellent textbook's statement that "the resting membrane potential results
+from the separation of charge across the
+cell membrane"~\cite{PrinciplesNeuralScience:2013} is only half the truth; we tell the second half in section~\ref{sec:Physics-MembraneElectricity}. 
+We refute their statement that "%by discussing how 
+resting ion channels
+establish and maintain the resting potential"~\cite{PrinciplesNeuralScience:2013}, page 126.
+The ion channels are passive players. The interplay of 
+the lipid condenser and the electrolytes on both sides
+of the permeable membrane establishes the resting potential, and ionic gradients maintain it.
+The textbook separates the neuron membrane's states into resting and transient states. 
+It introduces resting and transient ion channels,
+but does not introduce that the different physical processes in those states need different models. 
+As we show in section~\ref{sec:Physics-Unified}, \textit{two different physical mechanisms
+operate in the resting and the transient states}, so two different models are needed for describing the same components.
+
+A primary reason neurophysiology has been misguided is that it has in mind a static picture of the dynamic life of neurons.
+It started from the static
+inanimate anatomic microscopic pictures, continued
+with the static clamping investigations (where
+the negative feedback of an external electric circuit eliminates the natural gradients) and underpinning the
+theory by analyzing frozen (inanimate) samples
+by electron microscopes.
+Those investigations revealed a tremendous amount of crucial details,
+but they obscured the idea
+that those samples are just snapshots of a permanently
+changing system.
+Neuroscience projected the mechanisms of the static resting state to the dynamic transient state and attempted
+to understand the transient state 
+as perturbations~\cite{PerturbationNeuralComputation:2002} to the  (entirely different) resting state.
+Of course, that attempt required more and more ad hoc non-scientific assumptions.
+We agree that "Understanding and predicting molecular responses
+in single cells upon chemical, genetic or mechanical perturbations is a core question in biology."~\cite{PerturbationSingleCell:2023}
+However, it is not possible without understanding that the transient state is a state on its own right,
+with different physical mechanisms, rather than a perturbation of the entirely different resting state.
+
+Due to the lack of the needed expertize in physics,
+biophysics introduced the idea of the "whatnot"~\cite{Schrodinger:1992} protein mechanisms.
+Claims such as "pumps [by using protein mechanisms] \dots transport ions \textit{against their
+electrical and chemical gradients}"~\cite{PrinciplesNeuralScience:2013}, page 101, 
+or "the flux of ions through ion channels is passive,
+requiring \textit{no expenditure of metabolic energy} by the
+channels."~\cite{PrinciplesNeuralScience:2013}, page 107, are as scientific as in the pre-Newtonian age,
+there was a notion related to Aristotelian philosophy. This concept gave credence to the “theory” that the celestial spheres and, later on, the planets were pushed or moved by celestial movers, celestial intelligences, or angels against physical forces. Life science does not have its laws of motion, in the sense as Newton's Laws in physics, at least at cellular level. 
+\index{law of motion}
+
+The book~\cite{PrinciplesNeuralScience:2013} asks the central questions, "How do ionic [i.e., electrical and chemical] gradients contribute to the resting membrane potential? What prevents
+the ionic gradients from dissipating by diffusion of
+ions across the membrane through the resting channels?"
+However, it leaves them essentially open by giving only a qualitative answer, discussing only membrane permeability, without explaining how the resting potential is created.
+%
+We demonstrate in section~\ref{sec:Physics-MembraneElectricity} that classical methods of electricity enable us to calculate the membrane's potential resulting from charge separation and polarization, why and how its resting value is created, furthermore, how it is regulated.
+We make some physically plausible assumptions to provide numerical figures.
+
+Our results underpin that "the crucial system in biology isn't a molecule or a molecular class whatsoever, but the interface created by biomolecules in water"~\cite{LivingSystemPhysics:2021}. We add that mainly
+physical processes at various speeds (instead of molecular classes such as proteins) and ionic gradients (instead of protein mechanisms) control the processes.
+More precisely, inseparable thermodynamic and electrical processes set up and maintain the potential established by the electrical and thermodynamic backbone defined by the lipid/protein structure of the cell and the ionic solutions it contains. It is one of the frequent cases when 
+one effect implements a functionality (the backbone closely defines the frames of the operation), and the other (in this case, combined thermodynamics and electricity) corrects it when it implements a complex operational (dynamical) functionality:
+"stimulated phase transitions enable the phase-dependent processes to replace each other ... one process to build and the other
+to correct"~\cite{BiologicalConservationLaw:2017}.
+
+
+\ifx\magyar\undefined
+\section[The abstract neuron]{The abstract neuron\label{sec:V2-0_AbstractNeuron}}
+
+Nature uses an infinite variety of implementing neurons. 
+In the \gls{CNS} 
+they can cooperate
+with each other, 'despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity,
+\textit{the nervous systems adopt \textbf{a number of
+ basic principles}} for all neurons and synapses',
+\cite{JohnstonWuNeurophysiology:1995}
+independently from the infinitely complex molecular, biochemical and physiological details.
+Nature focuses only on functionality, the design of an element is irrelevant as long as the element performs its task. Malfunctions are of course tied to the specific implementation.
+\index{Johnston Daniel}
+\index{Wu Samuel Miao-sin }
+We \textit{will base our holistic discussion on those general basic principles 
+and create an 
+\hyperlink{NeuronPhysical}
+{'abstract physical neuron'}; a hypothetical element, which functions
+essentially like a neuron},
+skipping the 'implementation details' nature uses.
+We essentially follow von Neumann's method in describing the foundations of
+computing science~\cite{EDVACreport1945}: "we will base our considerations on a hypothetical element, which functions essentially like a neuron".
+We need \hyperlink{Abstractions}
+{different abstractions and approximations} 
+(furthermore, \hyperlink{NonOrdinaryLaws}{'non-ordinary' laws} of science) for describing biological processes.
+\index{ordinary laws}
+However, an abstraction is usable
+in practice only when paired with a generalization: the more abstract the assumption, the more general and widely applicable the concept or conclusion.
+\textit{By abstractions, we can reduce the unbelievably detailed world into manageable pieces, and we can learn anything general.}
+We must show which approximations are oversimplifications and which phenomena are misunderstood; measured, or interpreted in a wrong approach.
+
+
+In our non-disciplinary science-based model (the 'abstract physical neuron', as we call it), a neuron (highly simplified) is an elastic sphere with two lipid layers (membrane) in an electrolyte, a similarly elastic insulating output tube (axon), and an incompressible, partially ionized electrolyte fluid with different compositions and concentrations inside and outside.
+They contain ions, simple chemical molecules, and complex biological formations.
+In the electolytes inside and outside  may have gradients and the ions move at continuously changing speeds that can vary by several orders of magnitude during operation. 
+The lipid layer is partially permeable (controlled or uncontrolled) for the components above (channels, mainly ion channels).
+
+In the case of mathematical modeling, we describe the measured data recorded about the phenomena on a "looks like" basis with a mathematical function (HH published quantified measurement results in his own opinion), and possibly some ad-hoc assumed physical mechanism is put behind it.
+In the case of physical modeling, we reduce the unknown operation in question to something that we already know, whose behavior we see as similar to that of the object under investigation in some respect, and whose mathematical description we can handle. Of course, similarity has limits, especially if we try to model a living object with an inanimate object described by the disciplinary methods of science. Based on the model, we can not only find limitations, but also how we can make our model more accurate; even if this requires combining the disciplines of inanimate natural science.
+
+In the case of a living neuron, we can find many similarities with the functioning of an inanimate object: "whose thoughts come to mind" obviously means that the previous or even the most recent knowledge and available tools of the investigating scientist can decisively determine the scope of the modeling phenomenon. HH's work is hardly independent of the radar development work carried out during the war years.
+Similarly, when developing the model they proposed,
+they took into account that the computational capacity at their disposal was a mechanical ("winding") computer. Unfortunately, their descriptions, which contained strongly simplifying assumptions, were encoded in the form of coefficients; thus, our modern calculations on advanced computers are based on them.
+
+\else
+
+\section[Az absztrakt neuron]{Az absztrakt neuron\label{sec:AbstractNeuron}}
+
+A természet végtelenül változatos módokon valósít meg neuronokat.
+A központi idegrendszerben (\gls{CNS}) ezek egymással együtt tudnak működni, mivel 'despite the extraordinary diversity and complexity of neuronal morphology and synaptic connectivity,
+\textit{the nervous systems adopt \textbf{a number of
+ basic principles}} for all neurons and synapses',
+\cite{JohnstonWuNeurophysiology:1995}
+azok rendkívül összetett molekuláris, biokémiai és fiziológiai 
+részleteik ellenére.
+A természet csupán a funkcionalitásra koncentrál, egy-egy elem  kivitelezése mindaddig lényegtelen, amíg az elem ellátja a feladatát. A hibás működés természetesen a konkrét megvalósításhoz kötődik.
+\index{Johnston Daniel}
+\index{Wu Samuel Miao-sin}
+Átfogó tárgyalásunkban ezekre az általános elvekre támaszkodunk
+és egy \hyperlink{NeuronPhysical}
+{'abstract physical neuron'}-nak nevezett hipotetikus elemet
+hozunk létre, ami lényegében úgy működik, mint egy neuron;
+átugorva az "implementációs részleteket".
+Lényegében Neumann Jánosnak a számítástudomány alapelveit 
+leíró munkájában~\cite{EDVACreport1945} vezetett be:
+"we will base our considerations on a hypothetical element, which functions essentially like a neuron".
+
+Különböző  \hyperlink{Abstractions}
+{absztrakciók és közelítések},
+(továbbá, \hyperlink{NonOrdinaryLaws}{a tudomány 'rendetlen' (non-ordinary) törvényeinek} ) felhasználásával  írjuk le a biológiai
+folyamatokat.
+\index{rendetlen törvények}
+Azonban a gyakorlatban egy absztrakció csak akkor használható,
+ha egy általánosítással párosítjuk. Minél absztraktabb egy feltevés,
+annál szélesebb körben használható a fogalom vagy következtetés.
+\textit{Az absztrakciók által a hihetetlenül gazdag világot
+kezelhető darabokra bontjuk és általános dolgokat tanul\-hatunk.}
+Meg kell mutatnunk hogy melyik közelítés túlegyszerűsítés
+és milyen tapasztalatokat értettünk félre; mértünk vagy értelemeztünk rosszul.
+
+A nem diszciplináris, tudományos alapú modellünkben, a neuron (erős egyszerűsítésekkel),
+egy olyan rugalmas gömb, amit két lipid réteg (membrán) határol, 
+és egy hasonlóképpen rugalmas szigetelő csőben (axon) végződik.
+Ez a gömb összenyomhatatlan, részben ionizált elektrolitot tartalmaz,
+és a membrán külső és belső oldalán az elektrolitok 
+koncentrációja és kémiai összetétele nagyon eltérő.
+Az oldatban vannak ionok, egyszerű molekulák és összetett biológiai képződmények.
+Ezekben az elektrolitokban, kívül és belül, gradiensek létezhetnek
+és az ionok folyamatosan, akár nagyságrendekkel, változó sebességekkel mozoghatnak a működés során. 
+A lipid réteg részben (ellenőrzött módon vagy szabadon)  átjárható
+(csatornákon, főleg ion csatornákon keresztül) a fenti komponensek számára.
+
+Matematikai modellezés esetén a jelenségekről rögzített mérési adatokat "looks like" alapon leírjuk matematikai függvénnyel (HH saját véleménye szerint kvantitatizált mérési eredményeket tett közzé), és esetlegesen valami ad-hoc feltételezett fizikai mechanizmust állítunk mögé.
+Fizikai modellezés esetén a tekintett ismeretlen működést olyanra vezetjük vissza, amit már ismerünk, viselkedését valamilyen szempontból a vizsgált objektuméhoz hasonlónak látjuk, és aminek matematikai leírását kezelni tudjuk. Természetesen a hasonlóságnak korlátai vannak, különösen ha élő objektumot próbálunk a tudomány diszciplináris módszereivel leírt élettelen objektummal modellezni. A modell alapján nem csak korlátokra jöhetünk rá, hanem arra is, hogy modellünket hogyan tudjuk pontosabbá tenni; még akkor is, ha ezzel az élettelen természettudomány diszciplináit kombinálni kell.
+
+Az élő neuron esetén számos hasonlóságot találhatunk egy-egy élettelen objektum működésével: a "kinek mi jut róla eszébe" nyilván azzal jár, hogy a vizsgálódó tudós korábbi vagy éppen legfissebb  ismeretei, rendelkezésre álló eszközei akár döntően meghatározzák a modellezés jelenségkörét. \gls{HH} munkája aligha független a háborús években végzett radar fejlesztési munkáiktól.
+Hasonlóképpen, az általuk javasolt modell kidolgozásakor
+figyelembe vették, hogy a rendelkezésükre álló számítási kapacitás egy mechanikus ("tekerős") számítógép volt. Sajnos, erőteljesen egyszerűsítő feltevéseiket tartalmazó leírásaikat együtthatók formájában kódolták; így a fejlett számítógépeken futó mai számításaink is ezeken alapulnak. 
+\fi
+
+
+%The membrane functions as a \hyperlink{ControlTheory}{\gls{PID} control circuit}.
+\ifx\magyar\undefined
+\subsection[Neuron's states]{Neuron's states \label{sec:Model-NeuronStates}}
+Under a small external influence, a neuron remains in its resting state and regulates itself through non-controlled ion channels in its membrane.
+If the external influence exceeds a threshold, the controlled channels in the wall suddenly release a large amount of ions into the internal space, putting the neuron into a transient state.
+The membrane potential changes suddenly (within a few dozen nanoseconds), and, due to the mutual repulsion of ions, the pressure acting on the membrane wall and the ion concentration in the layer near the membrane also increase significantly and suddenly. At this point, the disciplines of electricity and thermodynamics can be combined: the pressure and the electric field are proportional to the number of ions in the volume.
+The forces exerted on ions, calculated in a disciplinary way, are falsified 
+in the sense that the other discipline also contributes inseparably; in a strict sense, neither of the two disciplines alone can describe ions' motion.
+The detailed analysis shows that the elastic energy during the action potential
+is about two orders of magnitude higher than the electrical energy, but the 
+amount of ions is about three oders of magnitude lower than that of the non-dissociated molecules.
+It that situation, the two effects are of the same order of magnitude,
+so that they can modulate each other. The electric charge on the membrane's wall 
+would produce a simple discharge current. However, its charge carriers are
+delivered by the damped oscillation of the electrolyte (a soliton) generated by the membrane.
+The amplitude of the soliton changes the number of the charge carriers delivered,
+so physiology measures an oscillating discharge current (that generates
+a potential wave known as \gls{AP}). No significant mass transfer
+takes place.
+
+\begin{figure*}
+\iflatexml
+\includegraphics[width=\textwidth]{fig/AP_Schematic.svg}
+\else
+\includegraphics[width=.65\textwidth]{fig/AP_Schematic.pdf}
+\fi
+		\caption{The conceptual graph of the action potential \label{fig:AP_Conceptual}}
+\end{figure*}   
+
+\
+\else
+
+\subsection[A neuron állapotai]{A neuron állapotai\label{sec:Model-NeuronStates}}
+Kis külső behatás esetén, a neuron nyugalmi állapotában marad és szabályozza állapotát a falban levő vezérletlen ioncsatornákon át.
+Ha a külső behatás túllép egy küszöbértéket, a falban levő vezérelt 
+ioncsatornákon át nagy mennyiségű ion kerül a belső térbe,
+és a neuron tranziens állapotba kerül.
+A membrán potenciál értéke hirtelen (néhány tucat nanosecundum alatt)
+megváltozik, és, az ionok kölcsönön taszítása miatt, megnő a
+membrán falra ható nyomás; továbbá, az ionok egyidejűleg megnövelik 
+a membrán-közeli rétegekben a koncentrációt.
+Ezen a ponton lehet kombinálni az elektromosságtan és a termodinamika
+diszciplináit: a nyomás és az elektromos tér egyránt a térfogatrészben
+található ionok számával arányos.
+Az ionokra ható, diszciplináris módon számított erők olyan értelemben
+nem valódiak, hogy a másik diszciplina következtében elválaszthatatlanul fellépő erők összeadódnak; szigorúan véve, egyik diszciplina sem tudja
+leírni az ion mozgását: az általa ismert erő alapján az ion mozgásának nem olyannak kell lenni. 
+A részletes analízis azt mutatja, hogy az \gls{AP} során a
+rugalmas energia körülbelül két nagyságrenddel nagyobb,
+mint az elektromos energia; viszont az ionok száma kb. három nagyságrenddel kisebb, mint a nem disszociált molekuláké.
+%The detailed analysis shows that the elastic energy during the action potential
+%is about two orders of magnitude higher than the electrical energy, but the 
+%amount of ions is about three oders of magnitude lower than that of the non-dissociated molecules.
+Ebben a helyzetben a két hatás ugyanabba a nagyságrendbe esik,
+így modulálni tudják egymást.
+Az elektromos kisülés egy egyszerű kisülési áramot jelentene.
+Azonban, az elektrolitnak a membrán által generált rezgőmozgása (a soliton) szállítja a töltéshordozókat.
+A soliton amplitúdója változtatja a szállított töltéshordozók számát,
+így a fiziológiai elektromos mérés egy oszcilláló kisülési áramot
+érzékel (ami az \gls{AP} néven ismert potenciálhullámot generálja).
+A jelenség során nincs jelentős tömeg átvitel.
+\fi
+
+
+
+\ifx\magyar\undefined
+\section[Electric model]{Electric model\label{sec:V2-0_ElectricModel}}
+
+The electrical phenomena associated with living matter ("animal electricity") have been known for centuries, so the first experiments in search of an explanation began with electrical measurements, although thermodynamic and mechanical studies were not far behind. Theoretical interpretation first became possible on the basis of electrical phenomena. Partly because it was not a suitable competitor to the theory, partly because it could really explain many phenomena, its use has now become almost exclusive. Neuroscience has tried to compensate for the contradictions experienced, on the one hand by ignoring inexplicable facts, and on the other hand by adding unscientific ad-hoc hypotheses.
+Below, we attempt to establish a disciplinary model based on three different similarities, and then a unified model that seeks to find a balance between the most faithful description of phenomena observable in living organisms and the description provided by the disciplines of inanimate science.
+
+
+\begin{figure}
+\includegraphics[width=.65\textwidth]{fig/HHModelHeimburg.png}
+\caption{\label{fig:HHModelHeimburg}
+The time course of the electric gradient perfectly matches that of the mechanical and thermal changes; however, classic theory cannot explain the connection between them [4]. See Fig.~\ref{fig:HHGradient} how the phase diagram of the voltage change in the function of its gradient matches the experimentally measured values.}	
+\end{figure}
+
+The classic model describes it, but cannot explain why AP is generated, why ion channels open and close, how they are controlled, and how constant batteries create a potential wave [17]. Compare this to the movement in the explained field in Fig. 3 and the voltage change in Fig. 4.
+
+%
+%\section[Electrical model
+%]{Electrical neuron model in a nutshell\label{sec:Single-ElectricalNutshell}}
+
+\proconpanel
+{Hodgkin-Huxley V1.0}
+{Goods
+\begin{itemize}[noitemsep]
+	\item 1
+	\item 2
+\end{itemize}
+}
+{bads}
+
+
+
+Despite that we attach mechanical and other phenomena to the
+electrical ones, our motto is similar to the frequently cited saying \href{https://en.wikipedia.org/wiki/Cherchez_la_femme"}{'Cherchez la femme'}:
+\textit{Look for the charge},
+\index{Cherchez la femme}
+meaning "\textit{no matter what the problem, some charge is often the root cause}" (however, we consider also effects of the thermodynamics 
+on charge, given that the charges are ions instead of electrons. Furthermore, we shortly consider the mechanical, optical, etc. consequences.).
+The expression comes from the novel \textit{The Mohicans of Paris} by Alexandre Dumas and is frequently used
+in detective novels in the sense that there are always complications and unusual
+situations, but "no matter what the problem, a woman is often the root cause". 
+Although, in most cases, the cause is seemingly different.
+
+Similarly, the charge is always the primary quantity when speaking about neural operations. 
+We follow this line and explain how processes, that traditionally
+belong to different classical science disciplines, redistribute charges and create
+electrical currents and voltages, then discuss how the cell handles the electrical charge. We note, however, that the different charge carrier (ions instead of electrons) needs care: the "slow current"
+shows unusual behavior and the needs using known laws in 
+more or less different form.
+Also, we make hints that in most cases, the classical disciplines, alone, are not qualified to describe phenomena of living matter.
+The details are described in Chapter~\ref{ch:Physics}, where
+the fundamental differences caused by the charge carrier are discussed. 
+
+We show that, alhough the thermodynamic effects
+are inseparable from the electrical ones, an appropriate combination of the disciplines satisfactorily describe the observations.
+We consider that \href{https://neuronaldynamics.epfl.ch/online/Ch1.S1.html}{neurotransmitters, receptors and specialized membrane proteins}
+\textit{only implement a kind of (time and energy-consuming)
+	chemical/enzymatic decoupling
+	of the signal transmission mechanism.} The idea resembles opto-coupling in electronics:
+makes \textit{the signal transmission independent from the local potential value}.
+Suppose neurons use galvanic coupling
+when the resting potential of one of the neurons equals the extracellular space. In that case,
+all connected neurons' resting potentials are
+equal to that of the extracellular space. Without this decoupling, the death
+of one neuron would immediately lead to the death of the entire neural network.
+Furthermore, the neurons could not make independent signal processing.
+
+
+\section{Equivalent electrical circuit\label{sec:Fallacies-ElectricalCircuit}}
+
+"These ionic concentration gradients across the cell membrane
+constitute the driving forces (or chemical potentials)
+for ionic currents flowing through open channels in the membrane.
+In other words, the ionic concentration gradients act like DC batteries
+for cross-membrane currents.”~\cite{JohnstonWuNeurophysiology:1995}
+
+%\subsubsection{Equivalent circuits\label{Physiology-HHEquivalentCircuits}}
+%
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.65\textwidth]{fig/HH_AP_schematic.png} 
+\caption{The equivalent circuit for the Hodgkin-Huxley model}
+\label{fig:AP_schematic}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.65\textwidth]{fig/HHcirdiagm.png} 
+\caption{The equivalent circuit for the Hodgkin-Huxley model}
+\label{fig:HH_EquivalentCircuit}
+\end{figure}
+
+
+
+%\subsection{Circuits\label{sec:Circuits}}
+The biological 'equivalent circuit' models assume that the circuits comprise point-like
+ideal \textit{discrete elements}
+such as condensers and resistors, and some hidden power changes their parameters according to some
+mathematical formulas,
+furthermore ideal batteries with voltage that may again be changed  by that power.
+All they are connected by conducting  (metallic) ideal wires
+and their interaction speed is infinitely high (the Newtonian 'instant interaction').
+Using that abstract model enables them to use the well-known classic equations, named after
+Ohm, Kirchoff, Coulomb, Maxwell and others. However, those abstractions have severe limitations.
+Biology applies Ohm's Law to its objects while claims that its objects are non-ohmic;
+understands that neural currents comprise ions while claims that the ions do not feel the Coulomb repulsion;
+measures ions' propagation speed but in its equations it claims that their effects are instant;
+hypotesizes non-existing physical mechanisms to make their nature. In general,
+biophysics abstracts from the world of the physics-inspired mathematical formulas a fictitious nature
+where biology lives and hypothesises complementary mechanisms to achieve some resemblance with the true biological word.
+The examples include that ions in the ions channels do not repulse each other;
+that charge, potential and current are independent of each other;
+that ion currents do not repulse each other neither when they travel from the presynaptic terminal to the
+\index{Coulomb's law}
+\gls{AIS};
+that some hidden power opens the ion channels to let ions in into the intracellular space,
+that ions with the same charge move in opposite directions when ions rush-in into the intracellular segment of the neuron;
+that the ions pass ion channels without being accelerated by the potential difference accross the membrane;
+the telegraph equations are applied to the case of axons although neither external potential nor current loss exists; and so on.
+
+
+Even that unfortunate idea of equivalent circuits leads to analyzing
+"electrotonic (electronic circuit equivalent) modeling of realistic neurons and the interaction of dendritic morphology
+and voltage-dependent membrane properties on the processing of neuronal synaptic input"~\cite{SingleNeuronComputation:2014};
+that is, to study a simulated neuron built from discrete electronic components. However, the idea needs to put together
+many compone "raises the possibility that the neuron is itself a network". On the one side, such an idea misguides the neurophysical research (since actually a fake neural system is scrutinized, the validity of the approach is questionalized~\cite{RealisticNeuronalModeling:2016}), and on the other, since electroengineers understand
+the neuronal operation from the wrong model, it also misguides building neuromorphic architectures. 
+
+The equivalent circuits are a source of misinterpretations. As~\cite{JohnstonWuNeurophysiology:1995} formulates,
+"In other words, the ionic concentration gradients act like DC batteries for cross-membrane currents."
+We call the attention again, that \textit{ions} represent the current,
+that is \textit{that current changes changes the concentration, that changes
+the voltage of the DC battery, unlike in the case of the equivalent circuits}.
+This difference is significant in understand how the basic neuronal circuit works.
+Introducing equivalent circuits prevents explaining the fundamental 
+electric phenomena.
+
+%\quotationbox{
+%This was how — Richard P. Feynman approached all knowledge: What can I know for sure, and how can I come to know it?
+%It resulted in his famous quote, “\textit{You must not fool yourself, and you are the easiest person to fool.}”
+%Feynman believed it and practiced it in all of his intellectual work.
+%}
+%\index{Feynman, Richard P.}
+
+%\subsection[Equivalent circuits]{Equivalent circuits\label{sec:PHYSICS_EquivalentCircuit}}
+%
+One wrong consequence of forgetting that the charge transfer mechanism is entirely different,
+the charge carriers are large and heavy (and as a consequence: slow) ions instead of electron (cloud),
+furthermore they are not necessary present in the 
+volume under test and the 'construction' of biological matter 
+enables the tested medium to produce charge carriers,
+using 'equivalent circuits' for
+neuronal operation. This fallacy
+entirely falsifies the conclusions from the measurements.
+
+Another wrong consequence of using 'equivalent circuits' to describe
+the electrical operation of neurons is believing that the currents in
+the biological circuit do not change the concentration, and through
+the concentration, also the potential; see also section~\ref{sec:Physics-Resources}. The 'equivalent circuits',
+of course, use a constant potential (they follow the abstraction used
+in the theory of electricity, although the 'ideal batteries' also
+may produce their voltage using chemical processes), and unreasonably, some mystic process changes the resistance/conductance of components. This wrong abstraction
+results in numerous misunderstandings, among others, introducing ideas
+such as parallel oscillator equivalent of neuron, input resistance,
+delayed rectifier current, resting current, and time- or voltage-dependent
+conductance. Furthermore, we cannot 
+interpret, among others, \emph{how neuronal electricity
+works in lack of external potential}; \emph{how slow currents operate
+neuron's infrastructure}, \emph{how and why action potential is generated}.
+Deriving the time course of the Nernst-Planck potential opens the
+way to a quantitative understanding of neurophysical electrical processes,
+including their time course.
+
+Again another wrong consequence is that the two secondary abstractions 'potential',
+and 'current', became independent from the primary abstraction 'charge'
+and each other (significantly contributing to the fallacy that 'physics cannot describe life'). Our equations and the underlying discussion point
+to the fact that \emph{the potential and the current cannot be separated
+from the charge}. No 'delayed rectifying current' and 'voltage- (or
+time-) dependent conductance' exist. Those notions originate from
+the wrong interpretation of measured data derived from mismatching
+measured electrical data pairs and the misconception that biological
+structures and materials must behave like metals.
+
+
+As we discussed in section~\ref{sec:Physics-TwoSegments}, 
+the unbalanced charge in neurons and the charge injected
+suddenly into the intracellular segment during a rush-in action
+are in the same order of magnitude. We also discussed that 
+the charge injection (the appearance and flow of charge in the proximal layer on the membrane's surface) causes well measureable mechanical, optical, etc. changes~\cite{MechanicalWaves:2015} on the membrane.
+Those changes are well observable on the low-concentration side, in the form of slow currents, and large-scale
+concentration and potential changes.
+
+Those changes also mean that a large amount of charge
+passes from the high-concentration side
+to the low concentration side of the membrane, and causes a sudden drop
+on the high-concentration side of the membrane. As discussed,
+that change means simultaneously a change in the corresponding 
+potentials across the membrane that solves the mystery why the
+\gls{AP}
+AP stops. The potential across the membrane is defined by the difference of the
+potential of the two thin layers (see section~\ref{sec:Physics-Membranes}) on the membrane's surface.
+As we discussed, a huge electric field exists across the
+plates of the neuronal condenser, while a moderate one 
+in the proximal layers. That means that the ions can quickly
+leave the high concentration when the rush-in injection begins.
+They produce an 'empty' layer (and a potential gradient)
+whithin that layer and the ions in the neighboring layer
+start to move using the 'downhill' potential. However, they do have a much slower speed, so they 'stop' at some distance. 
+
+
+
+\else
+
+\section[Elektromos modell]{Elektromos modell\label{sec:V2-0_ElectricModel}}
+
+Az élő anyaghoz kapcsolódó elektromos  jelenségek ("állati elektromosság") századok óta ismertek, így az első magyarázat-kereső kísérletek elektromos mérésekkel kezdődtek, bár nem sokkal maradtak le a termodinamikai és mechanikai vizsgálatok sem. Az elméleti értelmezés elsőként az elektromos jelenségek alapján vált lehetségessé. Részben azért, mert nem volt megfelelő versenytársa az elméletnek, részben mert valóban sok jelenséget tudott értelmezni, mára szinte kizárólagossá vált a használata. A tapasztalt ellentmondásokat a neuroscience egyrészt a megmagyarázhatatlan tények agyonhallgatásával, másrészt tudománytalan ad-hoc hipotézisek hozzáadásával igyekezett pótolni.
+Alább három különböző hasonlóság alapján próbálunk egy-egy diszciplináris modellt felállítani, majd egy egységesített modellt, ami igyekszik egyensúlyt találni az élő szervezetben megfigyelhető jelenségek minél hűbb leírása és az élettelen tudomány diszciplinái által nyújtott leírás között.
+
+Despite that we attach mechanical and other phenomena to the
+electrical ones, our motto is similar to the frequently cited saying \href{https://en.wikipedia.org/wiki/Cherchez_la_femme"}{'Cherchez la femme'}:
+\textit{Look for the charge},
+\index{Cherchez la femme}
+meaning "\textit{no matter what the problem, some charge is often the root cause}" (however, we consider also effects of the thermodynamics 
+on charge, given that the charges are ions instead of electrons. Furthermore, we shortly consider the mechanical, optical, etc. consequences.).
+The expression comes from the novel \textit{The Mohicans of Paris} by Alexandre Dumas and is frequently used
+in detective novels in the sense that there are always complications and unusual
+situations, but "no matter what the problem, a woman is often the root cause". 
+Although, in most cases, the cause is seemingly different.
+
+Similarly, the charge is always the primary quantity when speaking about neural operations. 
+We follow this line and explain how processes, that traditionally
+belong to different classical science disciplines, redistribute charges and create
+electrical currents and voltages, then discuss how the cell handles the electrical charge. We note, however, that the different charge carrier (ions instead of electrons) needs care: the "slow current"
+shows unusual behavior and the needs using known laws in 
+more or less different form.
+Also, we make hints that in most cases, the classical disciplines, alone, are not qualified to describe phenomena of living matter.
+The details are described in Chapter~\ref{ch:Physics}, where
+the fundamental differences caused by the charge carrier are discussed. 
+
+We show that, alhough the thermodynamic effects
+are inseparable from the electrical ones, an appropriate combination of the disciplines satisfactorily describe the observations.
+We consider that \href{https://neuronaldynamics.epfl.ch/online/Ch1.S1.html}{neurotransmitters, receptors and specialized membrane proteins}
+\textit{only implement a kind of (time and energy-consuming)
+	chemical/enzymatic decoupling
+	of the signal transmission mechanism.} The idea resembles opto-coupling in electronics:
+makes \textit{the signal transmission independent from the local potential value}.
+Suppose neurons use galvanic coupling
+when the resting potential of one of the neurons equals the extracellular space. In that case,
+all connected neurons' resting potentials are
+equal to that of the extracellular space. Without this decoupling, the death
+of one neuron would immediately lead to the death of the entire neural network.
+Furthermore, the neurons could not make independent signal processing.
+
+
+\subsection[]{Az elektromos leírás nyelve\label{}}
+
+\fi
+
+
+
+\ifx\magyar\undefined
+\section[Elastic model]{Elastic model\label{sec:V2-0_ElasticModel}}
+
+The mechanical (elastic) model takes us one step closer to the correct model. It assumes that the action potential is basically generated by the shock wave generated by the elastic membrane, which is significantly distorted by the electrostatic repulsion of the ions in the electrolyte.
+
+The rush-in of $Na^+$ ions results in electric, chemical, and elastic gradients, see~\cite{VeghUnifiedCrossdisciplinaryModel:2026}. The final result (shown in Fig.~\ref{fig:DampedOscillation}) is that the membrane vibrates the 
+electrolyte (with the cca. $10^{-3}$ part ions inside).
+Moreover, the electrostatic repulsion and the concentration gradient of ions provide an offset voltage that triggers an electrical discharge. 
+The two processes are superimposed.
+
+\begin{figure}
+	\includegraphics[scale=1.2]{fig/DampedOscillation}
+	
+	\caption{Describing the generation of an \gls{AP}
+		as the superposition of an elastic vibration 
+		of the membrane and an electrical discharge process.
+		\label{fig:DampedOscillation}}
+	
+\end{figure}
+
+
+The sudden rush-in of
+$Na^+$ ions has (at least) a double effect. 
+One effect is that they press the surface of the membrane that
+elastically increases its diameter~\cite{NeuronalDeformation:2020}.
+Due to their mutual repulsion,
+the ions experience a strong electrical force toward the membrane. It represents an impulse $J=F\,\Delta t$ [N\,s], that enables estimating the time and energy of the 
+change the rush-in causes and explains that the energy needed to 
+generate an \gls{AP} is suddenly produced electrically, 
+and stored temporarily as elastic energy (the neuron produces the required energy in the background, when \gls{ATP} produces ions by hydrolysis under the effect of the electrical field near to membrane); see~\cite{VeghUnifiedCrossdisciplinaryModel:2026}. 
+The case is practically identical to
+the deformation of an elastic plate induced by the hydrostatic pressure of a water column. Initially, the aluminum plate is suddenly subjected to hydrostatic pressure, and it reaches equilibrium after initial oscillations. The diagram line of the process is shown in the figure
+\cite{HydrostaticWaterColumn:2021}, and the method of simulation is discussed in \cite{Hydrostatic_SPHinXsys:2021}. Compare the diagram line to the
+gradient in Fig.~\ref{fig:PhysicalProcessesMembrane}, middle inset.
+
+The elastic force is described by the  
+\[
+F(t) = F_{max}^{elastic}\times e^{-\zeta*t}\times cos(\omega\times t)
+\]
+\noindent 
+formula. The classical model entirely neglects this elastic gradient. However, it is almost four orders of magnitude higher than the electrical and thermodynamic gradients (see Appendix~\ref{sec:Forces}), explaining why the damped elastic oscillation almost perfectly describes 
+the time course of the \gls{AP}. However, the elastic force oscillates and decays exponentially, so the dominance of 
+the elastic term changes with time.
+The electrical model can perfectly describe \gls{AP} since 
+the pressure and the electric field are proportional to the number of ions inside a volume.
+
+The other effect is that a large amount of positive charges
+appears in the neuron, significantly increasing the membrane's potential. The axon remains on the resting potential, so the potential gradient drives a current.
+A discharge process takes place where the amount of charge
+inside the neuron exponentially decreases 
+\[
+F_{electric}(t) = F^{max}_{electric}\times e^{-\delta*t}
+\]
+
+The two effects act at the same time, that is
+\[
+F_{resulting}(t) = F^{max}_{resulting}\times e^{-\delta*t}  \times e^{-\zeta*t}  \times cos(\omega\times t)
+\]
+(the two exponential factors have physically different reasons,
+but they can be contracted mathematically), resulting
+an oscillation shown in Fig.~\ref{fig:DampedOscillation}.
+This model combines the effects of two distinct disciplines,
+but may not be perfect, because of the dual role of ions:
+the electric effect changes the oscillating mass and the oscillation changes the amount of charge. However, it 
+suggests a way to synthesize the two effects, and explain 
+a till now unexplained thermodynamical observation.
+
+
+Furthermore, the  elastic model explains the experienced constant intensity
+of \gls{AP} (without the ad-hoc hypothesis of cooperating
+ion channels in the axon's wall). The vibrating electrolyte 
+behaves as a 'soliton'~\cite{SolitonPropagation:2005}, that is, transfers the pressure wave with a minimum material transport and intensity loss, and the dissociated ions inside the vibrated electrolyte generate the potential field observed as \gls{AP}.
+
+
+
+
+\begin{figure}
+	\includegraphics[width=.9\columnwidth]{fig/RestingPotential5.pdf}
+	\caption{The figure is supplemented with the unbent black line showing that the clamping condition forces the neuron
+		to find a new balanced state by compensating the clamping voltage
+		by setting a concentration [Na50,K7].
+		For comparison, the case of natural \gls{AP} is also shown.
+		The mechanism of producing \gls{AP} (using numbers referring to the case of squid shown in Table~1 in~\cite{VeghUnifiedCrossdisciplinaryModel:2026}). In the resting state, the inside thermal potentials follow the green paths.
+		When the rush-in of $Na^+$ ions suddenly increases the internal concentration to $[200]$, the potential on the internal side of the membrane increases to $+90\ mV$. The neuron must decrease its concentrations to restore the resting potential, mainly by releasing an action potential through the \gls{AIS}.
+		The clamping fixes the neuron's membrane voltage at \gls{AP},
+		so the neuron can operate only with the concentrations.
+		\label{fig:RestingPotential5}
+	}
+\end{figure}
+
+\proconpanel
+{Elastic/electric neuron model}
+{
+\begin{itemize}[noitemsep]
+	\item Connects mechanical and electrical phenomena
+	\item Simple function form to calculate
+\end{itemize}
+}
+{
+\begin{itemize}[noitemsep]
+	\item Uses empirical coupling factor between disciplines
+	\item Not a faithful form
+\end{itemize}
+}
+
+
+\else
+
+\section[Elasztikus modell]{Elasztikus modell\label{sec:V2-0_ElasticModel}}
+
+
+A mechanikai (rugalmas) modell egy lépéssel közelebb visz a helyes modellhez. Azt tételezi fel, hogy alapetően a rugalmas membrán által generált lökéshullám generálja az action potential-t, amit azonban jelentősen eltorzít az elektrolitban levő ionok elektrosztatikus taszítása.
+
+\proconpanel
+{Rugalmas/elektromos neuron modell}
+{
+\begin{itemize}[noitemsep]
+	\item Connects mechanical and electrical phenomena
+	\item Simple function form to calculate
+\end{itemize}
+}
+{
+\begin{itemize}[noitemsep]
+	\item Uses empirical coupling factor between disciplines
+	\item Not a faithful form
+\end{itemize}
+}
+
+\fi
+
+
+\ifx\magyar\undefined
+\section[Thermodynamic model]{Thermodynamic model\label{sec:V2-0_ThermodynamicModel}}
+
+The experience that not only electrical but also thermodynamic (temperature) changes occur in the neuron during the action potential is practically the same age as the observation of electrical phenomena. Later, with the development of measurement techniques, other phenomena (force effects, pressure waves, optical and density changes, etc.) were also observed. These phenomena cannot be explained by the single-discipline V1.0 theory, although they are perfectly consistent with the electrical effect and their time course is also the same; see figure~\ref{fig:HHGradient}.
+
+As Hodgkin wrote: "Hill and his colleagues found~\cite{HeatProductionNeuron:1958} that an initial phase of heat liberation [of the \gls{AP}] was followed by one of
+heat absorption. [...] a net cooling on open-circuit was totally unexpected
+and has so far received no satisfactory explanation."~\cite{HodgkinConduction:1964}
+"All authors came to similar conclusions: during
+the \gls{AP}, \textit{no signiﬁcant net heat is produced}. Transient heat releases are mostly reabsorbed in the second phase of the \gls{AP}. \dots The ﬁnding of a reversible heat release during the action potential of
+nerves is a striking and very fundamental fact. It is inconsistent with the
+\gls{HH} model.
+The physics underlying the nervous impulse
+must rather be based on reversible processes".~\cite{ThermalBiophysics:2007}
+
+
+\else
+
+\section[Termodinamikus modell]{Termodinamikus modell\label{sec:V2-0_ThermodynamicModel}}
+
+Az a tapasztalat,  hogy a neuronban nem csak elektromos hanem termodinamikai (hőmérséklet) változás is történik az akciós potenciál során, gyakorlatilag egyidős az elektromos jelenségek megfigyelésével. Később, a mérési technika fejlődésével egyéb jelenségeket (erőhatások, nyomáshullám, optikai és sűrűségváltozások, stb) is megfigyeltek. Ezek a jelenségek nem magyarázhatók az egy-diszciplinás V1.0 elmélettel, bár azok az elektromos hatással tökéletesen összhangban vannak, és időbeli lefutásuk is megegyezik; lásd~\ref{fig:HHGradient} ábra.
+
+\fi
+
+\begin{figure}
+\includegraphics[width=.65\textwidth]{fig/ElasticityGradientHeimburg.png}
+\caption{\label{fig:HHGradient}
+The time course of the electric gradient perfectly matches that of the mechanical and thermal changes; however, classic theory cannot explain the connection between them~\cite{HeimburgPhysikOfNerves:2009}. See Fig. ?? how the phase diagram of the voltage change in the function of its gradient matches the experimentally measured values.}	
+\end{figure}
+
+ 
+ 
+\ifx\magyar\undefined
+\subsection[The neuron as a Carnot-engine]{The neuron as Carnot-engine\label{sec:Model-CarnotEngine}}
+In simple words, a neuron combines different disciplines; it works like a two-tact biological internal combustion engine, and can be described theoretically as a special Carnot-type thermodynamic engine, see section~\ref{sec:Physics-Thermodynamics}. The synaptic input currents operate the ignition. The influx of $Na^+$ ions acts like an explosion, producing a large pressure impulse due to electrical repulsion between ions; see section~\ref{sec:Physics-Speculations}. The neuron's volume remains practically unchanged (representing an iso-volume process), and the pressure wave vibrates the particles (including dissociated ions) as a longitudinal wave, and the resulting offset potential moves the ions out of the neuron through the only available output channel: the axon. The pressure wave is similar to a sound wave, with negligible material transport. 
+The force analysis shows that the pressure wave
+causes a longitudinal vibration, while the changed potential adds
+a potential-dependent longitudinal force component for moving the ions.
+
+\else
+
+\subsection[A neuron mint Carnot-gép]{A neuron mint Carnot-gép\label{sec:Model-CarnotEngine}}
+Egyszerűen fogalmazva, a neuron több fizikai diszciplinát kombinál össze.
+Úgy működik, mint egy két-ütemű biológiai belső égésű motor,
+és elméletileg egy speciális Carnot-féle termodinamikai gépnek
+tekinthető.
+A szinaptikus bemenő áram gyújtásként hat. A $Na^+$ ionok rendkívül gyors beáramlása robbanásként hat,
+és nagy nyomás- és feszültség-gradienst hoz létre.
+A neuron térfogata gyakorlatilag változatlan marad (azonos térfogatú folyamat),
+és a nyomáshullám rezgeti a részecskéket (köztük a disszociált ionokat) longitudinális hullámként,
+a keletkezett többlet potenciál pedig mozgatja az ionokat az egyetlen lehetséges  kilépési útvonal: az axon felé. 
+A nyomáshullám egy hanghullámhoz hasonló, elhanyagolható anyagszállítással.
+Az erők analízise azt mutatja, hogy a nyomáshullám longitudinális rengést okoz, a megváltozott potenciál pedig egy longitudinális 
+erőkomponenssel járul hozzá az ion mozgatásához.
+\fi
+
+\ifx\magyar\undefined
+The two-tact engine, in the first stroke, the pressure impulse invests energy into compressing the elastic membrane and starting a compression wave (a soliton). In the first tact, the elastic membrane pumps out some electrolyte, and in the second tact it pumps in part of the electrolyte (the driving force is a combined thermoelectrical/mechanical force rather than some magic battery). The pumping goes through the ion channels in the \gls{AIS}, which "resists" it, thereby generating a potential wave known as \gls{AP}; well described by electricity. The force analysis shows that the pressure wave
+causes a longitudinal vibration, while the changed potential adds
+a potential-dependent longitudinal force component for moving the ions. Compressing the electrolyte
+produces heat, as evidenced by a rise in temperature. The expansion consumes heat, as evidenced by a decrease in temperature. These are well-understood processes in thermodynamics.
+However, they are still unexplained in biophysics, although they were observed
+seven decades ago~\cite{HeatProductionNeuron:1958}.
+The elastic membrane functions as a damped oscillator, which, in its negative amplitude phase, reverses the direction of electrolyte flow (and, consequently, the direction of the current carried by the ions).
+In the discipline of electricity (when using the serial $RC$ model), it can be interpreted as a capacitive current, which in physiology is observed as hyperpolarization that inverts the polarity of the output voltage.
+The ions represent both mass and charge simultaneously, and, correspondingly, one can observe, in addition to the electrical potential wave, mechanical, optical, and other features changing.
+In different disciplines, pressure and voltage represent the same phenomenon, using concepts from various disciplines.
+Both waves propagate with the speed of the carrier.
+
+\else
+
+A kétütemű motor működésének első ütemében a nyomás erőlökése
+energiát fordít a  rugalmas membrán összenyomásába és elindít 
+egy nyomáshullámot (soliton).
+Az első ütemben a rugalmas membrán elektrolitot pumpál ki
+az \gls{AIS} ioncsatornáin keresztül, a második ütemben pedig részben visszaszívja azt. A csatornák "ellenállnak",
+ezért az \gls{AP} néven ismert potenciálhullámot hozzák létre;
+a jelenséget az elektromosságtan jól leírja. 
+(a hajtóerő tehát egy kombinált termodinamikai/elektromos erő,
+és nem valamiféle állandó vagy mágikusan változó  feszültségű
+feszültséggenerátor)
+A folyadék összenyomása hőt termel, ami hőmérséklet emelkedésben 
+nyilvánul meg.
+A kiterjedés hőt fogyaszt, ami hőmérséklet csökkenésben nyilvánul meg.
+A termodinamikában ezek jól ismert folyamatok, 
+de a biofizika annak ellenére nem tudja magyarázni, hogy a folyamatokat
+már hét évtizeddel ezelőtt megfigyelték.~\cite{HeatProductionNeuron:1958}.
+A rugalmas membrán egy csillapított oszcillátorként működik,
+ami, a negatív amplitúdójú fázisban, megfordítja az elektrolite folyadék
+áramlásának irányát (beleértve a szállított ionok áramlásának irányát is).
+Ez a jelenség az elektromosságtanban (amikor soros  $RC$  modellt használjuk), kapacitív áramként értelmezhető, amit a fiziológia 
+hiperpolarizációként figyel meg, ami megfordítja a kimenő feszültség polaritását.
+Az ionok egyidejűleg jelentenek tömeget és töltést,
+és ennek megfelelően, az elektromos potenciál hullám mellett,
+mechanikai, optikai és egyéb tulajdonságok is változnak. 
+A különböző diszciplinákban a nyomás és a feszültség 
+ugyanazt a jelenséget mutatják a megfelelő diszciplina saját
+fogalmai szerint, amit az is alátámaszt, hogy mindkét hullám a hordozó sebességével terjed.
+\fi
+
+
+\subsection{Heat emission/absorption\label{sec:HeatAbsorption}}
+
+The early experimental observation~\cite{HeatProductionNeuron:1958}, that positive and negative heat production is associated with a nerve impulse, suggested a thermodynamic model. 
+In the framework of the classical
+theory, Ohmic currents ﬂow through resistors that dissipate heat due to
+friction, no matter in which direction ($W=I^2\times R$) the ion currents ﬂow.
+The existence of "cooling", alone, undermines the credibility of the classic theory~\cite{HEIMBURGReversibleHeatProduction:2021}.
+The issue here is that the dissipation was attributed to the "leakage current."  
+As Hodgkin wrote: "Hill and his colleagues found~\cite{HeatProductionNeuron:1958} that an initial phase of heat liberation [of the action potential] was followed by one of
+heat absorption. [...] a net cooling on open-circuit was totally unexpected
+and has so far received no satisfactory explanation."~\cite{HodgkinConduction:1964}
+"All authors came to similar conclusions: during
+the action potential, no signiﬁcant net heat is produced. Transient heat releases are mostly reabsorbed in the second phase of the action potential. \dots The ﬁnding of a reversible heat release during the action potential of
+nerves is a striking and very fundamental fact. It is inconsistent with the
+\gls{HH} model. The physics underlying the nervous impulse
+must rather be based on reversible processes".~\cite{ThermalBiophysics:2007} 
+At that time it was commonly known that compressing a
+medium produces heating and extending it causes cooling.
+Although modeling neuron as a thermodynamic engine 
+that is heated and cooled, and produced no signiﬁcant net heat, would be trivial, no such model came to light.
+The probable reason is that no reasonable idea
+shined up that could attach the observed heat absorbtion
+with the observed evident signs of the electrical operations.
+
+
+Heat liberation and absorption are direct experimental evidence of the "slow current" and the mechanisms described above.
+The lack of leakage current
+not only validates our model, but also solves the long-standing mystery of reversible heat release during the \gls{AP}.
+Pressure changes accompany the electrical process and naturally account for the observed temperature changes.
+The energy consumption of the nervous impulse underpins that the complex physical process comprises mostly reversible disciplinary processes:
+most of the energy of \gls{AP} is stored as reversible elastic potential energy. Hence, its dissipation is also negligible: "no signiﬁcant net heat is produced"~\cite{ThermalBiophysics:2007}. 
+
+The shocking conclusion in~\cite{MechanicalBrainPulses:2018}, that "brain cells communicate
+with mechanical pulses, not electrical signals", more precisely sounds
+that the elastic membrane generates a pressure wave in the volume of the 
+membrane, and all components having mass (the electrolyte) vibrate "in place". The charged components (the ions, a $10^{-3}$ part of the electrolyte) repel each other (as long as there is excess charge on the membrane) toward the \gls{AIS} and along the membrane.
+Actually, the disciplines of thermodynamics and electricity cooperate in both producing and transmitting \gls{AP}. Neither of them can do that alone. No compromise is needed.
+The nervous pulse transmission over the axons 
+also must be revisited. The classical mechanism based on coordinated action
+of ion channels is undoubtedly wrong. Among others, the physical conditions of applicability of the telegrapher's equations are not fulfilled, plus (see Appendix~\ref{sec:Forces}) the electrical forces are orders of magnitude weaker than the elastic ones. The enormous pressure, the incompressible electrical fluid,
+and the repulsion of the delivered particles suggest 
+an alternative and more reasonable mechanism.
+The resultant of the electrical and thermodynamic, and first of all, the mechanical force generated by the elastic membrane, does the task.
+No protein mechanisms and cooperating ion channels are needed.
+
+
+\ifx\magyar\undefined
+\section[Unified model]{Unified model\label{sec:V2-0_UnifiedModel}}
+
+\else
+
+\section[Egyesített modell]{Egyesített modell\label{sec:V2-0_UnifiedModel}}
+
+\fi
+
+
+
+\ifx\magyar\undefined %2026.08,09
+
+\section[The outward K+ component during the Action Potential]
+{The outward K+ component during the Action Potential\label{sec:Fallacies-OutwardK}}
+
+Emitting Action Potentials is a fundamental aspect of neuronal operation.
+\gls{HH} hypothesized that neurons operate with electrical currents and 
+suggested the idea~\cite{HodgkinHuxley:1952} that the neuronal operation
+is more or less reminiscent of an electric oscillator. Given that the parallel $RC$ circuit they hypothesized cannot produce an output voltage with opposite sign, they had to introduce
+the concept of a delayed current in the opposite direction. Even, they demonstrated that $K^+$ current flows in the second half 
+of the \gls{AP}. The net electrical model led immediately to contradiction with the empirical evidence that, 
+as Hodgkin wrote~\cite{HodgkinConduction:1964}, "Hill and his colleagues found~\cite{HeatProductionNeuron:1958} that an initial phase [of the action potential] was followed by one of
+heat absorption. [...] a net cooling on open-circuit was totally unexpected
+and has so far received no satisfactory explanation."
+Not to mention the mechanical, optical, etc. effects~\cite{MechanicalWaves:2015}; accompanied by \gls{AP}. 
+Neglecting the \gls{AIS} and sticking to \gls{AIS}-less model 
+led to clue-less ad-hoc assumptions and desperate claims such as 
+"The sodium influx associated with
+depolarization is exothermic  [...] the capacitive energy stored in the membrane is
+released as heat. However, the efflux of $K^+$  ions is endothermic [...] \textit{converting heat in the environment
+into capacitive energy at the membrane}."~\cite{MechanicalWaves:2015}
+(That anti-dissipation effect would be something new for physics and could convert the harmful global warming to an
+inexhaustible energy source for humankind.)
+The correct physical explanation can be derived using the 
+unified model of neuronal operation~\cite{Vegh2025ThermodynamicModel:2026,VeghUnifiedCrossdisciplinaryModel:2026}: under the mechanical pressure
+caused by the mutual repulsion of the ions, the electrolyte
+is compressed and expanded.
+
+One of the big mysteries in the creation of the V1.0  model was why \gls{AP}
+became negative when only
+$Na^+$ influx was seen when \gls{AP} was formed. 
+Given that they found only positive charges nearby, they supposed that
+an outflux of positive charges, namely of $K^+$ ions,  was the reason.
+Since the process is too fast, \gls{HH} used a voltage clamping method for the experimental demonstration~\cite{HodgkinHuxleyCurrent:1952} of the hypothesized  $K^+$ current. The essence of this is that they
+imitated the crossing of the membrane voltage threshold (reaching the "AP" state, see Fig.~\ref{fig:ClampingKCurrent}):
+"(after completion of the quick pulse through the membrane
+capacity)", then raised the intracellular domain of the membrane to a potential higher than the resting potential with a negative feedback circuit:
+"the potential
+difference across the membrane is suddenly changed from its resting
+value, and held at the new level by a feed-back circuit ('voltage clamp' procedure)", and measured the time dependence of the current in this state.
+
+\subsection[The formal description of the process]
+{The formal description of the process\label{sec:Fallacies-OutwardKPhysicsFormal}}
+
+Figure \ref{fig:RestingPotential5} shows the changes that occur in a neuron that is displaced from its equilibrium state.
+These processes are naturally slow, their role in the
+transient process is discussed in the \ref{sec:TransientState} section,
+here we only illustrate our statements regarding the $K^+$ current.
+Our statement is essentially based on Kirchhoff's Voltage Law,
+according to which the sum of the voltages in a closed circuit is zero.
+ In our case, the circuit extends from the inside of the neuron to the external environment.
+If for any reason the external and internal potential levels are not the same, then a current flows until they are equalized (current carries charge and causes a potential change; it is not an ideal voltage generator).
+Of course, the equalization is not
+instantaneous, the current has a time dependence.
+
+On both the left and right sides of the figure, the resting potential level is
+at the zero value of the vertical scale. In the resting state (without invasion),
+in the intracellular segment
+the [Na50,K400] concentrations are present inside the cell. Using these values, we reach the "Rest"
+state along the green arrows (based on the Nernst voltages, see \ref{Tab:SummaryTable}~Table), which is located at a height of \SI{-21}{\milli\volt}.
+On the right side, in the extracellular segment, from the point also at a height of 0, we arrive at a point at a height of \SI{21}{\milli\volt} along the blue arrows in the same way. The potential difference between the two mentioned points is \SI{42.5}{\milli\volt}, which \gls{HH} measured. It is a correct value,
+but it is the result of an electrostatic charging and not of a voltage drop due to the "leakage current" they assumed.
+\index{leakage current}
+The voltage across the membrane (represented by the solid orange arrow) points upwards, preventing positive ions in the intracellular space from moving towards the extracellular space and preventing negative ions in the extracellular space from moving towards the intracellular space. The $Ca^{2+}$ ions in the extracellular segment, however, are permeable, requiring continuous pumping. There is no potential difference between the outside and inside, so no (significant) current flows.
+
+If, for any reason, the membrane voltage suddenly rises above the threshold value, due to the extremely fast $Na^+$ influx,
+the membrane potential increases by about \SI{100}{\milli\volt} (a [Na200,K400] state occurs, see the brown arrows), i.e. the neuron jumps into the AP bubble.
+%After the threshold is exceeded naturally or with a short pulse, the "AP" passes into the "Rest" bubble,
+%this is the same in the case of natural and clamping measurements.
+The orange arrow that was pointing upwards now points downwards as a broken line: the outflow of positive ions (both $K^+$ and $Na^+$) is given a free path, but the sloping path for $Ca^{2+}$ ions is eliminated. However, the free ions in the surface layer of the membrane are the vast majority of the $Na^+$ ions that have just arrived, so the ion current through the \gls{AIS} mainly consists of such ions.
+A significant increase in the membrane voltage leads to a significant increase in the potential of the
+inner space of the neuron.
+A current is initiated that tries to restore the initial voltage and concentration relationships.
+The extracellular environment of the membrane is extremely stable (the concentrations do not change),
+but inside the cell the voltage increases to the same extent, in the direction of "Invasion".
+The membrane potential has changed significantly due to the change in the $Na^+$ concentration, so the cell then moves them towards equilibrium.
+
+
+In the case of natural \gls{AP}, there is no obstacle for the neuron
+to restore its previous state by changing any parameter, so the system concentrations
+start towards the state [Na50,K400]. This can be
+easily achieved by trying to make Na[50] from Na[200], while $K^+$ is still/already at the appropriate concentration.
+That is, it releases (mainly) $Na^+$ ions through the \gls{AIS} until the potential difference drops to zero.
+Reducing the $Na^+$ concentration also reduces the membrane
+voltage, i.e. after the release of the excess ions (admitted during the $Na^+$ rush-in) the neuron returns to its initial state;
+a cycle takes place.
+
+"Clamping" fixes the membrane voltage, meaning that the neuron cannot restore its initial
+resting state. Instead, it has to find a new balance by changing the concentrations.
+After the artificial \gls{AP}, clamping (using a negative feedback) keeps the membrane potential at a fixed value, so the neuron can only produce a new balance by changing the ion concentrations: a current flows until the Nernst voltages of the $Na^+$ and $K^+$ concentrations can balance the clamping voltage.
+From this [Na50,K400] state, the neuron has to adjust the potential so that the sum of the Nernst voltages plus the membrane's voltage plus the clamping voltage is zero (so another balance has to be set!), while the voltage is fixed.
+To do this, it must reduce the $K^+$ concentration, while the $Na^+$ concentration is already at a good value (the opposite of the previous case). And not by a small amount: [K7] only causes a voltage change equal to the clamping 100 mV imposed on the cell.
+This voltage is given by the green curved $Na^+[50]$ and the black dashed straight
+$K^+[7]$ path. The neuron can achieve this [Na50,K7] concentration
+by starting an intensive $K^+$ release.
+
+\begin{figure}
+\includegraphics[width=.9\columnwidth]{fig/ClampingKCurrent.pdf}
+\caption{Artificial and natural degradation of the AP state.
+In the case of natural degradation, the neuron
+has to get rid of the (unnecessary) $Na^+$ ions;
+by releasing them, it returns to the initial state;
+cycle takes place.
+Clamping keeps the membrane voltage fixed,
+so the neuron can only establish a new equilibrium situation by changing the intracellular concentrations
+which, due to the very reduced $K^+$ concentration, is only possible with an intense
+$K^+$ release.
+\label{fig:ClampingKCurrent}
+}
+\end{figure}
+
+Another important difference compared to the natural case is that there is no electrostatic acceleration across the membrane (which is why the $Na^+$ influx stopped),
+only a thermodynamic suction effect outwards due to clamping.
+Indeed, $K^+$ ions attempt flow out through the membrane, but
+they cannot exit until the electric potential drops
+below the equivalent thermodynamic driving force of the concentration.
+Moreover, the nearby $K^+$ ions get there sooner, but they leave a gap (reduced concentration) behind them, where the nearby neighbor $K^+$ electrodiffuses. This is why the physiologist sees a "delayed current".
+It is a strange game of nature that the resultant of the thermodynamic and the electric  (plus the elastic)  gradients moves, simultaneously, the $Na+$ ions parallel to the membrane surface, toward the \gls{AIS}, and
+the $K^+$ ions perpendicular to the surface toward the membrane,
+approximately until the peak of the action potential voltage is reached.
+The $Na^+$ starts to leave through the \gls{AIS}, while the "excessive" $K^+$ ions leave through the membrane.
+\textit{The two currents do not flow in the same path, so they cannot
+interfere as currents in opposite directions and cannot cause hyperpolarization.}
+\index{hyperpolarization}
+Hyperpolarization is caused by the reversal of the $Na^+$ current, which can be interpreted
+in the electrical sense as the capacitive current of the capacitor in the serial $RC$ circuit, and
+in the mechanical sense as the negative period of the elastic membrane oscillation.
+
+\textit{That is, the $K^+$ current is an artifact caused by the clamping, which is caused by the 'clamping' measurement conditions, and does not occur in the neuron under natural conditions.}
+
+
+So, this is where the urban legend "$K^+$ flows out through the membrane in the second phase of \gls{AP}, with a significant delay compared to the $Na^+$ influx" comes from.
+It is really a real measurement, it is really $K^+$ ion, but they did not measure what they thought.
+\gls{HH} and their late descendants did too. So there is no question of specific $Na^+$ and $K^+$ (synchronized with each other) channels: in both cases, the concentration and potential relationships decide what ions flow and in which direction.
+%It doesn't hurt to use a good model for what you want to study.
+\gls{HH} was aware that theirs was not good, but they didn't know any better.
+Unfortunately, they spread the misconception.
+
+
+
+In the classic experiment of \gls{HH}, clamping means that the left-hand "Invasion" suddenly raises the membrane voltage to the peak value measured at \gls{AP}, without the concentrations changing, so the voltage of the left-hand segment will also be higher.
+The current only stops when the difference in the Nernst voltages of the inner segments equalizes
+the clamping voltage. Due to the slowness of charge carriers, the process is not instantaneous.
+
+Fig.~\ref{fig:ClampingKCurrent} shows a pictorial summary of the process. The points on the surface give the Nernst voltage acting on the ions, for different combinations. The points on the surface are in equilibrium. The onset of the \gls{AP} moves the point that was in equilibrium until then well outside the surface. The neuron can find the new equilibrium position without the forcing effect of clamping by restoring the parameters of the previous state. In the case of clamping, it must set new concentrations at which the sum of the Nernst voltages can counteract the clamping voltage. In both cases, a relaxation process takes place, which in the case of the native process is measured by physiology as \gls{AP}.
+
+% Compiled 26.07.10
+\subsection[The physics of the process]
+{The physics of the process\label{sec:Fallacies-OutwardKPhysics}}
+
+The essential functioning of the cell largely takes place in layers of a few nanometers close to the cell membrane, where differences in concentration and voltage gradients (and consequently material flow rates) of up to several orders of magnitude can occur for a few dozen microseconds. Furthermore, the slow material flow creates potential and concentration changes that change from moment to moment, and whose effects can be significantly different in each layer due to the chemical quality of the ions. For this reason, the description of the events is unique in each case, for each layer and for each time period; it is not uncommon for scientific disciplines to be changed when describing individual stages, or for them to be combined in a different way.
+
+The two ends of the ion channels embedded in the membrane have different potentials and concentrations, so that the ions passing through acquire significant energy and speed. However, this gradient disappears when they exit the channel, so that the ions "stop" in frustration. The passage continues until the passing ions increase the electrochemical potential of the other side so much that the gradient disappears. Inside the electrolyte, the other, orders of magnitude smaller gradients continue to operate, of course, but can only create very slow material transport. The changes in the "bulk" part of the electrolyte tend towards slow equalization (different rules remain in effect near the boundary membrane). For this reason, a slow diffusion effect is also associated with all processes.
+
+When $Na^+$ ions penetrate the intracellular segment, they do so under the influence of a significant electrochemical gradient. In this way, immediately after the passage (lasting a few nanoseconds), the ions create a $Na^+$-rich layer, from which the charge of the ions (partly by direct collision) knocks out the ions there, mainly $K^+$.
+Basically, a $Na^+$ layer is formed directly under the intracellular part of the membrane, which increases the voltage on the capacitor plates, and since the \gls{AIS} at the end of the membrane acts as a sink for the ion current, an immediate $Na^+$ current is initiated, as discussed in the electrical model.
+$Na^+$ ions move along the membrane surface due to the high electrical gradient through the high-conductivity \gls{AIS}, but small amounts of $Na^+$ and $K^+$ ions apparently diffuse into the adjacent layer. The ion concentration and potential of the layer decrease with the outflow current. Due to the slowness of the ion current, the ions only reach the \gls{AIS} in tens of microseconds.
+The membrane is initially closed to positive ions (after the $Na^+$ ions have passed through), and the $Na^+$ layer represents an additional potential barrier. However, over time, the decreasing $Na^+$ concentration due to the current in the layer that causes the \gls{AP} increasingly allows $K^+$ ions to move towards the membrane and the experienced $K^+$ current to start, which is only possible after a few dozen microseconds.
+
+"Delayed $K^+$ channels" therefore mean ion channels that structurally do not distinguish between ions, and the delay is caused by transient processes taking place in the ion layers. These channels indeed release $K^+$ ions, which only start when the clamping voltage is switched on to the neuron (i.e., they create a non-equilibrium state of the neuron segment), and only $K^+$ ions because the thermodynamic gradient is only favorable to them.
+
+\gls{HH} found that the \gls{AP} can be decomposed into two currents:
+"the ionic current during a depolarization consists of two more or less independent components in parallel, an early transient phase of current carried by sodium ions, and a delayed long-lasting phase of current carried by potassium ions".
+Their conclusion is more than surprising, that although the current component arising from Na ions appears quickly, the component consisting of $K^+$ ions remains delayed and persistent. According to that "explanation", the neurons are disposable devices: after emitting a single \gls{AP}, the neuron emits a short-lasting $Na^+$ and (according to their figures 5 and 6) an infinitely long-lasting $K^+$ current, contrary to experience.
+In other words, for \SI{100}{\pico\ampere} (that is \SI{1e-10}{\ampere}) saturation current and \SI{1e11}{neuron} it would mean
+10~amper permanent current in the brain.
+Furthermore, it would keep the resting potential above 
+the value of the resting potential. The difference 
+would be the extra voltage of the clamping; that is,
+it would disappear at zero claping voltage.
+In other words, the extra voltage and the  $K^+$ current disappears in the absence of clamping, as observed.
+
+In our reading the current lasts as long as the voltage invasion caused by clamping persists or the $K^+$ content of the intracellular segment of the neuron is depleted.
+
+\else %2026.06.15
+
+\section[A $K^+$ áram az \gls{AP} folyamán]
+{A kifelé irányuló $K^+$ áram az \gls{AP} folyamán\label{sec:Fallacies-OutwardK}}
+
+A V1.0 megalkotása során az egyik nagy rejtély  volt, hogy az \gls{AP}
+miért vált negatívra, amikor az \gls{AP} létrejöttekor csupán
+$Na^+$ beáramlás látható. Mivel csak pozitív töltéseket találtak a környéken, feltételezték, hogy azt
+pozitív töltések, nevezetesen $K^+$ ionok, kiáramlása okozta. A folyamat azonban túl gyors, ezért \gls{HH} egy feszültség rögzítő eljárást (clamping) használt~\cite{HodgkinHuxleyCurrent:1952}
+a feltelezett  $K^+$ áram kimutatására. Ennek lényege, hogy 
+imitálták a membrán feszültségküszöb túllépését (az "AP" állapot elérését, lásd a~\ref{fig:ClampingKCurrent} és \ref{fig:RestingPotential5}~ábrákat):
+ "(after completion of the quick pulse through the membrane
+capacity)", majd egy negatív visszacsatolást használó áramkörrel
+a membrán intracelluláris tartományát a nyugalmi potenciálnál magasabb
+potenciálra emelte:
+"%we gave a general description of the time course of the current which flows through the membrane of the squid giant axon when 
+the potential 
+difference across the membrane is suddenly changed from its resting 
+value, and held at the new level by a feed-back circuit ('voltage clamp' procedure)", és ilyen állapotban mérte az áram időfüggését. 
+
+\subsection[A folyamat formális leírása]
+{A folyamat formális leírása\label{sec:Fallacies-OutwardKPhysicsFormal}}
+
+A \ref{fig:RestingPotential5} ábrán láthatók azok a változások,
+amelyek az egyensúlyi állapotából kimozdított neuronban végbemennek.
+Ezek a folyamatok természetesen lassúak, azok szerepét a 
+tranziens folyamatban a \ref{sec:TransientState} szakaszban tárgyaljuk,
+itt csupán a $K^+$ áramra vonatkozó állításainkat illusztráljuk.
+Állításunkat lényegében a Kirchhoff's Voltage Law-ra alapozzuk,
+ami szerint egy zárt áramkörben a feszültségek összege nulla; esetünkben az áramkör a neuron belsejétől a külső környezetig tart.
+Ha bármilyen okból a külső és a belső potenciálszint nem egyforma, akkor mindaddig áram folyik, amíg az ki nem egyenlítődik (az áram töltést szállít, és potenciálváltozást okoz; nem ideális feszültséggenerátor). Természetesen a kiegyenlítődés nem
+pillanatszerű, az áramnak időfüggése van.
+
+Az ábra bal és jobb oldalán egyaránt a függőleges skála nulla értékénél 
+van a nyugalmi potenciálszint. Nyugalmi állapotban (invázió nélkül)
+az intracelluláris szegmensben
+a [Na50,K400] koncentrációk vannak jelen a sejten belül. Ezeket használva a zöld nyilak mentén (a Nernst feszültségek alapján, lásd a \ref{Tab:SummaryTable}~Táblázatot) a "Rest"
+állapotba jutunk, ami a \SI{-21}{\milli\volt} magasságban található.
+Jobb oldalt az extracelluláris szegmensben a szintén 0 magasságban levő pontból a kék nyilak mentén
+ugyanilyen módon egy, a \SI{21}{\milli\volt} magasságban levő pontba érkezünk. A két említett pont közötti potenciál különbség \SI{42.5}{\milli\volt}, amit \gls{HH} ekkorának mért. Ami ugyan korrekt érték, 
+de elektrosztatikus feltöltődés eredménye és nem pedig az általuk 
+feltételezett "leakage current" következtében fellépő feszültségesés.
+A membrán két oldala közötti feszültség (amit 
+a folya\-matos narancssárga nyíl jelképez) felfelé mutat,
+ami az intracelluláris térben levő pozitív ionokat megakadályozza abban hogy
+az extracelluláris tér felé elinduljanak, és az extracelluláris
+térben levő negatív ionokat abban, hogy az intracelluláris tér felé induljanak. Az extracelluláris szegmensben levő $Ca^{2+}$ ionok számára viszont a membrán átjárható,
+azaz folyamatos pumpálásra van szükség. A külső és a belső oldal között
+nincs potenciálkülönbség, ezért áram nem folyik.
+
+
+Ha bármilyen okból a membrán feszültség a küszöbérték fölé emelkedik, akkor a neuron a rendkívül gyors $Na^+$ beáramlás miatt
+a membrán potenciál kb. \SI{100}{\milli\volt} értékkel megnő (egy [Na200,K400] állapot áll elő, lásd a barna nyilakat), azaz a neuron átugrik az AP buborékba.
+%A természetesen vagy rövid impulzussal előidézett küszöb túllépés után az "AP" átmegy a "Rest" buborékba, 
+%ez a természetes és a clamping mérés esetén megegyezik.
+Az eddig felfelé mutató narancs nyíl most szaggatva lefelé mutat: a pozitív ionok ($K^+$ és $Na^+$ is) kiáramlása szabad utat kap, a $Ca^{2+}$ ionok számára viszont megszűnik a lejtős pálya. A membrán felületi rétegében azonban szabad ionként túlnyomó többségben a most érkezett $Na^+$ ionok vannak, így az ionáram az AIS-en keresztül
+főként ilyen ionokból áll. 
+A membrán feszültség jelentős emelkedése maga után húzza a 
+a neuron belső tere potenciáljának jelentős emelkedését.
+Áram indul, ami igyekszik a kezdeti feszültség és koncentráció viszonyokat visszaállítani.
+A membrán extracelluláris környezete rendkívül stabil (a koncentrációk nem változnak),
+a sejt belsejében viszont a feszültség ugyanilyen mértékben megemelkedik, az "Invasion" irányába. 
+A membrán potenciál a $Na^+$ koncentráció változása miatt változott meg lényegesen, ezért a sejt majd azokat mozgatja az egyensúly irányába.
+
+
+ 
+ 
+\begin{figure}
+	\includegraphics[width=.9\columnwidth]{fig/RestingPotential5.pdf}
+	\caption{The figure is a modified version of Fig.~\ref{fig:RestingPotential4}. It is supplemented with the unbended black line showing that the clamping condition forces the neuron
+to find a new balanced state by compensating the clamping voltage
+with setting a concentration [Na50,K7]. 
+For comparison, the case of natural \gls{AP} is also shown. 
+The mechanism of producing \gls{AP} (using numbers referring to the case of squid shown in Table~\ref{Tab:SummaryTable}). In the resting state, the inside thermal potentials follow the green paths.
+When the rush-in of $Na^+$ ions suddenly increases the internal concentration to $[200]$, the potential on the internal side of the membrane increases to $+90\ mV$. The neuron must decrease its  concentrations to restore the resting potential, mainly by releasing an action potential through the \gls{AIS}.
+The clamping fixes neuron's membrane voltage at \gls{AP},
+so the neuron can operate only with the concentrations.
+		\label{fig:RestingPotential5}
+	}
+\end{figure}
+
+A természetes \gls{AP} esetén nincs akadálya, hogy a neuron
+a korábbi állapotát bármelyik paraméter változtatásával helyreállítsa, ezért a rendszer koncentrációi 
+elindulnak a [Na50,K400] állapot felé. Ezt 
+legegyszerűbben úgy tudja elérni, hogy a  Na[200]-ból igyekszik Na[50]-et csinálni, a $K^+$ még/már megfelelő koncentrációban van.
+Azaz, (főként) $Na^+$ ionokat bocsát ki az \gls{AIS}-en keresztül, amíg a potenciálkülönbség nullára nem csökken.
+A $Na^+$ koncentráció csökkentése egyúttal a membrán 
+feszültséget is csökkenti, azaz a felesleges (a $Na^+$ rush-in során
+beengedett) ionok kibocsátása után a neuron alapállapotba áll vissza;
+egy körfolyamat zajlik le.
+
+A "clamping" rögzíti a membrán feszültségét, azaz a neuron a kiindulási
+nyugalmi állapotot nem tudja helyreállítani; ehelyett a koncentrációk
+változtatásával kell új egyensúlyt találnia, miközben 
+a mesterséges \gls{AP} után a clamping (negative feedback alkalmazásával) a membrán potenciált rögzített értéken tartja.
+%, így a neuron csak az ionkoncentrációk változtatásával tud új egyensúlyi helyzetet
+%előállítani:
+Mindaddig áram folyik, amíg $Na^+$ és $K^+$ koncentrációk
+Nernst-feszültségei ellensúlyozni nem tudják a clamping feszültséget.
+Ebből a [Na50,K400] állapotból kell a neuronnak úgy beállítania a potenciált, hogy a Nernst-feszültségek plusz a membránfeszültség plusz a clamping feszültség összege nulla legyen (tehát egy másik egyensúlyi helyzetet kell beállítani!), miközben a feszültség rögzítve van.
+Ehhez csökkentenie kell a $K^+$  koncentrációt, miközben a $Na^+$  koncentráció már lényegében jó értéken áll (az előzőhöz képest fordított eset). Még pedig nem is kis mértékben: K+[7] idéz elő csak akkora feszültségváltozást, amekkorát a clamping 100 mV rákényszerít a sejtre.
+Ezt a feszültséget a zöld hajlított $Na^+[50]$ és a fekete szaggatott egyenes  
+$K^+[7]$ útvonal adja meg. A neuron ezt a [Na50,K7] koncentrációt 
+úgy tudja elérni, hogy intenzív $K^+$ kibocsátásba kezd.
+
+
+\begin{figure}
+	\includegraphics[width=.9\columnwidth]{fig/ClampingKCurrent.pdf}
+	\caption{Az AP állapot mesterséges és természetes lebomlása.
+	A természetes úton történő lebomlás esetén a neuronnak
+	a (számára felesleges) $Na^+$ ionoktól kell megszabadulnia;
+	azok kibocsátásával a kiindulási állapotba tér vissza; 
+	körfolyamat megy végbe.
+	A clamping rögzítve tartja a membrán feszültségét, 
+	így a neuron csak az intracelluláris koncentrációk
+	változtatásával tud új egyensúlyi helyzetet kialakítani, ami 
+	a nagyon lecsökkent $K^+$ koncentráció miatt csak intenzív
+	$K^+$ kibocsátással lehetséges.
+		\label{fig:ClampingKCurrent}
+	}
+\end{figure}
+
+A $Na^+$ esethez képest további fontos eltérés, hogy most nincs a membránon elektrosztatikus gyorsítás (a $Na^+$ beáramlás is ezért állt le),
+csupán a clamping miatt előállt termodinamikus szívóhatás kifelé. A $K^+$ ionok érzik a hívást, de csak diffundálni tudnak, és ettől a fiziológus "delayed current"-et lát. Valóban $K^+$ ionok áramlanak ki a membránon keresztül, de
+addig nem tudnak kilépni, amíg az elektromos potenciál nem csökken
+a koncentráció ekvivalens termodinamikus hajtóereje alá. 
+%Ráadásul a közelben levő $K^+$ ionok érnek oda hamarabb, de űrt (csökkent koncentrációt) hagynak maguk után, ahova a közeli szomszéd $K^+$ elektrodiffundál.
+A clamping mérés alkalmával először $Na+$ kezd távozni.
+A kibocsátás rövid szakaszon (egyidejűleg) párhuzamosan történik: a $Na^+$ az \gls{AIS}-en kezd távozni, miközben a membránon keresztül a "felesleges" $K^+$ ionok távoznak.
+A természet furcsa játéka, hogy a termodinamikai és elekt\-romos potenciál eredője a $Na+$ ionokat a membrán felülettel párhuzamosan, az \gls{AIS} felé, 
+a $K^+$ ionokat pedig a felületre merőlegesen a membrán felé mozgatja,
+kb. az akciós potenciál feszültség csúcsának eléréséig, egyidejűleg.  
+\textit{A két áram nem ugyanott folyik, így nem is képesek 
+ellentétes irányú áramként interferálni és hiperpolarizációt előidézni.}
+A hiperpolarizációt a $Na^+$ áram irányváltása idézi elő, amit 
+az elektromos szemléletben a kondenzátor kapacitív áramaként,
+a mechanikus szemléletben a rugalmas membrán rezgésének
+negatív periódusaként értelmezhetünk.
+\textit{Azaz, a $K^+$ áram a clamping által előidézett artifact, amit a 'clamping' mérési feltételei okoznak, természetes körülmények között
+a neuronban nem fordul elő.}
+
+Szóval, innét származik a "$K^+$ áramlik ki a membránon keresztül az \gls{AP} második fázisában, a $Na^+$ beáramláshoz képest jelentős késéssel" városi le\-genda. Tényleg valós mérés, tényleg $K^+$ ion, csak éppen nem azt mérték, amit gondoltak. \gls{HH} is meg kései utódaik is. Tehát nincs szó specifikus $Na^+$ és $K^+$ (egymáshoz szinkronizált) csatornákról: mindkét esetben a koncentráció és  potenciálviszonyok döntenek arról, hogy milyen ionok áramlanak és merrefelé. Nem árt, ha jó modellt alkalmaz az ember arra, amit tanulmányozni akar. \gls{HH} tisztában volt azzal, hogy az övék nem jó, de nem tudtak jobbat.
+Sajnos, a tévhitet terjesztették.
+
+
+A \ref{fig:ClampingKCurrent}~ábra a folyamat képszerű összefoglalását mutatja. A felület pont\-jai  az ionokra ható Nernst-feszültséget adják meg, különböző kombinációk esetén. A felületen levő pontok egyensúlyi helyzetben vannak. A \gls{AP} kezdete az addig egyensúlyi helyzetben levő pontot jóval a felületen kívülre mozgatja.
+Az újbóli egyensúlyi helyzetet a clamping kényszerítő hatása nélkül
+a neuron a megelőző állapot paramétereinek visszaállításával tudja
+megtalálni. Clamping esetén olyan új koncentrációkat kell beállítania,
+amelyek mellett a Nernst feszültségek összege ellensúlyozni tudja
+a clamping feszültséget. Mindkét esetben relaxációs folyamat zajlik le,
+ezt a natív folyamat esetén \gls{AP}-ként méri a fiziológia.
+
+ A mechanikus kép szerint a $Na^+$ "robbanás" után a rugalmas membrán relaxál, azaz egy darabig nyom\-ja, aztán meg húzza a $Na^+$ (és kevesebb $K^+$) keveréket az \gls{AIS}-en át, ami oda és vissza folyó áramot eredményez. Ezt méri a fiziológia \gls{AP}-ként. (Ha netán jelzett $K^+$ atomokat tesznek a citoplazmába, akkor tényleg lesz ellenirányban áramló $K^+$ is, de kevés.)
+
+
+\gls{HH} klasszikus kísérletében a clamping  azt jelenti, hogy a bal oldali "Invasion" úgy emeli hirtelen a membránfeszültséget az \gls{AP}-nál mért csúcsértékre, hogy a koncentrációk nem változnak. Az áram csak akkor szűnik meg, ha a belső szegmensek Nernst-feszültségeinek különbsége kiegyenlíti 
+a clamping feszültséget. A töltéshordozók lassúsága miatt a folyamat nem azonnali. 
+
+
+%% Fordítva 26.07.10
+\subsection[A folyamat fizikája]
+{A folyamat fizikája\label{sec:Fallacies-OutwardKPhysics}}
+
+A sejt lényegi működése nagyrészt a sejtmembránhoz közeli néhány nanométeres rétegekben történik, ahol néhány tucat mikroszekundumnyi időre akár több nagyságrendnyi koncentráció, feszültség és elasztikus gradiens (és ebből következően anyagáramlási sebesség) eltérések fordulhatnak elő. Továbbá, a lassú anyagáramlás potenciál- és koncentráció változásokat hoz létre, amik pillanatról pillanatra változnak, és amelyek hatása az ionok kémiai minősége miatt az egyes rétegekben jelentősen eltérő is lehet. Emiatt a történések leírása minden esetben, minden réteg és minden időszakasz esetén egyedi; nem ritkán tudományterületet is kell váltani az egyes szakaszok leírásakor, vagy azokat másféleképpen kombinálni.
+
+A membránba ágyazott ioncsatornák két végén eltérő potenciál és koncentráció van, így az áthaladó ionok jelentős energiára és sebességre tesznek szert.  Ez a gradiens azonban megszűnik, amikor kilépnek a csatornából, így az ionok csalódottan "megállnak". Az áthaladás mindaddig folytatódik, amíg az áthaladó ionok annyira megnövelik a másik oldal elektrokémiai potenciálját, hogy a gradiens megszűnik. Az elektrolit belsejében a többi, nagyságrendekkel kisebb gradiens természetesen tovább működik, de csak igen lassú anyag\-transz\-portot tud létrehozni.  Minden folyamathoz lassú diffúziós hatás is társul, ezért a változások az elektrolit "bulk" részében a lassú kiegyenlítődés felé tartanak (a határoló membrán közelében más szabályok maradnak érvényben). 
+
+Amikor a $Na^+$-ionok behatolnak az intracelluláris szegmensbe, azt jelentős elektrokémiai gradiens hatására teszik. Ilyen módon a közvetlenül az (néhány nanoszekundum ideig tartó) áthaladás után az ionok egy $Na^+$-gazdag réteget hoznak létre, amelyből az ionok töltése (részben közvetlen ütközéssel) kiüti az ott levő, főként $K^+$ ionokat.
+Alapvetően tehát egy  $Na^+$ réteg jön létre közvetlenül a membrán intracelluláris része felett, aminek hatására megnő a kondenzátorlemezeken levő feszültség, és mivel a membrán végében az \gls{AIS} az ionok számára nyelőként viselkedik, így egy azonnali $Na^+$ áram indul, amint azt az elektromos modell tárgyalja.
+A $Na^+$ ionok a membránfelület mentén a nagy elektromos gradiens hatására mozognak a nagy vezetőképességű \gls{AIS}-en keresztül, de kevés mennyiségű $Na^+$ és $K^+$ ion nyilván kölcsönösen be\-diffundál a szomszédos rétegbe.
+A  réteg  ionkoncentrációja és potenciálja a kifolyó árammal csökken.
+Az ionáram lassúsága miatt az ionok csak több tucat mikroszekundumnyi idő alatt érik el az \gls{AIS}-t.
+
+A pozitív ionok számára kezdetben (a $Na^+$ ionok áthaladás után) a membrán is le van zárva, a $Na^+$ réteg pedig egy további potenciálgátat jelent. Az idő múlásával azonban a membránon az utándiffúziós folyamatok és a rétegben az \gls{AP}-t előidéző áram hatására csökkenő $Na^+$ koncentráció egyre inkább lehetővé teszi hogy a $K^+$ ionok is elinduljanak a membrán felé és a tapasztalt $K^+$ áram elinduljon, ami csak néhány tucat mikroszekundum után lehetséges.
+A "késleltetett $K^+$ csatornák" tehát olyan ioncsatornákat jelentenek, amelyek strukturálisan nem tesznek különbséget ionok között, és a késleltetést az ionrétegekben zajló tranziens folyamatok okozzák.
+Ezeken a csatornákon valóban $K^+$ ionok folynak ki, amelyek csak akkor indulnak el, amikor a clamping voltage-t a neuronra kapcsolják (azaz, létrehozzák a neuron szegmens nem-egyensúlyi állapotát), és azért csak $K^+$ ionok, mert a termodinamikai gradiens csak számukra kedvező.
+
+\gls{HH} úgy találta, hogy az \gls{AP}-t keltő áram két áramra bontható:
+"the ionic current during a depolarization consists of two more or less independent components in parallel, an early transient phase of current carried by sodium ions, and a delayed long-lasting phase of current carried by potassium ions".
+Meglepő az a következtetésük, hogy bár a $Na^+$ ionokból származó áram komponens gyorsan megjelenik, a $K^+$ ionokból álló komponens késéssel és tartósan megmarad. Ha magyarázatuk helytálló, egyetlen \gls{AP} kibocsátása után a neuron rövid ideig tartó $Na^+$ és (5. és 6. ábrájuk szerint) végtelen hosszú ideig tartó $K^+$ áramot bocsát ki.
+Más szavakkal, amelyik neuron egyszer \gls{AP}-t bocsátott ki, az mindörökké $K^+$ áramot bocsát ki. Ez neurononként \SI{100}{\pico\ampere} (azaz \SI{1e-10}{\ampere}) telítési áram  és \SI{1e11}{neuron} esetén 
+10~amper állandóan folyó áramot jelentene az agyban, továbbá
+folyamatosan a nyugalmi potenciál értéke alatt tartaná a membrán potenciált. A különbség megegyezne a clamping feszültség értékével;
+azaz eltűnne nulla clamping feszültség esetén.
+Más szavakkal, az extra nyugalmi feszültség és a  $K^+$ áram
+egyaránt eltűnik clamping nélkül, a tapasztalattal megegyezően.
+
+A mi olvasatunkban, a helyes fizika alapján, az áram mindaddig tart, amíg a clamping által okozott  feszültséginvázió fennáll, vagy a neuron intracelluláris szegmensének $K$ tartalma el nem fogy.
+\fi
+
+
+\begin{figure}
+	\includegraphics[width=.9\columnwidth]{fig/HodgkinHuxleyFig2Simple.pdf}
+	\caption{The differing time constants of the rising
+	and falling edge of a neuronal square wave
+		\label{fig:DifferingTimeConstants}
+	}
+\end{figure}
+
+
+
+\ifx\magyar\undefined
+\section[The abstract ion channels]{The abstract ion channels \label{sec:AbstractIon channels}}
+
+Embedded in the wall of the membrane, a smaller amount of (controlled 
+and uncontrolled) ion channels are scattered.
+Between the membrane and the axon, there is an array of a large amount of uncontrolled ion channels (the Axon Initial Segment \gls{AIS}). 
+The elastic wall of the membrane is covered with ion layers, and therefore, a potential difference is created there (the resting potential).
+The membrane represents \textit{a confined space in which ions behave differently from in an infinite space}; furthermore, it significantly alters the properties of the few-nanometer-thick electrolyte layer near the membrane. In this layer, the concentration and potential change significantly with the distance from the membrane due to interactions between the membrane's ion layers and the electrolyte.
+Ion packages (spikes) sent by other neurons can enter the internal volume through controlled inputs (synapse).
+
+\else
+
+\section[Az absztrakt ioncsatornák]{Az absztrakt ioncsatornák \label{sec:AbstractIon channels}}
+A membrán falába ágyazva, nagyobb számú vezérelt és kisebb számú vezérlés nélküli ioncsatorna, a membrán és az axon között
+pedig egy nagyon sok vezérletlen ioncsatornát tartalmazó ion tömb 
+(az Axon Initial Segment \gls{AIS}) helyezkedik el.
+A rugalmas membrán falát ionrétegek borítják, és ezért
+potenciál különbség ("nyugalmi potenciál") keletkezik rajta.
+\textit{A membrán olyan zárt teret képez, amelyben az ionok a szabad térben
+ismerttől eltérő módon viselkednek}; továbbá, a membránon levő feszültség jelentősen megváltoztatja az elektrolitok tulajdonságait a 
+membránhoz közel eső néhány nanométer vastagságú rétegben. 
+Ebben a rétegben a koncentráció és a potenciál jelentősen függ
+a membrántól való távolságtól; ami a membrán ionrétegei és az
+elektrolit közötti kölcsönhatás következménye.
+A más neuronok által küldött ion csomagok (spikes) a belső térfogatba
+vezérelt bemeneteken (szinapszisokon)  át léphetnek be.
+\fi
+
+
+\ifx\magyar\undefined
+
+\else
+
+\fi

@@ -21,16 +21,6 @@ J.~von Neumann, {First draft of a report on the EDVAC}, IEEE Annals of the
 \newblock \href {https://doi.org/10.1109/85.238389}
   {\path{doi:10.1109/85.238389}}.
 
-\bibitem{VollmerLimitsOfBiology:1995}
-G.~Vollmer,
-  \href{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}{The
-  limits of biology}, in: D.~Prawitz, B.~Skyrms, D.~Westerståhl (Eds.), Logic,
-  Methodology and Philosophy of Science IX, Vol. 134 of Studies in Logic and
-  the Foundations of Mathematics, Elsevier, Amsterdam, 1995, pp. 659--676.
-\newblock \href {https://doi.org/https://doi.org/10.1016/S0049-237X(06)80068-6}
-  {\path{doi:https://doi.org/10.1016/S0049-237X(06)80068-6}}.
-\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}
-
 \bibitem{BrainInitiative10:2024}
 J.~Ngai, Brain @ 10: A decade of innovation, Neuron 112 (2024).
 \newblock \href {https://doi.org/10.1016/j.neuron.2024.09.007}
@@ -39,34 +29,14 @@ J.~Ngai, Brain @ 10: A decade of innovation, Neuron 112 (2024).
 \bibitem{HBP_1st_Review:2015}
 {Human Brain Project: The HBP flagship 1st technical project review} (2015).
 
-\bibitem{MolecularBiophysics:2003}
-J.~Tuszynski, M.~Kurzynski, Introduction to molecular biophysics, CRC Press,
-  Boca Raton, London, New York, Washington D.C., 2003.
-
 \bibitem{FeynmanThinking:1980}
 R.~P. Feynman, Principles of scientific thinking,
   \url{https://blog.hptbydts.com/richard-feynmans-principles-of-scientific-thinking}
   (1980).
 
-\bibitem{VeghNeuronAlgorithms:2025}
-J.~V{\'e}gh, {Algorithm for describing neuronal electric operation}, Algorithms
-  1 (2025).
-\newblock \href {https://doi.org/10.3390/a19010006}
-  {\path{doi:10.3390/a19010006}}.
-
-\bibitem{VeghNon-ordinaryLaws:2025}
-J.~V{\'e}gh, {The 'non-ordinary laws' of physics describing life}, {arXiv}, 1
-  (2025).
-
-\bibitem{VeghUnifiedCrossdisciplinaryModel:2026}
-J.~V{\'e}gh, \href{https://doi.org/10.48550/arXiv.2507.11448}{The unified
-  cross-disciplinary model of the operation of neurons} (2026).
-\newblock \href {http://arxiv.org/abs/2507.11448} {\path{arXiv:2507.11448}}.
-\newline\urlprefix\url{https://doi.org/10.48550/arXiv.2507.11448}
-
-\bibitem{Schrodinger:1992}
-E.~Schr\"odinger, Is life based on the laws of physics?, Cambridge University
-  Press, Canto, 1992, pp. 76--85.
+\bibitem{MolecularBiophysics:2003}
+J.~Tuszynski, M.~Kurzynski, Introduction to molecular biophysics, CRC Press,
+  Boca Raton, London, New York, Washington D.C., 2003.
 
 \bibitem{ThermodynamicAPDrukarch:2022}
 B.~Drukarch, M.~M.~M. Wilhelmus, S.~Shrivastava,
@@ -96,6 +66,10 @@ J.~V{\'e}gh, \href{https://www.mdpi.com/2076-3417/15/11/5805}{On implementing
   {\path{doi:10.3390/app15115805}}.
 \newline\urlprefix\url{https://www.mdpi.com/2076-3417/15/11/5805}
 
+\bibitem{Schrodinger:1992}
+E.~Schr\"odinger, Is life based on the laws of physics?, Cambridge University
+  Press, Canto, 1992, pp. 76--85.
+
 \bibitem{ConservationOfInformation:2021}
 Y.~A. Cengel, \href{https://www.mdpi.com/1099-4300/23/6/779}{On entropy,
   information, and conservation of information}, Entropy 23~(6) (2021).
@@ -108,6 +82,11 @@ T.~J. Sejnowski, C.~Koch, C.~P. S, Computational neuroscience, Science 9 (1988)
   1299--306.
 \newblock \href {https://doi.org/10.1126/science.3045969}
   {\path{doi:10.1126/science.3045969}}.
+
+\bibitem{GertstnerSpikingNeuronModels:2002}
+Gerstner, Kistler, \href{https://neuronaldynamics.epfl.ch/}{{Spiking Neuron
+  Models. Single Neurons, Populations, Plasticity}} (2002).
+\newline\urlprefix\url{https://neuronaldynamics.epfl.ch/}
 
 \bibitem{BuzsakiCellAssemblies:2010}
 G.~Buzs\'aki, {Neural syntax: cell assemblies, synapsembles, and readers},
@@ -145,6 +124,16 @@ N.~Caporale, Y.~Dan,
 \newblock \href {https://doi.org/10.1146/annurev.neuro.31.060407.125639}
   {\path{doi:10.1146/annurev.neuro.31.060407.125639}}.
 \newline\urlprefix\url{https://doi.org/10.1146/annurev.neuro.31.060407.125639}
+
+\bibitem{VeghNon-ordinaryLaws:2025}
+J.~V{\'e}gh, {The 'non-ordinary laws' of physics describing life}, {arXiv}, 1
+  (2025).
+
+\bibitem{VeghNeuronAlgorithms:2025}
+J.~V{\'e}gh, {Algorithm for describing neuronal electric operation}, Algorithms
+  1 (2025).
+\newblock \href {https://doi.org/10.3390/a19010006}
+  {\path{doi:10.3390/a19010006}}.
 
 \bibitem{KochBiophysics:1999}
 C.~Koch, Biophysics of Computation, Oxford University Press, New York, Oxford,
@@ -267,11 +256,6 @@ K.~S. Cole, H.~J. Curtis, Electric impedance of the squid giant axon during
 B.~Ermentrout, T.~H. David, Mathematical Foundations of Neuroscience, Springer,
   New York, 2010.
 
-\bibitem{GertstnerSpikingNeuronModels:2002}
-Gerstner, Kistler, \href{https://neuronaldynamics.epfl.ch/}{{Spiking Neuron
-  Models. Single Neurons, Populations, Plasticity}} (2002).
-\newline\urlprefix\url{https://neuronaldynamics.epfl.ch/}
-
 \bibitem{SingleNeuronComputation:2014}
 T.~McKenna, J.~Davis, S.~Zornetzer,
   \href{https://books.google.hu/books?id=n7CjBQAAQBAJ}{Single Neuron
@@ -284,6 +268,16 @@ M.~Almog, A.~Korngreen, Is realistic neuronal modeling realistic?, J
   Neurophysiol. 5 (2016) 2180--2209.
 \newblock \href {https://doi.org/doi: 10.1152/jn.00360.2016} {\path{doi:doi:
   10.1152/jn.00360.2016}}.
+
+\bibitem{VollmerLimitsOfBiology:1995}
+G.~Vollmer,
+  \href{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}{The
+  limits of biology}, in: D.~Prawitz, B.~Skyrms, D.~Westerståhl (Eds.), Logic,
+  Methodology and Philosophy of Science IX, Vol. 134 of Studies in Logic and
+  the Foundations of Mathematics, Elsevier, Amsterdam, 1995, pp. 659--676.
+\newblock \href {https://doi.org/https://doi.org/10.1016/S0049-237X(06)80068-6}
+  {\path{doi:https://doi.org/10.1016/S0049-237X(06)80068-6}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0049237X06800686}
 
 \bibitem{PerspectivesNerveSignalPropagation:2024}
 {Holland, L. and de Regt, H.W. and Drukarch, B.}, Two scientific perspectives
@@ -387,16 +381,49 @@ M.~C. Kiernan, K.~Cikurel, H.~Bostock,
   {\path{doi:10.1093/brain/124.4.816}}.
 \newline\urlprefix\url{https://doi.org/10.1093/brain/124.4.816}
 
+\bibitem{VeghUnifiedCrossdisciplinaryModel:2026}
+J.~V{\'e}gh, \href{https://doi.org/10.48550/arXiv.2507.11448}{The unified
+  cross-disciplinary model of the operation of neurons} (2026).
+\newblock \href {http://arxiv.org/abs/2507.11448} {\path{arXiv:2507.11448}}.
+\newline\urlprefix\url{https://doi.org/10.48550/arXiv.2507.11448}
+
+\bibitem{NeuronalDeformation:2020}
+T.~Ling, K.~Boyle, V.~Zuckerman, T.~Flores, C.~Ramakrishnan, K.~Deisseroth,
+  D.~Palanker, High-speed interferometric imaging reveals dynamics of neuronal
+  deformation during the action potential., Proc Natl Acad Sci U S A 117~(19)
+  (2020) 10278--10285.
+\newblock \href {https://doi.org/10.1073/pnas.1920039117}
+  {\path{doi:10.1073/pnas.1920039117}}.
+
+\bibitem{HydrostaticWaterColumn:2021}
+Extremtech, {Hydrostatic water column on an elastic plate},
+  \url{https://www.sphinxsys.org/html/examples/example8_2D_hydrostatic_fsi.html}
+  (2021).
+
+\bibitem{Hydrostatic_SPHinXsys:2021}
+C.~Zhang, M.~Rezavand, Y.~Zhu, Y.~Yu, D.~Wu, W.~Zhang, J.~Wang, X.~Hu,
+  {SPHinXsys: an open-source multi-physics and multi-resolution library based
+  on smoothed particle hydrodynamics}, {Computer Physics Communications} 267
+  (2021).
+
+\bibitem{HeatProductionNeuron:1958}
+B.~C. Abbott, A.~V. Hill, J.~V. Howarth, The positive and negative heat
+  production associated with a nerve impulse, Proc. R. Soc. London. B. 148
+  (1958) 149–187.
+
+\bibitem{HodgkinConduction:1964}
+A.~L. Hodgkin, The conduction of the nervous impulse, Liverpool University
+  Press, Liverpool, UK, 1964, 1964.
+
+\bibitem{ThermalBiophysics:2007}
+T.~Heimburg, Thermal Biophysics of Membranes, 1st Edition, 2007 WILEY-VCH
+  Verlag GmbH \& Co. KGaA, Weinheim, 2007.
+
 \bibitem{PerturbationSingleCell:2023}
 C.~Bunne, S.~Stark, G.~Gut, et~al., Learning single-cell perturbation responses
   using neural optimal transport, Nature Methods 20 (2023) 1759--1768.
 \newblock \href {https://doi.org/https://doi.org/10.1038/s41592-023-01969-x}
   {\path{doi:https://doi.org/10.1038/s41592-023-01969-x}}.
-
-\bibitem{HeatProductionNeuron:1958}
-B.~C. Abbott, A.~V. Hill, J.~V. Howarth, The positive and negative heat
-  production associated with a nerve impulse., Proc. R. Soc. London. B. 148
-  (1958) 149–187.
 
 \bibitem{CriticalElectricity:2018}
 B.~Drukarch, M.~Wilhelmus, {Thinking about the nerve impulse: A critical
@@ -468,18 +495,6 @@ I.~I. Ryzhkov, D.~V. Lebedev, V.~S. Solodovnichenko, A.~V. Minakov, M.~M.
 H.~Tamagawa, M.~Sasaki, W.~Lin, B.~Delalande, Is the membrane permeability the
   primary property for the membrane potential generation?, Mod Concept Material
   Sci. 6 (2024).
-
-\bibitem{Hodgkin-HuxleyAdsorption:2021}
-{Hirohisa Tamagawa and Titus Mulembo and Vera Maura {Fernandes de Lima} and
-  Wolfgang Hanke},
-  \href{https://www.sciencedirect.com/science/article/pii/S0079610721001279}{{Analyses
-  of HH and GHK equations with another perspective: Can ion adsorption also
-  govern trans-membrane potential?}}, Progress in Biophysics and Molecular
-  Biology 167 (2021) 3--11.
-\newblock \href
-  {https://doi.org/https://doi.org/10.1016/j.pbiomolbio.2021.10.004}
-  {\path{doi:https://doi.org/10.1016/j.pbiomolbio.2021.10.004}}.
-\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0079610721001279}
 
 \bibitem{CompanionGuideHodgkinHuxley:2022}
 A.~M. Brown, A companion guide to the Hodgkin-Huxley papers, The Physiological
@@ -567,14 +582,6 @@ A.~Das, {The special theory of relativity: a mathematical exposition}, 1st
   Vorg\"ange in bewegten K\"orpern}, Nachrichten von der K\"oniglichen
   Gesellschaft der Wissenschaften zu G\"ottingen (in German) (1908) 53--111.
 
-\bibitem{HodgkinConduction:1964}
-A.~L. Hodgkin, The conduction of the nervous impulse, Liverpool University
-  Press, Liverpool, UK, 1964, 1964.
-
-\bibitem{ThermalBiophysics:2007}
-T.~Heimburg, Thermal Biophysics of Membranes, 1st Edition, 2007 WILEY-VCH
-  Verlag GmbH \& Co. KGaA, Weinheim, 2007.
-
 \bibitem{MechanicalWaves:2015}
 A.~El~Hady, B.~B. Machta, {Mechanical surface waves accompany action potential
   propagation}, Nature Communications 6 (2019) 6697.
@@ -653,14 +660,6 @@ I.~Popov, Z.~Zhu, A.~e.~a. Young-Gonzales, {Search for a Grotthuss mechanism
 \newblock \href {https://doi.org/10.1038/s42004-023-00878-6}
   {\path{doi:10.1038/s42004-023-00878-6}}.
 
-\bibitem{ElectromagneticNeuron:2018}
-J.~Isakovic, I.~Dobbs-Dixon, D.~Chaudhury, et~al., Modeling of inhomogeneous
-  electromagnetic fields in the nervous system: a novel paradigm in
-  understanding cell interactions, disease etiology and therapy, Sci Rep 8
-  (2018).
-\newblock \href {https://doi.org/10.1038/s41598-018-31054-9}
-  {\path{doi:10.1038/s41598-018-31054-9}}.
-
 \bibitem{SpatiotemporalPrut:1998}
 Y.~Prut, E.~Vaadia, H.~Bergman, I.~Haalman, H.~Slovin, M.~Abeles,
   {Spatiotemporal Structure of Cortical Activity: Properties and Behavioral
@@ -670,19 +669,6 @@ Y.~Prut, E.~Vaadia, H.~Bergman, I.~Haalman, H.~Slovin, M.~Abeles,
 D.~Plenz, A.~Aertsen, {Neural dynamics in cortex-striatum ci-cultures -- II.
   Spatiotemporal Characteristics of Neural Activity}, {Neuroscience} 70/4
   (1996) 893--924.
-
-\bibitem{VeghIntroducingTemporalBehaviorScience:2020}
-J.~V{\'{e}}gh, \href{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}{{Why do we
-  need to Introduce Temporal Behavior in both Modern Science and Modern
-  Computing}}, Global Journal of Computer Science and Technology: Hardware \&
-  Computation 20/1 (2020) 13--29.
-\newline\urlprefix\url{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}
-
-\bibitem{BuzsakiVeghSpaceTime:2023}
-G.~Buzs\'aki, J.~V\'egh,
-  \href{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}{Space,
-  time and memory}, 1st Edition, Oxford University Press, 2025.
-\newline\urlprefix\url{https://global.oup.com/academic/product/space-time-and-memory-9780192882547}
 
 \bibitem{EinsteinMinkowskiRelativity:1977}
 L.~Pyenson, {Hermann Minkowski and Einstein's special theory of relativity},
@@ -768,6 +754,18 @@ H.~Tamagawa, S.~Morita, \href{https://www.mdpi.com/2077-0375/4/2/257}{Membrane
   {\path{doi:10.3390/membranes4020257}}.
 \newline\urlprefix\url{https://www.mdpi.com/2077-0375/4/2/257}
 
+\bibitem{Hodgkin-HuxleyAdsorption:2021}
+{Hirohisa Tamagawa and Titus Mulembo and Vera Maura {Fernandes de Lima} and
+  Wolfgang Hanke},
+  \href{https://www.sciencedirect.com/science/article/pii/S0079610721001279}{{Analyses
+  of HH and GHK equations with another perspective: Can ion adsorption also
+  govern trans-membrane potential?}}, Progress in Biophysics and Molecular
+  Biology 167 (2021) 3--11.
+\newblock \href
+  {https://doi.org/https://doi.org/10.1016/j.pbiomolbio.2021.10.004}
+  {\path{doi:https://doi.org/10.1016/j.pbiomolbio.2021.10.004}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0079610721001279}
+
 \bibitem{MembranePotentialKeyFunction:2023}
 H.~Tamagawa, T.~Nakahata, R.~Sugimori, B.~Delalande, M.~T, {The Membrane
   Potential Has a Primary Key Equation}, Acta Biotheoretica 71~(15) (2023).
@@ -838,14 +836,6 @@ B.~Hille, A.~C. M, R.~McKinnon, Ion channels: From idea to reality, Nature
 \newblock \href {https://doi.org/10.1126/science.7423196}
   {\path{doi:10.1126/science.7423196}}.
 
-\bibitem{NeuronalDeformation:2020}
-T.~Ling, K.~Boyle, V.~Zuckerman, T.~Flores, C.~Ramakrishnan, K.~Deisseroth,
-  D.~Palanker, High-speed interferometric imaging reveals dynamics of neuronal
-  deformation during the action potential., Proc Natl Acad Sci U S A 117~(19)
-  (2020) 10278--10285.
-\newblock \href {https://doi.org/10.1073/pnas.1920039117}
-  {\path{doi:10.1073/pnas.1920039117}}.
-
 \bibitem{RapidMechanicalBiphaseActionPotentialMeasured:1981}
 I.~Tasaki, K.~Iwasa, Rapid mechanical changes in crab nerve and squid axon
   during action potentials, J Physiol (Paris) 77 (1981) 1055--9.
@@ -874,17 +864,6 @@ D.~Fox, The brain, reimagined. brain cells communicate with mechanical pulses,
 \bibitem{VeghDANCES:2026}
 J.~V{\'{e}}gh, {Dynamic Abstract Neural Computing with Electronic Simulation},
   \url{https://jvegh.github.io/DANCES/} (Accessed on June 03, 2026) (2026).
-
-\bibitem{HydrostaticWaterColumn:2021}
-Extremtech, {Hydrostatic water column on an elastic plate},
-  \url{https://www.sphinxsys.org/html/examples/example8_2D_hydrostatic_fsi.html}
-  (2021).
-
-\bibitem{Hydrostatic_SPHinXsys:2021}
-C.~Zhang, M.~Rezavand, Y.~Zhu, Y.~Yu, D.~Wu, W.~Zhang, J.~Wang, X.~Hu,
-  {SPHinXsys: an open-source multi-physics and multi-resolution library based
-  on smoothed particle hydrodynamics}, {Computer Physics Communications} 267
-  (2021).
 
 \bibitem{SubmillisecondResolution:2008}
 I.~Nemenman, G.~D. Lewen, W.~Bialek, R.~R. de~Ruyter~van Steveninck, {Neural
@@ -1102,6 +1081,13 @@ IEEE/Accellera, {Systems initiative},
 \bibitem{SystemCBook:2010}
 C.~D. Black, J.~Donovan, B.~Bunton, A.~Keist, SystemC: From the Ground Up, 2nd
   Edition, Springer, New York, 2010.
+
+\bibitem{VeghIntroducingTemporalBehaviorScience:2020}
+J.~V{\'{e}}gh, \href{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}{{Why do we
+  need to Introduce Temporal Behavior in both Modern Science and Modern
+  Computing}}, Global Journal of Computer Science and Technology: Hardware \&
+  Computation 20/1 (2020) 13--29.
+\newline\urlprefix\url{https://doi.org/10.34257/GJCSTAVOL20IS1PG13}
 
 \bibitem{VeghMissingSecondDraft:2020}
 J.~V\'egh, {von Neumann's missing "Second Draft": what it should contain}, in:

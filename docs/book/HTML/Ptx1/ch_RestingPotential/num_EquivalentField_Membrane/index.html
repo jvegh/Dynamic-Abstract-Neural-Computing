@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>D.1 Deriving mebrane’s ”thermodynamic electrical field” ‣ Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Sun Aug 23 12:54:05 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on August 23, 2026.-->
+
+<link rel="shortcut icon" href="../../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../../latexmldoc.css" type="text/css">
+<script src="../../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="../index.html" title="Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up" href="../../index.html" title="Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up up" href="../../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="../../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="../index.html" title="Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="../sec_Physics-LayersInSegment/index.html" title="D.2 Charge layers in segment ‣ Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_Physics-LayersInSegment/index.html" title="D.2 Charge layers in segment ‣ Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_Physics-Goldman-Hodgkin-Katz/index.html" title="D.3 Goldman-Hodgkin-Katz potential ‣ Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_Physics-MovingPotential/index.html" title="D.4 Moving in the membrane’s potential ‣ Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../../ch_Modeling/index.html" title="Appendix A Modeling for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../../ch_Physics/index.html" title="Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../../ch_Thermodynamics/index.html" title="Appendix C Thermodynamics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../index.html" title="Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../../ch_Speculations/index.html" title="Appendix E Speculations ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="part" href="../../index.html" title="Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<meta name="keywords" lang="en" content="charge separation, equivalent thermodynamic electrical field, membrane, polarization">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">The Hodgkin-Huxley neuron model V2.0
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.5</em>
+<br class="ltx_break"></span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_part">
+<a href="../../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Appendices</span></a>
+<ol class="ltx_toclist ltx_toclist_part">
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Modeling/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modeling</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Physics/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">B</span> </span><span class="ltx_text" style="color:#000000;">Physics for neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Thermodynamics/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">C</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamics for neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a href="../index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D</span> </span><span class="ltx_text" style="color:#000000;">Resting Potential</span></span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_section ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.1</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamic field</span></span></span></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-LayersInSegment/index.html" title="In Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.2</span> </span><span class="ltx_text" style="color:#000000;">Charge layers</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Goldman-Hodgkin-Katz/index.html" title="In Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D.3 </span>Goldman-Hodgkin-Katz potential</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-MovingPotential/index.html" title="In Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D.4 </span>Moving in the membrane’s potential</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Speculations/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">E</span> </span><span class="ltx_text" style="color:#000000;">Speculations</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol>
+</li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href" style="font-size:90%;">Report issue</a><span class="ltx_text" style="font-size:90%;">
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</span></p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="../index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D</span> </span><span class="ltx_text" style="color:#000000;">Resting Potential</span></span></a><a href="../index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D</span> </span><span class="ltx_text" style="color:#000000;">Resting Potential</span></span></a><a href="../sec_Physics-LayersInSegment/index.html" title="In Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.2</span> </span><span class="ltx_text" style="color:#000000;">Charge layers</span></span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section">
+<h1 class="ltx_title ltx_title_section" style="color:#000000;">
+<span class="ltx_tag ltx_tag_section">D.1 </span>Deriving mebrane’s ”thermodynamic electrical field”</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">In section </span><a href="../../ch_Thermodynamics/phys_Nernst-Planck/index.html" title="C.1 Deriving the ”thermodynamic electrical field” ‣ Appendix C Thermodynamics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">C.1</span></a><span class="ltx_text" style="color:#000000;">, we introduced the idea
+of the ”equivalent thermodynamic electrical field”;
+</span><span class="ltx_text" style="color:#000000;">
+now we calculate it for the case of neuron membrane
+as shown in .</span></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="color:#00FF00;border-color: #00B300;"><span class="ltx_inline-logical-block ltx_parbox ltx_align_middle" style="width:433.6pt;background-color:#FFFFE6;">
+<span id="p3.p2" class="ltx_para">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Physics panel D.1.1:
+<br class="ltx_break"><a name="phys..EquivalentField_Membrane" id="phys..EquivalentField_Membrane" class="ltx_anchor">The membrane’s eqivalent electrical themodynamic field</a></span>
+
+We assume that, in a balanced state, the concentrations on the two sides of the membrane are <math id="p3.m1" class="ltx_Math" alttext="C_{k}^{ext}" display="inline"><msubsup><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">e</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">x</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">t</mi></mrow></msubsup></math> and <math id="p3.m2" class="ltx_Math" alttext="C_{k}^{in}" display="inline"><msubsup><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">i</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">n</mi></mrow></msubsup></math>, respectively; furthermore we assume that</span>
+<span id="A4.Ex1" class="ltx_equation ltx_eqn_table" style="background-color:#FFFFE6;">
+
+<span><span class="ltx_equation ltx_eqn_row ltx_align_baseline" style="background-color:#FFFFE6;">
+<span class="ltx_eqn_cell ltx_eqn_center_padleft"></span>
+<span class="ltx_eqn_cell ltx_align_center"><math id="A4.Ex1.m1" class="ltx_Math" alttext="\frac{dC_{k}}{dz}\approx\frac{C_{k}^{ext}-C_{k}^{in}}{d}" display="block"><mrow><mfrac mathcolor="#00FF00"><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">d</mi><mo>⁢</mo><msub><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi></msub></mrow><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">d</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">z</mi></mrow></mfrac><mo mathbackground="#FFFFE6" mathcolor="#00FF00">≈</mo><mfrac mathcolor="#00FF00"><mrow><msubsup><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">e</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">x</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">t</mi></mrow></msubsup><mo mathbackground="#FFFFE6" mathcolor="#00FF00">−</mo><msubsup><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">i</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">n</mi></mrow></msubsup></mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">d</mi></mfrac></mrow></math></span>
+<span class="ltx_eqn_cell ltx_eqn_center_padright"></span></span></span>
+</span>
+<span class="ltx_p">To simplify the math writing, we neglect the change caused by considering
+the difference (maybe we should apply a near-unity factor); we use the larger concentration value instead. Using the constants and <math id="p3.m3" class="ltx_Math" alttext="T=300" display="inline"><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">T</mi><mo mathbackground="#FFFFE6" mathcolor="#00FF00">=</mo><mn mathbackground="#FFFFE6" mathcolor="#00FF00">300</mn></mrow></math>, we can derive the ”equivalent thermodynamic electrical field” across the membrane for the case of a permeable ion channel in the membrane</span>
+<span id="eq:NernstPlanckThermal1" class="ltx_equation ltx_eqn_table" style="background-color:#FFFFE6;">
+
+<span><span class="ltx_equation ltx_eqn_row ltx_align_baseline" style="background-color:#FFFFE6;">
+<span class="ltx_eqn_cell ltx_eqn_center_padleft"></span>
+<span class="ltx_eqn_cell ltx_align_center"><math id="A4.E1.m1" class="ltx_Math" alttext="E_{thermal}^{C_{k}}=-\frac{RT}{q*F}\frac{1}{C_{k}^{ext}}\frac{C_{k}^{ext}-C_{k%
+}^{in}}{d}\approx-\frac{RT}{q*F}\frac{1}{d}" display="block"><mrow><msubsup><mi mathbackground="#FFFFE6" mathcolor="#00FF00">E</mi><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">t</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">h</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">e</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">r</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">m</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">a</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">l</mi></mrow><msub><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi></msub></msubsup><mo mathbackground="#FFFFE6" mathcolor="#00FF00">=</mo><mrow><mo mathbackground="#FFFFE6" mathcolor="#00FF00">−</mo><mrow><mfrac mathcolor="#00FF00"><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">R</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">T</mi></mrow><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">q</mi><mo lspace="0.222em" mathbackground="#FFFFE6" mathcolor="#00FF00" rspace="0.222em">∗</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">F</mi></mrow></mfrac><mo>⁢</mo><mfrac mathcolor="#00FF00"><mn mathbackground="#FFFFE6" mathcolor="#00FF00">1</mn><msubsup><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">e</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">x</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">t</mi></mrow></msubsup></mfrac><mo>⁢</mo><mfrac mathcolor="#00FF00"><mrow><msubsup><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">e</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">x</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">t</mi></mrow></msubsup><mo mathbackground="#FFFFE6" mathcolor="#00FF00">−</mo><msubsup><mi mathbackground="#FFFFE6" mathcolor="#00FF00">C</mi><mi mathbackground="#FFFFE6" mathcolor="#00FF00">k</mi><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">i</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">n</mi></mrow></msubsup></mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">d</mi></mfrac></mrow></mrow><mo mathbackground="#FFFFE6" mathcolor="#00FF00">≈</mo><mrow><mo mathbackground="#FFFFE6" mathcolor="#00FF00">−</mo><mrow><mfrac mathcolor="#00FF00"><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">R</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">T</mi></mrow><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">q</mi><mo lspace="0.222em" mathbackground="#FFFFE6" mathcolor="#00FF00" rspace="0.222em">∗</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">F</mi></mrow></mfrac><mo>⁢</mo><mfrac mathcolor="#00FF00"><mn mathbackground="#FFFFE6" mathcolor="#00FF00">1</mn><mi mathbackground="#FFFFE6" mathcolor="#00FF00">d</mi></mfrac></mrow></mrow></mrow></math></span>
+<span class="ltx_eqn_cell ltx_eqn_center_padright"></span>
+<span rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right"><span class="ltx_text" style="color:#000000;">(D.1)</span></span></span></span></span>
+</span>
+</span>
+<span id="p3.p1" class="ltx_para ltx_noindent">
+<span class="ltx_p">The equivalent thermodynamic electric field does not depend on concentration, but rather is linear in temperature and inversely proportional to membrane thickness (given in <math id="p3.p1.m1" class="ltx_Math" alttext="nm" display="inline"><mrow><mi mathbackground="#FFFFE6" mathcolor="#00FF00">n</mi><mo>⁢</mo><mi mathbackground="#FFFFE6" mathcolor="#00FF00">m</mi></mrow></math>).
+We provide the numerical values in <span class="ltx_text ltx_font_bold">Numerics panel <span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_tag">D.1</span></span></span> for the case of ion channels in the membrane’s wall.</span>
+</span></span><span class="ltx_text" style="background-color:#FFFFE6;">
+</span></span><span class="ltx_text" style="color:#00FF00;">
+</span><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_framed ltx_framed_rectangle" style="color:#0000FF;border-color: #4D4DFF;">
+<span class="ltx_inline-block ltx_parbox ltx_align_middle" style="width:433.6pt;background-color:#E6FFE6;">
+<span class="ltx_p"><span class="ltx_text ltx_font_bold">Numerics panel D.1.1:
+<br class="ltx_break"><a name="num..EquivalentField_Membrane" id="num..EquivalentField_Membrane" class="ltx_anchor">Neuron’s equivalent
+thermodynamic electrical field
+</a></span>
+
+It is valid separately for all <math id="p5.m1" class="ltx_Math" alttext="C_{k}" display="inline"><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">C</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">k</mi></msub></math></span>
+<span id="eq:NernstPlanckThermal2" class="ltx_equation ltx_eqn_table" style="background-color:#E6FFE6;">
+
+<span><span class="ltx_equation ltx_eqn_row ltx_align_baseline" style="background-color:#E6FFE6;">
+<span class="ltx_eqn_cell ltx_eqn_center_padleft"></span>
+<span class="ltx_eqn_cell ltx_align_center"><math id="A4.E2.m1" class="ltx_Math" alttext="E_{thermal}^{C_{k}}(d)=-2.585*10^{-2}\frac{1}{d}\quad\biggl{[}\frac{V}{m}%
+\biggr{]}" display="block"><mrow><mrow><msubsup><mi mathbackground="#E6FFE6" mathcolor="#0000FF">E</mi><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">t</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">h</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">e</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">r</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">a</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">l</mi></mrow><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">C</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">k</mi></msub></msubsup><mo>⁢</mo><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">(</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">d</mi><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mrow><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">−</mo><mrow><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">2.585</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mn mathbackground="#E6FFE6" mathcolor="#0000FF">10</mn><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">−</mo><mn mathbackground="#E6FFE6" mathcolor="#0000FF">2</mn></mrow></msup></mrow><mo>⁢</mo><mfrac mathcolor="#0000FF"><mn mathbackground="#E6FFE6" mathcolor="#0000FF">1</mn><mi mathbackground="#E6FFE6" mathcolor="#0000FF">d</mi></mfrac></mrow></mrow><mspace width="1em"></mspace><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">[</mo><mfrac mathcolor="#0000FF"><mi mathbackground="#E6FFE6" mathcolor="#0000FF">V</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mfrac><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">]</mo></mrow></mrow></mrow></math></span>
+<span class="ltx_eqn_cell ltx_eqn_center_padright"></span>
+<span rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right"><span class="ltx_text" style="color:#000000;">(D.2)</span></span></span></span></span>
+</span>
+<span class="ltx_p">Figure <a href="#fig:NernstPlanckThermalWidth" title="Figure D.1 ‣ D.1 Deriving mebrane’s ”thermodynamic electrical field” ‣ Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag">D.1</span></a> depicts the field’s dependence on the membrane’s width and how it compares
+to the charge-generated electrical field.
+The figure illustrates the setpoint(see section <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:Physics-ControlTheory</span>), the boundaries of the changes, and the interesting phenomena that occur within the shaded cross-section. The figure is an illustration, but its figures are not far from the true ones. For a <math id="p5.m2" class="ltx_Math" alttext="5\ nm" display="inline"><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">5</mn><mo lspace="0.500em">⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">n</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mrow></math> membrane thickness, it results in <math id="p5.m3" class="ltx_Math" alttext="5.17*10^{6}\ \frac{V}{m}" display="inline"><mrow><mrow><mn mathbackground="#E6FFE6" mathcolor="#0000FF">5.17</mn><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><msup><mn mathbackground="#E6FFE6" mathcolor="#0000FF">10</mn><mn mathbackground="#E6FFE6" mathcolor="#0000FF">6</mn></msup></mrow><mo>⁢</mo><mfrac mathcolor="#0000FF"><mi mathbackground="#E6FFE6" mathcolor="#0000FF">V</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi></mfrac></mrow></math>, which compares well to the value provided by Eq. (<span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:eq:ElectricGradient</span>).
+(Notice that the membrane’s thickness may change
+during the action potential, see <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib41" title="" class="ltx_ref">41</a>]</cite>:
+the rush-in extra charge compresses the membrane. Similarly, the concentration of the electrolyte in proximity to the membrane
+also changes.) Correspondingly, by using that <math id="p5.m4" class="ltx_Math" alttext="U=E*d" display="inline"><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">U</mi><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">E</mi><mo lspace="0.222em" mathbackground="#E6FFE6" mathcolor="#0000FF" rspace="0.222em">∗</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">d</mi></mrow></mrow></math>,</span>
+<span id="eq:NernstPlanckThermal2A" class="ltx_equation ltx_eqn_table" style="background-color:#E6FFE6;">
+
+<span><span class="ltx_equation ltx_eqn_row ltx_align_baseline" style="background-color:#E6FFE6;">
+<span class="ltx_eqn_cell ltx_eqn_center_padleft"></span>
+<span class="ltx_eqn_cell ltx_align_center"><math id="A4.E3.m1" class="ltx_Math" alttext="U_{thermal}^{C_{k}}(5)=-25.85\quad\biggl{[}{mV}\biggr{]}" display="block"><mrow><mrow><msubsup><mi mathbackground="#E6FFE6" mathcolor="#0000FF">U</mi><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">t</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">h</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">e</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">r</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">a</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">l</mi></mrow><msub><mi mathbackground="#E6FFE6" mathcolor="#0000FF">C</mi><mi mathbackground="#E6FFE6" mathcolor="#0000FF">k</mi></msub></msubsup><mo>⁢</mo><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">(</mo><mn mathbackground="#E6FFE6" mathcolor="#0000FF">5</mn><mo mathbackground="#E6FFE6" mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">=</mo><mrow><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF">−</mo><mn mathbackground="#E6FFE6" mathcolor="#0000FF">25.85</mn></mrow><mspace width="1em"></mspace><mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">[</mo><mrow><mi mathbackground="#E6FFE6" mathcolor="#0000FF">m</mi><mo>⁢</mo><mi mathbackground="#E6FFE6" mathcolor="#0000FF">V</mi></mrow><mo mathbackground="#E6FFE6" mathcolor="#0000FF" maxsize="210%" minsize="210%">]</mo></mrow></mrow></mrow></math></span>
+<span class="ltx_eqn_cell ltx_eqn_center_padright"></span>
+<span rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right"><span class="ltx_text" style="color:#000000;">(D.3)</span></span></span></span></span>
+</span>
+</span><span class="ltx_text" style="background-color:#E6FFE6;">
+</span></span><span class="ltx_text" style="color:#0000FF;">
+</span><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+<figure id="fig:NernstPlanckThermalWidth" class="ltx_figure"><object type="image/svg+xml" data="fig/NernstPlanckThermal.svg" id="A4.F1.g1" class="ltx_graphics ltx_img_square" width="598" height="503"></object>
+<figcaption class="ltx_caption" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure D.1: </span>
+The thermodynamic ”electrical field” depends on the membrane’s thickness, see Eq.(<a href="#eq:NernstPlanckThermal2" title="In D.1 Deriving mebrane’s ”thermodynamic electrical field” ‣ Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_tag"><span class="ltx_text" style="color:#000000;">D.2</span></span></a>). The electrical gradient depends on the charged layer’s concentration and thickness; see Eq.(<span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:eq:ElectricGradient</span>). The dots mark measured data shown in Table <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:Tab:SummaryTable</span>.
+
+</figcaption>
+</figure>
+<div id="p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">In simple words, the Nernst-Planck equation states that the changes in
+concentrations of ions create changes in the electrical field (and
+vice versa), and in a stationary state, they remain unchanged.
+Notice that in the case of an ion mixture, a joint charge-generated electrical field exists, and they equal, per ion, the concentration-generated ”electrical fields”, see section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Physiology-DerivingRestingPotential</span><span class="ltx_text" style="color:#000000;">.</span></p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">In the steady state, in contrast with the case of an ion in the infinite space, some other forces also contribute to
+the mentioned ones. To discuss how nature restores the steady state when a microscopic change occurs in a
+balanced state of a biological solution, we write the well-known Nernst-Planck
+equation (see Eq.(</span><a href="../../ch_Thermodynamics/phys_Nernst-Planck/index.html#eq:NernstPlanck" title="In C.1 Deriving the ”thermodynamic electrical field” ‣ Appendix C Thermodynamics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag"><span class="ltx_text" style="color:#000000;">C.1</span></span></a><span class="ltx_text" style="color:#000000;">)) in a slightly extended form:</span></p>
+<table id="Chx3.S1.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="A4.E4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="A4.E4.m1" class="ltx_Math" alttext="\displaystyle\underbrace{\bigl{(}-F_{constr}(z)\bigr{)}}_{Constraint}" display="inline"><munder><munder accentunder="true"><mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">(</mo><mrow><mo mathcolor="#000000">−</mo><mrow><msub><mi mathcolor="#000000">F</mi><mrow><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi></mrow></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">)</mo></mrow><mo mathcolor="#000000">⏟</mo></munder><mrow><mi mathcolor="#000000">C</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></munder></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="A4.E4.m2" class="ltx_Math" alttext="\displaystyle=\underbrace{e_{el}*E_{Gap}^{Total}(c,\Delta z)}_{Electrical}+%
+\underbrace{e_{el}*E_{thermal}^{{\color[rgb]{1,0,0}C_{k}}}(d)}_{Thermodynamic}" display="inline"><mrow><mi></mi><mo mathcolor="#000000">=</mo><mrow><munder><munder accentunder="true"><mrow><mrow><msub><mi mathcolor="#000000">e</mi><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msub><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msubsup><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">G</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow><mrow><mi mathcolor="#000000">T</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msubsup></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">c</mi><mo mathcolor="#000000">,</mo><mrow><mi mathcolor="#000000" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#000000">z</mi></mrow><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">⏟</mo></munder><mrow><mi mathcolor="#000000">E</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></munder><mo mathcolor="#000000">+</mo><munder><munder accentunder="true"><mrow><mrow><msub><mi mathcolor="#000000">e</mi><mrow><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></msub><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><msubsup><mi mathcolor="#000000">E</mi><mrow><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">h</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow><msub><mi mathcolor="#FF0000">C</mi><mi mathcolor="#FF0000">k</mi></msub></msubsup></mrow><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">d</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#000000">⏟</mo></munder><mrow><mi mathcolor="#000000">T</mi><mo>⁢</mo><mi mathcolor="#000000">h</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">d</mi><mo>⁢</mo><mi mathcolor="#000000">y</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">c</mi></mrow></munder></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(D.4)</span></td>
+</tr></tbody>
+<tbody id="eq:NernstPlanckExtended"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="A4.E5.m1" class="ltx_Math" alttext="\displaystyle\underbrace{\bigl{(}+F_{Transp}(z)\bigr{)}}_{Transport}%
+\underbrace{\bigl{(}+F_{Invasion}(z)\bigr{)}}_{External}" display="inline"><mrow><munder><munder accentunder="true"><mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">(</mo><mrow><mo mathcolor="#000000">+</mo><mrow><msub><mi mathcolor="#000000">F</mi><mrow><mi mathcolor="#000000">T</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">)</mo></mrow><mo mathcolor="#000000">⏟</mo></munder><mrow><mi mathcolor="#000000">T</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi></mrow></munder><mo>⁢</mo><munder><munder accentunder="true"><mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">(</mo><mrow><mo mathcolor="#000000">+</mo><mrow><msub><mi mathcolor="#000000">F</mi><mrow><mi mathcolor="#000000">I</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">v</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi><mo>⁢</mo><mi mathcolor="#000000">i</mi><mo>⁢</mo><mi mathcolor="#000000">o</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi></mrow></msub><mo>⁢</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">z</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#000000" maxsize="120%" minsize="120%">)</mo></mrow><mo mathcolor="#000000">⏟</mo></munder><mrow><mi mathcolor="#000000">E</mi><mo>⁢</mo><mi mathcolor="#000000">x</mi><mo>⁢</mo><mi mathcolor="#000000">t</mi><mo>⁢</mo><mi mathcolor="#000000">e</mi><mo>⁢</mo><mi mathcolor="#000000">r</mi><mo>⁢</mo><mi mathcolor="#000000">n</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi></mrow></munder></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(D.5)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We multiplied the usual two terms by the elementary charge, so its terms are expressed as forces, plus we added an external force (its role is discussed below). Furthermore, changing one force triggers a corresponding counterforce and/or causes the ion to move in a viscous fluid. That is, the speed of the material transport gradually changes
+as the steady state approached; furthermore, it is by orders of magnitude smaller than the speed of the interactions.
+When neuroscience teaches that ”pumps that maintain
+ion gradients …transport ions against their
+electrical and chemical gradients” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib2" title="" class="ltx_ref">2</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">, page 101, one shall ask </span><span class="ltx_text ltx_font_italic" style="color:#000000;">what kind of force acts on the ion</span><span class="ltx_text" style="color:#000000;">, keeping in mind
+E. Schrödinger’s opinion that not ”any ‘new force’ or what not” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib1" title="" class="ltx_ref">1</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> affects ions’ motion.</span></p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">An interesting option is when the counterforce combines two disciplines.
+When </span><math id="p8.m1" class="ltx_Math" alttext="Na^{+}" display="inline"><mrow><mi mathcolor="#000000">N</mi><mo>⁢</mo><msup><mi mathcolor="#000000">a</mi><mo mathcolor="#000000">+</mo></msup></mrow></math><span class="ltx_text" style="color:#000000;"> ions rush-in at the beginning into the membrane,
+they produce simultaneously a huge electrical and thermodynamic gradient.
+The repulsion among the ions creates a huge mechanical pressure
+that presses the elastic membrane. The counterforce starts a mechanical
+shock wave (soliton) </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib15" title="" class="ltx_ref">15</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">, that is simultaneously
+an electrical potential wave </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib16" title="" class="ltx_ref">16</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> that is measured as </span><a href="../../Ch_Index/index.html#glo.main.AP"><span href="../../Ch_Index/index.html#glo.main.AP" title="Action Potential" class="ltx_glossaryref" style="color:#000000;">AP</span></a><span class="ltx_text" style="color:#000000;">. Only using cross-disciplinary discussion (non-ordinary laws) enables understanding neuronal operation.
+That means when describing an ionic transfer process, </span><span class="ltx_text ltx_font_italic" style="color:#000000;">we must not separate the electrical current from the mass transfer</span><span class="ltx_text" style="color:#000000;">: they happen simultaneously and mutually trigger each other. Notice that the thermodynamic term is ion-specific while the electrical term is not. To be entirely balanced, the system must be balanced to all elements. In this way, changing one concentration implicitly changes all other concentrations and the electrical field.</span></p>
+</div>
+<div id="p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">It was a colossal mistake to introduce equivalent circuits with their fixed-value voltage generators. It forces one to assume that the
+conductances of the players (membrane, synapses, </span><a href="../../Ch_Index/index.html#glo.main.AIS"><span href="../../Ch_Index/index.html#glo.main.AIS" title="Axon Initial Segment" class="ltx_glossaryref" style="color:#000000;">AIS</span></a><span class="ltx_text" style="color:#000000;">)
+change
+without any reason and prevents understanding how the competition between thermodynamic and electrical processes governs neuronal operation.
+It leads, among others, to attributing conductance change to membranes, which are simple isolators with no charge carriers that can implement
+charge transfer, see section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:IonicCurrent</span><span class="ltx_text" style="color:#000000;">; this way
+attributing the change of an electrical entity to the biological material.
+This assumption neglects the driving force the mentioned forces provide.
+Instead, it attributes the magic ability to the ion channels that they
+can change their transmission ability as the actual situation requires.</span></p>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">When discussing balanced states, no transport occurs, so the transport force cancels, and the mobility has no role. The counterforce adapts to the situation.
+That force may be a mechanical one:
+the ions sitting on the surface of the membrane press the
+surface due to the attractive force of ions, and the membrane mechanically provides the needed
+counterforce.
+If the boundary of the segments is not freely penetrable, the counterforce equals the difference between
+those two forces. In this way, no force acts on the ions; the two gradients persist. When the ions can move freely between the segments, they will move until they produce a concentration gradient (a thermodynamic force) for the given ionWhen neuroscience teaches that ”pumps that maintain
+ion gradients …transport ions against their
+electrical and chemical gradients” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib2" title="" class="ltx_ref">2</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">, page 101, one shall ask what kind of force acts on the ion, keeping in mind
+E. Schrödinger’s opinion that not ”any ‘new force’ or what not” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib1" title="" class="ltx_ref">1</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> affects ions’ motion.
+that counterbalances the electrical gradient (the electrical force)
+and then the transport stops. A transport force is needed to reach the Stokes-Einstein speed (see Eq.(</span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:eq:StokesEinsteinSpeeddV</span><span class="ltx_text" style="color:#000000;">)) in a viscous fluid.</span></p>
+</div>
+<div id="p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We must not forget that initially, the Nernst-Planck equation described
+a transfer process (i.e., a dynamic equation), assuming the same speed for mass and
+charge transfers. We used it only to describe the balanced state (i.e., a static equation at zero speed) and added the term describing external (such as mechanical constraint) force that
+may be involved; it affects the process, but it does not belong to either of the respective fields. Commonly known mechanical constraints appear in a non-conducting layer called the membrane, where that counterforce prevents ions from penetrating the membrane layers.
+A membrane is a perfect isolator, i.e., no charge carriers exist
+between its two surfaces, so it is senseless to introduce the notion of its conductance. (There may be ion channels that deliver ions built into the membrane, but it is a different subject.) The separation results from </span><span class="ltx_text ltx_font_italic" style="color:#000000;">charge separation</span><span class="ltx_text" style="color:#000000;">, a mechanism distinct from </span><span class="ltx_text ltx_font_italic" style="color:#000000;">polarization</span><span class="ltx_text" style="color:#000000;">, as typically described in most biology textbooks.
+In the form we derived, the equation correctly describes
+the ion transfer, a current conveying ions with the speed controlled by the actual gradients, instead of assuming an ion current traveling
+with the apparent speed of electrical current in solids.</span></p>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">We must not forget that originally the Nernst-Planck equation described
+a transfer process (i.e., a dynamic equation), assuming the same speed for mass and
+charge transfers. We used it only to describe the balanced state (i.e., a static equation, at zero speed), and added the term describing external (such as mechanical constraint) force
+may be involved; it affects the process, but it does not belong to either of the respective fields. Commonly known mechanical constraints are a non-conducting layer, called membrane, where that counterforce prevents ions from penetrating the membrane layers.
+A membrane is a perfect isolator, i.e., no charge carriers exist
+between its two surfaces. (There may be ion channels, that deliver ions, built into the membrane, as we discuss in section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Demon-in-the-membrane</span><span class="ltx_text" style="color:#000000;">, but it is a different subject.) The current clearly results from </span><span class="ltx_text" style="color:#000000;">charge separation; a mechanism distinct from </span><span class="ltx_text" style="color:#000000;">polarization most biology textbook uses.
+</span><span class="ltx_text" style="color:#000000;">
+In the form we derived, the equation correctly describes
+the ion transfer, a current conveying ions with the speed controlled by the actual gradients, instead of assuming an ion current traveling
+with the apparent speed of electrical current in solids.</span></p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="../index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D</span> </span><span class="ltx_text" style="color:#000000;">Resting Potential</span></span></a><a href="../../bib.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="../sec_Physics-LayersInSegment/index.html" title="In Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D.2</span> </span><span class="ltx_text" style="color:#000000;">Charge layers</span></span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Aug 23 12:54:05 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

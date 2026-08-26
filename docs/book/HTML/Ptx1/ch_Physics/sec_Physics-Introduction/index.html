@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>B.1 Introduction ‣ Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0</title>
+<!--Generated on Sun Aug 23 12:54:05 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on August 23, 2026.-->
+
+<link rel="shortcut icon" href="../../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../../latexmldoc.css" type="text/css">
+<script src="../../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="../index.html" title="Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up" href="../../index.html" title="Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="up up up" href="../../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="start" href="../../../index.html" title="The Hodgkin-Huxley neuron model V2.0">
+<link rel="prev" href="../index.html" title="Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="next" href="../phys_Schr%C3%B6dingerNonOrdinaryLaws/index.html" title="B.2 Schrödinger on life ‣ Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../phys_Schr%C3%B6dingerNonOrdinaryLaws/index.html" title="B.2 Schrödinger on life ‣ Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_Physics-Abstraction/index.html" title="B.3 Science concepts ‣ Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="section" href="../sec_Physics-Addendum/index.html" title="B.4 Addendum ‣ Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../../ch_Modeling/index.html" title="Appendix A Modeling for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../index.html" title="Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../../ch_Thermodynamics/index.html" title="Appendix C Thermodynamics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../../ch_RestingPotential/index.html" title="Appendix D Resting Potential ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="appendix" href="../../ch_Speculations/index.html" title="Appendix E Speculations ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<link rel="part" href="../../index.html" title="Appendices ‣ The Hodgkin-Huxley neuron model V2.0">
+<meta name="keywords" lang="en" content="Lotka-Volterra type differential equation, complete measurement, law of conservation in biology , laws of motion, ordinary laws, thermodynamic electrical potential">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p">The Hodgkin-Huxley neuron model V2.0
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics and physiology
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">Version <em class="ltx_emph ltx_font_italic">0.0.5</em>
+<br class="ltx_break"></span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_part">
+<a href="../../index.html" title="In The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Appendices</span></a>
+<ol class="ltx_toclist ltx_toclist_part">
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Modeling/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modeling</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a href="../index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">B</span> </span><span class="ltx_text" style="color:#000000;">Physics for neurons</span></span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_section ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.1 </span>Introduction</span></span></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../phys_Schr%C3%B6dingerNonOrdinaryLaws/index.html" title="In Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.2 </span>Schrödinger on life</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Abstraction/index.html" title="In Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.3 </span>Science concepts</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Addendum/index.html" title="In Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.4 </span>Addendum</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Thermodynamics/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">C</span> </span><span class="ltx_text" style="color:#000000;">Thermodynamics for neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_RestingPotential/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">D</span> </span><span class="ltx_text" style="color:#000000;">Resting Potential</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="../../ch_Speculations/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">E</span> </span><span class="ltx_text" style="color:#000000;">Speculations</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol>
+</li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href" style="font-size:90%;">Report issue</a><span class="ltx_text" style="font-size:90%;">
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</span></p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="../index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">B</span> </span><span class="ltx_text" style="color:#000000;">Physics for neurons</span></span></a><a href="../index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">B</span> </span><span class="ltx_text" style="color:#000000;">Physics for neurons</span></span></a><a href="../phys_Schr%C3%B6dingerNonOrdinaryLaws/index.html" title="In Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.2 </span>Schrödinger on life</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section">
+<h1 class="ltx_title ltx_title_section" style="color:#000000;">
+<span class="ltx_tag ltx_tag_section">B.1 </span>Introduction</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Knowledge of the fundamental (physical) functioning of the biological neuron is essential for understanding its electrical processes and the excitation process, information processing based on signal transmission between neurons, and the low-level functioning of the brain. Although the fact that neurons show electrically measurable changes (i.e., belonging to the subject of electrical science) has been known since the beginning of instrumental studies, it was soon demonstrated that changes falling within the subject of thermodynamics and mechanics (i.e., another, separate discipline of physics) can also be measured. In the traditional view of physics, each discipline interprets only a certain range of quantities and can only derive relationships and laws between them. Nature, of course, does not care about the disciplinary nature of science, so science is essentially puzzled by the “miracle” that during the operation of a neuron interpreted as a purely electrical model, quantities falling within the scope of other disciplines (temperature, pressure) also change. The logic of things follows that then one must try to describe the experiences with the tools and laws of each discipline. In this way, it is possible to perform a “complete measurement”,
+</span><span class="ltx_text" style="color:#000000;">
+i.e. to experimentally measure all quantities that are related to the operation of the neuron, but no connection is established between the disciplinary laws and quantities.</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Although it is obvious that all phenomena are related to the same physical process, and the quantities are clearly correlated, a qualitative step forward is needed that does not simply put together the disciplinary laws developed for inanimate science, but rather adapts them to the conditions of living matter and creates the necessary connections between them. The infinitely distant, infinitely small change-causing concepts of physics, and disciplinary separation, are certainly not applicable. The amount of electric charges changing their location during operation is of the same order of magnitude as the amount of free charges on the membrane surface, so we can only use Lotka-Volterra type differential equations
+</span><span class="ltx_text" style="color:#000000;">
+to describe electrical changes (the usual use of “equivalent current circuits” is incorrect and misleading), and furthermore, between the closed biological boundary walls of neurons, the interaction of ions on each other creates a counterforce on the wall and the change in the counterforce creates a pressure change in the electrolyte filling the cell. The elastic lipid layer forming the neuron wall undergoes a size change due to the pressure change (although it has a constant modulus of elasticity: during operation, the neuron’s size of about 25 micrometers changes by only about 1 nanometer).</span></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Although it is known from the beginning of scientific thinking that the material world around us
+comprises discrete objects (particles) that cannot be divided without limitations at a given abstraction level,
+most of the scientific laws were devised for a continuous material,
+such as the laws about pressure and current.
+Our laws about mass and charge (and so: on energy, momentum, and so on),
+are about continuous concepts.
+In our everyday practice, the discrete nature of the matter
+that is considered to be continuous, causes no trouble;
+the laws abstracted in the continuous view perfectly
+describe our phenomena.
+Thermodynamics was the first discipline
+which connected two of those separated attributes, the discrete and continuous views. Similarly, a new discipline was born when Planck had to hypothesize that energy also has
+discrete constituents.
+We must follow a similar way of thinking when discussing
+phenomena of a very small amount of discrete objects in limited volumes of biological matter.</span></p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Furthermore, science has created abstract concepts such as space and time, mass and charge, continuous and discrete views. </span><span class="ltx_text ltx_font_italic" style="color:#000000;">Classical science considered only one such concept at a time.</span><span class="ltx_text" style="color:#000000;">
+Classical disciplines can discuss only one abstracted attribute of ions: classical mechanics can discuss its mass
+and classical electricity its charge.
+Neither of the mentioned disciplines, alone, can describe systems containing ions.
+Essentially, the electricity, thermodynamics and mechanics
+of ions in closer resemblance with the mentioned non-classical isciplines than with a classical one.
+Because of this, one can take over laws from the latter ones
+with great care; especially what wanting to apply them to
+the special structures of living matter.</span></p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The roles of time, space and matter are subjects of endless debates in science.
+Considering finite interaction speeds is against using a ”nice and classical physics”
+with its nice mathematical formulas, but omitting the different speeds
+misled and may mislead research in several fields.
+Biology produces situations where the complexity of phenomena
+and the needed carefulness meets the ones needed in cosmology.
+The difference is that, in biology, the consequences of phenomena are immediate
+and they can be studied experimentally.</span></p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">To describe the related phenomena, we must scrutinize, case by case, which interactions are significant and
+which interaction(s) can be omitted; instead of setting up ad-hoc models for living matter that contradict
+each other and fundamental scientific principles when used outside their narrow range of validity. To provide their
+correct physics-based description, we must understand the corresponding behavior of living material, including that it works with slow ion currents,
+electrically active, non-isotropic, structured materials,
+and consequently, its temporal behavior (the speeds of interactions)
+matters. We must consider macroscopic and microscopic phenomena (continuous and discrete features) at the same time, different
+science fields, and their interplay (or mixing). ”</span><a href="https://www.pnas.org/doi/10.1073/pnas.1705704114" title="" class="ltx_ref ltx_href" style="color:#000000;">Living complex systems</a><span class="ltx_text" style="color:#000000;"> in
+particular create high-ordered functionalities by pairing up low-ordered
+complementary processes, e.g., one process to build and the other
+to correct”. </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib21" title="" class="ltx_ref">21</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">
+</span><span class="ltx_text" style="color:#000000;">
+We must check the validity of our abstractions.</span></p>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">First of all, we introduce (and, in this aspect, correct the current common understanding)
+that neurons’ ”output product” </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><span class="ltx_ref ltx_missing_citation ltx_ref_self">BuzsakiCellAssemblies:2010</span><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">
+</span><span class="ltx_text ltx_font_italic" style="color:#000000;">is created and transmitted by thermoelectric processes instead of
+net electric phenomena or net thermodynamic</span><span class="ltx_text" style="color:#000000;">.
+Feynman was right, also in this point: ”</span><span class="ltx_text ltx_font_italic" style="color:#000000;">nature is not interested in our separations, and many of the interesting phenomena bridge the gaps between fields.</span><span class="ltx_text" style="color:#000000;">”  </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib44" title="" class="ltx_ref">44</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">
+We derive the correct mathematical and physical handling processes,
+not considering the disciplinary boundaries, pointing to where
+the </span><a href="../sec_Physics-Abstraction/index.html#Abstractions" title="range of phenomena, we use approximations and omissions, and we create abstractions ‣ Science disciplinarity ‣ B.3 Science concepts ‣ Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" style="color:#000000;">disciplinary omissions and approximations</a><span class="ltx_text" style="color:#000000;"> are not valid,
+deriving the required correct handling of the physical processes together with with the mathematics required to handle them.
+We use the theory developed in section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Physics-Thermodynamics</span><span class="ltx_text" style="color:#000000;">,
+where (among others) </span><span class="ltx_ref ltx_ref_self" style="color:#000000;">the time derivatives of the processes</span><span class="ltx_text" style="color:#000000;"> are introduced, in this way enabling the
+quantitative mathematical description of the neurons’ abstract operation,
+that serves as a basis for discussing quantitatively the neural computing
+processes (as we discuss in section </span><span class="ltx_ref ltx_missing_label ltx_ref_self" style="color:#000000;">LABEL:sec:Physics-LawsOfMotion</span><span class="ltx_text" style="color:#000000;">,
+these derivatives are the laws of motion of ions) and their information handling. However, these corrections must be carried out
+in disciplinarily separated chapters.
+</span><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">As Schrödinger and Feynman implicitly suggested, we revisit the approximations that led to classical physics (where we derived the well-known ’ordinary’ laws).
+</span><span class="ltx_text" style="color:#000000;">
+We scrutinize the ”construction” and ”working” of living matter in a cross-disciplinary way, using non-ordinary approximations and abstractions.
+Then, laws based on the same first principles in a different approximation can describe living matter.
+We show that nature and its observable phenomena are complex; it is pointless to dispute
+which of the scientific disciplines describes neuronal behavior. The non-disciplinary approach shows that the firm and fast electric interaction sufficiently well describes neuronal operation after introducing the equivalent ”thermodynamic electrical potential”.
+</span><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="../index.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">B</span> </span><span class="ltx_text" style="color:#000000;">Physics for neurons</span></span></a><a href="../../bib.html" title="In Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="../phys_Schr%C3%B6dingerNonOrdinaryLaws/index.html" title="In Appendix B Physics for neurons ‣ Appendices ‣ The Hodgkin-Huxley neuron model V2.0" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B.2 </span>Schrödinger on life</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sun Aug 23 12:54:05 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

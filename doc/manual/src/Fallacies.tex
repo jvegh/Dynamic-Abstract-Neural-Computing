@@ -4,7 +4,7 @@
 \minitoc
 \fi
 
-\chapter{Fallacies\label{ch:Physiology-Fallacies}}
+\chapter{Fallacies\label{ch:Fallacies}}
 
 \quotationbox{
 "And therefore when we go to investigate we shouldn’t pre-decide what it is we are trying to do except to find out more about it."
@@ -58,9 +58,9 @@ do not consider those differences.
 \input{src/Fallacies-HodgkinHuxley}
 
 \section[The outward $K^+$ component during the \gls{AP}]
-{The outward $K^+$ component during the \gls{AP}\label{sec:Physiology-Fallacies-OutwardK}}
+{The outward $K^+$ component during the \gls{AP}\label{sec:Fallacies-OutwardK}}
 
-One of the big mysteries in the creation of the V1.0  model was why \gls{AP}
+One of the big mysteries in the creation of the \gls{HH}  model was why \gls{AP}
 became negative when only
 $Na^+$ influx was seen when \gls{AP} was formed. 
 Given that \gls{HH} found only positive charges nearby, they supposed that
@@ -92,12 +92,12 @@ at the zero value of the vertical scale. In the resting state (without invasion)
 in the intracellular segment
 the [Na50,K400] concentrations are present inside the cell. Using these values, we reach the "Rest"
 state along the green arrows (based on the Nernst voltages, see \ref{Tab:SummaryTable}~Table), which is located at a height of \SI{-21}{\milli\volt}.
-On the right side, in the extracellular segment, from the point also at a height of 0, we arrive at a point at a height of \SI{21}{\milli\volt} along the blue arrows in the same way. The potential difference between the two mentioned points is \SI{42.5}{\milli\volt}, which \gls{HH} measured. It is a correct value,
+On the right side, in the extracellular segment, from the point also at a height of 0, we arrive at a point at a height of \SI{21}{\milli\volt} along the blue arrows in the same way. The potential difference between the two mentioned points is \SI{42.5}{\milli\volt}, which \gls{HH} measured (see section~\ref{sec:Single-UnifiedCurrents}). It is a correct value,
 but it is the result of an electrostatic charging and not of a voltage drop due to the "leakage current" they assumed.
 \index{leakage current}
 The voltage across the membrane (represented by the solid orange arrow) points upwards, preventing positive ions in the intracellular space from moving towards the extracellular space and preventing negative ions in the extracellular space from moving towards the intracellular space. The $Ca^{2+}$ ions in the extracellular segment, however, are permeable, requiring continuous pumping. There is no potential difference between the outside and inside, so no (significant) current flows.
 
-If, for any reason, the membrane voltage suddenly rises above the threshold value, due to the extremely fast $Na^+$ influx,
+If, for any reason, the membrane voltage suddenly rises above the threshold value, due to an extremely fast $Na^+$ influx,
 the membrane potential increases by about \SI{100}{\milli\volt} (a [Na200,K400] state occurs, see the brown arrows), i.e. the neuron jumps into the AP bubble.
 %After the threshold is exceeded naturally or with a short pulse, the "AP" passes into the "Rest" bubble,
 %this is the same in the case of natural and clamping measurements.
@@ -110,7 +110,7 @@ but inside the cell the voltage increases to the same extent, in the direction o
 The membrane potential has changed significantly due to the change in the $Na^+$ concentration, so the cell then moves them towards equilibrium.
 
 \begin{figure}
-\includegraphics[width=.9\columnwidth]{fig/RestingPotential5.pdf}
+\includegraphics[width=.8\columnwidth]{fig/RestingPotential5.pdf}
 \caption{The figure is a modified version of Fig.~\ref{fig:RestingPotential4}. It is supplemented with the unbended black line showing that the clamping condition forces the neuron
 to find a new balanced state by compensating the clamping voltage
 with setting a concentration [Na50,K7].
@@ -132,29 +132,17 @@ Reducing the $Na^+$ concentration also reduces the membrane
 voltage, i.e. after the release of the excess ions (admitted during the $Na^+$ rush-in) the neuron returns to its initial state;
 a cycle takes place.
 
-"Clamping" fixes the membrane voltage, meaning that the neuron cannot restore its initial
+In the classic experiment of \gls{HH}, clamping means that the left-hand "Invasion" suddenly raises the membrane voltage to the peak value measured at \gls{AP}, without the concentrations changing, so the voltage of the left-hand segment will also be higher.
+The current only stops when the difference in the Nernst voltages of the inner segments equalizes
+the clamping voltage. Due to the slowness of charge carriers, the process is not instantaneous.
+"Clamping" (see section~\ref{sec:PHYSICS_clamping}) fixes the membrane voltage, meaning that the neuron cannot restore its initial
 resting state. Instead, it has to find a new balance by changing the concentrations.
 After the artificial \gls{AP}, clamping (using a negative feedback) keeps the membrane potential at a fixed value, so the neuron can only produce a new balance by changing the ion concentrations: a current flows until the Nernst voltages of the $Na^+$ and $K^+$ concentrations can balance the clamping voltage.
 From this [Na50,K400] state, the neuron has to adjust the potential so that the sum of the Nernst voltages plus the membrane's voltage plus the clamping voltage is zero (so another balance has to be set!), while the voltage is fixed.
 To do this, it must reduce the $K^+$ concentration, while the $Na^+$ concentration is already at a good value (the opposite of the previous case). And not by a small amount: [K7] only causes a voltage change equal to the clamping 100 mV imposed on the cell.
-This voltage is given by the green curved $Na^+[50]$ and the black dashed straight
+This voltage is given by the resultant of the green curved $Na^+[50]$ and the black dashed straight
 $K^+[7]$ path. The neuron can achieve this [Na50,K7] concentration
 by starting an intensive $K^+$ release.
-
-\begin{figure}
-\includegraphics[width=.9\columnwidth]{fig/ClampingKCurrent.pdf}
-\caption{Artificial and natural degradation of the AP state.
-In the case of natural degradation, the neuron
-has to get rid of the (unnecessary) $Na^+$ ions;
-by releasing them, it returns to the initial state;
-cycle takes place.
-Clamping keeps the membrane voltage fixed,
-so the neuron can only establish a new equilibrium situation by changing the intracellular concentrations
-which, due to the very reduced $K^+$ concentration, is only possible with an intense
-$K^+$ release.
-\label{fig:ClampingKCurrent}
-}
-\end{figure}
 
 Another important difference compared to the natural case is that there is no electrostatic acceleration across the membrane (which is why the $Na^+$ influx stopped),
 only a thermodynamic suction effect outwards due to clamping.
@@ -168,28 +156,39 @@ approximately until the peak of the action potential voltage is reached.
 The $Na^+$ starts to leave through the \gls{AIS}, while the "excessive" $K^+$ ions leave through the membrane.
 \textit{The two currents do not flow in the same path, so they cannot
 interfere as currents in opposite directions and cannot cause hyperpolarization.}
+\index{$K^+$ current}
 \index{hyperpolarization}
 Hyperpolarization is caused by the reversal of the $Na^+$ current, which can be interpreted
 in the electrical sense as the capacitive current of the capacitor in the serial $RC$ circuit, and
+\index{capacitive current}
 in the mechanical sense as the negative period of the elastic membrane oscillation.
+\index{elastic oscillation}
 
 \textit{That is, the $K^+$ current is an artifact caused by the clamping, which is caused by the 'clamping' measurement conditions, and does not occur in the neuron under natural conditions.}
-
-
-So, this is where the urban legend "$K^+$ flows out through the membrane in the second phase of \gls{AP}, with a significant delay compared to the $Na^+$ influx" comes from.
-It is really a real measurement, it is really $K^+$ ion, but they did not measure what they thought.
-\gls{HH} and their late descendants did too. So there is no question of specific $Na^+$ and $K^+$ (synchronized with each other) channels: in both cases, the concentration and potential relationships decide what ions flow and in which direction.
+This is where the urban legend "$K^+$ flows out through the membrane in the second phase of \gls{AP}, with a significant delay compared to the $Na^+$ influx" comes from.
+It is really a good measurement, it is really $K^+$ ion, but \gls{HH} and their late descendants did not measure what they thought.
+So there is no question of specific $Na^+$ and $K^+$ (synchronized with each other) channels: in both cases, the concentration and potential relationships decide what ions flow and in which direction.
 %It doesn't hurt to use a good model for what you want to study.
-\gls{HH} was aware that theirs was not good, but they didn't know any better.
-Unfortunately, they spread the misconception.
+%\gls{HH} was aware that theirs was not good, but they didn't know any better.
+%Unfortunately, they spread the misconception.
 
 
+\begin{figure}
+\includegraphics[width=.9\columnwidth]{fig/ClampingKCurrent.pdf}
+\caption{Artificial and natural decay of the AP state.
+In the case of natural degradation, the neuron
+has to get rid of the (unnecessary) $Na^+$ ions;
+by releasing them, it returns to the initial state;
+cycle takes place.
+Clamping keeps the membrane voltage fixed,
+so the neuron can only establish a new equilibrium situation by changing the intracellular concentrations
+which, due to the very reduced $K^+$ concentration, is only possible with an intense
+$K^+$ release through the membrane.
+\label{fig:ClampingKCurrent}
+}
+\end{figure}
 
-In the classic experiment of \gls{HH}, clamping means that the left-hand "Invasion" suddenly raises the membrane voltage to the peak value measured at \gls{AP}, without the concentrations changing, so the voltage of the left-hand segment will also be higher.
-The current only stops when the difference in the Nernst voltages of the inner segments equalizes
-the clamping voltage. Due to the slowness of charge carriers, the process is not instantaneous.
-
-Fig.~\ref{fig:ClampingKCurrent} shows a pictorial summary of the process. The points on the surface give the Nernst voltage acting on the ions, for different combinations. The points on the surface are in equilibrium. The onset of the \gls{AP} moves the point that was in equilibrium until then well outside the surface. The neuron can find the new equilibrium position without the forcing effect of clamping by restoring the parameters of the previous state. In the case of clamping, it must set new concentrations at which the sum of the Nernst voltages can counteract the clamping voltage. In both cases, a relaxation process takes place, which in the case of the native process is measured by physiology as \gls{AP}.
+Fig.~\ref{fig:ClampingKCurrent} shows a pictorial summary of the process. The points on the surface give the Nernst voltage acting on the ions, for different combinations of ion concentrations. The points on the surface are in equilibrium. The onset of the \gls{AP} moves the point that was in equilibrium before well outside the surface. The neuron can find the new equilibrium position without the forcing effect of clamping by restoring the parameters of the previous state. In the case of clamping, it must set new concentrations at which the sum of the Nernst voltages can counteract the clamping voltage. In both cases, a relaxation process takes place, which in the case of the native process is measured by physiology as \gls{AP}.
 
 % Compiled 26.07.10
 \subsection[The physics of the process]
@@ -214,170 +213,10 @@ In other words, for \SI{100}{\pico\ampere} (that is \SI{1e-10}{\ampere}) saturat
 Furthermore, it would keep the resting potential above 
 the value of the resting potential. The difference 
 would be the extra voltage of the clamping; that is,
-it would disappear at zero claping voltage.
-In other words, the extra voltage and the  $K^+$ current disappears in the absence of clamping, as observed.
-
-In our reading the current lasts as long as the voltage invasion caused by clamping persists or the $K^+$ content of the intracellular segment of the neuron is depleted.
-
-
-\section{Equivalent electrical circuit\label{sec:Fallacies-ElectricalCuircuit}}
-
-"These ionic concentration gradients across the cell membrane
-constitute the driving forces (or chemical potentials)
-for ionic currents flowing through open channels in the membrane.
-In other words, the ionic concentration gradients act like DC batteries
-for cross-membrane currents.”~\cite{JohnstonWuNeurophysiology:1995}
-
-%\subsubsection{Equivalent circuits\label{Physiology-HHEquivalentCircuits}}
+it would disappear at zero clamping voltage.
+In other words, the extra voltage and the  $K^+$ current disappear in the absence of clamping, as observed.
 %
-
-
-\begin{figure}
-\centering
-\includegraphics[width=.65\textwidth]{fig/HHcirdiagm.png} 
-\caption{The equivalent circuit for the Hodgkin-Huxley model}
-\label{fig:HH_EquivalentCircuit}
-\end{figure}
-
-
-
-%\subsection{Circuits\label{sec:Circuits}}
-The biological 'equivalent circuit' models assume that the circuits comprise point-like
-ideal \textit{discrete elements}
-such as condensers and resistors, and some hidden power changes their parameters according to some
-mathematical formulas,
-furthermore ideal batteries with voltage that may again be changed  by that power.
-All they are connected by conducting  (metallic) ideal wires
-and their interaction speed is infinitely high (the Newtonian 'instant interaction').
-Using that abstract model enables them to use the well-known classic equations, named after
-Ohm, Kirchoff, Coulomb, Maxwell and others. However, those abstractions have severe limitations.
-Biology applies Ohm's Law to its objects while claims that its objects are non-ohmic;
-understands that neural currents comprise ions while claims that the ions do not feel the Coulomb repulsion;
-measures ions' propagation speed but in its equations it claims that their effects are instant;
-hypotesizes non-existing physical mechanisms to make their nature. In general,
-biophysics abstracts from the world of the physics-inspired mathematical formulas a fictitious nature
-where biology lives and hypothesises complementary mechanisms to achieve some resemblance with the true biological word.
-The examples include that ions in the ions channels do not repulse each other;
-that charge, potential and current are independent of each other;
-that ion currents do not repulse each other neither when they travel from the presynaptic terminal to the
-\index{Coulomb's law}
-\gls{AIS};
-that some hidden power opens the ion channels to let ions in into the intracellular space,
-that ions with the same charge move in opposite directions when ions rush-in into the intracellular segment of the neuron;
-that the ions pass ion channels without being accelerated by the potential difference accross the membrane;
-the telegraph equations are applied to the case of axons although neither external potential nor current loss exists; and so on.
-
-
-Even that unfortunate idea of equivalent circuits leads to analyzing
-"electrotonic (electronic circuit equivalent) modeling of realistic neurons and the interaction of dendritic morphology
-and voltage-dependent membrane properties on the processing of neuronal synaptic input"~\cite{SingleNeuronComputation:2014};
-that is, to study a simulated neuron built from discrete electronic components. However, the idea needs to put together
-many compone "raises the possibility that the neuron is itself a network". On the one side, such an idea misguides the neurophysical research (since actually a fake neural system is scrutinized, the validity of the approach is questionalized~\cite{RealisticNeuronalModeling:2016}), and on the other, since electroengineers understand
-the neuronal operation from the wrong model, it also misguides building neuromorphic architectures. 
-
-The equivalent circuits are a source of misinterpretations. As~\cite{JohnstonWuNeurophysiology:1995} formulates,
-"In other words, the ionic concentration gradients act like DC batteries for cross-membrane currents."
-We call the attention again, that \textit{ions} represent the current,
-that is \textit{that current changes changes the concentration, that changes
-the voltage of the DC battery, unlike in the case of the equivalent circuits}.
-This difference is significant in understand how the basic neuronal circuit works.
-Introducing equivalent circuits prevents explaining the fundamental 
-electric phenomena.
-
-%\quotationbox{
-%This was how — Richard P. Feynman approached all knowledge: What can I know for sure, and how can I come to know it?
-%It resulted in his famous quote, “\textit{You must not fool yourself, and you are the easiest person to fool.}”
-%Feynman believed it and practiced it in all of his intellectual work.
-%}
-%\index{Feynman, Richard P.}
-
-
-\section{Point-like neuron\label{sec:Physiology-FallaciesPointLike}}
-
-The abstraction we need to use always includes simplifications and omissions,
-depending on which phenomena we want to study. If we want to describe Earth's orbit around our Sun, we can consider it point-like at an elementary level and assume pairwise interaction between them.  However, for finer details, we need to consider its structure, size, and the disturbing effects of other planets and its Moon. Whether the abstraction of having point-like neurons is valid depends on the targeted phenomenon.
-
-In the initial investigations, the \textit{size of the cells} was seen
-to be much smaller than the \textit{size of their connections}.
-In addition, the axons were much earlier available for experimental
-investigations, suggesting that the observed signals originate and
-terminate in the network nodes. This abstraction might be
-appropriate (with some limitations, mainly due to the connection speed)
-until we can develop technical tools to study the \textit{internal operation}
-of the network nodes. "We assume that the dimensions
-of the cell are small enough so that spatial variations in the membrane potential can be neglected"~\cite{KochBiophysics:1999}. Its internal operations and phenomena can only have an artificial timing, its input signals are artificially correlated, and its mystic internal operation produces an action potential as an output signal in a pair-wise interaction.
-
-When starting from 'the so-called point representation
-of a neuron" \cite{KochBiophysics:1999}, admitting that "such
-an approximation would be valid, for instance, if we were investigating
-a small, spherical cell without a significant dendritic tree", we
-necessarily conclude that "individual neurons convert
-the incoming streams of binary pulses into analog, spatially distributed
-variables". This statement attempts to underpin that in the neural networks
-digital pulses are traveling, which is less then the half of truth.
-This point of view blocks the interpretation of even the phenomena that are correctly seen and leads to the design of wrong experiments. Among others, it results in the immediate consequence of interpreting neuronal communication as streams of binary pulses,
-which leads to applying Shannon’s mathematical theory to neural communication, despite Shannon's sharp opposition~\cite{ShannonBandwagon:1956}.
-\index{neuron!point-like}
-\index{point-like neuron}
-\index{Shannon, Claude}
-\index{information theory!neural}
-\index{neural information theory}
-
-
-
-
-\section{Passive distributed membrane\label{sec:Physiology-FallaciesPassiveMembrane}}
-
-The role of the neuronal membrane is controversial as used in physiology.
-As \cite{KochBiophysics:1999}
-discussed, 'from an electrical point of view, the properties of the membrane can be
-satisfactorily described by a sole element: a capacitance.' However, on the same page, the
-caption of Figure 1.1 explains that 'Proteins inserted into the membrane, here ionic channels,
-provide a conduit through the membrane.' Also, the 'associated lumped electrical circuit for this patch,
-consisting of a capacitance and a resistance \textit{in series} with a battery' (and parallel
-with each other).
-That picture is wrong; see Figure \ref{StructureOfAIS}.
-When inventing the 
-AIS, the wrong hypothesis turned into a fallacy.
-\index{passive membrane}
-\index{membrane!passive}
-
-
-\begin{figure}
-\includegraphics[width=.65\textwidth]{fig/PassiveNeuronMembraneCircular.jpg}
-
-\caption{Equivalent electrical
-model of a spherical cell with passive membrane. \cite{KochBiophysics:1999} Fig. 1.2 \label{fig:Fallacies-NeuronMembraneCircular} }
-\end{figure}
-
-
-
-\section{Membrane as a wrong isolator\label{sec:Physiology-Wrong isolator}}
-
-When assuming that the membrane's resistance and capacitance are distributed over its surface,
-one must also assume that it has imperfect resistance despite 
-no known mechanisms to conduct an ionic current. The membrane is a perfect isolator
-connected to a resistance the neuron's 
-%\gls{AIS}
-AIS
- represents. The ionic current
-(although it is not a 'leaking current') can flow out through it. The right picture
-that the capacitor and resistor are connected serially instead of parallel, as
-introduced several decades ago, defies the fallacy that the membrane is a non-perfect isolator.
-
-\section{Energy consumption\label{subsec:EnergyConsumption}}
-
-The passive distributed membrane implies that in its resting state (without operation and communication), a permanent 'leaking current' flows out from the $RC$ circuit through the 
-parallel resistance $R$. If we assume (see, for example~\cite{KochBiophysics:1999} page~11) $R=100\ M\Omega$ 
-and $V_M=0.1~V$, we arrive at $I_{rest}=1pA$ and $P_{rest}=10^{-9}~W$ power consumption per neuron. 
-We arrive at power consumption $100\ W$ for the brain's neurons if all neurons resting without communication.
-For the $10^{11}$ neurons of the brain
-we arrive at  power consumption if all neurons are  \textit{resting} without communication.
-It is plausible to assume that the working neuron consumes more energy (the synaptic currents are in the $nA$ range, although their fill-out factor is low).
-"The audit points out that, rather than the oft-quoted 20 W of glucose available to the human brain, \textit{the fraction partitioned to cortical computation is only $0.1~W$} of ATP"~\cite{EnergyNeuralCommunication:2021}.
-Assuming a leaking current, a must-be consequence of the parallel  $RC$ neuronal oscillator, results in more power consumption of about two orders of magnitude than the measured value.
-\textit{The existence of a leaking current is against the experimental evidence and 
-the metabolic efficiency of the biology of evolution}. 
+In our reading the current lasts as long as the voltage invasion caused by clamping persists or the $K^+$ content of the intracellular segment of the neuron is depleted.
 
 
 \section{'Delayed rectifying' current\label{sec:Physiology-DelayedCurrent}}
@@ -455,6 +294,234 @@ neuron is significantly activated \textit{during normal action
 	potentials}". That is, they might be significant in other periods, but not during generating normal 
 	%\gls{AP}s.
 	APs.
+
+
+
+\section{Equivalent electrical circuit\label{sec:Fallacies-ElectricalCircuit}}
+
+"These ionic concentration gradients across the cell membrane
+constitute the driving forces (or chemical potentials)
+for ionic currents flowing through open channels in the membrane.
+In other words, the ionic concentration gradients act like DC batteries
+for cross-membrane currents.”~\cite{JohnstonWuNeurophysiology:1995}
+
+%\subsubsection{Equivalent circuits\label{Physiology-HHEquivalentCircuits}}
+%
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.65\textwidth]{fig/HHcirdiagm.png} 
+\caption{The equivalent circuit for the Hodgkin-Huxley model}
+\label{fig:HH_EquivalentCircuit}
+\end{figure}
+
+
+
+%\subsection{Circuits\label{sec:Circuits}}
+The biological 'equivalent circuit' models assume that the circuits comprise point-like
+ideal \textit{discrete elements}
+such as condensers and resistors, and some hidden power changes their parameters according to some
+mathematical formulas,
+furthermore ideal batteries with voltage that may again be changed  by that power.
+All they are connected by conducting  (metallic) ideal wires
+and their interaction speed is infinitely high (the Newtonian 'instant interaction').
+Using that abstract model enables them to use the well-known classic equations, named after
+Ohm, Kirchoff, Coulomb, Maxwell and others. However, those abstractions have severe limitations.
+Biology applies Ohm's Law to its objects while claims that its objects are non-ohmic;
+understands that neural currents comprise ions while claims that the ions do not feel the Coulomb repulsion;
+measures ions' propagation speed but in its equations it claims that their effects are instant;
+hypotesizes non-existing physical mechanisms to make their nature. In general,
+biophysics abstracts from the world of the physics-inspired mathematical formulas a fictitious nature
+where biology lives and hypothesises complementary mechanisms to achieve some resemblance with the true biological word.
+The examples include that ions in the ions channels do not repulse each other;
+that charge, potential and current are independent of each other;
+that ion currents do not repulse each other neither when they travel from the presynaptic terminal to the
+\index{Coulomb's law}
+\gls{AIS};
+that some hidden power opens the ion channels to let ions in into the intracellular space,
+that ions with the same charge move in opposite directions when ions rush-in into the intracellular segment of the neuron;
+that the ions pass ion channels without being accelerated by the potential difference accross the membrane;
+the telegraph equations are applied to the case of axons although neither external potential nor current loss exists; and so on.
+
+
+Even that unfortunate idea of equivalent circuits leads to analyzing
+"electrotonic (electronic circuit equivalent) modeling of realistic neurons and the interaction of dendritic morphology
+and voltage-dependent membrane properties on the processing of neuronal synaptic input"~\cite{SingleNeuronComputation:2014};
+that is, to study a simulated neuron built from discrete electronic components. However, the idea needs to put together
+many compone "raises the possibility that the neuron is itself a network". On the one side, such an idea misguides the neurophysical research (since actually a fake neural system is scrutinized, the validity of the approach is questionalized~\cite{RealisticNeuronalModeling:2016}), and on the other, since electroengineers understand
+the neuronal operation from the wrong model, it also misguides building neuromorphic architectures. 
+
+The equivalent circuits are a source of misinterpretations. As~\cite{JohnstonWuNeurophysiology:1995} formulates,
+"In other words, the ionic concentration gradients act like DC batteries for cross-membrane currents."
+We call the attention again, that \textit{ions} represent the current,
+that is \textit{that current changes changes the concentration, that changes
+the voltage of the DC battery, unlike in the case of the equivalent circuits}.
+This difference is significant in understand how the basic neuronal circuit works.
+Introducing equivalent circuits prevents explaining the fundamental 
+electric phenomena.
+
+%\quotationbox{
+%This was how — Richard P. Feynman approached all knowledge: What can I know for sure, and how can I come to know it?
+%It resulted in his famous quote, “\textit{You must not fool yourself, and you are the easiest person to fool.}”
+%Feynman believed it and practiced it in all of his intellectual work.
+%}
+%\index{Feynman, Richard P.}
+
+%\subsection[Equivalent circuits]{Equivalent circuits\label{sec:PHYSICS_EquivalentCircuit}}
+%
+One wrong consequence of forgetting that the charge transfer mechanism is entirely different,
+the charge carriers are large and heavy (and as a consequence: slow) ions instead of electron (cloud),
+furthermore they are not necessary present in the 
+volume under test and the 'construction' of biological matter 
+enables the tested medium to produce charge carriers,
+using 'equivalent circuits' for
+neuronal operation. This fallacy
+entirely falsifies the conclusions from the measurements.
+
+Another wrong consequence of using 'equivalent circuits' to describe
+the electrical operation of neurons is believing that the currents in
+the biological circuit do not change the concentration, and through
+the concentration, also the potential; see also section~\ref{sec:Physics-Resources}. The 'equivalent circuits',
+of course, use a constant potential (they follow the abstraction used
+in the theory of electricity, although the 'ideal batteries' also
+may produce their voltage using chemical processes), and unreasonably, some mystic process changes the resistance/conductance of components. This wrong abstraction
+results in numerous misunderstandings, among others, introducing ideas
+such as parallel oscillator equivalent of neuron, input resistance,
+delayed rectifier current, resting current, and time- or voltage-dependent
+conductance. Furthermore, we cannot 
+interpret, among others, \emph{how neuronal electricity
+works in lack of external potential}; \emph{how slow currents operate
+neuron's infrastructure}, \emph{how and why action potential is generated}.
+Deriving the time course of the Nernst-Planck potential opens the
+way to a quantitative understanding of neurophysical electrical processes,
+including their time course.
+
+Again another wrong consequence is that the two secondary abstractions 'potential',
+and 'current', became independent from the primary abstraction 'charge'
+and each other (significantly contributing to the fallacy that 'physics cannot describe life'). Our equations and the underlying discussion point
+to the fact that \emph{the potential and the current cannot be separated
+from the charge}. No 'delayed rectifying current' and 'voltage- (or
+time-) dependent conductance' exist. Those notions originate from
+the wrong interpretation of measured data derived from mismatching
+measured electrical data pairs and the misconception that biological
+structures and materials must behave like metals.
+
+
+As we discussed in section~\ref{sec:Physics-TwoSegments}, 
+the unbalanced charge in neurons and the charge injected
+suddenly into the intracellular segment during a rush-in action
+are in the same order of magnitude. We also discussed that 
+the charge injection (the appearance and flow of charge in the proximal layer on the membrane's surface) causes well measureable mechanical, optical, etc. changes~\cite{MechanicalWaves:2015} on the membrane.
+Those changes are well observable on the low-concentration side, in the form of slow currents, and large-scale
+concentration and potential changes.
+
+Those changes also mean that a large amount of charge
+passes from the high-concentration side
+to the low concentration side of the membrane, and causes a sudden drop
+on the high-concentration side of the membrane. As discussed,
+that change means simultaneously a change in the corresponding 
+potentials across the membrane that solves the mystery why the
+\gls{AP}
+AP stops. The potential across the membrane is defined by the difference of the
+potential of the two thin layers (see section~\ref{sec:Physics-Membranes}) on the membrane's surface.
+As we discussed, a huge electric field exists across the
+plates of the neuronal condenser, while a moderate one 
+in the proximal layers. That means that the ions can quickly
+leave the high concentration when the rush-in injection begins.
+They produce an 'empty' layer (and a potential gradient)
+whithin that layer and the ions in the neighboring layer
+start to move using the 'downhill' potential. However, they do have a much slower speed, so they 'stop' at some distance. 
+
+
+
+
+\section{Point-like neuron\label{sec:Physiology-FallaciesPointLike}}
+
+The abstraction we need to use always includes simplifications and omissions,
+depending on which phenomena we want to study. If we want to describe Earth's orbit around our Sun, we can consider it point-like at an elementary level and assume pairwise interaction between them.  However, for finer details, we need to consider its structure, size, and the disturbing effects of other planets and its Moon. Whether the abstraction of having point-like neurons is valid depends on the targeted phenomenon.
+
+In the initial investigations, the \textit{size of the cells} was seen
+to be much smaller than the \textit{size of their connections}.
+In addition, the axons were much earlier available for experimental
+investigations, suggesting that the observed signals originate and
+terminate in the network nodes. This abstraction might be
+appropriate (with some limitations, mainly due to the connection speed)
+until we can develop technical tools to study the \textit{internal operation}
+of the network nodes. "We assume that the dimensions
+of the cell are small enough so that spatial variations in the membrane potential can be neglected"~\cite{KochBiophysics:1999}. Its internal operations and phenomena can only have an artificial timing, its input signals are artificially correlated, and its mystic internal operation produces an action potential as an output signal in a pair-wise interaction.
+
+When starting from 'the so-called point representation
+of a neuron" \cite{KochBiophysics:1999}, admitting that "such
+an approximation would be valid, for instance, if we were investigating
+a small, spherical cell without a significant dendritic tree", we
+necessarily conclude that "individual neurons convert
+the incoming streams of binary pulses into analog, spatially distributed
+variables". This statement attempts to underpin that in the neural networks
+digital pulses are traveling, which is less then the half of truth.
+This point of view blocks the interpretation of even the phenomena that are correctly seen and leads to the design of wrong experiments. Among others, it results in the immediate consequence of interpreting neuronal communication as streams of binary pulses,
+which leads to applying Shannon’s mathematical theory to neural communication, despite Shannon's sharp opposition~\cite{ShannonBandwagon:1956}.
+\index{neuron!point-like}
+\index{point-like neuron}
+\index{Shannon, Claude}
+\index{information theory!neural}
+\index{neural information theory}
+
+
+
+
+\section{Passive distributed membrane\label{sec:Physiology-FallaciesPassiveMembrane}}
+
+The role of the neuronal membrane is controversial as used in physiology.
+As \cite{KochBiophysics:1999}
+discussed, 'from an electrical point of view, the properties of the membrane can be
+satisfactorily described by a sole element: a capacitance.' However, on the same page, the
+caption of Figure 1.1 explains that 'Proteins inserted into the membrane, here ionic channels,
+provide a conduit through the membrane.' Also, the 'associated lumped electrical circuit for this patch,
+consisting of a capacitance and a resistance \textit{in series} with a battery' (and parallel
+with each other).
+That picture is wrong; see Figure \ref{StructureOfAIS}.
+When inventing the 
+AIS, the wrong hypothesis turned into a fallacy.
+\index{passive membrane}
+\index{membrane!passive}
+
+
+\begin{figure}
+\includegraphics[width=.65\textwidth]{fig/PassiveNeuronMembraneCircular.jpg}
+
+\caption{Equivalent electrical
+model of a spherical cell with passive membrane. \cite{KochBiophysics:1999} Fig. 1.2 \label{fig:Fallacies-NeuronMembraneCircular} }
+\end{figure}
+
+
+
+\section{Membrane as a wrong isolator\label{sec:Fallacies-Wrong isolator}}
+
+When assuming that the membrane's resistance and capacitance are distributed over its surface,
+one must also assume that it has imperfect resistance despite 
+no known mechanisms to conduct an ionic current. The membrane is a perfect isolator
+connected to a resistance the neuron's 
+%\gls{AIS}
+AIS
+ represents. The ionic current
+(although it is not a 'leaking current') can flow out through it. The right picture
+that the capacitor and resistor are connected serially instead of parallel, as
+introduced several decades ago, defies the fallacy that the membrane is a non-perfect isolator.
+
+\section{Energy consumption\label{subsec:EnergyConsumption}}
+
+The passive distributed membrane implies that in its resting state (without operation and communication), a permanent 'leaking current' flows out from the $RC$ circuit through the 
+parallel resistance $R$. If we assume (see, for example~\cite{KochBiophysics:1999} page~11) $R=100\ M\Omega$ 
+and $V_M=0.1~V$, we arrive at $I_{rest}=1pA$ and $P_{rest}=10^{-9}~W$ power consumption per neuron. 
+We arrive at power consumption $100\ W$ for the brain's neurons if all neurons resting without communication.
+For the $10^{11}$ neurons of the brain
+we arrive at  power consumption if all neurons are  \textit{resting} without communication.
+It is plausible to assume that the working neuron consumes more energy (the synaptic currents are in the $nA$ range, although their fill-out factor is low).
+"The audit points out that, rather than the oft-quoted 20 W of glucose available to the human brain, \textit{the fraction partitioned to cortical computation is only $0.1~W$} of ATP"~\cite{EnergyNeuralCommunication:2021}.
+Assuming a leaking current, a must-be consequence of the parallel  $RC$ neuronal oscillator, results in more power consumption of about two orders of magnitude than the measured value.
+\textit{The existence of a leaking current is against the experimental evidence and 
+the metabolic efficiency of the biology of evolution}. 
 
 
 \section{Membrane refractoriness\label{sec:Physiology-FallaciesRefractoriness}}
@@ -788,4 +855,53 @@ Furthermore, the cable equation assumes continuous current outflow
 \index{cable equation}
 \index{telegrapher's equations}
 
+
+\section{Goldman-Hodgkin-Katz potential\label{sec:Physics-Goldman-Hodgkin-Katz}}
+
+
+It was already stated, based on experimental evidence, that "the membrane permeability to the ions has nothing to do with the potential generation and the ions adsorption on the membrane surface generates the membrane potential", for a review see~\cite{MembranePotentialPermeability:2024}.
+The idea itself is nonsense: in a balanced state, no ion transport happens, so even without permeability, the balanced state persists;  the resting potential has nothing to do with either ions' mobility or permeability nor with ion absorption~\cite{Hodgkin-HuxleyAdsorption:2021}.
+Furthermore, there is no idea in \gls{GHK} about whether the 'setpoint' (why that specific concentration or potential difference) is present and why the same potential is reset after rough perturbations such as issuing an \gls{AP} or replicating a cell.
+The causality is reversed: the potential is a static concept which is set electrically, and
+the two gradients form the experienced concentrations and potentials from the available solvent molecules.
+For the time course of forming the gradients, mobility and permeability play a role, but not in determining the concentrations or the resting potential.
+
+
+In our clear physical picture, the thermodynamic forces on the one side
+and on the other side of the membrane are summed. They counterbalance each other; furthermore, jointly the effect of the neuronal condenser, see  Fig.~\ref{fig:RestingPotential3}.
+As we emphasized, the concentration gradients are ion-specific.
+Furthermore, as we discussed in connection with Eq.(\ref{eq:Nernst1}), the \hyperlink{NernstLaw}{Nernst equation} comprises a per-ion indefinite constant (a potential difference).
+To calculate a linear combination of terms comprising an arbitrary constant is nonsense,
+and so is adding absolute concentrations on the different sides of the membrane, or changing the base of the logarithm used in a calculation to match
+the experimental value. It is not more than number magic. The potential is described by coupled equations as discussed in connection with Eq.~(\ref{eq:coupling}).
+
+The $Ca^{2+}$ ions do not fit into the \gls{GHK} picture. 
+One of the reasons why \gls{GHK} cannot be good is that $[Ca^{2+}]$
+is omitted. Biologically, it is hard to believe that $Ca^{2+}$ does not participate in the game of life (especially since biology sees the need for $Ca^{2+}$ pumps). Physically, one concentration alone on one side of the membrane cannot keep balance; as the different ion exchange processes, Table~\ref{Tab:SummaryTable} and Fig.~\ref{fig:RestingPotential3} show.
+When adding a new ion to the solution, the sum concentration
+increases, and so the electrical force increases, forcing the previous 
+elements to find new concentrations on both sides.
+The appearance of a new chemical element indirectly changes the concentrations of the others (a good example is the role of the negligible amount of $Ca^{2+}$).
+
+%\subsection[Goldman-Hodgkin-Katz potential]{GHK potential\label{sec:Physics-RestingGHK}}
+In the light of our findings, we must reconsider a few key conceptions. We derived (see Eq.(\ref{eq:UGapTotal400})) that the gap voltage depends on the thickness of the membrane and the overall concentration. 
+Furthermore, we demonstrated that the gap voltage is equivalent to the resting potential (correctly: potential difference) and is independent of ion mobility or ion composition in the solution.
+Derived values, such as the Goldman-Hodgkin-Katz potential, should be rethought. The idea is nonsense: in a balanced state, no ion transport happens, so even without permeability, the balanced state persists;  as experiments proved, the resting potential has nothing to do with either ions' mobility or permeability nor with ion absorption~\cite{Hodgkin-HuxleyAdsorption:2021}.
+The causality is reversed: the potential is a static notion and is set electrically, and
+the two gradients form the experienced concentrations from the available solvent molecules.
+For the time course of forming the gradients and maintaining the balance, mobility and permeability play a role but not in determining the concentrations or the resting potential.
+
+The $Ca^{2+}$ ions do not fit into the GHK picture. However (see our Table~\ref{Tab:SummaryTable}), it provides a thermodynamic contribution in the
+same order of magnitude as the charge separation by the membrane. If we add
+the potential due to $Ca^{2+}$, we arrive at the correct result that the total balance of the thermodynamic contributions equals zero, that is, the resting potential is zero. The electrical potential contribution is an additional term, resulting in the resting potential.
+
+
+When adding a new ion to the solution, the sum concentration
+increases, and so the electrical force increases, forcing the previous 
+elements to find new concentrations on both sides.
+The appearance of a new chemical element indirectly changes the concentrations of the others (a good example is the role of the negligible amount of $Ca^{2+}$). No linear summing or similar assumptions can be made. The potential is described by coupled equations as discussed in connection with Eq.(\ref{eq:coupling}).
+As we discussed in connection with Eq.(\ref{eq:Nernst1}), the integral form of the Nernst equation implies an undetermined additive constant. To calculate 
+a linear combination of terms comprising an arbitrary constant is nonsense,
+and so is changing the base of the logarithm used in a calculation to match
+the experimental value.
 

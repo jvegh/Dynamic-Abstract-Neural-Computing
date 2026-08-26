@@ -1,0 +1,69 @@
+% This is the chapter 'Thermodynamics' for the Hodgkin-Huxley neuron model V2.0 book
+% English version
+% Last edited 2026.06.22
+
+\chapter{Thermodynamics for neurons\label{ch:Thermodynamics}}
+\iflatexml
+\else
+\minitoc
+\fi
+
+
+The usual interpretation of thermodynamics concerns a large number of particles in an isotropic and homogeneous free space, which can only interact by direct collisions. As detailed elsewhere, in the case of neurons, neither of these conditions is usually met, and therefore the thermodynamic conclusions must be derived anew and their validity examined. However, the fundamental relations of thermodynamics remain valid. In this chapter, we highlight aspects of thermodynamics that are significantly different from the usual ones for electrolytes in general, but for neurons in particular.
+
+\section[Thermodynamic field]{Deriving the "thermodynamic electrical field"\label{sec:Physics-ThermodynamicField}}
+
+In a segmented electrolyte, electrical charges are typically globally balanced;
+however, they may become locally unbalanced due to physical factors.
+An important case for the biology is when a semipermeable membrane
+separates two segments of electrolytes with very different ionic concentrations. 
+The differing concentrations generate voltage according to the 
+well-known  Nernst-Planck equation, as shown in
+\hyperlink{phys:Nernst-Planck}
+{\textbf{Physics panel~\ref{phys:Nernst-Planck}}}.
+\hyperlink{phys:Nernst-Planck}
+{\textbf{Physics panel~\ref{phys:Nernst-Planck}}}
+describes how the chemical and
+electrical spatial gradients depend on each other,
+\hyperlink{phys:EquivalentField_Membrane}
+{\textbf{Physics panel~\ref{phys:EquivalentField_Membrane}}}
+shows a practical approximation for calculating it, with 
+the calculated figures in 
+\hyperlink{num:EquivalentField_Membrane}
+{\textbf{Numerics panel~\ref{num:EquivalentField_Membrane}}}.
+
+
+In simple words, the Nernst-Planck equation states that the changes in
+concentrations of ions create changes in the electrical field (and
+vice versa), and in a stationary state, they remain unchanged.
+Notice that in the case of an ion mixture, \textit{a joint charge-generated electrical field exist, while an electrical field generates
+per ion different concentrations}.
+Note that inside a neuron the gradients change sharply,
+so there only the differential form can be used;
+using the statical macroscopical intagral form is misleading.
+
+
+\physicspanel{phys:Nernst-Planck}{The Nernst-Planck law}
+{
+The Nernst-Planck electrodiffusion equation in a balanced state
+\begin{equation}
+	\frac{d}{dz}V_{m}(z)=-\frac{RT}{q*F}\frac{1}{C_{k}(z)}\frac{d}{dz}C_{k}(z)\label{eq:NernstPlanck}
+\end{equation}
+describes in one dimension the mutual dependence of the \emph{spatial gradients} of the
+electrical and thermodynamic fields on each other. In good textbooks (see, for example,~\cite{KochBiophysics:1999},
+Eq (11.28)), its derivation is exhaustively detailed. In the
+equation, $z$ is the spatial variable across the direction of the
+changed invasion parameter, $R$ is the gas constant, $F$ is the
+Faraday's constant, $T$ is the temperature, $q$ the valence
+of the ion, ${V_m(z)}$ the potential, and ${C_k(z)}$ the concentration
+of the chemical ion. The two sides are the derivatives of the equation
+\begin{equation}
+	V_{m} =\frac{RT}{q*F}\ln{\biggl(\frac{C_{k}^{ext}}{C_{k}^{int}}\biggr)}\label{eq:Nernst1}
+\end{equation}
+\noindent known as \textit{Nernst equation}.  In other words, \textbf{Eqs.(\ref{eq:NernstPlanck}) and Eq.(\ref{eq:Nernst1}) are the differential and integral formulations of the same knowledge}. The limits of the integration are chosen arbitrarily (by choosing the reference concentration $C_{k}^{int}$).
+}
+
+
+
+
+

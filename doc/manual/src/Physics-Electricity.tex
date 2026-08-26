@@ -11,15 +11,18 @@ living matter, the effects of the limited volume of a cell, using slow positive 
 the interaction with thermodynamics, among others. So, 
 we must discuss the deviations in detail, which originate from the same reasons as discussed in section~\ref{sec:Physics-ThermodynamicsWhyDifferent}. 
 
-One of the famous dichotomies (see section~\ref{sec:Physics-Atomicity}) is that there exist laws, separately,
+\physicspanel{phys:ElectricDichotomies}{Electricity-related dichotomies}
+{
+One of the famous dichotomies (see section~\ref{sec:Physics-Dichotomies}) is that there exist laws, separately,
 for continuous and discrete electricity, without providing
 a transition between them.
 The fundamental concepts are the same, but we must rethink several approximations. Furthermore, sometimes we must consider the classical continuous electricity, sometimes particle-based electricity; sometimes the mixture of the two, or a transition
-between them. In biological cells, the usual "infinite" conditions (infinitely far, infinitely small, etc.)
-of the classical electronics are not fullfilled: it depends on the context what can be omitted with respect to some other quantity or size.
+between them. In biological cells, the usual "infinite" conditions (infinitely far, infinitely small, infinitely fast, etc.)
+of the classical electronics are not fullfilled: it depends on the context what can be omitted with respect to some other quantity.
 Say, the charge in the intracellular volume is "infinitely smaller" than that in the extracellular volume, but "infinitely larger" than the charge handled in an ion-channel-related operations.
 The biological organization prevents discussing living matter 
 as homogeneous and isotropic medium, the active "charge production" in some biological constructions needs a precise interpretation of the conservation laws, and the charge carriers' speed needs revisiting the interpretation of the fundamental physical laws.
+}
 
 \subsection[Why different]{Why ions' electricity is different\label{sec:PHYSICS_ElectricWhyDifferent}}
 
@@ -41,13 +44,14 @@ discrete elements, with one idealized feature.
 Physical electricity inherited the Newtonian picture that everything happens simultaneously and it applies a hybrid picture.
 It considers that no delay exists on the connecting wires, although charge passes in the current.  
 The current is defined as temporal change of charge,
-but it is explicitly considered only in the slighty non-ordinary 
+but it is explicitly considered only in the slightly non-ordinary 
 phenomena capacitance, inductance and impedance; it is considered
 as instant in the phenomenon called resistance.
 \index{ordinary laws}
 In biological electricity, neither of the above  disciplinary concepts
-can be interpreted in unchanged form, they must be reinterpreted. The charges are moved not necessarily by an electric field,
-but their movement is interpreted as current (and, simultanously, as mass transport) furthermore,
+can be interpreted in unchanged form, they must be reinterpreted. The movement of charges is interpreted as current (and, simultanously, as mass transport),
+but the are moved not necessarily only by an electric field;
+furthermore,
 that movement creates change in the potential (as well as in the concentration), due to the limited resources.
 \index{limited resource}
 Since the charge carriers are slow,
@@ -69,7 +73,7 @@ phenomena without the other.
 The case is somewhat similar to the case when an ion moves in simultanously applied electric and magnetic fields,
 and it is considerably different in that the thermodynamic interaction also represents a mass transport,
 inseparably, so the driving force is the sum of the thermal and electric gradients.
-\textit{The real complication and difference is, however, that the interactions have different speeds.}
+\textit{The real complication and difference is, however, that the interactions have different speeds, which situation rarely happens in physics.}
 However, it is not a different physics ("or whatnot").
 It is only using different laws for the different environment
 from the same first principles.
@@ -77,13 +81,16 @@ from the same first principles.
 \subsection[Concepts]{Fundamental concepts\label{sec:PHYSICS_ELECTRICFundamental}}  
 
 The disciplinarily separated sience defines \href{http://hyperphysics.phy-astr.gsu.edu/hbase/electric/elefie.html#c1}{electricity's concepts}
-through forces and infinitely small test charge. In living matter,
-neither is valid in an unchanged form: constraints and physical/chemical additional forces are present, furthermore, the charges of the carriers are not
-negligible compared to the charges that generate the field acting on the charges. Furthermore, \textit{since the carriers have mass, 
-one cannot apply laws of disciplinary electricity since they are valid for "slow" currents in a different form}. One may have fundamental problems with the mathematical descriptions: 
-the discrete nature of charge carriers question marks the differentiability of the corresponding functions,  
-the charge-mass dichotomy of ions the interpretation of 
-\hyperlink{PartialDerivative}{partial derivatives}, furthermore, the simultaneity of different phenomena.
+through forces and an infinitely small test charge. In living matter,
+neither is valid in an unchanged form: constrains and physical/chemical additional forces are present, furthermore, the charges of the carriers are not
+negligible compared to the charges that generate the field; furthermore, they are quantized. \textit{Since the carriers have mass and a different propagation mechanism, 
+one cannot apply laws of disciplinary electricity, valid for "fast currents", since they are valid for "slow" currents in a different form}. One may have fundamental problems with the mathematical descriptions: 
+the discrete nature of charge carriers question marks  the differentiability of the corresponding functions
+\hyperlink{math:Differentiability}{see the math panel \ref{math:Differentiability}},  
+the charge-mass dichotomy of ions, discussed in section~\ref{sec:Physics-Dichotomies}, the interpretation 
+of scientific disciplines, the spatiotemporal features,
+discussed in \hyperlink{phys:Spatiotemporal}{Physics panel \ref{phys:Spatiotemporal}},
+the simultaneity of different phenomena.
 \index{dichotomies in science}
 \index{differentiability}
 \index{partial derivative}
@@ -98,19 +105,25 @@ although the transition between the discrete and continuous views
 is implicite and tacit.
 In contrast with classical electricity, 
 significance should be attached to the circles representing the ion and electron, in the sense of implying a relative size and mass.
-In a useful first construct, they are hard-sphere objects.
-The most important opening idea, electrically, is that they have a property called "charge" which is the same size, but opposite in polarity for the ion and the electron and the ions can have multiple charge.
-The ions are about $50,000-100,000$ times heavier and about the same factor larger than electrons, and this difference leads to crucial other differences, for example in their speed and conduction mechanism.
+In a useful first construct, the charge carriers are hard-sphere objects.
+The most important opening idea, electrically, is that they have a property called "charge" which is the same size, but opposite in polarity for the ion and the electron; furthermore, the ions can have multiple charge.
+The ions are about $50,000-100,000$ times heavier and about the same factor larger than electrons, and this difference leads to crucial other differences, for example in their speed, conduction mechanism and thermodynamic features.
 For the sake of simplicity, we always think about positive ions,
-although we know also there are negative ions.
+although we know there are also negative ions.
 An essential implication is that an ion and an electron will strongly attract each other, while two positive ions or two electrons would strongly repel each other. 
+In closed biological space, the repulsion combined with the corresponding counterforces may lead to 
+mechanical pressure.
 All charges observed in nature are multiples of these elementary charges. The
 \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{charge} generates an \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{electric field}, its spatial integral results
 in potential difference or \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{voltage}, and its movement (its time derivative) generates a \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{current}
 (furthermore, electromagnetic waves that we do not discuss here).
 
-
+\physicspanel{phys:LocalChargeConservation}{Local charge conservation}
+{
 One of the fundamental symmetries of nature is the \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{conservation of electric charge}; it is valid, of course, for living matter as well. No known physical process produces a net change in electric charge. 
+In biology, especially in connection with the operation
+of neurotransmitters, it is not always clear what happens with the "created" and "disappearing" charges.
+
 Claims such as "the current cannot disappear, it has to go somewhere"~\cite{KochBiophysics:1999}, page 9, are wrong. On the one side \textit{only charge conserves, its time derivative, the current, does not}. On the other,
 \textit{charge conserves only globally, but not locally}: 
 the charge moves from one place to another with a finite speed. The case is similar to the case of general relativity, and also its reason is the same: the finite speed of interaction. In the general theory of relativity, local and global energies had to be introduced; for its mathematical handling, see, also \href{https://en.wikipedia.org/wiki/Noether's_theorem}{Noether's theorem}.
@@ -119,8 +132,7 @@ speed of interaction is the conduction velocity.
 It is a \indexit{limiting speed} in the sense as the concept is used in
 the theories of relativity: in biology, no effect can be faster
 than the (actual) \indexit{conduction speed}.
-Further complication arise from bioelectricity and neurotransmitters. They, apparently, "produce" new charges in a biological matter. 
-
+}
 
 
 \textit{In no case can one think that ions in living matter
@@ -138,7 +150,8 @@ The media and the charge carriers in those two halves are entirely different.
 
 
 \subsubsection{Electric field\label{sec:Physics-Gradient}}
-A charge generates an \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{electric field}. In the continuous view,
+A charge generates an \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{electric field}. 
+In the continuous view,
 physics uses the approximation that some electrical fluid coates surfaces and generates a field.
 However, in classical electricity, it is a static view which assumes instant interaction.
 That is,  surfaces are equipotential and the charges are fixed to a position somehow. In the particle view, there are no laws of motion: the charges have no carriers.
@@ -154,7 +167,14 @@ is infinitely large. In living matter, sometimes there are no
 the attraction of the ions on the opposite surface of the membrane
 keeps them in place, and extra ions must arrive into the volume
 to have freely moving charge carriers (which can produce local field and forward potential).  
+Given that the electric field integrated over a closed surface is proportional to the charge enclosed in the volume, furthermore the pressure on the surface is proportional to the
+number of ions enclosed in the volume; it should not be 
+surprising that pressure and the electric field are proportional to each other. Changing the number of ions
+in a closed volume changes the related voltage and
+pressure at the same time.
 
+\physicspanel{phys:ElectricalMonopole}{Electrical monopole}
+{
 An isolated single charge can be called an "electric monopole". Equal positive and negative charges placed close to each other constitute an \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{electric dipole}; solved salts in biological liquids typically represent dipoles.
 From some point, they have a fraction of a unit charge. From our point, it is important that the dipoles are directed. 
 \index{electric dipole}
@@ -165,17 +185,19 @@ It is a common fallacy in physiology that the applied potential $U$ generates
 a current. Instead, even in invasive measurements, its gradient ($E=U/z$) has the effect, where $z$ is the distance, for example, between the clamping point and the membrane or the \gls{AIS}.
 \textit{Inside the cells, there are no batteries.}
 Instead, the different ion concentrations produce electric gradient ($E=\frac{dU}{dz}$) that forms the driving force for moving the ions, among others, through the \gls{AIS}.
+}
 
                                    
 \subsubsection[Voltage]{Voltage\label{sec:PHYSICS_VOLTAGE}}
 
-It is worth to recall some features of \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{voltage}.
-Classical electricity applies a hybrid approach, again. 
+In connection with \href{http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html}{voltage},
+classical electricity applies a hybrid approach, again. 
 In classical circuits, the voltage arrives instantly, but 
 in the discrete elements, such as condensers and solenoids,
 have a mathematically described time course.
 We must extend the notion of electric field by considering 
-the contribution of a \hyperlink{ThermodynamicElectricField}{pseudo-electric field} arising from thermodynamics.
+the contribution of a \hyperlink{ThermodynamicElectricField}{pseudo-electric field} arising from thermodynamics, see 
+section~\ref{sec:Physics-ElectrolyteThermalField}.
 
 For a biological interpretation, we can start from the picture
 used in the case of condensers: charges arrive into a discrete element
@@ -188,19 +210,19 @@ can travel only with the speed of the slow ions, so the transport equations such
 
 In biology, thermodynamical processes produce the voltage and it has a time course. \textit{\textbf{Believing that an equivalent battery provides
 a constant voltage results in attributing changing conductance
-to the membrane}}, as we discuss in section~\ref{sec:PHYSICS_RESISTANCECONDUCTANCE}.
+to the membrane}}, as we discuss in section~\ref{sec:PHYSICS_ConductionMechanism}.
 
 
 It is important, that a voltage can be generated either by
-driving a current through a solid (in the continuous view) or placing charges in different points (in the discrete view). Electricity explains that voltage can be measured without or with electric current; having entirely different physical background.
-Accumulating charge on an insulator results in producing an electrostatic field. Of course, while charging, a current flows and energy is needed to produce a voltage, but it is a one-time action; the created potential difference persists.
+driving a current through a solid (in the continuous view) or placing charges in different points, typically on the surface of some biological object (in the discrete view). Electricity explains that voltage can be measured without or with electric current; having entirely different physical background.
+Accumulating charge on an insulator, such as a membrane's surface, results in producing an electrostatic field. Of course, while charging, a current flows and energy is needed to produce a voltage, but it is a one-time action; the created potential difference persists.
 In a condenser, a counterforce counterbalances the attraction between opposite charges on the opposite plates, no charge movement takes place, and no energy is needed to keep up the voltage.
 Another possibility 
 is when the charge moves (either an electron of the 'free electron cloud' moves against the friction of a solid or an ion moves 
 with the Stokes-Einstein speed against viscosity) in a medium, see Fig.~\ref{tab:Electric_ResistanceTypes}.
 \index{Stokes-Einstein speed}
 Notice the difference the thermodynamic feature of charge carriers
-means: only an elecric field can move the electrons, while 
+means: only an electric field can move the electrons, while a
 thermodynamic force can also move the ions.
 Anyhow, if moving charge carriers against resistance,
 it produces a voltage difference. 
@@ -219,7 +241,7 @@ Biology typically uses only the continuous view.
 
 It is a common fallacy in physiology that the applied potential $U$ generates
 a current. Hovever, it is a kind of potential energy.
- Instead, its gradient ($E=U/d$) has an effect, where $d$ is the distance. The field exerts force on a charge carrier in the respective
+ Instead, its gradient ($E=U/d$) has such an effect, where $d$ is the distance. The field exerts force on a charge carrier in the respective
 space region. For example, between the clamping point and the membrane or the \gls{AIS} the force field exists, but the current cannot start
 until charge carriers appear in the axon. It is important to distinguish potential and the difference of potentials in two different points.
 The latter, together with the distance of the points, leads to a gradient.
@@ -228,12 +250,12 @@ By saying that charge generates potential and having in mind
 that the charge carriers have a finite speed,
 one must conclude that
 the potential in biological matter can be the function of time 
-in volumes and surfaces when charge relocates due to different processes. It differs from the case of physical electricity
+in volumes and surfaces when charge relocates (for any reason) due to different processes. It differs from the case of physical electricity
 where the instant interaction means that the changes
-reach the different parts of the volume or the surface. 
+reach the different parts of the volume or the surface instantly. 
 In the case of living matter, internal processes change
-continuously the mass and charge disctribution: no uniform
-bulk concentration and uniform mebrane potential exists.
+continuously the mass and charge distribution: no uniform
+bulk concentration and uniform membrane potential exists.
 The continuous change is required for life. 
  
 \subsubsection{Current\label{sec:Physics-Current}}
@@ -248,12 +270,12 @@ In the macroscopic world, we describe the current as the statistical
 time course of charge carriers carrying charge $q$ through
 a cross section $A$. 
 Technical electricity handles current as an infinitely thin 
-electrical fuild.
+electrical fluid.
 At any point and at any time, the incoming charge equals the outgoing charge.
 \index{Kirchoff's Laws}
  Kirchoff's law expresses \textit{charge conservation at any point, in a differential form}.
 The correct definition of \hypertarget{electric_current}{current} is a differential one: $i=dq/dt$, as given for physiology by Appendix A.3.4 in~\cite{JohnstonWuNeurophysiology:1995}.
-By using this definition, A.3.5  correctly defines that "Ohm's law states that the ratio of voltage to current is a constant:
+By using this definition, A.3.5 in~\cite{JohnstonWuNeurophysiology:1995} correctly defines that "Ohm's law states that the ratio of voltage to current is a constant:
 $R = V/i$". So is its reciprocal, the conductance. By \textit{measuring simultaneously} 
 the two charge-related secondary entities, one can derive the ternary quantity \textit{"resistance", the opposition of material to current; an attribute of 
 the medium} where the measurement is caried out,
@@ -265,18 +287,20 @@ is the same across the volume. If the speed of the
 charge $dq$ is finite, a temporal difference belongs
 to the entrance and exit points of the charge.
 
+\physicspanel{phys:DisappearingCurrent}
+{Disappearing current}
+{
 The other way round, as given by Eq.~(1.4) in~\cite{KochBiophysics:1999}, is wrong.
 "It is straightforward to describe the dynamics of this circuit by applying Kirchoff's
 current law, which states that the sum of all currents flowing into or out of any electrical
 node must be zero (\textit{the current cannot disappear, it has to go somewhere})."~\cite{KochBiophysics:1999}
 \textit{It is straightforward, but, unfortunately, it is not true}.
-The sentence is true only in the picture of 'instant interaction',
-which is not the case for ions in electrolytes.
 Kirchoff's law expresses charge conservation in a simplified form,
-and only in the case of 'instant interaction' (the corresponding speeds differ by six orders of magnitude).
+and only in the case of 'instant interaction' (the corresponding speeds differ by six orders of magnitude),
+which is not the case for ions in electrolytes.
 \index{Kirchoff's Laws}
-\textit{The charge, instead of current, cannot disappear (and cannot newly appear either), it has to go somewhere}. \textbf{\textit{There is no conservation law for the time derivative of the charge, only for the charge itself.
-Mismatching charge and its derivative misguides understanding neurophysical phenomena.}} 
+\textit{The charge, instead of current, cannot disappear (and cannot newly appear either), it has to go somewhere}. \textit{There is no conservation law for the time derivative of the charge, only for the charge itself.
+Mismatching charge and its derivative misguides understanding neurophysical phenomena.}
 The non-differential definition contradicts charge conservation and also, contradicts itself: the charge carriers are ions rather than electrons.
 %
 \textit{The current can be interpreted in an integral form as current conservation only if the electric interaction is instant,
@@ -290,6 +314,7 @@ be distributed within the "wire" such as on the surface of the dendritic tree.
 The situation is apparently similar to the cases of charges in inductive, capacitive, etc. currents in technical electricity. The significant difference is that in the technical electricity the sum of the charges in the different currents
 is constant, in biology it is not known where are the charges
 in a delayed current.
+}
 
 
 \subsubsection[Conduction mechanism]{Conduction mechanism\label{sec:PHYSICS_ConductionMechanism}}
@@ -301,7 +326,7 @@ and they are slow (have a couple of $m/s$ speed, creating the illusion
 of 'delayed current').
 \index{delayed current}
 Figure~\ref{tab:Electric_ResistanceTypes} illustrates how 
-classical electronics and biology considers charges and their moving.
+classical electricity and biology considers charges and their moving.
 Both disciplines provide an atomic level description, but unfortunately they use the same words for their concepts, although
 their meaning can be entirely different. 
 
@@ -318,8 +343,8 @@ Solid state
 \includegraphics[width=.45\textwidth]{fig/SolidResistance.png} & 
 \includegraphics[width=.45\textwidth]{fig/IonicResistance.jpg} \\
 \else
-\includegraphics[width=.32\textwidth]{fig/SolidResistance.png} & 
-\includegraphics[width=.32\textwidth]{fig/IonicResistance.jpg} \\
+\includegraphics[width=.30\textwidth]{fig/SolidResistance.png} & 
+\includegraphics[width=.30\textwidth]{fig/IonicResistance.jpg} \\
 \fi
 \hline
 Current conveyed by electrons in solids & 
@@ -338,15 +363,14 @@ electrons (shown in the figure in blue) constantly bounce among heavier, station
 
 In biological matter, ions convey electricity. So called ion channels
 are used for the transfer. Here diffusion and electromigration takes place, by orders of magnitude different speeds. 
-%The ions traverse typically without collision, under the effect of an electric field. 
 The process is mostly reversible.  See also section~\ref{sec:Physics-HeatAbsorption} and Equ.(\ref{eq:StokesEinsteinSpeeddV}). 
 Fig.~\ref{tab:Electric_ResistanceTypes} shows that resistance 
 is interpreted as the interaction of charge carriers with the particles in the material that are transported by a driving force (that can comprise also a force of chemical origin).
 In solid state, the volume considered is "infinitely large" (that is, the field is homogeneous
 and the propagation is isotropic), and the charge carriers are uniform that is only one type of interaction is present.
-In biological objects, the volume is more or less limited (is finite), there may be charged objects present that make the propagation non-isotropic. Furthermore, the charge carriers are non-uniform
+In biological matter, the volume is more or less limited (is finite), there may be charged objects present that make the propagation non-isotropic. Furthermore, the charge carriers are non-uniform
 that introduces thermodynamic interaction in addition to the electrical interaction.
-Ions, under the electrical/thermodynamic field (and maybe mechanical constraints) accelerate to the Stokes-Einstein speed (see Eq.(\ref{eq:StokesSpeed})), move against a friction in the electrolyte.
+Ions, under the electric/thermodynamic field (and maybe mechanical constraints) accelerate to the \hyperlink{phys:StokesSpeed}{Stokes-Einstein speed} (see Eq.(\ref{eq:StokesSpeed})), move against a friction in the electrolyte.
 \index{StokesEinstein speed}
 The ions suffer (essentially elastic) collisions with neutral molecules and transfer their momentum (and so: energy) to them. 
 From the point of view of ions, the process is energy loss and momentum loss.
@@ -356,16 +380,16 @@ process in finally irreversible.
 \paragraph{Conduction under constrains\label{sec:PHYSICS_ConductionConstrained}}
 
 If the acceleration occurs in a narrow tube 
-such as an ion channel, the wall prevents gaining momentum in the 
+such as an ion channel (the ion channel has a typical size of a few nanometer, the mean free path is of size ten times less), the wall prevents gaining momentum in the 
 direction perpendicular to the direction of acceleration. 
-Given that the collisions are elastic, no energy dissipates;
+Given that the collisions are elastic, (almost) no energy dissipates;
 so, in principle, the process is reversible.
 Strangely enough, this way the electrical force
-accelerates also the neutral molecules; furthermore, their momentum (using an elastic membrane) can fully contribute to the operation
+accelerates also the neutral molecules; furthermore, their momentum and energy (using an elastic membrane) can fully contribute to the operation
 of neuron (forms the \gls{AP}). 
 
 
-In a narrow tube (such as an ion channel) the momentum exchange
+This way, in a narrow tube (such as an ion channel) the momentum exchange
 is limited to one direction.
 If the ions are accelerated through the channel, due  to the
 frequent collisions, they can entirely transfer their 
@@ -380,7 +404,7 @@ is a two-way process, it is reversible also in the practice. If a small amount o
 particles is present in the tube, under an external electrical
 field, the charged particles can accelerate the neutral ones.
 Vice versa, if the bulk of the particles are moved mechanically (say, when an ultrasound wave
- presses the neuron or a rush-in process transfers electric energy to the membrane), the one-directionally moving
+ presses the neuron or a rush-in process transfers elastic energy to the membrane), the one-directionally moving
  neutral molecules transfer momentum to the charged particles,
  this way producing measurable electrical waves (such as an \gls{AP}).
 
@@ -389,16 +413,16 @@ The secondary electric quantities can be derived from
 the primary quantity: the bulk of the undissociated molecules
 'resist' transferring ions under the effect of an electric field (the liquid must be pressed through the tube).
 One can measure potential and current along the ion
-channel (and so, to calculate resistance), but the behavior of the resistance/conductance is 
+channel (and so, can calculate resistance), but the behavior of the resistance/conductance is 
 drastically different. One has a pneumatic system instead of a voltage generator and the resistance originates in viscosity. Most of the energy is converted to
 mechanical energy instead of heat, making the process (mostly) reversible.
-The \gls{AP} initially produces an impulse force that compresses the membrane. The compressed membrane, while performing a damped oscillation, pushes and pulls the incompressible electrolyte that contains a small amount of dissociated ions, this way (per defitionem)
+The \gls{AP} initially produces an impulse force that compresses the membrane. The compressed membrane, while performing a damped oscillation, pushes and pulls the incompressible electrolyte that contains a small amount of dissociated ions, this way (per definitionem)
 creating an observable current and voltage wave. In the 
 positive and negative half periods of the elastic oscillation,
 due to opposite elastic/pneumatic forces, the current and voltage  change their sign. Given that the charges move at their
-\indexit{Stokes-Einstein speed}, the voltage-, current- and pressure waves are synchronized, as observed. The different 
+\indexit{Stokes-Einstein speed}, the voltage-, current-, temperature and pressure waves are synchronized, as observed. The different 
 experimental observations measure the same effect
-by using their disciplinary measuring devices.
+by using their disciplinary measuring devices as different quantities.
 The energy of the ions cannot dissipate; instead, the neutral and charged 
 particles share it, and convert between kinetic and elastic energies (the electric energy is much smaller).
 That is, the 
@@ -416,16 +440,16 @@ can be naturally unified.
 \subsubsection[Resistance/Conductance]{Resistance/Conductance\label{sec:PHYSICS_RESISTANCECONDUCTANCE}}
 
 
-Voltage and current, the secondary electric quantities, derive directly from charge, the primary quantity, and (except time) no external quantity is used. In contrast, when deriving resistance or conductance, one measures how the tested object relates to electricity. At this point comes to light the meaning of E.~Schrödinger's warning about how do we test in
+Voltage and current, the secondary electric quantities, derive directly from charge, the primary quantity, and (except time) no external quantity is used. In contrast, when deriving resistance or conductance, one measures how the tested object relates to electricity. At this point comes to light the meaning of E.~Schrödinger's warning about how do we tests in
 physics laboratories. Although physics knows (based on their 
-electric behavior) conductors, insulators and semiconductors,
+electric behavior) conductors, insulators and semiconductors, the instant interaction is tacitly included and
 the \textit{characteristics of the material} under testing 
 is never mismatched into electrical terms. Paper~\cite{RejectingMemristor:2018} discusses why introducing
 a fundamental circuit element (the memristor) led to decades-long confusion, when attempting to introduce new laws of electicity.
 Introducing neuron (in the form of equivalent circuits where 
 \index{equivalent electrical circuit}
 the "living matter" changes its electrical characteristics
-without any causality), that changes the rules of the game in 
+without any cause), that changes the rules of the game in 
 electricity, has led to similar confusion. 
 Physics provides examples when the relation of voltage and current seems to change
 and deviate from the Ohmic case.
@@ -464,8 +488,10 @@ The fundamental laws of electricity are the same, but describing electrical proc
 internal processes inside need more care
 than in the case of non-living matter without such processes.   
 
-When measuring resistance by dividing the measured values of voltage and current,
-a quantity of dimension resistance or conductance can be derived.
+\physicspanel{phys:MeasuringConductivity}{Measuring conductivity}
+{
+\textit{When measuring resistance by dividing the measured values of voltage and current,
+a quantity of dimension resistance or conductance can surely be derived.}
 Measuring those two charge-related characteristics
 requires performing two independent measurements,
 using two independent measuring devices; furthermore, assuring that one uses
@@ -474,7 +500,7 @@ measuring devices have been developed and are in use.
 Of course, even that instrument (see Fig.~\ref{fig:Physics-Multimeter}) cannot measure directly the ratio of
 those two secondary quantities, it makes (a little and forgivable) cheating. It reduces the measurement to measuring current 
 by applying a little voltage (of known value) to the device under test,
-and displays the calculated result in units of resistance/conductance.
+and displays the calculated result, using Ohm's Law, in units of resistance/conductance.
 The device uses the differential form of 
 deriving the current: measures 
 the voltage and the current at the 
@@ -488,9 +514,11 @@ the unwanted offset does not have significant effect.
 However, in biology, the 'service current' needed for the measurement 
 is in the range of the currents due to biological effects,
 and can bias measured values.
+}
 
-
-Two more kinds of issues come to the light when measuring in biological circuits. As we mentioned, although the measurement device
+\physicspanel{phys:OtherMeasuringEffects}{Other Measuring Effects}
+{
+In addition to the effect described in \hyperlink{phys:MeasuringConductivity}{physics panel~\ref{phys:MeasuringConductivity}}, two more kinds of issues come to light when measuring in biological circuits. As we mentioned, although the measurement device
 works with electrons and in the half with 'instant interaction',
 the current keeps the timing of the slow current in the biological time; that is, one uses a 'delayed current' value in measuring
 the resistance. This is why good physiology textbooks (such as~\cite{JohnstonWuNeurophysiology:1995}) emphasize that 
@@ -500,7 +528,7 @@ distorted values; an extreme example is 'demonstrating' that
 the neuron is a low-pass filter, see section~\ref{sec:Physiology-FallaciesLowPassFilter}.
 
 Another issue is that the device of course cannot distinguish what the
-experimenter wants to measure and cannot separate its own current that its required voltage produces
+experimenter wants to measure. It cannot separate its own current that its required voltage produces
 from the current that the tested object autonomously generates.
 It works with 'instant' electricity, 
 using Ohm's law, and divides the momentary value of the measured current with the known value of
@@ -512,6 +540,7 @@ The gradient and its effect are shifted by the time period that the charge carri
 to the place of the measurement.
 It is in the order of nanoseconds in technical circuits and it can be in the order of fragments of milliseconds, depending on the speed of the ions (depends on the gradient) and the distance traveled, in biological matter.
 So, the measured conductance is surely wrong, the question is only how much it is wrong. 
+}
 
 Notice that the middle figure in Fig.~\ref{fig:ActionPotentialTest} shows two essential potential gradient
 contributions. Given that for the current 
@@ -630,6 +659,8 @@ The activity of potential-controlled ion channels in its wall may
 change $n$ in various ways; furthermore, that change can result in
 'delayed' currents during measurement, for example, in \hyperlink{voltage-clamping}{clamping}, as physiological measurements witness.
 
+\physicspanel{phys:StokesSpeed}{Stokes speed of ions}
+{
 If we have a concentration
 $C(z)$, in the volume $A*dz$, we have $dQ=C(z)*A*dz*q$
 charge, resulting in another expression for the current
@@ -647,10 +678,11 @@ We extend the original idea for living matter by using
 \begin{align}
 	E(z) & = \frac{\Delta V}{\Delta z} & in\ linear\ potential\\
 	     & = \frac{dV}{dz} & in\ graded\ potential\\
-	     & = E_{electric} + E_{(thermal)} & in\ electrolytes
+	     & = E_{electric} + E_{thermal} & in\ electrolytes
 \end{align}
 Furthermore, correspondingly, here we introduce \textit{a speed gradient $v(z,t)$
 which plays a vital role in the processes that occur in living matter}.
+}
 \index{speed!gradient}
 
 The higher the resulting space derivative (gradient) and the fewer ions that
@@ -667,6 +699,9 @@ the chemically moved ions can mediate the electric field. \emph{The
 lower interaction speed limits the other interaction speed if the
 interactions generate each other.}
 
+\physicspanel{phys:StokesDiffusionCoefficient}
+{Stokes-Einstein diffusion coefficient}
+{
 The dependence of the diffusion coefficient on the viscosity can be modeled by the Stokes-Einstein relation:
 \index{Stokes-Einstein relation}
 \begin{equation}
@@ -684,12 +719,14 @@ v(z)= -\frac{D*R}{F}*C(z)*E(z)
 \label{eq:StokesEinsteinSpeeddC}
 \end{equation}
 
+
 In the
 equation, $z$ is the spatial variable across the direction of the
 changed invasion parameter, $R$ is the gas constant, $F$ is the
 Faraday's constant, $T$ is the temperature, $q$ the valence
 of the ion, ${V(z)}$ the resulting potential, and ${C(z)}$ the concentration
 of the chemical ion. For the experimental evidence, see section~\ref{sec:Physiology-StokesLaw}.
+}
 
 Models in neuroscience (as reviewed in~\cite{BrainNetworkModels:2018})
 almost entirely ignore these aspects. In our physical model, we see
@@ -729,7 +766,7 @@ and it is only an illusion (thanks to the "free electron cloud")
 that the current propagates at such a speed, the abstraction based on the approximation
 that those speeds are infinitely high, works. However, that abstraction has a
 range of validity and the biological systems not necessarily belong to it.
-It means that the laws of physics are valid, but in biology another approximations
+It means that the laws of physics are valid, but, in biology, another approximations
 must be applied. The absolute value of speeds alone would not mean a problem,
 but as section~\ref{sec:Physics-Thermodynamics} discusses, when force fields having
 \hypertarget{slow_current}{different propagation speeds} are mixing, special calculation methods must be used.
@@ -886,7 +923,7 @@ Handling the many equipotential compartments attempts to cover the fact
 that one imitates finite membrane size and slow currents.
 
 However, %@link MODELING_SINGLE_LA YERS
-in biology storing charge is implemented differently.
+in biology, storing charge is implemented differently.
 %@endlink.
 The notion of storing charge can be used also in the sense that
 for the time of passing a finite-size element with finite propagation speed,
@@ -1046,9 +1083,7 @@ and potential inside and outside the neuron.
  
 Notice that our interpretation and equations excellently and naturally
 describe also the currents propagating without an external voltage, among others the axonal current and the membrane's current.
-The 
-%\gls{AP}
-AP arrives at the beginning of the axon in the form of a traveling wave of a  slow current (an ion packet delivering ions). Recall that ions move in the "skin"
+The \gls{AP} arrives at the beginning of the axon in the form of a traveling wave of a  slow current (an ion packet delivering ions). Recall that ions move in the "skin"
 layer on the membrane, and they continue their way in the axon's internal
 surface, creating a similar skin on the internal surface of the tube.
 There is really no ion current in the volume of the axon, as the classic
@@ -1089,69 +1124,4 @@ rate to pump ions in at the beginning and the end to appropriately
 adjust the pumping intensity to accomodate to the spike's current
 intensity at the places of the channels; given that the total charge
 delivered by the spike and the shape of the spike remains the same during the axonal delivery.)
-
-\subsection[Equivalent circuits]{Equivalent circuits\label{sec:PHYSICS_EquivalentCircuit}}
-
-One wrong consequence of forgetting that the charge transfer mechanism is entirely different,
-the charge carriers are large and heavy (and as a consequence: slow) ions instead of electron (cloud),
-furthermore they are not necessary present in the 
-volume under test and the 'construction' of biological matter 
-enables the tested medium to produce charge carriers,
-using 'equivalent circuits' for
-neuronal operation. This fallacy
-entirely falsifies the conclusions from the measurements.
-
-Another wrong consequence of using 'equivalent circuits' to describe
-the electrical operation of neurons is believing that the currents in
-the biological circuit do not change the concentration, and through
-the concentration, also the potential; see also section~\ref{sec:Physics-Resources}. The 'equivalent circuits',
-of course, use a constant potential (they follow the abstraction used
-in the theory of electricity, although the 'ideal batteries' also
-may produce their voltage using chemical processes), and unreasonably, some mystic process changes the resistance/conductance of components. This wrong abstraction
-results in numerous misunderstandings, among others, introducing ideas
-such as parallel oscillator equivalent of neuron, input resistance,
-delayed rectifier current, resting current, and time- or voltage-dependent
-conductance. Furthermore, we cannot 
-interpret, among others, \emph{how neuronal electricity
-works in lack of external potential}; \emph{how slow currents operate
-neuron's infrastructure}, \emph{how and why action potential is generated}.
-Deriving the time course of the Nernst-Planck potential opens the
-way to a quantitative understanding of neurophysical electrical processes,
-including their time course.
-
-Again another wrong consequence is that the two secondary abstractions 'potential',
-and 'current', became independent from the primary abstraction 'charge'
-and each other (significantly contributing to the fallacy that 'physics cannot describe life'). Our equations and the underlying discussion point
-to the fact that \emph{the potential and the current cannot be separated
-from the charge}. No 'delayed rectifying current' and 'voltage- (or
-time-) dependent conductance' exist. Those notions originate from
-the wrong interpretation of measured data derived from mismatching
-measured electrical data pairs and the misconception that biological
-structures and materials must behave like metals.
-
-
-As we discussed in section~\ref{sec:Physics-TwoSegments}, 
-the unbalanced charge in neurons and the charge injected
-suddenly into the intracellular segment during a rush-in action
-are in the same order of magnitude. We also discussed that 
-the charge injection (the appearance and flow of charge in the proximal layer on the membrane's surface) causes well measureable mechanical, optical, etc. changes~\cite{MechanicalWaves:2015} on the membrane.
-Those changes are well observable on the low-concentration side, in the form of slow currents, and large-scale
-concentration and potential changes.
-
-Those changes also mean that a large amount of charge
-passes from the high-concentration side
-to the low concentration side of the membrane, and causes a sudden drop
-on the high-concentration side of the membrane. As discussed,
-that change means simultaneously a change in the corresponding 
-potentials across the membrane that solves the mystery why the
-\gls{AP}
-AP stops. The potential across the membrane is defined by the difference of the
-potential of the two thin layers (see section~\ref{sec:Physics-Membranes}) on the membrane's surface.
-As we discussed, a huge electric field exists across the
-plates of the neuronal condenser, while a moderate one 
-in the proximal layers. That means that the ions can quickly
-leave the high concentration when the rush-in injection begins.
-They produce an 'empty' layer (and a potential gradient)
-whithin that layer and the ions in the neighboring layer
-start to move using the 'downhill' potential. However, they do have a much slower speed, so they 'stop' at some distance. 
 

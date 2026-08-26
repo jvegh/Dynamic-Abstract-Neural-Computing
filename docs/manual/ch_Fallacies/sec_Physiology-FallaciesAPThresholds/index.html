@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>4.11 Thresholds of initiating AP ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8</title>
+<!--Generated on Tue Jul 28 18:02:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on July 28, 2026.-->
+
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="../../../ltx-book.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../../../latexmldoc.css" type="text/css">
+<script src="../../../LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="../index.html" title="Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="up up" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="start" href="../../index.html" title="Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="prev" href="../sec_Physiology-FallaciesLowPassFilter/sec_BlockingChannels.html" title="4.10.1 Blocking channels by drugs ‣ 4.10 Membrane as low-pass filter ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="next" href="../sec_Physics-CableEquation/index.html" title="4.12 The cable equation ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Physiology-HodgkinHuxley/index.html" title="4.1 Hodgkin&amp;Huxley’s empirical description ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Fallacies-OutwardK/index.html" title="4.2 The outward 𝐾⁺ component during the AP ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Physiology-DelayedCurrent/index.html" title="4.3 ’Delayed rectifying’ current ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Fallacies-ElectricalCircuit/index.html" title="4.4 Equivalent electrical circuit ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Physiology-FallaciesPointLike/index.html" title="4.5 Point-like neuron ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Physiology-FallaciesPassiveMembrane/index.html" title="4.6 Passive distributed membrane ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Fallacies-Wrong_isolator/index.html" title="4.7 Membrane as a wrong isolator ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../subsec_EnergyConsumption/index.html" title="4.8 Energy consumption ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Physiology-FallaciesRefractoriness/index.html" title="4.9 Membrane refractoriness ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Physiology-FallaciesLowPassFilter/index.html" title="4.10 Membrane as low-pass filter ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Physics-CableEquation/index.html" title="4.12 The cable equation ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="section" href="../sec_Physics-Goldman-Hodgkin-Katz/index.html" title="4.13 Goldman-Hodgkin-Katz potential ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Foreword/index.html" title="Foreword ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_StateOfTheArt/index.html" title="State-of-the-art ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Single/index.html" title="Chapter 1 Single (abstract) neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Physics/index.html" title="Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Physiology/index.html" title="Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../index.html" title="Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Computing/index.html" title="Chapter 5 Neural computing ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Information/index.html" title="Chapter 6 Neural information ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Multiple/index.html" title="Chapter 7 Multiple neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Intelligence/index.html" title="Chapter 8 Intelligence ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Simulation/index.html" title="Chapter 9 Neural simulator ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../ch_Version/index.html" title="Version history ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../Ch_ListOfTables/index.html" title="ListOfTables ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../Ch_ListOfFigures/index.html" title="ListOfFigures ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../Ch_Index/index.html" title="Index ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="chapter" href="../../Ch_Glossary/index.html" title="Glossary ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<link rel="bibliography" href="../../bib.html" title="Bibliography ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8">
+<meta name="keywords" lang="en" content="voltage gradient">
+</head>
+<body>
+<nav class="ltx_page_navbar">
+<div class="ltx_para">
+<img src="../graphics/neurer.png" class="ltx_graphics ltx_img_landscape" width="225" height="168" alt="[Uncaptioned image]">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Dynamic Abstract Neural Computing
+<br class="ltx_break">with Electronic Simulation
+<br class="ltx_break"><span class="ltx_text" style="font-size:90%;">The true physics, physiology, computing, and information science
+<br class="ltx_break">behind neuronal operation
+<br class="ltx_break">(DANCES) Version <em class="ltx_emph ltx_font_italic">0.2.8</em>
+<br class="ltx_break">@July 28, 2026</span></span></p>
+</div>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Foreword/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">Foreword</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_StateOfTheArt/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">State-of-the-art</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Single/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">1</span> </span><span class="ltx_text" style="color:#000000;">Single (abstract) neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physics/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">2</span> </span><span class="ltx_text" style="color:#000000;">Physics for neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Physiology/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">3</span> </span><span class="ltx_text" style="color:#000000;">Physiology for neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">4</span> </span><span class="ltx_text" style="color:#000000;">Fallacies</span></span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-HodgkinHuxley/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Hodgkin&amp;Huxley’s empirical description</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Fallacies-OutwardK/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">4.2</span> </span><span class="ltx_text" style="color:#000000;">The outward </span><math class="ltx_Math" alttext="K^{+}" display="inline"><msup><mi mathcolor="#000000">K</mi><mo mathcolor="#000000">+</mo></msup></math><span class="ltx_text" style="color:#000000;"> component during the </span><span title="" class="ltx_glossaryref" style="color:#000000;">AP</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-DelayedCurrent/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.3 </span>’Delayed rectifying’ current</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Fallacies-ElectricalCircuit/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Equivalent electrical circuit</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-FallaciesPointLike/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.5 </span>Point-like neuron</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-FallaciesPassiveMembrane/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.6 </span>Passive distributed membrane</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Fallacies-Wrong_isolator/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.7 </span>Membrane as a wrong isolator</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../subsec_EnergyConsumption/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.8 </span>Energy consumption</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-FallaciesRefractoriness/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.9 </span>Membrane refractoriness</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physiology-FallaciesLowPassFilter/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.10 </span>Membrane as low-pass filter</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.11 </span>Thresholds of initiating AP</span></span>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#sec:Physiology-HHOscillator" title="In 4.11 Thresholds of initiating AP ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">Oscillator type</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-CableEquation/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.12 </span>The cable equation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="../sec_Physics-Goldman-Hodgkin-Katz/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.13 </span>Goldman-Hodgkin-Katz potential</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Computing/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">5</span> </span><span class="ltx_text" style="color:#000000;">Computing with neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Information/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">6</span> </span><span class="ltx_text" style="color:#000000;">Information in neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Multiple/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">7</span> </span><span class="ltx_text" style="color:#000000;">Multiple neurons</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Intelligence/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">8</span> </span><span class="ltx_text" style="color:#000000;">Intelligence</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Simulation/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">9</span> </span><span class="ltx_text" style="color:#000000;">Simulation</span></span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../ch_Version/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">Version history</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfTables/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfTables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_ListOfFigures/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">ListOfFigures</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Index/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="../../Ch_Glossary/index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref"><span class="ltx_text ltx_ref_title">Bibliography</span></a></li>
+</ol></nav>
+<div class="ltx_para">
+<p class="ltx_p"><a href="../../simulator/ToIssue.html" title="" class="ltx_ref ltx_href" style="font-size:90%;color:#000000;">Report issue</a><span class="ltx_text" style="font-size:90%;color:#000000;">
+<a href="../manual.pdf" title="" class="ltx_ref ltx_href">Manual in .PDF form</a>
+<a href="../../simulator/index.html" title="" class="ltx_ref ltx_href">Simulator</a>
+<a href="../../simulator/ToCode.html" title="" class="ltx_ref ltx_href">Code</a>
+<a href="../doxy/HTML/index.html" title="" class="ltx_ref ltx_href">Code documentation</a>
+<a href="https://github.com/jvegh/Dynamic-Abstract-Neural-Computing/graphs/code-frequency" title="" class="ltx_ref ltx_href">Development pace</a>
+<img src="../graphics/NeuronAndBrain.jpg" class="ltx_graphics ltx_img_square" width="246" height="246" alt="[Uncaptioned image]">
+</span></p>
+</div></nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="../index.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref"><span class="ltx_text" style="color:#000000;">4</span> </span><span class="ltx_text" style="color:#000000;">Fallacies</span></span></a><a href="../sec_Physiology-FallaciesLowPassFilter/sec_BlockingChannels.html" title="In 4.10 Membrane as low-pass filter ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.10.1 </span>Blocking channels by drugs</span></a><a href="../sec_Physics-CableEquation/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.12 </span>The cable equation</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line">
+<h1 class="ltx_title ltx_title_section" style="color:#000000;">
+<span class="ltx_tag ltx_tag_section">4.11 </span>Thresholds of initiating AP</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">As discussed above, ion channels have a voltage threshold that opens
+them. We can successfully interpret how the microscopic threshold
+of the ion channels forms the macroscopic phenomenon that a voltage
+threshold exists for the membrane. Section 17.3 in </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib25" title="" class="ltx_ref">25</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">,
+introduces further (current and charge) thresholds. After introducing
+the “slow current” notion, we can understand that the same voltage
+threshold manifests in apparently different thresholds.</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">As discussed, introducing a sustained current </span><math id="p2.m1" class="ltx_Math" alttext="I_{clamp}" display="inline"><msub><mi mathcolor="#000000">I</mi><mrow><mi mathcolor="#000000">c</mi><mo>⁢</mo><mi mathcolor="#000000">l</mi><mo>⁢</mo><mi mathcolor="#000000">a</mi><mo>⁢</mo><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">p</mi></mrow></msub></math><span class="ltx_text" style="color:#000000;">
+implies the introduction of a sustained slow current on the membrane’s
+surface. The sustained current means a sustained presence of ions on the surface, resulting in a continuous increase of potential offset over the resting potential value. As observed, “the somatic membrane
+potential responds with a slight overshoot”. Given that the charge
+collection for initiating an
+AP starts at a voltage above the
+resting potential, the voltage threshold is reached earlier. The introduced
+external current </span><math id="p2.m2" class="ltx_Math" alttext="I_{A}" display="inline"><msub><mi mathcolor="#000000">I</mi><mi mathcolor="#000000">A</mi></msub></math><span class="ltx_text" style="color:#000000;"> is added to the sustained </span><a href="../../ch_Physics/phys_ElectricDichotomies/sec_PHYSICS_MEASURING.html#voltage-clamping" title="The very common measuring method reveals some fundamental differences between the electric behavior of conductors and living matter. ”The reason for voltage-clamping ‣ Voltage/current clamping/patching ‣ 2.4.7 Measuring issues ‣ 2.4 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;">clamping current</a><span class="ltx_text" style="color:#000000;">.
+The charge delivered by the newly added slow current appears delayed
+(after the onset). Depending on the point of the membrane the current
+is added, the delay may be up to 1 msec. (As </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib49" title="" class="ltx_ref">49</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">
+demonstrated, the propagation speed inside a neuron is in the order
+of less than 1 cm/s; furthermore, as we discussed, the need to use
+electrolyte electrodes can prolong the measured delay time considerably.)
+</span><em class="ltx_emph ltx_font_italic" style="color:#000000;">The current threshold is another manifestation of the voltage
+threshold.</em><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">As we discussed in section </span><a href="../../ch_Physics/sec_Physics-Abstraction/sec_Physics-Complete.html#phys:Atomicity" title="Electrical vs Mechanical ‣ 2.2.4 Complete measurement ‣ 2.2 Science concepts ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">2.2.4</span></a><span class="ltx_text" style="color:#000000;">,
+the virtue of a capacitive current is used only to imitate the effect
+of a slow current: biology has no discrete capacitance. The capacitive
+current exists only as a virtual notion in the electric circuit comprising
+discrete elements that are considered parallel with the biology-imitating
+circuit comprising distributed elements. In the lack of notion of
+a “slow” current, for “rapid events”, one may attempt to replace
+the “delayed rectifying current” with an instantaneous current.
+As formulated in section 17.3.5 in </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib25" title="" class="ltx_ref">25</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">:
+“Because we are considering rapid events, the steady-state I-V in
+Eq. 17.4 must be replaced by the instantaneous I-V curve”. However,
+the rapid events are not rapid enough to make such a replacement in
+a differential equation. This replacement results in their Eq. (17.7)
+non-matching values are used. As we explained, Eq. (</span><a href="../../ch_Physiology/sec_Physiology-DerivingActionPotential/sec_Physiology-ChargeConservation.html#eq:Kirchoff_biological" title="In 3.7.5 Charge conservation ‣ 3.7 Action potential ‣ Chapter 3 Abstract neurophysiology ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">3.9</span></a><span class="ltx_text" style="color:#000000;">)
+formulates Kirchoff’s Law in biology. Using </span><em class="ltx_emph ltx_font_italic" style="color:#000000;">a virtual parameter
+“capacity <math id="p3.m1" class="ltx_Math" alttext="C" display="inline"><mi mathcolor="#000000">C</mi></math>” for biological neurons misleads research: introduces
+a nonexisting “charge threshold”, which exists only due to mismatching
+notions of finite-speed biological circuits with notions of the infinite-speed
+abstract electric circuits</em><span class="ltx_text" style="color:#000000;">, used to imitate a finite-speed current
+in terms of a virtual infinite-speed current.</span></p>
+</div>
+<section id="sec:Physiology-HHOscillator" class="ltx_subsubsection">
+<h2 class="ltx_title ltx_title_subsubsection" style="color:#000000;">Oscillator type</h2>
+
+<div id="SS0.SSSx1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">If we apply a continuous square wave voltage waveform to an integrator-type electric RC circuit,
+we receive an output wave form shown in Fig. </span><a href="#fig:RCLongWaveform" title="Figure 4.7 ‣ Oscillator type ‣ 4.11 Thresholds of initiating AP ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">4.7</span></a><span class="ltx_text" style="color:#000000;">.
+After switching a voltage to the circuit, a charge-up process starts, then the output voltage saturates.
+After switching the voltage off, the condenser discharges.
+</span><span class="ltx_text ltx_font_italic" style="color:#000000;">The time constant <math id="SS0.SSSx1.p1.m1" class="ltx_Math" alttext="\tau" display="inline"><mi mathcolor="#000000">τ</mi></math> for the charge and discharge processes are identical.</span><span class="ltx_text" style="color:#000000;">
+If the time period of the input square wave waveform is made longer
+(in the figure with a half-period “</span><math id="SS0.SSSx1.p1.m2" class="ltx_Math" alttext="8*\tau" display="inline"><mrow><mn mathcolor="#000000">8</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">τ</mi></mrow></math><span class="ltx_text" style="color:#000000;">”), the capacitor would then stay fully charged longer
+and also stay fully discharged longer.</span></p>
+</div>
+<figure id="fig:RCLongWaveform" class="ltx_figure"><img src="fig/RCLongWaveform.jpg" id="Ch4.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="389" height="194" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 4.7: </span>The output waveform of an integrator-type electric <math id="Ch4.F7.m3" class="ltx_Math" alttext="RC" display="inline"><mrow><mi mathcolor="#000000">R</mi><mo>⁢</mo><mi mathcolor="#000000">C</mi></mrow></math> circuit
+at a long (<math id="Ch4.F7.m4" class="ltx_Math" alttext="8*\tau" display="inline"><mrow><mn mathcolor="#000000">8</mn><mo lspace="0.222em" mathcolor="#000000" rspace="0.222em">∗</mo><mi mathcolor="#000000">τ</mi></mrow></math>) pulse width square wave input (see Eq.(https://www.electronics-tutorials.ws/) </figcaption>
+</figure>
+<div id="SS0.SSSx1.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">HH measured </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib9" title="" class="ltx_ref">9</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;"> the time course of the neuronal membrane (i.e., a neuronal </span><math id="SS0.SSSx1.p2.m1" class="ltx_Math" alttext="RC" display="inline"><mrow><mi mathcolor="#000000">R</mi><mo>⁢</mo><mi mathcolor="#000000">C</mi></mrow></math><span class="ltx_text" style="color:#000000;"> circuit)
+when switched </span><a href="../../ch_Physics/phys_ElectricDichotomies/sec_PHYSICS_MEASURING.html#voltage-clamping" title="The very common measuring method reveals some fundamental differences between the electric behavior of conductors and living matter. ”The reason for voltage-clamping ‣ Voltage/current clamping/patching ‣ 2.4.7 Measuring issues ‣ 2.4 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;">clamping axonal voltage</a><span class="ltx_text" style="color:#000000;"> on and off.
+Their measurement result is shown in Fig. </span><a href="#fig:ClampingOnOff_HH" title="Figure 4.8 ‣ Oscillator type ‣ 4.11 Thresholds of initiating AP ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">4.8</span></a><span class="ltx_text" style="color:#000000;">.
+They experienced a formal similarity with switching a voltage of an integrator-type </span><math id="SS0.SSSx1.p2.m2" class="ltx_Math" alttext="RC" display="inline"><mrow><mi mathcolor="#000000">R</mi><mo>⁢</mo><mi mathcolor="#000000">C</mi></mrow></math><span class="ltx_text" style="color:#000000;"> circuit on and off,
+compare to Fig. </span><a href="#fig:RCLongWaveform" title="Figure 4.7 ‣ Oscillator type ‣ 4.11 Thresholds of initiating AP ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">4.7</span></a><span class="ltx_text" style="color:#000000;">, so </span><span class="ltx_text ltx_font_italic" style="color:#000000;">they concluded that
+the response of the neuronal circuit is identical
+to that of the integrator-type electric <math id="SS0.SSSx1.p2.m3" class="ltx_Math" alttext="RC" display="inline"><mrow><mi mathcolor="#000000">R</mi><mo>⁢</mo><mi mathcolor="#000000">C</mi></mrow></math> circuit</span><span class="ltx_text" style="color:#000000;"> (see our discussion in sections </span><a href="../../ch_Physics/phys_ElectricDichotomies/sec_PHYSICS_MEASURINGOSCILLATOR.html#Physics-OscillatorIntegrator" title="Integrator-type oscillator ‣ 2.4.5 Oscillator ‣ 2.4 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">2.4.5</span></a><span class="ltx_text" style="color:#000000;">
+and </span><a href="../../ch_Physics/phys_ElectricDichotomies/sec_PHYSICS_MEASURINGOSCILLATOR.html" title="2.4.5 Oscillator ‣ 2.4 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">2.4.5</span></a><span class="ltx_text" style="color:#000000;">).
+They (mistakenly) concluded that the electric equivalent circuit
+of a neuron is a parallelly switched electric </span><math id="SS0.SSSx1.p2.m4" class="ltx_Math" alttext="RC" display="inline"><mrow><mi mathcolor="#000000">R</mi><mo>⁢</mo><mi mathcolor="#000000">C</mi></mrow></math><span class="ltx_text" style="color:#000000;"> oscillator.
+One more evidence that ”the success of the equations is no evidence in
+favour of the mechanism that we tentatively had in
+mind when formulating them”.</span></p>
+</div>
+<figure id="fig:ClampingOnOff_HH" class="ltx_figure"><object type="image/svg+xml" data="fig/HodgkinHuxleyFig2Simple.svg" id="Ch4.F8.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="389" height="266"></object>
+<figcaption class="ltx_caption ltx_centering" style="color:#000000;"><span class="ltx_tag ltx_tag_figure">Figure 4.8: </span>The green and red diagram lines are calculated for the clamping-on and clamping-off case.
+he dashed blue line models the case that the neuron is a purely electric system, as opposed to the case of clamping the axonal tube
+with ion channels in its wall. The black bulbs are for measured points.
+Moreover, the fitted polynomial line is reproduced from <cite class="ltx_cite ltx_citemacro_cite">[<a href="../../bib.html#bib9" title="" class="ltx_ref">9</a>]</cite>.
+</figcaption>
+</figure>
+<div id="SS0.SSSx1.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Figure </span><a href="#fig:ClampingOnOff_HH" title="Figure 4.8 ‣ Oscillator type ‣ 4.11 Thresholds of initiating AP ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">4.8</span></a><span class="ltx_text" style="color:#000000;"> shows </span><span class="ltx_text ltx_font_italic" style="color:#000000;">two</span><span class="ltx_text" style="color:#000000;"> switch-on diagram lines, with two different </span><math id="SS0.SSSx1.p3.m1" class="ltx_Math" alttext="\tau" display="inline"><mi mathcolor="#000000">τ</mi></math><span class="ltx_text" style="color:#000000;"> time constants.
+The blue line (”electric”) is drawn with the measured time constant of the swith-off discharge.
+Acconding to the theory of electricity, the time constants of the falling and rising edge must be the same
+in the case of an electric integrator.
+The green diagram line (the one fitted to the measured data) correspond to a different </span><math id="SS0.SSSx1.p3.m2" class="ltx_Math" alttext="\tau" display="inline"><mi mathcolor="#000000">τ</mi></math><span class="ltx_text" style="color:#000000;"> time constant.
+The effect was observed by  </span><cite class="ltx_cite ltx_citemacro_cite"><span class="ltx_text" style="color:#000000;">[</span><a href="../../bib.html#bib9" title="" class="ltx_ref">9</a><span class="ltx_text" style="color:#000000;">]</span></cite><span class="ltx_text" style="color:#000000;">,
+but they did not explain and also did not interpret it.
+Although their fitted polynomial nearly hides the effect, a little ”hump” at around </span><math id="SS0.SSSx1.p3.m3" class="ltx_Math" alttext="3\ ms" display="inline"><mrow><mn mathcolor="#000000">3</mn><mo lspace="0.500em">⁢</mo><mi mathcolor="#000000">m</mi><mo>⁢</mo><mi mathcolor="#000000">s</mi></mrow></math><span class="ltx_text" style="color:#000000;"> can be observed.
+The reason is that the charge-up current is not constant, it also has a time course; despite that they stabilized the voltage.</span></p>
+</div>
+<div id="SS0.SSSx1.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">The different time constants should have been a warning sign for HH that
+</span><span class="ltx_text ltx_font_italic" style="color:#000000;">the measured effect differs from the one they had in mind</span><span class="ltx_text" style="color:#000000;">.
+They wanted to believe and demonstrate that they have measured the output signal
+of a serial </span><math id="SS0.SSSx1.p4.m1" class="ltx_Math" alttext="RC" display="inline"><mrow><mi mathcolor="#000000">R</mi><mo>⁢</mo><mi mathcolor="#000000">C</mi></mrow></math><span class="ltx_text" style="color:#000000;"> circuit.
+With the evaluation of their measurement, they suggested some wrong hypotheses</span></p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">They misidentified the current as </span><span class="ltx_text ltx_font_italic" style="color:#000000;">the
+change of conductance</span><span class="ltx_text" style="color:#000000;">. No conductance change happens, only a condenser
+changes and discharges. They worked with a condenser, not with a resistor.</span></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">They meticulously observed and measured that the time contants </span><math id="I1.i2.p1.m1" class="ltx_Math" alttext="\tau" display="inline"><mi mathcolor="#000000">τ</mi></math><span class="ltx_text" style="color:#000000;">
+of the exponential charge-up and discharge processes are different;
+but did not care that they should be indentical and also did not care of the ”hump”.</span></p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">They measured the resulting charge-up composite process. As we explain in section </span><a href="../../ch_Physics/phys_ElectricDichotomies/sec_PHYSICS_ELECTRICFundamental.html#phys:DisappearingCurrent" title="Current ‣ 2.4.2 Fundamental concepts ‣ 2.4 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">2.4.2</span></a><span class="ltx_text" style="color:#000000;">,
+before switching the clamping voltage, there is no charge carrier
+inside the axonal tube; first, the ions must diffuse into the axon.</span></p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">They fitted the rising time course with a polynomial, hiding
+that it comprises a saturating voltage of the condenser, that
+the current through the axon also saturated with a different time constant,
+and at the begining the line had a zero current contribution.</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="SS0.SSSx1.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">On the one side, they underpinned that our equations </span><a href="../../ch_Physics/phys_ElectricDichotomies/sec_Physics-IonicPeculiarities.html#eq:I_Source" title="In Current source ‣ 2.4.3 Peculiarities of ion current ‣ 2.4 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">2.38</span></a><span class="ltx_text" style="color:#000000;"> and </span><a href="../../ch_Physics/phys_ElectricDichotomies/sec_Physics-IonicPeculiarities.html#eq:I_Drain" title="In Current drain ‣ 2.4.3 Peculiarities of ion current ‣ 2.4 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;"><span class="ltx_text ltx_ref_tag">2.37</span></a><span class="ltx_text" style="color:#000000;">
+describe correctly the axonal chargeup current and discharge currents, respectively.
+On the other, as they noticed that the time constants of the two processes are significantly different
+(see the green and the dashed blue diagram lines), underpinned that
+the axonal charge production mechanism significantly changes
+the axonal source current. The green line has significantly slower rise
+since the axonal current only gradually increases after switching the clamping on.
+Without that current change, the charge-up current would follow the blue line.
+Unfortunately, there are three physical processes, with similar time constants.
+One, that they wanted to demonstrate is the steady state:
+the current leads to a saturated current.
+Two, that the </span><a href="../../ch_Physics/phys_ElectricDichotomies/sec_PHYSICS_MEASURING.html#voltage-clamping" title="The very common measuring method reveals some fundamental differences between the electric behavior of conductors and living matter. ”The reason for voltage-clamping ‣ Voltage/current clamping/patching ‣ 2.4.7 Measuring issues ‣ 2.4 Ions’ electricity ‣ Chapter 2 Physics for neurons ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" style="color:#000000;">clamping ”creates” charge carriers</a><span class="ltx_text" style="color:#000000;"> in the axon,
+so the charging current changes.
+Three, the initial switch-on creates a voltage gradient on the membrane,
+so an action potential is also started.
+</span><span class="ltx_text" style="color:#000000;"></span></p>
+</div>
+<div id="SS0.SSSx1.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="color:#000000;">Their equations more or less precisely describe
+the features of the wrong oscillator type and those of the
+non-existing </span><math id="SS0.SSSx1.p6.m1" class="ltx_Math" alttext="K^{+}" display="inline"><msup><mi mathcolor="#000000">K</mi><mo mathcolor="#000000">+</mo></msup></math><span class="ltx_text" style="color:#000000;"> current introduced for compensating for the wrong oscillator selection.</span></p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="../sec_Physiology-FallaciesLowPassFilter/sec_BlockingChannels.html" title="In 4.10 Membrane as low-pass filter ‣ Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.10.1 </span>Blocking channels by drugs</span></a><a href="../../bib.html" title="In Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Bibliography</span></a><a href="../sec_Physics-CableEquation/index.html" title="In Chapter 4 Fallacies ‣ Dynamic Abstract Neural Computing with Electronic Simulation (DANCES) Version 0.2.8" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.12 </span>The cable equation</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Jul 28 18:02:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>
